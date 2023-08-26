@@ -75,20 +75,20 @@ It is **highly recommended not to trust and not to use messaging software that i
 | Telegram                            |                 :x:                 |        optional       |  client apps only  | Telegram Group, UK                       |
 | QQ                                  |                 :x:                 |          :x:          |         :x:        | Tencent Holdings Ltd., China             |
 | iMessage                            |                 :x:                 |   :heavy_check_mark:  |         :x:        | Apple Inc., USA                          |
-| SnapChat                            |                 :x:                 |       snaps only      |         :x:        |	Snap Inc., USA                           |
-| Kik                                 |                 :x:                 |          :x:          |         :x:        |	MediaLab AI Inc., France                 |
-| Skype                               |                 :x:                 |   :heavy_check_mark:  |         :x:        |	Microsoft Corporation, USA               |
+| SnapChat                            |                 :x:                 |       snaps only      |         :x:        |	Snap Inc., USA                          |
+| Kik                                 |                 :x:                 |          :x:          |         :x:        |	MediaLab AI Inc., France                |
+| Skype                               |                 :x:                 |   :heavy_check_mark:  |         :x:        |	Microsoft Corporation, USA              |
 | Discord                             |                 :x:                 |          :x:          |         :x:        | Discord Inc., USA                        |
-| Viber                               |                 :x:                 |   :heavy_check_mark:  |         :x:        |	Rakuten, Japan                           |
-| imo                                 |                 :x:                 |        optional       |         :x:        |	PageBites Inc., USA                      |
-| LINE                                |                 :x:                 |   :heavy_check_mark:  |         :x:        |	Line Corporation, Japan                  |
-| Hike                                |                 :x:                 |   :heavy_check_mark:  |         :x:        |	Hike Private Limited, India              |
+| Viber                               |                 :x:                 |   :heavy_check_mark:  |         :x:        |	Rakuten, Japan                          |
+| imo                                 |                 :x:                 |        optional       |         :x:        |	PageBites Inc., USA                     |
+| LINE                                |                 :x:                 |   :heavy_check_mark:  |         :x:        |	Line Corporation, Japan                 |
+| Hike                                |                 :x:                 |   :heavy_check_mark:  |         :x:        |	Hike Private Limited, India             |
 | Zalo                                |                 :x:                 |          :x:          |         :x:        | Zalo Group, Vietnam                      |
 | KakaoTalk                           |                 :x:                 |        optional       |         :x:        | Kakao Corp., South Korea                 |
-| Signal                              |                 :x:                 |   :heavy_check_mark:  | :heavy_check_mark: |	Signal Foundation, USA                   |
+| Signal                              |                 :x:                 |   :heavy_check_mark:  | :heavy_check_mark: |	Signal Foundation, USA                  |
 | Threema                             |                 :x:                 |   :heavy_check_mark:  |  client apps only  | Threema GmbH, Switzerland                |
-| Element (Matrix protocol)           |          :heavy_check_mark:         |   :heavy_check_mark:  | :heavy_check_mark: |	The Matrix.org Foundation CIC, UK        |
-| ICQ                                 |                 :x:                 |     AV files only     |         :x:        |	Mail.ru Group, Russia                    |
+| Element (Matrix protocol)           |          :heavy_check_mark:         |   :heavy_check_mark:  | :heavy_check_mark: |	The Matrix.org Foundation CIC, UK       |
+| ICQ                                 |                 :x:                 |     AV files only     |         :x:        |	Mail.ru Group, Russia                   |
 
 Please note that information in the table above might not be up to date.
 
