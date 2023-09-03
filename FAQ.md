@@ -12,6 +12,10 @@
 
 **Yellow** is a very innovative decentralized, secure, modulable and open source instant messaging and social media software. It is the implementation of **ODTP** and **NEMP** protocols.
 
+## Why is this software named "Yellow"?
+
+**Yellow** is the color of cheerfulness, playfulness, warmth, energy and abundance. At the same time, it is the color on the Liberland and anarcho-capitalist flags. Furthermore, "Yellow" sounds like "Hello", which is symbolic for instant messaging (initial greeting).
+
 ## Why is NEMP using conversations instead of folders?
 
 Folders system (Inbox, Sent etc.) is very obsolete concept of message storing that was created before proper e-mail client software even existed. The original e-mail worked in file system structure where directories had files had roles of e-mail folders and messages. This concept was adopted in all e-mail clients that were released later. Storing the e-mails in folders is very impractical solution, because if you search for message history, you have to switch between folders and search the content of each message. On the other hand conversations resolve this problem and make history search very fast, clear and easy. You don't have to copy the history of conversation in every single message so it saves disk space on servers.
