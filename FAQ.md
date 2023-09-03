@@ -68,7 +68,7 @@ It is **highly recommended not to trust and not to use messaging software that i
 
 ## Comparison with other messaging software
 
-Please take a look at [**comparison tables**](https://libersoft.org/).
+Please take a look at [**comparison tables**](https://yellow.libersoft.org/).
 
 ## Element (using Matrix protocol) is also open source, has a distributed network and using end-to-end encryption. How does it differ from Yellow?
 
