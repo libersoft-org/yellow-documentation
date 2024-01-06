@@ -1,4 +1,4 @@
-# The New E-Mail Protocol (NEMP) - documentation
+# Advanced Mail Transfer Protocol (AMTP) - documentation
 
 ## Development state
 
