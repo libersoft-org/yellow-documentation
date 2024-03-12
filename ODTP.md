@@ -43,6 +43,16 @@ ODTP operates over WebTransport protocol for connection establishment and encryp
 
 ## Message structure
 
+```
+{
+ "module": "file_sharing",
+ "data": {
+  "command": "download",
+  "file_id": "1234567890abcdef"
+ }
+}
+```
+
 ## Commands specification
 
 ## Error handling
