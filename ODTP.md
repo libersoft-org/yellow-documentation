@@ -6,6 +6,7 @@
 - [**Protocol objectives**](#protocol-objectives)
 - [**Architecture**](#architecture)
 - [**Security**](#security)
+- [**Modularity**](#modularity)
 - [**Connection establishment**](#connection-establishment)
 - [**Message structure**](#message-structure)
 - [**Commands specification**](#commands-specifications)
@@ -35,6 +36,8 @@ This documents contains the complete protocol documentation.
 ODTP operates over WebTransport protocol for connection establishment and encrypted data transmission and Binary JSON (BSON) for structured, compact command representation.
 
 ## Security
+
+## Modularity
 
 ## Connection establishment
 
