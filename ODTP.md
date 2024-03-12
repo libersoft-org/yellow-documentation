@@ -14,7 +14,7 @@
 
 ## About
 
-Open Data Transfer Protocol (ODTP) is an universal communication network protocol used in software like [**Yellow**](https://yellow.libersoft.org).
+The Open Data Transfer Protocol (ODTP) is an universal communication network protocol used in software like [**Yellow**](https://yellow.libersoft.org). It is designed to facilitate reliable and secure data exchange between two points. Leveraging the WebTransport protocol for connection establishment and data transmission and Binary JSON (BSON) for structured, compact command representation.
 
 This documents contains the complete protocol documentation.
 
