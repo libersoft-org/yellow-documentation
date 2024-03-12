@@ -43,7 +43,7 @@ ODTP operates over WebTransport protocol for connection establishment and encryp
 
 ## Message structure
 
-```
+```json
 {
  "module": "file_sharing",
  "data": {
