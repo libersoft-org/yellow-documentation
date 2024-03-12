@@ -28,6 +28,7 @@ This documents contains the complete protocol documentation.
 - **Reliability** - Ensure data integrity and order
 - **Security** - Secure data transfer using WebTransport's underlying protocols
 - **Flexibility** - Support a wide range of applications and data types
+- **Modularity** - Supports communication between separate modules
 
 ## Architecture
 
