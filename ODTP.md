@@ -1,6 +1,7 @@
 # Open Data Transfer Protocol (ODTP) - documentation
 
 ## Table of contents
+
 - [**About**](#about)
 - [**Development state**](#development-state)
 - [**Protocol objectives**](#protocol-objectives)
