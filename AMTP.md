@@ -1,18 +1,45 @@
 # Advanced Mail Transfer Protocol (AMTP) - documentation
 
-## Development state
-
-**IMPORTANT NOTE:** This is just a draft. It is not the final version of protocol, some parts might be obsolete, we are working on new version!
-
 ## Table of contents
 
-- TODO
+- [**About**](#about)
+- [**Development state**](#development-state)
+- [**Protocol objectives**](#protocol-objectives)
+- [**Architecture**](#architecture)
+- [**Identity**](#identity)
+- [**Security**](#security)
+- [**Client to server connection**](#client-to-server-connection)
+- [**Server to server connection**](#server-to-server-connection)
+- [**Modules**]()
+- [**Example**](#example)
 
-### Protocol identity
+## About
+
+The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail protocol, extending beyond the traditional limitations of SMTP by supporting a broader range of communication modules, such as messages, forums, and more. Unlike SMTP, AMTP uses more modern, efficient, and secure methods for data transfer, identification, and addressing by leveraging [**ODTP**](./ODTP.md) (Open Data Transfer Protocol).
+
+## Development state
+
+This is just a draft. It is not the final version of protocol, some parts might be obsolete, we are working on new version!
+
+## Protocol objectives
+
+## Architecture
+
+## Identity
 
 - User's identity is in e-mail address format, the same applies to aliases, chat groups, news groups etc.
 
-## **TODO:** MOVE THE FOLLOWING TO ADMIN MODULE:
+## Security
+
+## Client to server conneection
+
+## Server to server conneection
+
+## Modules
+
+## Example
+
+# **TODO:** MOVE THE FOLLOWING TO ADMIN MODULE:
 
 ### Admin login <a name="a2s-login"></a>
 
