@@ -42,6 +42,8 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 
 ## Server to server conneection
 
+## DNS connection
+
 ## Modules
 
 ## Example
