@@ -10,10 +10,12 @@
 - [**Modularity**](#modularity)
 - [**Connection establishment**](#connection-establishment)
 - [**Message structure**](#message-structure)
-- [**Commands specification**](#commands-specifications)
+  - [**Core communication**](#core-communication)
+  - [**Module communication**](#module-communication)
 - [**Error handling**](#error-handling)
+  - [**Error from core**](#error-from-core)
+  - [**Error from module**](#error-from-module)
 - [**Example**](#example)
-
 
 ## Development state
 
@@ -33,15 +35,25 @@ The Open Data Transfer Protocol (ODTP) is a protocol that describes application 
 
 ## Architecture
 
-**ODTP** operates over **WebTransport** protocol for connection establishment and encrypted data transmission and Binary JSON (BSON) for structured, compact command representation.
+**ODTP** operates over [**WebTransport**](https://www.w3.org/TR/webtransport/) protocol for connection establishment and encrypted data transmission and [**BSON**](https://en.wikipedia.org/wiki/BSON) for structured, compact command representation.
 
 ## Security
+
+- TODO
+
+## Modularity
+
+- TODO
+
+## Connection establishment
+
+- TODO
 
 ## Message structure
 
 User defines if they want to communicate with the core or with a module.
 
-### Core communication example:
+### Core communication:
 
 ```json
 {
@@ -54,7 +66,7 @@ User defines if they want to communicate with the core or with a module.
 }
 ```
 
-### Module communication example:
+### Module communication:
 
 ```json
 {
@@ -67,11 +79,9 @@ User defines if they want to communicate with the core or with a module.
 }
 ```
 
-## Connection establishment
-
 ## Error handling
 
-### Error from core example:
+### Error from core:
 
 ```json
 {
@@ -80,7 +90,7 @@ User defines if they want to communicate with the core or with a module.
 }
 ```
 
-### Error from module example:
+### Error from module:
 
 ```json
 {
@@ -92,7 +102,6 @@ User defines if they want to communicate with the core or with a module.
 }
 ```
 
-## DELETE NOTES:
+## Example
 
-- Data are sent using HTTPS over WebTransport
-- All the commands over WebTransport are sent in BSON format
+- TODO
