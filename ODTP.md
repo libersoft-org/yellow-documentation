@@ -61,6 +61,4 @@ ODTP operates over WebTransport protocol for connection establishment and encryp
 ## DELETE NOTES:
 
 - Data are sent using HTTPS over WebTransport
-- All the commands over WebSocket are sent in JSON / BSON format (it is recommended to send the JSON data in compact format)
-- There is a permanent connection between client and server
-- Server to server connections are not permanent (the first server disconnects after data are sent)
+- All the commands over WebTransport are sent in BSON format
