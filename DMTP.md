@@ -16,7 +16,7 @@ The **Decentralized Mail Transfer Protocol (DMTP)** is the upcoming decentralize
 ## DMTP and AMTP differences
 
                       |    **DMTP**    |    **AMTP**    |
----------------------------------------------------------
+----------------------|----------------|----------------|
 **Network structure** | Decentralized  | Distributed    |
 **Identity**          | Public key     | E-mail address |
 **Storage**           | Server storage | None / IPFS    |
