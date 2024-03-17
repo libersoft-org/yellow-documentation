@@ -54,23 +54,21 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 
 ## Security
 
-## Client to server connection
-
-## Server to server conneection
-
 ## DNS connection
 
 ## Modules
 
-## Example
+## Commands
 
-# **TODO:** MOVE THE FOLLOWING TO ADMIN MODULE:
+### Client to server connection
 
-### Admin login <a name="a2s-login"></a>
+#### Admin commands
 
-- Admin has to be logged in in order to manage the server. If the login is successful, they'll get the admin token that has to be sent in every request
+##### Admin login <a name="a2s-login"></a>
 
-- Request example:
+- Admin has to be logged in in order to manage the server. If the login is successful, admin gets the admin token that has to be sent in every following request.
+
+**Request example:**
 
 ```json
 {
@@ -79,7 +77,7 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 }
 ```
 
-- Response example:
+**Response example:**
 
 ```json
 {
@@ -111,13 +109,11 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 }
 ```
 
-### Admin logout <a name="a2s-logout"></a>
+##### Admin logout <a name="a2s-logout"></a>
 
-### Domains management <a name="a2s-domains"></a>
+##### Domains list: <a name="a2s-domains-list"></a>
 
-#### Domains list: <a name="a2s-domains-list"></a>
-
-- Request example:
+**Request example:**
 
 ```json
 {
@@ -126,7 +122,7 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 }
 ```
 
-- Response example:
+**Response example:**
 
 ```json
 [
@@ -142,52 +138,42 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 ]
 ```
 
-#### Add a new domain <a name="a2s-domains-add"></a>
-
-#### Set the existing domain <a name="a2s-domains-set"></a>
-
-#### Delete the domain <a name="a2s-domains-del"></a>
-
-
-### Users management <a name="a2s-users"></a>
-
-#### Users list <a name="a2s-users-list"></a>
-
-#### Add a new user <a name="a2s-users-add"></a>
-
-#### Set the existing user <a name="a2s-users-set"></a>
-
-#### Delete the user <a name="a2s-users-del"></a>
-
-
-### Aliases management <a name="a2s-aliases"></a>
-
-#### Aliases list <a name="a2s-aliases-list"></a>
-
-#### Add a new alias <a name="a2s-aliases-add"></a>
-
-#### Set the existing alias <a name="a2s-aliases-set"></a>
-
-#### Delete the alias <a name="a2s-aliases-del"></a>
-
-
-### Admins management <a name="a2s-admins"></a>
-
-#### Admins list <a name="a2s-admins-list"></a>
-
-#### Add a new admin <a name="a2s-admins-add"></a>
-
-#### Set the existing admin <a name="a2s-admins-set"></a>
-
-#### Delete the admin <a name="a2s-admins-del"></a>
-
+##### Add a new domain <a name="a2s-domains-add"></a>
 
 ```json
 ```
 
-## User to server communication <a name="u2s"></a>
+##### Set the existing domain <a name="a2s-domains-set"></a>
 
-### User login <a name="u2s-login"></a>
+##### Delete the domain <a name="a2s-domains-del"></a>
+
+##### Users list <a name="a2s-users-list"></a>
+
+##### Add a new user <a name="a2s-users-add"></a>
+
+##### Set the existing user <a name="a2s-users-set"></a>
+
+##### Delete the user <a name="a2s-users-del"></a>
+
+##### Aliases list <a name="a2s-aliases-list"></a>
+
+##### Add a new alias <a name="a2s-aliases-add"></a>
+
+##### Set the existing alias <a name="a2s-aliases-set"></a>
+
+##### Delete the alias <a name="a2s-aliases-del"></a>
+
+##### Admins list <a name="a2s-admins-list"></a>
+
+##### Add a new admin <a name="a2s-admins-add"></a>
+
+##### Set the existing admin <a name="a2s-admins-set"></a>
+
+##### Delete the admin <a name="a2s-admins-del"></a>
+
+#### User commands
+
+##### User login <a name="u2s-login"></a>
 
 - User logs in using their e-mail address and password. The additional verification is possible (2FA etc.).
 - If the login is successful, they'll get user token that is sent in all requests.
@@ -195,21 +181,18 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 - User tokens are stored in the server database and users store it localy.
 - If the user has more tokens for the same account (for example from more devices), they can delete other tokens by their request.
 
-### Server info <a name="u2s-serverinfo"></a>
+##### Server info <a name="u2s-serverinfo"></a>
 
 - Users can request other server's information such as maximum message length accepted, maximum file size accepted etc.
 
-### User info <a name="u2s-userinfo"></a>
+##### User info <a name="u2s-userinfo"></a>
 
 - Users can request other user's information such as their client software and its version, visible name, photo etc.
 
-## **TODO:** MOVE THE FOLLOWING TO CONTACTS MODULE:
 
-### Contacts management <a name="u2s-contacts"></a>
+##### Server to server connection
 
-- Contacts for each user are stored server side.
-- Users are able to manage them.
-- All the contacts stored on the server are encrypted by end to end encryption
+- TODO
 
 ## **TODO:** MOVE THE FOLLOWING TO MESSAGES MODULE:
 
