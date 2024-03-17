@@ -16,12 +16,11 @@ The **Decentralized Mail Transfer Protocol (DMTP)** is the upcoming decentralize
 
 ## DMTP and AMTP differences
 
-                      |    **DMTP**    |    **AMTP**    |
-----------------------|----------------|----------------|
-**Network structure** | Decentralized  | Distributed    |
-**Identity**          | Public key     | E-mail address |
-**DNS used**          | No             | Yes            |
-**Storage**           | Server storage | None / IPFS    |
-**ODTP support**      | Yes            | Yes            |
-**Modules support**   | Yes            | Yes            |
-----------------------|----------------|----------------|
+|                       | **DMTP**       | **AMTP**       |
+|-----------------------|----------------|----------------|
+| **Network structure** | Decentralized  | Distributed    |
+| **Identity**          | Public key     | E-mail address |
+| **DNS used**          | No             | Yes            |
+| **Storage**           | Server storage | None / IPFS    |
+| **ODTP support**      | Yes            | Yes            |
+| **Modules support**   | Yes            | Yes            |
