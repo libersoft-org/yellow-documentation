@@ -39,7 +39,7 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 
 ## Security
 
-## Client to server conneection
+## Client to server connection
 
 ## Server to server conneection
 
