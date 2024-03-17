@@ -39,8 +39,8 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 
 - The type of authentication (signing by private key)
 - Security by default (secured channel and end-to-end encryption by default)
-- Different application layer protocol (WebTransport) 
-- Message format (BSON)
+- Different application layer protocol (**WebTransport**) - as described in **ODTP**
+- Message format (**BSON**) - as described in **ODTP**
 - Client-server permanent connection
 - Modularity
 
