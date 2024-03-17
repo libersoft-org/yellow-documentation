@@ -27,11 +27,11 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 - **Extensibility**: Support for communication modules for different purposes (messages, forum, social media features, etc.)
 - **Efficiency**: Utilization of ODTP protocol to reduce latency and increase throughput
 - **Security**: Secured data transfer and end-to-end encryption
-- **Universality**: Retaining the e-mail identity (user@domain.tld) while expanding functionality
+- **Universality**: Retaining the e-mail identity (**user@domain.tld**) while expanding functionality
 
 ### What is common with SMTP protocol:
 
-- The type of identity (user@domain.tld)
+- The type of identity (**user@domain.tld**)
 - Network topology (distributed model)
 - Server-server non-permanent connection
 
