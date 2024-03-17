@@ -4,6 +4,7 @@
 
 - [**Development state**](#development-state)
 - [**About**](#about)
+- [**Protocol objectives**](#protocol-objectives)
 - [**Architecture**](#architecture)
 - [**Security**](#security)
 - [**Modularity**](#modularity)
@@ -22,7 +23,7 @@
 
 The Open Data Transfer Protocol (ODTP) is a protocol that describes application layer and data format used in software like [**Yellow**](https://yellow.libersoft.org). It is designed to facilitate reliable and secure data exchange between two points.
 
-### Protocol objectives
+## Protocol objectives
 
 - **Efficiency** - Minimize overhead for faster data transfer, providing multiplexed and low-latency connection
 - **Reliability** - Ensure data integrity and order
@@ -32,19 +33,33 @@ The Open Data Transfer Protocol (ODTP) is a protocol that describes application 
 
 ## Architecture
 
-ODTP operates over WebTransport protocol for connection establishment and encrypted data transmission and Binary JSON (BSON) for structured, compact command representation.
+**ODTP** operates over **WebTransport** protocol for connection establishment and encrypted data transmission and Binary JSON (BSON) for structured, compact command representation.
 
 ## Security
 
-## Modularity
-
-## Connection establishment
-
 ## Message structure
+
+User defines if they want to communicate with the core or with a module.
+
+### Core communication example:
+
+```json
+{
+ "command": "...",
+ "data": {
+  .
+  .
+  .
+ }
+}
+```
+
+### Module communication example:
 
 ```json
 {
  "module": "file_sharing",
+ "error": 0,
  "data": {
   "command": "download",
   "file_id": "1234567890abcdef"
@@ -52,11 +67,30 @@ ODTP operates over WebTransport protocol for connection establishment and encryp
 }
 ```
 
-## Commands specification
+## Connection establishment
 
 ## Error handling
 
-## Example
+### Error from core example:
+
+```json
+{
+ "error": 1,
+ "message": "Command not found"
+}
+```
+
+### Error from module example:
+
+```json
+{
+ "module": "messages",
+ "data": {
+  "error": 1,
+  "message": "Command not found"
+ }
+}
+```
 
 ## DELETE NOTES:
 
