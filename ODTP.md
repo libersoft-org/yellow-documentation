@@ -4,7 +4,6 @@
 
 - [**Development state**](#development-state)
 - [**About**](#about)
-- [**Protocol objectives**](#protocol-objectives)
 - [**Architecture**](#architecture)
 - [**Security**](#security)
 - [**Modularity**](#modularity)
@@ -23,7 +22,7 @@
 
 The Open Data Transfer Protocol (ODTP) is a protocol that describes application layer and data format used in software like [**Yellow**](https://yellow.libersoft.org). It is designed to facilitate reliable and secure data exchange between two points.
 
-## Protocol objectives
+### Protocol objectives
 
 - **Efficiency** - Minimize overhead for faster data transfer, providing multiplexed and low-latency connection
 - **Reliability** - Ensure data integrity and order
