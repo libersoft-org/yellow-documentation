@@ -1,5 +1,3 @@
-## **TODO:** MOVE THE FOLLOWING TO MESSAGES MODULE:
-
 ### Message <a name="u2s-messages"></a>
 
 - Users can send messages to other users within the same server or to users on other servers as well.
