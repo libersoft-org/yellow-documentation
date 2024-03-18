@@ -127,7 +127,7 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
      "12ab::34cd:56ef:7890:1234"
     ]
    }, {
-    "ens1": [
+    "ens2": [
      "40.30.20.10",
      "12ab::34cd:56ef:7890:4321"
     ]
