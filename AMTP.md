@@ -54,6 +54,16 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 
 ## Security
 
+### User and admin authentication
+
+User's or admin's password never leaves a end device for advanced security reasons. Passwords are verified by asymmetric encryption like this:
+
+1. Client creates a private key, then a public key out of this private key with the encryption algorhytm that is supported by a server and stores both these keys on the device.
+2. Client creates their account and sends a public key and the name of the encryption algorhytm within the registration and server stores it in the database. Private key is NOT sent during the registration, it never leaves the end device.
+3. Client sends a login request to the server with their user name. Server generates a new random string, encrypts this string with a public key and sends it to the client.
+4. Client decrypts the string they got from a server and sends it decrypted back to the server.
+5. Server verifies if the decrypted string is correct and sends the session token back to client if the string was correct.
+
 ## DNS connection
 
 ## Modules
