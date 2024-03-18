@@ -58,7 +58,7 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 
 The authentication process for users and administrators is designed to ensure that sensitive information remains confined to the user's device. This is achieved through a asymmetric encryption strategy, outlined as follows:
 
-#### 1. Key generation and initial Setup:
+#### 1. Key generation and initial setup:
 - Upon initiating the registration process, the client generates a unique private key on the device. Utilizing an encryption algorithm compatible with the server, a corresponding public key is derived from this private key.
 - Both keys are securely stored on the client's device. However, only the public key, along with the identification of the utilized encryption algorithm, is transmitted to the server during account registration. The server then records the public key and the identification of encryption algorithm in its database for future authentication processes. It is crucial to note that the private key is NEVER transmitted or leaves the client's device, ensuring maximum security.
 
