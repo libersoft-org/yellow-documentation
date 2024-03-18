@@ -37,7 +37,7 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 
 ### What is different from SMTP protocol:
 
-- The type of authentication (signing by private key)
+- The type of authentication (logging in by asymmetric encryption)
 - Security by default (secured channel and end-to-end encryption by default)
 - Different application layer protocol (**WebTransport**)
 - Message format (**BSON**)
