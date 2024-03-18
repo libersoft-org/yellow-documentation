@@ -54,15 +54,21 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 
 ## Security
 
-### User and admin authentication
+### User and administrator authentication
 
-User's or admin's password never leaves a end device for advanced security reasons. Passwords are verified by asymmetric encryption like this:
+The authentication process for users and administrators is designed to ensure that sensitive password information remains confined to the user's device. This is achieved through a asymmetric encryption strategy, outlined as follows:
 
-1. Client creates a private key, then a public key out of this private key with the encryption algorhytm that is supported by a server and stores both these keys on the device.
-2. Client creates their account and sends a public key and the name of the encryption algorhytm within the registration and server stores it in the database. Private key is NOT sent during the registration, it never leaves the end device.
-3. Client sends a login request to the server with their user name. Server generates a new random string, encrypts this string with a public key and sends it to the client.
-4. Client decrypts the string they got from a server and sends it decrypted back to the server.
-5. Server verifies if the decrypted string is correct and sends the session token back to client if the string was correct.
+#### 1. Key Generation and Initial Setup:
+- Upon initiating the registration process, the client generates a unique private key on the device. Utilizing an encryption algorithm compatible with the server, a corresponding public key is derived from this private key.
+- Both keys are securely stored on the client's device; however, only the public key, along with the name of the utilized encryption algorithm, is transmitted to the server during account registration. The server then records the public key in its database for future authentication processes. It is crucial to note that the private key is never transmitted or leaves the client's device, ensuring maximum security.
+
+#### 2. Authentication Sequence:
+- For authentication, the client sends a login request accompanied by their username to the server.
+- In response, the server generates a random string, which is then encrypted using the client's public key before being sent back to the client.
+- Upon receipt, the client utilizes their private key to decrypt the received string, sending the decrypted version back to the server for verification.
+- The server compares the decrypted string with the original random string. If they match, it confirms the client's identity and grants access by issuing a session token to the client.
+
+This authentication method leverages the strengths of asymmetric encryption to safeguard user data, ensuring that sensitive information, such as private keys, remains protected within the confines of the user's device. This approach not only enhances security but also aligns with best practices for secure communications in modern applications.
 
 ## DNS connection
 
