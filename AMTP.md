@@ -20,7 +20,7 @@ This is just a draft. It is not the final version of protocol.
 
 ## About
 
-The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail protocol, extending beyond the traditional limitations of [**SMTP**](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol) by supporting a broader range of communication modules. Unlike SMTP, AMTP uses more modern, efficient, and secure methods for data transfer, identification, and addressing by leveraging [**ODTP**](./ODTP.md) (Open Data Transfer Protocol).
+The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail protocol, extending beyond the traditional limitations of [**SMTP**](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol) by supporting a broader range of modules. Unlike SMTP, AMTP uses more modern, efficient, and secure methods for data transfer, identification, and addressing.
 
 ### Protocol objectives
 
@@ -46,7 +46,7 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 
 ## Architecture
 
-**AMTP** operates on the principle of a persistent connection between the client and server using **ODTP**, enabling real-time communication and data exchange. The protocol supports both client-server and server-server communication for message passing and other data object exchanges. Server-server connections are not persistent.
+**AMTP** operates on the principle of a persistent connection between the client and server using **WebTransport**, enabling real-time communication and data exchange. The protocol supports both client-server and server-server communication for message passing and other data object exchanges. Server-server connections are not persistent.
 
 ## Identity
 
