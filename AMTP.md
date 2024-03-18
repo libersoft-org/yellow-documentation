@@ -88,8 +88,6 @@ This authentication method leverages the strengths of asymmetric encryption to s
 
 **Request example:**
 
-- TODO - add asymmetric encryption login !!!
-
 ```json
 {
  "command": "admin_login_request",
