@@ -16,7 +16,7 @@
 
 ## Development state
 
-This is just a draft. It is not the final version of protocol, some parts might be obsolete, we are working on new version!
+This is just a draft. It is not the final version of protocol.
 
 ## About
 
