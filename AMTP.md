@@ -20,7 +20,7 @@ This is just a draft. It is not the final version of protocol.
 
 ## About
 
-The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail protocol, extending beyond the traditional limitations of [**SMTP**](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol) by supporting a broader range of modules. Unlike SMTP, AMTP uses more modern, efficient, and secure methods for data transfer, identification, and addressing.
+The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail protocol, extending beyond the traditional limitations of [**SMTP**](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol) by supporting a broader range of modules. Unlike **SMTP**, **AMTP** uses more modern, efficient, and secure methods for data transfer, identification, and addressing.
 
 ### Protocol objectives
 
@@ -70,9 +70,23 @@ The authentication process for users and administrators is designed to ensure th
 
 This authentication method leverages the strengths of asymmetric encryption to safeguard user data, ensuring that sensitive information, such as private keys, remains protected within the confines of the user's device. This approach not only enhances security but also aligns with best practices for secure communications in modern applications.
 
-## DNS connection
+## DNS configuration
 
-- TODO
+To facilitate the resolution of **AMTP** service endpoints within a distributed network, similar to how e-mail services utilize MX, SPF, DKIM and DMARC records, the **AMTP** protocol employs a set of specific DNS records. These records are essential for directing **AMTP** traffic to the appropriate server based on the recipient's domain. The following DNS records are necessary for domains participating in the **AMTP** network:
+
+**AMTP TXT record**:
+
+- This record combines functions similar to MX and SPF records known from e-mail.
+
+**Example:**
+
+```makefile
+subdomain.domain.tld. IN TXT "amtp=amtp.domain.tld"
+```
+
+- This record indicates that for account **@subdomain.domain.tld** is used **AMTP** server **amtp.domain.tld**
+
+- TODO - is there something like DKIM, DMARC needed?
 
 ## Modules
 
