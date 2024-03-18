@@ -56,16 +56,16 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 
 ### User and administrator authentication
 
-The authentication process for users and administrators is designed to ensure that sensitive password information remains confined to the user's device. This is achieved through a asymmetric encryption strategy, outlined as follows:
+The authentication process for users and administrators is designed to ensure that sensitive information remains confined to the user's device. This is achieved through a asymmetric encryption strategy, outlined as follows:
 
-#### 1. Key Generation and Initial Setup:
+#### 1. Key generation and initial Setup:
 - Upon initiating the registration process, the client generates a unique private key on the device. Utilizing an encryption algorithm compatible with the server, a corresponding public key is derived from this private key.
-- Both keys are securely stored on the client's device; however, only the public key, along with the name of the utilized encryption algorithm, is transmitted to the server during account registration. The server then records the public key in its database for future authentication processes. It is crucial to note that the private key is never transmitted or leaves the client's device, ensuring maximum security.
+- Both keys are securely stored on the client's device. However, only the public key, along with the identification of the utilized encryption algorithm, is transmitted to the server during account registration. The server then records the public key and the identification of encryption algorithm in its database for future authentication processes. It is crucial to note that the private key is NEVER transmitted or leaves the client's device, ensuring maximum security.
 
-#### 2. Authentication Sequence:
+#### 2. Authentication sequence:
 - For authentication, the client sends a login request accompanied by their username to the server.
-- In response, the server generates a random string, which is then encrypted using the client's public key before being sent back to the client.
-- Upon receipt, the client utilizes their private key to decrypt the received string, sending the decrypted version back to the server for verification.
+- In response, the server generates a random string (containing at least 40 characters), which is then encrypted using the client's public key before being sent back to the client.
+- Upon receipt, the client utilizes their private key to decrypt the received string, sending the decrypted string back to the server for verification.
 - The server compares the decrypted string with the original random string. If they match, it confirms the client's identity and grants access by issuing a session token to the client.
 
 This authentication method leverages the strengths of asymmetric encryption to safeguard user data, ensuring that sensitive information, such as private keys, remains protected within the confines of the user's device. This approach not only enhances security but also aligns with best practices for secure communications in modern applications.
