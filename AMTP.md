@@ -72,19 +72,25 @@ This authentication method leverages the strengths of asymmetric encryption to s
 
 ## DNS connection
 
+- TODO
+
 ## Modules
+
+- TODO
 
 ## Commands
 
+- TODO
+
 ### Client to server connection
+
+- TODO
 
 #### Admin commands
 
 ##### Admin login <a name="a2s-login"></a>
 
 - Admin has to be logged in in order to execute commands starting **admin_***. If the login is successful, admin gets the admin token that has to be sent in every following request.
-
-###### 1. Login request
 
 **Request example:**
 
@@ -177,6 +183,8 @@ This authentication method leverages the strengths of asymmetric encryption to s
 
 ##### Admin logout <a name="a2s-logout"></a>
 
+- TODO
+
 ##### Domains list: <a name="a2s-domains-list"></a>
 
 **Request example:**
@@ -211,40 +219,71 @@ This authentication method leverages the strengths of asymmetric encryption to s
 
 ##### Add a new domain <a name="a2s-domains-add"></a>
 
-```json
-```
+- TODO
 
 ##### Set the existing domain <a name="a2s-domains-set"></a>
 
+- TODO
+
 ##### Delete the domain <a name="a2s-domains-del"></a>
+
+- TODO
 
 ##### Users list <a name="a2s-users-list"></a>
 
+- TODO
+
 ##### Add a new user <a name="a2s-users-add"></a>
+
+- TODO
 
 ##### Set the existing user <a name="a2s-users-set"></a>
 
+- TODO
+
 ##### Delete the user <a name="a2s-users-del"></a>
+
+- TODO
 
 ##### Aliases list <a name="a2s-aliases-list"></a>
 
+- TODO
+
 ##### Add a new alias <a name="a2s-aliases-add"></a>
+
+- TODO
 
 ##### Set the existing alias <a name="a2s-aliases-set"></a>
 
+- TODO
+
 ##### Delete the alias <a name="a2s-aliases-del"></a>
+
+- TODO
 
 ##### Admins list <a name="a2s-admins-list"></a>
 
+- TODO
+
 ##### Add a new admin <a name="a2s-admins-add"></a>
+
+- TODO
 
 ##### Set the existing admin <a name="a2s-admins-set"></a>
 
+- TODO
+
 ##### Delete the admin <a name="a2s-admins-del"></a>
+
+- TODO
 
 #### User commands
 
+- TODO
+
 ##### User login <a name="u2s-login"></a>
+
+- TODO
 
 - User logs in using their e-mail address and password. The additional verification is possible (2FA etc.).
 - If the login is successful, they'll get user token that is sent in all requests.
@@ -254,12 +293,15 @@ This authentication method leverages the strengths of asymmetric encryption to s
 
 ##### Server info <a name="u2s-serverinfo"></a>
 
+- TODO
+
 - Users can request other server's information such as maximum message length accepted, maximum file size accepted etc.
 
 ##### User info <a name="u2s-userinfo"></a>
 
-- Users can request other user's information such as their client software and its version, visible name, photo etc.
+- TODO
 
+- Users can request other user's information such as their client software and its version, visible name, photo etc.
 
 ##### Server to server connection
 
