@@ -66,13 +66,39 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 
 ##### Admin login <a name="a2s-login"></a>
 
-- Admin has to be logged in in order to manage the server. If the login is successful, admin gets the admin token that has to be sent in every following request.
+- Admin has to be logged in in order to execute commands starting **admin_***. If the login is successful, admin gets the admin token that has to be sent in every following request.
+
+**Request example:**
+
+- TODO - add asymmetric encryption login !!!
+
+```json
+{
+ "command": "admin_login",
+ "user": "user@domain.tld",
+ "password": "very_secret_password"
+}
+```
+
+**Response example:**
+
+```json
+{
+ "command": "admin_login",
+ "error": 0,
+ "data": {
+  "admin_token": "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+ }
+}
+```
+
+##### Admin system info <a name="a2s-sysinfo"></a>
 
 **Request example:**
 
 ```json
 {
- "api_name": "admin_sysinfo",
+ "command": "admin_sysinfo",
  "admin_token": "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
 }
 ```
@@ -81,31 +107,34 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 
 ```json
 {
- "app_name": "Yellow Server",
- "app_version": "0.01",
- "os_name": "Linux",
- "os_version": "5.10.0-19-amd64",
- "cpu_model": "Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz",
- "cpu_cores": 40,
- "cpu_arch": "x64",
- "cpu_load": 0,
- "ram_total": 8332619776,
- "ram_free": 7842000896,
- "hostname": "mail",
- "networks": [
-  {
-   "ens1": [
-    "192.168.0.5",
-    "12ab::34cd:56ef:7890:1234"
-   ]
-  }, {
-   "ens1": [
-    "40.30.20.10",
-    "12ab::34cd:56ef:7890:4321"
-   ]
-  }
- ],
- "uptime": "8 days, 17 hours, 32 minutes, 52 seconds"
+ "command": "admin_sysinfo",
+ "data": {
+  "app_name": "Yellow Server",
+  "app_version": "0.01",
+  "os_name": "Linux",
+  "os_version": "5.10.0-19-amd64",
+  "cpu_model": "Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz",
+  "cpu_cores": 40,
+  "cpu_arch": "x64",
+  "cpu_load": 0,
+  "ram_total": 8332619776,
+  "ram_free": 7842000896,
+  "hostname": "mail",
+  "networks": [
+   {
+    "ens1": [
+     "192.168.0.5",
+     "12ab::34cd:56ef:7890:1234"
+    ]
+   }, {
+    "ens1": [
+     "40.30.20.10",
+     "12ab::34cd:56ef:7890:4321"
+    ]
+   }
+  ],
+  "uptime": "8 days, 17 hours, 32 minutes, 52 seconds"
+ }
 }
 ```
 
@@ -117,7 +146,7 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 
 ```json
 {
- "api_name": "admin_get_domains",
+ "command": "admin_get_domains",
  "admin_token":"1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
 }
 ```
@@ -125,17 +154,22 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 **Response example:**
 
 ```json
-[
- {
-  "id": 1,
-  "name": "domain1.tld",
-  "created":"2023-11-25 14:57:03"
- }, {
-  "id": 2,
-  "name": "domain2.tld",
-  "created": "2023-11-26 16:21:08"
+{
+ "command": "admin_get_domains",
+ "data": {
+  [
+   {
+    "id": 1,
+    "name": "domain1.tld",
+    "created":"2023-11-25 14:57:03"
+   }, {
+    "id": 2,
+    "name": "domain2.tld",
+    "created": "2023-11-26 16:21:08"
+   }
+  ]
  }
-]
+}
 ```
 
 ##### Add a new domain <a name="a2s-domains-add"></a>
