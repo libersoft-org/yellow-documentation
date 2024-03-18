@@ -25,7 +25,7 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 ### Protocol objectives
 
 - **Extensibility**: Support for communication modules for different purposes (messages, forum, social media features, etc.)
-- **Efficiency**: Utilization of ODTP protocol to reduce latency and increase throughput
+- **Efficiency**: Utilization of [**WebTransport**](https://www.w3.org/TR/webtransport/) to reduce latency and increase throughput
 - **Security**: Secured data transfer and end-to-end encryption
 - **Universality**: Retaining the e-mail identity (**user@domain.tld**) while expanding functionality
 
@@ -39,8 +39,8 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 
 - The type of authentication (signing by private key)
 - Security by default (secured channel and end-to-end encryption by default)
-- Different application layer protocol (**WebTransport**) - as described in **ODTP**
-- Message format (**BSON**) - as described in **ODTP**
+- Different application layer protocol (**WebTransport**)
+- Message format (**BSON**)
 - Client-server permanent connection
 - Modularity
 
