@@ -84,15 +84,16 @@ This authentication method leverages the strengths of asymmetric encryption to s
 
 - Admin has to be logged in in order to execute commands starting **admin_***. If the login is successful, admin gets the admin token that has to be sent in every following request.
 
+###### 1. Login request
+
 **Request example:**
 
 - TODO - add asymmetric encryption login !!!
 
 ```json
 {
- "command": "admin_login",
- "user": "user@domain.tld",
- "password": "very_secret_password"
+ "command": "admin_login_request",
+ "user": "admin",
 }
 ```
 
@@ -100,7 +101,29 @@ This authentication method leverages the strengths of asymmetric encryption to s
 
 ```json
 {
- "command": "admin_login",
+ "command": "admin_login_request",
+ "error": 0,
+ "data": {
+  "verification_string": "1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F",
+ }
+}
+```
+
+**Request example:**
+
+```json
+{
+ "command": "admin_login_verify",
+ "user": "admin",
+ "verification_string": "abcdefghijklmnopqrstuvwxyz1234567890abcd"
+}
+```
+
+**Response example:**
+
+```json
+{
+ "command": "admin_login_verify",
  "error": 0,
  "data": {
   "admin_token": "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
