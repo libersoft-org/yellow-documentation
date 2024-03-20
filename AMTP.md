@@ -10,7 +10,7 @@
 - [**Client to server connection**](#client-to-server-connection)
 - [**Server to server connection**](#server-to-server-connection)
 - [**DNS connection**](#dns-connection)
-- [**Modules**]()
+- [**Modules**](#modules)
 - [**Example**](#example)
 
 
@@ -47,6 +47,8 @@ The **Advanced Mail Transfer Protocol (AMTP)** is the next generation of e-mail 
 ## Architecture
 
 **AMTP** operates on the principle of a persistent connection between the client and server using **WebTransport**, enabling real-time communication and data exchange. The protocol supports both client-server and server-server communication for message passing and other data object exchanges. Server-server connections are not persistent.
+
+<div style="text-align: center"><img src="AMTP.png" alt="AMTP architecture" /></div>
 
 ## Identity
 
