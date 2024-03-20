@@ -12,7 +12,6 @@ If you just want to get your free Yellow account hosted on our server, please na
 
 ## Documentation
 
-- [**Open Data Transfer Protocol (ODTP)**](./ODTP.md)
 - [**Advanced Mail Transfer Protocol (AMTP)**](./AMTP.md)
 - [**Decentralized Mail Transfer Protocol (DMTP)**](./DMTP.md)
 - **Modules**:
