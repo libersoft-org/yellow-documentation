@@ -9,7 +9,7 @@
 - [**Security**](#security)
 - [**Client to server connection**](#client-to-server-connection)
 - [**Server to server connection**](#server-to-server-connection)
-- [**DNS connection**](#dns-connection)
+- [**DNS configuration**](#dns-configuration)
 - [**Modules**](#modules)
 - [**Example**](#example)
 
