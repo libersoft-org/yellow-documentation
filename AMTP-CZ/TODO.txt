@@ -1,0 +1,17 @@
+Design stranky:
+- sipku presunout vlevo od textu a predelat ji na plusko / minusko
+- doresit itemy v TOC menu se sipkou maji rozdilnou velikost oproti tem bez sipky
+- kdyz je TOC menu na desktop verzi zasunute, tak v mobilni vysunute a obracene - chtelo by to predelat u mobilni verze, aby se nevysouvalo, kdyz na desktop je zasunute
+- kdyz je menu vysunute, tak misto hamburgeru zobrazovat krizek
+
+Obsah:
+- Projet vše v dokumentaci, kde je TODO a doplnit
+- Zjistit u WebTransportu, na čem vlastně běží (HTTP3 server nebo samostatně?) a jestli má nějaký endpoint a jaký budeme používat (např. "/" nebo "/amtp/")
+- Globální blokace - Jak bude fungovat (tzn. uživ. účty, konkrétní servery, domény kterým prostě vypnu spojení, aniž bych cokoliv předával modulům)
+- Uživatelské účty - Jak k nim vytvořit flexibilní user info (aby každý server si definoval, co ke každému uživateli chce definovat za položky (jméno, příjmení, pohlaví, datum narození, telefon, ...) + fotku / video / gif)
+- Doménový koš - Řešit v jádru? Týká se toho, když např. příjde zpráva, tak došlé zprávy na neexistující účty, které jsou ale na existující doméně, se přesměrují na konkrétní existující účty. Jenže uživatelské účty jsou už definovány v jádru a tak jádro by mohlo odmítnout jakoukoliv komunikaci na neexistující účet. Co s tím?
+- Moduly na serveru mohou být zavedeny ve více verzích najednou. Např. modul zprávy ve verzi 1.0 a 2.0 (kvůli zpětné kompatibilitě s klientskými moduly) - Bude mít každá verze nějaký hash / jiný identifikátor (např. číslo ID), který bude uveden v commandu a nebo jen název modulu + verze?
+- Má smysl místo jednoho TXT záznamu používat SRV? (zjistit, zda vše potřebné SRV umí a jestli to fakt má smysl, když můžeme nahradit několik SRV záznamů jedním TXT)
+- Command: Přidat blokaci vlastních účtů na serveru
+- Command: přidat change public key (je potřeba, nebo už v user_edit?)
+- Zamyslet se nad dalšími commandy do jádra (v ChatGPT)

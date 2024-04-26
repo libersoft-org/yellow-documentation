@@ -1,0 +1,120 @@
+<mxfile host="app.diagrams.net" modified="2024-04-08T21:53:52.975Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="guSnims_hZh43axenmB6" version="24.0.5" type="device">
+  <diagram name="Stránka-1" id="7cyxLV52WM7m2embr-cK">
+    <mxGraphModel dx="1531" dy="1793" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="tgN6m3i9DT7jNhMSGEQ1-40" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=3;perimeterSpacing=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;" parent="1" vertex="1">
+          <mxGeometry width="350" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="tgN6m3i9DT7jNhMSGEQ1-5" value="Own AMTP server" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;fontStyle=1;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;" parent="1" vertex="1">
+          <mxGeometry y="10" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tgN6m3i9DT7jNhMSGEQ1-46" value="&lt;div style=&quot;font-size: 20px;&quot;&gt;AMTP&lt;/div&gt;&lt;div style=&quot;font-size: 20px;&quot;&gt;client 2&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=20;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=3;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;" parent="1" vertex="1">
+          <mxGeometry x="125" y="160" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="tgN6m3i9DT7jNhMSGEQ1-47" value="&lt;div style=&quot;font-size: 20px;&quot;&gt;AMTP&lt;/div&gt;client 3" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=20;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=3;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;" parent="1" vertex="1">
+          <mxGeometry x="250" y="160" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="tgN6m3i9DT7jNhMSGEQ1-50" value="&lt;div style=&quot;font-size: 20px;&quot;&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;AMTP&lt;br style=&quot;font-size: 20px;&quot;&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 20px;&quot;&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;client 1&lt;br style=&quot;font-size: 20px;&quot;&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=20;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=3;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;" parent="1" vertex="1">
+          <mxGeometry y="160" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="tgN6m3i9DT7jNhMSGEQ1-63" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;horizontal=1;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="175" y="160" as="sourcePoint" />
+            <mxPoint x="175" y="50" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tgN6m3i9DT7jNhMSGEQ1-64" value="&lt;div style=&quot;font-size: 12px;&quot;&gt;WT persistent&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px;&quot;&gt;connection&lt;br style=&quot;font-size: 12px;&quot;&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;fontStyle=1;horizontal=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;fontSize=12;spacing=0;" parent="tgN6m3i9DT7jNhMSGEQ1-63" vertex="1" connectable="0">
+          <mxGeometry y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tgN6m3i9DT7jNhMSGEQ1-71" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;horizontal=1;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="300" y="160" as="sourcePoint" />
+            <mxPoint x="300" y="50" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tgN6m3i9DT7jNhMSGEQ1-72" value="&lt;div style=&quot;font-size: 12px;&quot;&gt;WT persistent&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px;&quot;&gt;connection&lt;br style=&quot;font-size: 12px;&quot;&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;fontStyle=1;horizontal=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;fontSize=12;spacing=0;" parent="tgN6m3i9DT7jNhMSGEQ1-71" vertex="1" connectable="0">
+          <mxGeometry y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fQWVmCW7hai4RUJR2Vjz-1" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;horizontal=1;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="50" y="160" as="sourcePoint" />
+            <mxPoint x="50" y="50" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fQWVmCW7hai4RUJR2Vjz-2" value="&lt;div style=&quot;font-size: 12px;&quot;&gt;WT persistent&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px;&quot;&gt;connection&lt;br style=&quot;font-size: 12px;&quot;&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;fontStyle=1;horizontal=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;fontSize=12;spacing=0;" parent="fQWVmCW7hai4RUJR2Vjz-1" vertex="1" connectable="0">
+          <mxGeometry y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dzrmX_ZHxAnPR0i0tXz_-15" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=3;perimeterSpacing=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;" parent="1" vertex="1">
+          <mxGeometry x="460" width="350" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="dzrmX_ZHxAnPR0i0tXz_-16" value="Foreign AMTP server" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;fontStyle=1;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;" parent="1" vertex="1">
+          <mxGeometry x="460" y="10" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dzrmX_ZHxAnPR0i0tXz_-17" value="&lt;div style=&quot;font-size: 20px;&quot;&gt;AMTP&lt;/div&gt;&lt;div style=&quot;font-size: 20px;&quot;&gt;client 5&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=20;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=3;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;" parent="1" vertex="1">
+          <mxGeometry x="585" y="160" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="dzrmX_ZHxAnPR0i0tXz_-18" value="&lt;div style=&quot;font-size: 20px;&quot;&gt;AMTP&lt;/div&gt;client 6" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=20;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=3;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;" parent="1" vertex="1">
+          <mxGeometry x="710" y="160" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="dzrmX_ZHxAnPR0i0tXz_-19" value="&lt;div style=&quot;font-size: 20px;&quot;&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;AMTP&lt;br style=&quot;font-size: 20px;&quot;&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 20px;&quot;&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;client 4&lt;br style=&quot;font-size: 20px;&quot;&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=20;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=3;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;" parent="1" vertex="1">
+          <mxGeometry x="460" y="160" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="dzrmX_ZHxAnPR0i0tXz_-20" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;horizontal=1;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="635" y="160" as="sourcePoint" />
+            <mxPoint x="635" y="50" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dzrmX_ZHxAnPR0i0tXz_-21" value="&lt;div style=&quot;font-size: 12px;&quot;&gt;WT persistent&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px;&quot;&gt;connection&lt;br style=&quot;font-size: 12px;&quot;&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;fontStyle=1;horizontal=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;fontSize=12;spacing=0;" parent="dzrmX_ZHxAnPR0i0tXz_-20" vertex="1" connectable="0">
+          <mxGeometry y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dzrmX_ZHxAnPR0i0tXz_-22" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;horizontal=1;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="760" y="160" as="sourcePoint" />
+            <mxPoint x="760" y="50" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dzrmX_ZHxAnPR0i0tXz_-23" value="&lt;div style=&quot;font-size: 12px;&quot;&gt;WT persistent&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px;&quot;&gt;connection&lt;br style=&quot;font-size: 12px;&quot;&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;fontStyle=1;horizontal=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;fontSize=12;spacing=0;" parent="dzrmX_ZHxAnPR0i0tXz_-22" vertex="1" connectable="0">
+          <mxGeometry y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dzrmX_ZHxAnPR0i0tXz_-24" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;horizontal=1;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="510" y="160" as="sourcePoint" />
+            <mxPoint x="510" y="50" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dzrmX_ZHxAnPR0i0tXz_-25" value="&lt;div style=&quot;font-size: 12px;&quot;&gt;WT persistent&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px;&quot;&gt;connection&lt;br style=&quot;font-size: 12px;&quot;&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;fontStyle=1;horizontal=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;fontSize=12;spacing=0;" parent="dzrmX_ZHxAnPR0i0tXz_-24" vertex="1" connectable="0">
+          <mxGeometry y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dzrmX_ZHxAnPR0i0tXz_-27" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;horizontal=1;curved=0;dashed=1;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="350" y="24.71" as="sourcePoint" />
+            <mxPoint x="460" y="24.71" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dzrmX_ZHxAnPR0i0tXz_-28" value="&lt;div style=&quot;font-size: 12px;&quot;&gt;WT transient&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px;&quot;&gt;connection&lt;br style=&quot;font-size: 12px;&quot;&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;fontStyle=1;horizontal=1;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;fontSize=12;spacing=2;labelPosition=center;verticalLabelPosition=middle;" parent="dzrmX_ZHxAnPR0i0tXz_-27" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dzrmX_ZHxAnPR0i0tXz_-29" value="* WT = WebTransport" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry y="240" width="140" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

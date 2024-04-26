@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+ <title>Advanced Mail Transfer Protocol (AMTP) - dokumentace</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <link rel="stylesheet" href="style.css" type="text/css" />
+ <script src="js/toc.js"></script>
+ <script src="js/main.js"></script>
+ </head>
+ <body>
+  <div id="header" class="no-print">
+   <a id="menu" onclick="menu()">☰</a>
+   <a id="logo" href="#top">AMTP - dokumentace</a>
+  </div>
+  <div id="toc" class="no-print"></div>
+  <div id="doc">
+   <a name="top"></a><h1 class="center">Advanced Mail Transfer Protocol (AMTP) - dokumentace</h1>
+   <div class="center">
+    <div><span class="bold center">UPOZORNĚNÍ:</span><br /><span>Toto je pouze návrh, nejedná se o konečnou verzi protokolu.</span></div>
+    <div><span class="bold">Verze návrhu: </span><span>1</span></div>
+    <div><span class="bold">Vydáno: </span><span>Duben 2024</span></div>
+   </div>
+   <a name="about"></a><h2>Úvod</h2>
+   <div><span class="bold">Advanced Mail Transfer Protocol (AMTP)</span> je nová generace síťového protokolu elektronické pošty (e-mailu), která překračuje omezení tradičních protokolů <a href="https://cs.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol" target="_blank">SMTP</a>, <a href="https://cs.wikipedia.org/wiki/Post_Office_Protocol" target="_blank">POP</a> a <a href="https://cs.wikipedia.org/wiki/Internet_Message_Access_Protocol" target="_blank">IMAP</a> využitím nových technologií a modulární koncepce. Plně tyto protokoly nahrazuje svou funkcionalitou a dokonce významně rožšiřuje jejich použitelnost. Zároveň používá modernější, bezpečnější metody přenosu dat v reálném čase.</div>
+   <a name="subject"></a><h2>Předmět dokumentace</h2>
+   <div class="bold">Tento dokument popisuje:</div>
+   <ul>
+    <li><span class="bold">Síťový protokol</span> - vysvětluje způsoby, kterými jsou data přenášena, formátována, přeposílána a zabezpečena.</li>
+   </ul>
+   <div class="bold">Tento dokument nepopisuje:</div>
+   <ul>
+    <li><span class="bold">Implementaci</span> - specifikace software serverové a klientské aplikace - např. způsoby ukládání a zpracování dat</li>
+    <li><span class="bold">Moduly</span> - specifikace jednotlivých serverových a klientských modulů - např. zasílání zpráv, diskuze, funkce sociálních médií apod. - moduly jsou popsány v samostatných dokumentech</li>
+   </ul>
+   <a name="arguments"></a><h2>Důvody vytvoření</h2>
+   <div>Vzhledem k tomu, že tradiční emailové protokoly <span class="bold">SMTP</span>, <span class="bold">POP</span> a <span class="bold">IMAP</span> byly poprvé vyvinuty v 80. letech minulého století, vznikly po čase potřeby, které tyto protokoly již nejsou schopny efektivně řešit kvůli svému stáří a omezené funkcionalitě.</div>
+   <div>Konkrétní data vytvoření dokumentace a posledních aktualizací:</div>
+   <div class="bold">SMTP:</div>
+   <ul>
+    <li>První dokumentace: <a href="https://www.rfc-editor.org/rfc/rfc821.html" target="_blank">RFC 821</a> (1982)</li>
+    <li>Poslední aktualizace: <a href="https://www.rfc-editor.org/rfc/rfc5321.html" target="_blank">RFC 5321</a> (2008)</li>
+   </ul>
+   <div class="bold">POP:</div>
+   <ul>
+    <li>První dokumentace: <a href="https://www.rfc-editor.org/rfc/rfc918.html" target="_blank">RFC 918</a> (1984)</li>
+    <li>Poslední aktualizace: <a href="https://www.rfc-editor.org/rfc/rfc1939.html" target="_blank">RFC 1939</a> (1996)</li>
+   </ul>
+   <div class="bold">IMAP:</div>
+   <ul>
+    <li>První dokumentace: <a href="https://www.rfc-editor.org/rfc/rfc1064.html" target="_blank">RFC 1064</a> (1988)</li>
+    <li>Poslední aktualizace: <a href="https://www.rfc-editor.org/rfc/rfc9051.html" target="_blank">RFC 9051</a> (2021)</li>
+   </ul>
+   <div>I přesto, že byly tyto protokoly v průběhu času aktualizovány, stále nepřinášejí dostatečná řešení pro nové potřeby, jako jsou komunikace v reálném čase, komplexní zabezpečení, strukturovanou komunikaci, snadnou rozšiřitelnost funkconalit a mnoho dalšího. To je způsobeno především snahou těchto aktualizací o navázání na původní koncepty, což je velmi limitující faktor, který vyžaduje změnu přístupu.</div>
+   <div>Protokol <span class="bold">AMTP</span> nenavazuje na původní zastaralé koncepty a místo toho přináší nové, moderní přístupy k řešení těchto potřeb.</div>
+   <div>Ačkoliv jsou veřejně dostupné i další otevřené protokoly či platformy (např. <a href="https://cs.wikipedia.org/wiki/Matrix_(protokol)" target="_blank">Matrix</a>, <a href="https://cs.wikipedia.org/wiki/Mastodon_(software)" target="_blank">Mastodon</a>, <a href="https://cs.wikipedia.org/wiki/Diaspora*_(soci%C3%A1ln%C3%AD_s%C3%AD%C5%A5)" target="_blank">Diaspora</a>, <a href="https://en.wikipedia.org/wiki/Nostr" target="_blank">Nostr</a> apod.), které umožňují bezpečnou komunikaci a nabízí decentralizovanou či distribuovanou síť, ke které se může kdokoliv připojit, stále nenabízí některé důležité funkcionality, které <span class="bold">AMTP</span> řeší, jako například modulární koncept nebo podporu nejnovějších komunikačních protokolů pro přenos dat v reálném čase.</div>
+   <a name="objectives"></a><h2>Cíle protokolu</h2>
+   <div>Cílem vytvoření tohoto protokolu je nahrazení současných e-mailových protokolů <span class="bold">SMTP</span>, <span class="bold">POP</span> a <span class="bold">IMAP</span> pomocí nové, robustní, moderní a bezpečné alternativy, která taktéž přináší snadnou rozšiřitelnost funkcionalit díky modulárnímu konceptu, čímž je zajištěna dlouhodobá udržitelnost. Funkcionalita všech tří výše zmíněných protokolů je v <span class="bold">AMTP</span> plně zachována a navíc značně rozšířena a zmodernizována.</div>
+   <div class="bold">Zachované koncepty v AMTP z původního SMTP:</div>
+   <ul class="spacelist">
+    <li><span class="bold">Distribuovaná síť</span>: Typ sítě, ve které je komunikace, zpracování a ukládání dat distribuováno mezi mnoho uzlů, které mohou mít různé vlastníky (poskytovatele služby). Tyto uzly mohou mezi sebou navzájem komunikovat, předávat si data a odlišovat se mezi sebou dle pravidel a sad služeb, které poskytují svým uživatelům. To síť odlišuje jak od centralistického modelu, kde je síť řízena jediným poskytovatelem, tak i od plně decentralizovaného modelu, kde každý koncový uživatel je sám sobě i pro ostatní poskytovatelem s předem nastavenými stejnými pravidly.</li>
+    <li><span class="bold">Identita e-mailové adresy</span>: Formát adresy uživatelského účtu je zachován z původních e-mailových standardů. Ve zjednodušené formě je to formát <span class="bold">uživatel@doména</span>.</li>
+   </ul>
+   <div><span class="bold">Nové koncepty v AMTP</span>:</div>
+   <ul class="spacelist">
+    <li><span class="bold">Komunikace v reálném čase</span>: Tento přístup, díky technologiím jako je <a href="https://www.w3.org/TR/webtransport/" target="_blank">WebTransport</a>, umožňuje uživatelům pohodlněji vést konverzace, rychleji reagovat na zprávy a využívat řadu dalších funkcionalit, kde je okamžitá komunikace nezbytná (např. videohovory, sdílení obrazovky, přenos velkých souborů apod.) a to navíc paralelně díky vícekanálové komunikaci. Tím jsou sníženy latence a zvýšena propustnost při přenosu dat.</li>
+    <li><span class="bold">Bezpečná komunikace</span>: Protokol klade velký důraz na zabezpečenou komunikaci a tím chrání soukromí uživatelů na mnoha vrstvách. Díky tomu jsou minimalizována rizika spojená s únikem dat, znemožněny odposlechy a další formy kybernetických útoků.</li>
+    <li><span class="bold">Rozšiřitelnost</span>: Protokol umožňuje snadno vytvářet rožšíření o různé funkcionality modulárního konceptu, ať už jde o vytváření jednoduchých jednoúčelových aplikací (např. zasílání zpráv z <a href="https://cs.wikipedia.org/wiki/Internet_v%C4%9Bc%C3%AD" target="_blank">IoT zařízení</a> uživateli) až po multifunkční <a href="https://en.wikipedia.org/wiki/Super-app" target="_blank">super-aplikace</a> s četnou řadou funkcionalit (např. zasílání rychlých zpráv, funkce sociálních médií, e-commerce platformy, přenosy velkých souborů, přenos dat v online hrách, komunikace s AI apod.).</li>
+    <li><span class="bold">Strukturovaná data</span>: Přenášená data jsou sestavena strukturovaně ve formátu <a href="https://en.wikipedia.org/wiki/BSON" target="_blank">BSON</a>, který kombinuje výhody strojově i lidsky snadno čitelného formátu <a href="https://cs.wikipedia.org/wiki/JSON" target="_blank">JSON</a>, s efektivitou binárního formátu. To umožňuje, aby data byla snadno přístupná a zpracovatelná jak pro vývojáře, tak pro aplikace.</li>
+   </ul>
+   <a name="standards"></a><h2>Zvolené standardy</h2>
+   <div>Při výběru standardů pro protokol <span class="bold">AMTP</span> byl kladen důraz na několik klíčových aspektů, které byly rozhodující pro zajištění, že nově vyvinutý protokol bude splňovat všechny potřeby moderní elektronické komunikace. Mezi tato hlavní kritéria, která ovlivnila výběr technologií patří:</div>
+   <ul class="spacelist">
+    <li><span class="bold">Výkon a efektivita</span> - Standardy byly vybírány s ohledem na jejich schopnost zpracovávat velké objemy dat s minimálními zpožděními. Je důležité, aby protokol dokázal efektivně manipulovat s daty a zároveň zajišťoval rychlý přenos informací mezi uživateli.</li>
+    <li><span class="bold">Bezpečnost a ochrana soukromí</span> - Zabezpečení je jedním z nejdůležitějších aspektů všech komunikačních protokolů, zvláště v éře kybernetických hrozeb. Standardy musely poskytovat robustní zabezpečení na úrovni přenosu dat a zároveň nabízet mechanismy pro ochranu soukromí uživatelů.</li>
+    <li><span class="bold">Kompatibilita</span> - Standardy byly vybrány také s ohledem na jejich úplnou podporu a dostupnost pro snadnou tvorbu klientských i serverových aplikací.</li>
+    <li><span class="bold">Otevřenost</span> - Je klíčové, aby standardy byly založeny na otevřených specifikacích, které jsou veřejně dostupné a bez patentových omezení. Stejně tak samotný <span class="bold">AMTP</span> je otevřeným protokolem.</li>
+    <li><span class="bold">Inovace</span> - Standardy mají představovat velmi inovativní komunikační řešení pro tvorbu moderních komunikačních aplikací.</li>
+   </ul>
+   <a name="standards-webtransport"></a><h3>WebTransport</h3>
+   <div>Integrace standardu <span class="bold">WebTransport</span> byl zvolen jako nejvhodnější varianta pro přenos dat v rámci protokolu <span class="bold">AMTP</span> z několika důvodů:</div>
+   <ul class="spacelist">
+    <li><span class="bold">Nízká latence</span> - Je navržen tak, aby minimalizoval latenci při navazování spojení a při výměně dat. To je zvláště důležité pro funkce vyžadující rychlou odezvu, jako jsou videohovory, videokonferenční hovory, hraní online her apod. Nízké latence celkově zlepšují uživatelskou přívětivost a zvyšují efektivitu komunikace.</li>
+    <li><span class="bold">Vícekanálový přenos dat</span> - Umožňuje vícekanálový přenos dat, což znamená, že umožňuje současně zpracovávat více datových toků přes jedno spojení. Tato vlastnost je velmi užitečná pro <span class="bold">AMTP</span>, protože umožňuje efektivní přenos různých typů dat (například textových zpráv, souborů, videa apod.) bez nutnosti navazování nových spojení pro každý datový tok.</li>
+    <li><span class="bold">Spolehlivé i nespolehlivé toky dat v kanálech</span> - Podpora jak spolehlivého, tak i nespolehlivého toku dat uvnitř kanálů poskytuje flexibilitu v závislosti na požadavcích dané funkcionality. Spolehlivé kanály zaručují doručení dat, zatímco nespolehlivé kanály mohou být využívány pro aplikace, kde je rychlost důležitější než spolehlivost (např. streamování živého videa, online hry apod.).</li>
+    <li><span class="bold">Zabezpečení</span> - Zajišťuje bezpečné šifrované spojení mezi klientem a serverem. Tato vlastnost je klíčová pro ochranu citlivých dat a zajišťuje ochranu proti odposlechům a dalším formám kybernetických útoků.
+    <li><span class="bold">Podpora obousměrné komunikace</span> - Protokol umožňuje obousměrnou komunikaci mezi klientem a serverem v reálném čase, což je ideální pro interaktivní aplikace, jako jsou chatovací systémy, hlasové a video přenosy, online hry a další funkcionality využívající spolupráci v reálném čase.</li>
+    <li><span class="bold">Škálovatelnost</span> - Díky efektivnímu využití síťových zdrojů a schopnosti snadno škálovat se zvyšujícím se nárůstem uživatelů a datových toků je tento standard vhodný pro rozsáhlé nasazení, což umožňuje zvládat velké objemy komunikace bez výrazného zvýšení nákladů na infrastrukturu.</li>
+    <li><span class="bold">Snadná integrace</span> - Jelikož je navržen s ohledem na integraci s moderními webovými aplikacemi, snadno se implementuje do serverových i klientských aplikací.</li>
+   </ul>
+   <a name="standards-bson"></a><h3>BSON</h3>
+   <ul class="spacelist">
+    <li><span class="bold">Lidsky čitelný formát</span> - I když je tento formát reprezentován v binární podobě, je jeho struktura odvozena z JSON, na který je snadno převeditelný a je tak dobře čitelný pro lidi a zárověň i zpracovatelný strojově.</li>
+    <li><span class="bold">Strukturovanost</span> - Podporuje vnořené struktury, jako jsou objekty a pole, což umožňuje reprezentovat hierarchické datové struktury.</li>
+    <li><span class="bold">Kompatibilita</span> - Je široce používán a jeho struktura je podporována většinou programovacích jazyků a platform.</li>
+    <li><span class="bold">Škálovatelnost</span> - Má schopnost škálovat od malých do velmi komplexních datových struktur. Zároveň zlepšuje manipulaci s daty a efektivitu přenosu, což umožňuje <span class="bold">AMTP</span> efektivně zpracovávat a přenášet velké objemy dat.</li>
+    <li><span class="bold">Interoperabilita</span> - Zajišťuje vysokou míru interoperability mezi různými systémy a aplikacemi. Taktéž může být snadno převeden na JSON a naopak, což usnadňuje výměnu dat mezi různými technologiemi a platformami.</li>
+    <li><span class="bold">Podpora datových typů</span> - Rozšiřuje další typy dat, k již stávajícím, které jsou dostupné v JSON (např. binární data, datum a čas apod.).</li>
+    <li><span class="bold">Efektivita přenosu</span> - Je reprezentován v binární podobě, což znamená, že je efektivnější pro přenos po síti ve srovnání s textovými formáty jako např. JSON. Menší velikost dat poskytuje rychlejší přenos a nižší nároky na šířku pásma, což je vhodné pro přenosy velkých objemů dat.</li>
+    <li><span class="bold">Snadná manipulace s daty</span> - Umožňuje přímý přístup k jednotlivým prvkům dat, aniž by bylo potřeba procházet celý objekt, což zvyšuje rychlost a efektivitu při zpracování dat. Tato vlastnost je zvláště užitečná pro implementaci komplexních funkcí, jako je filtrování nebo zpracovávání zpráv.</li>
+    <li><span class="bold">Integrace s databázovými systémy</span> - Mnoho současných databázových systémů, jako je např. <a href="https://cs.wikipedia.org/wiki/MongoDB" target="_blank">MongoDB</a>, nativně používá BSON pro ukládání a manipulaci s daty. To může usnadnit integraci s těmito databázemi, což je výhodné pro aplikace vyžadující komplexní databázové operace.</li>
+   </ul>
+   <a name="architecture"></a><h2>Architektura</h2>
+   <div>Architektura protokolu je navržena tak, aby poskytovala modulární, bezpečné a škálovatelné řešení v rámci distribuované sítě pro potřeby moderní elektronické komunikace v reálném čase.</div>
+   <a name="architecture-network"></a><h3>Distribuovaná síť</h3>
+   <div><span class="bold">Distribuovaná síťová architektura</span> v rámci <span class="bold">AMTP</span> přináší mnoho výhod, které jsou klíčové pro efektivní, bezpečné a odolné elektronické komunikační systémy. Zde jsou hlavní důvody, proč byl zvolen tento přístup:</div>
+   <ul class="spacelist">
+    <li><span class="bold">Odolnost proti výpadkům</span> - Distribuovaná síťová architektura zajišťuje, že selhání jednoho uzlu má lokální dopad na uživatele připojené k tomuto uzlu, avšak nemá žádný přímý vliv na funkčnost a dostupnost ostatních uzlů v síti. Toto omezení dopadu umožňuje, aby byla zajištěna kontinuita služby pro ostatní uživatele, kteří jsou připojeni k ostatním uzlům. Tím je zajištěna vyšší celková robustnost a odolnost celé sítě vůči izolovaným technickým problémům nebo geograficky lokalizovaným výpadkům, což je klíčové pro udržení nepřetržité globální komunikace.</li>
+    <li><span class="bold">Odolnost proti cenzuře</span>: Rozptýlení dat a služeb mezi velké množství serverů v různých jurisdikcích může znesnadnit úsilí o cenzuru nebo úplné blokování služby, což zajišťuje větší svobodu a nezávislost informací. Pokud je uživatel cenzurován ze strany konkrétního provozovatele serveru, může si vybrat jiného provozovatele, který nabízí svobodnější alternativu. Pokud provozovatel služby je cenzurován ze strany regulačních orgánů (např. státu), může přesunout svá data do jiné, svobodnější jurisdikce.</li>
+    <li><span class="bold">Konkurence mezi poskytovateli</span> - V distribuované síti existuje více nezávislých poskytovatelů služeb, kteří spravují různé uzly. To podporuje zdravou konkurenci, která vede k lepší kvalitě služeb, zavádění nových či vylepšení původních funkcionalit a jiným inovacím. Také může vést i ke snížení nákladů za placené služby pro koncové uživatele. Konkurence mezi poskytovateli také umožňuje uživatelům vybírat z různých služeb na základě kvality, ceny, ochrany soukromí a dalších faktorů, což zvyšuje možnosti volby a zlepšuje celkovou uživatelskou spokojenost.</li>
+    <li><span class="bold">Nezávislost</span> - Pokud uživatel nemá zájem využívat služeb žádného poskytovatele služby, má možnost si spustit vlastní server s vlastními pravidly a nastaveními dle svých individuálních potřeb.</li>
+    <li><span class="bold">Geografický výběr poskytovatele</span> - Distribuce serverů geograficky blíže k uživatelům může výrazně snížit latenci a zlepšit rychlost odezvy, což zlepšuje uživatelskou zkušenost při komunikaci a přenosem dat. Taktéž umožňuje vybrat si poskytovatele, který lépe vyhovuje lokálním potřebám, jako je podpora ve stejném jazyce, možnost osobního kontaktu nebo snadnější komunikace a servis. To zvyšuje komfort, spokojenost a posiluje důvěru uživatelů v poskytované služby.</li>
+    <li><span class="bold">Místní přizpůsobení</span>: Distribuované sítě umožňují lokálním poskytovatelům služby se lépe přizpůsobit specifickým regionálním požadavkům uživatelů a nutnost dodržovat pouze lokální právní normy a nebýt tak svázán dodržováním regulací a norem z celého světa tak, jak je to u centralizovaných globálních služeb.</li>
+    <li><span class="bold">Podpora pro inovace</span>: Distribuovaná síťová architektura umožňuje experimentování a inovace na jednotlivých uzlech bez rizika narušení celého systému. To může sloužit jako testovací prostor pro nové technologie a modely před jejich širším nasazením.</li>
+    <li><span class="bold">Bezpečnost</span>: Útoky zaměřené na jednotlivé uzly nemají vliv na celou síť. Distribuovaná struktura komplikuje útočníkům snahu ovlivnit celý systém. Nežádoucí ovlivnění více bodů v síti zvyšuje složitost a náklady na potenciální útoky.</li>
+    <li><span class="bold">Ochrana soukromí</span>: Distribuovaná síťová architektura může přispět k lepší ochraně soukromí uživatelů tím, že data menších poskytovatelů nejsou uchovávána a zpracovávána velkými korporacemi, které mohou mít tendence velké množství dat uživatelů různými způsoby zpracovávat nebo sdílet pro různé účely (reklamní, trénink AI, spolupráce s vládami apod.)</li>
+   </ul>
+   <div><span class="bold">Spojení</span> jsou realizována jak mezi klientem a serverem, tak i mezi servery navzájem.</div>
+   <ul class="spacelist">
+    <li><span class="bold">Spojení server-server</span> - Servery jsou organizovány do distribuované sítě, kde každý server je schopný předávat data ostatním serverům. Tato komunikace je realizována přes spojení, které nemusí být perzistentní a může být ukončeno jednou nebo druhou stranou kdykoliv to jedna ze stran uzná za vhodné (např. server odesilatele po dokončení doručování dat nebo server příjemce po vypršení určitého časového limitu, kdy mezi servery nedošlo k žádné výměně dat). Podmínky za kterých dochází k odpojování serverů mezi sebou nejsou standardizováné touto dokumentací, jsou plně v kompetenci konkrétní implementace serverové aplikace. Důvodem je to, že některé servery mohou mít omezený počet síťových portů, ke kterým je možné se připojit, případně jiných dalších prostředků které má server k dispozici omezeně, a tak server může spojení s ostatními servery častěji odpojovat a naopak servery, které mají dostatečný počet síťových portů, či jiných prostředků, může udržovat otevřené spojení s ostatními servery pro rychlejší komunikaci, bez nutnosti opětovného navazování spojení.</li>
+    <li><span class="bold">Spojení klient-server</span> - Každý klient je spojen se svým serverem prostřednictvím trvalého spojení (pokud je online). Takováto spojení slouží jako stabilní kanál pro všechny operace, které klient potřebuje vykonávat (např. příjem zpráv, notifikace, synchronizace dat apod.). Trvalá připojení klienta jsou klíčová pro udržení nepřetržité komunikace a interaktivních aplikací, které vyžadují okamžité reakce, jako jsou chatovací aplikace nebo online hry. Díky <span class="bold">WebTransportu</span> mohou tato spojení efektivně spravovat více datových toků současně, což minimalizuje zpoždění a zvyšuje celkovou uživatelskou spokojenost.</li>
+   </ul>
+   <div>Následující obrázek nastiňuje příklad toho, jak vypadají spojení v rámci <span class="bold">AMTP</span>:</div>
+   <div class="center"><img src="img/AMTP-network-CZ.png" alt="Distribuovaná síť" /></div>
+   <a name="architecture-modularity"></a><h3>Modularita</h3>
+   <div>Ačkoliv tato dokumentace nepopisuje implementaci serverové aplikace, je důležité zmínit, že tento protokol počítá s použitím modulární struktury serveru a podle toho vypadá i komunikace v rámci příkazů jak mezi klientem a serverem, tak i servery mezi sebou.</div>
+   <div>Klientská aplikace se spojí s WebTransport serverem se kterým naváže persistentní spojení a následuje obousměrný přenos dat. Server následně zpracovává data a odpovídá a to buď přímo, pokud byl příkaz od klienta určen jádru serveru a nebo je předán modulu, pokud byl pro modul určen a očekává odpověď od modulu, kterou jen prostě přepošle klientovi.<br>Způsob komunikace serverového jádra s moduly není součástí této dokumentace, každá softwarová implementace může mít vlastní řešení (například výměna dat uvnitř aplikace, externě běžící služby propojené unixovými sockety či perzistentní síťové spojení přes <span class="bold">WebTransport</span> apod.).</div>
+   <div><span class="bold">Modulární koncept architektury</span> protokolu poskytuje několik klíčových vlastností:</div>
+   <ul class="spacelist">
+    <li><span class="bold">Přizpůsobení</span>: Díky modulární struktuře mohou vývojáři snadno vybírat specifické funkcionality dle svých potřeb nebo potřeb jejich uživatelů. Správci či uživatelé mohou vybrat pouze ty moduly, které potřebují, což umožňuje vytvořit řešení šité na míru bez zbytečného nadbytečného softwaru. Například školy a firmy mohou využívat jiné moduly, než domácí uživatelé apod.</li>
+    <li><span class="bold">Rychlý a snadný vývoj</span>: Modulární architektura umožňuje různým týmům pracovat nezávisle na sobe na různých modulech, což zrychluje celkový vývoj systému, usnadňuje správu kódu a zvyšuje přehlednost v kódu. To je zvláště užitečné ve velkých projektech. Taktéž to šetří čas tím, že nemusí vytvářet celý systém od základu, ale jen specifické funkcionality.</li>
+    <li><span class="bold">Snadná údržba a aktualizace</span>: Moduly lze nezávisle na sobě aktualizovat a vylepšovat. Takovéto aktualizace jednotlivých modulů mohou proběhnout bez přerušení zbylé části systému nebo nutnosti celý systém překompilovat či restartovat. To zároveň přináší i dlouhodobou udržitelnost systému tím, že usnadní integraci nových funkcionalit.</li>
+    <li><span class="bold">Testování</span>: Každý modul lze testovat samostatně, což zjednodušuje proces odstranění chyb a zvyšuje celkovou kvalitu softwaru. Integrace nových funkcí je také snazší a méně náchylná k chybám, jelikož se jednotlivé moduly testují a ověřují nezávisle.</li>
+    <li><span class="bold">Odolnost proti chybám</span>: V případě, že jeden z modulů selže, neovlivní to fungování ostatních částí systému, což přispívá k vyšší stabilitě, odolnosti celého systému a omezení rizik spojených s narušením celého systému.</li>
+    <li><span class="bold">Bezpečnost</span>: Některé složitější implementace protokolu mohou modulům udělit pouze omezená práva k systému a tím zvýšit bezpečnost celého systému.</li>
+    <li><span class="bold">Multiverzování</span>: V rámci jednoho serveru může běžet stejný modul ve více verzích najednou. To umožňuje serveru být kompatibilní pro nové i starší verze klientských aplikací.</li>
+    <li><span class="bold">Interoperabilita</span>: Moduly mohou být navrženy tak, aby mohly komunikovat a spolupracovat mezi sebou a mezi různými dalšími systémy a aplikacemi, se kterými taktéž mohou sdílet data.</li>
+    <li><span class="bold">Geografická nezávislost</span> - Moduly mohou běžet na různém hardware umístěným na různých místech v síti.</li>
+    <li><span class="bold">Finanční efektivita</span> - Vývojáři mohou snadno vytvářet pouze určitou část systému, nikoliv celý systém a zároveň je jim umožněno svou funkcionalitu nabídnout již existující komunitě lidí, kteří systém využívají. To značným způsobem šetří náklady a zvyšuje potenciální výnosnost.</li>
+   </ul>
+   <div>Následující obrázek nastiňuje zjednodušený příklad toho, jak může vypadat architektura serverové aplikace:</div>
+   <div class="center"><img src="img/AMTP-server-CZ.png" alt="Architektura serveru" /></div>
+   <a name="identity"></a><h2>Identita</h2>
+   <div>Každý uživatelský účet v rámci AMTP je identifikován adresou, jejíž formát vychází ze standardu známého z e-mailových adres, s několika odlišnostmi a je definován následovně:</div>
+   <ul>
+    <li>Adresa se sestává z <span class="bold">lokální</span> a <span class="bold">doménové</span> části. Tyto části jsou odděleny znakem "<span class="bold">@</span>" (zavináč). Tedy ve tvaru: <span class="bold">uzivatel@domena</span></li>
+    <li><span class="bold">Lokální část</span> určuje unikátní uživatelské jméno v rámci každé domény.</li>
+    <li><span class="bold">Doménová část</span> určuje doménu, ke které má užívací právo provozovatel serveru (každý AMTP server může spravovat libovolné množství domén).</li>
+    <li><span class="bold">Povolené znaky v lokální části:</span></li>
+    <ul>
+     <li>Malá písmena anglické abecedy (a-z) - na jakékoliv pozici</li>
+     <li>Číslice (0-9) - na jakékoliv pozici</li>
+     <li>Speciální znaky - jsou povoleny následující znaky: tečka (.), pomlčka (-) a podtržítko (_). Tyto znaky nesmějí být použity na začátku ani na konci lokální části (např. john-@domain.tld) a nesmí se dva nebo více speciálních znaků objevit za sebou v jakékoliv kombinaci (např. john.-doe@domain.tld).</li>
+     <li>Velká písmena anglické abecedy jsou tolerována a automaticky převáděna na malá písmena.</li>
+    </ul>
+    <li><span class="bold">Povolené znaky v doménové části:</span></li>
+    <ul>
+     <li>Doménová jména mohou obsahovat znaky dle aktuálních standardů pro domény (definované v <a href="https://www.rfc-editor.org/rfc/rfc5890.html" target="_blank">RFC 5890</a>, <a href="https://www.rfc-editor.org/rfc/rfc5891.html" target="_blank">RFC 5891</a>, <a href="https://www.rfc-editor.org/rfc/rfc5892.html" target="_blank">RFC 5892</a>, <a href="https://www.rfc-editor.org/rfc/rfc5893.html" target="_blank">RFC 5893</a>, </li>
+    </ul>
+    <li>V rámci <span class="bold">AMTP</span> se již nepoužívá formát zápisu s viditelným jménem, který je známý z původních e-mailových protokolů (např.: "<span class="bold">John Doe &lt;john.doe@domain.tld&gt;</span>"). Informace o uživatelském účtu, jako je např. viditelné jméno, je získáno pomocí příkazu, který poskytuje server jako samostatný dotaz.</li>
+    <li>Narozdíl od původních e-mailových protokolů, <span class="bold">AMTP</span> nedefinuje, co uživatelský účet reprezentuje (např. poštovní schránku, alias pro přeposílání pošty apod.). To je plně v režii modulů (např. modul pro rychlé zprávy).</li>
+   </ul>
+   <a name="security"></a><h2>Zabezpečení</h2>
+   <div>Zabezpečení dat je klíčovou součástí moderního komunikačního protokolu, jelikož s rostoucími objemy přenášených dat mezi uživateli, roste i riziko jejich potenciálního zneužití.</div>
+   <div><span class="bold">AMTP</span> je navržen s důrazem na komplexní zabezpečení a to na několika úrovních, které jsou popsány v této sekci. Další úrovně zabezpečení mohou být doplněny v jednotlivých modulech.</div>
+   <a name="security-transfer"></a><h3>Šifrovaný přenos dat</h3>
+   <div>Šifrovaný přenost dat v je řešen v <span class="bold">AMTP</span> v souvislosti s integrací standardu <span class="bold">WebTransport</span>, který využívá protokol <a href="https://cs.wikipedia.org/wiki/QUIC" target="_blank">QUIC</a>, který integruje šifrování na úrovni transportní vrstvy. Všechna data přenášená přes <span class="bold">WebTransport</span> spojení jsou šifrována pomocí <a href="https://cs.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS</a>. Toto zahrnuje šifrování všech přenášených dat, vč. hlaviček a metadat, což minimalizuje riziko úniku citlivých informací a zároveň zajišťuje integritu dat tak, aby bylo zabráněno jejich modifikaci během přenosu.</div>
+   <div><span class="bold">WebTransport</span> vyžaduje platný šifrovací certifikát, vydaný certifikační autoritou (např. <a href="https://cs.wikipedia.org/wiki/Let%27s_Encrypt" target="_blank">Let's Encrypt</a>). Spojení s certifikátem s vlastním podpisem (bez certifikační autority) nejsou povoleny (jak pro spojení <span class="bold">klient-server</span>, tak i pro <span class="bold">server-server</span>), protože u nich nelze ověřit identitu (může je vydat kdokoliv), proto je nutné si takový certifikát nechat vystavit od certifikační autority a používat ho pro tento účely jak šifrovaného přenosu dat, tak i pro ověření identity serveru.</div>
+   <a name="security-login"></a><h3>Bezpečné přihlašování</h3>
+   <div>Proces ověřování uživatelů a správců je navržen tak, aby bylo zajištěno, že citlivé informace, jako je <a href="https://cs.wikipedia.org/wiki/Asymetrick%C3%A1_kryptografie" target="_blank">soukromý klíč</a>, zůstanou omezeny na zařízení uživatele. Toho je dosaženo pomocí asymetrické šifrovací strategie zvané <span class="bold">výzva-odezva</span>, která je popsána následovně:</div>
+   <div class="bold">1. Vygenerování klíčů:</div>
+   <ul>
+    <li>Po zahájení procesu registrace klient vygeneruje na svém koncovém zařízení jedinečný soukromý klíč. S využitím šifrovacího algoritmu kompatibilního s algoritmy podporovanými serverovou aplikací je z tohoto soukromého klíče odvozen odpovídající <a href="https://cs.wikipedia.org/wiki/Asymetrick%C3%A1_kryptografie" target="_blank">veřejný klíč</a>. Tato dokumentace nespecifikuje seznam podporovaných šifrovacích algoritmů, to je plně na implementaci serveru a klientských aplikací a dává to možnost změny algoritmů v budoucnu. <span class="bold">Soukromý klíč</span> je bezpečně uložen v klientském zařízení.</li>
+   </ul>
+   <div class="bold">2. Registrace účtu:</div>
+   <ul>
+    <li><span class="bold">Veřejný klíč</span> spolu s identifikací použitého šifrovacího algoritmu se předává serveru při registraci účtu na serveru. Server poté zaznamená <span class="bold">veřejný klíč</span> a identifikaci šifrovacího algoritmu do svého úložiště (např. databáze) pro budoucí procesy ověřování.</li>
+   </ul>
+   <div class="bold">3. Ověřování při přihlášení:</div>
+   <ul>
+    <li>Při ověřování odešle klient serveru žádost o přihlášení spolu se svým uživatelským jménem.</li>
+    <li>V odpovědi pro klienta server vygeneruje náhodný řetězec (doporučuje se délka řetězce alespoň 40 znaků), který je následně zašifrován pomocí <span class="bold">veřejného klíče</span> klienta a poté je takto zašifrovaný odeslán zpět klientovi.</li>
+    <li>Po přijetí klient použije svůj <span class="bold">soukromý klíč</span> k rozšifrování přijatého řetězce a odešle rozšifrovaný řetězec zpět na server k ověření.</li>
+    <li>Server porovná rozšifrovaný řetězec s původně vygenerovaným řetězcem. Pokud se shodují, potvrdí server identitu klienta a udělí mu přístup vydáním tokenu relace. Platnost tokenu je v kompetenci implementovaného řešení serverové a klientské aplikace.</li>
+   </ul>
+   <div>Tato metoda ověřování využívá výhody asymetrického šifrování k ochraně uživatelských dat a zajišťuje, že citlivé informace, jako jsou <span class="bold">soukromé klíče</span>, zůstanou chráněny v rámci uživatelských koncových zařízení. Tento přístup nejen zvyšuje bezpečnost, ale je také v souladu s osvědčenými postupy pro bezpečnou komunikaci v moderních aplikacích.</div>
+   <div class="center"><img src="img/AMTP-login-CZ.png" alt="Bezpečné přihlašování" /></div>
+   <ul>
+    <li>TODO: kombinace soukromého klíče s heslem?</li>
+    <li>TODO: řešit nějak časově omezenou platnost tokenu a challenge stringu?</li>
+    <li>TODO: další možnosti ověření: OAuth / social loginy, pouze heslo (hash) atd. - přesunutí přihlášení do separátního modulu?</li>
+   </ul>
+   <a name="security-e2e"></a><h3>Koncové šifrování</h3>
+   <div><span class="bold">Koncové šifrování</span> není předmětem této dokumentace, jelikož je v kompetenci jednotlivých modulů (např. zprávy, telefonování apod.). I tak je třeba zmínit, že by mělo být implementováno ve veškerých funkcionalitách modulů, kde se přenáší soukromá data mezi koncovými uživateli nebo skupinami uživatelů. Taktéž je doporučeno vytvářet moduly tak, aby klíče byly často obměňovány a nepoužívaly se sdílené klíče, kromě případů kdy to dává smysl (např. chatovací skupiny apod.). Data zabezpečená koncovým šifrováním představují další vrstvu zabezpečení nejen v případě selhání šifrování v rámci zabezpečeného spojení mezi klientem a serverem, ale i k tomu, aby nikdo, kromě koncových uživatelů neměl přístup k datům (např. ani správce serveru, na kterém má uživatel založený uživatelský účet).</div>
+   <a name="security-dkey"></a><h3>Digitální podpis serveru</h3>
+   <div><span class="bold">Digitální podpis serveru</span> slouží k ověření, zda server, ke kterému se klient či jiný server připojuje, je opravdu ten, za který se vydává. Toto je bezpečnostní mechanismus, který zabraňuje útokům, jako je např. <a href="https://cs.wikipedia.org/wiki/IP_spoofing" target="_blank">IP spoofing</a>.</div>
+   <div>Po nainstalování každého serveru se vygeneruje <span class="bold">soukromý klíč</span> a z něj odvozený <span class="bold">veřejný klíč</span> algoritmem, který podporují ostatní serverové i klientské aplikace. <span class="bold">Soukromý klíč</span> zůstává bezpečně uložen na serveru. <span class="bold">Veřejný klíč</span> společně s identifikací šifry se uloží do <a href="https://cs.wikipedia.org/wiki/Domain_Name_System" target="_blank">DNS</a> do <span class="bold">TXT</span> záznamu <span class="bold">AMTP-PUBKEY</span>.</div>
+   <div>Ihned po navázání spojení vlastního serveru či klienta s protějším serverem, se zašle dotaz protějšímu serveru se žádostí o podepsání náhodně vygenerovaného řetězce naší stranou jeho vlastním <span class="bold">soukromým klíčem</span>. Protější server podepíše tento řetězec svým <span class="bold">soukromým klíčem</span> a odešle ho zpět. Náš klient nebo server odešle následně dotaz do <span class="bold">DNS</span> pro získání <span class="bold">TXT</span> záznamu <span class="bold">ATMP-PUBKEY</span> uvedený k protějšímu serveru a tím získá  jeho <span class="bold">veřejný klíč</span>. Náš klient či server následně ověří zda podepsaný řetezec odpovídá <span class="bold">veřejnému klíči</span> získanému z <span class="bold">DNS</span>. Pokud je klíč platný, nadále komunikujeme s protějším serverem, naopak pokud tímto ověřením protější server neprojde, ukončíme spojení s protějším serverem.</div>
+   <div class="center"><img src="img/AMTP-dkey-CZ.png" alt="Digitální podpis serveru" /></div>
+   <ul>
+    <li>TODO - naše strana se poté také prokáže stejným způsobem (v případě serveru)?</li>
+   </ul>
+   <a name="dns"></a><h2>DNS</h2>
+   <div>Pro zajištění komunikace mezi servery v rámci distribuované sítě, jsou využity specifické <span class="bold">DNS</span> záznamy pro <span class="bold">AMTP</span>. Tyto záznamy jsou nezbytné pro správné a bezpečné směrování provozu mezi servery na základě jejich domén. Pro zapojení serveru do sítě pro účel předávání dat mezi servery, jsou nezbytné záznamy v DNS u domén, které jsou serverem využívány. Bez těchto záznamů není možné předávat data mezi servery.</div>
+   <div>V původních e-mailových standardech bylo využito několik záznamů v DNS, jejichž funkcionalita byla nahrazena v <span class="bold">AMTP</span> jinými specifickými doménovými záznamy. Následující tabulka vysvětluje, čím byly v rámci tohoto protokolu nahrazeny záznamy známé z původních e-mailových standardů:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Záznam původních standardů</th>
+      <th>Nahrazen AMTP záznamem</th>
+      <th>Poznámka</th>
+     </tr>
+     <tr>
+      <td>A / AAAA</td>
+      <td>A / AAAA</td>
+      <td>Záznam určující doménové jméno serveru je zachován</td>
+     </tr>
+     <tr>
+      <td>PTR</td>
+      <td>-</td>
+      <td>Záznam není již potřeba, jelikož představuje zastaralý způsob ověření serveru. V AMTP je legitimita každého serveru ověřena pomocí "TXT - amtp-pubkey" záznamu.</td>
+     </tr>
+     <tr>
+      <td>MX</td>
+      <td>TXT - amtp-servers</td>
+      <td>Záznam určující který server je přiřazen ke kterému doménovému jménu, na kterém jsou uživatelské účty</td>
+     </tr>
+     <tr>
+      <td>TXT - SPF</td>
+      <td>-</td>
+      <td>"TXT - SPF" záznam není potřeba, jelikož jeho funkci zastává "TXT - amtp-servers" záznam</td>
+     </tr>
+     <tr>
+      <td>TXT - DKIM</td>
+      <td>TXT - amtp-pubkey</td>
+      <td>Záznam určující veřejný klíč serveru, kterým si cizí servery ověřují legitimitu užívání doménového jména uživatelských účtů</td>
+     </tr>
+     <tr>
+      <td>TXT - DMARC</td>
+      <td>-</td>
+      <td>Záznam již není potřeba. Reporting neúspěšných pokusů o předání dat ze serverů, které postrádají legitimitu užívání účtů na cizích doménách pro legitimní servery je zbytečný, jelikož v rámci AMTP se nemůže stát, že takové zprávy by byly vůbec doručeny. Pokud by byl reporting potřeba, je možné na tuto funkcionalitu napsat modul.</td>
+     </tr>
+    </table>
+   </div>
+   <a name="dns-config"></a><h3>Konfigurace DNS</h3>
+   <div><span class="bold">AMTP servers TXT záznam</span>:</div>
+   <ul>
+    <li>Tento záznam definuje cílové servery, na kterých jsou uživatelské účty pro určitou doménu (kombinuje funkcionalitu podobnou záznamům MX a SPF známým z e-mailu).</li>
+    <li>Záznam začíná řetězcem "<span class="bold">amtp-servers=</span>" a následuje seznam jednotlivých serverů, které jsou odděleny čárkou (",")</li>
+    <li>Servery jsou seřazeny podle priority. Pokud je některý server nedostupný, použije se pro připojení další server v řadě.</li>
+    <li>Pokud není zadán žádný port, použije se standardně port 443.</li>
+   </ul>
+   <div><span class="bold">Příklad:</span></div>
+<pre>
+subdomain.domain.tld. IN TXT "amtp-servers=amtp1.domain.tld,amtp2.domain.tld:12345,amtp3.domain.tld:23456"
+</pre>
+   <div>Tento záznam definuje, že pro účty na doméně <span class="bold">@subdomain.domain.tld</span> jsou používány následující servery <span class="bold">AMTP</span>:</div>
+   <ul>
+    <li><span class="bold">amtp1.domain.tld</span> na portu 443</li>
+    <li><span class="bold">amtp2.domain.tld</span> na portu 12345</li>
+    <li><span class="bold">amtp3.domain.tld</span> na portu 23456</li>
+   </ul>
+   <div><span class="bold">AMTP PUBKEY TXT záznam</span>:</div>
+   <ul>
+    <li>Tento záznam definuje, jaký veřejný klíč používá server ke své identifikaci po spojení s protějším serverem.</li>
+    <li>Záznam začíná řetězcem "<span class="bold">amtp-pubkey=</span>" a následují parametry oddělené čárkou:</li>
+    <ul>
+     <li>"<span class="bold">e:</span>" + název šifry</li>
+     <li>"<span class="bold">k:</span>" + veřejný klíč</li>
+    </ul>
+   </ul>
+<pre>
+amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
+</pre>
+   <div>Tento příklad uvádí, že pro server <span class="bold">amtp1.domain.tld</span> je využíván veřejný klíč "<span class="bold">123456789abcdef</span>" s algoritmem <a href="https://cs.wikipedia.org/wiki/RSA" target="_blank">RSA</a>.</div>
+   <a name="connection"></a><h2>Spojení</h2>
+   <ul>
+    <li>TODO - sepsat, jak se přesně navazuje spojení, jestli je tam nějaký endpoint pro WebTransport apod.</li>
+   </ul>
+   <a name="commands"></a><h2>Příkazy</h2>
+   <div>Příkazy jsou zasílány přes <span class="bold">WebTransport</span> pomocí obousměrného streamu. Nejprve se otevře stream, poté probíhá obousměrná komunikace pomocí příkazů strukturovaných ve formátu <span class="bold">BSON</span> a nakonec, jakmile již není potřeba mít stream otevřený, stream se uzavře jednou či druhou stranou. Více streamů v rámci jednoho spojení může běžet souběžně.</div>
+   <ul>
+    <li>TODO - popsat obecne jak vypada success (error už popsán níže)</li>
+   </ul>
+   <div class="bold">Struktura chyby (z jádra, nikoliv z modulu):</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Hodnota</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>řetězec</td>
+      <td class="center">✔</td>
+      <td>Název příkazu</td>
+     </tr>
+     <tr>
+      <td>error</td>
+      <td>číslo</td>
+      <td class="center">✔</td>
+      <td>Stavové číslo chyby</td>
+     </tr>
+     <tr>
+      <td>message</td>
+      <td>řetězec</td>
+      <td class="center">✔</td>
+      <td>Zpráva s chybou</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad chyby od serveru:</div>
+<pre>
+{
+ "command": "admin_login_request",
+ "error": 1,
+ "message": "User not found",
+}
+</pre>
+   <a name="commands-c2s"></a><h3>Klient-server</h3>
+   <div>Následující příkazy jsou využívány v komunikaci mezi klientskou a serverovou aplikací:</div>
+   <a name="commands-c2s-admin"></a><h4>Správce</h4>
+   <div>Všechny příkazy začínající "<span class="bold">admin_</span>" jsou určeny pouze pro správce. Aby bylo možné provádět tyto příkazy, musí být správce přihlášen. Pokud je přihlášení úspěšné, získá správce token relace, který musí být odeslán v každém správcovském požadavku. Tento token se liší od tokenu uživatele.</div>
+   <a name="commands-c2s-admin-login"></a><h5>Přihlášení správce</h5>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-login-challenge"></a><h6>Přihlašovací výzva</h6>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Hodnota</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"admin_login_request"</td>
+      <td class="center">❌✔</td>
+      <td>Název příkazu</td>
+     </tr>
+     <tr>
+      <td>user</td>
+      <td>řetězec</td>
+      <td class="center">✔</td>
+      <td>Uživatelské jméno</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Hodnota</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"admin_login_request"</td>
+      <td class="center">✔</td>
+      <td>Název příkazu</td>
+     </tr>
+     <tr>
+      <td>verification_string</td>
+      <td>řetězec</td>
+      <td class="center">✔</td>
+      <td>Řetězec výzvy pro zašifrování</td>
+     </tr>
+     <tr>
+      <td>public_key</td>
+      <td>řetězec</td>
+      <td class="center">✔</td>
+      <td>Veřejný klíč, kterým byl řetězec zašifrován</td>
+     </tr>
+     <tr>
+      <td>encryption</td>
+      <td>řetězec</td>
+      <td class="center">✔</td>
+      <td>Identifikace algoritmu, kterým byl řetězec zašifrován</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>Uživatel nenalezen</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>Ověření výzvy se nezdařilo</td>
+     </tr>
+    </table>
+   </div>
+- TODO
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "admin_login_request",
+ "user": "admin"
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "command": "admin_login_request",
+ "verification_string": "1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B",
+ "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
+ "encryption": "rsa"
+}
+</pre>
+   <a name="commands-c2s-admin-login-response"></a><h6>Přihlašovací odezva</h6>
+   <div><span class="bold">Příklad žádosti:</span></div>
+<pre>
+{
+ "command": "admin_login_verify",
+ "user": "admin",
+ "verification_string": "abcdefghijklmnopqrstuvwxyz1234567890abcd"
+}
+</pre>
+   <div class="bold">Příklad odezvy:</div>
+<pre>
+{
+ "command": "admin_login_verify",
+ "admin_token": "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+}
+</pre>
+   <a name="commands-c2s-admin-logout"></a><h5>Odhlášení správce</h5>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-admins"></a><h5>Správci</h5>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-admins-list"></a><h6>Seznam správců</h6>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-admins-add"></a><h6>Přidat nového správce</h6>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-admins-set"></a><h6>Úprava správce</h6>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-admins-del"></a><h6>Smazání správce</h6>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-domains"></a><h5>Domény:</h5>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-domains-list"></a><h6>Seznam domén:</h6>
+   <div class="bold">Příklad žádosti:</div>
+<pre>
+{
+ "command": "admin_get_domains",
+ "admin_token": "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+}
+</pre>
+   <div><span class="bold">Příklad odezvy:</span></div>
+<pre>
+{
+ "command": "admin_get_domains",
+ "domains": {
+  [
+   {
+    "id": 1,
+    "name": "domain1.tld",
+    "created":"2023-11-25 14:57:03"
+   }, {
+    "id": 2,
+    "name": "domain2.tld",
+    "created": "2023-11-26 16:21:08"
+   }
+  ]
+ }
+}
+</pre>
+   <a name="commands-c2s-admin-domains-add"></a><h6>Přidání nové domény</h6>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-domains-set"></a><h6>Úprava domény</h6>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-domains-del"></a><h6>Smazání domény</h6>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-identities"></a><h5>Identity</h5>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-identities-list"></a><h6>Seznam identit</h6>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-identities-add"></a><h6>Přidání nové identity</h6>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-identities-set"></a><h6>Úprava identity</h6>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-identities-del"></a><h6>Smazání identity</h6>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-catchall"></a><h5>Doménový koš</h5>
+   <div>Doménový koš slouží k zachytávání a přeposílání došlých zpráv, které jsou poslané sice na existující doménu, ale neexistující identitu a to jednomu či více příjemcům. Jelikož identita neexistuje, použije se pro zašifrování zprávy veřejný klíč serveru. Server následně zprávu rozšifruje svými soukromým klíčem a opět zašifruje šifrou každého jednotlivého příjemce, kterému se má zpráva přeposlat. Pokud neexistuje v seznamu příjemců doméhového koše jediný příjemce, znamená to, že doméhový koš je pro doménu vypnutý.</div>
+   <a name="commands-c2s-admin-catchall-list"></a><h6>Seznam příjemců</h6>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-catchall-add"></a><h6>Přidat příjemce</h6>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-catchall-set"></a><h6>Upravit příjemce</h6>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-catchall-del"></a><h6>Smazat příjemce</h6>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-serverinfo"></a><h5>Informace o serveru pro správce</h5>
+   <div class="bold">Příklad žádosti:</div>
+<pre>
+{
+ "command": "admin_sysinfo",
+ "admin_token": "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+}
+</pre>
+   <div class="bold">Příklad odezvy:</div>
+<pre>
+{
+ "command": "admin_sysinfo",
+ "app_name": "AMTP Server",
+ "app_version": "1.00",
+ "os_name": "Linux",
+ "os_version": "5.10.0-19-amd64",
+ "cpu_model": "Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz",
+ "cpu_cores": 40,
+ "cpu_arch": "x64",
+ "cpu_load": 0,
+ "ram_total": 8332619776,
+ "ram_free": 7842000896,
+ "hostname": "amtp",
+ "networks": [
+  {
+   "ens1": [
+    "192.168.0.2",
+    "12ab::34cd:56ef:7890:1234"
+   ]
+  }, {
+   "ens2": [
+    "10.20.30.40",
+    "12ab::34cd:56ef:7890:4321"
+   ]
+  }
+ ],
+ "uptime": "8 days, 12 hours, 45 minutes, 52 seconds"
+}
+</pre>
+   <a name="commands-c2s-user"></a><h4>Uživatel</h4>
+   <div>Všechny příkazy začínající "<span class="bold">user_</span>" jsou určeny pro uživatele. Aby bylo možné provádět tyto příkazy, musí být uživatel přihlášen. Pokud je přihlášení úspěšné, získá uživatel token relace, který musí být odeslán v každém správcovském požadavku. Tento token se liší od tokenu správce.</div>
+   <a name="commands-c2s-user-login"></a><h5>Přihlášení uživatele</h5>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-user-login-challenge"></a><h5>Přihlašovací výzva</h5>
+   <ul>
+    <li>TODO</li>
+    <li>TODO: expirace tokenu?</li>
+   </ul>
+   <a name="commands-c2s-user-login-response"></a><h5>Přihlašovací odezva</h5>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-user-logout"></a><h5>Odhlášení uživatele</h5>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-user-userinfo"></a><h5>Informace o uživateli</h5>
+   <ul>
+    <li>TODO: uživatelé mohou požádat o informace o ostatních uživatelích jako jméno, foto apod.etc.</li>
+   </ul>
+   <a name="commands-c2s-user-serverinfo"></a><h5>Informace o serveru pro uživatele</h5>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-modules"></a><h4>Komunikace s moduly</h4>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-s2s"></a><h3>Spojení server-server</h3>
+   <div>Následující příkazy jsou využívány v komunikaci mezi dvěma serverovými aplikacemi:</div>
+   <ul>
+    <li>TODO: předávání, ověřování identit atd.</li>
+   </ul>
+   <a name="examples"></a><h2>Příklady</h2>
+   <ul>
+    <li>TODO</li>
+   </ul>
+  </div>
+  <div id="resizer" class="no-print"></div>
+ </body>
+</html>

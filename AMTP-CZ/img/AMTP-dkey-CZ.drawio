@@ -1,0 +1,80 @@
+<mxfile host="app.diagrams.net" modified="2024-04-26T12:12:59.566Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0" etag="lJTo7Ml1n5r-RW-Ekm9B" version="24.2.5" type="device">
+  <diagram name="Stránka-1" id="toOVd7-JZ7SLgHdmARIT">
+    <mxGraphModel dx="2059" dy="1044" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="jIflx6HBgD9O2iB-TuAb-1" value="&lt;div style=&quot;font-size: 15px;&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Vygeneruje a uloží soukromý klíč&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Vygeneruje a uloží veřejný klíč&lt;br&gt;vygenerovaný na základě privátního klíče&lt;br&gt;&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;spacing=0;align=left;labelPosition=center;verticalLabelPosition=middle;spacingLeft=0;spacingBottom=0;fillColor=#ffe6cc;strokeColor=#d79b00;spacingTop=15;" parent="1" vertex="1">
+          <mxGeometry y="50" width="350" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="jIflx6HBgD9O2iB-TuAb-3" value="Server" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=18;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;" parent="1" vertex="1">
+          <mxGeometry y="50" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jIflx6HBgD9O2iB-TuAb-6" value="&lt;div style=&quot;font-size: 15px;&quot;&gt;&lt;ul&gt;&lt;li&gt;Do DNS je uložen veřejný klíč jakožto&lt;br&gt;TXT záznam AMTP-PUBKEY&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;spacing=0;align=left;labelPosition=center;verticalLabelPosition=middle;spacingLeft=0;spacingBottom=0;fillColor=#e1d5e7;strokeColor=#9673a6;spacingTop=15;" parent="1" vertex="1">
+          <mxGeometry x="480" y="50" width="350" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="jIflx6HBgD9O2iB-TuAb-7" value="DNS" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=18;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;" parent="1" vertex="1">
+          <mxGeometry x="480" y="50" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jIflx6HBgD9O2iB-TuAb-8" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;" parent="1" source="jIflx6HBgD9O2iB-TuAb-1" target="jIflx6HBgD9O2iB-TuAb-6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="350" y="460" as="sourcePoint" />
+            <mxPoint x="400" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5YB8qFmiyGmd4muCcbbY-2" value="Vytvoření klíčů a uložení do DNS" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;fontStyle=1;fontSize=20;spacing=0;" parent="1" vertex="1">
+          <mxGeometry width="830" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5YB8qFmiyGmd4muCcbbY-10" value="&lt;div style=&quot;font-size: 15px;&quot;&gt;&lt;ul&gt;&lt;li&gt;Vygeneruje náhodný řetězec&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;spacing=0;align=left;labelPosition=center;verticalLabelPosition=middle;spacingLeft=0;spacingBottom=0;fillColor=#d5e8d4;strokeColor=#82b366;spacingTop=15;" parent="1" vertex="1">
+          <mxGeometry y="240" width="350" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="5YB8qFmiyGmd4muCcbbY-11" value="Vlastní server / klient" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=18;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;" parent="1" vertex="1">
+          <mxGeometry y="240" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5YB8qFmiyGmd4muCcbbY-12" value="&lt;div style=&quot;font-size: 15px;&quot;&gt;&lt;ul&gt;&lt;li&gt;Podepíše řetězec soukromým klíčem&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;spacing=0;align=left;labelPosition=center;verticalLabelPosition=middle;spacingLeft=0;spacingBottom=0;fillColor=#ffe6cc;strokeColor=#d79b00;spacingTop=15;" parent="1" vertex="1">
+          <mxGeometry x="480" y="240" width="350" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="5YB8qFmiyGmd4muCcbbY-13" value="Protější server" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=18;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;" parent="1" vertex="1">
+          <mxGeometry x="480" y="240" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5YB8qFmiyGmd4muCcbbY-14" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;" parent="1" source="5YB8qFmiyGmd4muCcbbY-10" target="5YB8qFmiyGmd4muCcbbY-12" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="350" y="650" as="sourcePoint" />
+            <mxPoint x="400" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5YB8qFmiyGmd4muCcbbY-22" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;Zašle řetězec se&lt;br&gt;žádostí o podpis&lt;br style=&quot;font-size: 14px;&quot;&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;spacingTop=-6;labelBackgroundColor=none;spacing=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;" parent="5YB8qFmiyGmd4muCcbbY-14" vertex="1" connectable="0">
+          <mxGeometry x="-0.0462" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5YB8qFmiyGmd4muCcbbY-16" value="Poznámka:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;fontStyle=1;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="-3" y="580" width="830" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5YB8qFmiyGmd4muCcbbY-20" value="&lt;div style=&quot;font-size: 15px;&quot;&gt;&lt;ul&gt;&lt;li&gt;Připojí se k DNS a získá veřejný klíč&lt;br&gt;protějšího serveru&lt;br&gt;&lt;/li&gt;&lt;li&gt;Ověří řetězec řetězec veřejným klíčem z DNS&lt;/li&gt;&lt;li&gt;Pokud je podpis validní, komunikuje dále,&lt;br&gt;jinak ukončí spojení&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;spacing=0;align=left;labelPosition=center;verticalLabelPosition=middle;spacingLeft=0;spacingBottom=0;fillColor=#d5e8d4;strokeColor=#82b366;spacingTop=15;" parent="1" vertex="1">
+          <mxGeometry y="410" width="350" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="5YB8qFmiyGmd4muCcbbY-21" value="Vlastní server / klient" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=18;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;" parent="1" vertex="1">
+          <mxGeometry y="410" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5YB8qFmiyGmd4muCcbbY-23" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;spacingTop=0;spacingBottom=0;labelBackgroundColor=default;" parent="1" source="5YB8qFmiyGmd4muCcbbY-12" target="5YB8qFmiyGmd4muCcbbY-21" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="350" y="380" as="sourcePoint" />
+            <mxPoint x="400" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5YB8qFmiyGmd4muCcbbY-24" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Zašle podepsaný&lt;br style=&quot;font-size: 14px;&quot;&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;řetězec&lt;/font&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;spacingTop=-8;spacingLeft=28;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;rotation=-35;fontSize=14;" parent="5YB8qFmiyGmd4muCcbbY-23" vertex="1" connectable="0">
+          <mxGeometry x="0.1954" y="1" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5YB8qFmiyGmd4muCcbbY-31" value="Ověření protějšího serveru" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;fontStyle=1;fontSize=20;spacing=0;" parent="1" vertex="1">
+          <mxGeometry x="-1" y="190" width="830" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5YB8qFmiyGmd4muCcbbY-32" value="&lt;ul&gt;&lt;li&gt;Soukromý klíč slouží k podepisování&lt;/li&gt;&lt;li&gt;Veřejný klíč slouží ověřování podpisu&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;fontStyle=0;fontSize=16;spacing=-18;spacingRight=0;" parent="1" vertex="1">
+          <mxGeometry x="-3" y="620" width="830" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
