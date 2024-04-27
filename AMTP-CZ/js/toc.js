@@ -46,14 +46,14 @@ const data = [
     title: 'Šifrovaný přenos dat',
     link: 'security-transfer'
    }, {
+    title: 'Digitální podpis serveru',
+    link: 'security-dkey'
+   }, {
     title: 'Bezpečné přihlašování',
     link: 'security-login'
    }, {
     title: 'Koncové šifrování',
     link: 'security-e2e'
-   }, {
-    title: 'Digitální podpis serveru',
-    link: 'security-dkey'
    }
   ]
  }, {
