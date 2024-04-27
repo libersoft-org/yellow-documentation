@@ -59,7 +59,7 @@
    <div class="bold">Zachované koncepty v AMTP z původního SMTP:</div>
    <ul class="spacelist">
     <li><span class="bold">Distribuovaná síť</span>: Typ sítě, ve které je komunikace, zpracování a ukládání dat distribuováno mezi mnoho uzlů, které mohou mít různé vlastníky (poskytovatele služby). Tyto uzly mohou mezi sebou navzájem komunikovat, předávat si data a odlišovat se mezi sebou dle pravidel a sad služeb, které poskytují svým uživatelům. To síť odlišuje jak od centralistického modelu, kde je síť řízena jediným poskytovatelem, tak i od plně decentralizovaného modelu, kde každý koncový uživatel je sám sobě i pro ostatní poskytovatelem s předem nastavenými stejnými pravidly.</li>
-    <li><span class="bold">Identita e-mailové adresy</span>: Formát adresy uživatelského účtu je zachován z původních e-mailových standardů. Ve zjednodušené formě je to formát <span class="bold">uživatel@doména</span>.</li>
+    <li><span class="bold">Identita e-mailové adresy</span>: Formát adresy uživatelského účtu je zachován (s menšími odlišnostmi) z původních e-mailových standardů. Ve zjednodušené formě je to formát <span class="bold">uživatel@doména</span>.</li>
    </ul>
    <div><span class="bold">Nové koncepty v AMTP</span>:</div>
    <ul class="spacelist">
@@ -140,7 +140,7 @@
    </ul>
    <div>Následující obrázek nastiňuje zjednodušený příklad toho, jak může vypadat architektura serverové aplikace:</div>
    <div class="center"><img src="img/AMTP-server-CZ.png" alt="Architektura serveru" /></div>
-   <a name="identity"></a><h2>Identita</h2>
+   <a name="identity"></a><h2>Identita uživatele</h2>
    <div>Každý uživatelský účet v rámci AMTP je identifikován adresou, jejíž formát vychází ze standardu známého z e-mailových adres, s několika odlišnostmi a je definován následovně:</div>
    <ul>
     <li>Adresa se sestává z <span class="bold">lokální</span> a <span class="bold">doménové</span> části. Tyto části jsou odděleny znakem "<span class="bold">@</span>" (zavináč). Tedy ve tvaru: <span class="bold">uzivatel@domena</span></li>
@@ -503,41 +503,23 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <ul>
     <li>TODO</li>
    </ul>
-   <a name="commands-c2s-admin-identities"></a><h5>Identity</h5>
+   <a name="commands-c2s-admin-users"></a><h5>Uživatelské účty</h5>
    <ul>
     <li>TODO</li>
    </ul>
-   <a name="commands-c2s-admin-identities-list"></a><h6>Seznam identit</h6>
+   <a name="commands-c2s-admin-users-list"></a><h6>Seznam uživatelů</h6>
    <ul>
     <li>TODO</li>
    </ul>
-   <a name="commands-c2s-admin-identities-add"></a><h6>Přidání nové identity</h6>
+   <a name="commands-c2s-admin-users-add"></a><h6>Přidání nového uživatele</h6>
    <ul>
     <li>TODO</li>
    </ul>
-   <a name="commands-c2s-admin-identities-set"></a><h6>Úprava identity</h6>
+   <a name="commands-c2s-admin-users-set"></a><h6>Úprava uživatelů</h6>
    <ul>
     <li>TODO</li>
    </ul>
-   <a name="commands-c2s-admin-identities-del"></a><h6>Smazání identity</h6>
-   <ul>
-    <li>TODO</li>
-   </ul>
-   <a name="commands-c2s-admin-catchall"></a><h5>Doménový koš</h5>
-   <div>Doménový koš slouží k zachytávání a přeposílání došlých zpráv, které jsou poslané sice na existující doménu, ale neexistující identitu a to jednomu či více příjemcům. Jelikož identita neexistuje, použije se pro zašifrování zprávy veřejný klíč serveru. Server následně zprávu rozšifruje svými soukromým klíčem a opět zašifruje šifrou každého jednotlivého příjemce, kterému se má zpráva přeposlat. Pokud neexistuje v seznamu příjemců doméhového koše jediný příjemce, znamená to, že doméhový koš je pro doménu vypnutý.</div>
-   <a name="commands-c2s-admin-catchall-list"></a><h6>Seznam příjemců</h6>
-   <ul>
-    <li>TODO</li>
-   </ul>
-   <a name="commands-c2s-admin-catchall-add"></a><h6>Přidat příjemce</h6>
-   <ul>
-    <li>TODO</li>
-   </ul>
-   <a name="commands-c2s-admin-catchall-set"></a><h6>Upravit příjemce</h6>
-   <ul>
-    <li>TODO</li>
-   </ul>
-   <a name="commands-c2s-admin-catchall-del"></a><h6>Smazat příjemce</h6>
+   <a name="commands-c2s-admin-users-del"></a><h6>Smazání uživatele</h6>
    <ul>
     <li>TODO</li>
    </ul>
@@ -614,7 +596,7 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-s2s"></a><h3>Spojení server-server</h3>
    <div>Následující příkazy jsou využívány v komunikaci mezi dvěma serverovými aplikacemi:</div>
    <ul>
-    <li>TODO: předávání, ověřování identit atd.</li>
+    <li>TODO: předávání, ověřování uživatelů atd.</li>
    </ul>
    <a name="examples"></a><h2>Příklady</h2>
    <ul>

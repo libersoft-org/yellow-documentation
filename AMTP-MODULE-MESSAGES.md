@@ -14,6 +14,25 @@ These are just some notes, the documentation is not yet available.
 - TODO - add a command that will just add a message to mailbox without sending it over the network - this is benefitial for example when a user changes their private + public key and wants to re-encrypt the whole chat history - so they delete all messages in their mailbox on server and just send them from client to server again, now encrypted with a new private key. Such messages will have old date and time etc.
 - TODO - chat groups and news groups will NOT have their own identity. They only have owners / moderators, that are identities
 
+<a name="commands-c2s-admin-catchall"></a><h5>Doménový koš</h5>
+   <div>Doménový koš slouží k zachytávání a přeposílání došlých zpráv, které jsou poslané sice na existující doménu, ale neexistující identitu a to jednomu či více příjemcům. Jelikož identita neexistuje, použije se pro zašifrování zprávy veřejný klíč serveru. Server následně zprávu rozšifruje svými soukromým klíčem a opět zašifruje šifrou každého jednotlivého příjemce, kterému se má zpráva přeposlat. Pokud neexistuje v seznamu příjemců doméhového koše jediný příjemce, znamená to, že doméhový koš je pro doménu vypnutý.</div>
+   <a name="commands-c2s-admin-catchall-list"></a><h6>Seznam příjemců</h6>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-catchall-add"></a><h6>Přidat příjemce</h6>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-catchall-set"></a><h6>Upravit příjemce</h6>
+   <ul>
+    <li>TODO</li>
+   </ul>
+   <a name="commands-c2s-admin-catchall-del"></a><h6>Smazat příjemce</h6>
+   <ul>
+    <li>TODO</li>
+   </ul>
+
 #### Send message to user <a name="u2s-messages-send2user"></a>
 #### Send message to group <a name="u2s-messages-send2group"></a>
 #### Receive message from user <a name="u2s-messages-receiveuser"></a>

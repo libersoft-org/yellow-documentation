@@ -9,9 +9,21 @@ Obsah:
 - Zjistit u WebTransportu, na čem vlastně běží (HTTP3 server nebo samostatně?) a jestli má nějaký endpoint a jaký budeme používat (např. "/" nebo "/amtp/")
 - Globální blokace - Jak bude fungovat (tzn. uživ. účty, konkrétní servery, domény kterým prostě vypnu spojení, aniž bych cokoliv předával modulům)
 - Uživatelské účty - Jak k nim vytvořit flexibilní user info (aby každý server si definoval, co ke každému uživateli chce definovat za položky (jméno, příjmení, pohlaví, datum narození, telefon, ...) + fotku / video / gif)
-- Doménový koš - Řešit v jádru? Týká se toho, když např. příjde zpráva, tak došlé zprávy na neexistující účty, které jsou ale na existující doméně, se přesměrují na konkrétní existující účty. Jenže uživatelské účty jsou už definovány v jádru a tak jádro by mohlo odmítnout jakoukoliv komunikaci na neexistující účet. Co s tím?
 - Moduly na serveru mohou být zavedeny ve více verzích najednou. Např. modul zprávy ve verzi 1.0 a 2.0 (kvůli zpětné kompatibilitě s klientskými moduly) - Bude mít každá verze nějaký hash / jiný identifikátor (např. číslo ID), který bude uveden v commandu a nebo jen název modulu + verze?
 - Má smysl místo jednoho TXT záznamu používat SRV? (zjistit, zda vše potřebné SRV umí a jestli to fakt má smysl, když můžeme nahradit několik SRV záznamů jedním TXT)
 - Command: Přidat blokaci vlastních účtů na serveru
 - Command: přidat change public key (je potřeba, nebo už v user_edit?)
 - Zamyslet se nad dalšími commandy do jádra (v ChatGPT)
+- Kombinace soukr. klice s heslem - nejjednoduseji: zaheslovat lokalne na klientovi privatni klic (Jindra zjisti, jestli lze resit elegantneji) - tohle napsat do dokumentace
+- Casova omezenost tokenu a challenge - bude u obojiho (asi) - Jindra popise v commandech
+- Jindra zjisti, jestli vubec potrebujem token nebo pri spojeni webtransportu udelame prihlasovaci kolecko - at sepise alternativy
+- Jindra vymysli, jak presunout overeni uzivatelu do modulu tak, aby tomu modulu bylo duverovano, ze mu muze davat nejaka data o uzivatelich atd. (a urcite se to bude delat, jadro se bude modulu doptavat a duverovat mu kdo je tedy prihlasen a kdo ne)
+- Koncove sifrovani - Jindra popise jak se vyhnout sdilenym klicum u chat skupin (nebo to proste smazat tu vetu)
+- Digitalni podpis serveru - Jindra navrhne alternativu k DNS (notary server) (resp. ne jako alternativu, ale jako dalsi vrstvu zabezpeceni)
+- Prohodit sekce zabezpeceni - prenos, digi podpis, prihlasovani, koncove sifrovani
+- Digi podpis - todo, co je na konci - ano, potreba popsat (staci napsat, ze stejnym zpusobem se prokaze druha strana v pripade serveru)
+- Prikazy - v odezvach nebude command - vsude smazat
+- Domenovy kos - prehodit ho do module messages
+- Jak ma admin definovat user info (nejak i pro registraci, pridavani uzivatelu atd.)
+- Pridat sekci zpetna kompatibilita - ze neni implementovana do jadra protokolu, ale muze byt implementovana v ramci klientske aplikace nebo serveroveho modulu
+- U commandu admina vysvetlit, proc jsou admini samostatne a ne klasicky uziv. ucet (ucty maji maji domenu, na zacatku zadna neni, admin ji vytvari), admin ucty a uzivatelske ucty nemaji funkcni prunik (admini nepouzivaji klienta, jen spravuji domeny, uzivatele, dalsi adminy, moduly apod.)... poptat se GPT na dalsi duvody

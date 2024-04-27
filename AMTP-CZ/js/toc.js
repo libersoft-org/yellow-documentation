@@ -36,7 +36,7 @@ const data = [
    }
   ]
  }, {
-  title: 'Identita',
+  title: 'Identita uživatele',
   link: 'identity'
  }, {
   title: 'Zabezpečení',
@@ -132,39 +132,21 @@ const data = [
          }
         ]
        }, {
-        title: 'Identity',
-        link: 'commands-c2s-admin-identities',
+        title: 'Uživatelské účty',
+        link: 'commands-c2s-admin-users',
         sub: [
          {
-          title: 'Seznam identit',
-          link: 'commands-c2s-admin-identities-list'
+          title: 'Seznam uživatelů',
+          link: 'commands-c2s-admin-users-list'
          }, {
-          title: 'Přidání nové identity',
-          link: 'commands-c2s-admin-identities-add'
+          title: 'Přidání nového uživatele',
+          link: 'commands-c2s-admin-users-add'
          }, {
-          title: 'Úprava identity',
-          link: 'commands-c2s-admin-identities-set'
+          title: 'Úprava uživatele',
+          link: 'commands-c2s-admin-users-set'
          }, {
-          title: 'Smazání identity',
-          link: 'commands-c2s-admin-identities-del'
-         }
-        ]
-       }, {
-        title: 'Doménový koš',
-        link: 'commands-c2s-admin-catchall',
-        sub: [
-         {
-          title: 'Seznam příjemců',
-          link: 'commands-c2s-admin-catchall-list'
-         }, {
-          title: 'Přidání příjemce',
-          link: 'commands-c2s-admin-catchall-add'
-         }, {
-          title: 'Úprava příjemce',
-          link: 'commands-c2s-admin-catchall-set'
-         }, {
-          title: 'Smazání příjemce',
-          link: 'commands-c2s-admin-catchall-del'
+          title: 'Smazání uživatele',
+          link: 'commands-c2s-admin-users-del'
          }
         ]
        }, {
