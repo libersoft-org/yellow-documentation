@@ -312,7 +312,7 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-c2s-admin"></a><h4>Správce</h4>
    <div>Všechny příkazy začínající "<span class="bold">admin_</span>" jsou určeny pouze pro správce. Aby bylo možné provádět tyto příkazy (mimo příkazů pro samotné přihlášení), musí být správce přihlášen. Pokud je přihlášení úspěšné, získá správce token relace, který musí být odeslán v každém následném příkazu. Tento token se liší od tokenu uživatele.</div>
    <a name="commands-c2s-admin-login"></a><h5>Přihlášení správce</h5>
-   <div>Přihlášení správce probíhá ve dvou krocích - přihlašovací výzvě a přihlašovací odezvě. V přihlašovací výzvě zašle klient své přihlašovací jméno a pokud používá mimo privátního klíče i heslo, tak i hash tohoto hesla (nepovinné). Server ověří heslo (pokud uživatel používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem uživatele. Tento zašifrovaný řetězec je předán uživateli. Uživatel následně řetězec rozšifruje pomocí svého soukromého klíče a zašle ho zpět v rámci přihlašovací odezvy. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetětec od klienta odpovídá původně vygenerovanému, pak uživatele přihlásí. V opačném případě vrátí chybu.</div>
+   <div>Přihlášení správce probíhá ve dvou krocích - přihlašovací výzvě a přihlašovací odezvě. V přihlašovací výzvě zašle klient své přihlašovací jméno a pokud používá mimo privátního klíče i heslo, tak i hash tohoto hesla (nepovinné). Server ověří heslo (pokud správce používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem správce. Tento zašifrovaný řetězec je předán správci. Správce následně řetězec rozšifruje pomocí svého soukromého klíče a zašle ho zpět v rámci přihlašovací odezvy. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetětec od klienta odpovídá původně vygenerovanému, pak správce přihlásí a udělí mu token relace. V opačném případě vrátí chybu.</div>
    <a name="commands-c2s-admin-login-challenge"></a><h6>Přihlašovací výzva</h6>
    <div><span class="bold">Struktura požadavku od klienta:</span></div>
    <div class="table-container">
@@ -549,11 +549,9 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-user"></a><h4>Uživatel</h4>
-   <div>Všechny příkazy začínající "<span class="bold">user_</span>" jsou určeny pro uživatele. Aby bylo možné provádět tyto příkazy, musí být uživatel přihlášen (mimo příkazů pro samotné přihlášení). Pokud je přihlášení úspěšné, získá uživatel token relace, který musí být odeslán v každém správcovském požadavku. Tento token se liší od tokenu správce.</div>
+   <div>Všechny příkazy začínající "<span class="bold">user_</span>" jsou určeny pro uživatele. Aby bylo možné provádět tyto příkazy, musí být uživatel přihlášen (mimo příkazů pro samotné přihlášení). Pokud je přihlášení úspěšné, získá uživatel token relace, který musí být odeslán v každém uživatelském požadavku. Tento token se liší od tokenu správce.</div>
    <a name="commands-c2s-user-login"></a><h5>Přihlášení uživatele</h5>
-   <ul>
-    <li>TODO</li>
-   </ul>
+   <div>Přihlášení uživatele probíhá ve dvou krocích - přihlašovací výzvě a přihlašovací odezvě. V přihlašovací výzvě zašle klient své přihlašovací jméno ve tvaru <span class="bold">uzivatel@domena</span> a pokud používá mimo privátního klíče i heslo, tak i hash tohoto hesla (nepovinné). Server ověří heslo (pokud uživatel používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem uživatele. Tento zašifrovaný řetězec je následně předán uživateli. Uživatel řetězec rozšifruje pomocí svého soukromého klíče a zašle ho zpět v rámci přihlašovací odezvy. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetětec od klienta odpovídá původně vygenerovanému, pak uživatele přihlásí a udělí mu token relace. V opačném případě vrátí chybu.</div>
    <a name="commands-c2s-user-login-challenge"></a><h5>Přihlašovací výzva</h5>
    <ul>
     <li>TODO</li>
