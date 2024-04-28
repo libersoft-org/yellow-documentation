@@ -276,9 +276,7 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    </ul>
    <a name="commands"></a><h2>Příkazy</h2>
    <div>Příkazy jsou zasílány přes <span class="bold">WebTransport</span> pomocí obousměrného streamu. Nejprve se otevře stream, poté probíhá obousměrná komunikace pomocí příkazů strukturovaných ve formátu <span class="bold">BSON</span> a nakonec, jakmile již není potřeba mít stream otevřený, stream se uzavře jednou či druhou stranou. Více streamů v rámci jednoho spojení může běžet souběžně.</div>
-   <ul>
-    <li>TODO - popsat obecne jak vypada success (error už popsán níže)</li>
-   </ul>
+   <div>Pokud příkaz vrátí chybu, je strukturována následovně:</div>
    <div class="bold">Struktura chyby (z jádra, nikoliv z modulu):</div>
    <div class="table-container">
     <table class="table-structure">
@@ -287,12 +285,6 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Hodnota</th>
       <th class="center">Vyžadováno</th>
       <th>Popis</th>
-     </tr>
-     <tr>
-      <td>command</td>
-      <td>řetězec</td>
-      <td class="center">✔</td>
-      <td>Název příkazu</td>
      </tr>
      <tr>
       <td>error</td>
@@ -311,19 +303,16 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad chyby od serveru:</div>
 <pre>
 {
- "command": "admin_login_request",
  "error": 1,
  "message": "User not found"
 }
 </pre>
    <a name="commands-c2s"></a><h3>Klient-server</h3>
-   <div>Následující příkazy jsou využívány v komunikaci mezi klientskou a serverovou aplikací:</div>
+   <div>V této sekci jsou popsány příkazy, které jsou využívány v komunikaci mezi klientskou a serverovou aplikací:</div>
    <a name="commands-c2s-admin"></a><h4>Správce</h4>
    <div>Všechny příkazy začínající "<span class="bold">admin_</span>" jsou určeny pouze pro správce. Aby bylo možné provádět tyto příkazy (mimo příkazů pro samotné přihlášení), musí být správce přihlášen. Pokud je přihlášení úspěšné, získá správce token relace, který musí být odeslán v každém následném příkazu. Tento token se liší od tokenu uživatele.</div>
    <a name="commands-c2s-admin-login"></a><h5>Přihlášení správce</h5>
-   <ul>
-    <li>TODO</li>
-   </ul>
+   <div>Přihlášení správce probíhá ve dvou krocích - přihlašovací výzvě a přihlašovací odezvě. V přihlašovací výzvě zašle klient své přihlašovací jméno a pokud používá mimo privátního klíče i heslo, tak i hash tohoto hesla (nepovinné). Server ověří heslo (pokud uživatel používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem uživatele. Tento zašifrovaný řetězec je předán uživateli. Uživatel následně řetězec rozšifruje pomocí svého soukromého klíče a zašle ho zpět v rámci přihlašovací odezvy. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetětec od klienta odpovídá původně vygenerovanému, pak uživatele přihlásí. V opačném případě vrátí chybu.</div>
    <a name="commands-c2s-admin-login-challenge"></a><h6>Přihlašovací výzva</h6>
    <div><span class="bold">Struktura požadavku od klienta:</span></div>
    <div class="table-container">
@@ -587,7 +576,7 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     <li>TODO</li>
    </ul>
    <a name="commands-s2s"></a><h3>Spojení server-server</h3>
-   <div>Následující příkazy jsou využívány v komunikaci mezi dvěma serverovými aplikacemi:</div>
+   <div>V této sekci jsou popsány příkazy, které jsou využívány v komunikaci mezi dvěma serverovými aplikacemi:</div>
    <ul>
     <li>TODO: předávání, ověřování protějšího serveru atd.</li>
    </ul>
