@@ -174,9 +174,6 @@ const data = [
         title: 'Odhlášení uživatele',
         link: 'commands-c2s-user-logout'
        }, {
-        title: 'Informace o uživateli',
-        link: 'commands-c2s-user-userinfo'
-       }, {
         title: 'Informace o serveru pro uživatele',
         link: 'commands-c2s-user-serverinfo'
        }

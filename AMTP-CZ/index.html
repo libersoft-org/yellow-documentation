@@ -157,8 +157,9 @@
     <ul>
      <li>Doménová jména mohou obsahovat znaky dle aktuálních standardů pro domény (definované v <a href="https://www.rfc-editor.org/rfc/rfc5890.html" target="_blank">RFC 5890</a>, <a href="https://www.rfc-editor.org/rfc/rfc5891.html" target="_blank">RFC 5891</a>, <a href="https://www.rfc-editor.org/rfc/rfc5892.html" target="_blank">RFC 5892</a>, <a href="https://www.rfc-editor.org/rfc/rfc5893.html" target="_blank">RFC 5893</a>, </li>
     </ul>
-    <li>V rámci <span class="bold">AMTP</span> se již nepoužívá formát zápisu s viditelným jménem, který je známý z původních e-mailových protokolů (např.: "<span class="bold">John Doe &lt;john.doe@domain.tld&gt;</span>"). Informace o uživatelském účtu, jako je např. viditelné jméno, je získáno pomocí příkazu, který poskytuje server jako samostatný dotaz.</li>
+    <li>V rámci <span class="bold">AMTP</span> se již nepoužívá formát zápisu s viditelným jménem, který je známý z původních e-mailových protokolů (např.: "<span class="bold">John Doe &lt;john.doe@domain.tld&gt;</span>").</li>
     <li>Narozdíl od původních e-mailových protokolů, <span class="bold">AMTP</span> nedefinuje, co uživatelský účet reprezentuje (např. poštovní schránku, alias pro přeposílání pošty apod.). To je plně v režii modulů (např. modul pro rychlé zprávy).</li>
+    <li><span class="bold"></span>Uživatelský účet v protokolovém jádru neobsahuje žádné další profilové informace (např. jméno, příjmení, pohlaví, datum narození, fotografie apod.). Tyto informace jsou plně v kompetenci modulů, kde mohou reprezentovat uživatelské profily. Tento přístup dává modulům svobodu v rozhodnutí, zda každý uživatelský účet bude reprezentovat jen jeden a nebo více uživatelských profilů, tzn. přihlášením k jednomu uživatelskému účtu se dostane uživatel ke svým několika profilům). Taktéž tento přístup zajišťuje možnost nezveřejňovat uživatelské účty pod adresou uživatele. </li>
    </ul>
    <a name="security"></a><h2>Zabezpečení</h2>
    <div>Zabezpečení dat je klíčovou součástí moderního komunikačního protokolu, jelikož s rostoucími objemy přenášených dat mezi uživateli, roste i riziko jejich potenciálního zneužití.</div>
@@ -169,11 +170,9 @@
    <a name="security-dkey"></a><h3>Digitální podpis serveru</h3>
    <div><span class="bold">Digitální podpis serveru</span> slouží k ověření, zda server, ke kterému se klient či jiný server připojuje, je opravdu ten, za který se vydává. Toto je bezpečnostní mechanismus, který zabraňuje útokům, jako je např. <a href="https://cs.wikipedia.org/wiki/IP_spoofing" target="_blank">IP spoofing</a>.</div>
    <div>Po nainstalování každého serveru se vygeneruje <span class="bold">soukromý klíč</span> a z něj odvozený <span class="bold">veřejný klíč</span> algoritmem, který podporují ostatní serverové i klientské aplikace. <span class="bold">Soukromý klíč</span> zůstává bezpečně uložen na serveru. <span class="bold">Veřejný klíč</span> společně s identifikací šifry se uloží do <a href="https://cs.wikipedia.org/wiki/Domain_Name_System" target="_blank">DNS</a> do <span class="bold">TXT</span> záznamu <span class="bold">AMTP-PUBKEY</span>.</div>
-   <div>Ihned po navázání spojení vlastního serveru či klienta s protějším serverem, se zašle dotaz protějšímu serveru se žádostí o podepsání náhodně vygenerovaného řetězce naší stranou jeho vlastním <span class="bold">soukromým klíčem</span>. Protější server podepíše tento řetězec svým <span class="bold">soukromým klíčem</span> a odešle ho zpět. Náš klient nebo server odešle následně dotaz do <span class="bold">DNS</span> pro získání <span class="bold">TXT</span> záznamu <span class="bold">ATMP-PUBKEY</span> uvedený k protějšímu serveru a tím získá  jeho <span class="bold">veřejný klíč</span>. Náš klient či server následně ověří zda podepsaný řetezec odpovídá <span class="bold">veřejnému klíči</span> získanému z <span class="bold">DNS</span>. Pokud je klíč platný, nadále komunikujeme s protějším serverem, naopak pokud tímto ověřením protější server neprojde, ukončíme spojení s protějším serverem.</div>
+   <div>Ihned po navázání spojení vlastního serveru či klienta s protějším serverem, se zašle dotaz protějšímu serveru se žádostí o podepsání náhodně vygenerovaného řetězce naší stranou jeho vlastním <span class="bold">soukromým klíčem</span>. Protější server podepíše tento řetězec svým <span class="bold">soukromým klíčem</span> a odešle ho zpět. Náš server nebo klient odešle následně dotaz do <span class="bold">DNS</span> pro získání <span class="bold">TXT</span> záznamu <span class="bold">ATMP-PUBKEY</span> uvedený k protějšímu serveru a tím získá  jeho <span class="bold">veřejný klíč</span>. Náš server či klient následně ověří zda podepsaný řetezec odpovídá <span class="bold">veřejnému klíči</span> získanému z <span class="bold">DNS</span>. Pokud je klíč platný, nadále se komunikuje s protějším serverem, v opačném případě je ukončeno spojení.</div>
+   <div>V případě spojení <span class="">server-server</span> se po ověření protějšího serveru, provede stejné ověření z opačné strany (protější server si ověří náš server).</div>
    <div class="center"><img src="img/AMTP-dkey-CZ.png" alt="Digitální podpis serveru" /></div>
-   <ul>
-    <li>TODO - naše strana se poté také prokáže stejným způsobem (v případě serveru)?</li>
-   </ul>   
    <a name="security-login"></a><h3>Bezpečné přihlašování</h3>
    <div>Proces ověřování uživatelů a správců je navržen tak, aby bylo zajištěno, že citlivé informace, jako je <a href="https://cs.wikipedia.org/wiki/Asymetrick%C3%A1_kryptografie" target="_blank">soukromý klíč</a>, zůstanou omezeny na zařízení uživatele. Toho je dosaženo pomocí asymetrické šifrovací strategie zvané <span class="bold">výzva-odezva</span>, která je popsána následovně:</div>
    <div class="bold">1. Vygenerování klíčů:</div>
@@ -187,17 +186,13 @@
    <div class="bold">3. Ověřování při přihlášení:</div>
    <ul>
     <li>Při ověřování odešle klient serveru žádost o přihlášení spolu se svým uživatelským jménem.</li>
-    <li>V odpovědi pro klienta server vygeneruje náhodný řetězec (doporučuje se délka řetězce alespoň 40 znaků), který je následně zašifrován pomocí <span class="bold">veřejného klíče</span> klienta a poté je takto zašifrovaný odeslán zpět klientovi.</li>
+    <li>V odpovědi pro klienta server vygeneruje náhodný řetězec (doporučuje se délka řetězce alespoň 40 znaků), který je následně zašifrován pomocí <span class="bold">veřejného klíče</span> klienta a poté je takto zašifrovaný odeslán zpět klientovi. Doporučuje se časově omezit platnost zašifrovaného řetězce (dobu platnosti si určí server).</li>
     <li>Po přijetí klient použije svůj <span class="bold">soukromý klíč</span> k rozšifrování přijatého řetězce a odešle rozšifrovaný řetězec zpět na server k ověření.</li>
-    <li>Server porovná rozšifrovaný řetězec s původně vygenerovaným řetězcem. Pokud se shodují, potvrdí server identitu klienta a udělí mu přístup vydáním tokenu relace. Platnost tokenu je v kompetenci implementovaného řešení serverové a klientské aplikace.</li>
+    <li>Server porovná rozšifrovaný řetězec s původně vygenerovaným řetězcem. Pokud se shodují, potvrdí server identitu klienta a udělí mu přístup vydáním tokenu relace. Dobu platnosti tokenu si určuje serverová aplikace.</li>
    </ul>
    <div>Tato metoda ověřování využívá výhody asymetrického šifrování k ochraně uživatelských dat a zajišťuje, že citlivé informace, jako jsou <span class="bold">soukromé klíče</span>, zůstanou chráněny v rámci uživatelských koncových zařízení. Tento přístup nejen zvyšuje bezpečnost, ale je také v souladu s osvědčenými postupy pro bezpečnou komunikaci v moderních aplikacích.</div>
+   <div>Ověření uživatele pomocí soukromého klíče může být rozšířeno i ověřením hesla (nepovinné), které je zasláno při registraci v zahashované formě (šifrovací algoritmus je v kompetenci serverové a klientské aplikace). Tímto se docílí dvoufaktorového ověření.</div>
    <div class="center"><img src="img/AMTP-login-CZ.png" alt="Bezpečné přihlašování" /></div>
-   <ul>
-    <li>TODO: kombinace soukromého klíče s heslem?</li>
-    <li>TODO: řešit nějak časově omezenou platnost tokenu a challenge stringu?</li>
-    <li>TODO: další možnosti ověření: OAuth / social loginy, pouze heslo (hash) atd. - přesunutí přihlášení do separátního modulu?</li>
-   </ul>
    <a name="security-e2e"></a><h3>Koncové šifrování</h3>
    <div>Data zabezpečená <a href="https://cs.wikipedia.org/wiki/Koncov%C3%A9_%C5%A1ifrov%C3%A1n%C3%AD" target="_blank">koncovým šifrováním</a> představují další vrstvu zabezpečení nejen v případě selhání šifrování v rámci zabezpečeného spojení mezi klientem a serverem, ale i k tomu, aby nikdo, kromě koncových uživatelů neměl přístup k datům (např. ani správce serveru, na kterém má uživatel založený uživatelský účet).</div>
    <div><span class="bold">Koncové šifrování</span> není předmětem této dokumentace, jelikož je v kompetenci jednotlivých modulů (např. zprávy, telefonování apod.). I tak je třeba zmínit, že by mělo být implementováno ve veškerých funkcionalitách modulů, kde se přenáší soukromá data mezi koncovými uživateli nebo skupinami uživatelů. Taktéž je doporučeno vytvářet moduly tak, aby klíče byly často obměňovány.</div>
@@ -341,7 +336,7 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>command</td>
       <td>"admin_login_request"</td>
-      <td class="center">❌✔</td>
+      <td class="center">✔</td>
       <td>Název příkazu</td>
      </tr>
      <tr>
@@ -349,6 +344,12 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>řetězec</td>
       <td class="center">✔</td>
       <td>Uživatelské jméno</td>
+     </tr>
+     <tr>
+      <td>password</td>
+      <td>řetězec</td>
+      <td class="center">❌</td>
+      <td>Hash hesla</td>
      </tr>
     </table>
    </div>
@@ -400,7 +401,11 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">2</td>
-      <td>Ověření výzvy se nezdařilo</td>
+      <td>Neplatné uživatelské heslo</td>
+     </tr>
+     <tr>
+      <td class="center">3</td>
+      <td>Ověření klíčem se nezdařilo</td>
      </tr>
     </table>
    </div>
@@ -581,10 +586,6 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-c2s-user-logout"></a><h5>Odhlášení uživatele</h5>
    <ul>
     <li>TODO</li>
-   </ul>
-   <a name="commands-c2s-user-userinfo"></a><h5>Informace o uživateli</h5>
-   <ul>
-    <li>TODO: uživatelé mohou požádat o informace o ostatních uživatelích jako jméno, foto apod.etc.</li>
    </ul>
    <a name="commands-c2s-user-serverinfo"></a><h5>Informace o serveru pro uživatele</h5>
    <ul>

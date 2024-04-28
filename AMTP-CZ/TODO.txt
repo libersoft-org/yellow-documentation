@@ -14,13 +14,14 @@ Obsah:
 - Command: Přidat blokaci vlastních účtů na serveru
 - Command: přidat change public key (je potřeba, nebo už v user_edit?)
 - Zamyslet se nad dalšími commandy do jádra (v ChatGPT)
-- Kombinace soukr. klice s heslem - nejjednoduseji: zaheslovat lokalne na klientovi privatni klic (Jindra zjisti, jestli lze resit elegantneji) - tohle napsat do dokumentace
 - Casova omezenost tokenu a challenge - bude u obojiho (asi) - Jindra popise v commandech
-- Jindra zjisti, jestli vubec potrebujem token nebo pri spojeni webtransportu udelame prihlasovaci kolecko - at sepise alternativy
 - Jindra vymysli, jak presunout overeni uzivatelu do modulu tak, aby tomu modulu bylo duverovano, ze mu muze davat nejaka data o uzivatelich atd. (a urcite se to bude delat, jadro se bude modulu doptavat a duverovat mu kdo je tedy prihlasen a kdo ne)
 - Digitalni podpis serveru - Jindra navrhne alternativu k DNS (notary server) (resp. ne jako alternativu, ale jako dalsi vrstvu zabezpeceni)
-- Digi podpis - todo, co je na konci - ano, potreba popsat (staci napsat, ze stejnym zpusobem se prokaze druha strana v pripade serveru)
 - Prikazy - v odezvach nebude command - vsude smazat
 - Jak ma admin definovat user info (nejak i pro registraci, pridavani uzivatelu atd.)
-- Pridat sekci zpetna kompatibilita - ze neni implementovana do jadra protokolu, ale muze byt implementovana v ramci klientske aplikace nebo serveroveho modulu
+- Pridat nekam tema zpetna kompatibilita (se SMTP) - ze neni implementovana do jadra protokolu, ale muze byt implementovana v ramci klientske aplikace nebo serveroveho modulu
 - U commandu admina vysvetlit, proc jsou admini samostatne a ne klasicky uziv. ucet (ucty maji maji domenu, na zacatku zadna neni, admin ji vytvari), admin ucty a uzivatelske ucty nemaji funkcni prunik (admini nepouzivaji klienta, jen spravuji domeny, uzivatele, dalsi adminy, moduly apod.)... poptat se GPT na dalsi duvody
+- User info - jeho struktura bude v samostatnem modulu - napsat do dokumentace, ze uzivatel klidne muze mit vice profilu (toto vytváří flexibilitu k tomu, aby moduly mohly tvořit více profilů k jedinému uživatelskému účtu - napr. vice video kanalu apod.)
+- tokeny budou + jejich sprava (uzivatel maze sve, admin maze vsech, expirace)
+- admin ma taky tokeny, ty expiruji kratce, takze neni potreba management?
+- další možnosti ověření: OAuth / social loginy, pouze heslo (hash) atd. - přesunutí přihlášení do separátního modulu?
