@@ -56,6 +56,7 @@
    <div>Ačkoliv jsou veřejně dostupné i další otevřené protokoly či platformy (např. <a href="https://cs.wikipedia.org/wiki/Matrix_(protokol)" target="_blank">Matrix</a>, <a href="https://cs.wikipedia.org/wiki/Mastodon_(software)" target="_blank">Mastodon</a>, <a href="https://cs.wikipedia.org/wiki/Diaspora*_(soci%C3%A1ln%C3%AD_s%C3%AD%C5%A5)" target="_blank">Diaspora</a>, <a href="https://en.wikipedia.org/wiki/Nostr" target="_blank">Nostr</a> apod.), které umožňují bezpečnou komunikaci a nabízí decentralizovanou či distribuovanou síť, ke které se může kdokoliv připojit, stále nenabízí některé důležité funkcionality, které <span class="bold">AMTP</span> řeší, jako například modulární koncept nebo podporu nejnovějších komunikačních protokolů pro přenos dat v reálném čase.</div>
    <a name="objectives"></a><h2>Cíle protokolu</h2>
    <div>Cílem vytvoření tohoto protokolu je nahrazení současných e-mailových protokolů <span class="bold">SMTP</span>, <span class="bold">POP</span> a <span class="bold">IMAP</span> pomocí nové, robustní, moderní a bezpečné alternativy, která taktéž přináší snadnou rozšiřitelnost funkcionalit díky modulárnímu konceptu, čímž je zajištěna dlouhodobá udržitelnost. Funkcionalita všech tří výše zmíněných protokolů je v <span class="bold">AMTP</span> plně zachována a navíc značně rozšířena a zmodernizována.</div>
+   <div><span class="bold">Zpětná kompatibilita</span> s původními e-mailovými protokoly není implementována v rámci tohoto protokolu. Lze jí zajistit pomocí modulu, který funguje jako most do <span class="bold">SMTP</span> serveru nebo jako oddělenou software implementaci v rámci klientské aplikace.</div>
    <div class="bold">Zachované koncepty v AMTP z původního SMTP:</div>
    <ul class="spacelist">
     <li><span class="bold">Distribuovaná síť</span>: Typ sítě, ve které je komunikace, zpracování a ukládání dat distribuováno mezi mnoho uzlů, které mohou mít různé vlastníky (poskytovatele služby). Tyto uzly mohou mezi sebou navzájem komunikovat, předávat si data a odlišovat se mezi sebou dle pravidel a sad služeb, které poskytují svým uživatelům. To síť odlišuje jak od centralistického modelu, kde je síť řízena jediným poskytovatelem, tak i od plně decentralizovaného modelu, kde každý koncový uživatel je sám sobě i pro ostatní poskytovatelem s předem nastavenými stejnými pravidly.</li>
@@ -159,7 +160,7 @@
     </ul>
     <li>V rámci <span class="bold">AMTP</span> se již nepoužívá formát zápisu s viditelným jménem, který je známý z původních e-mailových protokolů (např.: "<span class="bold">John Doe &lt;john.doe@domain.tld&gt;</span>").</li>
     <li>Narozdíl od původních e-mailových protokolů, <span class="bold">AMTP</span> nedefinuje, co uživatelský účet reprezentuje (např. poštovní schránku, alias pro přeposílání pošty apod.). To je plně v režii modulů (např. modul pro rychlé zprávy).</li>
-    <li><span class="bold"></span>Uživatelský účet v protokolovém jádru neobsahuje žádné další profilové informace (např. jméno, příjmení, pohlaví, datum narození, fotografie apod.). Tyto informace jsou plně v kompetenci modulů, kde mohou reprezentovat uživatelské profily. Tento přístup dává modulům svobodu v rozhodnutí, zda každý uživatelský účet bude reprezentovat jen jeden a nebo více uživatelských profilů, tzn. přihlášením k jednomu uživatelskému účtu se dostane uživatel ke svým několika profilům). Taktéž tento přístup zajišťuje možnost nezveřejňovat uživatelské účty pod adresou uživatele. </li>
+    <li><span class="bold"></span>Uživatelský účet v protokolovém jádru neobsahuje žádné další profilové informace (např. jméno, příjmení, pohlaví, datum narození, fotografie apod.). Tyto informace jsou plně v kompetenci modulů, kde mohou být reprezentovány v podobě uživatelských profilů. Tento přístup dává modulům svobodu v rozhodnutí, zda každý uživatelský účet bude reprezentovat jen jeden a nebo více uživatelských profilů, tzn. přihlášením k jednomu uživatelskému účtu se dostane uživatel ke svým několika profilům). Taktéž tento přístup zajišťuje možnost nezveřejňovat uživatelské účty pod adresou uživatele.</li>
    </ul>
    <a name="security"></a><h2>Zabezpečení</h2>
    <div>Zabezpečení dat je klíčovou součástí moderního komunikačního protokolu, jelikož s rostoucími objemy přenášených dat mezi uživateli, roste i riziko jejich potenciálního zneužití.</div>
@@ -312,13 +313,13 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_login_request",
  "error": 1,
- "message": "User not found",
+ "message": "User not found"
 }
 </pre>
    <a name="commands-c2s"></a><h3>Klient-server</h3>
    <div>Následující příkazy jsou využívány v komunikaci mezi klientskou a serverovou aplikací:</div>
    <a name="commands-c2s-admin"></a><h4>Správce</h4>
-   <div>Všechny příkazy začínající "<span class="bold">admin_</span>" jsou určeny pouze pro správce. Aby bylo možné provádět tyto příkazy, musí být správce přihlášen. Pokud je přihlášení úspěšné, získá správce token relace, který musí být odeslán v každém správcovském požadavku. Tento token se liší od tokenu uživatele.</div>
+   <div>Všechny příkazy začínající "<span class="bold">admin_</span>" jsou určeny pouze pro správce. Aby bylo možné provádět tyto příkazy (mimo příkazů pro samotné přihlášení), musí být správce přihlášen. Pokud je přihlášení úspěšné, získá správce token relace, který musí být odeslán v každém následném příkazu. Tento token se liší od tokenu uživatele.</div>
    <a name="commands-c2s-admin-login"></a><h5>Přihlášení správce</h5>
    <ul>
     <li>TODO</li>
@@ -361,12 +362,6 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Hodnota</th>
       <th class="center">Vyžadováno</th>
       <th>Popis</th>
-     </tr>
-     <tr>
-      <td>command</td>
-      <td>"admin_login_request"</td>
-      <td class="center">✔</td>
-      <td>Název příkazu</td>
      </tr>
      <tr>
       <td>verification_string</td>
@@ -420,7 +415,6 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "command": "admin_login_request",
  "verification_string": "1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B",
  "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
  "encryption": "rsa"
@@ -438,7 +432,6 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad odezvy:</div>
 <pre>
 {
- "command": "admin_login_verify",
  "admin_token": "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
 }
 </pre>
@@ -481,7 +474,6 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div><span class="bold">Příklad odezvy:</span></div>
 <pre>
 {
- "command": "admin_get_domains",
  "domains": {
   [
    {
@@ -540,7 +532,6 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad odezvy:</div>
 <pre>
 {
- "command": "admin_sysinfo",
  "app_name": "AMTP Server",
  "app_version": "1.00",
  "os_name": "Linux",
@@ -569,7 +560,7 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-user"></a><h4>Uživatel</h4>
-   <div>Všechny příkazy začínající "<span class="bold">user_</span>" jsou určeny pro uživatele. Aby bylo možné provádět tyto příkazy, musí být uživatel přihlášen. Pokud je přihlášení úspěšné, získá uživatel token relace, který musí být odeslán v každém správcovském požadavku. Tento token se liší od tokenu správce.</div>
+   <div>Všechny příkazy začínající "<span class="bold">user_</span>" jsou určeny pro uživatele. Aby bylo možné provádět tyto příkazy, musí být uživatel přihlášen (mimo příkazů pro samotné přihlášení). Pokud je přihlášení úspěšné, získá uživatel token relace, který musí být odeslán v každém správcovském požadavku. Tento token se liší od tokenu správce.</div>
    <a name="commands-c2s-user-login"></a><h5>Přihlášení uživatele</h5>
    <ul>
     <li>TODO</li>
@@ -598,7 +589,7 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-s2s"></a><h3>Spojení server-server</h3>
    <div>Následující příkazy jsou využívány v komunikaci mezi dvěma serverovými aplikacemi:</div>
    <ul>
-    <li>TODO: předávání, ověřování uživatelů atd.</li>
+    <li>TODO: předávání, ověřování protějšího serveru atd.</li>
    </ul>
    <a name="examples"></a><h2>Příklady</h2>
    <ul>

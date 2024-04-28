@@ -8,20 +8,18 @@ Obsah:
 - Projet vše v dokumentaci, kde je TODO a doplnit
 - Zjistit u WebTransportu, na čem vlastně běží (HTTP3 server nebo samostatně?) a jestli má nějaký endpoint a jaký budeme používat (např. "/" nebo "/amtp/")
 - Globální blokace - Jak bude fungovat (tzn. uživ. účty, konkrétní servery, domény kterým prostě vypnu spojení, aniž bych cokoliv předával modulům)
-- Uživatelské účty - Jak k nim vytvořit flexibilní user info (aby každý server si definoval, co ke každému uživateli chce definovat za položky (jméno, příjmení, pohlaví, datum narození, telefon, ...) + fotku / video / gif)
 - Moduly na serveru mohou být zavedeny ve více verzích najednou. Např. modul zprávy ve verzi 1.0 a 2.0 (kvůli zpětné kompatibilitě s klientskými moduly) - Bude mít každá verze nějaký hash / jiný identifikátor (např. číslo ID), který bude uveden v commandu a nebo jen název modulu + verze?
-- Má smysl místo jednoho TXT záznamu používat SRV? (zjistit, zda vše potřebné SRV umí a jestli to fakt má smysl, když můžeme nahradit několik SRV záznamů jedním TXT)
-- Command: Přidat blokaci vlastních účtů na serveru
+- Přidat blokaci vlastních účtů na serveru (stačí jen dát bool - aktivní a nebo nějaká složitější struktura - kdo zablokoval, kdy, proč?)
 - Command: přidat change public key (je potřeba, nebo už v user_edit?)
+- Časová omezenost tokenu a challenge - bude u obojího (asi)
+- Veřejná registrace - přidat, může hodit error, že není podporována
+- Uživatelské tokeny + jejich sprava (uživatel maže své, admin maže všech, expirace)
+- Admin ma také tokeny, ty expirují krátce, takže není potřeba management?
+- Informace o serveru pro uživatele - má se objevit i okamžitě po spojení? Kdyžtak to někam napsat
+- Do struktur všech příkazů přidat parametr "token" (kromě přihlašování)
+- Admin příkazy pro management modulů
 - Zamyslet se nad dalšími commandy do jádra (v ChatGPT)
-- Casova omezenost tokenu a challenge - bude u obojiho (asi) - Jindra popise v commandech
-- Jindra vymysli, jak presunout overeni uzivatelu do modulu tak, aby tomu modulu bylo duverovano, ze mu muze davat nejaka data o uzivatelich atd. (a urcite se to bude delat, jadro se bude modulu doptavat a duverovat mu kdo je tedy prihlasen a kdo ne)
-- Digitalni podpis serveru - Jindra navrhne alternativu k DNS (notary server) (resp. ne jako alternativu, ale jako dalsi vrstvu zabezpeceni)
-- Prikazy - v odezvach nebude command - vsude smazat
-- Jak ma admin definovat user info (nejak i pro registraci, pridavani uzivatelu atd.)
-- Pridat nekam tema zpetna kompatibilita (se SMTP) - ze neni implementovana do jadra protokolu, ale muze byt implementovana v ramci klientske aplikace nebo serveroveho modulu
-- U commandu admina vysvetlit, proc jsou admini samostatne a ne klasicky uziv. ucet (ucty maji maji domenu, na zacatku zadna neni, admin ji vytvari), admin ucty a uzivatelske ucty nemaji funkcni prunik (admini nepouzivaji klienta, jen spravuji domeny, uzivatele, dalsi adminy, moduly apod.)... poptat se GPT na dalsi duvody
-- User info - jeho struktura bude v samostatnem modulu - napsat do dokumentace, ze uzivatel klidne muze mit vice profilu (toto vytváří flexibilitu k tomu, aby moduly mohly tvořit více profilů k jedinému uživatelskému účtu - napr. vice video kanalu apod.)
-- tokeny budou + jejich sprava (uzivatel maze sve, admin maze vsech, expirace)
-- admin ma taky tokeny, ty expiruji kratce, takze neni potreba management?
-- další možnosti ověření: OAuth / social loginy, pouze heslo (hash) atd. - přesunutí přihlášení do separátního modulu?
+
+Návrh 2:
+- Přesunutí uživatelských účtů / přihlášení do modulu - přidá další možnosti ověření: OAuth / social loginy atd.
+- Digitální podpis serveru - navrhnout alternativu k DNS - něco jako notary server na Matrix protokolu (resp. ne jako alternativu, ale jako další vrstvu zabezpečení)
