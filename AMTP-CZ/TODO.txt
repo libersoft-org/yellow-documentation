@@ -1,26 +1,27 @@
 Design stranky:
-- sipku presunout vlevo od textu a predelat ji na plusko / minusko
-- doresit itemy v TOC menu se sipkou maji rozdilnou velikost oproti tem bez sipky
-- kdyz je TOC menu na desktop verzi zasunute, tak v mobilni vysunute a obracene - chtelo by to predelat u mobilni verze, aby se nevysouvalo, kdyz na desktop je zasunute
-- kdyz je menu vysunute, tak misto hamburgeru zobrazovat krizek
+- Šipku přesunout vlevo od textu a předělat jí na plusko / mínusko
+- Dořešit itemy v TOC menu se šipkou mají rozdílnou velikost oproti těm bez šipky
+- Když je TOC menu na desktop verzi zasunuté, tak v mobilní je vysunuté a obráceně - chtělo by to předělat u mobilní verze, aby se nevysouvalo, když na desktopu je zasunuté
+- Když je menu vysunuté, tak místo hamburgeru zobrazovat křížek
 
 Obsah:
 - Projet vše v dokumentaci, kde je TODO a doplnit
 - Zjistit u WebTransportu, na čem vlastně běží (HTTP3 server nebo samostatně?) a jestli má nějaký endpoint a jaký budeme používat (např. "/" nebo "/amtp/")
+- Veřejná registrace - přidat, může hodit error, že není podporována
+- Command: přidat u správce i uživatele - change public key, change password
+- Správa adminovských i uživatelských tokenů (uživatel maže své, admin maže všech, zobrazení expirace, nějaké identifikace zařízení apod.)
+- Zamyslet se nad dalšími commandy do jádra (v ChatGPT)
+
+K probrání:
 - Globální blokace - Jak bude fungovat (tzn. uživ. účty, konkrétní servery, domény kterým prostě vypnu spojení, aniž bych cokoliv předával modulům)
 - Moduly na serveru mohou být zavedeny ve více verzích najednou. Např. modul zprávy ve verzi 1.0 a 2.0 (kvůli zpětné kompatibilitě s klientskými moduly) - Bude mít každá verze nějaký hash / jiný identifikátor (např. číslo ID), který bude uveden v commandu a nebo jen název modulu + verze?
 - Přidat blokaci vlastních účtů na serveru (stačí jen dát bool - aktivní a nebo nějaká složitější struktura - kdo zablokoval, kdy, proč?)
-- Command: přidat change public key (je potřeba, nebo už v user_edit?)
-- Časová omezenost tokenu a challenge - bude u obojího (asi)
-- Veřejná registrace - přidat, může hodit error, že není podporována
-- Uživatelské tokeny + jejich sprava (uživatel maže své, admin maže všech, expirace)
-- Admin má také tokeny, ty expirují krátce, takže není potřeba management?
+- Admin má také tokeny, ty expirují krátce (cca 15 minut neaktivity), takže není potřeba management?
 - Informace o serveru pro uživatele - má se objevit i okamžitě po spojení? Kdyžtak to někam napsat
-- Do struktur všech příkazů přidat parametr "token" (kromě přihlašování)
+- Do struktur všech příkazů přidat parametr "token" (kromě přihlašování) - je potřeba?
 - Dá se použít heslo jako privátní klíč a z něj vytvořit veřejný? Aby se heslo nemuselo (byť zahashované) posílat po síti?
-- Zamyslet se nad dalšími commandy do jádra (v ChatGPT)
 
-Návrh 2:
+Návrh verze 2:
 - Přesunutí uživatelských účtů / přihlášení do modulu - přidá další možnosti ověření: OAuth / social loginy atd.
 - Digitální podpis serveru - navrhnout alternativu k DNS - něco jako notary server na Matrix protokolu (resp. ne jako alternativu, ale jako další vrstvu zabezpečení)
 - Admin příkazy pro management modulů (?)
