@@ -14,12 +14,13 @@ Obsah:
 - Časová omezenost tokenu a challenge - bude u obojího (asi)
 - Veřejná registrace - přidat, může hodit error, že není podporována
 - Uživatelské tokeny + jejich sprava (uživatel maže své, admin maže všech, expirace)
-- Admin ma také tokeny, ty expirují krátce, takže není potřeba management?
+- Admin má také tokeny, ty expirují krátce, takže není potřeba management?
 - Informace o serveru pro uživatele - má se objevit i okamžitě po spojení? Kdyžtak to někam napsat
 - Do struktur všech příkazů přidat parametr "token" (kromě přihlašování)
-- Admin příkazy pro management modulů
+- Dá se použít heslo jako privátní klíč a z něj vytvořit veřejný? Aby se heslo nemuselo (byť zahashované) posílat po síti?
 - Zamyslet se nad dalšími commandy do jádra (v ChatGPT)
 
 Návrh 2:
 - Přesunutí uživatelských účtů / přihlášení do modulu - přidá další možnosti ověření: OAuth / social loginy atd.
 - Digitální podpis serveru - navrhnout alternativu k DNS - něco jako notary server na Matrix protokolu (resp. ne jako alternativu, ale jako další vrstvu zabezpečení)
+- Admin příkazy pro management modulů (?)

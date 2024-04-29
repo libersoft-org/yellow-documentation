@@ -73,6 +73,12 @@ const data = [
   link: 'commands',
   sub: [
    {
+    title: 'Struktura chyb',
+    link: 'commands-errors',
+   }, {
+    title: 'Neznámý příkaz',
+    link: 'commands-unknown',
+   }, {
     title: 'Klient-server',
     link: 'commands-c2s',
     sub: [
