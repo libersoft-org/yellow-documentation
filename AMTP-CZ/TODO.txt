@@ -3,10 +3,12 @@ Design stranky:
 - Šipku přesunout vlevo od textu a předělat jí na plusko / mínusko
 - Dořešit itemy v TOC menu se šipkou mají rozdílnou velikost oproti těm bez šipky
 - Když je TOC menu na desktop verzi zasunuté, tak v mobilní je vysunuté a obráceně - chtělo by to předělat u mobilní verze, aby se nevysouvalo, když na desktopu je zasunuté
+- Automatický highlight sekce v TOC, na kterou je aktuálně doscrollováno (jinou barvou, než aktivní - zakliknutá sekce)
+- Po refreshi stránky, pokud je v adrese #sekce - tak jí zvýraznit
 
 Obsah:
 - Sekce "Spojení" - zjistit u WebTransportu, na čem vlastně běží (HTTP3 server nebo samostatně?) a jestli má nějaký endpoint a jaký budeme používat (např. "/" nebo "/amtp/")
-- Dopsat všechny commandy dokumentaci, kde je TODO
+- Dopsat všechny commandy v dokumentaci, kde je TODO
 - Command: přidat u správce i uživatele - change public key, change password - obojí vyžaduje zadání public key (+ hesla, pokud je nastaveno) i přesto, že má uživatel platný token
 - Správa adminovských i uživatelských tokenů (uživatel maže své, admin maže všech, zobrazení expirace, nějaké identifikace zařízení (+ možnost nastavení názvu zařízení) apod.)
 - Uživatelské / správcovské heslo použít jako privátní klíč (a z něj vytvořit veřejný), vytvořit stejný typ challenge-response přihlášení, jako je u privátního klíče, aby se heslo nemuselo (byť v zahashované podobě) posílat po síti
