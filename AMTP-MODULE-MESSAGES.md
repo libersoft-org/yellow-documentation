@@ -1,6 +1,6 @@
 ### Message <a name="u2s-messages"></a>
 
-These are just some notes, the documentation is not yet available.
+**NOTICE:** This is not a documentation, it's just some notes.
 
 - Users can send messages to other users within the same server or to users on other servers as well.
 - Message can contain the text or file
