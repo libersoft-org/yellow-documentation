@@ -1,22 +1,22 @@
 # Yellow - frequently asked questions
 
-## What is ODTP?
+## What is AMTP?
 
-**Open Data Transfer Protocol (ODTP)** is the application layer network protocol that uses WebTransport + JSON for data transfer.
+**Advanced Mail Transfer Protocol (AMTP)** is a new generation of e-mail network protocol that surpasses the limitations of traditional protocols such as [**SMTP**](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol), [**POP**](https://en.wikipedia.org/wiki/Post_Office_Protocol), and [**IMAP**](https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol) by utilizing new technologies and a modular concept. It fully replaces these protocols with its functionality and even significantly expands their usability thanks to its modular design. It also uses more modern, secure methods of real-time data transmission.
 
-## What is NEMP?
+## What is DMTP?
 
-**The New E-Mail Protocol (NEMP)** is the new generation of e-mail protocol. It replaces the old e-mail protocols (SMTP, IMAP, POP3) and just describes the user's identity, not the data they are processing (messages, contacts etc.).
+**Decentralized Mail Transfer Protocol (DMTP)** is the upcoming decentralized, serverless e-mail protocol.
 
 ## What is Yellow?
 
-**Yellow** is a very innovative decentralized, secure, modulable and open source instant messaging and social media software. It is the implementation of **ODTP** and **NEMP** protocols.
+**Yellow** is a very innovative decentralized, secure, modulable and open source instant messaging and social media software. It is the implementation of **AMTP** and **DMTP** protocols.
 
 ## Why is this software named "Yellow"?
 
 **Yellow** is the color of cheerfulness, playfulness, warmth, energy and abundance. At the same time, it is the color on the Liberland and anarcho-capitalist flags. Furthermore, "Yellow" sounds like "Hello", which is symbolic for instant messaging (initial greeting).
 
-## Why is NEMP using conversations instead of folders?
+## Why is AMTP using conversations instead of folders?
 
 Folders system (Inbox, Sent etc.) is very obsolete concept of message storing that was created before proper e-mail client software even existed. The original e-mail worked in file system structure where directories had files had roles of e-mail folders and messages. This concept was adopted in all e-mail clients that were released later. Storing the e-mails in folders is very impractical solution, because if you search for message history, you have to switch between folders and search the content of each message. On the other hand conversations resolve this problem and make history search very fast, clear and easy. You don't have to copy the history of conversation in every single message so it saves disk space on servers.
 
@@ -24,7 +24,7 @@ Custom folders in classic e-mail clients had some advantages and are present in 
 
 ## Is Yellow Client backward compatible with classic e-mail protocols (SMTP, IMAP, POP3)?
 
-Right now it is not backward compatible yet, but this feature will be added in future to Yellow Client.
+Right now it is not backward compatible yet, but this feature can be added as a module in Yellow Client.
 
 ## Why is decentralization and distribution important?
 

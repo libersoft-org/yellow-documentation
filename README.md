@@ -15,8 +15,8 @@ If you just want to get your free Yellow account hosted on our server, please na
   - **English version** - in **DMTP-EN** directory run **DMTP-EN.md** (not a documentation, just some notes)
   - **Czech version** - not yet available
 - **Modules**:
-  - [**Messages**](./MODULE-MESSAGES.md)
-  - [**Contacts**](./MODULE-CONTACTS.md)
+  - [**Messages**](./AMTP-MODULE-MESSAGES.md)
+  - [**Contacts**](./AMTP-MODULE-CONTACTS.md)
 - [**Frequently asked questions**](./FAQ.md)
 - [**License**](./LICENSE)
 
