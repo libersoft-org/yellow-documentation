@@ -136,28 +136,28 @@
    <div>Následující obrázek nastiňuje zjednodušený příklad toho, jak může vypadat modulární architektura serverové aplikace:</div>
    <div class="center"><img src="img/AMTP-server-CZ.png" alt="Architektura serveru" /></div>
    <a name="identity"></a><h2>Identita uživatele</h2>
-   <div>Každý uživatelský účet v rámci AMTP je identifikován adresou, jejíž formát vychází ze standardu známého z e-mailových adres, s několika odlišnostmi a je definován následovně:</div>
-   <ul>
-    <li>Adresa se sestává z <span class="bold">lokální</span> a <span class="bold">doménové</span> části. Tyto části jsou odděleny znakem "<span class="bold">@</span>" (zavináč). Tedy ve tvaru: <span class="bold">uživatel@doména</span></li>
-    <li><span class="bold">Lokální část</span> určuje unikátní uživatelské jméno v rámci každé domény.</li>
-    <li><span class="bold">Doménová část</span> určuje doménu, ke které má užívací právo provozovatel serveru (každý AMTP server může spravovat libovolné množství domén).</li>
-    <li><span class="bold">Povolené znaky v lokální části:</span></li>
+   <div>Každý uživatelský účet v rámci <span class="bold">AMTP</span> je identifikován adresou, jejíž formát vychází původních e-mailových standardů, s několika odlišnostmi a je definován následovně:</div>
+   <ul class="spacelist">
+    <li><span class="bold">Adresa</span> se sestává z <span class="bold">lokální</span> a <span class="bold">doménové</span> části. Tyto části jsou odděleny znakem "<span class="bold">@</span>" (zavináč). Tedy ve tvaru: <span class="bold">uživatel@doména</span></li>
     <ul>
-     <li>Malá písmena anglické abecedy (a-z) - na jakékoliv pozici</li>
-     <li>Číslice (0-9) - na jakékoliv pozici</li>
-     <li>Speciální znaky - jsou povoleny následující znaky: tečka (.), pomlčka (-) a podtržítko (_). Tyto znaky nesmějí být použity na začátku ani na konci lokální části (např. john-@domain.tld) a nesmí se dva nebo více speciálních znaků objevit za sebou v jakékoliv kombinaci (např. john.-doe@domain.tld).</li>
-     <li>Velká písmena anglické abecedy jsou tolerována a automaticky převáděna na malá písmena.</li>
+     <li>
+      <span class="bold">Lokální část</span> určuje unikátní uživatelské jméno v rámci každé domény a obsahuje následující povolené znaky:</li>
+      <ul>
+       <li><span class="bold">Malá písmena</span> - (a-z) - pouze anglické abecedy  - na jakékoliv pozici</li>
+       <li><span class="bold">Číslice</span> - (0-9) - na jakékoliv pozici</li>
+       <li><span class="bold">Speciální znaky</span> - tečka (.), pomlčka (-) a podtržítko (_) - tyto znaky nesmějí být použity na začátku ani na konci lokální části (tedy nikoliv např. <span class="bold">john-@domain.tld</span>) a nesmí se dva nebo více speciálních znaků objevit za sebou v jakékoliv kombinaci (tedy nikoliv např. <span class="bold">john.-doe@domain.tld</span>).</li>
+       <li>Velká písmena anglické abecedy jsou tolerována a automaticky převáděna na malá písmena.</li>
+      </ul>
+     <li><span class="bold">Doménová část</span> určuje doménu, ke které má užívací právo provozovatel serveru (každý AMTP server může spravovat libovolné množství domén). Doménová jména mohou obsahovat znaky dle aktuálních standardů pro domény (definované v <a href="https://www.rfc-editor.org/rfc/rfc5890.html" target="_blank">RFC 5890</a>, <a href="https://www.rfc-editor.org/rfc/rfc5891.html" target="_blank">RFC 5891</a>, <a href="https://www.rfc-editor.org/rfc/rfc5892.html" target="_blank">RFC 5892</a> a <a href="https://www.rfc-editor.org/rfc/rfc5893.html" target="_blank">RFC 5893</a>.</li>
     </ul>
-    <li><span class="bold">Povolené znaky v doménové části:</span></li>
-    <ul>
-     <li>Doménová jména mohou obsahovat znaky dle aktuálních standardů pro domény (definované v <a href="https://www.rfc-editor.org/rfc/rfc5890.html" target="_blank">RFC 5890</a>, <a href="https://www.rfc-editor.org/rfc/rfc5891.html" target="_blank">RFC 5891</a>, <a href="https://www.rfc-editor.org/rfc/rfc5892.html" target="_blank">RFC 5892</a>, <a href="https://www.rfc-editor.org/rfc/rfc5893.html" target="_blank">RFC 5893</a>, </li>
-    </ul>
+    
+    
     <li>V rámci <span class="bold">AMTP</span> se již nepoužívá formát zápisu s viditelným jménem, který je známý z původních e-mailových protokolů (např.: "<span class="bold">John Doe &lt;john.doe@domain.tld&gt;</span>").</li>
     <li>Narozdíl od původních e-mailových protokolů, <span class="bold">AMTP</span> nedefinuje, co uživatelský účet reprezentuje (např. poštovní schránku, alias pro přeposílání pošty apod.). To je plně v režii modulů (např. modul pro rychlé zprávy).</li>
     <li><span class="bold"></span>Uživatelský účet v protokolovém jádru neobsahuje žádné další profilové informace (např. jméno, příjmení, pohlaví, datum narození, fotografie apod.). Tyto informace jsou plně v kompetenci modulů, kde mohou být reprezentovány v podobě uživatelských profilů. Tento přístup dává modulům svobodu v rozhodnutí, zda každý uživatelský účet bude reprezentovat jen jeden a nebo více uživatelských profilů, tzn. přihlášením k jednomu uživatelskému účtu se dostane uživatel ke svým několika profilům). Taktéž tento přístup zajišťuje možnost nezveřejňovat uživatelské účty pod adresou uživatele.</li>
    </ul>
    <a name="security"></a><h2>Zabezpečení</h2>
-   <div>Zabezpečení dat je klíčovou součástí moderního komunikačního protokolu, jelikož s rostoucími objemy přenášených dat mezi uživateli, roste i riziko jejich potenciálního zneužití.</div>
+   <div><span class="bold">Zabezpečení dat</span> je klíčovou součástí moderního komunikačního protokolu, jelikož s rostoucími objemy přenášených dat mezi uživateli, roste i riziko jejich potenciálního zneužití.</div>
    <div><span class="bold">AMTP</span> je navržen s důrazem na komplexní zabezpečení a to na několika úrovních, které jsou popsány v této sekci. Další úrovně zabezpečení mohou být doplněny v jednotlivých modulech.</div>
    <a name="security-transfer"></a><h3>Šifrovaný přenos dat</h3>
    <div>Šifrovaný přenost dat v je řešen v <span class="bold">AMTP</span> v souvislosti s integrací standardu <span class="bold">WebTransport</span>, který využívá protokol <a href="https://cs.wikipedia.org/wiki/QUIC" target="_blank">QUIC</a>, který integruje šifrování na úrovni transportní vrstvy. Všechna data přenášená přes <span class="bold">WebTransport</span> spojení jsou šifrována pomocí <a href="https://cs.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS</a>. Toto zahrnuje šifrování všech přenášených dat, vč. hlaviček a metadat, což minimalizuje riziko úniku citlivých informací a zároveň zajišťuje integritu dat tak, aby bylo zabráněno jejich modifikaci během přenosu.</div>
@@ -280,7 +280,7 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div>Nejprve se otevře stream, poté probíhá obousměrná komunikace pomocí příkazů strukturovaných ve formátu <span class="bold">BSON</span> a nakonec, jakmile již není potřeba mít stream otevřený, stream se uzavře jednou či druhou stranou. Více streamů v rámci jednoho spojení může běžet souběžně.</div>
    <a name="commands-errors"></a><h3>Chyby</h3>
    <div>V této sekci je popsána struktura obecných chyb, chyb jádra a modulů.</div>
-   <a name="commands-errors-general"></a><h4>Obecné chyby</h4>
+   <a name="commands-errors-general"></a><h4>Obecné chyby jádra</h4>
    <div>Následující chyby nejsou nastávají nikoliv jako přímé odpovědi příkazů, ale při obecných selháních.</div>
    <div class="bold">Chybové stavy:</div>
    <div class="table-container">
