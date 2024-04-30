@@ -1,28 +1,27 @@
 Design stranky:
+- Když je menu vysunuté, tak místo hamburgeru zobrazovat křížek
 - Šipku přesunout vlevo od textu a předělat jí na plusko / mínusko
 - Dořešit itemy v TOC menu se šipkou mají rozdílnou velikost oproti těm bez šipky
 - Když je TOC menu na desktop verzi zasunuté, tak v mobilní je vysunuté a obráceně - chtělo by to předělat u mobilní verze, aby se nevysouvalo, když na desktopu je zasunuté
-- Když je menu vysunuté, tak místo hamburgeru zobrazovat křížek
 
 Obsah:
-- Projet vše v dokumentaci, kde je TODO a doplnit
-- Zjistit u WebTransportu, na čem vlastně běží (HTTP3 server nebo samostatně?) a jestli má nějaký endpoint a jaký budeme používat (např. "/" nebo "/amtp/")
-- Veřejná registrace - přidat, může hodit error, že není podporována
-- Command: přidat u správce i uživatele - change public key, change password
-- Správa adminovských i uživatelských tokenů (uživatel maže své, admin maže všech, zobrazení expirace, nějaké identifikace zařízení apod.)
+- Sekce "Spojení" - zjistit u WebTransportu, na čem vlastně běží (HTTP3 server nebo samostatně?) a jestli má nějaký endpoint a jaký budeme používat (např. "/" nebo "/amtp/")
+- Dopsat všechny commandy dokumentaci, kde je TODO
+- Command: přidat u správce i uživatele - change public key, change password - obojí vyžaduje zadání public key (+ hesla, pokud je nastaveno) i přesto, že má uživatel platný token
+- Správa adminovských i uživatelských tokenů (uživatel maže své, admin maže všech, zobrazení expirace, nějaké identifikace zařízení (+ možnost nastavení názvu zařízení) apod.)
+- Uživatelské / správcovské heslo použít jako privátní klíč (a z něj vytvořit veřejný), vytvořit stejný typ challenge-response přihlášení, jako je u privátního klíče, aby se heslo nemuselo (byť v zahashované podobě) posílat po síti
+- Informace o serveru pro uživatele (je v samostatném příkazu) - má se objevit i okamžitě po spojení - to napsat do sekce "Spojení"
+- Moduly na serveru mohou být zavedeny ve více verzích najednou. Např. modul zprávy ve verzi 1.0 a 2.0 (kvůli zpětné kompatibilitě s klientskými moduly) - popsat v příkazech modulů
+- Přidat management spravcovských tokenů i pro správce (ty jeho vlastní i ostatních správců?)
+- Globální blokace z cizích serverů - na konkrétní servery, domény a konkrétní uživ. účty (user@domena) - okamžité odpojení bez předávání modulům
 - Zamyslet se nad dalšími commandy do jádra
 
 K probrání:
-- Globální blokace - Jak bude fungovat (tzn. uživ. účty, konkrétní servery, domény kterým prostě vypnu spojení, aniž bych cokoliv předával modulům)
-- Moduly na serveru mohou být zavedeny ve více verzích najednou. Např. modul zprávy ve verzi 1.0 a 2.0 (kvůli zpětné kompatibilitě s klientskými moduly) - Bude mít každá verze nějaký hash / jiný identifikátor (např. číslo ID), který bude uveden v commandu a nebo jen název modulu + verze?
 - Přidat blokaci vlastních účtů na serveru (stačí jen dát bool - aktivní a nebo nějaká složitější struktura - kdo zablokoval, kdy, proč?)
-- Admin má také tokeny, ty expirují krátce (cca 15 minut neaktivity), takže není potřeba management?
-- Informace o serveru pro uživatele - má se objevit i okamžitě po spojení? Kdyžtak to někam napsat
-- Do struktur všech příkazů přidat parametr "token" (kromě přihlašování) - je potřeba?
-- Dá se použít heslo jako privátní klíč a z něj vytvořit veřejný? Aby se heslo nemuselo (byť zahashované) posílat po síti?
-- Admin příkazy pro management logů - zobrazit, smazat konkrétní, smazat vše,... (?)
+- Do struktur všech příkazů přidat parametr "token" (kromě přihlašování) - popsat někam obecně, aby se všude nemuselo zbytečně uvádět?
+- Pro obměňování tokenů relace (uživatel i admin) - zjistit, jestli používat 2 tokeny nebo jestli bude stačit jeden a to popsat
 
 Návrh verze 2:
 - Přesunutí uživatelských účtů / přihlášení do modulu - přidá další možnosti ověření: OAuth / social loginy atd.
 - Digitální podpis serveru - navrhnout alternativu k DNS - něco jako notary server na Matrix protokolu (resp. ne jako alternativu, ale jako další vrstvu zabezpečení)
-- Admin příkazy pro management modulů (?)
+- Admin příkazy pro management modulů a logů

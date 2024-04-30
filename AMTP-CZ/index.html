@@ -276,7 +276,53 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    </ul>
    <a name="commands"></a><h2>Příkazy</h2>
    <div>Příkazy jsou zasílány přes <span class="bold">WebTransport</span> pomocí obousměrného streamu. Nejprve se otevře stream, poté probíhá obousměrná komunikace pomocí příkazů strukturovaných ve formátu <span class="bold">BSON</span> a nakonec, jakmile již není potřeba mít stream otevřený, stream se uzavře jednou či druhou stranou. Více streamů v rámci jednoho spojení může běžet souběžně.</div>
-   <a name="commands-errors"></a><h3>Struktura chyb</h3>
+   <a name="commands-errors"></a><h3>Chyby</h3>
+   <div>V této sekci je popsána struktura obecných chyb, chyb jádra a modulů.</div>
+   <a name="commands-errors-general"></a><h4>Obecné chyby</h4>
+   <div>Následující chyby nejsou nastávají nikoliv jako přímé odpovědi příkazů, ale při obecných selháních.</div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">900</td>
+      <td>Unknown command</td>
+      <td>Server obdržel od druhé strany nerozpoznaný příkaz</td>
+     </tr>
+     <tr>
+      <td class="center">901</td>
+      <td>Admin's token is missing</td>
+      <td>Správce v příkazu neposkytl token relace</td>
+     </tr>
+     <tr>
+      <td class="center">902</td>
+      <td>Admin's token is invalid</td>
+      <td>Správce poskytl neplatný token relace</td>
+     </tr>
+     <tr>
+      <td class="center">903</td>
+      <td>User's token is missing</td>
+      <td>Uživatel v příkazu neposkytl token relace</td>
+     </tr>
+     <tr>
+      <td class="center">904</td>
+      <td>User's token is invalid</td>
+      <td>Uživatel poskytl neplatný token relace</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad obecné chyby:</div>
+<pre>
+{
+ "error": 900,
+ "message": "Unknown command"
+}
+</pre>
+   <a name="commands-errors-commands"></a><h4>Chyby příkazů jádra</h4>
    <div>Pokud příkaz vrátí chybu, je strukturována následovně:</div>
    <div class="bold">Struktura chyby (z jádra, nikoliv z modulu):</div>
    <div class="table-container">
@@ -308,14 +354,8 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "message": "User not found"
 }
 </pre>
-   <a name="commands-unknown"></a><h3>Neznámý příkaz</h3>
-   <div>Pokud příkaz není serverem rozpoznán, vrátí následující chybu:</div>
-<pre>
-{
- "error": 1,
- "message": "Unknown command"
-}
-</pre>
+   <a name="commands-errors-modules"></a><h4>Chyby příkazů modulů</h4>
+   <div>Chyby generované moduly si definuje modul sám dle svých potřeb. Doporučuje se používat stejnou strukturu jako používá jádro pro lepší přehlednost.</div>
    <a name="commands-c2s"></a><h3>Klient-server</h3>
    <div>V této sekci jsou popsány příkazy, které jsou využívány v komunikaci mezi klientskou a serverovou aplikací:</div>
    <a name="commands-c2s-admin"></a><h4>Správce</h4>
@@ -562,6 +602,12 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
    <a name="commands-c2s-user"></a><h4>Uživatel</h4>
    <div>Všechny příkazy začínající "<span class="bold">user_</span>" jsou určeny pro uživatele. Aby bylo možné provádět tyto příkazy, musí být uživatel přihlášen (mimo příkazů pro samotné přihlášení). Pokud je přihlášení úspěšné, získá uživatel token relace, který musí být odeslán v každém uživatelském požadavku. Tento token se liší od tokenu správce.</div>
+   <a name="commands-c2s-user-registration"></a><h5>Registrace uživatele</h5>
+   <div>Možnost registrace účtu uživatelem musí být povolena na serveru</div>
+   <ul>
+    <li>TODO</li>
+    <li>TODO - popsat chybu, kdy není registrace povolena na serveru</li>
+   </ul>
    <a name="commands-c2s-user-login"></a><h5>Přihlášení uživatele</h5>
    <div>Přihlášení uživatele probíhá ve dvou krocích - přihlašovací výzvě a přihlašovací odezvě. V přihlašovací výzvě zašle klient své přihlašovací jméno ve tvaru <span class="bold">uzivatel@domena</span> a pokud používá mimo privátního klíče i heslo, tak i hash tohoto hesla (nepovinné). Server ověří heslo (pokud uživatel používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem uživatele. Tento zašifrovaný řetězec je následně předán uživateli. Uživatel řetězec rozšifruje pomocí svého soukromého klíče a zašle ho zpět v rámci přihlašovací odezvy. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetětec od klienta odpovídá původně vygenerovanému, pak uživatele přihlásí a udělí mu token relace. V opačném případě vrátí chybu.</div>
    <a name="commands-c2s-user-login-challenge"></a><h5>Přihlašovací výzva</h5>

@@ -73,11 +73,20 @@ const data = [
   link: 'commands',
   sub: [
    {
-    title: 'Struktura chyb',
+    title: 'Chyby',
     link: 'commands-errors',
-   }, {
-    title: 'Neznámý příkaz',
-    link: 'commands-unknown',
+    sub: [
+     {
+      title: 'Obecné chyby jádra',
+      link: 'commands-errors-general',
+     }, {
+      title: 'Chyby příkazů jádra',
+      link: 'commands-errors-commands',
+     }, {
+      title: 'Chyby příkazů modulů',
+      link: 'commands-errors-modules',
+     }
+    ]
    }, {
     title: 'Klient-server',
     link: 'commands-c2s',
@@ -165,6 +174,9 @@ const data = [
       link: 'commands-c2s-user',
       sub: [
        {
+        title: 'Registrace uživatele',
+        link: 'commands-c2s-user-registration'
+       }, {
         title: 'Přihlášení uživatele',
         link: 'commands-c2s-user-login',
         sub: [
