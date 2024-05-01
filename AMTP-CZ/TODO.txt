@@ -9,6 +9,8 @@ Design stranky:
 K domyšlení:
 - Do struktur všech příkazů přidat parametr "token" (kromě přihlašování, user info apod.) - popsat někam obecně, aby se všude nemuselo zbytečně uvádět?
 - Pro obměňování tokenů relace (uživatel i admin) - zjistit, jestli používat 2 tokeny nebo jestli bude stačit jeden a to popsat
+- Admin bude moct změnit svůj pubkey + heslo nebo i ostatních adminů - v případě, že mu to práva umožňují - tzn. popsat nějaký ACL pro adminy
+- Admin bude moct managovat (mazat, menit nazvy apod.) tokenů i ostatních adminů, pokud mu to ACL dovolí
 
 Dopsání obsahu:
 - Sekce "Spojení" - zjistit u WebTransportu, na čem vlastně běží (HTTP3 server nebo samostatně?) a jestli má nějaký endpoint a jaký budeme používat (např. "/" nebo "/amtp/")
@@ -19,8 +21,6 @@ Dopsání obsahu:
 - Globální blokace z cizích serverů - na konkrétní servery, domény a konkrétní uživ. účty (user@domena) - okamžité odpojení bez předávání modulům
 - Přidat blokaci vlastních účtů na serveru - kdo zablokoval, kdy, proč atd.
 - Admin bude moct změnit pubkey + heslo běžných uživatelů
-- Admin bude moct změnit svůj pubkey + heslo nebo i ostatních adminů - v případě, že mu to práva umožňují - tzn. popsat nějaký ACL pro adminy
-- Admin bude moct managovat (mazat, menit nazvy apod.) tokenů i ostatních adminů, pokud mu to ACL dovolí
 - Zamyslet se nad dalšími commandy do jádra
 
 Návrh verze 2:
