@@ -1,4 +1,5 @@
 Design stranky:
+- V mobilní verzi při kliknutí na položku v TOC zasunout menu s TOC
 - Když je menu vysunuté, tak místo hamburgeru zobrazovat křížek
 - Šipku přesunout vlevo od textu a předělat jí na plusko / mínusko
 - Dořešit itemy v TOC se šipkou mají rozdílnou velikost oproti těm bez šipky
