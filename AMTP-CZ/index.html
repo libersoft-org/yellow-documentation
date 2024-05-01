@@ -164,7 +164,7 @@
    <div><span class="bold">Digitální podpis serveru</span> slouží k ověření, zda server, ke kterému se klient či jiný server připojuje, je opravdu ten, za který se vydává. Toto je bezpečnostní mechanismus, který zabraňuje útokům, jako je např. <a href="https://cs.wikipedia.org/wiki/IP_spoofing" target="_blank">IP spoofing</a>.</div>
    <div>Po nainstalování každého serveru se vygeneruje <span class="bold">soukromý klíč</span> a z něj odvozený <span class="bold">veřejný klíč</span> algoritmem, který podporují ostatní serverové i klientské aplikace. <span class="bold">Soukromý klíč</span> zůstává bezpečně uložen na serveru. <span class="bold">Veřejný klíč</span> společně s identifikací šifrovacího algoritmu se uloží do <a href="https://cs.wikipedia.org/wiki/Domain_Name_System" target="_blank">DNS</a> do <span class="bold">TXT</span> záznamu <span class="bold">AMTP-PUBKEY</span>.</div>
    <div>Ihned po navázání spojení vlastního serveru či klienta s protějším serverem, se zašle dotaz protějšímu serveru se žádostí o podepsání námi náhodně vygenerovaného řetězce. Protější server podepíše tento řetězec svým <span class="bold">soukromým klíčem</span> a odešle ho zpět. Náš server nebo klient odešle následně dotaz do <span class="bold">DNS</span> pro získání <span class="bold">TXT</span> záznamu <span class="bold">ATMP-PUBKEY</span> uvedený k protějšímu serveru a tím získá  jeho <span class="bold">veřejný klíč</span>. Náš server či klient následně ověří zda podepsaný řetezec odpovídá <span class="bold">veřejnému klíči</span> získanému z <span class="bold">DNS</span>. Pokud je podpis platný, nadále se komunikuje s protějším serverem, v opačném případě je ukončeno spojení.</div>
-   <div>V případě spojení <span class="">server-server</span> se po ověření protějšího serveru, provede stejné ověření z opačné strany (protější server si ověří náš server).</div>
+   <div>V případě spojení <span class="bold">server-server</span> se po ověření protějšího serveru, provede stejné ověření z opačné strany (protější server si ověří náš server).</div>
    <div class="center"><img src="img/AMTP-dkey-CZ.png" alt="Digitální podpis serveru" /></div>
    <a name="security-login"></a><h3>Bezpečné přihlašování</h3>
    <div>Proces ověřování uživatelů a správců je navržen tak, aby bylo zajištěno, že citlivé informace, jako je <a href="https://cs.wikipedia.org/wiki/Asymetrick%C3%A1_kryptografie" target="_blank">soukromý klíč</a>, zůstanou uloženy vždy jen na zařízení uživatele a nikam se nezasílají. Toho je dosaženo pomocí asymetrické šifrovací strategie zvané <span class="bold">výzva-odezva</span>, která je popsána následovně:</div>
@@ -174,17 +174,17 @@
    </ul>
    <div class="bold">2. Registrace účtu:</div>
    <ul>
-    <li><span class="bold">Veřejný klíč</span> spolu s identifikací použitého šifrovacího algoritmu se předává serveru při registraci účtu na serveru. Server poté zaznamená <span class="bold">veřejný klíč</span> a identifikaci šifrovacího algoritmu do svého úložiště (např. databáze) pro budoucí procesy ověřování.</li>
+    <li><span class="bold">Veřejný klíč</span> spolu s identifikací použitého šifrovacího algoritmu se předává serveru při registraci účtu na serveru. Server poté uloží <span class="bold">veřejný klíč</span> a identifikaci šifrovacího algoritmu do svého úložiště (např. databáze) pro budoucí procesy ověřování.</li>
    </ul>
    <div class="bold">3. Ověřování při přihlášení:</div>
    <ul>
-    <li>Při ověřování odešle klient serveru žádost o přihlášení spolu se svým uživatelským jménem.</li>
-    <li>V odpovědi pro klienta server vygeneruje náhodný řetězec (doporučuje se délka řetězce alespoň 40 znaků), který je následně zašifrován pomocí <span class="bold">veřejného klíče</span> klienta a poté je takto zašifrovaný odeslán zpět klientovi. Doporučuje se časově omezit platnost zašifrovaného řetězce (dobu platnosti si určí server, doporučená doba platnosti je zhruba 30 vteřin).</li>
+    <li>Klient nejprve odešle serveru žádost o přihlášení spolu se svým uživatelským jménem a případně i heslem, pokud je používáno.</li>
+    <li>Server vygeneruje náhodný řetězec (doporučuje se délka řetězce alespoň 40 znaků), který je následně zašifrován pomocí <span class="bold">veřejného klíče</span> klienta a poté je v této zašifrované formě odeslán klientovi spolu s jeho veřejným klíčem a identifikací šifrovacího algoritmu. Doporučuje se časově omezit platnost zašifrovaného řetězce (dobu platnosti si určí server, doporučená doba platnosti je zhruba 30 vteřin).</li>
     <li>Po přijetí klient použije svůj <span class="bold">soukromý klíč</span> k rozšifrování přijatého řetězce a odešle rozšifrovaný řetězec zpět na server k ověření.</li>
-    <li>Server porovná rozšifrovaný řetězec s původně vygenerovaným řetězcem. Pokud se shodují, potvrdí server identitu klienta a udělí mu přístup vydáním tokenu relace. Token relace by měl být taktéž časově omezen (dobu platnosti si určí server, doporučená doba platnosti je zhruba 15 minut v případě správce a 30 dní v případě uživatele). Platnost tokenu se doporučuje prodlužovat na dobu jeho platnosti od chvíle zaslání každého příkazu. Tím se zajistí, že token expiruje pouze při neaktivitě správce či uživatele, případně jeho ručním odstraněním.</li>
+    <li>Server porovná rozšifrovaný řetězec s původně vygenerovaným řetězcem. Pokud se tyto dva řetězce shodují, potvrdí server identitu klienta a udělí mu přístup vydáním tokenu relace. Token relace by měl být taktéž časově omezen (dobu platnosti si určí server, doporučená doba platnosti je zhruba 15 minut v případě správce a 30 dní v případě uživatele). Platnost tokenu se doporučuje prodlužovat na dobu jeho platnosti od chvíle zaslání každého příkazu. Tím se zajistí, že token expiruje pouze při neaktivitě správce či uživatele, případně jeho ručním odstraněním.</li>
    </ul>
    <div>Tato metoda ověřování využívá výhody asymetrického šifrování k ochraně uživatelských dat a zajišťuje, že citlivé informace, jako jsou <span class="bold">soukromé klíče</span>, zůstanou chráněny v rámci koncových zařízení uživatelů. Tento přístup zvyšuje bezpečnost a je v souladu s osvědčenými postupy pro bezpečnou komunikaci v moderních aplikacích.</div>
-   <div>Ověření uživatele pomocí soukromého klíče může být rozšířeno i ověřením hesla (nepovinné), které je zasláno při registraci v zahashované formě (výběr šifrovacího algoritmu je v kompetenci serverové a klientské aplikace). Tímto se docílí dodatečného zabezpečení pro případ, kdyby byl privátní klíč zkompromitován.</div>
+   <div>Ověření uživatele pomocí soukromého klíče může být rozšířeno i ověřením hesla (standardně nepovinné, server si povinnost hesla může vynutit), které je zasláno při registraci v zahashované formě (výběr šifrovacího algoritmu je v kompetenci serverové a klientské aplikace). Tímto se docílí dodatečného zabezpečení pro případ, kdyby byl privátní klíč zkompromitován.</div>
    <div class="center"><img src="img/AMTP-login-CZ.png" alt="Bezpečné přihlašování" /></div>
    <a name="security-e2e"></a><h3>Koncové šifrování</h3>
    <div>Data zabezpečená <a href="https://cs.wikipedia.org/wiki/Koncov%C3%A9_%C5%A1ifrov%C3%A1n%C3%AD" target="_blank">koncovým šifrováním</a> představují další vrstvu zabezpečení nejen v případě selhání šifrování v rámci zabezpečeného spojení mezi klientem a serverem, ale i k tomu, aby nikdo, kromě koncových uživatelů neměl přístup k datům (např. ani správce serveru, na kterém má uživatel založený uživatelský účet).</div>
@@ -207,11 +207,11 @@
      <tr>
       <td>PTR</td>
       <td>-</td>
-      <td>Záznam není již potřeba, jelikož představuje zastaralý způsob ověření serveru. V AMTP je legitimita každého serveru ověřena pomocí "TXT - amtp-pubkey" záznamu.</td>
+      <td>Záznam není již potřeba, jelikož představuje zastaralý způsob ověření serveru. V AMTP je legitimita každého serveru ověřena pomocí "TXT - AMTP-PUBKEY" záznamu.</td>
      </tr>
      <tr>
       <td>MX</td>
-      <td>TXT - amtp-servers</td>
+      <td>TXT - AMTP-SERVERS</td>
       <td>Záznam určující který server je přiřazen ke kterému doménovému jménu, na kterém jsou uživatelské účty</td>
      </tr>
      <tr>
