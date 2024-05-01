@@ -21,6 +21,7 @@ Dopsání obsahu:
 - Globální blokace z cizích serverů - na konkrétní servery, domény a konkrétní uživ. účty (user@domena) - okamžité odpojení bez předávání modulům
 - Přidat blokaci vlastních účtů na serveru - kdo zablokoval, kdy, proč atd.
 - Admin bude moct změnit pubkey + heslo běžných uživatelů
+- Někam dopsat jak řádkovat JSON (LF) a v jaké codepage to psát (UTF)
 - Zamyslet se nad dalšími commandy do jádra
 
 Návrh verze 2:
