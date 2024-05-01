@@ -564,20 +564,18 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <ul>
     <li>TODO</li>
    </ul>
-   <a name="commands-c2s-admin-info"></a><h5>Informace o serveru pro správce</h5>
+   <a name="commands-c2s-admin-sysinfo"></a><h5>Informace o serveru pro správce</h5>
+   <div>Tento příkaz zobrazuje systémové prostředky serveru.</div>
    <div class="bold">Příklad žádosti:</div>
 <pre>
 {
- "command": "admin_info",
+ "command": "admin_sysinfo",
  "admin_token": "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
 }
 </pre>
    <div class="bold">Příklad odezvy:</div>
 <pre>
 {
- "app_name": "AMTP Server",
- "app_version": "1.00",
- "hostname": "amtp.domain.tld",
  "os_name": "Linux",
  "os_version": "5.10.0-19-amd64",
  "cpu_model": "Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz",
@@ -655,12 +653,34 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     <li>TODO - dopsat</li>
    </ul>
    <a name="commands-c2s-user-modules"></a><h5>Seznam používaných modulů</h5>
-   <div>Tento příkaz zobrazuje seznam modulů a jejich verzí, které server používá.</div>
+   <div>Tento příkaz zobrazuje seznam modulů a jejich verzí, které server používá. Server může mít spuštěný jeden modul ve více verzích. To umožňuje zpětnou kompatibilitu se starými verzemi klientských modulů. Tento příkaz nevyžaduje token relace.</div>
+   <div class="bold">Příklad žádosti:</div>
+<pre>
+{
+ "command": "user_modules"
+}
+</pre>
+   <div class="bold">Příklad odezvy:</div>
+<pre>
+{
+ "modules": [
+  {
+   "name": "contacts",
+   "version": "1.0"
+  }, {
+   "name": "messages",
+   "version": "1.0"
+  }, {
+   "name": "messages",
+   "version": "2.0"
+  }
+ ]
+}
+</pre>
    <ul>
     <li>TODO - dopsat</li>
    </ul>
    <a name="commands-c2s-modules"></a><h4>Komunikace s moduly</h4>
-   <div>Server může mít spuštěný jeden modul ve více verzích. To umožňuje zpětnou kompatibilitu se starými verzemi klientských modulů.</div>
    <ul>
     <li>TODO</li>
    </ul>

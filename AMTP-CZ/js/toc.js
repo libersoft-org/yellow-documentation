@@ -166,7 +166,7 @@ const data = [
         ]
        }, {
         title: 'Informace o serveru pro správce',
-        link: 'commands-c2s-admin-info'
+        link: 'commands-c2s-admin-sysinfo'
        }
       ]
      }, {
