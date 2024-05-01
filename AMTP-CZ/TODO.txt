@@ -4,7 +4,7 @@ Design stranky:
 - Dořešit itemy v TOC menu se šipkou mají rozdílnou velikost oproti těm bez šipky
 - Když je TOC menu na desktop verzi zasunuté, tak v mobilní je vysunuté a obráceně - chtělo by to předělat u mobilní verze, aby se nevysouvalo, když na desktopu je zasunuté
 - Automatický highlight sekce v TOC, na kterou je aktuálně doscrollováno (jinou barvou, než aktivní - zakliknutá sekce)
-- Po refreshi stránky, pokud je v adrese #sekce - tak jí zvýraznit
+- Po refreshi stránky, pokud je v adrese #sekce - tak jí zvýraznit v TOC
 
 Obsah:
 - Sekce "Spojení" - zjistit u WebTransportu, na čem vlastně běží (HTTP3 server nebo samostatně?) a jestli má nějaký endpoint a jaký budeme používat (např. "/" nebo "/amtp/")

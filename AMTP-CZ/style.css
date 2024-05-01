@@ -20,7 +20,8 @@ img {
 }
 
 h1, h2, h3, h4, h5, h6 {
- margin: 0 0 10px 0;
+ margin: 0 -20px 10px -20px;
+ padding: 0px 20px;
  border-top: 1px solid #BBB;
  border-bottom: 1px solid #BBB;
  text-align: left;
