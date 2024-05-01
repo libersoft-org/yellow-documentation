@@ -1,27 +1,27 @@
 Design stranky:
 - Když je menu vysunuté, tak místo hamburgeru zobrazovat křížek
 - Šipku přesunout vlevo od textu a předělat jí na plusko / mínusko
-- Dořešit itemy v TOC menu se šipkou mají rozdílnou velikost oproti těm bez šipky
+- Dořešit itemy v TOC se šipkou mají rozdílnou velikost oproti těm bez šipky
 - Když je TOC menu na desktop verzi zasunuté, tak v mobilní je vysunuté a obráceně - chtělo by to předělat u mobilní verze, aby se nevysouvalo, když na desktopu je zasunuté
 - Automatický highlight sekce v TOC, na kterou je aktuálně doscrollováno (jinou barvou, než aktivní - zakliknutá sekce)
-- Po refreshi stránky, pokud je v adrese #sekce - tak jí zvýraznit v TOC
-
-Obsah:
-- Sekce "Spojení" - zjistit u WebTransportu, na čem vlastně běží (HTTP3 server nebo samostatně?) a jestli má nějaký endpoint a jaký budeme používat (např. "/" nebo "/amtp/")
-- Dopsat všechny commandy v dokumentaci, kde je TODO
-- Command: přidat u správce i uživatele - change public key, change password - obojí vyžaduje zadání public key (+ hesla, pokud je nastaveno) i přesto, že má uživatel platný token
-- Správa adminovských i uživatelských tokenů (uživatel maže své, admin maže všech, zobrazení expirace, nějaké identifikace zařízení (+ možnost nastavení názvu zařízení) apod.)
-- Uživatelské / správcovské heslo použít jako privátní klíč (a z něj vytvořit veřejný), vytvořit stejný typ challenge-response přihlášení, jako je u privátního klíče, aby se heslo nemuselo (byť v zahashované podobě) posílat po síti
-- Informace o serveru pro uživatele (je v samostatném příkazu) - má se objevit i okamžitě po spojení - to napsat do sekce "Spojení"
-- Moduly na serveru mohou být zavedeny ve více verzích najednou. Např. modul zprávy ve verzi 1.0 a 2.0 (kvůli zpětné kompatibilitě s klientskými moduly) - popsat v příkazech modulů
-- Přidat management spravcovských tokenů i pro správce (ty jeho vlastní i ostatních správců?)
-- Globální blokace z cizích serverů - na konkrétní servery, domény a konkrétní uživ. účty (user@domena) - okamžité odpojení bez předávání modulům
-- Zamyslet se nad dalšími commandy do jádra
+- Po refreshi stránky, pokud je v adrese #sekce - tak jí zvýraznit v TOC jako aktivní
 
 K probrání:
 - Přidat blokaci vlastních účtů na serveru (stačí jen dát bool - aktivní a nebo nějaká složitější struktura - kdo zablokoval, kdy, proč?)
-- Do struktur všech příkazů přidat parametr "token" (kromě přihlašování) - popsat někam obecně, aby se všude nemuselo zbytečně uvádět?
+- Do struktur všech příkazů přidat parametr "token" (kromě přihlašování, user info apod.) - popsat někam obecně, aby se všude nemuselo zbytečně uvádět?
+- Admin bude moct změnit jen svůj pubkey + heslo nebo i ostatních adminů?
+- Admin bude moct změnit pubkey + heslo běžných uživatelů?
+- Admin bude moct managovat (mazat, menit nazvy apod.) tokenů i ostatních adminů?
 - Pro obměňování tokenů relace (uživatel i admin) - zjistit, jestli používat 2 tokeny nebo jestli bude stačit jeden a to popsat
+
+Dopsání obsahu:
+- Sekce "Spojení" - zjistit u WebTransportu, na čem vlastně běží (HTTP3 server nebo samostatně?) a jestli má nějaký endpoint a jaký budeme používat (např. "/" nebo "/amtp/")
+- Dopsat všechny commandy v dokumentaci, kde je TODO
+- Přidat commandy: Správa adminovských i uživatelských tokenů (uživatel maže své, admin maže všech, zobrazení expirace, nějaké identifikace zařízení (+ možnost nastavení názvu zařízení) apod.)
+- Přidat management spravcovských tokenů i pro správce
+- Uživatelské / správcovské heslo použít jako privátní klíč (a z něj vytvořit veřejný), vytvořit stejný typ challenge-response přihlášení, jako je u privátního klíče, aby se heslo nemuselo (byť v zahashované podobě) posílat po síti
+- Globální blokace z cizích serverů - na konkrétní servery, domény a konkrétní uživ. účty (user@domena) - okamžité odpojení bez předávání modulům
+- Zamyslet se nad dalšími commandy do jádra
 
 Návrh verze 2:
 - Přesunutí uživatelských účtů / přihlášení do modulu - přidá další možnosti ověření: OAuth / social loginy atd.

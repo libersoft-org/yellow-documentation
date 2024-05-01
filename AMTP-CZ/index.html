@@ -190,8 +190,8 @@
    <div>Data zabezpečená <a href="https://cs.wikipedia.org/wiki/Koncov%C3%A9_%C5%A1ifrov%C3%A1n%C3%AD" target="_blank">koncovým šifrováním</a> představují další vrstvu zabezpečení nejen v případě selhání šifrování v rámci zabezpečeného spojení mezi klientem a serverem, ale i k tomu, aby nikdo, kromě koncových uživatelů neměl přístup k datům (např. ani správce serveru, na kterém má uživatel založený uživatelský účet).</div>
    <div><span class="bold">Koncové šifrování</span> není předmětem této dokumentace, jelikož je v kompetenci jednotlivých modulů (např. zprávy, telefonování apod.). I tak je třeba zmínit, že by mělo být implementováno ve veškerých funkcionalitách modulů, kde se přenáší soukromá data mezi koncovými uživateli nebo skupinami uživatelů. Taktéž je doporučeno vytvářet moduly tak, aby klíče byly často obměňovány.</div>
    <a name="dns"></a><h2>DNS</h2>
-   <div>Pro zajištění komunikace mezi servery v rámci distribuované sítě, jsou využity specifické <span class="bold">DNS</span> záznamy pro <span class="bold">AMTP</span>. Tyto záznamy jsou nezbytné pro správné a bezpečné směrování provozu mezi servery na základě jejich domén. Pro zapojení serveru do sítě pro účel předávání dat mezi servery, jsou nezbytné záznamy v DNS u domén, které jsou serverem využívány. Bez těchto záznamů není možné předávat data mezi servery.</div>
-   <div>V původních e-mailových standardech bylo využito několik záznamů v DNS, jejichž funkcionalita byla nahrazena v <span class="bold">AMTP</span> jinými specifickými doménovými záznamy. Následující tabulka vysvětluje, čím byly v rámci tohoto protokolu nahrazeny záznamy známé z původních e-mailových standardů:</div>
+   <div>Pro zajištění komunikace mezi servery v rámci distribuované sítě, jsou využity specifické <span class="bold">DNS</span> záznamy pro <span class="bold">AMTP</span>. Tyto záznamy jsou nezbytné pro správné a bezpečné směrování provozu mezi servery na základě jejich domén. Pro zapojení serveru do sítě pro účel předávání dat mezi servery, jsou nezbytné záznamy v <span class="bold">DNS</span> u domén, které jsou serverem využívány. Bez těchto záznamů není možné předávat data mezi servery.</div>
+   <div>V původních e-mailových standardech bylo využito několik záznamů v <span class="bold">DNS</span>, jejichž funkcionalita byla nahrazena v <span class="bold">AMTP</span> jinými specifickými doménovými záznamy. Následující tabulka vysvětluje, čím byly v rámci tohoto protokolu nahrazeny záznamy známé z původních e-mailových standardů:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -202,7 +202,7 @@
      <tr>
       <td>A / AAAA</td>
       <td>A / AAAA</td>
-      <td>Záznam určující doménové jméno serveru je zachován</td>
+      <td>Záznam určující doménové jméno serveru je zachován.</td>
      </tr>
      <tr>
       <td>PTR</td>
@@ -212,34 +212,34 @@
      <tr>
       <td>MX</td>
       <td>TXT - AMTP-SERVERS</td>
-      <td>Záznam určující který server je přiřazen ke kterému doménovému jménu, na kterém jsou uživatelské účty</td>
+      <td>Záznam určující který server je přiřazen ke kterému doménovému jménu, na kterém jsou uživatelské účty.</td>
      </tr>
      <tr>
       <td>TXT - SPF</td>
       <td>-</td>
-      <td>"TXT - SPF" záznam není potřeba, jelikož jeho funkci zastává "TXT - amtp-servers" záznam</td>
+      <td>Tento záznam není potřeba, jelikož jeho funkci zastává "TXT - AMTP-SERVERS" záznam.</td>
      </tr>
      <tr>
       <td>TXT - DKIM</td>
-      <td>TXT - amtp-pubkey</td>
-      <td>Záznam určující veřejný klíč serveru, kterým si cizí servery ověřují legitimitu užívání doménového jména uživatelských účtů</td>
+      <td>TXT - AMTP-PUBKEY</td>
+      <td>Záznam určující veřejný klíč serveru, kterým si cizí servery ověřují legitimitu užívání doménového jména v adresách uživatelských účtů</td>
      </tr>
      <tr>
       <td>TXT - DMARC</td>
       <td>-</td>
-      <td>Záznam již není potřeba. Reporting neúspěšných pokusů o předání dat ze serverů, které postrádají legitimitu užívání účtů na cizích doménách pro legitimní servery je zbytečný, jelikož v rámci AMTP se nemůže stát, že takové zprávy by byly vůbec doručeny. Pokud by byl reporting potřeba, je možné na tuto funkcionalitu napsat modul.</td>
+      <td>Záznam již není potřeba. Reporting neúspěšných pokusů o předání dat ze serverů, které postrádají legitimitu užívání účtů na cizích doménách pro legitimní servery je zbytečný, jelikož v rámci AMTP se nemůže stát, že takové zprávy by byly vůbec doručeny. Pokud by byl nějaký reporting potřeba, je možné na tuto funkcionalitu vytvořit modul.</td>
      </tr>
     </table>
    </div>
    <a name="dns-config"></a><h3>Konfigurace DNS</h3>
-   <div><span class="bold">AMTP servers TXT záznam</span>:</div>
+   <div><span class="bold">TXT - AMTP-SERVERS záznam</span>:</div>
    <ul>
-    <li>Tento záznam definuje cílové servery, na kterých jsou uživatelské účty pro určitou doménu (kombinuje funkcionalitu podobnou záznamům MX a SPF známým z e-mailu).</li>
-    <li>Záznam začíná řetězcem "<span class="bold">amtp-servers=</span>" a následuje seznam jednotlivých serverů, které jsou odděleny čárkou (",")</li>
+    <li>Tento záznam definuje cílové servery, na kterých jsou uživatelské účty pro určitou doménu (kombinuje funkcionalitu podobnou záznamům MX a SPF, které jsou určeny pro původní e-mailové protokoly).</li>
+    <li>Záznam se určuje pro konkrétní doménu, která je určená pro adresy uživatelských účtů a definuje se řetězcem "<span class="bold">amtp-servers=</span>", po kterém následuje seznam jednotlivých serverů, které jsou odděleny čárkou (",")</li>
     <li>Servery jsou seřazeny podle priority. Pokud je některý server nedostupný, použije se pro připojení další server v řadě.</li>
     <li>Pokud není zadán žádný port, použije se standardně port 443.</li>
    </ul>
-   <div><span class="bold">Příklad:</span></div>
+   <div class="bold">Příklad:</div>
 <pre>
 subdomain.domain.tld. IN TXT "amtp-servers=amtp1.domain.tld,amtp2.domain.tld:12345,amtp3.domain.tld:23456"
 </pre>
@@ -249,37 +249,39 @@ subdomain.domain.tld. IN TXT "amtp-servers=amtp1.domain.tld,amtp2.domain.tld:123
     <li><span class="bold">amtp2.domain.tld</span> na portu 12345</li>
     <li><span class="bold">amtp3.domain.tld</span> na portu 23456</li>
    </ul>
-   <div><span class="bold">AMTP PUBKEY TXT záznam</span>:</div>
+   <div><span class="bold">TXT - AMTP-PUBKEY záznam</span>:</div>
    <ul>
     <li>Tento záznam definuje, jaký veřejný klíč používá server ke své identifikaci po spojení s protějším serverem.</li>
-    <li>Záznam začíná řetězcem "<span class="bold">amtp-pubkey=</span>" a následují parametry oddělené čárkou:</li>
+    <li>Záznam začíná řetězcem "<span class="bold">amtp-pubkey=</span>", po kterém následují parametry oddělené čárkou:</li>
     <ul>
      <li>"<span class="bold">e:</span>" + název šifry</li>
      <li>"<span class="bold">k:</span>" + veřejný klíč</li>
     </ul>
    </ul>
+   <div class="bold">Příklad:</div>
 <pre>
 amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
-   <div>Tento příklad uvádí, že pro server <span class="bold">amtp1.domain.tld</span> je využíván veřejný klíč "<span class="bold">123456789abcdef</span>" s algoritmem <a href="https://cs.wikipedia.org/wiki/RSA" target="_blank">RSA</a>.</div>
+   <div>Tento příklad uvádí, že pro server <span class="bold">amtp1.domain.tld</span> je používán veřejný klíč "<span class="bold">123456789abcdef</span>" se šifrovacím algoritmem <a href="https://cs.wikipedia.org/wiki/RSA" target="_blank">RSA</a>.</div>
    <a name="connection"></a><h2>Spojení</h2>
    <div><span class="bold">Spojení</span> jsou realizována jak mezi klientem a serverem, tak i mezi servery navzájem.</div>
    <ul class="spacelist">
     <li><span class="bold">Spojení server-server</span> - Servery jsou organizovány do distribuované sítě, kde každý server je schopný předávat data ostatním serverům. Tato komunikace je realizována přes spojení, které nemusí být perzistentní a může být ukončeno jednou nebo druhou stranou kdykoliv to jedna ze stran uzná za vhodné (např. server odesilatele po dokončení doručování dat nebo server příjemce po vypršení určitého časového limitu, kdy mezi servery nedošlo k žádné výměně dat). Podmínky za kterých dochází k odpojování serverů mezi sebou nejsou standardizováné touto dokumentací, jsou plně v kompetenci konkrétní implementace serverové aplikace. Důvodem je například to, že některé servery mohou mít omezené systémové prostředky a tak mohou spojení s ostatními servery častěji odpojovat. Naopak servery, které mají dostatečné systémové prostředky, mohou udržovat otevřené spojení s ostatními servery pro rychlejší komunikaci, bez nutnosti opětovného navazování spojení.</li>
-    <li><span class="bold">Spojení klient-server</span> - Každý klient je spojen se svým serverem prostřednictvím trvalého spojení (pokud nedojde k výpadku). Takováto spojení slouží jako stabilní kanál pro všechny operace, které klient potřebuje vykonávat (např. příjem zpráv, získávání notifikací, synchronizace dat apod.). Trvalá připojení klienta jsou klíčová pro udržení nepřetržité komunikace pro funkcionality, které vyžadují okamžité reakce, jako jsou např. rychlé zprávy nebo online hry. Díky <span class="bold">WebTransportu</span> mohou tato spojení efektivně spravovat více datových proudů současně, což minimalizuje zpoždění a zvyšuje celkovou uživatelskou spokojenost.</li>
+    <li><span class="bold">Spojení klient-server</span> - Každý klient je spojen se svým serverem prostřednictvím trvalého spojení. Pokud dojde k výpadku, automaticky se znovu klient k serveru připojí. Takováto spojení slouží jako stabilní kanál pro všechny operace, které klient potřebuje vykonávat (např. příjem zpráv, získávání notifikací, synchronizace dat apod.). Trvalá připojení klienta jsou klíčová pro udržení nepřetržité komunikace pro funkcionality, které vyžadují okamžité reakce, jako jsou např. rychlé zprávy nebo online hry. Díky <span class="bold">WebTransportu</span> mohou tato spojení efektivně spravovat více datových proudů současně, což minimalizuje zpoždění a zvyšuje celkovou uživatelskou spokojenost.</li>
    </ul>
-   <div>Následující obrázek nastiňuje příklad toho, jak vypadají spojení v rámci <span class="bold">AMTP</span>:</div>
+   <div>Následující obrázek nastiňuje příklad toho, jak fungují spojení v rámci <span class="bold">AMTP</span>:</div>
    <div class="center"><img src="img/AMTP-network-CZ.png" alt="Distribuovaná síť" /></div>
+   <div>Ihned po navázání spojení se serverem pošle server automaticky protější straně informace o sobě, které jsou také přístupné pod příkazem <span class="bold">user_info</span>.</div>
    <ul>
-    <li>TODO - sepsat, jak se přesně navazuje spojení, jestli je tam nějaký endpoint pro WebTransport apod.</li>
+    <li>TODO - sepsat, jak se přesně navazuje spojení, jestli je tam nějaký endpoint pro WebTransport, jestli tam musí být HTTP/3 server apod.</li>
    </ul>
    <a name="commands"></a><h2>Příkazy</h2>
-   <div>Příkazy jsou zasílány přes <span class="bold">WebTransport</span> pomocí obousměrného streamu. V rámci zasílání všech příkazů jádra protokolu se používají výhradně spolehlivé streamy. Moduly mohou používat spolehlivé i nespolehlivé proudy dat.</div>
-   <div>Nejprve se otevře stream, poté probíhá obousměrná komunikace pomocí příkazů strukturovaných ve formátu <span class="bold">BSON</span> a nakonec, jakmile již není potřeba mít stream otevřený, stream se uzavře jednou či druhou stranou. Více streamů v rámci jednoho spojení může běžet souběžně.</div>
+   <div>Příkazy jsou zasílány přes <span class="bold">WebTransport</span> pomocí obousměrného proudu dat. V rámci zasílání všech příkazů jádra protokolu se používají výhradně spolehlivé proudy. Moduly mohou používat spolehlivé i nespolehlivé proudy, dle jejich konkrétních potřeb.</div>
+   <div>V rámci každého příkazu se nejprve otevře proud, poté probíhá obousměrná komunikace pomocí příkazů strukturovaných ve formátu <span class="bold">BSON</span> a nakonec, jakmile již není potřeba mít proud otevřený, uzavře se jednou či druhou stranou, zatímco spojení může být stále zachováno. Více proudů v rámci jednoho spojení může běžet souběžně.</div>
    <a name="commands-errors"></a><h3>Chyby</h3>
    <div>V této sekci je popsána struktura obecných chyb, chyb jádra a modulů.</div>
    <a name="commands-errors-general"></a><h4>Obecné chyby jádra</h4>
-   <div>Následující chyby nejsou nastávají nikoliv jako přímé odpovědi příkazů, ale při obecných selháních.</div>
+   <div>Následující chyby nastávají nikoliv jako přímé odpovědi příkazů, ale při dalších speciálních událostech.</div>
    <div class="bold">Chybové stavy:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -562,11 +564,11 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <ul>
     <li>TODO</li>
    </ul>
-   <a name="commands-c2s-admin-serverinfo"></a><h5>Informace o serveru pro správce</h5>
+   <a name="commands-c2s-admin-info"></a><h5>Informace o serveru pro správce</h5>
    <div class="bold">Příklad žádosti:</div>
 <pre>
 {
- "command": "admin_sysinfo",
+ "command": "admin_info",
  "admin_token": "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
 }
 </pre>
@@ -575,6 +577,7 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "app_name": "AMTP Server",
  "app_version": "1.00",
+ "hostname": "amtp.domain.tld",
  "os_name": "Linux",
  "os_version": "5.10.0-19-amd64",
  "cpu_model": "Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz",
@@ -583,7 +586,6 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "cpu_load": 0,
  "ram_total": 8332619776,
  "ram_free": 7842000896,
- "hostname": "amtp",
  "networks": [
   {
    "ens1": [
@@ -623,11 +625,42 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <ul>
     <li>TODO</li>
    </ul>
-   <a name="commands-c2s-user-serverinfo"></a><h5>Informace o serveru pro uživatele</h5>
+   <a name="commands-c2s-user-setpubkey"></a><h5>Změna veřejného klíče pro přihlášení</h5>
    <ul>
-    <li>TODO</li>
+    <li>TODO - pozor, vyžaduje ověření původním pubkey (+ heslem, pokud se používá)</li>
+   </ul>
+   <a name="commands-c2s-user-setpassword"></a><h5>Změna hesla pro přihlášení</h5>
+   <ul>
+    <li>TODO - pozor, vyžaduje ověření původním pubkey (+ heslem, pokud se používalo)</li>
+    <li>TODO - toto by mělo umět i nějak zrušit používání hesla pokud to server umožňuje (poslat null?)</li>
+    <li>TODO - bude se vyžadovat aktivní příhlášení (tzn. mít token)?
+   </ul>
+   <a name="commands-c2s-user-info"></a><h5>Informace o serveru pro uživatele</h5>
+   <div>Tento příkaz vrací informace o AMTP serveru a nevyžaduje token relace.</div>
+   <div class="bold">Příklad žádosti:</div>
+<pre>
+{
+ "command": "user_info"
+}
+</pre>
+   <div class="bold">Příklad odezvy:</div>
+<pre>
+{
+ "app_name": "AMTP Server",
+ "app_version": "1.00",
+ "hostname": "amtp.domain.tld"
+}
+</pre>
+   <ul>
+    <li>TODO - dopsat</li>
+   </ul>
+   <a name="commands-c2s-user-modules"></a><h5>Seznam používaných modulů</h5>
+   <div>Tento příkaz zobrazuje seznam modulů a jejich verzí, které server používá.</div>
+   <ul>
+    <li>TODO - dopsat</li>
    </ul>
    <a name="commands-c2s-modules"></a><h4>Komunikace s moduly</h4>
+   <div>Server může mít spuštěný jeden modul ve více verzích. To umožňuje zpětnou kompatibilitu se starými verzemi klientských modulů.</div>
    <ul>
     <li>TODO</li>
    </ul>

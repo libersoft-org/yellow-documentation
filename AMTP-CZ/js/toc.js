@@ -166,7 +166,7 @@ const data = [
         ]
        }, {
         title: 'Informace o serveru pro správce',
-        link: 'commands-c2s-admin-serverinfo'
+        link: 'commands-c2s-admin-info'
        }
       ]
      }, {
@@ -192,8 +192,17 @@ const data = [
         title: 'Odhlášení uživatele',
         link: 'commands-c2s-user-logout'
        }, {
+        title: 'Změna veřejného klíče pro přihlášení',
+        link: 'commands-c2s-user-setpubkey'
+       }, {
+        title: 'Změna hesla pro přihlášení',
+        link: 'commands-c2s-user-setpassword'
+       }, {
         title: 'Informace o serveru pro uživatele',
-        link: 'commands-c2s-user-serverinfo'
+        link: 'commands-c2s-user-info'
+       }, {
+        title: 'Seznam používaných modulů',
+        link: 'commands-c2s-user-modules'
        }
       ]
      }, {
