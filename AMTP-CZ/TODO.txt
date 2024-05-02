@@ -15,6 +15,7 @@ Dopsání obsahu:
 - Admin bude moct změnit jen svůj pubkey + heslo (nikoliv ostatních adminů), pokud neexistuje žádný admin, co by měl funkční login (všichni ztratili klíče), tak prostě nutný přímý zásah na serveru lokálně
 - Přepsat všude, že spravcovské tokeny nebudou, protože jsou jen na dobu session
 - Globální blokace z cizích serverů / z klientů - něco jako fail2ban pro challenge-response + management ban / unban adminem + přidat statusy těmto zlým serverům / klientům ve stylu "You are not welcome here" při pokusu o přihlášení klienta / ověření serveru
+- Tenhle fail to ban nepopisovat jen v commandech, ale napsat o tom i další sekci v Zabezpečení
 - Přidat blokaci vlastních účtů na serveru - vracet status o tom, že je zablokovaný, kdo zablokoval, kdy, proč atd. + přidat commandy admina
 - Admin bude moct změnit pubkey + heslo běžných uživatelů
 - Někam dopsat jak řádkovat JSON (LF) a v jaké codepage to psát (UTF)
