@@ -10,7 +10,6 @@ Design stranky:
 Dopsání obsahu:
 - Sekce "Spojení" - dopsat na začátek sekce, že se propojujeme s HTTP serverem (standard HTTP/3), otevřeme WebTransport session a uvnitř se vytváří proudy, používá se endpoint /amtp/, zmínit draft WebTransport over HTTP3 - https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-http3-09
 - Tokeny se nepoužívají v commandech, ale jen po připojení k session (tzn. buď se přihlásím a nebo nahlásím token) - smazat to tedy z commandů a jen u každého commandu zmínit, jestli vyžaduje přihlášení či nikoliv
-- Dopsat všechny commandy v dokumentaci, kde je TODO
 - Přidat commandy: Správa adminovských i uživatelských tokenů (uživatel maže své, admin maže všech, zobrazení expirace, nějaké identifikace zařízení (+ možnost nastavení názvu zařízení) apod.)
 - Admin bude moct změnit jen svůj pubkey + heslo (nikoliv ostatních adminů), pokud neexistuje žádný admin, co by měl funkční login (všichni ztratili klíče), tak prostě nutný přímý zásah na serveru lokálně
 - Přepsat všude, že spravcovské tokeny nebudou, protože jsou jen na dobu session
@@ -19,6 +18,7 @@ Dopsání obsahu:
 - Přidat blokaci vlastních účtů na serveru - vracet status o tom, že je zablokovaný, kdo zablokoval, kdy, proč atd. + přidat commandy admina
 - Admin bude moct změnit pubkey + heslo běžných uživatelů
 - Někam dopsat jak řádkovat JSON (LF) a v jaké codepage to psát (UTF)
+- Dopsat všechny commandy v dokumentaci, kde je TODO
 - Zamyslet se nad dalšími commandy do jádra
 
 Návrh verze 2:
