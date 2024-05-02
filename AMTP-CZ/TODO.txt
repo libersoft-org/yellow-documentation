@@ -7,20 +7,15 @@ Design stranky:
 - Automatický highlight sekce v TOC, na kterou je aktuálně doscrollováno (jinou barvou, než aktivní - zakliknutá sekce)
 - Po refreshi stránky, pokud je v adrese #sekce - tak jí zvýraznit v TOC jako aktivní
 
-K domyšlení:
-- Do struktur všech příkazů přidat parametr "token" (kromě přihlašování, user info apod.) - popsat někam obecně, aby se všude nemuselo zbytečně uvádět?
-- Pro obměňování tokenů relace (uživatel i admin) - zjistit, jestli používat 2 tokeny nebo jestli bude stačit jeden a to popsat
-- Admin bude moct změnit svůj pubkey + heslo nebo i ostatních adminů - v případě, že mu to práva umožňují - tzn. popsat nějaký ACL pro adminy
-- Admin bude moct managovat (mazat, menit nazvy apod.) tokenů i ostatních adminů, pokud mu to ACL dovolí
-
 Dopsání obsahu:
-- Sekce "Spojení" - zjistit u WebTransportu, na čem vlastně běží (HTTP3 server nebo samostatně?) a jestli má nějaký endpoint a jaký budeme používat (např. "/" nebo "/amtp/")
+- Sekce "Spojení" - dopsat na začátek sekce, že se propojujeme s HTTP serverem (standard HTTP/3), otevřeme WebTransport session a uvnitř se vytváří proudy, používá se endpoint /amtp/, zmínit draft WebTransport over HTTP3 - https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-http3-09
+- Tokeny se nepoužívají v commandech, ale jen po připojení k session (tzn. buď se přihlásím a nebo nahlásím token) - smazat to tedy z commandů a jen u každého commandu zmínit, jestli vyžaduje přihlášení či nikoliv
 - Dopsat všechny commandy v dokumentaci, kde je TODO
 - Přidat commandy: Správa adminovských i uživatelských tokenů (uživatel maže své, admin maže všech, zobrazení expirace, nějaké identifikace zařízení (+ možnost nastavení názvu zařízení) apod.)
-- Přidat management spravcovských tokenů i pro správce
-- Uživatelské / správcovské heslo použít jako privátní klíč (a z něj vytvořit veřejný), vytvořit stejný typ challenge-response přihlášení, jako je u privátního klíče, aby se heslo nemuselo (byť v zahashované podobě) posílat po síti
-- Globální blokace z cizích serverů - na konkrétní servery, domény a konkrétní uživ. účty (user@domena) - okamžité odpojení bez předávání modulům
-- Přidat blokaci vlastních účtů na serveru - kdo zablokoval, kdy, proč atd.
+- Admin bude moct změnit jen svůj pubkey + heslo (nikoliv ostatních adminů), pokud neexistuje žádný admin, co by měl funkční login (všichni ztratili klíče), tak prostě nutný přímý zásah na serveru lokálně
+- Přepsat všude, že spravcovské tokeny nebudou, protože jsou jen na dobu session
+- Globální blokace z cizích serverů / z klientů - něco jako fail2ban pro challenge-response + management ban / unban adminem + přidat statusy těmto zlým serverům / klientům ve stylu "You are not welcome here" při pokusu o přihlášení klienta / ověření serveru
+- Přidat blokaci vlastních účtů na serveru - vracet status o tom, že je zablokovaný, kdo zablokoval, kdy, proč atd. + přidat commandy admina
 - Admin bude moct změnit pubkey + heslo běžných uživatelů
 - Někam dopsat jak řádkovat JSON (LF) a v jaké codepage to psát (UTF)
 - Zamyslet se nad dalšími commandy do jádra
@@ -28,4 +23,7 @@ Dopsání obsahu:
 Návrh verze 2:
 - Přesunutí uživatelských účtů / přihlášení do modulu - přidá další možnosti ověření: OAuth / social loginy atd.
 - Digitální podpis serveru - navrhnout alternativu k DNS - něco jako notary server na Matrix protokolu (resp. ne jako alternativu, ale jako další vrstvu zabezpečení)
-- Admin příkazy pro management modulů a logů
+- Admin příkazy pro management modulů a audit logů - přidá se do dokumentace až poté, co zjistíme, co všechno je třeba logovat
+- Tokenové páry krátkodobých tokenů - access token a refresh token, místo dlouhodobých tokenů - zjistit implementací, jelikož nevíme, jak dlouhé sessions většinou udrží WebTransport a jestli se nebudou měnit při každém připojení
+- ACL s právy pro konkrétní akce adminů
+- Uživatelské / správcovské heslo použít jako privátní klíč a z něj vytvořit veřejný - pokud to jde, vytvořit stejný typ challenge-response přihlášení, jako je u privátního klíče, aby se heslo nemuselo (byť v zahashované podobě) posílat po síti (pokud to má vůbec smysl, protože Argon2 má nějaký random autosalting a pokaždé se posílá něco jiného po síti, takže to funguje podobně, jako challenge-response) - toto vyžaduje nějaký hlubší research kryptografa (jak moc je Argon prolomitelný, jestli vůbec lze něco jako password-as-private-key). Obecně prolomení šifry styly: "z public key získat private key" versus "prolomit Argon2id hash"
