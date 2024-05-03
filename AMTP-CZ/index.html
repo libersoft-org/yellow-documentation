@@ -272,7 +272,7 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div>Na straně serveru je spuštěn <a href="https://cs.wikipedia.org/wiki/HTTPS" target="_blank">HTTPS</a> server s platným šifrovacím certifikátem vydaným certifikační autoritou a podporujícím standard <a href="https://cs.wikipedia.org/wiki/HTTP/3" target="_blank">HTTP/3</a>. Přesný způsob komunikace je podrobně popsán v dokumentu <a href="https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-http3" target="_blank">WebTransport over HTTP/3</a>.</div>
    <div>Po připojení k endpointu <span class="bold">/amtp/</span> je vytvořena <span class="bold">WebTransport</span> session, v rámci které je možné otevírat a zavírat jednotlivé proudy, ve kterých probíhá komunikace pomocí příkazů. Více proudů může běžet souběžně.</div>
    <div>Ihned po navázání spojení se serverem pošle server automaticky protější straně informace o sobě, které jsou také přístupné pod příkazem <span class="bold">user_info</span>.</div>
-   <div>Následující obrázek nastiňuje příklad toho, jak fungují spojení v rámci <span class="bold">AMTP</span>:</div>
+   <div>Následující schéma nastiňuje příklad toho, jak fungují spojení klientů a serverů v rámci <span class="bold">AMTP</span>:</div>
    <div class="center"><img src="img/AMTP-network-CZ.png" alt="Distribuovaná síť" /></div>
    <a name="commands"></a><h2>Příkazy</h2>
    <div>Příkazy jsou zasílány přes <span class="bold">WebTransport</span> pomocí obousměrného proudu dat. V rámci zasílání všech příkazů jádra protokolu se používají výhradně spolehlivé proudy. Moduly mohou používat spolehlivé i nespolehlivé proudy, dle jejich konkrétních potřeb.</div>
