@@ -8,7 +8,6 @@ Design stranky:
 - Po refreshi stránky, pokud je v adrese #sekce - tak jí zvýraznit v TOC jako aktivní
 
 Dopsání obsahu:
-- Vyrenderovat obrázky ve vyšším rozlišení a následně je zmenšit v dokumentaci
 - Tokeny se nepoužívají v commandech, ale jen po připojení k session (tzn. buď se přihlásím a nebo nahlásím token) - smazat to tedy z commandů a jen u každého commandu zmínit, jestli vyžaduje přihlášení či nikoliv
 - Přidat commandy: Správa adminovských i uživatelských tokenů (uživatel maže své, admin maže všech, zobrazení expirace, nějaké identifikace zařízení (+ možnost nastavení názvu zařízení) apod.)
 - Admin bude moct změnit jen svůj pubkey + heslo (nikoliv ostatních adminů), pokud neexistuje žádný admin, co by měl funkční login (všichni ztratili klíče), tak prostě nutný přímý zásah na serveru lokálně

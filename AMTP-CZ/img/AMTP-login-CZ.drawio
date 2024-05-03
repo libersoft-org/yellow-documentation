@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-04-26T12:00:19.943Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0" etag="fMDhXl_HYo5pF2EaoqXm" version="24.2.5" type="device">
+<mxfile host="app.diagrams.net" modified="2024-05-03T21:44:02.779Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0" etag="cVRcaQxW8sIC7ShG8oTh" version="24.3.0" type="device">
   <diagram name="Stránka-1" id="toOVd7-JZ7SLgHdmARIT">
-    <mxGraphModel dx="2059" dy="1085" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2059" dy="1092" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -22,7 +22,7 @@
             <mxPoint x="400" y="410" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="5YB8qFmiyGmd4muCcbbY-1" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;Zašle veřejný klíč&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;v rámci registrace&lt;br style=&quot;font-size: 14px;&quot;&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;fontColor=default;labelBackgroundColor=none;spacing=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;spacingTop=-4;" parent="jIflx6HBgD9O2iB-TuAb-8" vertex="1" connectable="0">
+        <mxCell id="5YB8qFmiyGmd4muCcbbY-1" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;Zašle veřejný klíč&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;v rámci registrace&lt;br style=&quot;font-size: 14px;&quot;&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;fontColor=default;labelBackgroundColor=none;spacing=0;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;spacingTop=-4;spacingLeft=-5;" parent="jIflx6HBgD9O2iB-TuAb-8" vertex="1" connectable="0">
           <mxGeometry x="0.0308" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -85,7 +85,7 @@
             <mxPoint x="400" y="330" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="5YB8qFmiyGmd4muCcbbY-29" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Zašle rozšifrovaný&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;řetězec&lt;br style=&quot;font-size: 14px;&quot;&gt;&lt;/font&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;spacingTop=-4;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;fontSize=14;" parent="5YB8qFmiyGmd4muCcbbY-27" vertex="1" connectable="0">
+        <mxCell id="5YB8qFmiyGmd4muCcbbY-29" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Zašle rozšifrovaný&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;řetězec&lt;br style=&quot;font-size: 14px;&quot;&gt;&lt;/font&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;spacingTop=-4;fontFamily=Ubuntu;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DUbuntu;fontSize=14;spacingLeft=-1;" parent="5YB8qFmiyGmd4muCcbbY-27" vertex="1" connectable="0">
           <mxGeometry x="-0.0154" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
