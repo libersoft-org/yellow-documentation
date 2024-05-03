@@ -8,15 +8,15 @@ Design stranky:
 - Po refreshi stránky, pokud je v adrese #sekce - tak jí zvýraznit v TOC jako aktivní
 
 Dopsání obsahu:
-- Tokeny se nepoužívají v commandech, ale jen po připojení k session (tzn. buď se přihlásím a nebo nahlásím token) - smazat to tedy z commandů a jen u každého commandu zmínit, jestli vyžaduje přihlášení či nikoliv
-- Přidat commandy: Správa adminovských i uživatelských tokenů (uživatel maže své, admin maže všech, zobrazení expirace, nějaké identifikace zařízení (+ možnost nastavení názvu zařízení) apod.)
-- Admin bude moct změnit jen svůj pubkey + heslo (nikoliv ostatních adminů), pokud neexistuje žádný admin, co by měl funkční login (všichni ztratili klíče), tak prostě nutný přímý zásah na serveru lokálně
 - Přepsat všude, že spravcovské tokeny nebudou, protože jsou jen na dobu session
+- Tokeny se nepoužívají v commandech, ale jen po připojení k session (tzn. buď se přihlásím a nebo nahlásím token) - smazat to tedy z commandů a jen u každého commandu zmínit, jestli vyžaduje přihlášení či nikoliv
+- Někam dopsat jak řádkovat JSON (LF) a v jaké codepage to psát (UTF)
 - Globální blokace z cizích serverů / z klientů - něco jako fail2ban pro challenge-response + management ban / unban adminem + přidat statusy těmto zlým serverům / klientům ve stylu "You are not welcome here" při pokusu o přihlášení klienta / ověření serveru
 - Tenhle fail to ban nepopisovat jen v commandech, ale napsat o tom i další sekci v Zabezpečení
+- Přidat commandy: Správa adminovských i uživatelských tokenů (uživatel maže své, admin maže všech, zobrazení expirace, nějaké identifikace zařízení (+ možnost nastavení názvu zařízení) apod.)
+- Admin bude moct změnit jen svůj pubkey + heslo (nikoliv ostatních adminů), pokud neexistuje žádný admin, co by měl funkční login (všichni ztratili klíče), tak prostě nutný přímý zásah na serveru lokálně
 - Přidat blokaci vlastních účtů na serveru - vracet status o tom, že je zablokovaný, kdo zablokoval, kdy, proč atd. + přidat commandy admina
 - Admin bude moct změnit pubkey + heslo běžných uživatelů
-- Někam dopsat jak řádkovat JSON (LF) a v jaké codepage to psát (UTF)
 - Dopsat všechny commandy v dokumentaci, kde je TODO
 - Zamyslet se nad dalšími commandy do jádra
 
