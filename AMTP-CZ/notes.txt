@@ -1,0 +1,42 @@
+
+Spojení server-server
+
+{
+	error: "you_are_not_welcome_here",
+message: "Your server is banned from connecting to this server. Please contact the administrator for more information."
+	
+
+}
+
+class ErrorCodes(Enum):
+	you_are_not_welcome_here = 1
+	invalid_user = 2
+	
+
+
+if error == "admin_you_are_not_welcome_here":
+	You are not welcome here. Please contact the administrator for more information.
+
+
+
+
+-------=-------=---
+
+tabulka banu vlastnich uzivatelu:
+	admin_id ban_id, user_amail, reason, expiration, ts
+
+crud:
+	add_ban(user_amail, reason, expiration)
+	list_bans()
+	edit_ban(ban_id, reason, expiration)
+	remove_ban(ban_id)
+
+---------------
+
+tabulka banu ip adres:
+	ban_id, admin_id, ip: string, reason: string, expiration: datetime = null, ts: datetime
+crud:
+	...
+
+------------------
+

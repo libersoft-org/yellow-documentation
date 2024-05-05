@@ -302,16 +302,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>Unknown command</td>
       <td>Server obdržel od druhé strany nerozpoznaný příkaz</td>
      </tr>
-     <tr>
-      <td class="center">901</td>
-      <td>User's token is missing</td>
-      <td>Uživatel v příkazu neposkytl token relace</td>
-     </tr>
-     <tr>
-      <td class="center">902</td>
-      <td>User's token is invalid</td>
-      <td>Uživatel poskytl neplatný či prošlý token relace</td>
-     </tr>
     </table>
    </div>
    <div class="bold">Příklad obecné chyby:</div>
@@ -354,7 +344,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-errors-modules"></a><h4>Chyby příkazů modulů</h4>
-   <div>Chyby generované moduly si definuje modul sám dle svých potřeb. Doporučuje se používat stejnou strukturu jako používá jádro pro lepší přehlednost.</div>
+   <div>Chyby generované moduly si definuje modul sám dle svých potřeb. Doporučuje se pro lepší přehlednost používat stejnou strukturu jako používá jádro.</div>
    <a name="commands-c2s"></a><h3>Klient-server</h3>
    <div>V této sekci jsou popsány příkazy, které jsou využívány v komunikaci mezi klientskou a serverovou aplikací.</div>
    <a name="commands-c2s-admin"></a><h4>Správce</h4>
@@ -479,7 +469,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "login": "OK"
+ "success": true
 }
 </pre>
    <a name="commands-c2s-admin-logout"></a><h5>Odhlášení správce</h5>
@@ -496,8 +486,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>command</td>
-      <td>"admin_"</td>
-      <td class="center">✔❌</td>
+      <td>"admin_logout"</td>
+      <td class="center">✔</td>
       <td>Název příkazu</td>
      </tr>
     </table>
@@ -512,10 +502,10 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>-</td>
-      <td>-</td>
-      <td class="center">✔❌</td>
-      <td>-</td>
+      <td>success</td>
+      <td>bool</td>
+      <td class="center">✔</td>
+      <td>vysledek operace</td>
      </tr>
     </table>
    </div>
@@ -529,7 +519,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
+      <td>failed</td>
       <td>-</td>
      </tr>
     </table>
@@ -537,17 +527,17 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_",
+ "command": "admin_logout",
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "success": true
 }
 </pre>
    <a name="commands-c2s-admin-admins"></a><h5>Správci</h5>
-   <div>TODO - úvod</div>
+   <div>Správci spravují věci</div>
    <a name="commands-c2s-admin-admins-list"></a><h6>Seznam správců</h6>
    <div>TODO - úvod</div>
    <div class="note">Pro provedení příkazu vyžadováno přihlášení správce: ✔</div>
@@ -562,8 +552,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>command</td>
-      <td>"admin_"</td>
-      <td class="center">✔❌</td>
+      <td>"admin_list_admins"</td>
+      <td class="center">✔</td>
       <td>Název příkazu</td>
      </tr>
     </table>
@@ -578,9 +568,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>-</td>
-      <td>-</td>
-      <td class="center">✔❌</td>
+      <td>admins</td>
+      <td>list[Admin]</td>
+      <td class="center">✔</td>
       <td>-</td>
      </tr>
     </table>
@@ -595,7 +585,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
+      <td>error</td>
       <td>-</td>
      </tr>
     </table>
@@ -603,13 +593,23 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_",
+ "command": "admin_list_admins",
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "admins": [
+ {
+    "id": 1,
+    "name": "admin1",
+    "pubkey": "Xxxxx..."
+  },
+  {
+    "id": 2,
+    ...
+  }
+ ]
 }
 </pre>
    <a name="commands-c2s-admin-admins-add"></a><h6>Přidat nového správce</h6>
@@ -626,7 +626,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>command</td>
-      <td>"admin_"</td>
+      <td>"admin_create"</td>
       <td class="center">✔❌</td>
       <td>Název příkazu</td>
      </tr>
@@ -642,10 +642,22 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>-</td>
-      <td>-</td>
+      <td>name</td>
+      <td>string</td>
       <td class="center">✔❌</td>
       <td>-</td>
+     </tr>
+     <tr>
+      <td>password</td>
+      <td>string</td>
+      <td class="center">✔❌</td>
+      <td>heslo v plaintextu</td>
+     </tr>
+     <tr>
+      <td>pubkey</td>
+      <td>string</td>
+      <td class="center">✔❌</td>
+      <td>veřejný klíč</td>
      </tr>
     </table>
    </div>
@@ -659,7 +671,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
+      <td>error</td>
       <td>-</td>
      </tr>
     </table>
@@ -667,13 +679,16 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_",
+ "command": "admin_create",
+ "name": "admin1",
+ "password": "password",
+ "pubkey": "Xxxxx..."
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ success: true
 }
 </pre>
    <a name="commands-c2s-admin-admins-set"></a><h6>Úprava správce</h6>
@@ -690,9 +705,15 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>command</td>
-      <td>"admin_"</td>
-      <td class="center">✔❌</td>
+      <td>"admin_edit"</td>
+      <td class="center">✔</td>
       <td>Název příkazu</td>
+     </tr>
+     <tr>
+      <td>admin</td>
+      <td>Admin</td>
+      <td class="center">✔</td>
+      <td>admin identifikovaný polem "id"</td>
      </tr>
     </table>
    </div>
@@ -706,9 +727,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>-</td>
-      <td>-</td>
-      <td class="center">✔❌</td>
+      <td>success</td>
+      <td>bool</td>
+      <td class="center">✔</td>
       <td>-</td>
      </tr>
     </table>
@@ -723,7 +744,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
+      <td>error</td>
       <td>-</td>
      </tr>
     </table>
@@ -731,13 +752,18 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_",
+ "command": "admin_edit",
+ "admin": {
+  "id": 1,
+  "name": "admin1",
+  "pubkey": "Xxxxx..."
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "success": true
 }
 </pre>
    <a name="commands-c2s-admin-admins-del"></a><h6>Smazání správce</h6>
@@ -754,8 +780,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>command</td>
-      <td>"admin_"</td>
-      <td class="center">✔❌</td>
+      <td>"admin_delete"</td>
+      <td class="center">✔</td>
+      <td>Název příkazu</td>
+     </tr>
+     <tr>
+      <td>id</td>
+      <td>"admin_delete"</td>
+      <td class="center">✔</td>
       <td>Název příkazu</td>
      </tr>
     </table>
@@ -772,7 +804,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>-</td>
       <td>-</td>
-      <td class="center">✔❌</td>
+      <td class="center">✔</td>
       <td>-</td>
      </tr>
     </table>
