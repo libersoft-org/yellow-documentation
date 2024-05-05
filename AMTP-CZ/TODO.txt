@@ -8,16 +8,16 @@ Design stranky:
 - Po refreshi stránky, pokud je v adrese #sekce - tak jí zvýraznit v TOC jako aktivní
 
 Dopsání obsahu:
+- Při ověřování protějšího serveru přidat error pokud server nemá spojení s DNS
 - Globální blokace z cizích serverů / z klientů na IP - něco jako fail2ban pro:
   - challenge-response usera (vc. prihlasovani tokenem)
   - challenge-response admina
   - overovani serveru druhe strany pres DNS
 - Přidat management adminem pro fail2ban (ruční banování, odbanování adminem + přidat statusy těmto zlým serverům / klientům ve stylu "You are not welcome here" při pokusech o přihlášení / challenge
 - Tenhle fail2ban nepopisovat jen v commandech, ale napsat o tom i další sekci v Zabezpečení
-- Při ověřování protějšího serveru přidat error pokud server nemá spojení s DNS
-- Přidat commandy: Správa adminovských i uživatelských tokenů (uživatel maže své, admin maže všech, zobrazení expirace, nějaké identifikace zařízení (+ možnost nastavení názvu zařízení) apod.)
+- Přidat commandy: Správa uživatelských tokenů (uživatel maže své, admin maže všech, zobrazení expirace, nějaké identifikace zařízení (+ možnost změny názvu zařízení) apod.)
 - Admin bude moct změnit jen svůj pubkey + heslo (nikoliv ostatních adminů), pokud neexistuje žádný admin, co by měl funkční login (všichni ztratili klíče), tak prostě nutný přímý zásah na serveru lokálně
-- Přidat blokaci vlastních účtů na serveru - vracet status o tom, že je zablokovaný, kdo zablokoval, kdy, proč atd. + přidat commandy admina
+- Přidat možnost blokace uživatelských účtů na serveru adminem - vracet status o tom, že je zablokovaný, kdo zablokoval, kdy, proč atd. + přidat commandy admina
 - Admin bude moct změnit pubkey + heslo běžných uživatelů
 - Dopsat všechny commandy v dokumentaci, kde je TODO
 - Zamyslet se nad dalšími commandy do jádra
