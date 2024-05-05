@@ -12,9 +12,9 @@ Dopsání obsahu:
   - challenge-response usera (vc. prihlasovani tokenem)
   - challenge-response admina
   - overovani serveru druhe strany pres DNS
-- Pridat management adminem pro fail2ban (rucni banovani, odbanovani adminem + přidat statusy těmto zlým serverům / klientům ve stylu "You are not welcome here" při pokusech o prihlaseni / challenge
+- Přidat management adminem pro fail2ban (ruční banování, odbanování adminem + přidat statusy těmto zlým serverům / klientům ve stylu "You are not welcome here" při pokusech o přihlášení / challenge
 - Tenhle fail2ban nepopisovat jen v commandech, ale napsat o tom i další sekci v Zabezpečení
-- Pridat error pokud server nema spojeni s DNS
+- Při ověřování protějšího serveru přidat error pokud server nemá spojení s DNS
 - Přidat commandy: Správa adminovských i uživatelských tokenů (uživatel maže své, admin maže všech, zobrazení expirace, nějaké identifikace zařízení (+ možnost nastavení názvu zařízení) apod.)
 - Admin bude moct změnit jen svůj pubkey + heslo (nikoliv ostatních adminů), pokud neexistuje žádný admin, co by měl funkční login (všichni ztratili klíče), tak prostě nutný přímý zásah na serveru lokálně
 - Přidat blokaci vlastních účtů na serveru - vracet status o tom, že je zablokovaný, kdo zablokoval, kdy, proč atd. + přidat commandy admina
