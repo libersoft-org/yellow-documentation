@@ -153,6 +153,14 @@ pre .comment {
  color: var(--color-lightblue);
 }
 
+.note {
+ padding: 20px; 
+ border-radius: 20px;
+ font-weight: bold;
+ background-color: var(--color-dark);
+ color: #FFF;
+}
+
 .hidden {
  display: none;
 }

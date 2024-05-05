@@ -142,7 +142,7 @@ const data = [
           title: 'Úprava domény',
           link: 'commands-c2s-admin-domains-set'
          }, {
-          title: 'Smazat doménu',
+          title: 'Smazání domény',
           link: 'commands-c2s-admin-domains-del'
          }
         ]
