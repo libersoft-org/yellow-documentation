@@ -275,7 +275,7 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div>Následující schéma nastiňuje příklad toho, jak fungují spojení klientů a serverů v rámci <span class="bold">AMTP</span>:</div>
    <div class="center"><img src="img/AMTP-network-CZ.png" alt="Distribuovaná síť" /></div>
    <a name="commands"></a><h2>Příkazy</h2>
-   <div>Příkazy jsou zasílány přes <span class="bold">WebTransport</span> pomocí obousměrného proudu dat. V rámci zasílání všech příkazů jádra protokolu se používají výhradně spolehlivé proudy. Moduly mohou používat spolehlivé i nespolehlivé proudy, dle jejich konkrétních potřeb.</div>
+   <div>Příkazy jsou zasílány přes <span class="bold">WebTransport</span> pomocí obousměrného proudu dat. V rámci zasílání všech příkazů jádra protokolu se používají výhradně spolehlivé proudy. Moduly mohou používat spolehlivé i nespolehlivé proudy, dle konkrétních potřeb.</div>
    <div>V rámci každého příkazu se nejprve otevře proud, poté probíhá obousměrná komunikace pomocí příkazů strukturovaných ve formátu <span class="bold">BSON</span> a nakonec, jakmile již není potřeba mít proud otevřený, uzavře se jednou či druhou stranou, zatímco spojení může být stále zachováno. Více proudů v rámci jednoho spojení může běžet souběžně.</div>
    <a name="commands-errors"></a><h3>Chyby</h3>
    <div>V této sekci je popsána struktura obecných chyb, chyb jádra a modulů.</div>
@@ -320,7 +320,7 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     <table class="table-structure">
      <tr>
       <th>Název parametru</th>
-      <th>Hodnota</th>
+      <th>Datový typ</th>
       <th class="center">Vyžadováno</th>
       <th>Popis</th>
      </tr>
@@ -359,7 +359,7 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     <table class="table-structure">
      <tr>
       <th>Název parametru</th>
-      <th>Hodnota</th>
+      <th>Datový typ</th>
       <th class="center">Vyžadováno</th>
       <th>Popis</th>
      </tr>
@@ -388,7 +388,7 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     <table class="table-structure">
      <tr>
       <th>Název parametru</th>
-      <th>Hodnota</th>
+      <th>Datový typ</th>
       <th class="center">Vyžadováno</th>
       <th>Popis</th>
      </tr>

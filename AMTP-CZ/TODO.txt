@@ -9,7 +9,6 @@ Design stranky:
 
 Dopsání obsahu:
 - Vytvořit template pro každý command (misto jen TODO)
-- U commandů slovo "Hodnota" přepsat na datový typ
 - U chybovych stavu dat anglictinu a vedle popisek v CZ
 - Smazat opakovanyho usera z admin_login_request
 - Přidat proces přihlášení uživatele tokenem po spojení
