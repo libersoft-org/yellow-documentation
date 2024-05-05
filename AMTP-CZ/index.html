@@ -354,6 +354,7 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-c2s-admin-login"></a><h5>Přihlášení správce</h5>
    <div>Přihlášení správce probíhá ve dvou krocích - přihlašovací výzvě a přihlašovací odezvě. V přihlašovací výzvě zašle klient své přihlašovací jméno a pokud používá mimo privátního klíče i heslo, tak i hash tohoto hesla (nepovinné). Server ověří heslo (pokud správce používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem správce. Tento zašifrovaný řetězec je předán správci. Správce následně řetězec rozšifruje pomocí svého soukromého klíče a zašle ho zpět v rámci přihlašovací odezvy. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetětec od klienta odpovídá původně vygenerovanému, pak je správce přihlášen po dobu spojení. V opačném případě vrátí chybu.</div>
    <a name="commands-c2s-admin-login-challenge"></a><h6>Přihlašovací výzva</h6>
+   <div><span class="bold">Upozornění</span>: Po dokončení přihlašovací výzvy se neukončuje proud. Následuje po ní přihlašovací odezva.</div>
    <div><span class="bold">Struktura požadavku od klienta:</span></div>
    <div class="table-container">
     <table class="table-structure">
@@ -446,7 +447,8 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_login_request",
- "user": "admin"
+ "user": "admin",
+ "password": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg"
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -458,54 +460,399 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-login-response"></a><h6>Přihlašovací odezva</h6>
-   <div><span class="bold">Příklad žádosti:</span></div>
+   <div><span class="bold">Upozornění</span>: Tuto přihlašovací odezvu předchází přihlašovací výzva, nelze jí tedy zaslat jako samostavný příkaz. Po úspěšném dokončení přihlašovací výzvy následuje tato přihlašovací odezva ve stejném proudu, ve kterém byla zaslána přihlašovací výzva. Po dokončení této přihlašovací odezvy je tento proud uzavřen.</div>
+   <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
  "verification_string": "abcdefghijklmnopqrstuvwxyz1234567890abcd"
 }
 </pre>
-   <div class="bold">Příklad odezvy:</div>
+   <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
  "login": "OK"
 }
 </pre>
    <a name="commands-c2s-admin-logout"></a><h5>Odhlášení správce</h5>
-   <ul>
-    <li>TODO</li>
-   </ul>
+   <div>TODO - úvod</div>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"admin_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "admin_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
    <a name="commands-c2s-admin-admins"></a><h5>Správci</h5>
-   <ul>
-    <li>TODO</li>
-   </ul>
+   <div>TODO - úvod</div>
    <a name="commands-c2s-admin-admins-list"></a><h6>Seznam správců</h6>
-   <ul>
-    <li>TODO</li>
-   </ul>
+   <div>TODO - úvod</div>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"admin_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "admin_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
    <a name="commands-c2s-admin-admins-add"></a><h6>Přidat nového správce</h6>
-   <ul>
-    <li>TODO</li>
-   </ul>
+   <div>TODO - úvod</div>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"admin_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "admin_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
    <a name="commands-c2s-admin-admins-set"></a><h6>Úprava správce</h6>
-   <ul>
-    <li>TODO</li>
-   </ul>
+   <div>TODO - úvod</div>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"admin_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "admin_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
    <a name="commands-c2s-admin-admins-del"></a><h6>Smazání správce</h6>
-   <ul>
-    <li>TODO</li>
-   </ul>
+   <div>TODO - úvod</div>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"admin_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "admin_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
    <a name="commands-c2s-admin-domains"></a><h5>Domény:</h5>
-   <ul>
-    <li>TODO</li>
-   </ul>
+   <div>TODO - úvod</div>
    <a name="commands-c2s-admin-domains-list"></a><h6>Seznam domén:</h6>
-   <div class="bold">Příklad žádosti:</div>
+
+
+
+   <div>TODO - úvod</div>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"admin_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
  "command": "admin_get_domains",
 }
 </pre>
-   <div><span class="bold">Příklad odezvy:</span></div>
+   <div><span class="bold">Příklad odezvy od serveru:</span></div>
 <pre>
 {
  "domains": {
@@ -524,46 +871,508 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-domains-add"></a><h6>Přidání nové domény</h6>
-   <ul>
-    <li>TODO</li>
-   </ul>
+   <div>TODO - úvod</div>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"admin_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "admin_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
    <a name="commands-c2s-admin-domains-set"></a><h6>Úprava domény</h6>
-   <ul>
-    <li>TODO</li>
-   </ul>
+   <div>TODO - úvod</div>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"admin_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "admin_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
    <a name="commands-c2s-admin-domains-del"></a><h6>Smazání domény</h6>
-   <ul>
-    <li>TODO</li>
-   </ul>
+   <div>TODO - úvod</div>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"admin_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "admin_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
    <a name="commands-c2s-admin-users"></a><h5>Uživatelské účty</h5>
-   <ul>
-    <li>TODO</li>
-   </ul>
+   <div>TODO - úvod</div>
    <a name="commands-c2s-admin-users-list"></a><h6>Seznam uživatelů</h6>
-   <ul>
-    <li>TODO</li>
-   </ul>
+   <div>TODO - úvod</div>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"admin_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "admin_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
    <a name="commands-c2s-admin-users-add"></a><h6>Přidání nového uživatele</h6>
-   <ul>
-    <li>TODO</li>
-   </ul>
+   <div>TODO - úvod</div>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"admin_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "admin_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
    <a name="commands-c2s-admin-users-set"></a><h6>Úprava uživatelů</h6>
-   <ul>
-    <li>TODO</li>
-   </ul>
+   <div>TODO - úvod</div>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"admin_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "admin_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
    <a name="commands-c2s-admin-users-del"></a><h6>Smazání uživatele</h6>
-   <ul>
-    <li>TODO</li>
-   </ul>
+   <div>TODO - úvod</div>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"admin_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "admin_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
    <a name="commands-c2s-admin-sysinfo"></a><h5>Informace o serveru pro správce</h5>
    <div>Tento příkaz zobrazuje systémové prostředky serveru.</div>
-   <div class="bold">Příklad žádosti:</div>
+   <div>TODO - úvod</div>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"admin_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold"></div>
+   <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
  "command": "admin_sysinfo",
 }
 </pre>
-   <div class="bold">Příklad odezvy:</div>
+   <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
  "os_name": "Linux",
@@ -591,47 +1400,453 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-user"></a><h4>Uživatel</h4>
-   <div>Všechny příkazy začínající "<span class="bold">user_</span>" jsou určeny pro uživatele. Aby bylo možné provádět tyto příkazy, musí být uživatel přihlášen (mimo příkazů pro samotné přihlášení). Pokud je přihlášení úspěšné, získá uživatel token relace, kterým se prokazuje při navázání spojení se serverem (místo přihlášení). Přihlášení tokenem je platné po dobu spojení, token se tedy neodesílá v každém uživatelském příkazu./div>
+   <div>Všechny příkazy začínající "<span class="bold">user_</span>" jsou určeny pro uživatele. Aby bylo možné provádět tyto příkazy, musí být uživatel přihlášen (mimo příkazů pro samotné přihlášení). Pokud je přihlášení úspěšné, získá uživatel token relace, kterým se prokazuje při navázání spojení se serverem (místo přihlášení). Přihlášení tokenem je platné po dobu spojení, token se tedy neodesílá v každém uživatelském příkazu.</div>
    <a name="commands-c2s-user-registration"></a><h5>Registrace uživatele</h5>
    <div>Možnost registrace účtu uživatelem musí být povolena na serveru</div>
-   <ul>
-    <li>TODO</li>
-    <li>TODO - popsat chybu, kdy není registrace povolena na serveru</li>
-   </ul>
+   <div>TODO - úvod, popsat chybu, kdy není registrace povolena na serveru</div>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"user_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "user_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
    <a name="commands-c2s-user-login"></a><h5>Přihlášení uživatele</h5>
    <div>Přihlášení uživatele probíhá ve dvou krocích - přihlašovací výzvě a přihlašovací odezvě. V přihlašovací výzvě zašle klient své přihlašovací jméno ve tvaru <span class="bold">uživatel@doména</span> a pokud používá mimo privátního klíče i heslo, tak i hash tohoto hesla (nepovinné). Server ověří heslo (pokud uživatel používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem uživatele. Tento zašifrovaný řetězec je následně předán uživateli. Uživatel řetězec rozšifruje pomocí svého soukromého klíče a zašle ho zpět v rámci přihlašovací odezvy. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetětec od klienta odpovídá původně vygenerovanému, pak uživatele přihlásí a udělí mu token relace. V opačném případě vrátí chybu.</div>
-   <a name="commands-c2s-user-login-challenge"></a><h5>Přihlašovací výzva</h5>
-   <ul>
-    <li>TODO</li>
-    <li>TODO: expirace tokenu?</li>
-   </ul>
-   <a name="commands-c2s-user-login-response"></a><h5>Přihlašovací odezva</h5>
-   <ul>
-    <li>TODO</li>
-   </ul>
+   <a name="commands-c2s-user-login-challenge"></a><h6>Přihlašovací výzva</h6>
+   <div>TODO - úvod, připsat upozornění, že nezavírat proud kvůli přihlašovací odezvě</div>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"user_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "user_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
+   <a name="commands-c2s-user-login-response"></a><h6>Přihlašovací odezva</h6>
+   <div>TODO - úvod, připsat upozornění, že se navazuje na proud přihlašovací výzvy a po dokončení přihlašovací odezvy se teprve uzavírá proud.</div>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"user_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "user_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
    <a name="commands-c2s-user-logout"></a><h5>Odhlášení uživatele</h5>
-   <ul>
-    <li>TODO</li>
-   </ul>
+   <div>TODO - úvod</div>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"user_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "user_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
    <a name="commands-c2s-user-setpubkey"></a><h5>Změna veřejného klíče pro přihlášení</h5>
-   <ul>
-    <li>TODO - pozor, vyžaduje ověření původním pubkey (+ heslem, pokud se používá)</li>
-   </ul>
+   <div>TODO - úvod, pozor - vyžaduje ověření původním pubkey (+ heslem, pokud se používá)</div>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"user_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "user_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
    <a name="commands-c2s-user-setpassword"></a><h5>Změna hesla pro přihlášení</h5>
+   <div>TODO - úvod</div>
    <ul>
-    <li>TODO - pozor, vyžaduje ověření původním pubkey (+ heslem, pokud se používalo)</li>
+    <li>TODO - pozor - vyžaduje ověření původním pubkey (+ heslem, pokud se používalo)</li>
     <li>TODO - toto by mělo umět i nějak zrušit používání hesla pokud to server umožňuje (poslat null?)</li>
     <li>TODO - bude se vyžadovat aktivní příhlášení (tzn. mít token)?
    </ul>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"user_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "user_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
    <a name="commands-c2s-user-info"></a><h5>Informace o serveru pro uživatele</h5>
    <div>Tento příkaz vrací informace o AMTP serveru a nevyžaduje token relace.</div>
-   <div class="bold">Příklad žádosti:</div>
+   <div>TODO - úvod</div>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"user_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold"></div>
+   <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
  "command": "user_info"
 }
 </pre>
-   <div class="bold">Příklad odezvy:</div>
+   <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
  "app_name": "AMTP Server",
@@ -639,9 +1854,6 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "hostname": "amtp.domain.tld"
 }
 </pre>
-   <ul>
-    <li>TODO - dopsat</li>
-   </ul>
    <a name="commands-c2s-user-modules"></a><h5>Seznam používaných modulů</h5>
    <div>Tento příkaz zobrazuje seznam modulů a jejich verzí, které server používá. Server může mít spuštěný jeden modul ve více verzích. To umožňuje zpětnou kompatibilitu se starými verzemi klientských modulů. Tento příkaz nevyžaduje token relace.</div>
    <div class="bold">Příklad žádosti:</div>
