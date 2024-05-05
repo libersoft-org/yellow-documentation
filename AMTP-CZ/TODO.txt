@@ -12,7 +12,7 @@ Dopsání obsahu:
   - challenge-response usera (vc. prihlasovani tokenem)
   - challenge-response admina
   - overovani serveru druhe strany pres DNS
-- Blokaci neautorizovaných přístupů popsat v commandech - u admina, usera i server-to-server (popsáno v Zabezpečení - blokace neautorizovaných přístupů)
+- Blokaci neautorizovaných přístupů popsat i v commandech (obecně popsáno v Zabezpečení - blokace neautorizovaných přístupů) - u loginu admina, loginu usera, pokusy s neplatným tokenem i ověřování server-to-server v DNS
 - Přidat management zablokovaných IP adminem (fail2ban) - ruční banování, odbanování adminem + přidat statusy těmto zlým serverům / klientům ve stylu "You are not welcome here" při pokusech o přihlášení / challenge
 - Přidat commandy: Správa uživatelských tokenů (uživatel maže své, admin maže všech, zobrazení expirace, nějaké identifikace zařízení (+ možnost změny názvu zařízení) apod.)
 - Admin bude moct změnit jen svůj pubkey + heslo (nikoliv ostatních adminů), pokud neexistuje žádný admin, co by měl funkční login (všichni ztratili klíče), tak prostě nutný přímý zásah na serveru lokálně
