@@ -8,13 +8,12 @@ Design stranky:
 - Po refreshi stránky, pokud je v adrese #sekce - tak jí zvýraznit v TOC jako aktivní
 
 Dopsání obsahu:
-- Při ověřování protějšího serveru přidat error pokud server nemá spojení s DNS
-- Globální blokace z cizích serverů / z klientů na IP - něco jako fail2ban pro:
+- Popsat fail2ban na IP v sekci "Zabezpečení" - "Blokace neautorizovaných přístupů" a to u:
   - challenge-response usera (vc. prihlasovani tokenem)
   - challenge-response admina
   - overovani serveru druhe strany pres DNS
-- Přidat management adminem pro fail2ban (ruční banování, odbanování adminem + přidat statusy těmto zlým serverům / klientům ve stylu "You are not welcome here" při pokusech o přihlášení / challenge
-- Tenhle fail2ban nepopisovat jen v commandech, ale napsat o tom i další sekci v Zabezpečení
+- Blokaci neautorizovaných přístupů popsat v commandech - u admina, usera i server-to-server (popsáno v Zabezpečení - blokace neautorizovaných přístupů)
+- Přidat management zablokovaných IP adminem (fail2ban) - ruční banování, odbanování adminem + přidat statusy těmto zlým serverům / klientům ve stylu "You are not welcome here" při pokusech o přihlášení / challenge
 - Přidat commandy: Správa uživatelských tokenů (uživatel maže své, admin maže všech, zobrazení expirace, nějaké identifikace zařízení (+ možnost změny názvu zařízení) apod.)
 - Admin bude moct změnit jen svůj pubkey + heslo (nikoliv ostatních adminů), pokud neexistuje žádný admin, co by měl funkční login (všichni ztratili klíče), tak prostě nutný přímý zásah na serveru lokálně
 - Přidat možnost blokace uživatelských účtů na serveru adminem - vracet status o tom, že je zablokovaný, kdo zablokoval, kdy, proč atd. + přidat commandy admina
@@ -24,8 +23,8 @@ Dopsání obsahu:
 
 Návrh verze 2:
 - Přesunutí uživatelských účtů / přihlášení do modulu - přidá další možnosti ověření: OAuth / social loginy atd.
-- Digitální podpis serveru - navrhnout alternativu k DNS - něco jako notary server na Matrix protokolu (resp. ne jako alternativu, ale jako další vrstvu zabezpečení)
+- Uživatelské / správcovské heslo použít jako privátní klíč a z něj vytvořit veřejný - pokud to jde, vytvořit stejný typ challenge-response přihlášení, jako je u privátního klíče, aby se heslo nemuselo (byť v zahashované podobě) posílat po síti (pokud to má vůbec smysl, protože Argon2 má nějaký random autosalting a pokaždé se posílá něco jiného po síti, takže to funguje podobně, jako challenge-response) - toto vyžaduje nějaký hlubší research kryptografa (jak moc je Argon prolomitelný, jestli vůbec lze něco jako password-as-private-key). Obecně prolomení šifry styly: "z public key získat private key" versus "prolomit Argon2id hash"
 - Admin příkazy pro management modulů a audit logů - přidá se do dokumentace až poté, co zjistíme, co všechno je třeba logovat
 - Tokenové páry krátkodobých tokenů - access token a refresh token, místo dlouhodobých tokenů - zjistit implementací, jelikož nevíme, jak dlouhé sessions většinou udrží WebTransport a jestli se nebudou měnit při každém připojení
-- ACL s právy pro konkrétní akce adminů
-- Uživatelské / správcovské heslo použít jako privátní klíč a z něj vytvořit veřejný - pokud to jde, vytvořit stejný typ challenge-response přihlášení, jako je u privátního klíče, aby se heslo nemuselo (byť v zahashované podobě) posílat po síti (pokud to má vůbec smysl, protože Argon2 má nějaký random autosalting a pokaždé se posílá něco jiného po síti, takže to funguje podobně, jako challenge-response) - toto vyžaduje nějaký hlubší research kryptografa (jak moc je Argon prolomitelný, jestli vůbec lze něco jako password-as-private-key). Obecně prolomení šifry styly: "z public key získat private key" versus "prolomit Argon2id hash"
+- ACL s právy pro konkrétní akce adminů + zavedení možnosti změny klíče ostatních adminů v případě, že má admin toto právo
+- Digitální podpis serveru - navrhnout alternativu k DNS - něco jako notary server na Matrix protokolu (resp. ne jako alternativu, ale jako další vrstvu zabezpečení)

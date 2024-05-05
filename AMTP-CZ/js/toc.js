@@ -52,6 +52,9 @@ const data = [
     title: 'Bezpečné přihlašování',
     link: 'security-login'
    }, {
+    title: 'Blokace neautorizovaných přístupů',
+    link: 'security-block'
+   }, {
     title: 'Koncové šifrování',
     link: 'security-e2e'
    }

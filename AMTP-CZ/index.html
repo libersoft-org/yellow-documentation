@@ -186,6 +186,8 @@
    <div>Tato metoda ověřování využívá výhody asymetrického šifrování k ochraně uživatelských dat a zajišťuje, že citlivé informace, jako jsou <span class="bold">soukromé klíče</span>, zůstanou chráněny v rámci koncových zařízení uživatelů. Tento přístup zvyšuje bezpečnost a je v souladu s osvědčenými postupy pro bezpečnou komunikaci v moderních aplikacích.</div>
    <div>Ověření uživatele pomocí soukromého klíče může být rozšířeno i ověřením hesla (standardně nepovinné, server si povinnost hesla může vynutit), které je zasláno při registraci v zahashované formě (výběr šifrovacího algoritmu je v kompetenci serverové a klientské aplikace). Tímto se docílí dodatečného zabezpečení pro případ, kdyby byl privátní klíč zkompromitován.</div>
    <div class="center"><img src="img/AMTP-login-CZ.png" alt="Bezpečné přihlašování" /></div>
+   <a name="security-block"></a><h3>Blokace neautorizovaných přístupů</h3>
+   <div>TODO</div>
    <a name="security-e2e"></a><h3>Koncové šifrování</h3>
    <div>Data zabezpečená <a href="https://cs.wikipedia.org/wiki/Koncov%C3%A9_%C5%A1ifrov%C3%A1n%C3%AD" target="_blank">koncovým šifrováním</a> představují další vrstvu zabezpečení nejen v případě selhání šifrování v rámci zabezpečeného spojení mezi klientem a serverem, ale i k tomu, aby nikdo, kromě koncových uživatelů neměl přístup k datům (např. ani správce serveru, na kterém má uživatel založený uživatelský účet).</div>
    <div><span class="bold">Koncové šifrování</span> není předmětem této dokumentace, jelikož je v kompetenci jednotlivých modulů (např. zprávy, telefonování apod.). I tak je třeba zmínit, že by mělo být implementováno ve veškerých funkcionalitách modulů, kde se přenáší soukromá data mezi koncovými uživateli nebo skupinami uživatelů. Taktéž je doporučeno vytvářet moduly tak, aby klíče byly často obměňovány.</div>
@@ -1801,11 +1803,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
    <a name="commands-c2s-user-setpassword"></a><h5>Změna hesla pro přihlášení</h5>
    <div>TODO - úvod</div>
-   <ul>
-    <li>TODO - pozor - vyžaduje ověření původním pubkey (+ heslem, pokud se používalo)</li>
-    <li>TODO - toto by mělo umět i nějak zrušit používání hesla pokud to server umožňuje (poslat null?)</li>
-    <li>TODO - bude se vyžadovat aktivní příhlášení (tzn. mít token)?
-   </ul>
+   <div>TODO - pozor - vyžaduje ověření původním pubkey (+ heslem, pokud se používalo)</div>
+   <div>TODO - toto by mělo umět i nějak zrušit používání hesla pokud to server umožňuje (poslat null?)</div>
+   <div>TODO - bude se vyžadovat aktivní příhlášení (tzn. mít token)?</div>
    <div class="note">Pro provedení příkazu vyžadováno přihlášení uživatele: ✔</div>
    <div><span class="bold">Struktura požadavku od klienta:</span></div>
    <div class="table-container">
@@ -2012,18 +2012,13 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-modules"></a><h4>Komunikace s moduly</h4>
-   <ul>
-    <li>TODO</li>
-   </ul>
+   <div>TODO</div>
    <a name="commands-s2s"></a><h3>Spojení server-server</h3>
    <div>V této sekci jsou popsány příkazy, které jsou využívány v komunikaci mezi dvěma serverovými aplikacemi:</div>
-   <ul>
-    <li>TODO: předávání, ověřování protějšího serveru atd.</li>
-   </ul>
+   <div>TODO: předávání, ověřování protějšího serveru atd.</div>
+   <div>TODO: u ověřování protějšího serveru přidat error pokud server nemá spojení s DNS</div>
    <a name="examples"></a><h2>Příklady</h2>
-   <ul>
-    <li>TODO</li>
-   </ul>
+   <div>TODO</div>
   </div>
   <div id="resizer" class="no-print"></div>
  </body>
