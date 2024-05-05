@@ -145,12 +145,12 @@
       <ul>
        <li><span class="bold">Malá písmena</span>: (a-z) - pouze anglické abecedy  - na jakékoliv pozici</li>
        <li><span class="bold">Číslice</span>: (0-9) - na jakékoliv pozici</li>
-       <li><span class="bold">Speciální znaky</span>: tečka (.), pomlčka (-) a podtržítko (_) - tyto znaky nesmějí být použity na začátku ani na konci lokální části (tedy nikoliv např. <span class="bold">john-@domain.tld</span>) a nesmí se dva nebo více speciálních znaků objevit za sebou v jakékoliv kombinaci (tedy nikoliv např. <span class="bold">john.-doe@domain.tld</span>).</li>
+       <li><span class="bold">Speciální znaky</span>: tečka (.), pomlčka (-) a podtržítko (_) - tyto znaky nesmějí být použity na začátku ani na konci lokální části (tedy nikoliv např. <span class="bold">john-@example.com</span>) a nesmí se dva nebo více speciálních znaků objevit za sebou v jakékoliv kombinaci (tedy nikoliv např. <span class="bold">john.-doe@example.com</span>).</li>
        <li>Velká písmena anglické abecedy jsou tolerována a automaticky převáděna na malá písmena.</li>
       </ul>
      <li><span class="bold">Doménová část</span>: určuje doménu, ke které má užívací právo provozovatel serveru (každý AMTP server může spravovat libovolné množství domén). Doménová jména mohou obsahovat znaky dle aktuálních standardů pro domény (definované v <a href="https://www.rfc-editor.org/rfc/rfc5890.html" target="_blank">RFC 5890</a>, <a href="https://www.rfc-editor.org/rfc/rfc5891.html" target="_blank">RFC 5891</a>, <a href="https://www.rfc-editor.org/rfc/rfc5892.html" target="_blank">RFC 5892</a> a <a href="https://www.rfc-editor.org/rfc/rfc5893.html" target="_blank">RFC 5893</a>.</li>
     </ul>
-    <li><span class="bold">Viditelné jméno</span>: V rámci <span class="bold">AMTP</span> se již nepoužívá formát zápisu s viditelným jménem, který je známý z původních e-mailových protokolů (např.: "<span class="bold">John Doe &lt;john.doe@domain.tld&gt;</span>").</li>
+    <li><span class="bold">Viditelné jméno</span>: V rámci <span class="bold">AMTP</span> se již nepoužívá formát zápisu s viditelným jménem, který je známý z původních e-mailových protokolů (např.: "<span class="bold">John Doe &lt;john.doe@example.com&gt;</span>").</li>
     <li><span class="bold">Účel identity</span>: Narozdíl od původních e-mailových protokolů, <span class="bold">AMTP</span> nedefinuje, co uživatelský účet reprezentuje (např. poštovní schránku, alias pro přeposílání pošty apod.). To je plně v režii modulů (např. modul pro rychlé zprávy).</li>
     <li><span class="bold">Profilové informace</span>: Uživatelský účet v protokolovém jádru neobsahuje žádné další profilové informace (např. jméno, příjmení, pohlaví, datum narození, fotografie apod.). Tyto informace jsou plně v kompetenci modulů, kde mohou být reprezentovány v podobě uživatelských profilů. Tento přístup dává modulům svobodu v rozhodnutí, zda každý uživatelský účet bude reprezentovat jen jeden a nebo více uživatelských profilů, tzn. přihlášením k jednomu uživatelskému účtu se může uživatel dostat k několika svým profilům). Taktéž tento přístup zajišťuje možnost nezveřejňovat adresu uživatelského účtu, pokud moduly budou zobrazovat jiný typ identifikace profilů.</li>
    </ul>
@@ -241,13 +241,13 @@
    </ul>
    <div class="bold">Příklad:</div>
 <pre>
-subdomain.domain.tld. IN TXT "amtp-servers=amtp1.domain.tld,amtp2.domain.tld:12345,amtp3.domain.tld:23456"
+subdomain.example.com. IN TXT "amtp-servers=amtp1.example.com,amtp2.example.com:12345,amtp3.example.com:23456"
 </pre>
-   <div>Tento záznam definuje, že pro účty na doméně <span class="bold">@subdomain.domain.tld</span> jsou používány následující servery <span class="bold">AMTP</span>:</div>
+   <div>Tento záznam definuje, že pro účty na doméně <span class="bold">@subdomain.example.com</span> jsou používány následující servery <span class="bold">AMTP</span>:</div>
    <ul>
-    <li><span class="bold">amtp1.domain.tld</span> na portu 443</li>
-    <li><span class="bold">amtp2.domain.tld</span> na portu 12345</li>
-    <li><span class="bold">amtp3.domain.tld</span> na portu 23456</li>
+    <li><span class="bold">amtp1.example.com</span> na portu 443</li>
+    <li><span class="bold">amtp2.example.com</span> na portu 12345</li>
+    <li><span class="bold">amtp3.example.com</span> na portu 23456</li>
    </ul>
    <div><span class="bold">TXT - AMTP-PUBKEY záznam</span>:</div>
    <ul>
@@ -260,9 +260,9 @@ subdomain.domain.tld. IN TXT "amtp-servers=amtp1.domain.tld,amtp2.domain.tld:123
    </ul>
    <div class="bold">Příklad:</div>
 <pre>
-amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
+amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
-   <div>Tento příklad uvádí, že pro server <span class="bold">amtp1.domain.tld</span> je používán veřejný klíč "<span class="bold">123456789abcdef</span>" se šifrovacím algoritmem <a href="https://cs.wikipedia.org/wiki/RSA" target="_blank">RSA</a>.</div>
+   <div>Tento příklad uvádí, že pro server <span class="bold">amtp1.example.com</span> je používán veřejný klíč "<span class="bold">123456789abcdef</span>" se šifrovacím algoritmem <a href="https://cs.wikipedia.org/wiki/RSA" target="_blank">RSA</a>.</div>
    <a name="connection"></a><h2>Spojení</h2>
    <div><span class="bold">Spojení</span> jsou realizována jak mezi klientem a serverem, tak i mezi servery navzájem.</div>
    <ul class="spacelist">
@@ -859,12 +859,12 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
   [
    {
     "id": 1,
-    "name": "domain1.tld",
-    "created":"2023-11-25 14:57:03"
+    "name": "example1.com",
+    "created":"2024-04-30 14:51:03"
    }, {
     "id": 2,
-    "name": "domain2.tld",
-    "created": "2023-11-26 16:21:08"
+    "name": "example2.com",
+    "created": "2024-04-30 16:21:08"
    }
   ]
  }
@@ -1851,7 +1851,7 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "app_name": "AMTP Server",
  "app_version": "1.00",
- "hostname": "amtp.domain.tld"
+ "hostname": "amtp.example.com"
 }
 </pre>
    <a name="commands-c2s-user-modules"></a><h5>Seznam používaných modulů</h5>
