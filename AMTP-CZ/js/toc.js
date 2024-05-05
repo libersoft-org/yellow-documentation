@@ -189,6 +189,9 @@ const data = [
          }
         ]
        }, {
+        title: 'Ověření uživatele tokenem',
+        link: 'commands-c2s-user-verify',
+       }, {
         title: 'Odhlášení uživatele',
         link: 'commands-c2s-user-logout'
        }, {

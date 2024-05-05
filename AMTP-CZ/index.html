@@ -1593,6 +1593,69 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "-": "-",
 }
 </pre>
+   <a name="commands-c2s-user-verify"></a><h5>Ověření uživatele tokenem</h5>
+   <div>Pokud byl uživatel již dříve přihlášen, získal token relace a nemusí se tedy přihlašovat, stačí jen aby se místo přihlášení po novém navázání spojení ověřil tokenem relace. Pokud platnost tokenu relace již vypršela, je nutné přihlášení pro získání nového tokenu.</div>
+   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>"user_"</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "user_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
    <a name="commands-c2s-user-logout"></a><h5>Odhlášení uživatele</h5>
    <div>TODO - úvod</div>
    <div><span class="bold">Struktura požadavku od klienta:</span></div>
