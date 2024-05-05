@@ -13,11 +13,11 @@ Dopsání obsahu:
   - challenge-response admina
   - overovani serveru druhe strany pres DNS
 - Blokaci neautorizovaných přístupů popsat i v commandech (obecně popsáno v Zabezpečení - blokace neautorizovaných přístupů) - u loginu admina, loginu usera, pokusy s neplatným tokenem i ověřování server-to-server v DNS
-- Přidat management zablokovaných IP adminem (fail2ban) - ruční banování, odbanování adminem + přidat statusy těmto zlým serverům / klientům ve stylu "You are not welcome here" při pokusech o přihlášení / challenge
-- Přidat commandy: Správa uživatelských tokenů (uživatel maže své, admin maže všech, zobrazení expirace, nějaké identifikace zařízení (+ možnost změny názvu zařízení) apod.)
-- Admin bude moct změnit jen svůj pubkey + heslo (nikoliv ostatních adminů), pokud neexistuje žádný admin, co by měl funkční login (všichni ztratili klíče), tak prostě nutný přímý zásah na serveru lokálně
-- Přidat možnost blokace uživatelských účtů na serveru adminem - vracet status o tom, že je zablokovaný, kdo zablokoval, kdy, proč atd. + přidat commandy admina
-- Admin bude moct změnit pubkey + heslo běžných uživatelů
+- Přidat commandy pro management zablokovaných IP adminem (fail2ban) - ruční banování, odbanování adminem + přidat statusy těmto zlým serverům / klientům ve stylu "You are not welcome here" při pokusech o přihlášení / challenge
+- Přidat commandy pro správu uživatelských tokenů (uživatel maže své, admin maže všech, zobrazení expirace, nějaké identifikace zařízení (+ možnost změny názvu zařízení) apod.)
+- Přidat commandy u admina pro změnu svého pubkey + hesla
+- Přidat commandy pro admina na blokaci uživatelských účtů + pokud se takový uživatel bude přihlašovat, tak vracet status o tom, že je zablokovaný, kdo zablokoval, kdy, proč atd.
+- Přidat commandy pro admina na změnu pubkey + hesla běžných uživatelů
 - Dopsat všechny commandy v dokumentaci, kde je TODO
 - Zamyslet se nad dalšími commandy do jádra
 
