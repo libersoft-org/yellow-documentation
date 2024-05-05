@@ -181,7 +181,7 @@
     <li>Klient nejprve odešle serveru žádost o přihlášení spolu se svým uživatelským jménem a případně i heslem, pokud je používáno.</li>
     <li>Server vygeneruje náhodný řetězec (doporučuje se délka řetězce alespoň 40 znaků), který je následně zašifrován pomocí <span class="bold">veřejného klíče</span> klienta a poté je v této zašifrované formě odeslán klientovi spolu s jeho veřejným klíčem a identifikací šifrovacího algoritmu. Doporučuje se časově omezit platnost zašifrovaného řetězce (dobu platnosti si určí server, doporučená doba platnosti je zhruba 30 vteřin).</li>
     <li>Po přijetí klient použije svůj <span class="bold">soukromý klíč</span> k rozšifrování přijatého řetězce a odešle rozšifrovaný řetězec zpět na server k ověření.</li>
-    <li>Server porovná rozšifrovaný řetězec s původně vygenerovaným řetězcem. Pokud se tyto dva řetězce shodují, potvrdí server identitu klienta a udělí mu přístup vydáním tokenu relace. Token relace by měl být taktéž časově omezen (dobu platnosti si určí server, doporučená doba platnosti je zhruba 15 minut v případě správce a 30 dní v případě uživatele). Platnost tokenu se doporučuje prodlužovat na dobu jeho platnosti od chvíle zaslání každého příkazu. Tím se zajistí, že token expiruje pouze při neaktivitě správce či uživatele, případně jeho ručním odstraněním.</li>
+    <li>Server porovná rozšifrovaný řetězec s původně vygenerovaným řetězcem. Pokud se tyto dva řetězce shodují, je uživatel či správce přihlášen. V případě uživatelů (nikoliv správců) je zároveň i vydán token relace. Token relace by měl být taktéž časově omezen (dobu platnosti si určí server, doporučená doba platnosti je 30 dní). Platnost tokenu se doporučuje prodlužovat na dobu jeho platnosti od chvíle zaslání každého příkazu. Tím se zajistí, že token expiruje pouze při neaktivitě uživatele, případně jeho ručním odstraněním. Správci nepotřebují token relace, jelikož se přihlašují jen na krátkou dobu (po dobu spojení se serverem).</li>
    </ul>
    <div>Tato metoda ověřování využívá výhody asymetrického šifrování k ochraně uživatelských dat a zajišťuje, že citlivé informace, jako jsou <span class="bold">soukromé klíče</span>, zůstanou chráněny v rámci koncových zařízení uživatelů. Tento přístup zvyšuje bezpečnost a je v souladu s osvědčenými postupy pro bezpečnou komunikaci v moderních aplikacích.</div>
    <div>Ověření uživatele pomocí soukromého klíče může být rozšířeno i ověřením hesla (standardně nepovinné, server si povinnost hesla může vynutit), které je zasláno při registraci v zahashované formě (výběr šifrovacího algoritmu je v kompetenci serverové a klientské aplikace). Tímto se docílí dodatečného zabezpečení pro případ, kdyby byl privátní klíč zkompromitován.</div>
@@ -296,23 +296,13 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">901</td>
-      <td>Admin's token is missing</td>
-      <td>Správce v příkazu neposkytl token relace</td>
-     </tr>
-     <tr>
-      <td class="center">902</td>
-      <td>Admin's token is invalid</td>
-      <td>Správce poskytl neplatný token relace</td>
-     </tr>
-     <tr>
-      <td class="center">903</td>
       <td>User's token is missing</td>
       <td>Uživatel v příkazu neposkytl token relace</td>
      </tr>
      <tr>
-      <td class="center">904</td>
+      <td class="center">902</td>
       <td>User's token is invalid</td>
-      <td>Uživatel poskytl neplatný token relace</td>
+      <td>Uživatel poskytl neplatný či prošlý token relace</td>
      </tr>
     </table>
    </div>
@@ -360,9 +350,9 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-c2s"></a><h3>Klient-server</h3>
    <div>V této sekci jsou popsány příkazy, které jsou využívány v komunikaci mezi klientskou a serverovou aplikací:</div>
    <a name="commands-c2s-admin"></a><h4>Správce</h4>
-   <div>Všechny příkazy začínající "<span class="bold">admin_</span>" jsou určeny pouze pro správce. Aby bylo možné provádět tyto příkazy (mimo příkazů pro samotné přihlášení), musí být správce přihlášen. Pokud je přihlášení úspěšné, získá správce token relace, který musí být odeslán v každém následném příkazu. Tento token se liší od tokenu uživatele.</div>
+   <div>Všechny příkazy začínající "<span class="bold">admin_</span>" jsou určeny pouze pro správce. Aby bylo možné provádět tyto příkazy (mimo příkazů pro samotné přihlášení), musí být správce přihlášen. Pokud je přihlášení úspěšné, je správce přihlášen po dobu spojení.</div>
    <a name="commands-c2s-admin-login"></a><h5>Přihlášení správce</h5>
-   <div>Přihlášení správce probíhá ve dvou krocích - přihlašovací výzvě a přihlašovací odezvě. V přihlašovací výzvě zašle klient své přihlašovací jméno a pokud používá mimo privátního klíče i heslo, tak i hash tohoto hesla (nepovinné). Server ověří heslo (pokud správce používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem správce. Tento zašifrovaný řetězec je předán správci. Správce následně řetězec rozšifruje pomocí svého soukromého klíče a zašle ho zpět v rámci přihlašovací odezvy. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetětec od klienta odpovídá původně vygenerovanému, pak správce přihlásí a udělí mu token relace. V opačném případě vrátí chybu.</div>
+   <div>Přihlášení správce probíhá ve dvou krocích - přihlašovací výzvě a přihlašovací odezvě. V přihlašovací výzvě zašle klient své přihlašovací jméno a pokud používá mimo privátního klíče i heslo, tak i hash tohoto hesla (nepovinné). Server ověří heslo (pokud správce používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem správce. Tento zašifrovaný řetězec je předán správci. Správce následně řetězec rozšifruje pomocí svého soukromého klíče a zašle ho zpět v rámci přihlašovací odezvy. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetětec od klienta odpovídá původně vygenerovanému, pak je správce přihlášen po dobu spojení. V opačném případě vrátí chybu.</div>
    <a name="commands-c2s-admin-login-challenge"></a><h6>Přihlašovací výzva</h6>
    <div><span class="bold">Struktura požadavku od klienta:</span></div>
    <div class="table-container">
@@ -466,15 +456,13 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div><span class="bold">Příklad žádosti:</span></div>
 <pre>
 {
- "command": "admin_login_verify",
- "user": "admin",
  "verification_string": "abcdefghijklmnopqrstuvwxyz1234567890abcd"
 }
 </pre>
    <div class="bold">Příklad odezvy:</div>
 <pre>
 {
- "admin_token": "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+ "login": "OK"
 }
 </pre>
    <a name="commands-c2s-admin-logout"></a><h5>Odhlášení správce</h5>
@@ -510,7 +498,6 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_get_domains",
- "admin_token": "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
 }
 </pre>
    <div><span class="bold">Příklad odezvy:</span></div>
@@ -569,7 +556,6 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_sysinfo",
- "admin_token": "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
 }
 </pre>
    <div class="bold">Příklad odezvy:</div>
@@ -600,7 +586,7 @@ amtp1.domain.tld. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-user"></a><h4>Uživatel</h4>
-   <div>Všechny příkazy začínající "<span class="bold">user_</span>" jsou určeny pro uživatele. Aby bylo možné provádět tyto příkazy, musí být uživatel přihlášen (mimo příkazů pro samotné přihlášení). Pokud je přihlášení úspěšné, získá uživatel token relace, který musí být odeslán v každém uživatelském požadavku. Tento token se liší od tokenu správce.</div>
+   <div>Všechny příkazy začínající "<span class="bold">user_</span>" jsou určeny pro uživatele. Aby bylo možné provádět tyto příkazy, musí být uživatel přihlášen (mimo příkazů pro samotné přihlášení). Pokud je přihlášení úspěšné, získá uživatel token relace, kterým se prokazuje při navázání spojení se serverem (místo přihlášení). Přihlášení tokenem je platné po dobu spojení, token se tedy neodesílá v každém uživatelském příkazu./div>
    <a name="commands-c2s-user-registration"></a><h5>Registrace uživatele</h5>
    <div>Možnost registrace účtu uživatelem musí být povolena na serveru</div>
    <ul>

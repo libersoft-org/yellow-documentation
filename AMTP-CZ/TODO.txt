@@ -8,9 +8,9 @@ Design stranky:
 - Po refreshi stránky, pokud je v adrese #sekce - tak jí zvýraznit v TOC jako aktivní
 
 Dopsání obsahu:
-- Přepsat všude, že spravcovské tokeny nebudou, protože jsou jen na dobu session
-- Tokeny se nepoužívají v commandech, ale jen po připojení k session (tzn. buď se přihlásím a nebo nahlásím token) - smazat to tedy z commandů a jen u každého commandu zmínit, jestli vyžaduje přihlášení či nikoliv
-- Někam dopsat jak řádkovat JSON (LF) a v jaké codepage to psát (UTF)
+- Zapracovat veci z Telegramu - ulozene
+- Přidat proces přihlášení uživatele tokenem po spojení
+- Tokeny se nepoužívají v commandech, smazat z commandů a jen u každého commandu zmínit, jestli vyžaduje přihlášení či nikoliv
 - Globální blokace z cizích serverů / z klientů - něco jako fail2ban pro challenge-response + management ban / unban adminem + přidat statusy těmto zlým serverům / klientům ve stylu "You are not welcome here" při pokusu o přihlášení klienta / ověření serveru
 - Tenhle fail to ban nepopisovat jen v commandech, ale napsat o tom i další sekci v Zabezpečení
 - Přidat commandy: Správa adminovských i uživatelských tokenů (uživatel maže své, admin maže všech, zobrazení expirace, nějaké identifikace zařízení (+ možnost nastavení názvu zařízení) apod.)
