@@ -8,7 +8,6 @@ Design stranky:
 - Po refreshi stránky, pokud je v adrese #sekce - tak jí zvýraznit v TOC jako aktivní
 
 Dopsání obsahu:
-- Smazat opakovanyho usera z admin_login_request
 - Přidat proces přihlášení uživatele tokenem po spojení
 - Tokeny se nepoužívají v commandech, smazat z commandů a jen u každého commandu zmínit, jestli vyžaduje přihlášení či nikoliv
 - Globální blokace z cizích serverů / z klientů na IP - něco jako fail2ban pro:
