@@ -8,12 +8,8 @@ Design stranky:
 - Po refreshi stránky, pokud je v adrese #sekce - tak jí zvýraznit v TOC jako aktivní
 
 Dopsání obsahu:
-- Popsat fail2ban na IP v sekci "Zabezpečení" - "Blokace neautorizovaných přístupů" a to u:
-  - challenge-response usera (vc. prihlasovani tokenem)
-  - challenge-response admina
-  - overovani serveru druhe strany pres DNS
 - Dopsat všechny commandy v dokumentaci, kde je TODO
-- Blokaci neautorizovaných přístupů popsat i v commandech (obecně popsáno v Zabezpečení - blokace neautorizovaných přístupů) - u loginu admina, loginu usera, pokusy s neplatným tokenem i ověřování server-to-server v DNS
+- Blokaci neautorizovaných přístupů popsat i v commandech (obecně popsáno v Zabezpečení - Blokace neautorizovaných přístupů) - u loginu admina, loginu usera, pokusy s neplatným tokenem u usera i ověřování server-to-server (PUBKEY z DNS)
 - Přidat commandy pro management zablokovaných IP adminem (fail2ban) - ruční banování, odbanování adminem + přidat statusy těmto zlým serverům / klientům ve stylu "You are not welcome here" při pokusech o přihlášení / challenge
 - Přidat commandy pro správu uživatelských tokenů (uživatel maže své, admin maže všech, zobrazení expirace, nějaké identifikace zařízení (+ možnost změny názvu zařízení) apod.)
 - Přidat commandy u admina pro změnu svého pubkey + hesla
