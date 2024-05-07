@@ -215,6 +215,7 @@ none.
         }
     ]
 }
+```
 ## uprava zpravy
 ### priklad
 ```
@@ -224,6 +225,8 @@ none.
     "subject": "Ahoj Pepo, jak se mas?"
 }
 ```
+Uprava zpravy je mozna pouze v pripade, ze je zprava vytvorena uzivatelem, a nebyla jiz odeslana.
+
 ### navratova hodnota
 ```
 {
@@ -244,19 +247,8 @@ none.
     "success": "ok"
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
+## mechanizmus fungovani
+Po nastaveni priznaku "ready_to_send" klientem, zacne modul zprav pokusy o doruceni zpravy na cilovy server. 
 
 
 
