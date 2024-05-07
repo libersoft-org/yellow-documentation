@@ -2055,6 +2055,72 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div>V této sekci jsou popsány příkazy, které jsou využívány v komunikaci mezi dvěma serverovými aplikacemi:</div>
    <div>TODO: předávání, ověřování protějšího serveru atd.</div>
    <div>TODO: u ověřování protějšího serveru přidat error pokud server nemá spojení s DNS</div>
+   
+   Spojeni server-server je navazano na zaklade pozadavku modulu na odeslani zpravy na jiny server.
+   
+   <h4>Navazani spojeni</h4>
+   Servery se pri navazani spojeni vzajemne overuji. Toto overeni je provedeno paralelne v obou smerech. Drzeni privatniho klice se overi metodou challenge-response.
+   
+   Verejny klic serveru se ziska ze tri zdroju:
+   1) Z lokalni databaze serveru. 
+   2) Z DNS se ziska TXT zaznam ATMP-PUBKEY.
+   3) Z odpovedi vzdaleneho serveru v ramci challenge-response flow. 
+    
+    <h4>Challenge-response flow</h4>
+   1) Vzdaleny server je pozadan o podepsani nahodneho retezce. V odpovedi je navic prilozen verejny klic serveru.
+   priklad:
+    <pre>
+    {
+      "command": "server_challenge",
+      "data": {
+        "challenge": "1234567890"
+      }
+    }
+    </pre>
+    2) Vzdaleny server odpovi s podpisem a verejnym klicem:
+    <pre>
+    {
+      "command": "server_challenge_response",
+      "data": {
+        "signature": "abcdef1234567890",
+        "pubkey": "-----BEGIN..."
+      }
+    }
+    </pre>
+   
+    <h4>Overeni klicu</h4>
+    Vsechny verejne klice se porovnaji. V pripade neshody je spojeni ukonceno.
+    Podpis ziskany v ramci challenge-response flow se overi pomoci verejneho klice. V pripade neshody je spojeni ukonceno.
+    
+
+
+   
+   <h3>Zpravy mezi moduly</h3>
+   Zpravy mezi moduly obsahuji string type, ktery se konstruuje podobne jako jmenne prostory v jazyce Java (
+https://docs.oracle.com/javase/specs/jls/se6/html/packages.html , 7.7 Unique Package Names).
+   
+   priklad zpravy predane z modulu do jadra:
+   <pre>
+   {
+     "type": "com.github.koo5.amtp.messaging.message",
+     "to": "server2.example.com",
+     "data": {
+       "from": "franta@server1.example.com",
+       "to": "pepa@server2.example.com",
+       "message": "Ahoj, jak se mas?"
+       "created": "2022-01-01T12:00:00Z",
+     }
+   }
+   </pre>
+   
+   V pripade, ze cil zpravy ("to") je mistni modul, je zprava predana primo mistnimu modulu. V opacnem pripade je zprava v nezmenenem stavu predana serveru, ktery je zodpovedny za cilovou domenu. Vzdaleny server potvrdi prijeti zpravy:
+   
+   <pre>
+   {
+     "success": true
+   }
+   </pre>
+      
    <a name="examples"></a><h2>Příklady</h2>
    <div>TODO</div>
   </div>
