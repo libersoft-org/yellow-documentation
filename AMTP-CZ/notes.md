@@ -175,3 +175,90 @@ none.
     "success": "ok"
 }
 ```
+
+# modul zprav
+## pridani zpravy do databaze
+### priklad
+```
+{
+    "command": "com.github.libersoft.messages.add",
+    "from": "franta@server1.example.com",
+    "to": "pepa@server1.example.com",
+    "subject": "Ahoj Pepo",
+    "body": "Jak se mas?",
+}
+```
+### navratova hodnota
+```
+{
+    "id": 1,
+    "ts": "2020-01-01 00:00:00"
+}
+```
+## seznam zprav
+### priklad
+```
+{
+    "command": "com.github.libersoft.messages.list",
+}
+```
+### navratova hodnota
+```
+{
+    "messages": [
+        {
+            "id": 1,
+            "from": "franta@server1.example.com",
+            "to": "pepa@server1.example.com",
+            "subject": "Ahoj Pepo",
+            "body": "Jak se mas?",
+        }
+    ]
+}
+## uprava zpravy
+### priklad
+```
+{
+    "command": "com.github.libersoft.messages.edit",
+    "id": 1,
+    "subject": "Ahoj Pepo, jak se mas?"
+}
+```
+### navratova hodnota
+```
+{
+    "success": "ok"
+}
+```
+## smazani zpravy
+### priklad
+```
+{
+    "command": "com.github.libersoft.messages.delete",
+    "id": 1
+}
+```
+### navratova hodnota
+```
+{
+    "success": "ok"
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
