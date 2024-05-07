@@ -15,7 +15,7 @@ If you just want to get your free Yellow account hosted on our server, please na
   - **English version** - not yet available
   - **Czech version** - in **AMTP-CZ** directory run **index.html**
 - **Decentralized Mail Transfer Protocol (DMTP)**
-  - **English version** - in **DMTP-EN** directory run **DMTP-EN.md** (not a documentation, just some notes)
+  - [**English version**](DMTP-EN/DMTP-EN.md)
   - **Czech version** - not yet available
 - **Modules**:
   - **Messages**
