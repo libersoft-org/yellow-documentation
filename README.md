@@ -8,15 +8,22 @@ If you just want to get your free Yellow account hosted on our server, please na
 
 ## Documentation
 
+- **Yellow**
+  - [**English version**](YELLOW-EN.md)
+  - [**Czech version**](YELLOW-CZ.md)
 - **Advanced Mail Transfer Protocol (AMTP)**
   - **English version** - not yet available
   - **Czech version** - in **AMTP-CZ** directory run **index.html**
 - **Decentralized Mail Transfer Protocol (DMTP)**
-  - **English version** - in **DMTP-EN** directory run **DMTP-EN.md** (not a documentation, just some notes)
+  - [**English version**](DMTP-EN/DMTP-EN.md)
   - **Czech version** - not yet available
 - **Modules**:
-  - [**Messages**](./AMTP-MODULE-MESSAGES.md)
-  - [**Contacts**](./AMTP-MODULE-CONTACTS.md)
+  - **Messages**
+    - [**English version**](./AMTP-MODULE-MESSAGES-EN.md)
+    - [**Czech version**](./AMTP-MODULE-MESSAGES-CZ.md)
+  - **Contacts**
+    - [**English version**](./AMTP-MODULE-CONTACTS-EN.md)
+    - [**Czech version**](./AMTP-MODULE-CONTACTS-CZ.md)
 - [**Frequently asked questions**](./FAQ.md)
 - [**License**](./LICENSE)
 
