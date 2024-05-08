@@ -1,5 +1,7 @@
+https://www.jsonrpc.org/specification
 
 ```
+
 
 Obecna forma prikazu z klienta k serveru je (priklad):
 {
@@ -53,30 +55,15 @@ tabulka banu ip adres:
 crud:
 	...
 
-------------------
 
-```
 
-proste:
-## admin commands
-All admin commands names must be prefixed with "admin_".
 
-## management of admins
-### list_admins
-#### parameters
-none.
-#### return 
 
-### admin_create_admin
-schema:
-```
-{
-"command": "admin_create",
-"name": "admin1",
-"password": "password",
-"pubkey": "Xxxxx..."
-}
-```
+
+
+
+
+===
 
 ## management of domains
 ### list_domains
@@ -88,7 +75,7 @@ none.
 #### return example
 ```
 {
-    "domains": [
+    "result": [
         {
             "id": 1,
             "domain": "example1.com",
@@ -96,8 +83,21 @@ none.
         }
     ]
 }
+{
+    "error": "you_are_not_welcome_here",
+}
+
 ```
 ### create_domain
+### request schema
+```
+{
+    "domain": {"string"
+}
+```
+
+```
+
 #### parameters
 ```
 {
@@ -161,7 +161,7 @@ none.
 }
 ```
 ### create_user
-#### parameters
+#### example
 ```
 {
     "amail": "tonda@example2.com",
@@ -190,6 +190,17 @@ none.
     "success": "ok"
 }
 ```
+### delete_user
+#### parameters
+```
+{
+    "id": 2
+}
+```
+
+
+
+
 
 # modul zprav
 ## pridani zpravy do databaze

@@ -626,7 +626,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>command</td>
-      <td>"admin_create"</td>
+      <td>"admin_create_admin"</td>
       <td class="center">✔❌</td>
       <td>Název příkazu</td>
      </tr>
@@ -705,7 +705,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>command</td>
-      <td>"admin_edit"</td>
+      <td>"admin_edit_admin"</td>
       <td class="center">✔</td>
       <td>Název příkazu</td>
      </tr>
@@ -780,13 +780,13 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>command</td>
-      <td>"admin_delete"</td>
+      <td>"admin_delete_admin"</td>
       <td class="center">✔</td>
       <td>Název příkazu</td>
      </tr>
      <tr>
       <td>id</td>
-      <td>"admin_delete"</td>
+      <td>64 bit integer</td>
       <td class="center">✔</td>
       <td>Název příkazu</td>
      </tr>
@@ -899,7 +899,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div><span class="bold">Příklad odezvy od serveru:</span></div>
 <pre>
 {
- "domains": {
+ "result": {
   [
    {
     "id": 1,
@@ -2049,7 +2049,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  ]
 }
 </pre>
+
    <a name="commands-c2s-modules"></a><h4>Komunikace s moduly</h4>
+
    <div>TODO</div>
    <a name="commands-s2s"></a><h3>Spojení server-server</h3>
    <div>V této sekci jsou popsány příkazy, které jsou využívány v komunikaci mezi dvěma serverovými aplikacemi:</div>
@@ -2067,6 +2069,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    3) Z odpovedi vzdaleneho serveru v ramci challenge-response flow. 
     
     <h4>Challenge-response flow</h4>
+
    1) Vzdaleny server je pozadan o podepsani nahodneho retezce. V odpovedi je navic prilozen verejny klic serveru.
    priklad:
     <pre>
@@ -2077,6 +2080,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       }
     }
     </pre>
+
     2) Vzdaleny server odpovi s podpisem a verejnym klicem:
     <pre>
     {
@@ -2088,7 +2092,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     }
     </pre>
    
-    <h4>Overeni klicu</h4>
     Vsechny verejne klice se porovnaji. V pripade neshody je spojeni ukonceno.
     Podpis ziskany v ramci challenge-response flow se overi pomoci verejneho klice. V pripade neshody je spojeni ukonceno.
     
