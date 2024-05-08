@@ -302,6 +302,16 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>Unknown command</td>
       <td>Server obdržel od druhé strany nerozpoznaný příkaz</td>
      </tr>
+     <tr>
+      <td class="center">901</td>
+      <td>Admin is not logged in</td>
+      <td>Uživatel není přihlášen</td>
+     </tr>
+     <tr>
+      <td class="center">902</td>
+      <td>User is not logged in</td>
+      <td>Uživatel není přihlášen</td>
+     </tr>
     </table>
    </div>
    <div class="bold">Příklad obecné chyby:</div>
@@ -347,7 +357,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div>Chyby generované moduly si definuje modul sám dle svých potřeb. Doporučuje se pro lepší přehlednost používat stejnou strukturu jako používá jádro.</div>
    <a name="commands-c2s"></a><h3>Klient-server</h3>
    <div>V této sekci jsou popsány příkazy, které jsou využívány v komunikaci mezi klientskou a serverovou aplikací.</div>
-   <a name="commands-c2s-admin"></a><h4>Správce</h4>
+   <a name="commands-c2s-admin"></a><h4>Příkazy správce</h4>
    <div>Všechny příkazy začínající "<span class="bold">admin_</span>" jsou určeny pouze pro správce. Aby bylo možné provádět tyto příkazy (mimo příkazů pro samotné přihlášení), musí být správce přihlášen. Pokud je přihlášení úspěšné, je správce přihlášen po dobu spojení.</div>
    <a name="commands-c2s-admin-login"></a><h5>Přihlášení správce</h5>
    <div>Přihlášení správce probíhá ve dvou krocích - přihlašovací výzvě a přihlašovací odezvě. V přihlašovací výzvě zašle klient své přihlašovací jméno a pokud používá mimo privátního klíče i heslo, tak i hash tohoto hesla (nepovinné). Server ověří heslo (pokud správce používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem správce. Tento zašifrovaný řetězec je předán správci. Správce následně řetězec rozšifruje pomocí svého soukromého klíče a zašle ho zpět v rámci přihlašovací odezvy. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetětec od klienta odpovídá původně vygenerovanému, pak je správce přihlášen po dobu spojení. V opačném případě vrátí chybu.</div>
@@ -1451,7 +1461,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "uptime": "8 days, 12 hours, 45 minutes, 52 seconds"
 }
 </pre>
-   <a name="commands-c2s-user"></a><h4>Uživatel</h4>
+   <a name="commands-c2s-user"></a><h4>Příkazy uživatele</h4>
    <div>Všechny příkazy začínající "<span class="bold">user_</span>" jsou určeny pro uživatele. Aby bylo možné provádět tyto příkazy, musí být uživatel přihlášen (mimo příkazů pro samotné přihlášení). Pokud je přihlášení úspěšné, získá uživatel token relace, kterým se prokazuje při navázání spojení se serverem (místo přihlášení). Přihlášení tokenem je platné po dobu spojení, token se tedy neodesílá v každém uživatelském příkazu.</div>
    <a name="commands-c2s-user-registration"></a><h5>Registrace uživatele</h5>
    <div>Možnost registrace účtu uživatelem musí být povolena na serveru</div>
@@ -1689,11 +1699,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     <table class="table-structure">
      <tr>
       <td class="center">1</td>
-      <td>User's token is missing</td>
-      <td>Uživatel v příkazu neposkytl token relace</td>
-     </tr>
-     <tr>
-      <td class="center">2</td>
       <td>User's token is invalid</td>
       <td>Uživatel poskytl neplatný či prošlý token relace</td>
      </tr>

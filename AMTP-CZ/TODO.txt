@@ -8,6 +8,8 @@ Design stranky:
 - Po refreshi stránky, pokud je v adrese #sekce - tak jí zvýraznit v TOC jako aktivní
 
 Dopsání obsahu:
+- Zabezpečení - přidat novou sekci - Podepisování obsahu - t.j. veškerý obsah, který vytvářím (např. zprávy, video apod.), je to kvůli tomu, aby mě můj home server nemohl fejkovat. Veřejné klíče mohu vystavit někam mimo AMTP server (např. na svůj web) - tuto sekci dát před koncové šifrování, protože nejdříve se podepisuje, pak šifruje.
+- 2 chyby, co se smazaly z obecných chyb (901, 902), hodit do Přihlášení uživatele tokenem
 - Dopsat všechny commandy v dokumentaci, kde je TODO
 - Blokaci neautorizovaných přístupů popsat i v commandech (obecně popsáno v Zabezpečení - Blokace neautorizovaných přístupů) - u loginu admina, loginu usera, pokusy s neplatným tokenem u usera i ověřování server-to-server (PUBKEY z DNS)
 - Přidat commandy pro management zablokovaných IP adminem (fail2ban) - ruční banování, odbanování adminem + přidat statusy těmto zlým serverům / klientům ve stylu "You are not welcome here" při pokusech o přihlášení / challenge
@@ -24,3 +26,4 @@ Návrh verze 2:
 - Tokenové páry krátkodobých tokenů - access token a refresh token, místo dlouhodobých tokenů - zjistit implementací, jelikož nevíme, jak dlouhé sessions většinou udrží WebTransport a jestli se nebudou měnit při každém připojení
 - ACL s právy pro konkrétní akce adminů + zavedení možnosti změny klíče ostatních adminů v případě, že má admin toto právo
 - Digitální podpis serveru - navrhnout alternativu k DNS - něco jako notary server na Matrix protokolu (resp. ne jako alternativu, ale jako další vrstvu zabezpečení)
+- Rozšíření fail2ban na obecný rate limit na počet commandů za jednotku času (těžko říct, jestli to je reálné, protože file transfer toho bude generovat docela hodně, takže se uvidí v praxi v budoucnu)
