@@ -1,4 +1,19 @@
+
 ```
+
+Obecna forma prikazu z klienta k serveru je (priklad):
+{
+
+  cmd:"user_login",
+
+  params: {
+	name:...,
+	password:...
+  }
+  
+}
+
+
 Spojení server-server
 
 {
@@ -249,6 +264,8 @@ Uprava zpravy je mozna pouze v pripade, ze je zprava vytvorena uzivatelem, a neb
 ```
 ## mechanizmus fungovani
 Po nastaveni priznaku "ready_to_send" klientem, zacne modul zprav pokusy o doruceni zpravy na cilovy server. 
+
+
 
 
 
