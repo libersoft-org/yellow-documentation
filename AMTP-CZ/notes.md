@@ -65,7 +65,20 @@ crud:
 
 ===
 
+
+
+
+
 ## management of domains
+Domain datatype:
+```
+{
+    optional int id;
+    string domain;
+    datetime ts;
+}
+```
+commands:
 ### list_domains
 #### parameters
 none.
@@ -83,22 +96,16 @@ none.
         }
     ]
 }
-{
-    "error": "you_are_not_welcome_here",
-}
 
 ```
 ### create_domain
 ### request schema
 ```
 {
-    "domain": {"string"
+    string domain
 }
 ```
-
-```
-
-#### parameters
+#### example query
 ```
 {
     "domain": "example.com"
@@ -113,7 +120,11 @@ none.
 }
 ```
 ### edit_domain
-#### parameters
+#### request schema
+```
+Domain
+``` 
+#### example request
 ```
 {
     "id": 2,
@@ -129,7 +140,13 @@ none.
 }
 ```
 ### delete_domain
-### parameters
+### request schema
+```
+{
+    int id
+}
+```
+### request example
 ```
 {
     "id": 2
@@ -174,8 +191,10 @@ none.
     "id": 2,
     "amail": "tonda@example2.com",
     "pubkey": "Xxxxx..."
-}
-```
+}```
+### error codes
+`user_exists`
+
 ### edit_user
 #### parameters
 ```
@@ -190,16 +209,18 @@ none.
     "success": "ok"
 }
 ```
+### error codes
+`user_does_not_exist`
+
 ### delete_user
 #### parameters
 ```
 {
-    "id": 2
+    int id
 }
 ```
-
-
-
+### error codes
+`user_does_not_exist`
 
 
 # modul zprav
@@ -214,7 +235,7 @@ none.
     "body": "Jak se mas?",
 }
 ```
-### navratova hodnota
+### odpoved
 ```
 {
     "id": 1,
@@ -228,7 +249,7 @@ none.
     "command": "com.github.libersoft.messages.list",
 }
 ```
-### navratova hodnota
+### odpoved
 ```
 {
     "messages": [
@@ -253,7 +274,7 @@ none.
 ```
 Uprava zpravy je mozna pouze v pripade, ze je zprava vytvorena uzivatelem, a nebyla jiz odeslana.
 
-### navratova hodnota
+### odpoved
 ```
 {
     "success": "ok"
@@ -267,14 +288,15 @@ Uprava zpravy je mozna pouze v pripade, ze je zprava vytvorena uzivatelem, a neb
     "id": 1
 }
 ```
-### navratova hodnota
+### odpoved
 ```
 {
     "success": "ok"
 }
 ```
-## mechanizmus fungovani
-Po nastaveni priznaku "ready_to_send" klientem, zacne modul zprav pokusy o doruceni zpravy na cilovy server. 
+## predani zpravy na cilovy server
+Po nastaveni priznaku "ready_to_send" klientem, zacne modul zprav pokusy o doruceni zpravy na cilovy server, viz "Spojení server-server" a "Zpravy mezi moduly", priklad zpravy predane z modulu do jadra.
+
 
 
 
