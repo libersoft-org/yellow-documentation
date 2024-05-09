@@ -8,14 +8,6 @@ Design stranky:
 - Po refreshi stránky, pokud je v adrese #sekce - tak jí zvýraznit v TOC jako aktivní
 
 Dopsání obsahu:
-- U všech commandů vyhodit "command" někam nad to, protože datový typ není hodnota
-- Na začátek commandů popsat obecnou strukturu příkazu:
-{
- command: "...",
- params: {
-  ...
- }
-}
 - Přidat další výhodu protokolu: migrovatelnost účtu z jiných home serverů (přenesení nejen dat, ale i ověření identity) - tzn. když si změním server a identitu na jiný server pod jinou doménou, tak se uživatelům, se kterými jsem komunikoval, pošlu ověření pomocí svého soukromého klíče (otázka je, jestli to bude ten stejný veřejný klíč, kterým se normálně přihlašuju nebo nejaký další). Já budu mít stále stejný soukromý a veřejný klíč s nekým - a sice si změním identitu, ale ta druhá strana dostane upozornění, že jsem si změnil adresu, ale validuju se tím svým klíčem a tak si mě druhá strana ověří.
 - Přidat další výhodu protokolu: rozepsat most do SMTP serveru
 - Přidat 3 commandy (ne síťové, ale mezi modulem a corem), které vrací:

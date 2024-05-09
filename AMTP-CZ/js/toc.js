@@ -79,6 +79,9 @@ const data = [
   link: 'commands',
   sub: [
    {
+    title: 'Struktura příkazů',
+    link: 'commands-structure'
+   }, {
     title: 'Chyby',
     link: 'commands-errors',
     sub: [
