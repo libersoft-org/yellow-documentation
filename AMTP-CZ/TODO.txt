@@ -8,7 +8,6 @@ Design stranky:
 - Po refreshi stránky, pokud je v adrese #sekce - tak jí zvýraznit v TOC jako aktivní
 
 Dopsání obsahu:
-- Přidat další výhodu protokolu: rozepsat most do SMTP serveru
 - Přidat 3 commandy (ne síťové, ale mezi modulem a corem), které vrací:
   - 1. Které domény jsou ke konkretnímu serveru
   - 2. Doména - vrátí název serveru
