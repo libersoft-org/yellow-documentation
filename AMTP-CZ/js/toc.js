@@ -55,6 +55,9 @@ const data = [
     title: 'Blokace neautorizovaných přístupů',
     link: 'security-block'
    }, {
+    title: 'Podepisování obsahu',
+    link: 'security-sign'
+   }, {
     title: 'Koncové šifrování',
     link: 'security-e2e'
    }

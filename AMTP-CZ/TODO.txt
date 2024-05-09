@@ -8,7 +8,6 @@ Design stranky:
 - Po refreshi stránky, pokud je v adrese #sekce - tak jí zvýraznit v TOC jako aktivní
 
 Dopsání obsahu:
-- Zabezpečení - přidat novou sekci - Podepisování obsahu - t.j. veškerý obsah, který vytvářím (např. zprávy, video apod.), je to kvůli tomu, aby mě můj home server nemohl fejkovat. Veřejné klíče mohu vystavit někam mimo AMTP server (např. na svůj web) - tuto sekci dát před koncové šifrování, protože nejdříve se podepisuje, pak šifruje.
 - U všech commandů vyhodit "command" někam nad to, protože datový typ není hodnota
 - Na začátek commandů popsat obecnou strukturu příkazu:
 {
