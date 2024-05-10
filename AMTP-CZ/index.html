@@ -2356,20 +2356,23 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     Vsechny verejne klice se porovnaji. V pripade neshody je spojeni ukonceno.
     Podpis ziskany v ramci challenge-response flow se overi pomoci verejneho klice. V pripade neshody je spojeni ukonceno.
    <a name="commands-c2s-modules"></a><h3>Komunikace s moduly</h3>
+   <div>TODO</div>
    Zpravy mezi moduly obsahuji string type, ktery se konstruuje podobne jako jmenne prostory v jazyce Java (
 https://docs.oracle.com/javase/specs/jls/se6/html/packages.html , 7.7 Unique Package Names).
    priklad zpravy predane z modulu do jadra:
    <pre>
    {
-     "type": "org.libersoft.messaging",
-     "from": "server1.example.com",
-     "to": "server2.example.com",
+     "module": "org.libersoft.messages",
+     "from": "amtp.example1.com",
+     "to": "amtp.example2.com",
      "data": {
-       "type": "message",
-       "from": "alice@example.com",
-       "to": "bob@example.com",
-       "message": "Hi, how are you doing?"
-       "created": "2024-01-01T12:00:00Z",
+       "command": "message_send",
+       "params": {
+        "from": "alice@example1.com",
+        "to": "bob@example2.com",
+        "message": "Hi, how are you doing?"
+        "created": "2024-01-01T12:00:00Z",
+       }
      }
    }
    </pre>
