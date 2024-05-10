@@ -55,6 +55,9 @@ const data = [
     title: 'Blokace neautorizovaných přístupů',
     link: 'security-block'
    }, {
+    title: 'Podepisování obsahu',
+    link: 'security-sign'
+   }, {
     title: 'Koncové šifrování',
     link: 'security-e2e'
    }
@@ -76,6 +79,9 @@ const data = [
   link: 'commands',
   sub: [
    {
+    title: 'Struktura příkazů',
+    link: 'commands-structure'
+   }, {
     title: 'Chyby',
     link: 'commands-errors',
     sub: [
@@ -95,7 +101,7 @@ const data = [
     link: 'commands-c2s',
     sub: [
      {
-      title: 'Správce',
+      title: 'Příkazy správce',
       link: 'commands-c2s-admin',
       sub: [
        {
@@ -173,7 +179,7 @@ const data = [
        }
       ]
      }, {
-      title: 'Uživatel',
+      title: 'Příkazy uživatele',
       link: 'commands-c2s-user',
       sub: [
        {
@@ -211,14 +217,32 @@ const data = [
         link: 'commands-c2s-user-modules'
        }
       ]
-     }, {
-      title: 'Komunikace s moduly',
-      link: 'commands-c2s-modules'
      }
     ]
    }, {
     title: 'Server-server',
     link: 'commands-s2s'
+   }, {
+    title: 'Komunikace s moduly',
+    link: 'commands-c2s-modules',
+    sub: [
+     {
+      title: 'Předávání příkazů určených modulům',
+      link: 'commands-c2s-modules-deliver'
+     }, {
+      title: 'Příkazy mezi jádrem a modulem',
+      link: 'commands-c2s-modules-commands',
+      sub: [
+       {
+        title: 'Zjištění oprávněných serverů',
+        link: 'commands-c2s-modules-commands-servers'
+       }, {
+        title: 'Ověření opravnění užití domény',
+        link: 'commands-c2s-modules-commands-verify'
+       }
+      ]
+     }
+    ]
    }
   ]
  }, {

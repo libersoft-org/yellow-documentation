@@ -19,10 +19,10 @@
    <div class="center">
     <div><span class="bold center">UPOZORNĚNÍ:</span><br /><span>Toto je pouze návrh, nejedná se o konečnou verzi protokolu.</span></div>
     <div><span class="bold">Verze návrhu: </span><span>1</span></div>
-    <div><span class="bold">Vydáno: </span><span>Duben 2024</span></div>
+    <div><span class="bold">Vydáno: </span><span>Květen 2024</span></div>
    </div>
    <a name="about"></a><h2>Úvod</h2>
-   <div><span class="bold">Advanced Mail Transfer Protocol (AMTP)</span> je nová generace síťového protokolu elektronické pošty (e-mailu), která překračuje omezení tradičních protokolů <a href="https://cs.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol" target="_blank">SMTP</a>, <a href="https://cs.wikipedia.org/wiki/Post_Office_Protocol" target="_blank">POP</a> a <a href="https://cs.wikipedia.org/wiki/Internet_Message_Access_Protocol" target="_blank">IMAP</a> využitím nových technologií a modulární koncepce. Plně tyto protokoly nahrazuje svou funkcionalitou (mimo zasílání zpráv, které je popsáno v samostatném modulu) a dokonce významně rožšiřuje jejich použitelnost díky svému modulárnímu konceptu. Zároveň používá modernější, bezpečnější metody přenosu dat v reálném čase.</div>
+   <div><span class="bold">Advanced Mail Transfer Protocol (AMTP)</span> je nová generace síťového protokolu elektronické pošty (e-mailu), která překračuje omezení tradičních protokolů <a href="https://cs.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol" target="_blank">SMTP</a>, <a href="https://cs.wikipedia.org/wiki/Post_Office_Protocol" target="_blank">POP</a> a <a href="https://cs.wikipedia.org/wiki/Internet_Message_Access_Protocol" target="_blank">IMAP</a> využitím nových technologií, modulární koncepce a pokročilých způsobů zabezpečení. Plně tyto protokoly nahrazuje svou funkcionalitou (mimo zasílání zpráv, které je popsáno v samostatném modulu) a významně rožšiřuje jejich použitelnost díky svému modulárnímu konceptu. Zároveň používá modernější, bezpečnější metody přenosu dat v reálném čase.</div>
    <a name="subject"></a><h2>Předmět dokumentace</h2>
    <div class="bold">Tento dokument popisuje:</div>
    <ul>
@@ -51,22 +51,22 @@
     <li>První dokumentace: <a href="https://www.rfc-editor.org/rfc/rfc1064.html" target="_blank">RFC 1064</a> (1988)</li>
     <li>Poslední aktualizace: <a href="https://www.rfc-editor.org/rfc/rfc9051.html" target="_blank">RFC 9051</a> (2021)</li>
    </ul>
-   <div>I přesto, že byly tyto protokoly v průběhu času aktualizovány, stále nepřinášejí dostatečná řešení pro nové potřeby, jako jsou komunikace v reálném čase, komplexní zabezpečení, strukturovanou komunikaci, snadnou rozšiřitelnost funkconalit a mnoho dalšího. To je způsobeno především snahou těchto aktualizací o navázání na původní koncepty, což je velmi limitující faktor, který vyžaduje změnu přístupu.</div>
+   <div>I přesto, že byly tyto protokoly v průběhu času aktualizovány, stále nepřinášejí dostatečná řešení pro nové potřeby, jako jsou komunikace v reálném čase, komplexní zabezpečení, strukturovanou komunikaci, snadnou rozšiřitelnost funkcionalit a mnoho dalšího. To je způsobeno především snahou těchto aktualizací o navázání na původní koncepty, což je velmi limitující faktor, který vyžaduje změnu přístupu.</div>
    <div>Protokol <span class="bold">AMTP</span> nenavazuje na původní zastaralé koncepty a místo toho přináší nové, moderní přístupy k řešení těchto potřeb.</div>
    <div>Ačkoliv jsou veřejně dostupné i další otevřené protokoly či platformy (např. <a href="https://cs.wikipedia.org/wiki/Matrix_(protokol)" target="_blank">Matrix</a>, <a href="https://cs.wikipedia.org/wiki/Mastodon_(software)" target="_blank">Mastodon</a>, <a href="https://cs.wikipedia.org/wiki/Diaspora*_(soci%C3%A1ln%C3%AD_s%C3%AD%C5%A5)" target="_blank">Diaspora</a>, <a href="https://en.wikipedia.org/wiki/Nostr" target="_blank">Nostr</a> apod.), které umožňují bezpečnou komunikaci a nabízí decentralizovanou či distribuovanou síť, ke které se může kdokoliv připojit, stále nenabízí některé důležité funkcionality, které <span class="bold">AMTP</span> řeší, jako například modulární koncept funkcionalit nebo podporu nejnovějších komunikačních protokolů pro přenos dat v reálném čase.</div>
    <a name="objectives"></a><h2>Cíle protokolu</h2>
    <div>Cílem vytvoření tohoto protokolu je nahrazení současných e-mailových protokolů <span class="bold">SMTP</span>, <span class="bold">POP</span> a <span class="bold">IMAP</span> pomocí nové, moderní a bezpečné alternativy, která taktéž přináší snadnou rozšiřitelnost funkcionalit díky modulárnímu konceptu, čímž je zajištěna dlouhá životnost a udržitelnost implementací tohoto protokolu. Funkcionalita všech původních e-mailových protokolů je v <span class="bold">AMTP</span> plně zachována a navíc značně rozšířena a zmodernizována.</div>
-   <div><span class="bold">Zpětná kompatibilita</span> s původními e-mailovými protokoly není implementována v rámci tohoto protokolu, jelikož jí lze zajistit pomocí modulu, který funguje jako most do <span class="bold">SMTP</span> serveru nebo jako oddělenou software implementaci v rámci klientské aplikace.</div>
+   <div><span class="bold">Zpětná kompatibilita</span> s původními e-mailovými protokoly není implementována v rámci tohoto protokolu, jelikož jí lze zajistit pomocí modulu na serveru, který komunikuje se <span class="bold">SMTP</span> serverem nebo implementací <span class="bold">IMAP</span> protokolu v rámci klientské aplikace. Těmito implementacemi lze zajistit hladký přechod pro poskytovatele e-mailových služeb ze serverů používajících původní e-mailové standardy na moderní implementace <span class="bold">AMTP</span>.</div>
    <div class="bold">Zachované koncepty v AMTP z původního SMTP:</div>
    <ul class="spacelist">
     <li><span class="bold">Distribuovaná síť</span>: Typ sítě, ve které je komunikace, zpracování a ukládání dat distribuováno mezi mnoho uzlů, které mohou mít různé vlastníky (poskytovatele služby). Tyto uzly mohou mezi sebou navzájem komunikovat, předávat si data a odlišovat se mezi sebou dle pravidel a sad služeb, které poskytují svým uživatelům. To síť odlišuje jak od centralistického modelu, kde je síť řízena jediným poskytovatelem, tak i od plně decentralizovaného modelu, kde každý koncový uživatel je suverénní jednotkou, která komunikuje s ostatními v rámci peer-to-peer sítě.</li>
     <li><span class="bold">Identita e-mailové adresy</span>: Formát adresy uživatelského účtu je zachován (s menšími odlišnostmi, popsanými v dalších sekcích této dokumentace) z původních e-mailových standardů. Ve zjednodušené formě je to formát <span class="bold">uživatel@doména</span>.</li>
    </ul>
-   <div><span class="bold">Nové koncepty v AMTP</span>:</div>
+   <div class="bold">Nové koncepty v AMTP:</div>
    <ul class="spacelist">
     <li><span class="bold">Komunikace v reálném čase</span>: Tento přístup, díky technologiím jako je <a href="https://www.w3.org/TR/webtransport/" target="_blank">WebTransport</a>, umožňuje uživatelům pohodlněji vést konverzace, rychleji reagovat na zprávy a využívat řadu dalších funkcionalit, kde je okamžitá komunikace nezbytná (např. videohovory, sdílení obrazovky, přenos velkých souborů apod.) a to navíc paralelně díky vícekanálové komunikaci. Tím jsou sníženy latence a zvýšena propustnost při přenosu dat.</li>
     <li><span class="bold">Bezpečná komunikace</span>: Protokol klade velký důraz na zabezpečenou komunikaci a tím chrání soukromí uživatelů na více vrstvách. Díky tomu jsou minimalizována rizika spojená s únikem dat, znemožněny odposlechy a další formy kybernetických útoků.</li>
-    <li><span class="bold">Rozšiřitelnost</span>: Protokol umožňuje snadno vytvářet rožšíření o různé funkcionality díky modulárnímu konceptu, ať už jde o vytváření jednoduchých jednoúčelových aplikací (např. zasílání zpráv z <a href="https://cs.wikipedia.org/wiki/Internet_v%C4%9Bc%C3%AD" target="_blank">IoT zařízení</a> uživateli) až po multifunkční <a href="https://en.wikipedia.org/wiki/Super-app" target="_blank">super-aplikace</a> s četnou řadou funkcionalit (např. zasílání rychlých zpráv, funkce sociálních médií, e-commerce platformy, přenosy velkých souborů, přenos dat v online hrách apod.).</li>
+    <li><span class="bold">Rozšiřitelnost</span>: Protokol umožňuje snadno vytvářet rožšíření o různé funkcionality díky modulárnímu konceptu, ať už jde o vytváření jednoduchých jednoúčelových aplikací (např. zasílání zpráv z <a href="https://cs.wikipedia.org/wiki/Internet_v%C4%9Bc%C3%AD" target="_blank">IoT zařízení</a> uživateli) až po multifunkční <a href="https://en.wikipedia.org/wiki/Super-app" target="_blank">super-aplikace</a> s četnou řadou funkcionalit (např. zasílání rychlých zpráv, funkce sociálních médií, e-commerce, přenosy velkých souborů, přenos dat v online hrách apod.).</li>
     <li><span class="bold">Strukturovaná data</span>: Přenášená data jsou sestavena strukturovaně ve formátu <a href="https://en.wikipedia.org/wiki/BSON" target="_blank">BSON</a>, který kombinuje výhody strojově i lidsky snadno čitelného formátu <a href="https://cs.wikipedia.org/wiki/JSON" target="_blank">JSON</a>, s efektivitou binárního formátu. To umožňuje, aby data byla snadno přístupná a zpracovatelná jak pro vývojáře, tak pro aplikace.</li>
    </ul>
    <a name="standards"></a><h2>Zvolené standardy</h2>
@@ -117,9 +117,14 @@
     <li><span class="bold">Ochrana soukromí</span>: Distribuovaná síťová architektura může přispět k lepší ochraně soukromí uživatelů tím, že data menších poskytovatelů nejsou uchovávána a zpracovávána velkými korporacemi, které mohou mít tendence velké množství dat uživatelů různými způsoby zpracovávat nebo sdílet pro různé účely (reklamní, trénink AI, spolupráce s vládami apod.)</li>
    </ul>
    <a name="architecture-modularity"></a><h3>Modularita</h3>
-   <div>Ačkoliv tato dokumentace nepopisuje implementaci serverové aplikace, je důležité zmínit, že tento protokol počítá s použitím modulární architektury serveru a podle toho vypadá i komunikace v rámci příkazů a to jak mezi klientem a serverem, tak i servery mezi sebou.</div>
-   <div>Jedna strana se spojí s druhým serverem, se kterým vytvoří <span class="bold">WebTransport</span> spojení a následuje obousměrný přenos dat. Tento server následně zpracovává data a odpovídá buď přímo z jádra (pokud byl příkaz určen jádru) a nebo je předán modulu (pokud byl určen modulu). Následně podle určení, odpovídá buď jádro nebo modul. V případě určení pro modul nezpracovává jádro nijak odpověď a jen jí předá klientovi.</div>
-   <div>Způsob komunikace serverového jádra s moduly není standardizován touto dokumentací, každá softwarová implementace může mít vlastní řešení (například výměna dat uvnitř aplikace, externě běžící služby propojené unixovými sockety, síťové spojení přes <span class="bold">WebTransport</span> apod.).</div>
+   <div>Ačkoliv tato dokumentace nepopisuje implementaci serverové aplikace, je důležité zmínit, že tento protokol počítá s použitím modulární architektury serveru a proto je třeba popsat nejen komunikaci v rámci příkazů síťového protokolu, ale i komunikaci mezi <span class="bold">jádrem</span> serveru a <span class="bold">moduly</span>.</div>
+   <ul class="spacelist">
+    <li><span class="bold">Jádro</span>: Stará se o síťovou komunikaci, komunikaci s moduly, komunikaci s <a href="https://cs.wikipedia.org/wiki/Domain_Name_System" target="_blank">DNS</a> a zajišťuje základní správu serveru.</li>
+    <li><span class="bold">Moduly</span>: Zajišťují funkcionality serveru (např. zasílání rychlých zpráv, diskuzní fórum, blogy apod.). Každá serverová i klientská aplikace může využívat vlastní sadu modulů.</li>
+   </ul>
+   <div></div>
+   <div>Po spojení klienta nebo cizího serveru s vlastním serverem je možné komunikovat buď napřímo s <span class="bold">jádrem</span> nebo s jednotlivými <span class="bold">moduly</span>. Na základě struktury příkazu, který je zaslán po síti, server určí, zda se jedná o příkaz, který má být zpracován jádrem nebo moduly. Pokud je určen příkaz modulu a modul ho zpracuje, vrátí odpověď jádru a jádro ho následně předá zpět připojenému klientovi nebo cizímu serveru, pro které je určen.</div>
+   <div>Způsob komunikace serverového jádra s moduly není standardizován touto dokumentací, každá softwarová implementace může mít vlastní řešení (například výměna dat uvnitř aplikace, externě běžící služby propojené unixovými sockety, síťové spojení přes <span class="bold">WebTransport</span> apod.). V rámci tohoto protokolu jsou pouze popsány struktury dat v <span class="bold">BSON</span> formátu, které se doporučuje používat při komunikaci mezi jádrem a serverem.</div>
    <div><span class="bold">Modulární koncept architektury</span> protokolu poskytuje několik klíčových výhod:</div>
    <ul class="spacelist">
     <li><span class="bold">Přizpůsobení</span>: Díky modulární struktuře mohou provozovatelé serverů snadno vybírat specifické funkcionality dle svých potřeb nebo potřeb jejich uživatelů. Správci či uživatelé mohou vybrat pouze ty moduly, které potřebují, což umožňuje vytvořit řešení šité na míru bez zbytečného nadbytečného software. Například školy či firmy mohou využívat jiné moduly, než domácí uživatelé apod.</li>
@@ -162,7 +167,7 @@
    <div>Pro tento účel je vyžadován platný šifrovací certifikát, vydaný certifikační autoritou (např. <a href="https://cs.wikipedia.org/wiki/Let%27s_Encrypt" target="_blank">Let's Encrypt</a>). Spojení s certifikátem s vlastním podpisem (bez certifikační autority) není povoleno (jak pro spojení <span class="bold">klient-server</span>, tak i pro <span class="bold">server-server</span>), protože u nich nelze ověřit identitu (může je vydat kdokoliv), proto je nutné si takový certifikát nechat vystavit od certifikační autority a používat ho pro účely jak šifrovaného přenosu dat, tak i pro ověření identity serveru.</div>
    <a name="security-dkey"></a><h3>Digitální podpis serveru</h3>
    <div><span class="bold">Digitální podpis serveru</span> slouží k ověření, zda server, ke kterému se klient či jiný server připojuje, je opravdu ten, za který se vydává. Toto je bezpečnostní mechanismus, který zabraňuje útokům, jako je např. <a href="https://cs.wikipedia.org/wiki/IP_spoofing" target="_blank">IP spoofing</a>.</div>
-   <div>Po nainstalování každého serveru se vygeneruje <span class="bold">soukromý klíč</span> a z něj odvozený <span class="bold">veřejný klíč</span> algoritmem, který podporují ostatní serverové i klientské aplikace. <span class="bold">Soukromý klíč</span> zůstává bezpečně uložen na serveru. <span class="bold">Veřejný klíč</span> společně s identifikací šifrovacího algoritmu se uloží do <a href="https://cs.wikipedia.org/wiki/Domain_Name_System" target="_blank">DNS</a> do <span class="bold">TXT</span> záznamu <span class="bold">AMTP-PUBKEY</span>.</div>
+   <div>Po nainstalování každého serveru se vygeneruje <span class="bold">soukromý klíč</span> a z něj odvozený <span class="bold">veřejný klíč</span> algoritmem, který podporují ostatní serverové i klientské aplikace. <span class="bold">Soukromý klíč</span> zůstává bezpečně uložen na serveru. <span class="bold">Veřejný klíč</span> společně s identifikací šifrovacího algoritmu se uloží do <span class="bold">DNS</a> do <span class="bold">TXT</span> záznamu <span class="bold">AMTP-PUBKEY</span>.</div>
    <div>Ihned po navázání spojení vlastního serveru či klienta s protějším serverem, se zašle dotaz protějšímu serveru se žádostí o podepsání námi náhodně vygenerovaného řetězce. Protější server podepíše tento řetězec svým <span class="bold">soukromým klíčem</span> a odešle ho zpět. Náš server nebo klient odešle následně dotaz do <span class="bold">DNS</span> pro získání <span class="bold">TXT</span> záznamu <span class="bold">ATMP-PUBKEY</span> uvedený k protějšímu serveru a tím získá  jeho <span class="bold">veřejný klíč</span>. Náš server či klient následně ověří zda podepsaný řetezec odpovídá <span class="bold">veřejnému klíči</span> získanému z <span class="bold">DNS</span>. Pokud je podpis platný, nadále se komunikuje s protějším serverem, v opačném případě je ukončeno spojení.</div>
    <div>V případě spojení <span class="bold">server-server</span> se po ověření protějšího serveru, provede stejné ověření z opačné strany (protější server si ověří náš server).</div>
    <div class="center"><img src="img/AMTP-dkey-CZ.png" alt="Digitální podpis serveru" /></div>
@@ -194,8 +199,11 @@
     <li><span class="bold">Digitální podpis serveru</span>: V případě, že cizí server se pokouší připojit a neprojde opakovaně procesem ověřením svého digitálního podpisu, je takový server považován za podvodný a je doporučeno ho zablokovat.</li>
    </ul>
    <div>Blokace ve výše uvedených případech je definována na konkrétní IP adresu nebo rozsah IP adres protistrany. Nastavení přísnosti pravidel pro blokaci neautorizovaných přístupů je plně v kompetenci implementace serverové aplikace. Tato pravidla nemusí být serverem implementována vůbec, důrazně se však doporučuje je implementovat.</div>
+   <a name="security-sign"></a><h3>Podepisování obsahu</h3>
+   <div>Veškerý obsah, který uživatel zasílá na server (např. zaslání rychlé zprávy, vložení příspěvku do newsfeedu, uložení blogového článku, vložení příspěvku do diskuzního fóra apod.), by měl být podepsán <span class="bold">privátním klíčem</span> uživatele a to ještě předtím, než je tento obsah zašifrován pomocí <a href="https://cs.wikipedia.org/wiki/Koncov%C3%A9_%C5%A1ifrov%C3%A1n%C3%AD" target="_blank">koncového šifrování</a>. <span class="bold">Veřejný klíč</span>, kterým je možné podpis ověřit, může uživatel vystavit kdekoliv mimo svůj vlastní server (např. na své webové stránce, na jiný <span class="bold">AMTP</span> server, případně na jiné službě, která je k tomuto účelu určená). Tímto <span class="bold">veřejným klíčem</span> pak může kdokoliv ověřit, že obsah opravdu pochází od uživatele, který jej zaslal na server. Tímto se dá předejít případům, kdy by mohl správce serveru podvrhnout obsah pod jménem uživatele, který má na serveru účet nebo kdyby server byl napaden a vydával obsah jménem některého z uživatelů, který je na něm registrovaný. Implementace podepisování obsahu v modulech není povinná, ale velmi se doporučuje.</div>
+   <div>Taktéž této vlastnosti lze využít, když se uživatel rozhodne zmigrovat svůj účet (identitu) na jiný server (pod jinou doménou). Uživatelé si pak mohou díky původnímu podpisovému klíči ověřit, že se jedná o původního uživatele a nikoliv někoho jiného, kdo by se mohl za něj vydávat.</div>
    <a name="security-e2e"></a><h3>Koncové šifrování</h3>
-   <div>Data zabezpečená <a href="https://cs.wikipedia.org/wiki/Koncov%C3%A9_%C5%A1ifrov%C3%A1n%C3%AD" target="_blank">koncovým šifrováním</a> představují další vrstvu zabezpečení nejen v případě selhání šifrování v rámci zabezpečeného spojení mezi klientem a serverem, ale i k tomu, aby nikdo, kromě koncových uživatelů neměl přístup k datům (např. ani správce serveru, na kterém má uživatel založený uživatelský účet).</div>
+   <div>Data zabezpečená <span class="bold">koncovým šifrováním</span> představují další vrstvu zabezpečení nejen v případě selhání šifrování v rámci zabezpečeného spojení mezi klientem a serverem, ale i k tomu, aby nikdo, kromě koncových uživatelů neměl přístup k datům (např. ani správce serveru, na kterém má uživatel založený uživatelský účet).</div>
    <div><span class="bold">Koncové šifrování</span> není předmětem této dokumentace, jelikož je v kompetenci jednotlivých modulů (např. zprávy, telefonování apod.). I tak je třeba zmínit, že by mělo být implementováno ve veškerých funkcionalitách modulů, kde se přenáší soukromá data mezi koncovými uživateli nebo skupinami uživatelů. Taktéž je doporučeno vytvářet moduly tak, aby klíče byly často obměňovány.</div>
    <a name="dns"></a><h2>DNS</h2>
    <div>Pro zajištění komunikace mezi servery v rámci distribuované sítě, jsou využity specifické <span class="bold">DNS</span> záznamy pro <span class="bold">AMTP</span>. Tyto záznamy jsou nezbytné pro správné a bezpečné směrování provozu mezi servery na základě jejich domén. Pro zapojení serveru do sítě pro účel předávání dat mezi servery, jsou nezbytné záznamy v <span class="bold">DNS</span> u domén, které jsou serverem využívány. Bez těchto záznamů není možné předávat data mezi servery.</div>
@@ -240,7 +248,7 @@
     </table>
    </div>
    <a name="dns-config"></a><h3>Konfigurace DNS</h3>
-   <div><span class="bold">TXT - AMTP-SERVERS záznam</span>:</div>
+   <div class="bold">TXT - AMTP-SERVERS záznam:</div>
    <ul>
     <li>Tento záznam definuje cílové servery, na kterých jsou uživatelské účty pro určitou doménu (kombinuje funkcionalitu podobnou záznamům MX a SPF, které jsou určeny pro původní e-mailové protokoly).</li>
     <li>Záznam se určuje pro konkrétní doménu, která je určená pro adresy uživatelských účtů a definuje se řetězcem "<span class="bold">amtp-servers=</span>", po kterém následuje seznam jednotlivých serverů, které jsou odděleny čárkou (",")</li>
@@ -257,7 +265,7 @@ subdomain.example.com. IN TXT "amtp-servers=amtp1.example.com,amtp2.example.com:
     <li><span class="bold">amtp2.example.com</span> na portu 12345</li>
     <li><span class="bold">amtp3.example.com</span> na portu 23456</li>
    </ul>
-   <div><span class="bold">TXT - AMTP-PUBKEY záznam</span>:</div>
+   <div class="bold">TXT - AMTP-PUBKEY záznam:</div>
    <ul>
     <li>Tento záznam definuje, jaký veřejný klíč používá server ke své identifikaci po spojení s protějším serverem.</li>
     <li>Záznam začíná řetězcem "<span class="bold">amtp-pubkey=</span>", po kterém následují parametry oddělené čárkou:</li>
@@ -284,7 +292,42 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="center"><img src="img/AMTP-network-CZ.png" alt="Distribuovaná síť" /></div>
    <a name="commands"></a><h2>Příkazy</h2>
    <div>Příkazy jsou zasílány přes <span class="bold">WebTransport</span> pomocí obousměrného proudu dat. V rámci zasílání všech příkazů jádra protokolu se používají výhradně spolehlivé proudy. Moduly mohou používat spolehlivé i nespolehlivé proudy, dle konkrétních potřeb.</div>
-   <div>V rámci každého příkazu se nejprve otevře proud, poté probíhá obousměrná komunikace pomocí příkazů strukturovaných ve formátu <span class="bold">BSON</span> a nakonec, jakmile již není potřeba mít proud otevřený, uzavře se jednou či druhou stranou, zatímco spojení může být stále zachováno. Více proudů v rámci jednoho spojení může běžet souběžně.</div>
+   <div>V rámci každého příkazu se nejprve otevře proud, poté probíhá obousměrná komunikace pomocí strukturovaných příkazů a nakonec, jakmile již není potřeba mít proud otevřený, uzavře se jednou či druhou stranou, zatímco spojení může být stále zachováno dokud je potřeba. Více proudů v rámci jednoho spojení může běžet souběžně.</div>
+   <a name="commands-structure"></a><h3>Struktura příkazů</h3>
+   <div>Příkazy od klientů jsou strukturované ve formátu <span class="bold">BSON</span> a to s následujícími parametry:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</td>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>command</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Název příkazu</td>
+     </tr>
+     <tr>
+      <td>params</td>
+      <td>object</td>
+      <td class="center">❌</td>
+      <td>Objekt, obsahující jednotlivé parametry příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad:</div>
+<pre>
+{
+ "command": "some_command",
+ "params": {
+  "param1": "value1",
+  "param2": "value2",
+  "param3": "value3"
+ }
+}
+</pre>
    <a name="commands-errors"></a><h3>Chyby</h3>
    <div>V této sekci je popsána struktura obecných chyb, chyb jádra a modulů.</div>
    <a name="commands-errors-general"></a><h4>Obecné chyby jádra</h4>
@@ -301,6 +344,16 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td class="center">900</td>
       <td>Unknown command</td>
       <td>Server obdržel od druhé strany nerozpoznaný příkaz</td>
+     </tr>
+     <tr>
+      <td class="center">901</td>
+      <td>Admin is not logged in</td>
+      <td>Správce není přihlášen</td>
+     </tr>
+     <tr>
+      <td class="center">902</td>
+      <td>User is not logged in</td>
+      <td>Uživatel není přihlášen</td>
      </tr>
     </table>
    </div>
@@ -324,13 +377,13 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>error</td>
-      <td>číslo</td>
+      <td>32-bit integer</td>
       <td class="center">✔</td>
       <td>Stavové číslo chyby</td>
      </tr>
      <tr>
       <td>message</td>
-      <td>řetězec</td>
+      <td>string</td>
       <td class="center">✔</td>
       <td>Zpráva s chybou</td>
      </tr>
@@ -347,14 +400,26 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div>Chyby generované moduly si definuje modul sám dle svých potřeb. Doporučuje se pro lepší přehlednost používat stejnou strukturu jako používá jádro.</div>
    <a name="commands-c2s"></a><h3>Klient-server</h3>
    <div>V této sekci jsou popsány příkazy, které jsou využívány v komunikaci mezi klientskou a serverovou aplikací.</div>
-   <a name="commands-c2s-admin"></a><h4>Správce</h4>
+   <a name="commands-c2s-admin"></a><h4>Příkazy správce</h4>
    <div>Všechny příkazy začínající "<span class="bold">admin_</span>" jsou určeny pouze pro správce. Aby bylo možné provádět tyto příkazy (mimo příkazů pro samotné přihlášení), musí být správce přihlášen. Pokud je přihlášení úspěšné, je správce přihlášen po dobu spojení.</div>
    <a name="commands-c2s-admin-login"></a><h5>Přihlášení správce</h5>
    <div>Přihlášení správce probíhá ve dvou krocích - přihlašovací výzvě a přihlašovací odezvě. V přihlašovací výzvě zašle klient své přihlašovací jméno a pokud používá mimo privátního klíče i heslo, tak i hash tohoto hesla (nepovinné). Server ověří heslo (pokud správce používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem správce. Tento zašifrovaný řetězec je předán správci. Správce následně řetězec rozšifruje pomocí svého soukromého klíče a zašle ho zpět v rámci přihlašovací odezvy. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetětec od klienta odpovídá původně vygenerovanému, pak je správce přihlášen po dobu spojení. V opačném případě vrátí chybu.</div>
-   <div class="note">Pro provedení příkazů vyžadováno přihlášení správce: ❌</div>
    <a name="commands-c2s-admin-login-challenge"></a><h6>Přihlašovací výzva</h6>
    <div><span class="bold">Upozornění</span>: Po dokončení přihlašovací výzvy se neukončuje proud. Následuje po ní přihlašovací odezva.</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
+     </tr>
+     <tr>
+      <td>admin_login</td>
+      <td class="center">❌</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -364,26 +429,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>command</td>
-      <td>"admin_login_request"</td>
-      <td class="center">✔</td>
-      <td>Název příkazu</td>
-     </tr>
-     <tr>
       <td>user</td>
-      <td>řetězec</td>
+      <td>string</td>
       <td class="center">✔</td>
       <td>Uživatelské jméno</td>
      </tr>
      <tr>
       <td>password</td>
-      <td>řetězec</td>
+      <td>string</td>
       <td class="center">❌</td>
       <td>Hash hesla</td>
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -394,19 +453,19 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>verification_string</td>
-      <td>řetězec</td>
+      <td>string</td>
       <td class="center">✔</td>
-      <td>Řetězec výzvy pro zašifrování</td>
+      <td>string výzvy pro zašifrování</td>
      </tr>
      <tr>
       <td>public_key</td>
-      <td>řetězec</td>
+      <td>string</td>
       <td class="center">✔</td>
       <td>Veřejný klíč, kterým byl řetězec zašifrován</td>
      </tr>
      <tr>
       <td>encryption</td>
-      <td>řetězec</td>
+      <td>string</td>
       <td class="center">✔</td>
       <td>Identifikace algoritmu, kterým byl řetězec zašifrován</td>
      </tr>
@@ -440,14 +499,21 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>Wrong password</td>
       <td>Heslo je chybné</td>
      </tr>
+     <tr>
+      <td class="center">5</td>
+      <td>User is already logged in</td>
+      <td>Uživatel je již přihlášen</td>
+     </tr>
     </table>
    </div>
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_login_request",
- "user": "admin",
- "password": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg"
+ "command": "admin_login",
+ "params": {
+  "user": "admin",
+  "password": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -473,26 +539,22 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-logout"></a><h5>Odhlášení správce</h5>
-   <div>TODO - úvod</div>
-   <div class="note">Pro provedení příkazu vyžadováno přihlášení správce: ✔</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div>Tento příkaz odhlásí správce, pokud byl přihlášen.</div>
+   <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
-      <th>Název parametru</th>
-      <th>Datový typ</th>
-      <th class="center">Vyžadováno</th>
-      <th>Popis</th>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>command</td>
-      <td>"admin_logout"</td>
+      <td>admin_logout</td>
       <td class="center">✔</td>
-      <td>Název příkazu</td>
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -502,7 +564,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>success</td>
+      <td>success - TODO</td>
       <td>bool</td>
       <td class="center">✔</td>
       <td>vysledek operace</td>
@@ -519,15 +581,15 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>failed</td>
-      <td>-</td>
+      <td>User is not logged in</td>
+      <td>Uživatel nebyl přihlášen, tudíž není možné ho odhlásit</td>
      </tr>
     </table>
    </div>
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_logout",
+ "command": "admin_logout"
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -537,11 +599,23 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-admins"></a><h5>Správci</h5>
-   <div>Správci spravují věci</div>
+   <div>TODO</div>
    <a name="commands-c2s-admin-admins-list"></a><h6>Seznam správců</h6>
    <div>TODO - úvod</div>
-   <div class="note">Pro provedení příkazu vyžadováno přihlášení správce: ✔</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
+     </tr>
+     <tr>
+      <td>admin_admins_list</td>
+      <td class="center">✔</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -551,14 +625,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>command</td>
-      <td>"admin_list_admins"</td>
-      <td class="center">✔</td>
-      <td>Název příkazu</td>
+      <td>offset</td>
+      <td>32-bit integer</td>
+      <td class="center">❌</td>
+      <td>Počáteční číslo pořadí ve výpisu</td>
+     </tr>
+     <tr>
+      <td>count</td>
+      <td>32-bit integer</td>
+      <td class="center">❌</td>
+      <td>Počet položek ve výpisu</td>
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -569,23 +649,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>admins</td>
-      <td>list[Admin]</td>
+      <td>list[Admin] - TODO</td>
       <td class="center">✔</td>
-      <td>-</td>
-     </tr>
-    </table>
-   </div>
-   <div class="bold">Chybové stavy:</div>
-   <div class="table-container">
-    <table class="table-structure">
-     <tr>
-      <th class="center">Kód chyby</th>
-      <th>Zpráva</th>
-      <th>Popis</th>
-     </tr>
-     <tr>
-      <td class="center">1</td>
-      <td>error</td>
       <td>-</td>
      </tr>
     </table>
@@ -593,7 +658,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_list_admins",
+ "command": "admin_admins_list"
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -612,27 +677,22 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  ]
 }
 </pre>
-   <a name="commands-c2s-admin-admins-add"></a><h6>Přidat nového správce</h6>
+   <a name="commands-c2s-admin-admins-add"></a><h6>Přidání nového správce</h6>
    <div>TODO - úvod</div>
-   <div class="note">Pro provedení příkazu vyžadováno přihlášení správce: ✔</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
-      <th>Název parametru</th>
-      <th>Datový typ</th>
-      <th class="center">Vyžadováno</th>
-      <th>Popis</th>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>command</td>
-      <td>"admin_create_admin"</td>
-      <td class="center">✔❌</td>
-      <td>Název příkazu</td>
+      <td>admin_admins_create</td>
+      <td class="center">✔</td>
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Parametry:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -661,6 +721,23 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
+   <div class="bold">Struktura odezvy od serveru:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>TODO</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
    <div class="bold">Chybové stavy:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -671,7 +748,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>error</td>
+      <td>TODO</td>
       <td>-</td>
      </tr>
     </table>
@@ -679,7 +756,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_create",
+ "command": "admin_admins_create",
  "name": "admin1",
  "password": "password",
  "pubkey": "Xxxxx..."
@@ -693,31 +770,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
    <a name="commands-c2s-admin-admins-set"></a><h6>Úprava správce</h6>
    <div>TODO - úvod</div>
-   <div class="note">Pro provedení příkazu vyžadováno přihlášení správce: ✔</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
-      <th>Název parametru</th>
-      <th>Datový typ</th>
-      <th class="center">Vyžadováno</th>
-      <th>Popis</th>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>command</td>
-      <td>"admin_edit_admin"</td>
+      <td>admin_admins_edit</td>
       <td class="center">✔</td>
-      <td>Název příkazu</td>
-     </tr>
-     <tr>
-      <td>admin</td>
-      <td>Admin</td>
-      <td class="center">✔</td>
-      <td>admin identifikovaný polem "id"</td>
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Parametry:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -727,7 +793,24 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>success</td>
+      <td>id</td>
+      <td>32-bit integer</td>
+      <td class="center">✔</td>
+      <td>Správce identifikovaný polem "id"</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Struktura odezvy od serveru:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>success - TODO</td>
       <td>bool</td>
       <td class="center">✔</td>
       <td>-</td>
@@ -744,7 +827,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>error</td>
+      <td>TODO</td>
       <td>-</td>
      </tr>
     </table>
@@ -752,7 +835,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_edit",
+ "command": "admin_admins_edit",
  "admin": {
   "id": 1,
   "name": "admin1",
@@ -768,8 +851,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
    <a name="commands-c2s-admin-admins-del"></a><h6>Smazání správce</h6>
    <div>TODO - úvod</div>
-   <div class="note">Pro provedení příkazu vyžadováno přihlášení správce: ✔</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
+     </tr>
+     <tr>
+      <td>admin_admins_delete</td>
+      <td class="center">✔</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -779,20 +874,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>command</td>
-      <td>"admin_delete_admin"</td>
-      <td class="center">✔</td>
-      <td>Název příkazu</td>
-     </tr>
-     <tr>
       <td>id</td>
-      <td>64 bit integer</td>
+      <td>64-bit integer</td>
       <td class="center">✔</td>
       <td>Název příkazu</td>
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -840,25 +929,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div>TODO - úvod</div>
    <a name="commands-c2s-admin-domains-list"></a><h6>Seznam domén:</h6>
    <div>TODO - úvod</div>
-   <div class="note">Pro provedení příkazu vyžadováno přihlášení správce: ✔</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
-      <th>Název parametru</th>
-      <th>Datový typ</th>
-      <th class="center">Vyžadováno</th>
-      <th>Popis</th>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>command</td>
-      <td>"admin_"</td>
-      <td class="center">✔❌</td>
-      <td>Název příkazu</td>
+      <td>admin_domains_list</td>
+      <td class="center">✔</td>
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -893,10 +977,10 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_get_domains",
+ "command": "admin_domains_list"
 }
 </pre>
-   <div><span class="bold">Příklad odezvy od serveru:</span></div>
+   <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
  "result": {
@@ -916,8 +1000,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
    <a name="commands-c2s-admin-domains-add"></a><h6>Přidání nové domény</h6>
    <div>TODO - úvod</div>
-   <div class="note">Pro provedení příkazu vyžadováno přihlášení správce: ✔</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
+     </tr>
+     <tr>
+      <td>admin_domains_create</td>
+      <td class="center">✔</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -927,14 +1023,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>command</td>
-      <td>"admin_"</td>
+      <td>TODO</td>
+      <td>TODO</td>
       <td class="center">✔❌</td>
       <td>Název příkazu</td>
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -980,8 +1076,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
    <a name="commands-c2s-admin-domains-set"></a><h6>Úprava domény</h6>
    <div>TODO - úvod</div>
-   <div class="note">Pro provedení příkazu vyžadováno přihlášení správce: ✔</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
+     </tr>
+     <tr>
+      <td>admin_domains_edit</td>
+      <td class="center">✔</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -991,14 +1099,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>command</td>
-      <td>"admin_"</td>
+      <td>TODO</td>
+      <td>TODO</td>
       <td class="center">✔❌</td>
       <td>Název příkazu</td>
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1044,8 +1152,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
    <a name="commands-c2s-admin-domains-del"></a><h6>Smazání domény</h6>
    <div>TODO - úvod</div>
-   <div class="note">Pro provedení příkazu vyžadováno přihlášení správce: ✔</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
+     </tr>
+     <tr>
+      <td>admin_domains_delete</td>
+      <td class="center">✔</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1055,14 +1175,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>command</td>
-      <td>"admin_"</td>
+      <td>TODO</td>
+      <td>TODO</td>
       <td class="center">✔❌</td>
       <td>Název příkazu</td>
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1110,8 +1230,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div>TODO - úvod</div>
    <a name="commands-c2s-admin-users-list"></a><h6>Seznam uživatelů</h6>
    <div>TODO - úvod</div>
-   <div class="note">Pro provedení příkazu vyžadováno přihlášení správce: ✔</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
+     </tr>
+     <tr>
+      <td>admin_users_list</td>
+      <td class="center">✔</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1121,14 +1253,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>command</td>
-      <td>"admin_"</td>
+      <td>offset, count - TODO</td>
+      <td>TODO</td>
       <td class="center">✔❌</td>
       <td>Název příkazu</td>
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1174,8 +1306,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
    <a name="commands-c2s-admin-users-add"></a><h6>Přidání nového uživatele</h6>
    <div>TODO - úvod</div>
-   <div class="note">Pro provedení příkazu vyžadováno přihlášení správce: ✔</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
+     </tr>
+     <tr>
+      <td>admin_users_create</td>
+      <td class="center">✔</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1185,14 +1329,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>command</td>
-      <td>"admin_"</td>
+      <td>TODO</td>
+      <td>TODO</td>
       <td class="center">✔❌</td>
       <td>Název příkazu</td>
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1238,8 +1382,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
    <a name="commands-c2s-admin-users-set"></a><h6>Úprava uživatele</h6>
    <div>TODO - úvod</div>
-   <div class="note">Pro provedení příkazu vyžadováno přihlášení správce: ✔</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
+     </tr>
+     <tr>
+      <td>admin_users_edit</td>
+      <td class="center">✔</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1249,14 +1405,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>command</td>
-      <td>"admin_"</td>
+      <td>TODO</td>
+      <td>TODO</td>
       <td class="center">✔❌</td>
       <td>Název příkazu</td>
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1302,8 +1458,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
    <a name="commands-c2s-admin-users-del"></a><h6>Smazání uživatele</h6>
    <div>TODO - úvod</div>
-   <div class="note">Pro provedení příkazu vyžadováno přihlášení správce: ✔</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
+     </tr>
+     <tr>
+      <td>admin_users_delete</td>
+      <td class="center">✔</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1313,14 +1481,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>command</td>
-      <td>"admin_"</td>
+      <td>TODO</td>
+      <td>TODO</td>
       <td class="center">✔❌</td>
       <td>Název příkazu</td>
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1367,8 +1535,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-c2s-admin-sysinfo"></a><h5>Informace o serveru pro správce</h5>
    <div>Tento příkaz zobrazuje systémové prostředky serveru.</div>
    <div>TODO - úvod</div>
-   <div class="note">Pro provedení příkazu vyžadováno přihlášení správce: ✔</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
+     </tr>
+     <tr>
+      <td>admin_info</td>
+      <td class="center">✔</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1378,14 +1558,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>command</td>
-      <td>"admin_"</td>
+      <td>TODO</td>
+      <td>TODO</td>
       <td class="center">✔❌</td>
       <td>Název příkazu</td>
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1421,7 +1601,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_sysinfo",
+ "command": "admin_info",
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -1451,13 +1631,25 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "uptime": "8 days, 12 hours, 45 minutes, 52 seconds"
 }
 </pre>
-   <a name="commands-c2s-user"></a><h4>Uživatel</h4>
+   <a name="commands-c2s-user"></a><h4>Příkazy uživatele</h4>
    <div>Všechny příkazy začínající "<span class="bold">user_</span>" jsou určeny pro uživatele. Aby bylo možné provádět tyto příkazy, musí být uživatel přihlášen (mimo příkazů pro samotné přihlášení). Pokud je přihlášení úspěšné, získá uživatel token relace, kterým se prokazuje při navázání spojení se serverem (místo přihlášení). Přihlášení tokenem je platné po dobu spojení, token se tedy neodesílá v každém uživatelském příkazu.</div>
    <a name="commands-c2s-user-registration"></a><h5>Registrace uživatele</h5>
    <div>Možnost registrace účtu uživatelem musí být povolena na serveru</div>
    <div>TODO - úvod, popsat chybu, kdy není registrace povolena na serveru</div>
-   <div class="note">Pro provedení příkazu vyžadováno přihlášení uživatele: ❌</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení uživatele</th>
+     </tr>
+     <tr>
+      <td>user_reg</td>
+      <td class="center">❌</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1474,7 +1666,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1520,10 +1712,22 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
    <a name="commands-c2s-user-login"></a><h5>Přihlášení uživatele</h5>
    <div>Přihlášení uživatele probíhá ve dvou krocích - přihlašovací výzvě a přihlašovací odezvě. V přihlašovací výzvě zašle klient své přihlašovací jméno ve tvaru <span class="bold">uživatel@doména</span> a pokud používá mimo privátního klíče i heslo, tak i hash tohoto hesla (nepovinné). Server ověří heslo (pokud uživatel používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem uživatele. Tento zašifrovaný řetězec je následně předán uživateli. Uživatel řetězec rozšifruje pomocí svého soukromého klíče a zašle ho zpět v rámci přihlašovací odezvy. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetětec od klienta odpovídá původně vygenerovanému, pak uživatele přihlásí a udělí mu token relace. V opačném případě vrátí chybu.</div>
-   <div class="note">Pro provedení příkazů vyžadováno přihlášení uživatele: ❌</div>
    <a name="commands-c2s-user-login-challenge"></a><h6>Přihlašovací výzva</h6>
    <div>TODO - úvod, připsat upozornění, že nezavírat proud kvůli přihlašovací odezvě</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení uživatele</th>
+     </tr>
+     <tr>
+      <td>user_login</td>
+      <td class="center">❌</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1540,7 +1744,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1586,7 +1790,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
    <a name="commands-c2s-user-login-response"></a><h6>Přihlašovací odezva</h6>
    <div>TODO - úvod, připsat upozornění, že se navazuje na proud přihlašovací výzvy a po dokončení přihlašovací odezvy se teprve uzavírá proud.</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1596,14 +1800,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>command</td>
-      <td>"user_"</td>
+      <td>TODO</td>
+      <td>TODO</td>
       <td class="center">✔❌</td>
       <td>Název příkazu</td>
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1649,8 +1853,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
    <a name="commands-c2s-user-verify"></a><h5>Ověření uživatele tokenem</h5>
    <div>Pokud byl uživatel již dříve přihlášen, získal token relace a nemusí se tedy přihlašovat, stačí jen aby se místo přihlášení po novém navázání spojení ověřil tokenem relace. Pokud platnost tokenu relace již vypršela, je nutné přihlášení pro získání nového tokenu.</div>
-   <div class="note">Pro provedení příkazu vyžadováno přihlášení uživatele: ❌</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení uživatele</th>
+     </tr>
+     <tr>
+      <td>user_verify</td>
+      <td class="center">❌</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1660,14 +1876,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>command</td>
-      <td>"user_"</td>
+      <td>TODO</td>
+      <td>TODO</td>
       <td class="center">✔❌</td>
-      <td>Název příkazu</td>
+      <td>TODO</td>
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1689,11 +1905,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     <table class="table-structure">
      <tr>
       <td class="center">1</td>
-      <td>User's token is missing</td>
-      <td>Uživatel v příkazu neposkytl token relace</td>
-     </tr>
-     <tr>
-      <td class="center">2</td>
       <td>User's token is invalid</td>
       <td>Uživatel poskytl neplatný či prošlý token relace</td>
      </tr>
@@ -1713,8 +1924,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
    <a name="commands-c2s-user-logout"></a><h5>Odhlášení uživatele</h5>
    <div>TODO - úvod</div>
-   <div class="note">Pro provedení příkazu vyžadováno přihlášení uživatele: ✔</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení uživatele</th>
+     </tr>
+     <tr>
+      <td>user_logout</td>
+      <td class="center">✔</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1724,14 +1947,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>command</td>
-      <td>"user_"</td>
+      <td>TODO</td>
+      <td>TODO</td>
       <td class="center">✔❌</td>
-      <td>Název příkazu</td>
+      <td>TODO</td>
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1777,8 +2000,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
    <a name="commands-c2s-user-setpubkey"></a><h5>Změna veřejného klíče pro přihlášení</h5>
    <div>TODO - úvod, pozor - vyžaduje ověření původním pubkey (+ heslem, pokud se používá)</div>
-   <div class="note">Pro provedení příkazu vyžadováno přihlášení uživatele: ✔</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení uživatele</th>
+     </tr>
+     <tr>
+      <td>user_setpubkey</td>
+      <td class="center">✔</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1788,14 +2023,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>command</td>
-      <td>"user_"</td>
+      <td>TODO</td>
+      <td>TODO</td>
       <td class="center">✔❌</td>
-      <td>Název příkazu</td>
+      <td>TODO</td>
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1844,8 +2079,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div>TODO - pozor - vyžaduje ověření původním pubkey (+ heslem, pokud se používalo)</div>
    <div>TODO - toto by mělo umět i nějak zrušit používání hesla pokud to server umožňuje (poslat null?)</div>
    <div>TODO - bude se vyžadovat aktivní příhlášení (tzn. mít token)?</div>
-   <div class="note">Pro provedení příkazu vyžadováno přihlášení uživatele: ✔</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení uživatele</th>
+     </tr>
+     <tr>
+      <td>user_setpass</td>
+      <td class="center">✔</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1862,7 +2109,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1909,8 +2156,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-c2s-user-info"></a><h5>Informace o serveru pro uživatele</h5>
    <div>Tento příkaz vrací informace o AMTP serveru a nevyžaduje token relace.</div>
    <div>TODO - úvod</div>
-   <div class="note">Pro provedení příkazu vyžadováno přihlášení uživatele: ❌</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení uživatele</th>
+     </tr>
+     <tr>
+      <td>user_info</td>
+      <td class="center">❌</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1920,14 +2179,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>command</td>
-      <td>"user_"</td>
+      <td>TODO</td>
+      <td>TODO</td>
       <td class="center">✔❌</td>
-      <td>Název příkazu</td>
+      <td>TODO</td>
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1976,8 +2235,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
    <a name="commands-c2s-user-modules"></a><h5>Seznam používaných modulů</h5>
    <div>Tento příkaz zobrazuje seznam modulů a jejich verzí, které server používá. Server může mít spuštěný jeden modul ve více verzích. To umožňuje zpětnou kompatibilitu se starými verzemi klientských modulů. Tento příkaz nevyžaduje token relace.</div>
-   <div class="note">Pro provedení příkazu vyžadováno přihlášení uživatele: ❌</div>
-   <div><span class="bold">Struktura požadavku od klienta:</span></div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení uživatele</th>
+     </tr>
+     <tr>
+      <td>user_modules</td>
+      <td class="center">❌</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1987,14 +2258,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>command</td>
-      <td>"user_"</td>
+      <td>TODO</td>
+      <td>TODO</td>
       <td class="center">✔❌</td>
-      <td>Název příkazu</td>
+      <td>TODO</td>
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -2049,10 +2320,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  ]
 }
 </pre>
-
-   <a name="commands-c2s-modules"></a><h4>Komunikace s moduly</h4>
-
-   <div>TODO</div>
    <a name="commands-s2s"></a><h3>Spojení server-server</h3>
    <div>V této sekci jsou popsány příkazy, které jsou využívány v komunikaci mezi dvěma serverovými aplikacemi:</div>
    <div>TODO: předávání, ověřování protějšího serveru atd.</div>
@@ -2091,41 +2358,310 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       }
     }
     </pre>
-   
     Vsechny verejne klice se porovnaji. V pripade neshody je spojeni ukonceno.
     Podpis ziskany v ramci challenge-response flow se overi pomoci verejneho klice. V pripade neshody je spojeni ukonceno.
-    
-
-
-   
-   <h3>Zpravy mezi moduly</h3>
-   Zpravy mezi moduly obsahuji string type, ktery se konstruuje podobne jako jmenne prostory v jazyce Java (
-https://docs.oracle.com/javase/specs/jls/se6/html/packages.html , 7.7 Unique Package Names).
-   
-   priklad zpravy predane z modulu do jadra:
-   <pre>
-   {
-     "type": "com.github.libersoft.messaging",
-     "from": "server1.example.com",
-     "to": "server2.example.com",
-     "data": {
-       "type": "message_2_0",
-       "from": "franta@domena1.server1.example.com",
-       "to": "pepau@domena1.server2.example.com",
-       "message": "Ahoj, jak se mas?"
-       "created": "2022-01-01T12:00:00Z",
-     }
-   }
-   </pre>
-   
-   V pripade, ze cil zpravy ("to") je mistni modul, je zprava predana primo mistnimu modulu. V opacnem pripade je zprava v nezmenenem stavu predana serveru, ktery je zodpovedny za cilovou domenu. Vzdaleny server potvrdi prijeti zpravy:
-   
-   <pre>
-   {
-     "success": true
-   }
-   </pre>
-      
+   <a name="commands-c2s-modules"></a><h3>Komunikace s moduly</h3>
+   <div>Tato sekce popisuje, jakým způsobem se předávají data v rámci modulů různých <span class="bold">AMTP</span> serverů a jakým způsobem komunikuje jádro serveru s moduly.</div>
+   <a name="commands-c2s-modules-deliver"></a><h4>Předávání příkazů určených modulům</h4>
+   <div>Na vlastním serveru nejprve předá modul zprávu určenou cizímu serveru s následujícími parametry:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>module</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Název modulu</td>
+     </tr>
+     <tr>
+      <td>to</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Adresa AMTP serveru, kterému je příkaz určen.</td>
+     </tr>
+     <tr>
+      <td>data</td>
+      <td>object</td>
+      <td class="center">✔</td>
+      <td>Objekt s daty které poskytl modul</td>
+     </tr>
+    </table>
+   </div>
+   <div>Jelikož moduly mohou být vyvinuty různými vývojáři, je potřeba jednoznačný identifikátor názvu modulu. K tomuto účelu se využívá <span class="bold">reverzní zápis názvu domény</span> vývojáře, po kterém následuje tečka <span class="bold">(.)</span>, dále <span class="bold">název modulu</span>, poté podtržítko <span class="bold">(_)</span> a nakonec <span class="bold">verze modulu</span>. Díky identifikaci verze modulu může server poskytovat jeden modul ve více verzích najednou, což se dá využít například pro zpětnou kompatibilitu se staršími verzemi modulů klientských aplikací.</div>
+   <div class="bold">Formát názvu modulu:</div>
+<pre>
+"tld.domain.module-name_version"
+</pre>   
+   <div class="bold">Příklad názvu modulu:</div>
+<pre>
+"com.example.messages_1.0"
+</pre>
+   <div>Tento zápis označuje, že vývojář, který vlastní doménu <span class="bold">example.com</span> vytvořil modul s názvem <span class="bold">messages</span> ve verzi <span class="bold">1.0</span>.</div>
+   <div class="bold">Chybové stavy z jádra vlastního serveru:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>Server unavailable</td>
+      <td>Protější server neodpovídá</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>TODO</td>
+      <td>TODO</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy z jádra cizího serveru:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>Module not found</td>
+      <td>Na serveru neběží požadovaný modul</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>TODO</td>
+      <td>TODO</td>
+     </tr>
+    </table>
+   </div>
+   <div>Příklad příkazu od modulu určeného protějšímu serveru:</div>
+<pre>
+{
+ "module": "com.example.messages_1.0",
+ "to": "amtp.example2.com",
+ "data": {
+  "command": "send",
+  "params": {
+   "from": "alice@example1.com",
+   "to": "bob@example2.com",
+   "message": "Hi, how are you doing?"
+   "created": "2024-01-01T12:00:00Z"
+  }
+ }
+}
+</pre>
+   <div>V případě, že cílový server příkazu ("to") je místní server, je zpráva předána přímo místnímu modulu, bez odesílání po síti.</div>
+   <div>Následně protější server předá modulu strukturu příkazu, ve které přidá parametr <span class="bold">"from"</span>, který obsahuje adresu serveru, který zprávu odeslal a určenému modulu předá strukturu v následujícím tvaru:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>from</td>
+      <td>string</td>
+      <td>Název serveru, který příkaz zaslal</td>
+     </tr>
+     <tr>
+      <td>data</td>
+      <td>object</td>
+      <td>Objekt s daty které poskytl modul</td>
+     </tr>
+    </table>
+   </div>
+   <div>Příklad příkazu určeného ke zpracování modulem:</div>
+<pre>
+{
+ "from": "amtp.example1.com",
+ "data": {
+  "command": "send",
+  "params": {
+   "from": "alice@example1.com",
+   "to": "bob@example2.com",
+   "message": "Hi, how are you doing?"
+   "created": "2024-01-01T12:00:00Z"
+  }
+ }
+}
+</pre>
+   <div>Modul si následně před zpracováním příkazu může ověřit, zda server, který příkaz odeslal, má oprávnění používat v identitách doménová jména. K tomu slouží příkazy <span class="bold">get_servers</span> a <span class="bold">verify_domain</span> mezi moduly a jádrem.</div>
+   <a name="commands-c2s-modules-commands"></a><h4>Příkazy mezi jádrem a modulem</h4>
+   <div>Následující příkazy poskytují modulům užitečné informace, pomocí kterých si modul může ověřit legitimnost použití identit, které modul protějšího serveru uvedl v objektu <span class="bold">data</span>.</div>
+   <a name="commands-c2s-modules-commands-servers"></a><h5>Zjištění oprávněných serverů:</h5>
+   <div>Tento příkaz slouží ke zjištění seznamu adres serverů, které mají oprávnění užívat konkrétní doménu.</div>
+   <div>Název příkazu: <span class="bold">get_servers</span></div>
+   <div class="bold">Parametry požadavku pro jádro:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>domain</td>
+      <td>string</td>
+      <td>Název domény, u které je požadováno zjistit AMTP server(y), které mají oprávnění ji využívat v identitách</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Struktura odezvy od jádra:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>servers</td>
+      <td>array[string]</td>
+      <td>Seznam adres serverů, které mají oprávnění k užívání domény</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>DNS not available</td>
+      <td>Nebylo možné se spojit s DNS serverem</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>Domain name is missing</td>
+      <td>Nebyl vyplněn parametr s názvem domény</td>
+     </tr>
+     <tr>
+      <td class="center">3</td>
+      <td>Domain name not found</td>
+      <td>Doména nebyla nalezena v DNS</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od modulu:</div>
+<pre>
+{
+ "command": "get_servers",
+ "params": {
+  "domain": "example.com"
+ }
+}
+</pre>
+   <div class="bold">Příklad odezvy od jádra:</div>
+<pre>
+{
+ "servers": [
+  "amtp1.example.com",
+  "amtp2.example.com",
+  "amtp3.example.com"
+ ]
+}
+</pre>
+   <a name="commands-c2s-modules-commands-verify"></a><h5>Ověření opravnění užití domény:</h5>
+   <div>Tento příkaz slouží ke zjištění, zda určitý server má oprávnění užívat konkrétní doménu</div>
+   <div>Název příkazu: <span class="bold">verify_domain</span></div>
+   <div class="bold">Parametry požadavku pro jádro:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>server</td>
+      <td>string</td>
+      <td>Název serveru u kterého se ověřuje, zda má právo používat identity konkrétní domény</td>
+     </tr>
+     <tr>
+      <td>domain</td>
+      <td>string</td>
+      <td>Název domény, u které je ověřuje, zda jí má právo používat v identitách konkrétní server</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Struktura odezvy od jádra:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>authorized</td>
+      <td>bool</td>
+      <td>Odpověď, zda server má oprávnění užívat doménu</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>DNS not available</td>
+      <td>Nebylo možné se spojit s DNS serverem</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>Domain name is missing</td>
+      <td>Nebyl vyplněn parametr s názvem domény</td>
+     </tr>
+     <tr>
+      <td class="center">3</td>
+      <td>Domain name not found</td>
+      <td>Doména nebyla nalezena v DNS</td>
+     </tr>
+     <tr>
+      <td class="center">4</td>
+      <td>Server address is missing</td>
+      <td>Nebyl vyplněn parametr s adresou serveru</td>
+     </tr>
+     <tr>
+      <td class="center">5</td>
+      <td>Server address not found</td>
+      <td>Adresa serveru nebyla nalezena v DNS</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od modulu:</div>
+<pre>
+{
+ "command": "verify_domain",
+ "params": {
+  "server": "amtp.example.com"
+ }
+}
+</pre>
+   <div class="bold">Příklad odezvy od jádra:</div>
+<pre>
+{
+ "authorized": true
+}
+</pre>
    <a name="examples"></a><h2>Příklady</h2>
    <div>TODO</div>
   </div>
