@@ -117,9 +117,14 @@
     <li><span class="bold">Ochrana soukromí</span>: Distribuovaná síťová architektura může přispět k lepší ochraně soukromí uživatelů tím, že data menších poskytovatelů nejsou uchovávána a zpracovávána velkými korporacemi, které mohou mít tendence velké množství dat uživatelů různými způsoby zpracovávat nebo sdílet pro různé účely (reklamní, trénink AI, spolupráce s vládami apod.)</li>
    </ul>
    <a name="architecture-modularity"></a><h3>Modularita</h3>
-   <div>Ačkoliv tato dokumentace nepopisuje implementaci serverové aplikace, je důležité zmínit, že tento protokol počítá s použitím modulární architektury serveru a podle toho vypadá i komunikace v rámci příkazů a to jak mezi klientem a serverem, tak i servery mezi sebou.</div>
-   <div>Jedna strana se spojí s druhým serverem, se kterým vytvoří <span class="bold">WebTransport</span> spojení a následuje obousměrný přenos dat. Tento server následně zpracovává data a odpovídá buď přímo z jádra (pokud byl příkaz určen jádru) a nebo je předán modulu (pokud byl určen modulu). Následně podle určení, odpovídá buď jádro nebo modul. V případě určení pro modul nezpracovává jádro nijak odpověď a jen jí předá klientovi.</div>
-   <div>Způsob komunikace serverového jádra s moduly není standardizován touto dokumentací, každá softwarová implementace může mít vlastní řešení (například výměna dat uvnitř aplikace, externě běžící služby propojené unixovými sockety, síťové spojení přes <span class="bold">WebTransport</span> apod.).</div>
+   <div>Ačkoliv tato dokumentace nepopisuje implementaci serverové aplikace, je důležité zmínit, že tento protokol počítá s použitím modulární architektury serveru a proto je třeba popsat nejen komunikaci v rámci příkazů síťového protokolu, ale i komunikaci mezi <span class="bold">jádrem</span> serveru a <span class="bold">moduly</span>.</div>
+   <ul class="spacelist">
+    <li><span class="bold">Jádro</span>: Stará se o síťovou komunikaci, komunikaci s moduly, komunikaci s <a href="https://cs.wikipedia.org/wiki/Domain_Name_System" target="_blank">DNS</a> a zajišťuje základní správu serveru.</li>
+    <li><span class="bold">Moduly</span>: Zajišťují funkcionality serveru (např. zasílání rychlých zpráv, diskuzní fórum, blogy apod.). Každá serverová i klientská aplikace může využívat vlastní sadu modulů.</li>
+   </ul>
+   <div></div>
+   <div>Po spojení klienta nebo cizího serveru s vlastním serverem je možné komunikovat buď napřímo s <span class="bold">jádrem</span> nebo s jednotlivými <span class="bold">moduly</span>. Na základě struktury příkazu, který je zaslán po síti, server určí, zda se jedná o příkaz, který má být zpracován jádrem nebo moduly. Pokud je určen příkaz modulu a modul ho zpracuje, vrátí odpověď jádru a jádro ho následně předá zpět připojenému klientovi nebo cizímu serveru, pro které je určen.</div>
+   <div>Způsob komunikace serverového jádra s moduly není standardizován touto dokumentací, každá softwarová implementace může mít vlastní řešení (například výměna dat uvnitř aplikace, externě běžící služby propojené unixovými sockety, síťové spojení přes <span class="bold">WebTransport</span> apod.). V rámci tohoto protokolu jsou pouze popsány struktury dat v <span class="bold">BSON</span> formátu, které se doporučuje používat při komunikaci mezi jádrem a serverem.</div>
    <div><span class="bold">Modulární koncept architektury</span> protokolu poskytuje několik klíčových výhod:</div>
    <ul class="spacelist">
     <li><span class="bold">Přizpůsobení</span>: Díky modulární struktuře mohou provozovatelé serverů snadno vybírat specifické funkcionality dle svých potřeb nebo potřeb jejich uživatelů. Správci či uživatelé mohou vybrat pouze ty moduly, které potřebují, což umožňuje vytvořit řešení šité na míru bez zbytečného nadbytečného software. Například školy či firmy mohou využívat jiné moduly, než domácí uživatelé apod.</li>
@@ -162,7 +167,7 @@
    <div>Pro tento účel je vyžadován platný šifrovací certifikát, vydaný certifikační autoritou (např. <a href="https://cs.wikipedia.org/wiki/Let%27s_Encrypt" target="_blank">Let's Encrypt</a>). Spojení s certifikátem s vlastním podpisem (bez certifikační autority) není povoleno (jak pro spojení <span class="bold">klient-server</span>, tak i pro <span class="bold">server-server</span>), protože u nich nelze ověřit identitu (může je vydat kdokoliv), proto je nutné si takový certifikát nechat vystavit od certifikační autority a používat ho pro účely jak šifrovaného přenosu dat, tak i pro ověření identity serveru.</div>
    <a name="security-dkey"></a><h3>Digitální podpis serveru</h3>
    <div><span class="bold">Digitální podpis serveru</span> slouží k ověření, zda server, ke kterému se klient či jiný server připojuje, je opravdu ten, za který se vydává. Toto je bezpečnostní mechanismus, který zabraňuje útokům, jako je např. <a href="https://cs.wikipedia.org/wiki/IP_spoofing" target="_blank">IP spoofing</a>.</div>
-   <div>Po nainstalování každého serveru se vygeneruje <span class="bold">soukromý klíč</span> a z něj odvozený <span class="bold">veřejný klíč</span> algoritmem, který podporují ostatní serverové i klientské aplikace. <span class="bold">Soukromý klíč</span> zůstává bezpečně uložen na serveru. <span class="bold">Veřejný klíč</span> společně s identifikací šifrovacího algoritmu se uloží do <a href="https://cs.wikipedia.org/wiki/Domain_Name_System" target="_blank">DNS</a> do <span class="bold">TXT</span> záznamu <span class="bold">AMTP-PUBKEY</span>.</div>
+   <div>Po nainstalování každého serveru se vygeneruje <span class="bold">soukromý klíč</span> a z něj odvozený <span class="bold">veřejný klíč</span> algoritmem, který podporují ostatní serverové i klientské aplikace. <span class="bold">Soukromý klíč</span> zůstává bezpečně uložen na serveru. <span class="bold">Veřejný klíč</span> společně s identifikací šifrovacího algoritmu se uloží do <span class="bold">DNS</a> do <span class="bold">TXT</span> záznamu <span class="bold">AMTP-PUBKEY</span>.</div>
    <div>Ihned po navázání spojení vlastního serveru či klienta s protějším serverem, se zašle dotaz protějšímu serveru se žádostí o podepsání námi náhodně vygenerovaného řetězce. Protější server podepíše tento řetězec svým <span class="bold">soukromým klíčem</span> a odešle ho zpět. Náš server nebo klient odešle následně dotaz do <span class="bold">DNS</span> pro získání <span class="bold">TXT</span> záznamu <span class="bold">ATMP-PUBKEY</span> uvedený k protějšímu serveru a tím získá  jeho <span class="bold">veřejný klíč</span>. Náš server či klient následně ověří zda podepsaný řetezec odpovídá <span class="bold">veřejnému klíči</span> získanému z <span class="bold">DNS</span>. Pokud je podpis platný, nadále se komunikuje s protějším serverem, v opačném případě je ukončeno spojení.</div>
    <div>V případě spojení <span class="bold">server-server</span> se po ověření protějšího serveru, provede stejné ověření z opačné strany (protější server si ověří náš server).</div>
    <div class="center"><img src="img/AMTP-dkey-CZ.png" alt="Digitální podpis serveru" /></div>
@@ -2357,31 +2362,148 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     Podpis ziskany v ramci challenge-response flow se overi pomoci verejneho klice. V pripade neshody je spojeni ukonceno.
    <a name="commands-c2s-modules"></a><h3>Komunikace s moduly</h3>
    <div>TODO</div>
-   Zpravy mezi moduly obsahuji string type, ktery se konstruuje podobne jako jmenne prostory v jazyce Java (
-https://docs.oracle.com/javase/specs/jls/se6/html/packages.html , 7.7 Unique Package Names).
-   priklad zpravy predane z modulu do jadra:
-   <pre>
-   {
-     "module": "org.libersoft.messages",
-     "from": "amtp.example1.com",
-     "to": "amtp.example2.com",
-     "data": {
-       "command": "message_send",
-       "params": {
-        "from": "alice@example1.com",
-        "to": "bob@example2.com",
-        "message": "Hi, how are you doing?"
-        "created": "2024-01-01T12:00:00Z",
-       }
-     }
-   }
-   </pre>
-   V pripade, ze cil zpravy ("to") je mistni modul, je zprava predana primo mistnimu modulu. V opacnem pripade je zprava v nezmenenem stavu predana serveru, ktery je zodpovedny za cilovou domenu. Vzdaleny server potvrdi prijeti zpravy:
-   <pre>
-   {
-     "success": true
-   }
-   </pre>
+   <a name="commands-c2s-modules-names"></a><h4>Názvy modulů</h4>
+   <div>Jelikož moduly mohou být vyvinuty různými vývojáři, je potřeba jednoznačný identifikátor jména modulu. K tomuto účelu se využívá <span class="bold">reverzní zápis názvu domény</span> vývojáře, po kterém následuje tečka <span class="bold">(.)</span>, dále <span class="bold">název modulu</span>, poté podtržítko <span class="bold">(_)</span> a nakonec <span class="bold">verze modulu</span>. Díky identifikaci verze modulu může server poskytovat jeden modul ve více verzích najednou, což se dá využít například pro zpětnou kompatibilitu se staršími verzemi modulů klientských aplikací.</div>
+   <div class="bold">Formát názvu modulu:</div>
+<pre>
+"tld.domain.module-name_version"
+</pre>   
+   <div class="bold">Příklad názvu modulu:</div>
+<pre>
+"com.example.messages_1.0"
+</pre>
+   <div>Tento zápis označuje, že vývojář, který vlastní doménu <span class="bold">example.com</span> vytvořil modul s názvem <span class="bold">messages</span> ve verzi <span class="bold">1.0</span>.</div>
+   <a name="commands-c2s-modules-deliver"></a><h4>Předávání příkazů určených modulům</h4>
+   <div>Na vlastním serveru nejprve předá modul zprávu určenou cizímu serveru s následujícími parametry:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>module</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Název modulu</td>
+     </tr>
+     <tr>
+      <td>to</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Adresa AMTP serveru, kterému je příkaz určen.</td>
+     </tr>
+     <tr>
+      <td>data</td>
+      <td>object</td>
+      <td class="center">✔</td>
+      <td>Objekt s daty které poskytl modul</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy z jádra vlastního serveru:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>Server unavailable</td>
+      <td>Protější server neodpovídá</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>TODO</td>
+      <td>TODO</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy z jádra cizího serveru:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>Module not found</td>
+      <td>Na serveru neběží požadovaný modul</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>TODO</td>
+      <td>TODO</td>
+     </tr>
+    </table>
+   </div>
+   <div>Příklad příkazu od modulu určeného protějšímu serveru:</div>
+<pre>
+{
+ "module": "com.example.messages_1.0",
+ "to": "amtp.example2.com",
+ "data": {
+  "command": "send",
+  "params": {
+   "from": "alice@example1.com",
+   "to": "bob@example2.com",
+   "message": "Hi, how are you doing?"
+   "created": "2024-01-01T12:00:00Z"
+  }
+ }
+}
+</pre>
+   <div>V případě, že cílový server příkazu ("to") je místní server, je zpráva předána přímo místnímu modulu, bez odesílání po síti.</div>
+   <div>Následně protější server předá modulu strukturu příkazu, ve které přidá parametr <span class="bold">"from"</span>, který obsahuje adresu serveru, který zprávu odeslal a určenému modulu předá strukturu v následujícím tvaru:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>from</td>
+      <td>string</td>
+      <td>Název serveru, který příkaz zaslal</td>
+     </tr>
+     <tr>
+      <td>data</td>
+      <td>object</td>
+      <td>Objekt s daty které poskytl modul</td>
+     </tr>
+    </table>
+   </div>
+   <div>Příklad příkazu určeného ke zpracování modulem:</div>
+<pre>
+{
+ "from": "amtp.example1.com",
+ "data": {
+  "command": "send",
+  "params": {
+   "from": "alice@example1.com",
+   "to": "bob@example2.com",
+   "message": "Hi, how are you doing?"
+   "created": "2024-01-01T12:00:00Z"
+  }
+ }
+}
+</pre>
+   <div>Modul si následně před zpracováním příkazu může ověřit, zda server, který příkaz odeslal, má oprávnění používat v identitách doménová jména. K tomu slouží příkazy <span class="bold">get_domains</span>, <span class="bold">get_server</span> a <span class="bold">verify_domain</span> mezi moduly a jádrem.</div>
+   <a name="commands-c2s-modules-commands"></a><h4>Příkazy mezi jádrem a modulem</h4>
+   <div>Následující příkazy poskytují modulům užitečné informace, pomocí kterých si modul může ověřit legitimnost použití identit</div>
+   <a name="commands-c2s-modules-commands-server"></a><h5>Získání serveru dle domény:</h5>
+   <div>TODO - get_server</div>
+   <a name="commands-c2s-modules-commands-domain"></a><h5>Získání domén dle serveru:</h5>
+   <div>TODO - get_domain</div>
+   <a name="commands-c2s-modules-commands-verify"></a><h5>Zjištění, zda server má oprávnění užívat konkrétní doménu:</h5>
+   <div>TODO - verify_domian</div>
    <a name="examples"></a><h2>Příklady</h2>
    <div>TODO</div>
   </div>
