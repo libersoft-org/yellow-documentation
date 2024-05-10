@@ -73,7 +73,7 @@ crud:
 Domain datatype:
 ```
 {
-    optional int id;
+    int id;
     string domain;
     datetime ts;
 }
@@ -122,7 +122,10 @@ none.
 ### edit_domain
 #### request schema
 ```
-Domain
+{
+    int id;
+    string domain;
+}
 ``` 
 #### example request
 ```
@@ -158,6 +161,11 @@ Domain
     "status": "ok"
 }
 ```
+
+
+
+
+
 
 ## management of users
 ### list_users
@@ -221,6 +229,123 @@ none.
 ```
 ### error codes
 `user_does_not_exist`
+
+
+
+
+
+
+# Informace o serveru pro správce
+## admin_info
+### parameters
+none.
+
+
+
+
+
+# Příkazy uživatele
+## user_register
+### parameters
+string identifier
+string pubkey
+### example response
+result "ok"
+
+
+## user_login
+### parameters
+string identifier
+### response schema
+string salt
+
+## user_login2
+### parameters
+string password_hash
+### response schema
+string key_challenge
+
+## user_login3
+### parameters
+string challenge_response
+### response example
+{
+    "result": "ok"
+}
+
+## user_verify
+### parameters
+string token
+### response example
+{
+    "result": "ok"
+}
+
+
+## user_logout
+### parameters
+none.
+### response example
+{
+    "result": "ok"
+}
+
+## user_setpubkey
+### parameters
+string pubkey
+### response example
+{
+    "result": "ok"
+}
+
+## user_set_homeserver_login_password_verification_enabled
+### parameters
+bool enabled
+### response example
+{
+    "result": "ok"
+}
+
+## user_set_homeserver_login_password
+### parameters
+none.
+### response example
+{
+    "salt": "Xxxxx..."
+}
+
+## user_set_homeserver_login_password2
+### parameters
+string password_hash
+### response example
+{
+    "result": "ok"
+}
+
+
+## user_homeserver_info
+### parameters
+none.
+### response example
+{
+    "result":{
+         "app_name": "AMTP Server",
+         "app_version": "1.00",
+         "hostname": "amtp.example.com"
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # modul zprav
