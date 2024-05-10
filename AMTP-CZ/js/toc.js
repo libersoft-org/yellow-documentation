@@ -224,7 +224,25 @@ const data = [
     link: 'commands-s2s'
    }, {
     title: 'Komunikace s moduly',
-    link: 'commands-c2s-modules'
+    link: 'commands-c2s-modules',
+    sub: [
+     {
+      title: 'Předávání příkazů určených modulům',
+      link: 'commands-c2s-modules-deliver'
+     }, {
+      title: 'Příkazy mezi jádrem a modulem',
+      link: 'commands-c2s-modules-commands',
+      sub: [
+       {
+        title: 'Zjištění oprávněných serverů',
+        link: 'commands-c2s-modules-commands-servers'
+       }, {
+        title: 'Ověření opravnění užití domény',
+        link: 'commands-c2s-modules-commands-verify'
+       }
+      ]
+     }
+    ]
    }
   ]
  }, {

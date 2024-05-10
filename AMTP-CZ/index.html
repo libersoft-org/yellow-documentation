@@ -19,7 +19,7 @@
    <div class="center">
     <div><span class="bold center">UPOZORNĚNÍ:</span><br /><span>Toto je pouze návrh, nejedná se o konečnou verzi protokolu.</span></div>
     <div><span class="bold">Verze návrhu: </span><span>1</span></div>
-    <div><span class="bold">Vydáno: </span><span>Duben 2024</span></div>
+    <div><span class="bold">Vydáno: </span><span>Květen 2024</span></div>
    </div>
    <a name="about"></a><h2>Úvod</h2>
    <div><span class="bold">Advanced Mail Transfer Protocol (AMTP)</span> je nová generace síťového protokolu elektronické pošty (e-mailu), která překračuje omezení tradičních protokolů <a href="https://cs.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol" target="_blank">SMTP</a>, <a href="https://cs.wikipedia.org/wiki/Post_Office_Protocol" target="_blank">POP</a> a <a href="https://cs.wikipedia.org/wiki/Internet_Message_Access_Protocol" target="_blank">IMAP</a> využitím nových technologií, modulární koncepce a pokročilých způsobů zabezpečení. Plně tyto protokoly nahrazuje svou funkcionalitou (mimo zasílání zpráv, které je popsáno v samostatném modulu) a významně rožšiřuje jejich použitelnost díky svému modulárnímu konceptu. Zároveň používá modernější, bezpečnější metody přenosu dat v reálném čase.</div>
@@ -62,7 +62,7 @@
     <li><span class="bold">Distribuovaná síť</span>: Typ sítě, ve které je komunikace, zpracování a ukládání dat distribuováno mezi mnoho uzlů, které mohou mít různé vlastníky (poskytovatele služby). Tyto uzly mohou mezi sebou navzájem komunikovat, předávat si data a odlišovat se mezi sebou dle pravidel a sad služeb, které poskytují svým uživatelům. To síť odlišuje jak od centralistického modelu, kde je síť řízena jediným poskytovatelem, tak i od plně decentralizovaného modelu, kde každý koncový uživatel je suverénní jednotkou, která komunikuje s ostatními v rámci peer-to-peer sítě.</li>
     <li><span class="bold">Identita e-mailové adresy</span>: Formát adresy uživatelského účtu je zachován (s menšími odlišnostmi, popsanými v dalších sekcích této dokumentace) z původních e-mailových standardů. Ve zjednodušené formě je to formát <span class="bold">uživatel@doména</span>.</li>
    </ul>
-   <div><span class="bold">Nové koncepty v AMTP</span>:</div>
+   <div class="bold">Nové koncepty v AMTP:</div>
    <ul class="spacelist">
     <li><span class="bold">Komunikace v reálném čase</span>: Tento přístup, díky technologiím jako je <a href="https://www.w3.org/TR/webtransport/" target="_blank">WebTransport</a>, umožňuje uživatelům pohodlněji vést konverzace, rychleji reagovat na zprávy a využívat řadu dalších funkcionalit, kde je okamžitá komunikace nezbytná (např. videohovory, sdílení obrazovky, přenos velkých souborů apod.) a to navíc paralelně díky vícekanálové komunikaci. Tím jsou sníženy latence a zvýšena propustnost při přenosu dat.</li>
     <li><span class="bold">Bezpečná komunikace</span>: Protokol klade velký důraz na zabezpečenou komunikaci a tím chrání soukromí uživatelů na více vrstvách. Díky tomu jsou minimalizována rizika spojená s únikem dat, znemožněny odposlechy a další formy kybernetických útoků.</li>
@@ -248,7 +248,7 @@
     </table>
    </div>
    <a name="dns-config"></a><h3>Konfigurace DNS</h3>
-   <div><span class="bold">TXT - AMTP-SERVERS záznam</span>:</div>
+   <div class="bold">TXT - AMTP-SERVERS záznam:</div>
    <ul>
     <li>Tento záznam definuje cílové servery, na kterých jsou uživatelské účty pro určitou doménu (kombinuje funkcionalitu podobnou záznamům MX a SPF, které jsou určeny pro původní e-mailové protokoly).</li>
     <li>Záznam se určuje pro konkrétní doménu, která je určená pro adresy uživatelských účtů a definuje se řetězcem "<span class="bold">amtp-servers=</span>", po kterém následuje seznam jednotlivých serverů, které jsou odděleny čárkou (",")</li>
@@ -265,7 +265,7 @@ subdomain.example.com. IN TXT "amtp-servers=amtp1.example.com,amtp2.example.com:
     <li><span class="bold">amtp2.example.com</span> na portu 12345</li>
     <li><span class="bold">amtp3.example.com</span> na portu 23456</li>
    </ul>
-   <div><span class="bold">TXT - AMTP-PUBKEY záznam</span>:</div>
+   <div class="bold">TXT - AMTP-PUBKEY záznam:</div>
    <ul>
     <li>Tento záznam definuje, jaký veřejný klíč používá server ke své identifikaci po spojení s protějším serverem.</li>
     <li>Záznam začíná řetězcem "<span class="bold">amtp-pubkey=</span>", po kterém následují parametry oddělené čárkou:</li>
@@ -442,7 +442,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -554,7 +554,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     </table>
    </div>
 
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -638,7 +638,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -721,7 +721,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -800,7 +800,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -881,7 +881,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -942,7 +942,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -980,7 +980,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "command": "admin_domains_list"
 }
 </pre>
-   <div><span class="bold">Příklad odezvy od serveru:</span></div>
+   <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
  "result": {
@@ -1030,7 +1030,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1106,7 +1106,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1182,7 +1182,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1260,7 +1260,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1336,7 +1336,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1412,7 +1412,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1488,7 +1488,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1565,7 +1565,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1666,7 +1666,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1744,7 +1744,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1807,7 +1807,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1883,7 +1883,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1954,7 +1954,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -2030,7 +2030,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -2109,7 +2109,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -2186,7 +2186,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -2265,7 +2265,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div><span class="bold">Struktura odezvy od serveru:</span></div>
+   <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -2361,18 +2361,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     Vsechny verejne klice se porovnaji. V pripade neshody je spojeni ukonceno.
     Podpis ziskany v ramci challenge-response flow se overi pomoci verejneho klice. V pripade neshody je spojeni ukonceno.
    <a name="commands-c2s-modules"></a><h3>Komunikace s moduly</h3>
-   <div>TODO</div>
-   <a name="commands-c2s-modules-names"></a><h4>Názvy modulů</h4>
-   <div>Jelikož moduly mohou být vyvinuty různými vývojáři, je potřeba jednoznačný identifikátor jména modulu. K tomuto účelu se využívá <span class="bold">reverzní zápis názvu domény</span> vývojáře, po kterém následuje tečka <span class="bold">(.)</span>, dále <span class="bold">název modulu</span>, poté podtržítko <span class="bold">(_)</span> a nakonec <span class="bold">verze modulu</span>. Díky identifikaci verze modulu může server poskytovat jeden modul ve více verzích najednou, což se dá využít například pro zpětnou kompatibilitu se staršími verzemi modulů klientských aplikací.</div>
-   <div class="bold">Formát názvu modulu:</div>
-<pre>
-"tld.domain.module-name_version"
-</pre>   
-   <div class="bold">Příklad názvu modulu:</div>
-<pre>
-"com.example.messages_1.0"
-</pre>
-   <div>Tento zápis označuje, že vývojář, který vlastní doménu <span class="bold">example.com</span> vytvořil modul s názvem <span class="bold">messages</span> ve verzi <span class="bold">1.0</span>.</div>
+   <div>Tato sekce popisuje, jakým způsobem se předávají data v rámci modulů různých <span class="bold">AMTP</span> serverů a jakým způsobem komunikuje jádro serveru s moduly.</div>
    <a name="commands-c2s-modules-deliver"></a><h4>Předávání příkazů určených modulům</h4>
    <div>Na vlastním serveru nejprve předá modul zprávu určenou cizímu serveru s následujícími parametry:</div>
    <div class="table-container">
@@ -2403,6 +2392,16 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
+   <div>Jelikož moduly mohou být vyvinuty různými vývojáři, je potřeba jednoznačný identifikátor názvu modulu. K tomuto účelu se využívá <span class="bold">reverzní zápis názvu domény</span> vývojáře, po kterém následuje tečka <span class="bold">(.)</span>, dále <span class="bold">název modulu</span>, poté podtržítko <span class="bold">(_)</span> a nakonec <span class="bold">verze modulu</span>. Díky identifikaci verze modulu může server poskytovat jeden modul ve více verzích najednou, což se dá využít například pro zpětnou kompatibilitu se staršími verzemi modulů klientských aplikací.</div>
+   <div class="bold">Formát názvu modulu:</div>
+<pre>
+"tld.domain.module-name_version"
+</pre>   
+   <div class="bold">Příklad názvu modulu:</div>
+<pre>
+"com.example.messages_1.0"
+</pre>
+   <div>Tento zápis označuje, že vývojář, který vlastní doménu <span class="bold">example.com</span> vytvořil modul s názvem <span class="bold">messages</span> ve verzi <span class="bold">1.0</span>.</div>
    <div class="bold">Chybové stavy z jádra vlastního serveru:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -2495,15 +2494,174 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  }
 }
 </pre>
-   <div>Modul si následně před zpracováním příkazu může ověřit, zda server, který příkaz odeslal, má oprávnění používat v identitách doménová jména. K tomu slouží příkazy <span class="bold">get_domains</span>, <span class="bold">get_server</span> a <span class="bold">verify_domain</span> mezi moduly a jádrem.</div>
+   <div>Modul si následně před zpracováním příkazu může ověřit, zda server, který příkaz odeslal, má oprávnění používat v identitách doménová jména. K tomu slouží příkazy <span class="bold">get_servers</span> a <span class="bold">verify_domain</span> mezi moduly a jádrem.</div>
    <a name="commands-c2s-modules-commands"></a><h4>Příkazy mezi jádrem a modulem</h4>
-   <div>Následující příkazy poskytují modulům užitečné informace, pomocí kterých si modul může ověřit legitimnost použití identit</div>
-   <a name="commands-c2s-modules-commands-server"></a><h5>Získání serveru dle domény:</h5>
-   <div>TODO - get_server</div>
-   <a name="commands-c2s-modules-commands-domain"></a><h5>Získání domén dle serveru:</h5>
-   <div>TODO - get_domain</div>
-   <a name="commands-c2s-modules-commands-verify"></a><h5>Zjištění, zda server má oprávnění užívat konkrétní doménu:</h5>
-   <div>TODO - verify_domian</div>
+   <div>Následující příkazy poskytují modulům užitečné informace, pomocí kterých si modul může ověřit legitimnost použití identit, které modul protějšího serveru uvedl v objektu <span class="bold">data</span>.</div>
+   <a name="commands-c2s-modules-commands-servers"></a><h5>Zjištění oprávněných serverů:</h5>
+   <div>Tento příkaz slouží ke zjištění seznamu adres serverů, které mají oprávnění užívat konkrétní doménu.</div>
+   <div>Název příkazu: <span class="bold">get_servers</span></div>
+   <div class="bold">Parametry požadavku pro jádro:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>domain</td>
+      <td>string</td>
+      <td>Název domény, u které je požadováno zjistit AMTP server(y), které mají oprávnění ji využívat v identitách</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Struktura odezvy od jádra:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>servers</td>
+      <td>array[string]</td>
+      <td>Seznam adres serverů, které mají oprávnění k užívání domény</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>DNS not available</td>
+      <td>Nebylo možné se spojit s DNS serverem</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>Domain name is missing</td>
+      <td>Nebyl vyplněn parametr s názvem domény</td>
+     </tr>
+     <tr>
+      <td class="center">3</td>
+      <td>Domain name not found</td>
+      <td>Doména nebyla nalezena v DNS</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od modulu:</div>
+<pre>
+{
+ "command": "get_servers",
+ "params": {
+  "domain": "example.com"
+ }
+}
+</pre>
+   <div class="bold">Příklad odezvy od jádra:</div>
+<pre>
+{
+ "servers": [
+  "amtp1.example.com",
+  "amtp2.example.com",
+  "amtp3.example.com"
+ ]
+}
+</pre>
+   <a name="commands-c2s-modules-commands-verify"></a><h5>Ověření opravnění užití domény:</h5>
+   <div>Tento příkaz slouží ke zjištění, zda určitý server má oprávnění užívat konkrétní doménu</div>
+   <div>Název příkazu: <span class="bold">verify_domain</span></div>
+   <div class="bold">Parametry požadavku pro jádro:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>server</td>
+      <td>string</td>
+      <td>Název serveru u kterého se ověřuje, zda má právo používat identity konkrétní domény</td>
+     </tr>
+     <tr>
+      <td>domain</td>
+      <td>string</td>
+      <td>Název domény, u které je ověřuje, zda jí má právo používat v identitách konkrétní server</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Struktura odezvy od jádra:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>authorized</td>
+      <td>bool</td>
+      <td>Odpověď, zda server má oprávnění užívat doménu</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>DNS not available</td>
+      <td>Nebylo možné se spojit s DNS serverem</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>Domain name is missing</td>
+      <td>Nebyl vyplněn parametr s názvem domény</td>
+     </tr>
+     <tr>
+      <td class="center">3</td>
+      <td>Domain name not found</td>
+      <td>Doména nebyla nalezena v DNS</td>
+     </tr>
+     <tr>
+      <td class="center">4</td>
+      <td>Server address is missing</td>
+      <td>Nebyl vyplněn parametr s adresou serveru</td>
+     </tr>
+     <tr>
+      <td class="center">5</td>
+      <td>Server address not found</td>
+      <td>Adresa serveru nebyla nalezena v DNS</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od modulu:</div>
+<pre>
+{
+ "command": "verify_domain",
+ "params": {
+  "server": "amtp.example.com"
+ }
+}
+</pre>
+   <div class="bold">Příklad odezvy od jádra:</div>
+<pre>
+{
+ "authorized": true
+}
+</pre>
    <a name="examples"></a><h2>Příklady</h2>
    <div>TODO</div>
   </div>
