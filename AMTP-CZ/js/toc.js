@@ -101,7 +101,7 @@ const data = [
     link: 'commands-c2s',
     sub: [
      {
-      title: 'Správce',
+      title: 'Příkazy správce',
       link: 'commands-c2s-admin',
       sub: [
        {
@@ -179,7 +179,7 @@ const data = [
        }
       ]
      }, {
-      title: 'Uživatel',
+      title: 'Příkazy uživatele',
       link: 'commands-c2s-user',
       sub: [
        {
@@ -217,14 +217,14 @@ const data = [
         link: 'commands-c2s-user-modules'
        }
       ]
-     }, {
-      title: 'Komunikace s moduly',
-      link: 'commands-c2s-modules'
      }
     ]
    }, {
     title: 'Server-server',
     link: 'commands-s2s'
+   }, {
+    title: 'Komunikace s moduly',
+    link: 'commands-c2s-modules'
    }
   ]
  }, {

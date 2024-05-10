@@ -2315,10 +2315,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  ]
 }
 </pre>
-
-   <a name="commands-c2s-modules"></a><h4>Komunikace s moduly</h4>
-
-   <div>TODO</div>
    <a name="commands-s2s"></a><h3>Spojení server-server</h3>
    <div>V této sekci jsou popsány příkazy, které jsou využívány v komunikaci mezi dvěma serverovými aplikacemi:</div>
    <div>TODO: předávání, ověřování protějšího serveru atd.</div>
@@ -2357,41 +2353,32 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       }
     }
     </pre>
-   
     Vsechny verejne klice se porovnaji. V pripade neshody je spojeni ukonceno.
     Podpis ziskany v ramci challenge-response flow se overi pomoci verejneho klice. V pripade neshody je spojeni ukonceno.
-    
-
-
-   
-   <h3>Zpravy mezi moduly</h3>
+   <a name="commands-c2s-modules"></a><h3>Komunikace s moduly</h3>
    Zpravy mezi moduly obsahuji string type, ktery se konstruuje podobne jako jmenne prostory v jazyce Java (
 https://docs.oracle.com/javase/specs/jls/se6/html/packages.html , 7.7 Unique Package Names).
-   
    priklad zpravy predane z modulu do jadra:
    <pre>
    {
-     "type": "com.github.libersoft.messaging",
+     "type": "org.libersoft.messaging",
      "from": "server1.example.com",
      "to": "server2.example.com",
      "data": {
-       "type": "message_2_0",
-       "from": "franta@domena1.server1.example.com",
-       "to": "pepau@domena1.server2.example.com",
-       "message": "Ahoj, jak se mas?"
-       "created": "2022-01-01T12:00:00Z",
+       "type": "message",
+       "from": "alice@example.com",
+       "to": "bob@example.com",
+       "message": "Hi, how are you doing?"
+       "created": "2024-01-01T12:00:00Z",
      }
    }
    </pre>
-   
    V pripade, ze cil zpravy ("to") je mistni modul, je zprava predana primo mistnimu modulu. V opacnem pripade je zprava v nezmenenem stavu predana serveru, ktery je zodpovedny za cilovou domenu. Vzdaleny server potvrdi prijeti zpravy:
-   
    <pre>
    {
      "success": true
    }
    </pre>
-      
    <a name="examples"></a><h2>Příklady</h2>
    <div>TODO</div>
   </div>
