@@ -457,7 +457,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-errors-modules"></a><h4>Chyby příkazů modulů</h4>
    <div>Struktura chyb generovaných moduly si definuje modul sám dle svých potřeb. Doporučuje se pro lepší přehlednost používat stejnou strukturu jako používá jádro - tedy s parametry <span class="bold">error</span> a <span class="bold">message</span>.</div>
    <a name="commands-c2s"></a><h3>Klient-server</h3>
-   <div>V této části jsou popsány příkazy, které jsou využívány v komunikaci mezi klientskou aplikací a jádrem serverové aplikace.</div>
+   <div>V této části dokumentace jsou popsány příkazy, které jsou využívány v komunikaci mezi klientskou aplikací a jádrem serverové aplikace.</div>
    <a name="commands-c2s-admin"></a><h4>Příkazy správce</h4>
    <div>Všechny příkazy začínající "<span class="bold">admin_</span>" jsou určeny pouze pro správce serveru. Aby bylo možné provádět tyto příkazy (mimo příkazů pro samotné přihlášení), musí být správce přihlášen. Pokud je přihlášení úspěšné, je správce přihlášen po dobu spojení.</div>
    <a name="commands-c2s-admin-login"></a><h5>Přihlášení správce</h5>
@@ -2449,7 +2449,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-s2s"></a><h3>Spojení server-server</h3>
-   <div>V této části jsou popsány příkazy, které jsou využívány v komunikaci mezi dvěma serverovými aplikacemi:</div>
+   <div>V této části dokumentace jsou popsány příkazy, které jsou využívány v komunikaci mezi dvěma serverovými aplikacemi:</div>
    <div>TODO: předávání, ověřování protějšího serveru atd.</div>
    <div>TODO: u ověřování protějšího serveru přidat error pokud server nemá spojení s DNS</div>
    
@@ -2489,7 +2489,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     Vsechny verejne klice se porovnaji. V pripade neshody je spojeni ukonceno.
     Podpis ziskany v ramci challenge-response flow se overi pomoci verejneho klice. V pripade neshody je spojeni ukonceno.
    <a name="commands-c2s-modules"></a><h3>Komunikace s moduly</h3>
-   <div>Tato část popisuje, jakým způsobem se předávají data v rámci modulů různých <span class="bold">AMTP</span> serverů a jakým způsobem komunikuje jádro serveru s moduly.</div>
+   <div>Tato část dokumentace popisuje, jakým způsobem se předávají data v rámci modulů různých <span class="bold">AMTP</span> serverů a jakým způsobem komunikuje jádro serveru s moduly.</div>
    <a name="commands-c2s-modules-deliver"></a><h4>Předávání příkazů určených modulům</h4>
    <div>Na vlastním serveru nejprve předá modul zprávu určenou cizímu serveru s následujícími parametry:</div>
    <div class="table-container">
