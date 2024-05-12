@@ -60,7 +60,7 @@
    <div class="bold">Zachované koncepty v AMTP z původního SMTP:</div>
    <ul class="spacelist">
     <li><span class="bold">Distribuovaná síť</span>: Typ sítě, ve které je komunikace, zpracování a ukládání dat distribuováno mezi mnoho uzlů, které mohou mít různé vlastníky (poskytovatele služby). Tyto uzly mohou mezi sebou navzájem komunikovat, předávat si data a odlišovat se mezi sebou dle pravidel a sad služeb, které poskytují svým uživatelům. To síť odlišuje jak od centralistického modelu, kde je síť řízena jediným poskytovatelem, tak i od plně decentralizovaného modelu, kde každý koncový uživatel je suverénní jednotkou, která komunikuje s ostatními v rámci peer-to-peer sítě.</li>
-    <li><span class="bold">Identita e-mailové adresy</span>: Formát adresy uživatelského účtu je zachován (s menšími odlišnostmi, popsanými v dalších sekcích této dokumentace) z původních e-mailových standardů. Ve zjednodušené formě je to formát <span class="bold">uživatel@doména</span>.</li>
+    <li><span class="bold">Identita e-mailové adresy</span>: Formát adresy uživatelského účtu je zachován (s menšími odlišnostmi, popsanými v dalších částech této dokumentace) z původních e-mailových standardů. Ve zjednodušené formě je to formát <span class="bold">uživatel@doména</span>.</li>
    </ul>
    <div class="bold">Nové koncepty v AMTP:</div>
    <ul class="spacelist">
@@ -161,7 +161,7 @@
    </ul>
    <a name="security"></a><h2>Zabezpečení</h2>
    <div><span class="bold">Zabezpečení dat</span> je klíčovou součástí moderního komunikačního protokolu, jelikož s rostoucími objemy přenášených dat mezi uživateli, roste i riziko jejich potenciálního zneužití.</div>
-   <div><span class="bold">AMTP</span> je navržen s důrazem na komplexní zabezpečení a to na několika úrovních, které jsou popsány v této sekci. Další úrovně zabezpečení mohou být doplněny v jednotlivých modulech.</div>
+   <div><span class="bold">AMTP</span> je navržen s důrazem na komplexní zabezpečení a to na několika úrovních, které jsou popsány v této části dokumentace. Další úrovně zabezpečení mohou být doplněny v jednotlivých modulech.</div>
    <a name="security-transfer"></a><h3>Šifrovaný přenos dat</h3>
    <div>Šifrovaný přenost dat v je vyřešen v <span class="bold">AMTP</span> díky tomu, že využívá <span class="bold">WebTransport</span> spojení, které integruje protokol <a href="https://cs.wikipedia.org/wiki/QUIC" target="_blank">QUIC</a>, který používá šifrování na úrovni transportní vrstvy. Všechna přenášená data v rámci spojení jsou šifrována pomocí <a href="https://cs.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS</a>. Toto zahrnuje šifrování všech přenášených dat, vč. hlaviček a metadat, což minimalizuje riziko úniku citlivých informací a zároveň zajišťuje integritu dat tak, aby bylo zabráněno jejich modifikaci během přenosu.</div>
    <div>Pro tento účel je vyžadován platný šifrovací certifikát, vydaný certifikační autoritou (např. <a href="https://cs.wikipedia.org/wiki/Let%27s_Encrypt" target="_blank">Let's Encrypt</a>). Spojení s certifikátem s vlastním podpisem (bez certifikační autority) není povoleno (jak pro spojení <span class="bold">klient-server</span>, tak i pro <span class="bold">server-server</span>), protože u nich nelze ověřit identitu (může je vydat kdokoliv), proto je nutné si takový certifikát nechat vystavit od certifikační autority a používat ho pro účely jak šifrovaného přenosu dat, tak i pro ověření identity serveru.</div>
@@ -293,8 +293,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands"></a><h2>Příkazy</h2>
    <div>Příkazy jsou zasílány přes <span class="bold">WebTransport</span> pomocí obousměrného proudu dat. V rámci zasílání všech příkazů jádra protokolu se používají výhradně spolehlivé proudy. Moduly mohou používat spolehlivé i nespolehlivé proudy, dle konkrétních potřeb.</div>
    <div>V rámci každého příkazu se nejprve otevře proud, poté probíhá obousměrná komunikace pomocí strukturovaných příkazů a nakonec, jakmile již není potřeba mít proud otevřený, uzavře se jednou či druhou stranou, zatímco spojení může být stále zachováno dokud je potřeba. Více proudů v rámci jednoho spojení může běžet souběžně.</div>
-   <a name="commands-structure"></a><h3>Struktura příkazů</h3>
-   <div>Příkazy od klientů jsou strukturované ve formátu <span class="bold">BSON</span> a to s následujícími parametry:</div>
+   <a name="commands-structure"></a><h3>Struktura příkazů a odpovědí</h3>
+   <div>Příkazy a odpovědi mezi klientem či cizím serverem a vlastním serverem jsou strukturovány ve formátu <span class="bold">BSON</span>.</div>
+   <div class="bold">Struktura příkazu pro server:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -317,7 +318,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div class="bold">Příklad:</div>
+   <div class="bold">Příklad příkazu pro server:</div>
 <pre>
 {
  "command": "some_command",
@@ -328,8 +329,55 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  }
 }
 </pre>
+   <div class="bold">Struktura odpovědi od serveru:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</td>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>error</td>
+      <td>32-bit integer</td>
+      <td class="center">✔</td>
+      <td>Číslo chyby. V případě bezchybného provedení příkazu vždy = 0.</td>
+     </tr>
+     <tr>
+      <td>message</td>
+      <td>string</td>
+      <td class="center">❌</td>
+      <td>Parametr se zprávou o provedení příkazu - v případě chyb je povinný, v případě úspěšného zpracování je volitelný</td>
+     </tr>
+     <tr>
+      <td>data</td>
+      <td>object</td>
+      <td class="center">❌</td>
+      <td>Objekt, obsahující data odpovědi</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad odpovědi od serveru při úspěšném zpracování:</div>
+<pre>
+{
+ "error": 0,
+ "data": {
+  "param1": "value1",
+  "param2": "value2",
+  "param3": "value3"
+ }
+}
+</pre>
+   <div class="bold">Příklad odpovědi od serveru při chybě:</div>
+<pre>
+{
+ "error": 123,
+ "message": "Some error description"
+}
+</pre>
    <a name="commands-errors"></a><h3>Chyby</h3>
-   <div>V této sekci je popsána struktura obecných chyb, chyb jádra a modulů.</div>
+   <div>V této části dokumentace je popsána struktura obecných chyb, chyb jádra a modulů.</div>
    <a name="commands-errors-general"></a><h4>Obecné chyby jádra</h4>
    <div>Následující chyby nastávají nikoliv jako přímé odpovědi příkazů, ale při dalších speciálních událostech.</div>
    <div class="bold">Chybové stavy:</div>
@@ -343,17 +391,17 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td class="center">900</td>
       <td>Unknown error</td>
-      <td>Vyskytla se nerozpoznaná chyba</td>
+      <td>Vyskytla se neznámá chyba</td>
      </tr>
      <tr>
       <td class="center">901</td>
-      <td>Invalid BSON</td>
-      <td>Obdržen nerozpoznaný BSON</td>
+      <td>Invalid BSON command</td>
+      <td>Obdržen neplatný BSON příkaz</td>
      </tr>
      <tr>
       <td class="center">902</td>
       <td>Unknown command</td>
-      <td>Obdržen nerozpoznaný příkaz</td>
+      <td>Obdržen neznámý příkaz</td>
      </tr>
      <tr>
       <td class="center">903</td>
@@ -407,7 +455,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-errors-modules"></a><h4>Chyby příkazů modulů</h4>
-   <div>Struktura chyb generovaných moduly si definuje modul sám dle svých potřeb. Doporučuje se pro lepší přehlednost používat stejnou strukturu jako používá jádro.</div>
+   <div>Struktura chyb generovaných moduly si definuje modul sám dle svých potřeb. Doporučuje se pro lepší přehlednost používat stejnou strukturu jako používá jádro - tedy s parametry <span class="bold">error</span> a <span class="bold">message</span>.</div>
    <a name="commands-c2s"></a><h3>Klient-server</h3>
    <div>V této části jsou popsány příkazy, které jsou využívány v komunikaci mezi klientskou aplikací a jádrem serverové aplikace.</div>
    <a name="commands-c2s-admin"></a><h4>Příkazy správce</h4>
@@ -675,7 +723,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "success": true
+ "logout": true
 }
 </pre>
    <a name="commands-c2s-admin-admins"></a><h5>Správci</h5>
@@ -2401,7 +2449,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-s2s"></a><h3>Spojení server-server</h3>
-   <div>V této sekci jsou popsány příkazy, které jsou využívány v komunikaci mezi dvěma serverovými aplikacemi:</div>
+   <div>V této části jsou popsány příkazy, které jsou využívány v komunikaci mezi dvěma serverovými aplikacemi:</div>
    <div>TODO: předávání, ověřování protějšího serveru atd.</div>
    <div>TODO: u ověřování protějšího serveru přidat error pokud server nemá spojení s DNS</div>
    
@@ -2441,7 +2489,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     Vsechny verejne klice se porovnaji. V pripade neshody je spojeni ukonceno.
     Podpis ziskany v ramci challenge-response flow se overi pomoci verejneho klice. V pripade neshody je spojeni ukonceno.
    <a name="commands-c2s-modules"></a><h3>Komunikace s moduly</h3>
-   <div>Tato sekce popisuje, jakým způsobem se předávají data v rámci modulů různých <span class="bold">AMTP</span> serverů a jakým způsobem komunikuje jádro serveru s moduly.</div>
+   <div>Tato část popisuje, jakým způsobem se předávají data v rámci modulů různých <span class="bold">AMTP</span> serverů a jakým způsobem komunikuje jádro serveru s moduly.</div>
    <a name="commands-c2s-modules-deliver"></a><h4>Předávání příkazů určených modulům</h4>
    <div>Na vlastním serveru nejprve předá modul zprávu určenou cizímu serveru s následujícími parametry:</div>
    <div class="table-container">
