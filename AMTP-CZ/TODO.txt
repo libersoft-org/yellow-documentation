@@ -20,6 +20,7 @@ Dopsání obsahu:
 - Příkazy - Admin - Přidat error při fail2ban + poté při loginu - Auto-ban při přihlašování (chybí v NOTES)
 - Příkazy - Admin - Změna pubkey (chybí v NOTES)
 - Příkazy - Admin - Změna hesla (chybí v NOTES)
+- Příkazy - User - Registrace (chybí v NOTES)
 - Příkazy - User - Změna pubkey (chybí v NOTES)
 - Příkazy - User - Změna hesla (chybí v NOTES)
 - Příkazy - User - Přidat error při fail2ban + poté při loginu - Auto-ban při přihlašování (chybí v NOTES)
