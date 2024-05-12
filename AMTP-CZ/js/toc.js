@@ -178,16 +178,16 @@ const data = [
         link: 'commands-c2s-admin-block',
         sub: [
          {
-          title: 'Seznam zablokovaných IP',
+          title: 'Seznam zablokovaných IP adres',
           link: 'commands-c2s-admin-block-list'
          }, {
-          title: 'Přidání zablokované IP',
+          title: 'Přidání zablokované IP adresy',
           link: 'commands-c2s-admin-block-add'
          }, {
-          title: 'Úprava zablokované IP',
+          title: 'Úprava zablokované IP adresy',
           link: 'commands-c2s-admin-block-set'
          }, {
-          title: 'Smazání zablokované IP',
+          title: 'Smazání zablokované IP adresy',
           link: 'commands-c2s-admin-block-del'
          }
         ]
