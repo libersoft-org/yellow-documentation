@@ -342,16 +342,26 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">900</td>
-      <td>Unknown command</td>
-      <td>Server obdržel od druhé strany nerozpoznaný příkaz</td>
+      <td>Unknown error</td>
+      <td>Vyskytla se nerozpoznaná chyba</td>
      </tr>
      <tr>
       <td class="center">901</td>
+      <td>Invalid BSON</td>
+      <td>Obdržen nerozpoznaný BSON</td>
+     </tr>
+     <tr>
+      <td class="center">902</td>
+      <td>Unknown command</td>
+      <td>Obdržen nerozpoznaný příkaz</td>
+     </tr>
+     <tr>
+      <td class="center">903</td>
       <td>Admin is not logged in</td>
       <td>Správce není přihlášen</td>
      </tr>
      <tr>
-      <td class="center">902</td>
+      <td class="center">904</td>
       <td>User is not logged in</td>
       <td>Uživatel není přihlášen</td>
      </tr>
@@ -361,12 +371,12 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "error": 900,
- "message": "Unknown command"
+ "message": "Unknown error"
 }
 </pre>
    <a name="commands-errors-commands"></a><h4>Chyby příkazů jádra</h4>
    <div>Pokud příkaz vrátí chybu, je strukturována následovně:</div>
-   <div class="bold">Struktura chyby (z jádra, nikoliv z modulu):</div>
+   <div class="bold">Struktura chyby z jádra serveru:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -389,7 +399,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div class="bold">Příklad chyby od serveru:</div>
+   <div class="bold">Příklad chyby z jádra serveru:</div>
 <pre>
 {
  "error": 1,
@@ -397,11 +407,11 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-errors-modules"></a><h4>Chyby příkazů modulů</h4>
-   <div>Chyby generované moduly si definuje modul sám dle svých potřeb. Doporučuje se pro lepší přehlednost používat stejnou strukturu jako používá jádro.</div>
+   <div>Struktura chyb generovaných moduly si definuje modul sám dle svých potřeb. Doporučuje se pro lepší přehlednost používat stejnou strukturu jako používá jádro.</div>
    <a name="commands-c2s"></a><h3>Klient-server</h3>
-   <div>V této sekci jsou popsány příkazy, které jsou využívány v komunikaci mezi klientskou a serverovou aplikací.</div>
+   <div>V této části jsou popsány příkazy, které jsou využívány v komunikaci mezi klientskou aplikací a jádrem serverové aplikace.</div>
    <a name="commands-c2s-admin"></a><h4>Příkazy správce</h4>
-   <div>Všechny příkazy začínající "<span class="bold">admin_</span>" jsou určeny pouze pro správce. Aby bylo možné provádět tyto příkazy (mimo příkazů pro samotné přihlášení), musí být správce přihlášen. Pokud je přihlášení úspěšné, je správce přihlášen po dobu spojení.</div>
+   <div>Všechny příkazy začínající "<span class="bold">admin_</span>" jsou určeny pouze pro správce serveru. Aby bylo možné provádět tyto příkazy (mimo příkazů pro samotné přihlášení), musí být správce přihlášen. Pokud je přihlášení úspěšné, je správce přihlášen po dobu spojení.</div>
    <a name="commands-c2s-admin-login"></a><h5>Přihlášení správce</h5>
    <div>Přihlášení správce probíhá ve dvou krocích - přihlašovací výzvě a přihlašovací odezvě. V přihlašovací výzvě zašle klient své přihlašovací jméno a pokud používá mimo privátního klíče i heslo, tak i hash tohoto hesla (nepovinné). Server ověří heslo (pokud správce používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem správce. Tento zašifrovaný řetězec je předán správci. Správce následně řetězec rozšifruje pomocí svého soukromého klíče a zašle ho zpět v rámci přihlašovací odezvy. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetětec od klienta odpovídá původně vygenerovanému, pak je správce přihlášen po dobu spojení. V opačném případě vrátí chybu.</div>
    <a name="commands-c2s-admin-login-challenge"></a><h6>Přihlašovací výzva</h6>
@@ -414,7 +424,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_login</td>
+      <td>admin_login_request</td>
       <td class="center">❌</td>
      </tr>
     </table>
@@ -452,7 +462,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>verification_string</td>
+      <td>encrypted_string</td>
       <td>string</td>
       <td class="center">✔</td>
       <td>string výzvy pro zašifrování</td>
@@ -464,7 +474,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>Veřejný klíč, kterým byl řetězec zašifrován</td>
      </tr>
      <tr>
-      <td>encryption</td>
+      <td>encryption_algorithm</td>
       <td>string</td>
       <td class="center">✔</td>
       <td>Identifikace algoritmu, kterým byl řetězec zašifrován</td>
@@ -509,7 +519,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_login",
+ "command": "admin_login_request",
  "params": {
   "user": "admin",
   "password": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg"
@@ -519,23 +529,90 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "verification_string": "1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B",
+ "encrypted_string": "1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B",
  "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
- "encryption": "rsa"
+ "encryption_algorithm": "rsa4096oaep"
 }
 </pre>
    <a name="commands-c2s-admin-login-response"></a><h6>Přihlašovací odezva</h6>
-   <div><span class="bold">Upozornění</span>: Tuto přihlašovací odezvu předchází přihlašovací výzva, nelze jí tedy zaslat jako samostavný příkaz. Po úspěšném dokončení přihlašovací výzvy následuje tato přihlašovací odezva ve stejném proudu, ve kterém byla zaslána přihlašovací výzva. Po dokončení této přihlašovací odezvy je tento proud uzavřen.</div>
+   <div><span class="bold">Upozornění</span>: Tuto přihlašovací odezvu předchází přihlašovací výzva, není to tedy samostatný příkaz. Po úspěšném dokončení přihlašovací výzvy následuje tato přihlašovací odezva ve stejném proudu, ve kterém byla zaslána přihlašovací výzva. Po dokončení této přihlašovací odezvy je tento proud uzavřen.</div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
+     </tr>
+     <tr>
+      <td>admin_login_response</td>
+      <td class="center">❌</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>decrypted_string</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Rozšifrovaný řetězec z přihlašovací výzvy soukromým klíčem</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Struktura odezvy od serveru:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>authorized</td>
+      <td>bool</td>
+      <td class="center">✔</td>
+      <td>Indikace úspěšného přihlášení</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>Decrypted string is missing</td>
+      <td>Rozšifrovaný řetězec chybí</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>Wrong decrypted string</td>
+      <td>Nesprávně rozšifrovaný řetězec</td>
+     </tr>
+    </table>
+   </div>
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "verification_string": "abcdefghijklmnopqrstuvwxyz1234567890abcd"
+ "decrypted_string": "abcdefghijklmnopqrstuvwxyz1234567890abcd"
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "success": true
+ "authorized": true
 }
 </pre>
    <a name="commands-c2s-admin-logout"></a><h5>Odhlášení správce</h5>
@@ -2540,13 +2617,13 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>DNS not available</td>
-      <td>Nebylo možné se spojit s DNS serverem</td>
+      <td>Domain name is missing</td>
+      <td>Nebyl vyplněn parametr s názvem domény</td>
      </tr>
      <tr>
       <td class="center">2</td>
-      <td>Domain name is missing</td>
-      <td>Nebyl vyplněn parametr s názvem domény</td>
+      <td>DNS not available</td>
+      <td>Nebylo možné se spojit s DNS serverem</td>
      </tr>
      <tr>
       <td class="center">3</td>
@@ -2622,23 +2699,23 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>DNS not available</td>
-      <td>Nebylo možné se spojit s DNS serverem</td>
-     </tr>
-     <tr>
-      <td class="center">2</td>
       <td>Domain name is missing</td>
       <td>Nebyl vyplněn parametr s názvem domény</td>
      </tr>
      <tr>
+      <td class="center">2</td>
+      <td>Server address is missing</td>
+      <td>Nebyl vyplněn parametr s adresou serveru</td>
+     </tr>
+     <tr>
       <td class="center">3</td>
-      <td>Domain name not found</td>
-      <td>Doména nebyla nalezena v DNS</td>
+      <td>DNS not available</td>
+      <td>Nebylo možné se spojit s DNS serverem</td>
      </tr>
      <tr>
       <td class="center">4</td>
-      <td>Server address is missing</td>
-      <td>Nebyl vyplněn parametr s adresou serveru</td>
+      <td>Domain name not found</td>
+      <td>Doména nebyla nalezena v DNS</td>
      </tr>
      <tr>
       <td class="center">5</td>
@@ -2652,7 +2729,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "verify_domain",
  "params": {
-  "server": "amtp.example.com"
+  "server": "amtp.example.com",
+  "domain": "example.com"
  }
 }
 </pre>

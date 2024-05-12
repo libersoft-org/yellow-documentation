@@ -6,10 +6,27 @@ Design stranky:
 - Když je TOC menu na desktop verzi zasunuté, tak v mobilní je vysunuté a obráceně - chtělo by to předělat u mobilní verze, aby se nevysouvalo, když na desktopu je zasunuté
 - Automatický highlight sekce v TOC, na kterou je aktuálně doscrollováno (jinou barvou, než aktivní - zakliknutá sekce)
 - Po refreshi stránky, pokud je v adrese #sekce - tak jí zvýraznit v TOC jako aktivní
+- Do obsahu (#doc) přidat možnost srolování každého nadpisu (accordion), stejně jako je to v #toc.
 
 Dopsání obsahu:
-- Přidat commandy pro management zablokovaných IP adminem (fail2ban) - ruční banování, odbanování adminem + přidat statusy těmto zlým serverům / klientům ve stylu "You are not welcome here" při pokusech o přihlášení / challenge
-- Přidat commandy pro správu uživatelských tokenů (uživatel maže své, admin maže všech, zobrazení expirace, nějaké identifikace zařízení (+ možnost změny názvu zařízení) apod.)
+- Příkazy - Admin - Domény (je v NOTES)
+- Příkazy - Admin - Uživatelské účty (je v NOTES)
+- Příkazy - Admin - Bany uživatelů (je v NOTES)
+- Příkazy - Admin - Informace o serveru (je v NOTES)
+- Příkazy - User - Správa uživatelských tokenů (je v NOTES, ale chybí tam editace názvu)
+
+- Příkazy - Admin - Správci (chybí v NOTES)
+- Příkazy - Admin - Správa uživatelských tokenů (chybí v NOTES)
+- Příkazy - Admin - Přidat error při fail2ban + poté při loginu - Auto-ban při přihlašování (chybí v NOTES)
+- Příkazy - Admin - Změna pubkey (chybí v NOTES)
+- Příkazy - Admin - Změna hesla (chybí v NOTES)
+- Příkazy - User - Změna pubkey (chybí v NOTES)
+- Příkazy - User - Změna hesla (chybí v NOTES)
+- Příkazy - User - Přidat error při fail2ban + poté při loginu - Auto-ban při přihlašování (chybí v NOTES)
+- Příkazy - Server - Přidat error při fail2ban + poté při ověření - Auto-ban při nevalidním ověření serveru (chybí v NOTES)
+
+- Přidat commandy pro management zablokovaných IP adminem (fail2ban) - ruční banování / odbanování adminem + přidat chybové stavy těmto zlým serverům / klientům ve stylu "You are not welcome here" při pokusech o přihlášení / challenge
+- Přidat commandy pro správu uživatelských tokenů (uživatel maže / edituje své, admin maže / edituje všech, zobrazení expirace, nějaké identifikace zařízení
 - Přidat commandy u admina pro změnu svého pubkey + hesla
 - Přidat commandy pro admina na blokaci uživatelských účtů + pokud se takový uživatel bude přihlašovat, tak vracet status o tom, že je zablokovaný, kdo zablokoval, kdy, proč atd.
 - Přidat commandy pro admina na změnu pubkey + hesla běžných uživatelů
