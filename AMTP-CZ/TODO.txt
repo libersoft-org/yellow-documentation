@@ -26,7 +26,7 @@ Dopsání obsahu:
 - Příkazy - User - Přidat error při fail2ban + poté při loginu - Auto-ban při přihlašování (chybí v NOTES)
 - Příkazy - Server - Přidat error při fail2ban + poté při ověření - Auto-ban při nevalidním ověření serveru (chybí v NOTES)
 
-- Přidat commandy pro management zablokovaných IP adminem (fail2ban) - ruční banování / odbanování adminem + přidat chybové stavy těmto zlým serverům / klientům ve stylu "You are not welcome here" při pokusech o přihlášení / challenge
+- Zablokované IP adresy - přidat chybové stavy těmto zlým serverům / klientům ve stylu "You are not welcome here" při pokusech o přihlášení / challenge
 - Přidat commandy pro správu uživatelských tokenů (uživatel maže / edituje své, admin maže / edituje všech, zobrazení expirace, nějaké identifikace zařízení
 - Přidat commandy u admina pro změnu svého pubkey + hesla
 - Přidat commandy pro admina na blokaci uživatelských účtů + pokud se takový uživatel bude přihlašovat, tak vracet status o tom, že je zablokovaný, kdo zablokoval, kdy, proč atd.
