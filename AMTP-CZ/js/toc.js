@@ -120,6 +120,12 @@ const data = [
         title: 'Odhlášení správce',
         link: 'commands-c2s-admin-logout'
        }, {
+        title: 'Změna vlastního veřejného klíče pro přihlášení',
+        link: 'commands-c2s-admin-setpubkey'
+       }, {
+        title: 'Změna vlastního hesla pro přihlášení',
+        link: 'commands-c2s-admin-setpassword'
+       }, {
         title: 'Správci',
         link: 'commands-c2s-admin-admins',
         sub: [
@@ -171,24 +177,69 @@ const data = [
          }, {
           title: 'Smazání uživatele',
           link: 'commands-c2s-admin-users-del'
+         }, {
+          title: 'Změna veřejného klíče pro přihlášení uživatele',
+          link: 'commands-c2s-admin-users-setpubkey'
+         }, {
+          title: 'Změna hesla pro přihlášení uživatele',
+          link: 'commands-c2s-admin-users-setpassword'
+         }
+        ]
+       }, {
+        title: 'Správa uživatelských tokenů relace',
+        link: 'commands-c2s-admin-tokens',
+        sub: [
+         {
+          title: 'Seznam tokenů relace uživatele',
+          link: 'commands-c2s-admin-tokens-list'
+         }, {
+          title: 'Úprava tokenu relace uživatele',
+          link: 'commands-c2s-admin-tokens-set'
+         }, {
+          title: 'Smazání tokenu relace uživatele',
+          link: 'commands-c2s-admin-tokens-del'
+         }, {
+          title: 'Smazání všech tokenů relace uživatele',
+          link: 'commands-c2s-admin-token-delalluser'
+         }, {
+          title: 'Smazání tokenů relace všech uživatelů',
+          link: 'commands-c2s-admin-blockusers-delall'
+         }
+        ]
+       }, {
+        title: 'Blokace uživatelských účtů',
+        link: 'commands-c2s-admin-blockusers',
+        sub: [
+         {
+          title: 'Seznam zablokovaných uživatelů',
+          link: 'commands-c2s-admin-blockusers-list'
+         }, {
+          title: 'Přidání zablokovaného uživatele',
+          link: 'commands-c2s-admin-blockusers-add'
+         }, {
+          title: 'Úprava zablokovaného uživatele',
+          link: 'commands-c2s-admin-blockusers-set'
+         }, {
+          title: 'Smazání zablokovaného uživatele',
+          link: 'commands-c2s-admin-blockusers-del'
          }
         ]
        }, {
         title: 'Blokace IP adres',
-        link: 'commands-c2s-admin-block',
+        link: 'commands-c2s-admin-blockip',
         sub: [
          {
           title: 'Seznam zablokovaných IP adres',
-          link: 'commands-c2s-admin-block-list'
+          link: 'commands-c2s-admin-blockip-list'
          }, {
           title: 'Přidání zablokované IP adresy',
-          link: 'commands-c2s-admin-block-add'
+          link: 'commands-c2s-admin-blockip-add'
          }, {
           title: 'Úprava zablokované IP adresy',
-          link: 'commands-c2s-admin-block-set'
+          link: 'commands-c2s-admin-blockip-set'
          }, {
           title: 'Smazání zablokované IP adresy',
-          link: 'commands-c2s-admin-block-del'
+          link: 'commands-c2s-admin-blockip-del'
          }
         ]
        }, {
@@ -227,6 +278,24 @@ const data = [
        }, {
         title: 'Změna hesla pro přihlášení',
         link: 'commands-c2s-user-setpassword'
+       }, {
+        title: 'Správa vlastních tokenů relace',
+        link: 'commands-c2s-user-tokens',
+        sub: [
+         {
+          title: 'Seznam vlastních tokenů relace',
+          link: 'commands-c2s-user-tokens-list'
+         }, {
+          title: 'Úprava vlastního tokenu relace',
+          link: 'commands-c2s-user-tokens-set'
+         }, {
+          title: 'Smazání vlastního tokenu relace',
+          link: 'commands-c2s-user-tokens-del'
+         }, {
+          title: 'Smazání všech vlastních tokenů relace',
+          link: 'commands-c2s-user-token-delall'
+         }
+        ]
        }, {
         title: 'Informace o serveru pro uživatele',
         link: 'commands-c2s-user-info'
