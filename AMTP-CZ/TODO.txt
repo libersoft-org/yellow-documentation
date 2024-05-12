@@ -13,15 +13,15 @@ Dopsání obsahu:
 - Příkazy - Admin - Uživatelské účty (je v NOTES)
 - Příkazy - Admin - Bany uživatelů (je v NOTES)
 - Příkazy - Admin - Informace o serveru (je v NOTES)
-- Příkazy - User - Správa uživatelských tokenů (je v NOTES, ale chybí tam editace názvu)
+- Příkazy - User - Správa uživatelských tokenů (je v NOTES, ale chybí tam editace názvu) - done
 
 - Příkazy - Admin - Správci (chybí v NOTES)
-- Příkazy - Admin - Správa uživatelských tokenů (chybí v NOTES)
-- Příkazy - Admin - Přidat error při fail2ban + poté při loginu - Auto-ban při přihlašování (chybí v NOTES)
-- Příkazy - Admin - Změna pubkey (chybí v NOTES)
-- Příkazy - Admin - Změna hesla (chybí v NOTES)
+- Příkazy - Admin - Správa uživatelských tokenů (chybí v NOTES) - done
+- Příkazy - Admin - Přidat error při fail2ban + poté při loginu - Auto-ban při přihlašování (chybí v NOTES) - nechapu
+- Příkazy - Admin - Změna pubkey (chybí v NOTES) - admin_edit_admin
+- Příkazy - Admin - Změna hesla (chybí v NOTES) - admin_edit_admin
 - Příkazy - User - Registrace (chybí v NOTES)
-- Příkazy - User - Změna pubkey (chybí v NOTES)
+- Příkazy - User - Změna pubkey (chybí v NOTES) - user_set_pubkey
 - Příkazy - User - Změna hesla (chybí v NOTES)
 - Příkazy - User - Přidat error při fail2ban + poté při loginu - Auto-ban při přihlašování (chybí v NOTES)
 - Příkazy - Server - Přidat error při fail2ban + poté při ověření - Auto-ban při nevalidním ověření serveru (chybí v NOTES)

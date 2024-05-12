@@ -32,6 +32,99 @@ crud:
 ```
 
 
+# Příkazy - Admin - Správci (chybí v NOTES)
+
+## admin_list_admins
+### parameters
+none.
+### response example
+```
+{
+    "result": [
+        {
+            "id": 1,
+            "name": "Admin Adam",
+            "pubkey": "Xxxxx..."
+        }
+    ]
+}
+```
+
+
+
+
+## admin_add_admin
+### parameters
+string name
+string pubkey
+### request example
+```
+{
+    "name": "Admin Bob",
+    "pubkey": "Xxxxx..."
+}
+```
+### response example
+```
+{
+    "id": 2,
+    "name": "Admin Bob",
+}
+```
+
+
+
+
+### admin_edit_admin
+#### parameters
+int id
+optional string name
+optional string pubkey
+optional string password_hash
+#### request example
+```
+{
+    "id": 2,
+    "pubkey": "Yyyyyy..."
+}
+```
+#### response example
+```
+{
+    "result": "ok"
+}
+```
+#### error codes
+`admin_does_not_exist`
+`invalid_pubkey`
+`invalid_name`
+`admin_with_that_name_exists`
+
+
+
+
+### admin_delete_admin
+#### parameters
+int id
+#### request example
+```
+{
+    "id": 2
+}
+```
+#### response example
+```
+{
+    "result": "ok"
+}
+```
+#### error codes
+`admin_does_not_exist`
+`admin_is_last_admin`
+
+
+
+
 
 
 ## management of domains
@@ -263,7 +356,16 @@ none.
 string identifier
 string pubkey
 ### example response
-result "ok"
+```
+{
+    "result": "ok"
+}
+```
+### error codes
+`invalid_identifier`
+`invalid_pubkey`
+`user_with_that_identifier_exists`
+`registration_disabled`
 
 
 
@@ -300,13 +402,42 @@ none.
 
 
 
-## user_setpubkey
+## user_set_pubkey
 ### parameters
 string pubkey
 ### response example
 {
     "result": "ok"
 }
+
+
+
+## user_set_password
+### parameters
+```
+string password_hash
+```
+### request example
+```
+{
+    "password_hash": "Xxxxx..."
+}
+```
+### response example
+```
+{
+    "result": "ok"
+}
+```
+### error codes
+`invalid_password_hash`
+`password_verification_disabled`
+
+
+
+
+
+
 
 
 
@@ -441,9 +572,52 @@ datetime expiration
 
 
 
+# Příkazy - Admin - Správa uživatelských tokenů (chybí v NOTES)
+## admin_list_user_sessions
+### parameters
+int user_id
+### response example
+```
+{
+    "result": [
+        {
+            "id": 1,
+            "description": "Firefox for Windows version Xxxx..",
+            "expiration": "2020-01-01 00:00:00"
+        }
+    ]
+}
+```
 
 
-# commandy pro správu uživatelských tokenů
+
+### admin_delete_user_session
+#### parameters
+int user_id
+int session_id
+#### request example
+```
+{
+    "user_id": 1,
+    "session_id": 1
+}
+```
+#### response example
+```
+{
+    "result": "ok"
+}
+```
+#### error codes
+`session_does_not_exist`
+`user_does_not_exist`
+
+
+
+
+
+
+# commandy pro správu uživatelských tokenů - "Správa uživatelských tokenů"
 ## user_list_sessions
 ### parameters
 none.
@@ -465,17 +639,34 @@ none.
 ### parameters
 int id
 ### response example
+```
 {
     "result": "ok"
 }
+```
 ### error codes
 `session_does_not_exist`
 
 
 
 
-
-
+## user_update_session
+### parameters
+int id
+string description
+### request example
+```
+{
+    "id": 1,
+    "description": "home PC"
+}
+```
+### response example
+```
+{
+    "result": "ok"
+}
+```
 
 
 
