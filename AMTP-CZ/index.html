@@ -1660,6 +1660,331 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "-": "-",
 }
 </pre>
+
+
+
+
+
+
+
+
+
+
+
+
+   <a name="commands-c2s-admin-block"></a><h5>Blokace IP adres</h5>
+   <div>TODO - úvod</div>
+   <a name="commands-c2s-admin-block-list"></a><h6>Seznam zablokovaných IP</h6>
+   <div>TODO - úvod</div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
+     </tr>
+     <tr>
+      <td>admin_block_list</td>
+      <td class="center">✔</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>offset, count - TODO</td>
+      <td>TODO</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Struktura odezvy od serveru:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "admin_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
+   <a name="commands-c2s-admin-block-add"></a><h6>Přidání zablokované IP</h6>
+   <div>TODO - úvod</div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
+     </tr>
+     <tr>
+      <td>admin_users_create</td>
+      <td class="center">✔</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>TODO</td>
+      <td>TODO</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Struktura odezvy od serveru:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "admin_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
+   <a name="commands-c2s-admin-block-set"></a><h6>Úprava zablokované IP</h6>
+   <div>TODO - úvod</div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
+     </tr>
+     <tr>
+      <td>admin_users_edit</td>
+      <td class="center">✔</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>TODO</td>
+      <td>TODO</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Struktura odezvy od serveru:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "admin_",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
+   <a name="commands-c2s-admin-block-del"></a><h6>Smazání zablokované IP</h6>
+   <div>TODO - úvod</div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
+     </tr>
+     <tr>
+      <td>admin_block_delete</td>
+      <td class="center">✔</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>TODO</td>
+      <td>TODO</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Struktura odezvy od serveru:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "admin_block_delete",
+ "params": {
+  "id": 123
+ }
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "error": 0,
+ "message": "Blocked IP successfully deleted"
+}
+</pre>
+
+
+
    <a name="commands-c2s-admin-sysinfo"></a><h5>Informace o serveru pro správce</h5>
    <div>Tento příkaz zobrazuje systémové prostředky serveru.</div>
    <div>TODO - úvod</div>

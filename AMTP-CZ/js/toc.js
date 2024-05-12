@@ -174,6 +174,24 @@ const data = [
          }
         ]
        }, {
+        title: 'Blokace IP adres',
+        link: 'commands-c2s-admin-block',
+        sub: [
+         {
+          title: 'Seznam zablokovaných IP',
+          link: 'commands-c2s-admin-block-list'
+         }, {
+          title: 'Přidání zablokované IP',
+          link: 'commands-c2s-admin-block-add'
+         }, {
+          title: 'Úprava zablokované IP',
+          link: 'commands-c2s-admin-block-set'
+         }, {
+          title: 'Smazání zablokované IP',
+          link: 'commands-c2s-admin-block-del'
+         }
+        ]
+       }, {
         title: 'Informace o serveru pro správce',
         link: 'commands-c2s-admin-sysinfo'
        }
