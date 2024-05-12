@@ -539,12 +539,12 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>User name is missing</td>
+      <td>User name not set</td>
       <td>Uživatelské jméno nebylo vyplněno</td>
      </tr>
      <tr>
       <td class="center">2</td>
-      <td>Password is missing</td>
+      <td>Password not set</td>
       <td>Heslo nebylo vyplněno</td>
      </tr>
      <tr>
@@ -641,7 +641,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>Decrypted string is missing</td>
+      <td>Decrypted string not set</td>
       <td>Rozšifrovaný řetězec chybí</td>
      </tr>
      <tr>
@@ -754,13 +754,13 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>offset</td>
-      <td>32-bit integer</td>
+      <td>64-bit integer</td>
       <td class="center">❌</td>
       <td>Počáteční číslo pořadí ve výpisu</td>
      </tr>
      <tr>
       <td>count</td>
-      <td>32-bit integer</td>
+      <td>64-bit integer</td>
       <td class="center">❌</td>
       <td>Počet položek ve výpisu</td>
      </tr>
@@ -815,7 +815,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_admins_create</td>
+      <td>admin_admins_add</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -884,7 +884,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_admins_create",
+ "command": "admin_admins_add",
  "name": "admin1",
  "password": "password",
  "pubkey": "Xxxxx..."
@@ -922,7 +922,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>id</td>
-      <td>32-bit integer</td>
+      <td>64-bit integer</td>
       <td class="center">✔</td>
       <td>Správce identifikovaný polem "id"</td>
      </tr>
@@ -987,7 +987,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_admins_delete</td>
+      <td>admin_admins_del</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -1136,7 +1136,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_domains_create</td>
+      <td>admin_domains_add</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -1288,7 +1288,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_domains_delete</td>
+      <td>admin_domains_del</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -1442,7 +1442,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_users_create</td>
+      <td>admin_users_add</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -1594,7 +1594,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_users_delete</td>
+      <td>admin_users_del</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -1768,7 +1768,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-block-add"></a><h6>Přidání zablokované IP adresy</h6>
-   <div>Tento příkaz přidá na seznam blokovaných IP adres další IP adresu</div>
+   <div>Tento příkaz přidá na seznam blokovaných IP adres další IP adresu.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -1777,7 +1777,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_users_create</td>
+      <td>admin_block_add</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -1792,10 +1792,22 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>Název příkazu</td>
+      <td>ip</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>IP adresa určená k zablokování</td>
+     </tr>
+     <tr>
+      <td>reason</td>
+      <td>string</td>
+      <td class="center">❌</td>
+      <td>Důvod blokace IP adresy</td>
+     </tr>
+     <tr>
+      <td>duration</td>
+      <td>64-bit integer</td>
+      <td class="center">❌</td>
+      <td>Doba blokace IP adresy ve vteřinách - pokud není vyplněno, je blokace navždy</td>
      </tr>
     </table>
    </div>
@@ -1811,7 +1823,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>-</td>
       <td>-</td>
-      <td class="center">✔❌</td>
+      <td class="center">-</td>
       <td>-</td>
      </tr>
     </table>
@@ -1826,25 +1838,41 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
-      <td>-</td>
+      <td>IP address not set</td>
+      <td>IP adresa nebyla vyplněna</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>Wrong IP address format</td>
+      <td>Formát IP adresy je chybný</td>
+     </tr>
+     <tr>
+      <td class="center">3</td>
+      <td>Wrong duration format</td>
+      <td>Formát doby trvání blokace je chybný</td>
      </tr>
     </table>
    </div>
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_",
+ "command": "admin_block_add",
+ "params": {
+  "ip": "10.0.0.123",
+  "reason": "Spammer",
+  "duration": 86400
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "error": "0",
+ "message": "IP address successfully blocked"
 }
 </pre>
    <a name="commands-c2s-admin-block-set"></a><h6>Úprava zablokované IP adresy</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz změní parametry položky na seznamu blokovaných IP adres.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -1853,7 +1881,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_users_edit</td>
+      <td>admin_block_edit</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -1868,10 +1896,28 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>Název příkazu</td>
+      <td>id</td>
+      <td>64-bit integer</td>
+      <td class="center">✔</td>
+      <td>ID záznamu blokace</td>
+     </tr>
+     <tr>
+      <td>ip</td>
+      <td>string</td>
+      <td class="center">❌</td>
+      <td>IP adresa určená k zablokování - pokud nevyplněno, zůstává původní</td>
+     </tr>
+     <tr>
+      <td>reason</td>
+      <td>string</td>
+      <td class="center">❌</td>
+      <td>Důvod blokace IP adresy - pokud nevyplněno, zůstává původní</td>
+     </tr>
+     <tr>
+      <td>duration</td>
+      <td>64-bit integer</td>
+      <td class="center">❌</td>
+      <td>Doba blokace ve vteřinách - pokud nevyplněno, zůstává původní, pokud = null, je blokace navždy</td>
      </tr>
     </table>
    </div>
@@ -1887,7 +1933,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>-</td>
       <td>-</td>
-      <td class="center">✔❌</td>
+      <td class="center">-</td>
       <td>-</td>
      </tr>
     </table>
@@ -1902,25 +1948,47 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
-      <td>-</td>
+      <td>ID of the record is not set</td>
+      <td>ID záznamu nebylo vyplněno</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>ID of the record doesn't exist</td>
+      <td>ID záznamu neexistuje</td>
+     </tr>
+     <tr>
+      <td class="center">3</td>
+      <td>Wrong IP address format</td>
+      <td>Formát IP adresy je chybný</td>
+     </tr>
+     <tr>
+      <td class="center">4</td>
+      <td>Wrong duration format</td>
+      <td>Formát doby trvání blokace je chybný</td>
      </tr>
     </table>
    </div>
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_",
+ "command": "admin_block_edit",
+ "params": {
+  "id": 1,
+  "ip": "10.0.0.123",
+  "reason": "Spammer",
+  "duration": 86400
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
-{
- "-": "-",
-}
+ {
+  "error": "0",
+  "message": "IP address block successfully edited"
+ }
 </pre>
    <a name="commands-c2s-admin-block-del"></a><h6>Smazání zablokované IP adresy</h6>
-   <div>TODO - úvod</div>
+   <div>Tento přžíkaz smaže položku ze seznamu blokovaných IP adres.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -1929,7 +1997,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_block_delete</td>
+      <td>admin_block_del</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -1944,10 +2012,10 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>Název příkazu</td>
+      <td>id</td>
+      <td>64-bit integer</td>
+      <td class="center">✔</td>
+      <td>ID záznamu blokace</td>
      </tr>
     </table>
    </div>
@@ -1963,7 +2031,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>-</td>
       <td>-</td>
-      <td class="center">✔❌</td>
+      <td class="center">-</td>
       <td>-</td>
      </tr>
     </table>
@@ -1978,15 +2046,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
-      <td>-</td>
+      <td>ID of the record is not set</td>
+      <td>ID záznamu nebylo vyplněno</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>ID of the record doesn't exist</td>
+      <td>ID záznamu neexistuje</td>
      </tr>
     </table>
    </div>
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_block_delete",
+ "command": "admin_block_del",
  "params": {
   "id": 123
  }
@@ -1996,7 +2069,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "error": 0,
- "message": "The IP address successfully removed from the list"
+ "message": "IP address successfully removed from the list"
 }
 </pre>
    <a name="commands-c2s-admin-sysinfo"></a><h5>Informace o serveru pro správce</h5>
@@ -3007,7 +3080,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>Domain name is missing</td>
+      <td>Domain name not set</td>
       <td>Nebyl vyplněn parametr s názvem domény</td>
      </tr>
      <tr>
@@ -3017,7 +3090,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">3</td>
-      <td>Domain name not found</td>
+      <td>Domain name does not exist</td>
       <td>Doména nebyla nalezena v DNS</td>
      </tr>
     </table>
@@ -3089,12 +3162,12 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>Domain name is missing</td>
+      <td>Domain name not set</td>
       <td>Nebyl vyplněn parametr s názvem domény</td>
      </tr>
      <tr>
       <td class="center">2</td>
-      <td>Server address is missing</td>
+      <td>Server address not set</td>
       <td>Nebyl vyplněn parametr s adresou serveru</td>
      </tr>
      <tr>

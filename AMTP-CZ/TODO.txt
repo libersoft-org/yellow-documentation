@@ -34,7 +34,7 @@ Dopsání obsahu:
 - Dopsat všechny commandy v dokumentaci, kde je TODO
 - Blokaci neautorizovaných přístupů popsat i v commandech (obecně popsáno v Zabezpečení - Blokace neautorizovaných přístupů) - u loginu admina, loginu usera, pokusy s neplatným tokenem u usera i ověřování server-to-server (PUBKEY z DNS)
 - Notes.md - přeházet do html
-- Vymyslet u blokace IP adres, jak udělat IP range... Např. integer, který udává počet IP adres následujících za první IP adresou
+- Vymyslet u blokace IP adres, jak udělat IP range... Např. integer, který udává počet IP adres následujících za první IP adresou (otázka je, jestli to nebude moc velké číslo pro integer)
 - Zamyslet se nad dalšími commandy do jádra
 
 Návrh verze 2:
