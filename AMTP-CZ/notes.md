@@ -1,43 +1,17 @@
+# crypto
+https://neurotechnics.com/tools/pbkdf2-test
+
+
+
+# api schema frameworks / data types
+
+https://en.wikipedia.org/wiki/BSON
 https://www.jsonrpc.org/specification
+https://grpc.io/
+
+
 
 ```
-
-
-Obecna forma prikazu z klienta k serveru je (priklad):
-{
-
-  cmd:"user_login",
-
-  params: {
-	name:...,
-	password:...
-  }
-  
-}
-
-
-Spojení server-server
-
-{
-	error: "you_are_not_welcome_here",
-message: "Your server is banned from connecting to this server. Please contact the administrator for more information."
-	
-
-}
-
-class ErrorCodes(Enum):
-	you_are_not_welcome_here = 1
-	invalid_user = 2
-	
-
-
-if error == "admin_you_are_not_welcome_here":
-	You are not welcome here. Please contact the administrator for more information.
-
-
-
-
--------=-------=---
 
 tabulka banu vlastnich uzivatelu:
 	admin_id ban_id, user_amail, reason, expiration, ts
@@ -55,16 +29,7 @@ tabulka banu ip adres:
 crud:
 	...
 
-
-
-
-
-
-
-
-
-===
-
+```
 
 
 
@@ -79,11 +44,12 @@ Domain datatype:
 }
 ```
 commands:
+
 ### list_domains
 #### parameters
 none.
 #### return type
-`list[Domain]`
+`array[Domain]`
 
 #### return example
 ```
@@ -98,11 +64,14 @@ none.
 }
 
 ```
+
+
+
 ### create_domain
 ### request schema
 ```
 {
-    string domain
+    string domain  // Musi odpovidat regularnimu vyrazu pro domeny
 }
 ```
 #### example query
@@ -119,6 +88,14 @@ none.
     "ts": "2020-01-01 00:00:00"
 }
 ```
+#### chybove kody
+`domain_exists`
+`invalid_domain_name`
+
+
+
+
+
 ### edit_domain
 #### request schema
 ```
@@ -142,6 +119,15 @@ none.
     "ts": "2020-01-01 00:00:00"
 }
 ```
+#### chybove kody
+`domain_does_not_exist`
+`invalid_domain_name`
+
+
+
+
+
+
 ### delete_domain
 ### request schema
 ```
@@ -161,6 +147,9 @@ none.
     "status": "ok"
 }
 ```
+#### chybove kody
+`domain_does_not_exist`
+
 
 
 
@@ -172,7 +161,7 @@ none.
 #### parameters
 none.
 #### return type
-`list[User]`
+`array[User]`
 #### return example
 ```
 {
@@ -185,7 +174,17 @@ none.
     ]
 }
 ```
+
+
+
+
 ### create_user
+#### parameters
+```
+string amail;
+string pubkey;
+```
+
 #### example
 ```
 {
@@ -199,12 +198,24 @@ none.
     "id": 2,
     "amail": "tonda@example2.com",
     "pubkey": "Xxxxx..."
-}```
+}
+```
+
 ### error codes
-`user_exists`
+`user_with_that_identifier_exists`
+`invalid_identifier`
+`invalid_pubkey`
+
+
+
 
 ### edit_user
 #### parameters
+```
+int id
+string amail
+```
+#### example
 ```
 {
     "id": 2,
@@ -220,6 +231,7 @@ none.
 ### error codes
 `user_does_not_exist`
 
+
 ### delete_user
 #### parameters
 ```
@@ -229,7 +241,8 @@ none.
 ```
 ### error codes
 `user_does_not_exist`
-
+`invalid_identifier`
+`invalid_pubkey`
 
 
 
@@ -253,19 +266,19 @@ string pubkey
 result "ok"
 
 
-## user_login
-### parameters
-string identifier
-### response schema
-string salt
 
-## user_login2
+
+## user_login
 ### parameters
 string password_hash
 ### response schema
 string key_challenge
 
-## user_login3
+
+
+
+
+## user_login2 (continued)
 ### parameters
 string challenge_response
 ### response example
@@ -273,13 +286,7 @@ string challenge_response
     "result": "ok"
 }
 
-## user_verify
-### parameters
-string token
-### response example
-{
-    "result": "ok"
-}
+
 
 
 ## user_logout
@@ -290,6 +297,9 @@ none.
     "result": "ok"
 }
 
+
+
+
 ## user_setpubkey
 ### parameters
 string pubkey
@@ -297,6 +307,9 @@ string pubkey
 {
     "result": "ok"
 }
+
+
+
 
 ## user_set_homeserver_login_password_verification_enabled
 ### parameters
@@ -306,21 +319,18 @@ bool enabled
     "result": "ok"
 }
 
-## user_set_homeserver_login_password
-### parameters
-none.
-### response example
-{
-    "salt": "Xxxxx..."
-}
 
-## user_set_homeserver_login_password2
+
+
+## user_set_homeserver_login_password
 ### parameters
 string password_hash
 ### response example
 {
     "result": "ok"
 }
+
+
 
 
 ## user_homeserver_info
@@ -334,6 +344,134 @@ none.
          "hostname": "amtp.example.com"
     }
 }
+
+
+
+
+
+
+
+# commandy pro management zablokovaných IP adminem
+## admin_list_bans
+### parameters
+none.
+### response example
+```
+{
+    "result": [
+        {
+            "id": 1,
+            "ip": "Xxx.xxx.xxx.xxx",
+            "reason": "Bruteforce",
+            "expiration": "2020-01-01 00:00:00"
+        }   
+    ]
+}
+```
+
+
+
+
+## admin_add_ban
+### parameters
+string ip
+string reason
+datetime expiration
+### response example
+{
+    "result": "ok"
+}
+### error codes
+`invalid_ip`
+
+
+
+
+
+## admin_delete_ban
+### parameters
+int id
+### response example
+{
+    "result": "ok"
+}
+### error codes
+`ban_does_not_exist`
+`invalid_ip`
+
+
+
+
+
+
+# commandy pro admina na blokaci uživatelských účtů
+## admin_list_user_bans
+### parameters
+none.
+### response example
+```
+{
+    "result": [
+        {
+            "id": 1,
+            "user_amail": "pepa@domain1.example.com"
+            "reason": "blbec"
+        }
+    ]
+}
+```
+
+
+## admin_add_user_ban
+### parameters
+string user_amail
+string reason
+datetime expiration
+### response example
+{
+    "result": "ok"
+}
+### error codes
+`invalid_user_amail`
+`user_does_not_exist`
+`invalid_reason`
+`invalid_expiration`
+`user_is_already_banned`
+
+
+
+
+
+
+# commandy pro správu uživatelských tokenů
+## user_list_sessions
+### parameters
+none.
+### response example
+{
+    "result": [
+        {
+            "id": 1,
+            "description": "Firefox for Windows version Xxxx..",
+            "expiration": "2020-01-01 00:00:00"
+        }
+    ]
+}
+
+
+
+
+## user_delete_session
+### parameters
+int id
+### response example
+{
+    "result": "ok"
+}
+### error codes
+`session_does_not_exist`
+
+
 
 
 
