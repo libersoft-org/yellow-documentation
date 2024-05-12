@@ -606,7 +606,10 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "decrypted_string": "abcdefghijklmnopqrstuvwxyz1234567890abcd"
+ "command": "admin_login_response",
+ "params": {
+  "decrypted_string": "abcdefghijklmnopqrstuvwxyz1234567890abcd"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
