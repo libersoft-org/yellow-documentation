@@ -697,10 +697,10 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>success - TODO</td>
-      <td>bool</td>
-      <td class="center">✔</td>
-      <td>vysledek operace</td>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">-</td>
+      <td>-</td>
      </tr>
     </table>
    </div>
@@ -728,11 +728,12 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "logout": true
+ "error": 0,
+ "message": "User logged out"
 }
 </pre>
    <a name="commands-c2s-admin-admins"></a><h5>Správci</h5>
-   <div>TODO</div>
+   <div>Příkazy v této části dokumentace slouží ke správě správcovských účtů.</div>
    <a name="commands-c2s-admin-admins-list"></a><h6>Seznam správců</h6>
    <div>TODO - úvod</div>
    <div class="bold">Struktura požadavku od klienta:</div>
@@ -761,13 +762,13 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>offset</td>
       <td>64-bit integer</td>
       <td class="center">❌</td>
-      <td>Počáteční číslo pořadí ve výpisu</td>
+      <td>Počáteční číslo pořadí záznamu ve výpisu. Pokud není parametr vyplněn, pak se začíná od začátku seznamu.</td>
      </tr>
      <tr>
       <td>count</td>
       <td>64-bit integer</td>
       <td class="center">❌</td>
-      <td>Počet položek ve výpisu</td>
+      <td>Počet položek ve výpisu. Pokud není parametr vyplněn, pak jsou vypsány všechny položky.</td>
      </tr>
     </table>
    </div>
@@ -1075,6 +1076,29 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
+   <div class="bold">Parametry:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>offset</td>
+      <td>64-bit integer</td>
+      <td class="center">❌</td>
+      <td>Počáteční číslo pořadí záznamu ve výpisu. Pokud není parametr vyplněn, pak se začíná od začátku seznamu.</td>
+     </tr>
+     <tr>
+      <td>count</td>
+      <td>64-bit integer</td>
+      <td class="center">❌</td>
+      <td>Počet položek ve výpisu. Pokud není parametr vyplněn, pak jsou vypsány všechny položky.</td>
+     </tr>
+    </table>
+   </div>
    <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -1377,6 +1401,28 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     </table>
    </div>
    <div class="bold">Parametry:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>offset</td>
+      <td>64-bit integer</td>
+      <td class="center">❌</td>
+      <td>Počáteční číslo pořadí záznamu ve výpisu. Pokud není parametr vyplněn, pak se začíná od začátku seznamu.</td>
+     </tr>
+     <tr>
+      <td>count</td>
+      <td>64-bit integer</td>
+      <td class="center">❌</td>
+      <td>Počet položek ve výpisu. Pokud není parametr vyplněn, pak jsou vypsány všechny položky.</td>
+     </tr>
+    </table>
+   </div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -1844,10 +1890,16 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>Název příkazu</td>
+      <td>offset</td>
+      <td>64-bit integer</td>
+      <td class="center">❌</td>
+      <td>Počáteční číslo pořadí záznamu ve výpisu. Pokud není parametr vyplněn, pak se začíná od začátku seznamu.</td>
+     </tr>
+     <tr>
+      <td>count</td>
+      <td>64-bit integer</td>
+      <td class="center">❌</td>
+      <td>Počet položek ve výpisu. Pokud není parametr vyplněn, pak jsou vypsány všechny položky.</td>
      </tr>
     </table>
    </div>
@@ -2229,10 +2281,16 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>Název příkazu</td>
+      <td>offset</td>
+      <td>64-bit integer</td>
+      <td class="center">❌</td>
+      <td>Počáteční číslo pořadí záznamu ve výpisu. Pokud není parametr vyplněn, pak se začíná od začátku seznamu.</td>
+     </tr>
+     <tr>
+      <td>count</td>
+      <td>64-bit integer</td>
+      <td class="center">❌</td>
+      <td>Počet položek ve výpisu. Pokud není parametr vyplněn, pak jsou vypsány všechny položky.</td>
      </tr>
     </table>
    </div>
@@ -2540,13 +2598,13 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>offset</td>
       <td>64-bit integer</td>
       <td class="center">❌</td>
-      <td>Počet přeskočených záznamů v seznamu zablokovaných IP adres</td>
+      <td>Počáteční číslo pořadí záznamu ve výpisu. Pokud není parametr vyplněn, pak se začíná od začátku seznamu.</td>
      </tr>
      <tr>
       <td>count</td>
       <td>64-bit integer</td>
       <td class="center">❌</td>
-      <td>Maximální počet záznamů ze seznamu zablokovaných IP adres</td>
+      <td>Počet položek ve výpisu. Pokud není parametr vyplněn, pak jsou vypsány všechny položky.</td>
      </tr>
     </table>
    </div>
@@ -3569,10 +3627,16 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>Název příkazu</td>
+      <td>offset</td>
+      <td>64-bit integer</td>
+      <td class="center">❌</td>
+      <td>Počáteční číslo pořadí záznamu ve výpisu. Pokud není parametr vyplněn, pak se začíná od začátku seznamu.</td>
+     </tr>
+     <tr>
+      <td>count</td>
+      <td>64-bit integer</td>
+      <td class="center">❌</td>
+      <td>Počet položek ve výpisu. Pokud není parametr vyplněn, pak jsou vypsány všechny položky.</td>
      </tr>
     </table>
    </div>
@@ -3955,10 +4019,16 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>TODO</td>
+      <td>offset</td>
+      <td>64-bit integer</td>
+      <td class="center">❌</td>
+      <td>Počáteční číslo pořadí záznamu ve výpisu. Pokud není parametr vyplněn, pak se začíná od začátku seznamu.</td>
+     </tr>
+     <tr>
+      <td>count</td>
+      <td>64-bit integer</td>
+      <td class="center">❌</td>
+      <td>Počet položek ve výpisu. Pokud není parametr vyplněn, pak jsou vypsány všechny položky.</td>
      </tr>
     </table>
    </div>
