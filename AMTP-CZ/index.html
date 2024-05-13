@@ -294,7 +294,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div>Příkazy jsou zasílány přes <span class="bold">WebTransport</span> pomocí obousměrného proudu dat. V rámci zasílání všech příkazů jádra protokolu se používají výhradně spolehlivé proudy. Moduly mohou používat spolehlivé i nespolehlivé proudy, dle konkrétních potřeb.</div>
    <div>V rámci každého příkazu se nejprve otevře proud, poté probíhá obousměrná komunikace pomocí strukturovaných příkazů a nakonec, jakmile již není potřeba mít proud otevřený, uzavře se jednou či druhou stranou, zatímco spojení může být stále zachováno dokud je potřeba. Více proudů v rámci jednoho spojení může běžet souběžně.</div>
    <a name="commands-structure"></a><h3>Struktura příkazů a odpovědí</h3>
-   <div>Příkazy a odpovědi mezi klientem či cizím serverem a vlastním serverem jsou strukturovány ve formátu <span class="bold">BSON</span>.</div>
+   <div>Příkazy a odpovědi mezi klientem či cizím serverem a vlastním serverem jsou strukturovány ve formátu <span class="bold">BSON</span>. Datové typy parametrů tedy taktéž vycházejí z tohoto standardu. Pokud se kdekoliv uvádí datum a čas, je výhradně zapisován v UTC formátu dle <a href="https://cs.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>.</div>
    <div class="bold">Struktura příkazu pro server:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -672,7 +672,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "error": 0,
- "message": "User logged in"
+ "message": "Admin logged in"
 }
 </pre>
    <a name="commands-c2s-admin-logout"></a><h5>Odhlášení správce</h5>
@@ -749,7 +749,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "error": 0,
- "message": "User logged out"
+ "message": "Admin logged out"
 }
 </pre>
    <a name="commands-c2s-admin-setpubkey"></a><h5>Změna vlastního veřejného klíče pro přihlášení</h5>
@@ -4310,7 +4310,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     Vsechny verejne klice se porovnaji. V pripade neshody je spojeni ukonceno.
     Podpis ziskany v ramci challenge-response flow se overi pomoci verejneho klice. V pripade neshody je spojeni ukonceno.
    <a name="commands-c2s-modules"></a><h3>Komunikace s moduly</h3>
-   <div>Tato část dokumentace popisuje, jakým způsobem se předávají data v rámci modulů různých <span class="bold">AMTP</span> serverů a jakým způsobem komunikuje jádro serveru s moduly.</div>
+   <div>Tato část dokumentace popisuje, jakým způsobem se předávají data v rámci modulů mezi <span class="bold">AMTP</span> servery a jakým způsobem komunikuje jádro serveru s moduly.</div>
    <a name="commands-c2s-modules-deliver"></a><h4>Předávání příkazů určených modulům</h4>
    <div>Na vlastním serveru nejprve předá modul zprávu určenou cizímu serveru s následujícími parametry:</div>
    <div class="table-container">
@@ -4320,12 +4320,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Datový typ</th>
       <th class="center">Vyžadováno</th>
       <th>Popis</th>
-     </tr>
-     <tr>
-      <td>module</td>
-      <td>string</td>
-      <td class="center">✔</td>
-      <td>Název modulu</td>
      </tr>
      <tr>
       <td>to</td>
@@ -4341,6 +4335,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
+   <div>Jádro serveru do této struktury přidá parametr <span class="bold">module</span> (string), který obsahuje označení názvu modulu.</div>
    <div>Jelikož moduly mohou být vyvinuty různými vývojáři, je potřeba jednoznačný identifikátor názvu modulu. K tomuto účelu se využívá <span class="bold">reverzní zápis názvu domény</span> vývojáře, po kterém následuje tečka <span class="bold">(.)</span>, dále <span class="bold">název modulu</span>, poté podtržítko <span class="bold">(_)</span> a nakonec <span class="bold">verze modulu</span>. Díky identifikaci verze modulu může server poskytovat jeden modul ve více verzích najednou, což se dá využít například pro zpětnou kompatibilitu se staršími verzemi modulů klientských aplikací.</div>
    <div class="bold">Formát názvu modulu:</div>
 <pre>
@@ -4391,7 +4386,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div>Příklad příkazu od modulu určeného protějšímu serveru:</div>
+   <div class="bold">Příklad příkazu od modulu určeného protějšímu serveru:</div>
 <pre>
 {
  "module": "com.example.messages_1.0",
@@ -4428,7 +4423,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-   <div>Příklad příkazu určeného ke zpracování modulem:</div>
+   <div class="bold">Příklad příkazu určeného ke zpracování modulem:</div>
 <pre>
 {
  "from": "amtp.example1.com",
@@ -4443,7 +4438,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  }
 }
 </pre>
-   <div>Modul si následně před zpracováním příkazu může ověřit, zda server, který příkaz odeslal, má oprávnění používat v identitách doménová jména. K tomu slouží příkazy <span class="bold">get_servers</span> a <span class="bold">verify_domain</span> mezi moduly a jádrem.</div>
+   <div>Modul si poté před zpracováním příkazu může ověřit, zda server, který příkaz odeslal, má oprávnění používat v identitách doménová jména. K tomu slouží příkazy <span class="bold">get_servers</span> a <span class="bold">verify_domain</span> mezi moduly a jádrem.</div>
    <a name="commands-c2s-modules-commands"></a><h4>Příkazy mezi jádrem a modulem</h4>
    <div>Následující příkazy poskytují modulům užitečné informace, pomocí kterých si modul může ověřit legitimnost použití identit, které modul protějšího serveru uvedl v objektu <span class="bold">data</span>.</div>
    <a name="commands-c2s-modules-commands-servers"></a><h5>Zjištění oprávněných serverů:</h5>
