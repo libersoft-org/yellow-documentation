@@ -121,10 +121,28 @@ const data = [
         link: 'commands-c2s-admin-logout'
        }, {
         title: 'Změna vlastního veřejného klíče pro přihlášení',
-        link: 'commands-c2s-admin-setpubkey'
+        link: 'commands-c2s-admin-setpubkey',
+        sub: [
+         {
+          title: 'Změna vlastního veřejného klíče - výzva',
+          link: 'commands-c2s-admin-setpubkey-challenge'
+         }, {
+          title: 'Změna vlastního veřejného klíče - odezva',
+          link: 'commands-c2s-admin-setpubkey-response'
+         }
+        ]
        }, {
         title: 'Změna vlastního hesla pro přihlášení',
-        link: 'commands-c2s-admin-setpassword'
+        link: 'commands-c2s-admin-setpassword',
+        sub: [
+         {
+          title: 'Změna vlastního hesla - výzva',
+          link: 'commands-c2s-admin-setpassword-challenge'
+         }, {
+          title: 'Změna vlastního hesla - odezva',
+          link: 'commands-c2s-admin-setpassword-response'
+         }
+        ]
        }, {
         title: 'Správci',
         link: 'commands-c2s-admin-admins',
@@ -179,10 +197,28 @@ const data = [
           link: 'commands-c2s-admin-users-del'
          }, {
           title: 'Změna veřejného klíče pro přihlášení uživatele',
-          link: 'commands-c2s-admin-users-setpubkey'
+          link: 'commands-c2s-admin-users-setpubkey',
+          sub: [
+           {
+            title: 'Změna veřejného klíče uživatele - výzva',
+            link: 'commands-c2s-admin-users-setpubkey-challenge'
+           }, {
+            title: 'Změna veřejného klíče uživatele - odezva',
+            link: 'commands-c2s-admin-users-setpubkey-response'
+           }
+          ]
          }, {
           title: 'Změna hesla pro přihlášení uživatele',
-          link: 'commands-c2s-admin-users-setpassword'
+          link: 'commands-c2s-admin-users-setpassword',
+          sub: [
+           {
+            title: 'Změna hesla uživatele - výzva',
+            link: 'commands-c2s-admin-users-setpassword-challenge'
+           }, {
+            title: 'Změna hesla uživatele - odezva',
+            link: 'commands-c2s-admin-users-setpassword-response'
+           }
+          ]
          }
         ]
        }, {
@@ -274,10 +310,28 @@ const data = [
         link: 'commands-c2s-user-logout'
        }, {
         title: 'Změna veřejného klíče pro přihlášení',
-        link: 'commands-c2s-user-setpubkey'
+        link: 'commands-c2s-user-setpubkey',
+        sub: [
+         {
+          title: 'Změna veřejného klíče - výzva',
+          link: 'commands-c2s-user-setpubkey-challenge'
+         }, {
+          title: 'Změna veřejného klíče - odezva',
+          link: 'commands-c2s-user-setpubkey-response'
+         }
+        ]
        }, {
         title: 'Změna hesla pro přihlášení',
-        link: 'commands-c2s-user-setpassword'
+        link: 'commands-c2s-user-setpassword',
+        sub: [
+         {
+          title: 'Změna veřejného klíče - výzva',
+          link: 'commands-c2s-user-setpassword-challenge'
+         }, {
+          title: 'Změna veřejného klíče - odezva',
+          link: 'commands-c2s-user-setpassword-response'
+         }
+        ]
        }, {
         title: 'Správa vlastních tokenů relace',
         link: 'commands-c2s-user-tokens',

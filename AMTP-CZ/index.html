@@ -753,7 +753,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-setpubkey"></a><h5>Změna vlastního veřejného klíče pro přihlášení</h5>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz změní přihlašovací veřejný klíč uživatele. K tomu, aby mohl být veřejný klíč změněn, je třeba poskytnout přihlašovací výzvu a odezvu, stejně, jako je to u běžného přihlášení a to i v případech, kdy je uživatel již přihlášen. Toto dodatečné přihlášení uvnitř tohoto příkazu je implementováno proto, aby nikdo nemohl neoprávněně změnit veřejný klíč na serveru již přihlášenému uživateli, například při použití jeho zařízení v nestřežený okamžik.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -762,8 +762,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_</td>
-      <td class="center">✔</td>
+      <td>admin_setpubkey_challenge</td>
+      <td class="center">❌</td>
      </tr>
     </table>
    </div>
@@ -819,17 +819,18 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_",
+ "command": "admin_setpubkey",
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "error": 0,
+ "message": "Public key was changed"
 }
 </pre>
    <a name="commands-c2s-admin-setpassword"></a><h5>Změna vlastního hesla pro přihlášení</h5>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz změní přihlašovací heslo uživatele. K tomu, aby mohlo být heslo změněno, je třeba poskytnout přihlašovací výzvu a odezvu, stejně, jako je to u běžného přihlášení a to i v případech, kdy je uživatel již přihlášen. Toto dodatečné přihlášení uvnitř tohoto příkazu je implementováno proto, aby nikdo nemohl neoprávněně změnit heslo na serveru již přihlášenému uživateli, například při použití jeho zařízení v nestřežený okamžik.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -838,8 +839,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_</td>
-      <td class="center">✔</td>
+      <td>admin_setpassword</td>
+      <td class="center">❌</td>
      </tr>
     </table>
    </div>
@@ -895,7 +896,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_",
+ "command": "admin_setpassword",
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -904,16 +905,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "-": "-",
 }
 </pre>
-
-
-
-
-
-
-
-
-
-
    <a name="commands-c2s-admin-admins"></a><h5>Správci</h5>
    <div>Příkazy v této části dokumentace slouží ke správě správcovských účtů.</div>
    <a name="commands-c2s-admin-admins-list"></a><h6>Seznam správců</h6>
