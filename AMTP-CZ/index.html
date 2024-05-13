@@ -754,6 +754,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
    <a name="commands-c2s-admin-setpubkey"></a><h5>Změna vlastního veřejného klíče pro přihlášení</h5>
    <div>Tento příkaz změní přihlašovací veřejný klíč uživatele. K tomu, aby mohl být veřejný klíč změněn, je třeba poskytnout přihlašovací výzvu a odezvu, stejně, jako je to u běžného přihlášení a to i v případech, kdy je uživatel již přihlášen. Toto dodatečné přihlášení uvnitř tohoto příkazu je implementováno proto, aby nikdo nemohl neoprávněně změnit veřejný klíč na serveru již přihlášenému uživateli, například při použití jeho zařízení v nestřežený okamžik.</div>
+   <a name="commands-c2s-admin-setpubkey-challenge"></a><h6>Výzva</h6>
+   <div>TODO - úvod + popsat, že se nemá ukončovat proud !!!</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -819,18 +821,17 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_setpubkey",
+ "command": "admin_setpubkey_challenge",
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "error": 0,
- "message": "Public key was changed"
+ "TODO": "TODO"
 }
 </pre>
-   <a name="commands-c2s-admin-setpassword"></a><h5>Změna vlastního hesla pro přihlášení</h5>
-   <div>Tento příkaz změní přihlašovací heslo uživatele. K tomu, aby mohlo být heslo změněno, je třeba poskytnout přihlašovací výzvu a odezvu, stejně, jako je to u běžného přihlášení a to i v případech, kdy je uživatel již přihlášen. Toto dodatečné přihlášení uvnitř tohoto příkazu je implementováno proto, aby nikdo nemohl neoprávněně změnit heslo na serveru již přihlášenému uživateli, například při použití jeho zařízení v nestřežený okamžik.</div>
+   <a name="commands-c2s-admin-setpubkey-response"></a><h6>Odezva</h6>
+   <div>TODO - úvod + popsat, že se má pokračovat v proudu !!!</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -839,7 +840,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_setpassword</td>
+      <td>admin_setpubkey_response</td>
       <td class="center">❌</td>
      </tr>
     </table>
@@ -896,7 +897,162 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_setpassword",
+ "command": "admin_setpubkey_response",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "error": 0,
+ "message": "Public key was changed"
+}
+</pre>
+   <a name="commands-c2s-admin-setpassword"></a><h5>Změna vlastního hesla pro přihlášení</h5>
+   <div>Tento příkaz změní přihlašovací heslo uživatele. K tomu, aby mohlo být heslo změněno, je třeba poskytnout přihlašovací výzvu a odezvu, stejně, jako je to u běžného přihlášení a to i v případech, kdy je uživatel již přihlášen. Toto dodatečné přihlášení uvnitř tohoto příkazu je implementováno proto, aby nikdo nemohl neoprávněně změnit heslo na serveru již přihlášenému uživateli, například při použití jeho zařízení v nestřežený okamžik.</div>
+   <a name="commands-c2s-admin-setpassword-challenge"></a><h6>Výzva</h6>
+   <div>TODO - úvod + popsat, že se nemá ukončovat proud !!!</div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
+     </tr>
+     <tr>
+      <td>admin_setpassword_challenge</td>
+      <td class="center">❌</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>TODO</td>
+      <td>TODO</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Struktura odezvy od serveru:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "admin_setpassword_challenge",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
+   <a name="commands-c2s-admin-setpassword-response"></a><h6>Odezva</h6>
+   <div>TODO - úvod + popsat, že se má pokračovat v proudu !!!</div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení správce</th>
+     </tr>
+     <tr>
+      <td>admin_setpassword_response</td>
+      <td class="center">❌</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>TODO</td>
+      <td>TODO</td>
+      <td class="center">✔❌</td>
+      <td>Název příkazu</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Struktura odezvy od serveru:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "admin_setpassword_response",
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
