@@ -11,10 +11,9 @@ Design stranky:
 Dopsání obsahu:
 - Přidat commandy pro správu uživatelských tokenů (uživatel maže / edituje své, admin maže / edituje všech), zobrazení expirace, nějaké identifikace zařízení - už je to v TOC, přidat do DOC
 - Přidat sekci Blokace uživatelských účtů (už je v TOC, přidat do DOC) + pokud se takový uživatel bude přihlašovat, tak vracet status o tom, že je zablokovaný, kdo zablokoval, kdy, proč atd.
+- Dopsat všechny commandy v dokumentaci, kde je TODO
 
-- Přidat commandy u admina pro změnu svého pubkey + hesla (už je v TOC, přidat do DOC)
-- Přidat commandy pro admina na změnu pubkey + hesla běžných uživatelů (už je v TOC, dopsat DOC)
-
+- Notes.md - přeházet do html
 - Příkazy - Admin - Domény (je v NOTES)
 - Příkazy - Admin - Uživatelské účty (je v NOTES)
 - Příkazy - Admin - Bany uživatelů (je v NOTES)
@@ -33,8 +32,6 @@ Dopsání obsahu:
 - Příkazy - Server - Přidat error při fail2ban + poté při ověření - Auto-ban při nevalidním ověření serveru (chybí v NOTES)
 
 - Zablokované IP adresy - přidat chybové stavy těmto zlým serverům / klientům ve stylu "You are not welcome here" při pokusech o přihlášení / challenge
-- Dopsat všechny commandy v dokumentaci, kde je TODO
-- Notes.md - přeházet do html
 - Vymyslet u blokace IP adres, jak udělat IP range... Např. integer, který udává počet IP adres následujících za první IP adresou (otázka je, jestli to nebude moc velké číslo pro integer)
 - Zamyslet se nad dalšími commandy do jádra
 

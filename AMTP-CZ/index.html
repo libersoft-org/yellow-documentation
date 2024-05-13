@@ -753,7 +753,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-setpubkey"></a><h5>Změna vlastního veřejného klíče pro přihlášení</h5>
-   <div>Tento příkaz změní přihlašovací veřejný klíč uživatele. K tomu, aby mohl být veřejný klíč změněn, je třeba poskytnout přihlašovací výzvu a odezvu, stejně, jako je to u běžného přihlášení a to i v případech, kdy je uživatel již přihlášen. Toto dodatečné přihlášení uvnitř tohoto příkazu je implementováno proto, aby nikdo nemohl neoprávněně změnit veřejný klíč na serveru již přihlášenému uživateli, například při použití jeho zařízení v nestřežený okamžik.</div>
+   <div>Tento příkaz změní přihlašovací veřejný klíč správce. K tomu, aby mohl být veřejný klíč změněn, je třeba poskytnout přihlašovací výzvu a odezvu, stejně, jako je to u běžného přihlášení a to i v případech, kdy je správce již přihlášen. Toto dodatečné přihlášení uvnitř tohoto příkazu je implementováno proto, aby nikdo nemohl neoprávněně změnit veřejný klíč na serveru již přihlášenému správci, například při použití jeho zařízení v nestřežený okamžik.</div>
    <a name="commands-c2s-admin-setpubkey-challenge"></a><h6>Výzva</h6>
    <div>TODO - úvod + popsat, že se nemá ukončovat proud !!!</div>
    <div class="bold">Struktura požadavku od klienta:</div>
@@ -908,7 +908,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-setpassword"></a><h5>Změna vlastního hesla pro přihlášení</h5>
-   <div>Tento příkaz změní přihlašovací heslo uživatele. K tomu, aby mohlo být heslo změněno, je třeba poskytnout přihlašovací výzvu a odezvu, stejně, jako je to u běžného přihlášení a to i v případech, kdy je uživatel již přihlášen. Toto dodatečné přihlášení uvnitř tohoto příkazu je implementováno proto, aby nikdo nemohl neoprávněně změnit heslo na serveru již přihlášenému uživateli, například při použití jeho zařízení v nestřežený okamžik.</div>
+   <div>Tento příkaz změní přihlašovací heslo správce. K tomu, aby mohlo být heslo změněno, je třeba poskytnout přihlašovací výzvu a odezvu, stejně, jako je to u běžného přihlášení a to i v případech, kdy je správce již přihlášen. Toto dodatečné přihlášení uvnitř tohoto příkazu je implementováno proto, aby nikdo nemohl neoprávněně změnit heslo na serveru již přihlášenému správci, například při použití jeho zařízení v nestřežený okamžik.</div>
    <a name="commands-c2s-admin-setpassword-challenge"></a><h6>Výzva</h6>
    <div>TODO - úvod + popsat, že se nemá ukončovat proud !!!</div>
    <div class="bold">Struktura požadavku od klienta:</div>
