@@ -3964,6 +3964,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
    <a name="commands-c2s-user-setpubkey"></a><h5>Změna veřejného klíče pro přihlášení</h5>
    <div>TODO - úvod, pozor - vyžaduje ověření původním pubkey (+ heslem, pokud se používá)</div>
+   <a name="commands-c2s-user-setpubkey-challenge"></a><h6>Výzva</h6>
+   <div>TODO - úvod</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -3972,7 +3974,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení uživatele</th>
      </tr>
      <tr>
-      <td>user_setpubkey</td>
+      <td>user_setpubkey_challenge</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -4029,7 +4031,83 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "user_",
+ "command": "user_setpubkey_challenge",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
+   <a name="commands-c2s-user-setpubkey-response"></a><h6>Odezva</h6>
+   <div>TODO - úvod</div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení uživatele</th>
+     </tr>
+     <tr>
+      <td>user_setpubkey_response</td>
+      <td class="center">✔</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>TODO</td>
+      <td>TODO</td>
+      <td class="center">✔❌</td>
+      <td>TODO</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Struktura odezvy od serveru:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "user_setpubkey_response",
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -4043,6 +4121,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div>TODO - pozor - vyžaduje ověření původním pubkey (+ heslem, pokud se používalo)</div>
    <div>TODO - toto by mělo umět i nějak zrušit používání hesla pokud to server umožňuje (poslat null?)</div>
    <div>TODO - bude se vyžadovat aktivní příhlášení (tzn. mít token)?</div>
+   <a name="commands-c2s-user-setpassword-challenge"></a><h6>Výzva</h6>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -4051,7 +4130,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení uživatele</th>
      </tr>
      <tr>
-      <td>user_setpass</td>
+      <td>user_setpassword_challenge</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -4108,7 +4187,82 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "user_",
+ "command": "user_setpassword_challenge",
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "-": "-",
+}
+</pre>
+<a name="commands-c2s-user-setpassword-response"></a><h6>Odezva</h6>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+      <th class="center">Vyžaduje přihlášení uživatele</th>
+     </tr>
+     <tr>
+      <td>user_setpassword_response</td>
+      <td class="center">✔</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>TODO</td>
+      <td>TODO</td>
+      <td class="center">✔❌</td>
+      <td>TODO</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Struktura odezvy od serveru:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">✔❌</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "user_setpassword_response",
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
