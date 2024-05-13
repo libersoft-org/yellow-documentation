@@ -690,7 +690,23 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
     </table>
    </div>
-
+   <div class="bold">Parametry:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
    <div class="bold">Struktura odezvy od serveru:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -4500,11 +4516,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad odezvy od jádra:</div>
 <pre>
 {
- "servers": [
-  "amtp1.example.com",
-  "amtp2.example.com",
-  "amtp3.example.com"
- ]
+ "error": 0,
+ "data": {
+  "servers": [
+   "amtp1.example.com",
+   "amtp2.example.com",
+   "amtp3.example.com"
+  ]
+ }
 }
 </pre>
    <a name="commands-c2s-modules-commands-verify"></a><h5>Ověření opravnění užití domény:</h5>
@@ -4593,7 +4612,10 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad odezvy od jádra:</div>
 <pre>
 {
- "authorized": true
+ "error": 0,
+ "data": {
+  "authorized": true
+ }
 }
 </pre>
    <a name="examples"></a><h2>Příklady</h2>
