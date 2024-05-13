@@ -109,10 +109,10 @@ const data = [
         link: 'commands-c2s-admin-login',
         sub: [
          {
-          title: 'Přihlašovací výzva',
+          title: 'Výzva',
           link: 'commands-c2s-admin-login-challenge'
          }, {
-          title: 'Přihlašovací odezva',
+          title: 'Odezva',
           link: 'commands-c2s-admin-login-response'
          }
         ]
@@ -124,10 +124,10 @@ const data = [
         link: 'commands-c2s-admin-setpubkey',
         sub: [
          {
-          title: 'Změna vlastního veřejného klíče - výzva',
+          title: 'Výzva',
           link: 'commands-c2s-admin-setpubkey-challenge'
          }, {
-          title: 'Změna vlastního veřejného klíče - odezva',
+          title: 'Odezva',
           link: 'commands-c2s-admin-setpubkey-response'
          }
         ]
@@ -136,10 +136,10 @@ const data = [
         link: 'commands-c2s-admin-setpassword',
         sub: [
          {
-          title: 'Změna vlastního hesla - výzva',
+          title: 'Výzva',
           link: 'commands-c2s-admin-setpassword-challenge'
          }, {
-          title: 'Změna vlastního hesla - odezva',
+          title: 'Odezva',
           link: 'commands-c2s-admin-setpassword-response'
          }
         ]
@@ -200,10 +200,10 @@ const data = [
           link: 'commands-c2s-admin-users-setpubkey',
           sub: [
            {
-            title: 'Změna veřejného klíče uživatele - výzva',
+            title: 'Výzva',
             link: 'commands-c2s-admin-users-setpubkey-challenge'
            }, {
-            title: 'Změna veřejného klíče uživatele - odezva',
+            title: 'Odezva',
             link: 'commands-c2s-admin-users-setpubkey-response'
            }
           ]
@@ -212,10 +212,10 @@ const data = [
           link: 'commands-c2s-admin-users-setpassword',
           sub: [
            {
-            title: 'Změna hesla uživatele - výzva',
+            title: 'Výzva',
             link: 'commands-c2s-admin-users-setpassword-challenge'
            }, {
-            title: 'Změna hesla uživatele - odezva',
+            title: 'Odezva',
             link: 'commands-c2s-admin-users-setpassword-response'
            }
           ]
@@ -295,10 +295,10 @@ const data = [
         link: 'commands-c2s-user-login',
         sub: [
          {
-          title: 'Přihlašovací výzva',
+          title: 'Výzva',
           link: 'commands-c2s-user-login-challenge'
          }, {
-          title: 'Přihlašovací odezva',
+          title: 'Odezva',
           link: 'commands-c2s-user-login-response'
          }
         ]
@@ -313,10 +313,10 @@ const data = [
         link: 'commands-c2s-user-setpubkey',
         sub: [
          {
-          title: 'Změna veřejného klíče - výzva',
+          title: 'Výzva',
           link: 'commands-c2s-user-setpubkey-challenge'
          }, {
-          title: 'Změna veřejného klíče - odezva',
+          title: 'Odezva',
           link: 'commands-c2s-user-setpubkey-response'
          }
         ]
@@ -325,10 +325,10 @@ const data = [
         link: 'commands-c2s-user-setpassword',
         sub: [
          {
-          title: 'Změna veřejného klíče - výzva',
+          title: 'Výzva',
           link: 'commands-c2s-user-setpassword-challenge'
          }, {
-          title: 'Změna veřejného klíče - odezva',
+          title: 'Odezva',
           link: 'commands-c2s-user-setpassword-response'
          }
         ]
