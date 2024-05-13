@@ -200,10 +200,10 @@ const data = [
           link: 'commands-c2s-admin-tokens-del'
          }, {
           title: 'Smazání všech tokenů relace uživatele',
-          link: 'commands-c2s-admin-token-delalluser'
+          link: 'commands-c2s-admin-tokens-deluser'
          }, {
           title: 'Smazání tokenů relace všech uživatelů',
-          link: 'commands-c2s-admin-blockusers-delall'
+          link: 'commands-c2s-admin-tokens-delall'
          }
         ]
        }, {
@@ -293,7 +293,7 @@ const data = [
           link: 'commands-c2s-user-tokens-del'
          }, {
           title: 'Smazání všech vlastních tokenů relace',
-          link: 'commands-c2s-user-token-delall'
+          link: 'commands-c2s-user-tokens-delall'
          }
         ]
        }, {
