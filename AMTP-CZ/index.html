@@ -521,7 +521,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>Veřejný klíč, kterým byl řetězec zašifrován</td>
      </tr>
      <tr>
-      <td>encryption_algorithm</td>
+      <td>public_key_algorithm</td>
       <td>string</td>
       <td class="center">✔</td>
       <td>Identifikace algoritmu, kterým byl řetězec zašifrován</td>
@@ -580,7 +580,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "data": {
   "encrypted_string": "1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B",
   "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-  "encryption_algorithm": "rsa4096oaep"
+  "public_key_algorithm": "rsa4096oaep"
  }
 }
 </pre>
@@ -811,7 +811,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>Veřejný klíč, kterým byl řetězec zašifrován</td>
      </tr>
      <tr>
-      <td>encryption_algorithm</td>
+      <td>public_key_algorithm</td>
       <td>string</td>
       <td class="center">✔</td>
       <td>Identifikace algoritmu, kterým byl řetězec zašifrován</td>
@@ -865,7 +865,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
   "data": {
    "encrypted_string": "1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B",
    "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-   "encryption_algorithm": "rsa4096oaep"
+   "public_key_algorithm": "rsa4096oaep"
   }
  }
 </pre>
@@ -905,7 +905,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>Nový veřejný klíč</td>
      </tr>
      <tr>
-      <td>new_encryption_algorithm</td>
+      <td>new_public_key_algorithm</td>
       <td>string</td>
       <td class="center">✔</td>
       <td>Identifikace algoritmu pro veřejný klíč</td>
@@ -976,7 +976,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "params": {
   "decrypted_string": "abcdefghijklmnopqrstuvwxyz1234567890abcd",
   "new_public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-  "new_encryption_algorithm": "rsa4096oaep"
+  "new_public_key_algorithm": "rsa4096oaep"
  }
 }
 </pre>
@@ -1048,7 +1048,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>Veřejný klíč, kterým byl řetězec zašifrován</td>
      </tr>
      <tr>
-      <td>encryption_algorithm</td>
+      <td>public_key_algorithm</td>
       <td>string</td>
       <td class="center">✔</td>
       <td>Identifikace algoritmu, kterým byl řetězec zašifrován</td>
@@ -1102,7 +1102,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
   "data": {
    "encrypted_string": "1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B",
    "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-   "encryption_algorithm": "rsa4096oaep"
+   "public_key_algorithm": "rsa4096oaep"
   }
  }
 </pre>
@@ -1145,7 +1145,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>new_password_algorithm</td>
       <td>string</td>
       <td class="center">✔</td>
-      <td>Algoritmus nového hesla</td>
+      <td>Algoritmus hashe nového hesla</td>
      </tr>
     </table>
    </div>
@@ -1277,7 +1277,42 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>admins</td>
       <td>array[object]</td>
       <td class="center">✔</td>
-      <td>Objekt s TODO</td>
+      <td>Pole objektů se seznamem správců</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Položky objektu v poli "admins":</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>id</td>
+      <td>32-bit integer</td>
+      <td>ID záznamu</td>
+     </tr>
+     <tr>
+      <td>name</td>
+      <td>string</td>
+      <td>Přihlašovací jméno správce</td>
+     </tr>
+     <tr>
+      <td>public_key</td>
+      <td>string</td>
+      <td>Veřejný klíč správce pro přihlášení</td>
+     </tr>
+     <tr>
+      <td>public_key_algorithm</td>
+      <td>string</td>
+      <td>Šifrovací algoritmus veřejného klíče</td>
+     </tr>
+     <tr>
+      <td>created</td>
+      <td>timestamp</td>
+      <td>Datum vytvoření záznamu</td>
      </tr>
     </table>
    </div>
@@ -1301,24 +1336,44 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_admins_list",
  "params": {
-  "-": "-"
+  "offset": 50,
+  "count": 4
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "admins": [
- {
-    "id": 1,
-    "name": "admin1",
-    "pubkey": "Xxxxx..."
-  },
-  {
-    "id": 2,
-    ...
-  }
- ]
+ "error": 0,
+ "data": {
+  "blocked": [
+   {
+    "id": 51,
+    "name": "admin51",
+    "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
+    "public_key_algorithm": "rsa4096oaep"
+    "created": "2024-01-01T00:00:00Z",
+   }, {
+    "id": 52,
+    "name": "admin52",
+    "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
+    "public_key_algorithm": "rsa4096oaep"
+    "created": "2024-01-02T00:00:00Z",
+   }, {
+    "id": 53,
+    "name": "admin53",
+    "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
+    "public_key_algorithm": "rsa4096oaep"
+    "created": "2024-01-03T00:00:00Z",
+   }, {
+    "id": 54,
+    "name": "admin54",
+    "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
+    "public_key_algorithm": "rsa4096oaep"
+    "created": "2024-01-04T00:00:00Z",
+   }
+  ]
+ }
 }
 </pre>
    <a name="commands-c2s-admin-admins-add"></a><h6>Přidání nového správce</h6>
@@ -3369,7 +3424,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>created</td>
       <td>timestamp</td>
-      <td>Datum zablokování</td>
+      <td>Datum vytvoření záznamu</td>
      </tr>
      <tr>
       <td>duration</td>
