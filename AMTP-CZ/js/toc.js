@@ -333,20 +333,20 @@ const data = [
          }
         ]
        }, {
-        title: 'Správa vlastních tokenů relace',
+        title: 'Správa tokenů relace',
         link: 'commands-c2s-user-tokens',
         sub: [
          {
-          title: 'Seznam vlastních tokenů relace',
+          title: 'Seznam tokenů relace',
           link: 'commands-c2s-user-tokens-list'
          }, {
-          title: 'Úprava vlastního tokenu relace',
+          title: 'Úprava tokenu relace',
           link: 'commands-c2s-user-tokens-set'
          }, {
-          title: 'Smazání vlastního tokenu relace',
+          title: 'Smazání tokenu relace',
           link: 'commands-c2s-user-tokens-del'
          }, {
-          title: 'Smazání všech vlastních tokenů relace',
+          title: 'Smazání všech tokenů relace',
           link: 'commands-c2s-user-tokens-delall'
          }
         ]

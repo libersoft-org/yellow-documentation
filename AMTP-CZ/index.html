@@ -989,6 +989,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
    <a name="commands-c2s-admin-setpassword"></a><h5>Změna vlastního hesla pro přihlášení</h5>
    <div>Tento příkaz změní přihlašovací heslo správce. K tomu, aby mohlo být heslo změněno, je třeba poskytnout přihlašovací výzvu a odezvu, stejně, jako je to u běžného přihlášení a to i v případech, kdy je správce již přihlášen. Toto dodatečné přihlášení uvnitř tohoto příkazu je implementováno proto, aby nikdo nemohl neoprávněně změnit heslo na serveru již přihlášenému správci, například při použití jeho zařízení v nestřežený okamžik.</div>
+   <div>TODO - toto by mělo umět i nějak zrušit používání hesla pokud to server umožňuje (poslat null?) + chyba, že to nejde</div>
    <a name="commands-c2s-admin-setpassword-challenge"></a><h6>Výzva</h6>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -1227,7 +1228,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-c2s-admin-admins"></a><h5>Správci</h5>
    <div>Příkazy v této části dokumentace slouží ke správě správcovských účtů.</div>
    <a name="commands-c2s-admin-admins-list"></a><h6>Seznam správců</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz vrací seznam správcovských účtů.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -1377,7 +1378,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-admins-add"></a><h6>Přidání nového správce</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz přidá nový správcovský účet.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -1470,7 +1471,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-admins-set"></a><h6>Úprava správce</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz změní parametry správcovského účtu.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -1551,7 +1552,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-admins-del"></a><h6>Smazání správce</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz smaže správcovský účet.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -1632,7 +1633,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-c2s-admin-domains"></a><h5>Domény:</h5>
    <div>TODO - úvod</div>
    <a name="commands-c2s-admin-domains-list"></a><h6>Seznam domén:</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz vrací seznam domén používaných pro uživatelské účty.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -1657,13 +1658,13 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>offset</td>
-      <td>64-bit integer</td>
+      <td>32-bit integer</td>
       <td class="center">❌</td>
       <td>Počáteční číslo pořadí záznamu ve výpisu. Pokud není parametr vyplněn, pak se začíná od začátku seznamu.</td>
      </tr>
      <tr>
       <td>count</td>
-      <td>64-bit integer</td>
+      <td>32-bit integer</td>
       <td class="center">❌</td>
       <td>Počet položek ve výpisu. Pokud není parametr vyplněn, pak jsou vypsány všechny položky.</td>
      </tr>
@@ -1729,7 +1730,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-domains-add"></a><h6>Přidání nové domény</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz přidá novou doménu používanou pro uživatelské účty.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -1808,7 +1809,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-domains-set"></a><h6>Úprava domény</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz změní parametry domény používané pro uživatelské účty.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -1887,7 +1888,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-domains-del"></a><h6>Smazání domény</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz smaže doménu používanou pro uživatelské účty.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -1968,7 +1969,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-c2s-admin-users"></a><h5>Uživatelské účty</h5>
    <div>TODO - úvod</div>
    <a name="commands-c2s-admin-users-list"></a><h6>Seznam uživatelů</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz vrací seznam uživatelských účtů.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -1999,7 +2000,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>count</td>
-      <td>64-bit integer</td>
+      <td>32-bit integer</td>
       <td class="center">❌</td>
       <td>Počet položek ve výpisu. Pokud není parametr vyplněn, pak jsou vypsány všechny položky.</td>
      </tr>
@@ -2053,7 +2054,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-users-add"></a><h6>Přidání nového uživatele</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz přidá nový uživatelský účet.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -2132,7 +2133,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-users-set"></a><h6>Úprava uživatele</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz změní parametry uživatelského účtu.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -2211,7 +2212,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-users-del"></a><h6>Smazání uživatele</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz smaže uživatelský účet.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -2290,7 +2291,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-users-setpubkey"></a><h6>Změna veřejného klíče pro přihlášení uživatele</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz změní přihlašovací veřejný klíč uživatele správcem.</div>
    <a name="commands-c2s-admin-users-setpubkey-challenge"></a><h7>Výzva</h7>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -2448,7 +2449,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-users-setpassword"></a><h6>Změna hesla pro přihlášení uživatele</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz změní přihlašovací heslo uživatele správcem.</div>
+   <div>TODO - toto by mělo umět i nějak zrušit používání hesla pokud to server umožňuje (poslat null?) + chyba, že to nejde</div>
    <a name="commands-c2s-admin-users-setpassword-challenge"></a><h7>Výzva</h7>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -2608,7 +2610,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-c2s-admin-tokens"></a><h5>Správa uživatelských tokenů relace</h5>
    <div>TODO - úvod</div>
    <a name="commands-c2s-admin-tokens-list"></a><h6>Seznam tokenů relace uživatele</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz vrací seznam tokenů relace konkrétního uživatele.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -2633,13 +2635,13 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>offset</td>
-      <td>64-bit integer</td>
+      <td>32-bit integer</td>
       <td class="center">❌</td>
       <td>Počáteční číslo pořadí záznamu ve výpisu. Pokud není parametr vyplněn, pak se začíná od začátku seznamu.</td>
      </tr>
      <tr>
       <td>count</td>
-      <td>64-bit integer</td>
+      <td>32-bit integer</td>
       <td class="center">❌</td>
       <td>Počet položek ve výpisu. Pokud není parametr vyplněn, pak jsou vypsány všechny položky.</td>
      </tr>
@@ -2693,7 +2695,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-tokens-set"></a><h6>Úprava tokenu relace uživatele</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz změní parametry tokenu relace konkrétního uživatele.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -2772,7 +2774,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-tokens-del"></a><h6>Smazání tokenu relace uživatele</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz smaže token relace konkrétního uživatele.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -2851,7 +2853,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-tokens-deluser"></a><h6>Smazání všech tokenů relace uživatele</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz smaže všechny tokeny relace konkrétního uživatele.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -2930,7 +2932,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-tokens-delall"></a><h6>Smazání tokenů relace všech uživatelů</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz smaže všechny tokeny relace všech uživatelů.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -3014,7 +3016,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-c2s-admin-blockusers"></a><h5>Blokace uživatelských účtů</h5>
    <div>TODO - úvod</div>
    <a name="commands-c2s-admin-blockusers-list"></a><h6>Seznam zablokovaných uživatelů</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz vrací seznam zablokovaných uživatelů</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -3045,7 +3047,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>count</td>
-      <td>64-bit integer</td>
+      <td>32-bit integer</td>
       <td class="center">❌</td>
       <td>Počet položek ve výpisu. Pokud není parametr vyplněn, pak jsou vypsány všechny položky.</td>
      </tr>
@@ -3099,7 +3101,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-blockusers-add"></a><h6>Přidání zablokovaného uživatele</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz přidá nového zablokovaného uživatele.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -3178,7 +3180,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-blockusers-set"></a><h6>Úprava zablokovaného uživatele</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz změní parametry zablokovaného uživatele</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -3257,7 +3259,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-blockusers-del"></a><h6>Smazání zablokovaného uživatele</h6>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz smaže blokaci uživatele.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -3364,13 +3366,13 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>offset</td>
-      <td>64-bit integer</td>
+      <td>32-bit integer</td>
       <td class="center">❌</td>
       <td>Počáteční číslo pořadí záznamu ve výpisu. Pokud není parametr vyplněn, pak se začíná od začátku seznamu.</td>
      </tr>
      <tr>
       <td>count</td>
-      <td>64-bit integer</td>
+      <td>32-bit integer</td>
       <td class="center">❌</td>
       <td>Počet položek ve výpisu. Pokud není parametr vyplněn, pak jsou vypsány všechny položky.</td>
      </tr>
@@ -3718,7 +3720,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  }
 </pre>
    <a name="commands-c2s-admin-blockip-del"></a><h6>Smazání zablokované IP adresy</h6>
-   <div>Tento přžíkaz smaže položku ze seznamu blokovaných IP adres.</div>
+   <div>Tento příkaz smaže položku ze seznamu blokovaných IP adres.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -3803,8 +3805,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-sysinfo"></a><h5>Informace o serveru pro správce</h5>
-   <div>Tento příkaz zobrazuje systémové prostředky serveru.</div>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz zobrazuje užitečné informace o serveru a jeho prostředcích.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -3877,14 +3878,29 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "os_name": "Linux",
- "os_version": "5.10.0-19-amd64",
- "cpu_model": "Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz",
- "cpu_cores": 40,
- "cpu_arch": "x64",
- "cpu_load": 0,
- "ram_total": 8332619776,
- "ram_free": 7842000896,
+ "os": {
+  "name": "Linux",
+  "version": "5.10.0-19-amd64"
+ },
+ "cpus": [
+  {
+   "model": "Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz",
+   "arch": "x64",
+   "cores": 40,
+   "threads": 80,
+   "load": 10
+  }, {
+   "model": "Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz",
+   "arch": "x64",
+   "cores": 40,
+   "threads": 80,
+   "load": 5
+  }
+ ],
+ "ram": {
+  "total": 8332619776,
+  "free": 7842000896
+ },
  "networks": [
   {
    "ens1": [
@@ -3896,9 +3912,12 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     "10.20.30.40",
     "12ab::34cd:56ef:7890:4321"
    ]
-  }
+  },
+  "domains": 10,
+  "users": 50,
+  "data_size": 107374182400
  ],
- "uptime": "8 days, 12 hours, 45 minutes, 52 seconds"
+ "uptime": "8:12:45:52"
 }
 </pre>
    <a name="commands-c2s-user"></a><h4>Příkazy uživatele</h4>
@@ -4221,7 +4240,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-user-logout"></a><h5>Odhlášení uživatele</h5>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz odhlásí uživatele, pokud byl přihlášen.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -4300,7 +4319,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-user-setpubkey"></a><h5>Změna veřejného klíče pro přihlášení</h5>
-   <div>TODO - úvod, pozor - vyžaduje ověření původním pubkey (+ heslem, pokud se používá)</div>
+   <div>Tento příkaz změní přihlašovací veřejný klíč uživatele. K tomu, aby mohl být veřejný klíč změněn, je třeba poskytnout přihlašovací výzvu a odezvu, stejně, jako je to u běžného přihlášení a to i v případech, kdy je uživatel již přihlášen. Toto dodatečné přihlášení uvnitř tohoto příkazu je implementováno proto, aby nikdo nemohl neoprávněně změnit veřejný klíč na serveru již přihlášenému uživateli, například při použití jeho zařízení v nestřežený okamžik.</div>
    <a name="commands-c2s-user-setpubkey-challenge"></a><h6>Výzva</h6>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -4458,10 +4477,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-user-setpassword"></a><h5>Změna hesla pro přihlášení</h5>
-   <div>TODO - úvod</div>
-   <div>TODO - pozor - vyžaduje ověření původním pubkey (+ heslem, pokud se používalo)</div>
-   <div>TODO - toto by mělo umět i nějak zrušit používání hesla pokud to server umožňuje (poslat null?)</div>
-   <div>TODO - bude se vyžadovat aktivní příhlášení (tzn. mít token)?</div>
+   <div>Tento příkaz změní přihlašovací heslo uživatele. K tomu, aby mohlo být heslo změněno, je třeba poskytnout přihlašovací výzvu a odezvu, stejně, jako je to u běžného přihlášení a to i v případech, kdy je uživatel již přihlášen. Toto dodatečné přihlášení uvnitř tohoto příkazu je implementováno proto, aby nikdo nemohl neoprávněně změnit heslo na serveru již přihlášenému uživateli, například při použití jeho zařízení v nestřežený okamžik.</div>
+   <div>TODO - toto by mělo umět i nějak zrušit používání hesla pokud to server umožňuje (poslat null?) + chyba, že to nejde</div>
    <a name="commands-c2s-user-setpassword-challenge"></a><h6>Výzva</h6>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -4618,10 +4635,10 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "-": "-",
 }
 </pre>
-   <a name="commands-c2s-user-tokens"></a><h5>Správa vlastních tokenů relace</h5>
+   <a name="commands-c2s-user-tokens"></a><h5>Správa tokenů relace</h5>
    <div>TODO - úvod</div>
-   <a name="commands-c2s-user-tokens-list"></a><h6>Seznam vlastních tokenů relace</h6>
-   <div>TODO - úvod</div>
+   <a name="commands-c2s-user-tokens-list"></a><h6>Seznam tokenů relace</h6>
+   <div>Tento příkaz vrací seznam tokenů relace uživatele.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -4630,7 +4647,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>user_tokens_</td>
+      <td>user_tokens_list</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -4646,13 +4663,13 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>offset</td>
-      <td>64-bit integer</td>
+      <td>32-bit integer</td>
       <td class="center">❌</td>
       <td>Počáteční číslo pořadí záznamu ve výpisu. Pokud není parametr vyplněn, pak se začíná od začátku seznamu.</td>
      </tr>
      <tr>
       <td>count</td>
-      <td>64-bit integer</td>
+      <td>32-bit integer</td>
       <td class="center">❌</td>
       <td>Počet položek ve výpisu. Pokud není parametr vyplněn, pak jsou vypsány všechny položky.</td>
      </tr>
@@ -4693,7 +4710,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "user_tokens_",
+ "command": "user_tokens_list",
  "params": {
   "-": "-"
  }
@@ -4705,8 +4722,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "-": "-",
 }
 </pre>
-   <a name="commands-c2s-user-tokens-set"></a><h6>Úprava vlastního tokenu relace</h6>
-   <div>TODO - úvod</div>
+   <a name="commands-c2s-user-tokens-set"></a><h6>Úprava tokenu relace</h6>
+   <div>Tento příkaz změní parametry tokenu relace uživatele.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -4784,8 +4801,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "-": "-",
 }
 </pre>
-   <a name="commands-c2s-user-tokens-del"></a><h6>Smazání vlastního tokenu relace</h6>
-   <div>TODO - úvod</div>
+   <a name="commands-c2s-user-tokens-del"></a><h6>Smazání tokenu relace</h6>
+   <div>Tento příkaz smaže token relace uživatele.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -4863,8 +4880,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "-": "-",
 }
 </pre>
-   <a name="commands-c2s-user-tokens-delall"></a><h6>Smazání všech vlastních tokenů relace</h6>
-   <div>TODO - úvod</div>
+   <a name="commands-c2s-user-tokens-delall"></a><h6>Smazání všech tokenů relace</h6>
+   <div>Tento příkaz smaže všechny tokeny relace uživatele.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -4945,8 +4962,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 
 
    <a name="commands-c2s-user-info"></a><h5>Informace o serveru pro uživatele</h5>
-   <div>Tento příkaz vrací informace o AMTP serveru a nevyžaduje token relace.</div>
-   <div>TODO - úvod</div>
+   <div>Tento příkaz vrací užitečné informace o AMTP serveru.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -5056,7 +5072,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>count</td>
-      <td>64-bit integer</td>
+      <td>32-bit integer</td>
       <td class="center">❌</td>
       <td>Počet položek ve výpisu. Pokud není parametr vyplněn, pak jsou vypsány všechny položky.</td>
      </tr>
