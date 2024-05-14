@@ -9,6 +9,7 @@ Design stranky:
 - Do obsahu (#doc) přidat možnost srolování každého nadpisu (accordion), stejně jako je to v #toc.
 
 Dopsání obsahu:
+- Smazat u přihlašovacích výzev a odezev upozornění na neuzavirani proudu
 - Přidat commandy pro správu uživatelských tokenů (uživatel maže / edituje své, admin maže / edituje všech), zobrazení expirace, nějaké identifikace zařízení - už je to v TOC, přidat do DOC
 - Přidat sekci Blokace uživatelských účtů (už je v TOC, přidat do DOC) + pokud se takový uživatel bude přihlašovat, tak vracet status o tom, že je zablokovaný, kdo zablokoval, kdy, proč atd.
 - Dopsat všechny commandy v dokumentaci, kde je TODO

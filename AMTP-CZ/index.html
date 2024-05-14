@@ -461,9 +461,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-c2s-admin"></a><h4>Příkazy správce</h4>
    <div>Všechny příkazy začínající "<span class="bold">admin_</span>" jsou určeny pouze pro správce serveru. Aby bylo možné provádět tyto příkazy (mimo příkazů pro samotné přihlášení), musí být správce přihlášen. Pokud je přihlášení úspěšné, je správce přihlášen po dobu spojení.</div>
    <a name="commands-c2s-admin-login"></a><h5>Přihlášení správce</h5>
-   <div>Přihlášení správce probíhá ve dvou krocích - přihlašovací výzvě a přihlašovací odezvě. V přihlašovací výzvě zašle klient své přihlašovací jméno a pokud používá mimo privátního klíče i heslo, tak i hash tohoto hesla (nepovinné). Server ověří heslo (pokud správce používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem správce. Tento zašifrovaný řetězec je předán správci. Správce následně řetězec rozšifruje pomocí svého soukromého klíče a zašle ho zpět v rámci přihlašovací odezvy. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetětec od klienta odpovídá původně vygenerovanému, pak je správce přihlášen po dobu spojení. V opačném případě vrátí chybu.</div>
+   <div>Přihlášení správce probíhá ve dvou krocích - přihlašovací výzvě a přihlašovací odezvě. V přihlašovací výzvě zašle klient své přihlašovací jméno a hash hesla (pokud se používá). Server ověří heslo (pokud se používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem správce a předá mu jej. Správce následně řetězec rozšifruje pomocí svého soukromého klíče a zašle ho zpět v rámci přihlašovací odezvy. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetětec od klienta odpovídá původně vygenerovanému, pak je správce přihlášen po dobu spojení. V opačném případě vrátí chybu.</div>
    <a name="commands-c2s-admin-login-challenge"></a><h6>Výzva</h6>
-   <div><span class="bold">Upozornění</span>: Po dokončení přihlašovací výzvy se neukončuje proud. Následuje po ní přihlašovací odezva.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -586,7 +585,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-login-response"></a><h6>Odezva</h6>
-   <div><span class="bold">Upozornění</span>: Tuto přihlašovací odezvu předchází přihlašovací výzva, není to tedy samostatný příkaz. Po úspěšném dokončení přihlašovací výzvy následuje tato přihlašovací odezva ve stejném proudu, ve kterém byla zaslána přihlašovací výzva. Po dokončení této přihlašovací odezvy je tento proud uzavřen.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -755,7 +753,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-c2s-admin-setpubkey"></a><h5>Změna vlastního veřejného klíče pro přihlášení</h5>
    <div>Tento příkaz změní přihlašovací veřejný klíč správce. K tomu, aby mohl být veřejný klíč změněn, je třeba poskytnout přihlašovací výzvu a odezvu, stejně, jako je to u běžného přihlášení a to i v případech, kdy je správce již přihlášen. Toto dodatečné přihlášení uvnitř tohoto příkazu je implementováno proto, aby nikdo nemohl neoprávněně změnit veřejný klíč na serveru již přihlášenému správci, například při použití jeho zařízení v nestřežený okamžik.</div>
    <a name="commands-c2s-admin-setpubkey-challenge"></a><h6>Výzva</h6>
-   <div>TODO - úvod + popsat, že se nemá ukončovat proud !!!</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -831,7 +828,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-setpubkey-response"></a><h6>Odezva</h6>
-   <div>TODO - úvod + popsat, že se má pokračovat v proudu !!!</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -910,7 +906,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-c2s-admin-setpassword"></a><h5>Změna vlastního hesla pro přihlášení</h5>
    <div>Tento příkaz změní přihlašovací heslo správce. K tomu, aby mohlo být heslo změněno, je třeba poskytnout přihlašovací výzvu a odezvu, stejně, jako je to u běžného přihlášení a to i v případech, kdy je správce již přihlášen. Toto dodatečné přihlášení uvnitř tohoto příkazu je implementováno proto, aby nikdo nemohl neoprávněně změnit heslo na serveru již přihlášenému správci, například při použití jeho zařízení v nestřežený okamžik.</div>
    <a name="commands-c2s-admin-setpassword-challenge"></a><h6>Výzva</h6>
-   <div>TODO - úvod + popsat, že se nemá ukončovat proud !!!</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -986,7 +981,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-setpassword-response"></a><h6>Odezva</h6>
-   <div>TODO - úvod + popsat, že se má pokračovat v proudu !!!</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -2042,7 +2036,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-c2s-admin-users-setpubkey"></a><h6>Změna veřejného klíče pro přihlášení uživatele</h6>
    <div>TODO - úvod</div>
    <a name="commands-c2s-admin-users-setpubkey-challenge"></a><h7>Výzva</h7>
-   <div>TODO - úvod</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -2118,7 +2111,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-users-setpubkey-response"></a><h7>Odezva</h7>
-   <div>TODO - úvod</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -2196,7 +2188,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-c2s-admin-users-setpassword"></a><h6>Změna hesla pro přihlášení uživatele</h6>
    <div>TODO - úvod</div>
    <a name="commands-c2s-admin-users-setpassword-challenge"></a><h7>Výzva</h7>
-   <div>TODO - úvod</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -2272,7 +2263,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
 <a name="commands-c2s-admin-users-setpassword-response"></a><h7>Odezva</h7>
-   <div>TODO - úvod</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -3659,7 +3649,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-c2s-user-login"></a><h5>Přihlášení uživatele</h5>
    <div>Přihlášení uživatele probíhá ve dvou krocích - přihlašovací výzvě a přihlašovací odezvě. V přihlašovací výzvě zašle klient své přihlašovací jméno ve tvaru <span class="bold">uživatel@doména</span> a pokud používá mimo privátního klíče i heslo, tak i hash tohoto hesla (nepovinné). Server ověří heslo (pokud uživatel používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem uživatele. Tento zašifrovaný řetězec je následně předán uživateli. Uživatel řetězec rozšifruje pomocí svého soukromého klíče a zašle ho zpět v rámci přihlašovací odezvy. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetětec od klienta odpovídá původně vygenerovanému, pak uživatele přihlásí a udělí mu token relace. V opačném případě vrátí chybu.</div>
    <a name="commands-c2s-user-login-challenge"></a><h6>Výzva</h6>
-   <div>TODO - úvod, připsat upozornění, že nezavírat proud kvůli přihlašovací odezvě</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -3735,7 +3724,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-user-login-response"></a><h6>Odezva</h6>
-   <div>TODO - úvod, připsat upozornění, že se navazuje na proud přihlašovací výzvy a po dokončení přihlašovací odezvy se teprve uzavírá proud.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -3965,7 +3953,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-c2s-user-setpubkey"></a><h5>Změna veřejného klíče pro přihlášení</h5>
    <div>TODO - úvod, pozor - vyžaduje ověření původním pubkey (+ heslem, pokud se používá)</div>
    <a name="commands-c2s-user-setpubkey-challenge"></a><h6>Výzva</h6>
-   <div>TODO - úvod</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -4041,7 +4028,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-user-setpubkey-response"></a><h6>Odezva</h6>
-   <div>TODO - úvod</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
