@@ -512,7 +512,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>encrypted_string</td>
       <td>string</td>
       <td class="center">✔</td>
-      <td>string výzvy pro zašifrování</td>
+      <td>Zašifrovaný náhodně vygenerovaný řetězec uživatele jeho veřejným klíčem</td>
      </tr>
      <tr>
       <td>public_key</td>
@@ -647,8 +647,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">2</td>
-      <td>No login request sent</td>
-      <td>Přihlašovací výzva nebyla ještě zpracována, je nejprve nutné ji provést</td>
+      <td>No challenge created</td>
+      <td>Výzva nebyla ještě vytvořena, je nejprve nutné ji provést</td>
      </tr>
      <tr>
       <td class="center">3</td>
@@ -776,10 +776,16 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>TODO</td>
+      <td>user</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Uživatelské jméno</td>
+     </tr>
+     <tr>
+      <td>password</td>
+      <td>string</td>
+      <td class="center">❌</td>
+      <td>Hash hesla</td>
      </tr>
     </table>
    </div>
@@ -793,10 +799,22 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>-</td>
-      <td>-</td>
-      <td class="center">✔❌</td>
-      <td>-</td>
+      <td>encrypted_string</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Zašifrovaný náhodně vygenerovaný řetězec uživatele jeho veřejným klíčem</td>
+     </tr>
+     <tr>
+      <td>public_key</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Veřejný klíč, kterým byl řetězec zašifrován</td>
+     </tr>
+     <tr>
+      <td>encryption_algorithm</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Identifikace algoritmu, kterým byl řetězec zašifrován</td>
      </tr>
     </table>
    </div>
@@ -810,8 +828,23 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
-      <td>-</td>
+      <td>User name not set</td>
+      <td>Uživatelské jméno nebylo vyplněno</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>Password not set</td>
+      <td>Heslo nebylo vyplněno</td>
+     </tr>
+     <tr>
+      <td class="center">3</td>
+      <td>User name not found</td>
+      <td>Uživatelské jméno nebylo nenalezeno</td>
+     </tr>
+     <tr>
+      <td class="center">4</td>
+      <td>Wrong password</td>
+      <td>Heslo je chybné</td>
      </tr>
     </table>
    </div>
@@ -819,13 +852,22 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_setpubkey_challenge",
+ "params": {
+  "user": "admin",
+  "password": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
-{
- "TODO": "TODO"
-}
+ {
+  "error": 0,
+  "data": {
+   "encrypted_string": "1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B",
+   "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
+   "encryption_algorithm": "rsa4096oaep"
+  }
+ }
 </pre>
    <a name="commands-c2s-admin-setpubkey-response"></a><h6>Odezva</h6>
    <div class="bold">Struktura požadavku od klienta:</div>
@@ -851,10 +893,22 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>TODO</td>
+      <td>decrypted_string</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Rozšifrovaný řetězec z přihlašovací výzvy soukromým klíčem</td>
+     </tr>
+     <tr>
+      <td>new_public_key</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Nový veřejný klíč</td>
+     </tr>
+     <tr>
+      <td>new_encryption_algorithm</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Identifikace algoritmu pro veřejný klíč</td>
      </tr>
     </table>
    </div>
@@ -870,7 +924,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>-</td>
       <td>-</td>
-      <td class="center">✔❌</td>
+      <td class="center">-</td>
       <td>-</td>
      </tr>
     </table>
@@ -885,8 +939,33 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
-      <td>-</td>
+      <td>Decrypted string not set</td>
+      <td>Rozšifrovaný řetězec chybí</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>New public key is not set</td>
+      <td>Nový veřejný klíč chybí</td>
+     </tr>
+     <tr>
+      <td class="center">3</td>
+      <td>Encryption algorithm of the new public key is not set</td>
+      <td>Šifrovací algoritmus nového veřejného klíče chybí</td>
+     </tr>
+     <tr>
+      <td class="center">4</td>
+      <td>No challenge created</td>
+      <td>Výzva nebyla ještě vytvořena, je nejprve nutné ji provést</td>
+     </tr>
+     <tr>
+      <td class="center">5</td>
+      <td>Wrong decrypted string</td>
+      <td>Nesprávně rozšifrovaný řetězec</td>
+     </tr>
+     <tr>
+      <td class="center">6</td>
+      <td>Unsupported encryption algorithm</td>
+      <td>Server nepodporuje šifrovací algoritmus nového veřejného klíče</td>
      </tr>
     </table>
    </div>
@@ -894,6 +973,11 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_setpubkey_response",
+ "params": {
+  "decrypted_string": "abcdefghijklmnopqrstuvwxyz1234567890abcd",
+  "new_public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
+  "new_encryption_algorithm": "rsa4096oaep"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -972,6 +1056,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_setpassword_challenge",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -1047,6 +1134,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_setpassword_response",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -1130,7 +1220,10 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_admins_list"
+ "command": "admin_admins_list",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -1229,9 +1322,11 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_admins_add",
- "name": "admin1",
- "password": "password",
- "pubkey": "Xxxxx..."
+ "params": {
+  "name": "admin1",
+  "password": "password",
+  "pubkey": "Xxxxx..."
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -1307,8 +1402,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_admins_edit",
- "admin": {
+ "command": "admin_admins_set",
+ "params": {
   "id": 1,
   "name": "admin1",
   "pubkey": "Xxxxx..."
@@ -1389,6 +1484,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -1472,7 +1570,10 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_domains_list"
+ "command": "admin_domains_list",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -1561,6 +1662,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -1637,6 +1741,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -1713,6 +1820,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -1797,6 +1907,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -1873,6 +1986,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -1949,6 +2065,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -2025,6 +2144,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -2102,6 +2224,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_users_setpubkey_challenge",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -2177,6 +2302,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_users_setpubkey_response",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -2254,6 +2382,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_users_setpassword_challenge",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -2329,6 +2460,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_users_setpassword_response",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -2413,6 +2547,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_tokens_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -2489,6 +2626,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_tokens_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -2565,6 +2705,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_tokens_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -2641,6 +2784,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_tokens_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -2717,6 +2863,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_tokens_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -2804,6 +2953,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_blockusers_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -2880,6 +3032,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_blockusers_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -2956,6 +3111,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_blockusers_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -3032,6 +3190,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "admin_blockusers_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -3537,7 +3698,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_info",
+ "command": "admin_info"
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -3638,6 +3799,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "user_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -3715,6 +3879,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "user_login_challenge",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -3790,6 +3957,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "user_login_response",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -3866,6 +4036,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "user_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -3942,6 +4115,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "user_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -4019,6 +4195,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "user_setpubkey_challenge",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -4094,6 +4273,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "user_setpubkey_response",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -4174,6 +4356,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "user_setpassword_challenge",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -4249,6 +4434,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "user_setpassword_response",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -4333,6 +4521,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "user_tokens_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -4409,6 +4600,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "user_tokens_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -4485,6 +4679,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "user_tokens_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -4561,6 +4758,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "user_tokens_",
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -4725,6 +4925,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "command": "user_modules"
+ "params": {
+  "-": "-"
+ }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
