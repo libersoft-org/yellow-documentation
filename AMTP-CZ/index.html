@@ -1342,7 +1342,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "command": "admin_admins_list",
  "params": {
   "offset": 50,
-  "count": 4
+  "count": 3
  }
 }
 </pre>
@@ -1370,12 +1370,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
     "public_key_algorithm": "rsa4096oaep"
     "created": "2024-01-03T00:00:00Z",
-   }, {
-    "id": 54,
-    "name": "admin54",
-    "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-    "public_key_algorithm": "rsa4096oaep"
-    "created": "2024-01-04T00:00:00Z",
    }
   ]
  }
@@ -1728,7 +1722,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_domains_list",
  "params": {
-  "TODO": "TODO"
+  "offset": 50,
+  "count": 3
  }
 }
 </pre>
@@ -1738,14 +1733,18 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "result": {
   [
    {
-    "id": 1,
+    "id": 51,
     "name": "example1.com",
-    "created":"2024-04-30 14:51:03"
+    "created":"2024-01-01T00:00:00Z"
    }, {
-    "id": 2,
+    "id": 52,
     "name": "example2.com",
-    "created": "2024-04-30 16:21:08"
-   }
+    "created": "2024-01-02T00:00:00Z"
+   }, , {
+    "id": 53,
+    "name": "example3.com",
+    "created": "2024-01-03T00:00:00Z"
+   }, 
   ]
  }
 }
