@@ -989,7 +989,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
    <a name="commands-c2s-admin-setpassword"></a><h5>Změna vlastního hesla pro přihlášení</h5>
    <div>Tento příkaz změní přihlašovací heslo správce. K tomu, aby mohlo být heslo změněno, je třeba poskytnout přihlašovací výzvu a odezvu, stejně, jako je to u běžného přihlášení a to i v případech, kdy je správce již přihlášen. Toto dodatečné přihlášení uvnitř tohoto příkazu je implementováno proto, aby nikdo nemohl neoprávněně změnit heslo na serveru již přihlášenému správci, například při použití jeho zařízení v nestřežený okamžik.</div>
-   <div>TODO - toto by mělo umět i nějak zrušit používání hesla pokud to server umožňuje (poslat null?) + chyba, že to nejde</div>
    <a name="commands-c2s-admin-setpassword-challenge"></a><h6>Výzva</h6>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -1140,7 +1139,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>new_password_hash</td>
       <td>string</td>
       <td class="center">✔</td>
-      <td>Nový hash hesla</td>
+      <td>Nový hash hesla, může být null (smazání používání hesla), pokud to server dovoluje</td>
      </tr>
      <tr>
       <td>new_password_algorithm</td>
@@ -1204,6 +1203,11 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td class="center">6</td>
       <td>Unsupported password hash algorithm</td>
       <td>Server nepodporuje hashovací algoritmus nového hesla</td>
+     </tr>
+     <tr>
+      <td class="center">7</td>
+      <td>Password is required</td>
+      <td>Server nepodporuje možnost smazání hesla</td>
      </tr>
     </table>
    </div>
@@ -1404,20 +1408,32 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>name</td>
       <td>string</td>
-      <td class="center">✔❌</td>
-      <td>-</td>
+      <td class="center">✔</td>
+      <td>Přihlašovací jméno správce</td>
      </tr>
      <tr>
-      <td>password</td>
+      <td>public_key</td>
       <td>string</td>
-      <td class="center">✔❌</td>
-      <td>heslo v plaintextu</td>
+      <td class="center">✔</td>
+      <td>Veřejný klíč pro přihlášení</td>
      </tr>
      <tr>
-      <td>pubkey</td>
+      <td>public_key_algorithm</td>
       <td>string</td>
-      <td class="center">✔❌</td>
-      <td>veřejný klíč</td>
+      <td class="center">✔</td>
+      <td>Algoritmus veřejného klíče pro přihlášení</td>
+     </tr>
+     <tr>
+      <td>password_hash</td>
+      <td>string</td>
+      <td class="center">❌</td>
+      <td>Hash hesla pro přihlášení</td>
+     </tr>
+     <tr>
+      <td>password_hash_algorithm</td>
+      <td>string</td>
+      <td class="center">❌</td>
+      <td>Hashovací algoritmus hesla pro přihlášení</td>
      </tr>
     </table>
    </div>
@@ -1431,9 +1447,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
       <td>-</td>
-      <td class="center">✔❌</td>
+      <td>-</td>
+      <td class="center">-</td>
       <td>-</td>
      </tr>
     </table>
@@ -1458,16 +1474,19 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_admins_add",
  "params": {
-  "name": "admin1",
-  "password": "password",
-  "pubkey": "Xxxxx..."
+  "name": "admin",
+  "public_key": "TODO",
+  "public_key_algorithm": "TODO",
+  "password_hash": "TODO",
+  "password_hash_algorithm": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- success: true
+ "error": 0,
+ "message": "Admin account was created"
 }
 </pre>
    <a name="commands-c2s-admin-admins-set"></a><h6>Úprava správce</h6>
@@ -1480,7 +1499,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_admins_edit</td>
+      <td>admin_admins_set</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -1512,9 +1531,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>success - TODO</td>
-      <td>bool</td>
-      <td class="center">✔</td>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">-</td>
       <td>-</td>
      </tr>
     </table>
@@ -1548,7 +1567,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "success": true
+ "error": 0,
+ "message": "Admin account parameters were changed"
 }
 </pre>
    <a name="commands-c2s-admin-admins-del"></a><h6>Smazání správce</h6>
@@ -1595,7 +1615,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>-</td>
       <td>-</td>
-      <td class="center">✔</td>
+      <td class="center">-</td>
       <td>-</td>
      </tr>
     </table>
@@ -1618,16 +1638,17 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_",
+ "command": "admin_admins_del",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "error": 0,
+ "message": "Admin account was deleted"
 }
 </pre>
    <a name="commands-c2s-admin-domains"></a><h5>Domény:</h5>
@@ -1707,7 +1728,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_domains_list",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
@@ -1798,14 +1819,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-admin-domains-set"></a><h6>Úprava domény</h6>
@@ -1818,7 +1839,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_domains_edit</td>
+      <td>admin_domains_set</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -1877,14 +1898,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-admin-domains-del"></a><h6>Smazání domény</h6>
@@ -1956,14 +1977,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-admin-users"></a><h5>Uživatelské účty</h5>
@@ -2043,14 +2064,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-admin-users-add"></a><h6>Přidání nového uživatele</h6>
@@ -2122,14 +2143,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-admin-users-set"></a><h6>Úprava uživatele</h6>
@@ -2142,7 +2163,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_users_edit</td>
+      <td>admin_users_set</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -2201,14 +2222,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-admin-users-del"></a><h6>Smazání uživatele</h6>
@@ -2280,14 +2301,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-admin-users-setpubkey"></a><h6>Změna veřejného klíče pro přihlášení uživatele</h6>
@@ -2360,14 +2381,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_users_setpubkey_challenge",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-admin-users-setpubkey-response"></a><h7>Odezva</h7>
@@ -2438,19 +2459,18 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_users_setpubkey_response",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-admin-users-setpassword"></a><h6>Změna hesla pro přihlášení uživatele</h6>
    <div>Tento příkaz změní přihlašovací heslo uživatele správcem.</div>
-   <div>TODO - toto by mělo umět i nějak zrušit používání hesla pokud to server umožňuje (poslat null?) + chyba, že to nejde</div>
    <a name="commands-c2s-admin-users-setpassword-challenge"></a><h7>Výzva</h7>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -2519,14 +2539,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_users_setpassword_challenge",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
 <a name="commands-c2s-admin-users-setpassword-response"></a><h7>Odezva</h7>
@@ -2597,14 +2617,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_users_setpassword_response",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-admin-tokens"></a><h5>Správa uživatelských tokenů relace</h5>
@@ -2684,14 +2704,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_tokens_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-admin-tokens-set"></a><h6>Úprava tokenu relace uživatele</h6>
@@ -2763,14 +2783,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_tokens_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-admin-tokens-del"></a><h6>Smazání tokenu relace uživatele</h6>
@@ -2842,14 +2862,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_tokens_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-admin-tokens-deluser"></a><h6>Smazání všech tokenů relace uživatele</h6>
@@ -2921,14 +2941,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_tokens_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-admin-tokens-delall"></a><h6>Smazání tokenů relace všech uživatelů</h6>
@@ -3000,14 +3020,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_tokens_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
 
@@ -3090,14 +3110,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_blockusers_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-admin-blockusers-add"></a><h6>Přidání zablokovaného uživatele</h6>
@@ -3169,14 +3189,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_blockusers_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-admin-blockusers-set"></a><h6>Úprava zablokovaného uživatele</h6>
@@ -3248,14 +3268,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_blockusers_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-admin-blockusers-del"></a><h6>Smazání zablokovaného uživatele</h6>
@@ -3327,14 +3347,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_blockusers_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
 
@@ -3613,7 +3633,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_block_edit</td>
+      <td>admin_block_set</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -3703,7 +3723,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_block_edit",
+ "command": "admin_block_set",
  "params": {
   "id": 1,
   "ip": "10.0.0.123",
@@ -3992,14 +4012,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-user-login"></a><h5>Přihlášení uživatele</h5>
@@ -4072,14 +4092,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_login_challenge",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-user-login-response"></a><h6>Odezva</h6>
@@ -4150,14 +4170,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_login_response",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-user-verify"></a><h5>Ověření uživatele tokenem</h5>
@@ -4229,14 +4249,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-user-logout"></a><h5>Odhlášení uživatele</h5>
@@ -4308,14 +4328,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-user-setpubkey"></a><h5>Změna veřejného klíče pro přihlášení</h5>
@@ -4388,14 +4408,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_setpubkey_challenge",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-user-setpubkey-response"></a><h6>Odezva</h6>
@@ -4466,14 +4486,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_setpubkey_response",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-user-setpassword"></a><h5>Změna hesla pro přihlášení</h5>
@@ -4547,14 +4567,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_setpassword_challenge",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
 <a name="commands-c2s-user-setpassword-response"></a><h6>Odezva</h6>
@@ -4625,14 +4645,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_setpassword_response",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-user-tokens"></a><h5>Správa tokenů relace</h5>
@@ -4712,14 +4732,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_tokens_list",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-user-tokens-set"></a><h6>Úprava tokenu relace</h6>
@@ -4791,14 +4811,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_tokens_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-user-tokens-del"></a><h6>Smazání tokenu relace</h6>
@@ -4870,14 +4890,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_tokens_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
    <a name="commands-c2s-user-tokens-delall"></a><h6>Smazání všech tokenů relace</h6>
@@ -4949,14 +4969,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_tokens_",
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "-": "-",
+ "TODO": "TODO",
 }
 </pre>
 
@@ -5066,7 +5086,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>offset</td>
-      <td>64-bit integer</td>
+      <td>32-bit integer</td>
       <td class="center">❌</td>
       <td>Počáteční číslo pořadí záznamu ve výpisu. Pokud není parametr vyplněn, pak se začíná od začátku seznamu.</td>
      </tr>
@@ -5115,7 +5135,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_modules"
  "params": {
-  "-": "-"
+  "TODO": "TODO"
  }
 }
 </pre>
