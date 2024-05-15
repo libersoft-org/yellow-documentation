@@ -1317,7 +1317,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>created</td>
       <td>timestamp</td>
-      <td>Datum vytvoření záznamu</td>
+      <td>Datum a čas vytvoření záznamu</td>
      </tr>
     </table>
    </div>
@@ -1778,7 +1778,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>created</td>
       <td>timestamp</td>
-      <td>Datum vytvoření záznamu</td>
+      <td>Datum a čas vytvoření záznamu</td>
      </tr>
     </table>
    </div>
@@ -2206,7 +2206,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>created</td>
       <td>timestamp</td>
-      <td>Datum vytvoření záznamu</td>
+      <td>Datum a čas vytvoření záznamu</td>
      </tr>
     </table>
    </div>
@@ -2757,7 +2757,12 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>created</td>
       <td>timestamp</td>
-      <td>Datum vytvoření záznamu</td>
+      <td>Datum a čas vytvoření záznamu</td>
+     </tr>
+     <tr>
+      <td>expiration</td>
+      <td>timestamp</td>
+      <td>Datum a čas vypršení platnosti tokenu</td>
      </tr>
     </table>
    </div>
@@ -2802,17 +2807,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     "id": 55,
     "name": "My PC",
     "hash": "2bb80d537b1da3e38bd30361aa855686bde0eacd7162fef6a25fe97bf527a25b",
-    "created": "2024-01-01T00:00:00Z"
+    "created": "2024-01-01T00:00:00Z",
+    "expiration": "2024-02-01T00:00:00Z"
    }, {
     "id": 60,
     "name": "My cell phone",
     "hash": "84654139869a7dc2efc4fa2110d1e9a85a30d43beed59ee315f4cf102f01a026",
-    "created": "2024-01-02T00:00:00Z"
+    "created": "2024-01-02T00:00:00Z",
+    "expiration": "2024-02-02T00:00:00Z"
    }, {
     "id": 65,
     "name": "My tablet",
     "hash": "f54e5c8f810648e7638d25eb7ed6d24b7e5999d588e88826f2aa837d2ee52ecd",
-    "created": "2024-01-03T00:00:00Z"
+    "created": "2024-01-03T00:00:00Z",
+    "expiration": "2024-02-03T00:00:00Z"
    }
   ]
  }
@@ -2843,10 +2851,28 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>TODO</td>
+      <td>id</td>
+      <td>64-bit integer</td>
+      <td class="center">✔</td>
+      <td>ID záznamu v seznamu tokenů</td>
+     </tr>
+     <tr>
+      <td>name</td>
+      <td>string</td>
+      <td class="center">❌</td>
+      <td>Název tokenu</td>
+     </tr>
+     <tr>
+      <td>hash</td>
+      <td>string</td>
+      <td class="center">❌</td>
+      <td>Jedinečný hash tokenu relace</td>
+     </tr>
+     <tr>
+      <td>expiration</td>
+      <td>timestamp</td>
+      <td class="center">❌</td>
+      <td>Datum a čas vypršení platnosti tokenu relace</td>
      </tr>
     </table>
    </div>
@@ -2862,7 +2888,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>-</td>
       <td>-</td>
-      <td class="center">✔❌</td>
+      <td class="center">-</td>
       <td>-</td>
      </tr>
     </table>
@@ -2877,8 +2903,18 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
-      <td>-</td>
+      <td>Token ID is missing</td>
+      <td>ID záznamu tokenu relace nebylo vyplněno</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>Token ID does not exist</td>
+      <td>ID záznamu v seznamu tokenů relace nebylo nalezeno</td>
+     </tr>
+     <tr>
+      <td class="center">3</td>
+      <td>Token hash already exists</td>
+      <td>Hash tokenu již existuje v seznamu tokenů relace</td>
      </tr>
     </table>
    </div>
@@ -2887,14 +2923,18 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_tokens_set",
  "params": {
-  "TODO": "TODO"
+  "id": 1,
+  "name": "My PC",
+  "hash": "2bb80d537b1da3e38bd30361aa855686bde0eacd7162fef6a25fe97bf527a25b",
+  "expiration": "2024-02-01T00:00:00Z"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "TODO": "TODO",
+ "error": 0,
+ "message": "Token parameters were changed"
 }
 </pre>
    <a name="commands-c2s-admin-tokens-del"></a><h6>Smazání tokenu relace uživatele</h6>
@@ -2922,10 +2962,10 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>TODO</td>
+      <td>id</td>
+      <td>64-bit integer</td>
+      <td class="center">✔</td>
+      <td>ID záznamu v seznamu tokenů</td>
      </tr>
     </table>
    </div>
@@ -2941,7 +2981,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>-</td>
       <td>-</td>
-      <td class="center">✔❌</td>
+      <td class="center">-</td>
       <td>-</td>
      </tr>
     </table>
@@ -2956,8 +2996,13 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
-      <td>-</td>
+      <td>Token ID is missing</td>
+      <td>ID záznamu tokenu relace nebylo vyplněno</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>Token ID does not exist</td>
+      <td>ID záznamu v seznamu tokenů relace neexistuje</td>
      </tr>
     </table>
    </div>
@@ -2966,14 +3011,15 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_tokens_del",
  "params": {
-  "TODO": "TODO"
+  "id": 1
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "TODO": "TODO",
+ "error": 0,
+ "message": "Token was deleted"
 }
 </pre>
    <a name="commands-c2s-admin-tokens-deluser"></a><h6>Smazání všech tokenů relace uživatele</h6>
@@ -3001,10 +3047,10 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>TODO</td>
+      <td>id_users</td>
+      <td>64-bit integer</td>
+      <td class="center">✔</td>
+      <td>ID záznamu v seznamu uživatelských účtů</td>
      </tr>
     </table>
    </div>
@@ -3020,7 +3066,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>-</td>
       <td>-</td>
-      <td class="center">✔❌</td>
+      <td class="center">-</td>
       <td>-</td>
      </tr>
     </table>
@@ -3035,8 +3081,13 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
-      <td>-</td>
+      <td>User account ID is missing</td>
+      <td>ID záznamu uživatelského účtu nebylo vyplněno</td>
+     </tr>
+     <tr>
+      <td class="center">1</td>
+      <td>User account ID does not exist</td>
+      <td>ID záznamu v seznamu uživatelských účtů nebylo nalezeno</td>
      </tr>
     </table>
    </div>
@@ -3045,14 +3096,15 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_tokens_deluser",
  "params": {
-  "TODO": "TODO"
+  "id_users": 1
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "TODO": "TODO",
+ "error": 0,
+ "message": "All user's tokens were deleted"
 }
 </pre>
    <a name="commands-c2s-admin-tokens-delall"></a><h6>Smazání tokenů relace všech uživatelů</h6>
@@ -3080,10 +3132,10 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>TODO</td>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">-</td>
+      <td>-</td>
      </tr>
     </table>
    </div>
@@ -3099,7 +3151,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>-</td>
       <td>-</td>
-      <td class="center">✔❌</td>
+      <td class="center">-</td>
       <td>-</td>
      </tr>
     </table>
@@ -3113,7 +3165,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td class="center">1</td>
+      <td class="center">-</td>
       <td>-</td>
       <td>-</td>
      </tr>
@@ -3122,16 +3174,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_tokens_delall",
- "params": {
-  "TODO": "TODO"
- }
+ "command": "admin_tokens_delall"
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "TODO": "TODO",
+ "error": 0,
+ "message": "All users' tokens were deleted"
 }
 </pre>
    <a name="commands-c2s-admin-blockedusers"></a><h5>Blokace uživatelských účtů</h5>
@@ -3547,7 +3597,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>created</td>
       <td>timestamp</td>
-      <td>Datum vytvoření záznamu</td>
+      <td>Datum a čas vytvoření záznamu</td>
      </tr>
      <tr>
       <td>duration</td>
