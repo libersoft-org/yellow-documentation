@@ -944,12 +944,12 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">2</td>
-      <td>New public key is not set</td>
+      <td>New public key is missing</td>
       <td>Nový veřejný klíč chybí</td>
      </tr>
      <tr>
       <td class="center">3</td>
-      <td>Encryption algorithm of the new public key is not set</td>
+      <td>Encryption algorithm of the new public key is missing</td>
       <td>Šifrovací algoritmus nového veřejného klíče chybí</td>
      </tr>
      <tr>
@@ -1181,12 +1181,12 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">2</td>
-      <td>New password hash is not set</td>
+      <td>New password hash is missing</td>
       <td>Hash nového hesla chybí</td>
      </tr>
      <tr>
       <td class="center">3</td>
-      <td>New password hash algorithm is not set</td>
+      <td>New password hash algorithm is missing</td>
       <td>Hashovací algoritmus nového hesla chybí</td>
      </tr>
      <tr>
@@ -1796,7 +1796,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td class="center">1</td>
+      <td class="center">-</td>
       <td>-</td>
       <td>-</td>
      </tr>
@@ -1815,22 +1815,25 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "domains": {
-  [
-   {
-    "id": 51,
-    "name": "example1.com",
-    "created":"2024-01-01T00:00:00Z"
-   }, {
-    "id": 52,
-    "name": "example2.com",
-    "created": "2024-01-02T00:00:00Z"
-   }, , {
-    "id": 53,
-    "name": "example3.com",
-    "created": "2024-01-03T00:00:00Z"
-   } 
-  ]
+ "error": 0,
+ "data": {
+  "domains": {
+   [
+    {
+     "id": 51,
+     "name": "example1.com",
+     "created":"2024-01-01T00:00:00Z"
+    }, {
+     "id": 52,
+     "name": "example2.com",
+     "created": "2024-01-02T00:00:00Z"
+    }, , {
+     "id": 53,
+     "name": "example3.com",
+     "created": "2024-01-03T00:00:00Z"
+    } 
+   ]
+  }
  }
 }
 </pre>
@@ -2138,6 +2141,12 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
+      <td>id_domains</td>
+      <td>64-bit integer</td>
+      <td class="center">✔</td>
+      <td>ID záznamu domény</td>
+     </tr>
+     <tr>
       <td>offset</td>
       <td>64-bit integer</td>
       <td class="center">❌</td>
@@ -2161,10 +2170,60 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>-</td>
-      <td>-</td>
-      <td class="center">✔❌</td>
-      <td>-</td>
+      <td>users</td>
+      <td>array[object]</td>
+      <td class="center">✔</td>
+      <td>Pole objektů se seznamem uživatelských účtů</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Položky objektu v poli "users":</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>id</td>
+      <td>64-bit integer</td>
+      <td>ID záznamu</td>
+     </tr>
+     <tr>
+      <td>name</td>
+      <td>string</td>
+      <td>Lokální část názvu uživatelského účtu (před "@")</td>
+     </tr>
+     <tr>
+      <td>id_domains</td>
+      <td>32-bit integer</td>
+      <td>ID záznamu domény ze seznamu domén</td>
+     </tr>
+     <tr>
+      <td>public_key</td>
+      <td>string</td>
+      <td>Veřejný klíč uživatele pro přihlášení</td>
+     </tr>
+     <tr>
+      <td>public_key_algorithm</td>
+      <td>string</td>
+      <td>Šifrovací algoritmus veřejného klíče uživatele pro přihlášení</td>
+     </tr>
+     <tr>
+      <td>password_hash</td>
+      <td>string</td>
+      <td>Hash hesla uživatele</td>
+     </tr>
+     <tr>
+      <td>password_hash_algorithm</td>
+      <td>string</td>
+      <td>Hashovací algoritmus hesla uživatele</td>
+     </tr>
+     <tr>
+      <td>created</td>
+      <td>timestamp</td>
+      <td>Datum vytvoření záznamu</td>
      </tr>
     </table>
    </div>
@@ -2178,8 +2237,13 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
-      <td>-</td>
+      <td>Domain ID is missing</td>
+      <td>ID záznamu domény nebylo vyplněno</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>Wrong domain ID</td>
+      <td>ID záznamu domény nebylo nalezeno</td>
      </tr>
     </table>
    </div>
@@ -2188,14 +2252,47 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_users_list",
  "params": {
-  "TODO": "TODO"
+  "id_domains": 1,
+  "offset": 50,
+  "count": 3
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "TODO": "TODO",
+ "error": 0,
+ "data": {
+  "users": {
+   [
+    {
+     "id": 51,
+     "name": "alice",
+     "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
+     "public_key_algorithm": "rsa4096oaep",
+     "password_hash": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg",
+     "password_hash_algorithm": "argon2id",
+     "created":"2024-01-01T00:00:00Z"
+    }, {
+     "id": 52,
+     "name": "bob",
+     "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
+     "public_key_algorithm": "rsa4096oaep",
+     "password_hash": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg",
+     "password_hash_algorithm": "argon2id",
+     "created": "2024-01-02T00:00:00Z"
+    }, , {
+     "id": 53,
+     "name": "charlie",
+     "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
+     "public_key_algorithm": "rsa4096oaep",
+     "password_hash": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg",
+     "password_hash_algorithm": "argon2id",
+     "created": "2024-01-03T00:00:00Z"
+    } 
+   ]
+  }
+ }
 }
 </pre>
    <a name="commands-c2s-admin-users-add"></a><h6>Přidání nového uživatele</h6>
@@ -3555,7 +3652,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>IP adresa</td>
      </tr>
      <tr>
-      <td>blocked_by</td>
+      <td>id_admins</td>
       <td>32-bit integer</td>
       <td>ID blokujícího správce. Může být null, pokud byla IP adresa zablokována automaticky systémem, nikoliv ručně správcem.</td>
      </tr>
@@ -3610,28 +3707,28 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    {
     "id": 51,
     "ip": "10.0.0.123",
-    "blocked_by": null,
+    "id_admins": null,
     "reason": "Too many failed admin login attempts",
     "created": "2024-01-01T00:00:00Z",
     "duration": 86400
    }, {
     "id": 52,
     "ip": "172.16.0.123",
-    "blocked_by": null,
+    "id_admins": null,
     "reason": "Too many failed user login attempts",
     "created": "2024-01-02T00:00:00Z",
     "duration": 86400
    }, {
     "id": 53,
     "ip": "192.168.0.123",
-    "blocked_by": null,
+    "id_admins": null,
     "reason": "Too many failed server sign attempts",
     "created": "2024-01-03T00:00:00Z",
     "duration": 86400
    }, {
     "id": 54,
     "ip": "192.168.0.10",
-    "blocked_by": 1,
+    "id_admins": 1,
     "reason": "Spammer",
     "created": "2024-01-04T00:00:00Z",
     "duration": 86400
@@ -3821,7 +3918,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>ID of the record is not set</td>
+      <td>ID of the record is missing</td>
       <td>ID záznamu nebylo vyplněno</td>
      </tr>
      <tr>
@@ -3919,7 +4016,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>ID of the record is not set</td>
+      <td>ID of the record is missing</td>
       <td>ID záznamu nebylo vyplněno</td>
      </tr>
      <tr>

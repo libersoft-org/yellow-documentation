@@ -30,3 +30,4 @@ Návrh verze 2:
 - Digitální podpis serveru - navrhnout alternativu k DNS - něco jako notary server na Matrix protokolu (resp. ne jako alternativu, ale jako další vrstvu zabezpečení)
 - Rozšíření fail2ban na obecný rate limit na počet commandů za jednotku času (těžko říct, jestli to je reálné, protože file transfer toho bude generovat docela hodně, takže se uvidí v praxi v budoucnu)
 - Zvážit implementaci: dodatečný šifrovaný tunel, kde je šifrovaný každý command uvnitř WebTransportu, s jinou šifrou, než používá TLS v rámci WebTransportu - proč - kdyby někdo rozlouskl TLS. Dalo by se tam použít něco jako double ratchet, celé by to mělo být optional, protože to zpomaluje přenos.
+- Přidat do dokumentace i stavové chyby, když uživatel použije jiný datový typ na vstupu? Zjistit, jestli to vůbec v BSONu jde.
