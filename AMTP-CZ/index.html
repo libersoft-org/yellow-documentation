@@ -1139,7 +1139,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>new_password_hash</td>
       <td>string</td>
       <td class="center">✔</td>
-      <td>Nový hash hesla, může být null (smazání používání hesla), pokud to server dovoluje</td>
+      <td>Nový hash hesla - může být null (smazání používání hesla), pokud to server dovoluje</td>
      </tr>
      <tr>
       <td>new_password_algorithm</td>
@@ -3234,10 +3234,50 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>-</td>
-      <td>-</td>
-      <td class="center">✔❌</td>
-      <td>-</td>
+      <td>blockedusers</td>
+      <td>array[object]</td>
+      <td class="center">✔</td>
+      <td>Pole objektů se seznamem blokovaných IP adres</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Položky objektu v poli "blockedusers":</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>id</td>
+      <td>32-bit integer</td>
+      <td>ID záznamu v seznamu zablokovaných uživatelů</td>
+     </tr>
+     <tr>
+      <td>id_users</td>
+      <td>64-bit integer</td>
+      <td>ID zablokovaného uživateleů</td>
+     </tr>
+     <tr>
+      <td>id_admins</td>
+      <td>32-bit integer</td>
+      <td>ID blokujícího správce - může být null, pokud byla IP adresa zablokována automaticky systémem, nikoliv ručně správcem</td>
+     </tr>
+     <tr>
+      <td>reason</td>
+      <td>string</td>
+      <td>Důvod blokace</td>
+     </tr>
+     <tr>
+      <td>created</td>
+      <td>timestamp</td>
+      <td>Datum a čas vytvoření záznamu</td>
+     </tr>
+     <tr>
+      <td>duration</td>
+      <td>64-bit integer</td>
+      <td>Doba trvání blokace ve vteřinách</td>
      </tr>
     </table>
    </div>
@@ -3250,7 +3290,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td class="center">1</td>
+      <td class="center">-</td>
       <td>-</td>
       <td>-</td>
      </tr>
@@ -3261,14 +3301,41 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_blockedusers_list",
  "params": {
-  "TODO": "TODO"
+  "offset": 50,
+  "count": 3
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "TODO": "TODO",
+ "error": 0,
+ "data": {
+  "blockedusers": [
+   {
+    "id": 51,
+    "id_users": 1,
+    "id_admins": 1
+    "reason": "Spam",
+    "created": "2024-01-01T00:00:00Z",
+    "duration": 86400
+   }, {
+    "id": 52,
+    "id_users": 2,
+    "id_admins": 1
+    "reason": "Spam",
+    "created": "2024-01-02T00:00:00Z",
+    "duration": 86400
+   }, {
+    "id": 53,
+    "id_users": 3,
+    "id_admins": null
+    "reason": "Auto-spam detection",
+    "created": "2024-01-03T00:00:00Z",
+    "duration": 86400
+   }
+  ]
+ }
 }
 </pre>
    <a name="commands-c2s-admin-blockedusers-add"></a><h6>Přidání zablokovaného uživatele</h6>
@@ -3559,7 +3626,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>blockedip</td>
+      <td>blockedips</td>
       <td>array[object]</td>
       <td class="center">✔</td>
       <td>Pole objektů se seznamem zablokovaných IP adres</td>
@@ -3587,7 +3654,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>id_admins</td>
       <td>32-bit integer</td>
-      <td>ID blokujícího správce. Může být null, pokud byla IP adresa zablokována automaticky systémem, nikoliv ručně správcem.</td>
+      <td>ID blokujícího správce - může být null, pokud byla IP adresa zablokována automaticky systémem, nikoliv ručně správcem</td>
      </tr>
      <tr>
       <td>reason</td>
@@ -3636,7 +3703,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "error": 0,
  "data": {
-  "blockedip": [
+  "blockedips": [
    {
     "id": 51,
     "ip": "10.0.0.123",
