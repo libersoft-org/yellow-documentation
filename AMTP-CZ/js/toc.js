@@ -195,30 +195,6 @@ const data = [
          }, {
           title: 'Smazání uživatele',
           link: 'commands-c2s-admin-users-del'
-         }, {
-          title: 'Změna veřejného klíče pro přihlášení uživatele',
-          link: 'commands-c2s-admin-users-setpubkey',
-          sub: [
-           {
-            title: 'Výzva',
-            link: 'commands-c2s-admin-users-setpubkey-challenge'
-           }, {
-            title: 'Odezva',
-            link: 'commands-c2s-admin-users-setpubkey-response'
-           }
-          ]
-         }, {
-          title: 'Změna hesla pro přihlášení uživatele',
-          link: 'commands-c2s-admin-users-setpassword',
-          sub: [
-           {
-            title: 'Výzva',
-            link: 'commands-c2s-admin-users-setpassword-challenge'
-           }, {
-            title: 'Odezva',
-            link: 'commands-c2s-admin-users-setpassword-response'
-           }
-          ]
          }
         ]
        }, {
