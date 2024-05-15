@@ -2186,7 +2186,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_",
+ "command": "admin_users_list",
  "params": {
   "TODO": "TODO"
  }
@@ -2265,7 +2265,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_",
+ "command": "admin_users_add",
  "params": {
   "TODO": "TODO"
  }
@@ -2344,7 +2344,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_",
+ "command": "admin_users_set",
  "params": {
   "TODO": "TODO"
  }
@@ -2423,7 +2423,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_",
+ "command": "admin_users_del",
  "params": {
   "TODO": "TODO"
  }
@@ -2763,7 +2763,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_tokens_</td>
+      <td>admin_tokens_list</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -2826,7 +2826,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_tokens_",
+ "command": "admin_tokens_list",
  "params": {
   "TODO": "TODO"
  }
@@ -2848,7 +2848,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_tokens_</td>
+      <td>admin_tokens_set</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -2905,7 +2905,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_tokens_",
+ "command": "admin_tokens_set",
  "params": {
   "TODO": "TODO"
  }
@@ -2927,7 +2927,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_tokens_</td>
+      <td>admin_tokens_del</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -2984,7 +2984,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_tokens_",
+ "command": "admin_tokens_del",
  "params": {
   "TODO": "TODO"
  }
@@ -3006,7 +3006,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_tokens_</td>
+      <td>admin_tokens_deluser</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -3063,7 +3063,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_tokens_",
+ "command": "admin_tokens_deluser",
  "params": {
   "TODO": "TODO"
  }
@@ -3085,7 +3085,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_tokens_</td>
+      <td>admin_tokens_delall</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -3142,7 +3142,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_tokens_",
+ "command": "admin_tokens_delall",
  "params": {
   "TODO": "TODO"
  }
@@ -3154,12 +3154,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "TODO": "TODO",
 }
 </pre>
-
-
-
-   <a name="commands-c2s-admin-blockusers"></a><h5>Blokace uživatelských účtů</h5>
+   <a name="commands-c2s-admin-blockedusers"></a><h5>Blokace uživatelských účtů</h5>
    <div>Příkazy v této části dokumentace slouží ke správě zablokovaných uživatelských účtů.</div>
-   <a name="commands-c2s-admin-blockusers-list"></a><h6>Seznam zablokovaných uživatelů</h6>
+   <a name="commands-c2s-admin-blockedusers-list"></a><h6>Seznam zablokovaných uživatelů</h6>
    <div>Tento příkaz vrací seznam zablokovaných uživatelů</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -3169,7 +3166,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_blockusers_</td>
+      <td>admin_blockedusers_list</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -3232,7 +3229,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_blockusers_",
+ "command": "admin_blockedusers_list",
  "params": {
   "TODO": "TODO"
  }
@@ -3244,7 +3241,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "TODO": "TODO",
 }
 </pre>
-   <a name="commands-c2s-admin-blockusers-add"></a><h6>Přidání zablokovaného uživatele</h6>
+   <a name="commands-c2s-admin-blockedusers-add"></a><h6>Přidání zablokovaného uživatele</h6>
    <div>Tento příkaz přidá nového zablokovaného uživatele.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -3254,7 +3251,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_blockusers_</td>
+      <td>admin_blockedusers_add</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -3311,7 +3308,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_blockusers_",
+ "command": "admin_blockedusers_add",
  "params": {
   "TODO": "TODO"
  }
@@ -3323,7 +3320,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "TODO": "TODO",
 }
 </pre>
-   <a name="commands-c2s-admin-blockusers-set"></a><h6>Úprava zablokovaného uživatele</h6>
+   <a name="commands-c2s-admin-blockedusers-set"></a><h6>Úprava zablokovaného uživatele</h6>
    <div>Tento příkaz změní parametry zablokovaného uživatele</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -3333,7 +3330,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_blockusers_</td>
+      <td>admin_blockedusers_set</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -3390,7 +3387,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_blockusers_",
+ "command": "admin_blockedusers_set",
  "params": {
   "TODO": "TODO"
  }
@@ -3402,7 +3399,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "TODO": "TODO",
 }
 </pre>
-   <a name="commands-c2s-admin-blockusers-del"></a><h6>Smazání zablokovaného uživatele</h6>
+   <a name="commands-c2s-admin-blockedusers-del"></a><h6>Smazání zablokovaného uživatele</h6>
    <div>Tento příkaz smaže blokaci uživatele.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -3412,7 +3409,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_blockusers_</td>
+      <td>admin_blockedusers_del</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -3469,7 +3466,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_blockusers_",
+ "command": "admin_blockedusers_del",
  "params": {
   "TODO": "TODO"
  }
@@ -3482,9 +3479,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
 
-   <a name="commands-c2s-admin-blockip"></a><h5>Blokace IP adres</h5>
+   <a name="commands-c2s-admin-blockedip"></a><h5>Blokace IP adres</h5>
    <div>Neautorizované přístupy k serveru mohou být zablokovány a to buď automaticky pomocí ochranných strategií, popsaných v sekci <a href="#security-block">Blokace neautorizovaných přístupů</a> a nebo ručně správcem. Následující příkazy slouží ke správě těchto zablokovaných IP adres.</div>
-   <a name="commands-c2s-admin-blockip-list"></a><h6>Seznam zablokovaných IP adres</h6>
+   <a name="commands-c2s-admin-blockedip-list"></a><h6>Seznam zablokovaných IP adres</h6>
    <div>Tento příkaz vrací seznam zablokovaných IP adres.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -3494,7 +3491,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_block_list</td>
+      <td>admin_blockedip_list</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -3532,14 +3529,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>blocked</td>
+      <td>blockedip</td>
       <td>array[object]</td>
       <td class="center">✔</td>
       <td>Pole objektů se seznamem zablokovaných IP adres</td>
      </tr>
     </table>
    </div>
-   <div class="bold">Položky objektu v poli "blocked":</div>
+   <div class="bold">Položky objektu v poli "blockedip":</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
@@ -3597,7 +3594,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_block_list",
+ "command": "admin_blockedip_list",
  "params": {
   "offset": 50,
   "count": 4
@@ -3609,7 +3606,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "error": 0,
  "data": {
-  "blocked": [
+  "blockedip": [
    {
     "id": 51,
     "ip": "10.0.0.123",
@@ -3643,7 +3640,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  }
 }
 </pre>
-   <a name="commands-c2s-admin-blockip-add"></a><h6>Přidání zablokované IP adresy</h6>
+   <a name="commands-c2s-admin-blockedip-add"></a><h6>Přidání zablokované IP adresy</h6>
    <div>Tento příkaz přidá na seznam blokovaných IP adres další IP adresu.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -3653,7 +3650,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_block_add</td>
+      <td>admin_blockedip_add</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -3732,7 +3729,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_block_add",
+ "command": "admin_blockedip_add",
  "params": {
   "ip": "10.0.0.123",
   "reason": "Spammer",
@@ -3747,7 +3744,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "message": "IP address successfully blocked"
 }
 </pre>
-   <a name="commands-c2s-admin-blockip-set"></a><h6>Úprava zablokované IP adresy</h6>
+   <a name="commands-c2s-admin-blockedip-set"></a><h6>Úprava zablokované IP adresy</h6>
    <div>Tento příkaz změní parametry položky na seznamu blokovaných IP adres.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -3757,7 +3754,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_block_set</td>
+      <td>admin_blockedip_set</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -3847,7 +3844,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_block_set",
+ "command": "admin_blockedip_set",
  "params": {
   "id": 1,
   "ip": "10.0.0.123",
@@ -3860,10 +3857,10 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
  {
   "error": "0",
-  "message": "IP address block successfully edited"
+  "message": "IP address block successfully changed"
  }
 </pre>
-   <a name="commands-c2s-admin-blockip-del"></a><h6>Smazání zablokované IP adresy</h6>
+   <a name="commands-c2s-admin-blockedip-del"></a><h6>Smazání zablokované IP adresy</h6>
    <div>Tento příkaz smaže položku ze seznamu blokovaných IP adres.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -3873,7 +3870,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th class="center">Vyžaduje přihlášení správce</th>
      </tr>
      <tr>
-      <td>admin_block_del</td>
+      <td>admin_blockedip_del</td>
       <td class="center">✔</td>
      </tr>
     </table>
@@ -3935,7 +3932,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_block_del",
+ "command": "admin_blockedip_del",
  "params": {
   "id": 123
  }

@@ -244,38 +244,38 @@ const data = [
         ]
        }, {
         title: 'Blokace uživatelských účtů',
-        link: 'commands-c2s-admin-blockusers',
+        link: 'commands-c2s-admin-blockedusers',
         sub: [
          {
           title: 'Seznam zablokovaných uživatelů',
-          link: 'commands-c2s-admin-blockusers-list'
+          link: 'commands-c2s-admin-blockedusers-list'
          }, {
           title: 'Přidání zablokovaného uživatele',
-          link: 'commands-c2s-admin-blockusers-add'
+          link: 'commands-c2s-admin-blockedusers-add'
          }, {
           title: 'Úprava zablokovaného uživatele',
-          link: 'commands-c2s-admin-blockusers-set'
+          link: 'commands-c2s-admin-blockedusers-set'
          }, {
           title: 'Smazání zablokovaného uživatele',
-          link: 'commands-c2s-admin-blockusers-del'
+          link: 'commands-c2s-admin-blockedusers-del'
          }
         ]
        }, {
         title: 'Blokace IP adres',
-        link: 'commands-c2s-admin-blockip',
+        link: 'commands-c2s-admin-blockedip',
         sub: [
          {
           title: 'Seznam zablokovaných IP adres',
-          link: 'commands-c2s-admin-blockip-list'
+          link: 'commands-c2s-admin-blockedip-list'
          }, {
           title: 'Přidání zablokované IP adresy',
-          link: 'commands-c2s-admin-blockip-add'
+          link: 'commands-c2s-admin-blockedip-add'
          }, {
           title: 'Úprava zablokované IP adresy',
-          link: 'commands-c2s-admin-blockip-set'
+          link: 'commands-c2s-admin-blockedip-set'
          }, {
           title: 'Smazání zablokované IP adresy',
-          link: 'commands-c2s-admin-blockip-del'
+          link: 'commands-c2s-admin-blockedip-del'
          }
         ]
        }, {
