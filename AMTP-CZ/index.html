@@ -145,8 +145,7 @@
    <ul class="spacelist">
     <li><span class="bold">Adresa</span>: sestává se z <span class="bold">lokální</span> a <span class="bold">doménové</span> části. Tyto části jsou odděleny znakem "<span class="bold">@</span>" (zavináč). Tedy ve tvaru: <span class="bold">uživatel@doména</span></li>
     <ul>
-     <li>
-      <span class="bold">Lokální část</span>: určuje unikátní uživatelské jméno v rámci každé domény a obsahuje následující povolené znaky:</li>
+     <li><span class="bold">Lokální část</span>: určuje unikátní uživatelské jméno v rámci každé domény, které smí obsahovat <span class="bold">maximálně 64 znaků</span>. Povolené znaky jsou:</li>
       <ul>
        <li><span class="bold">Malá písmena</span>: (a-z) - pouze anglické abecedy  - na jakékoliv pozici</li>
        <li><span class="bold">Číslice</span>: (0-9) - na jakékoliv pozici</li>
@@ -1707,7 +1706,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-domains"></a><h5>Domény:</h5>
-   <div>TODO - úvod</div>
+   <div>Příkazy v této části dokumentace slouží ke správě domén pro uživatelské účty.</div>
    <a name="commands-c2s-admin-domains-list"></a><h6>Seznam domén:</h6>
    <div>Tento příkaz vrací seznam domén používaných pro uživatelské účty.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
@@ -1756,10 +1755,35 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>-</td>
-      <td>-</td>
-      <td class="center">✔❌</td>
-      <td>-</td>
+      <td>domains</td>
+      <td>array[object]</td>
+      <td class="center">✔</td>
+      <td>Pole objektů se seznamem domén</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Položky objektu v poli "domains":</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>id</td>
+      <td>32-bit integer</td>
+      <td>ID záznamu</td>
+     </tr>
+     <tr>
+      <td>name</td>
+      <td>string</td>
+      <td>Název domény</td>
+     </tr>
+     <tr>
+      <td>created</td>
+      <td>timestamp</td>
+      <td>Datum vytvoření záznamu</td>
      </tr>
     </table>
    </div>
@@ -1791,7 +1815,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "result": {
+ "domains": {
   [
    {
     "id": 51,
@@ -1805,7 +1829,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     "id": 53,
     "name": "example3.com",
     "created": "2024-01-03T00:00:00Z"
-   }, 
+   } 
   ]
  }
 }
@@ -1835,10 +1859,10 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>TODO</td>
+      <td>name</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Doménové jméno</td>
      </tr>
     </table>
    </div>
@@ -1854,7 +1878,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>-</td>
       <td>-</td>
-      <td class="center">✔❌</td>
+      <td class="center">-</td>
       <td>-</td>
      </tr>
     </table>
@@ -1869,24 +1893,30 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
-      <td>-</td>
+      <td>Domain name is missing</td>
+      <td>Doménové jméno nebylo vyplněno</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>Wrong domain name format</td>
+      <td>Doménové jméno má chybný formát</td>
      </tr>
     </table>
    </div>
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_",
+ "command": "admin_domains_add",
  "params": {
-  "TODO": "TODO"
+  "name": "example.com"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "TODO": "TODO",
+ "error": 0,
+ "message": "Domain was added to list"
 }
 </pre>
    <a name="commands-c2s-admin-domains-set"></a><h6>Úprava domény</h6>
@@ -1914,10 +1944,16 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>TODO</td>
+      <td>id</td>
+      <td>32-bit integer</td>
+      <td class="center">✔</td>
+      <td>ID záznamu</td>
+     </tr>
+     <tr>
+      <td>name</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>doménové jméno</td>
      </tr>
     </table>
    </div>
@@ -1933,7 +1969,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>-</td>
       <td>-</td>
-      <td class="center">✔❌</td>
+      <td class="center">-</td>
       <td>-</td>
      </tr>
     </table>
@@ -1948,24 +1984,41 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
-      <td>-</td>
+      <td>Domain ID is missing</td>
+      <td>ID záznamu domény nebylo vyplněno</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>Domain name is missing</td>
+      <td>Doménové jméno nebylo vyplněno</td>
+     </tr>
+     <tr>
+      <td class="center">3</td>
+      <td>Domain ID does not exist</td>
+      <td>ID záznamu domény neexistuje</td>
+     </tr>
+     <tr>
+      <td class="center">4</td>
+      <td>Wrong domain name format</td>
+      <td>Doménové jméno má chybný formát</td>
      </tr>
     </table>
    </div>
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_",
+ "command": "admin_domains_set",
  "params": {
-  "TODO": "TODO"
+  "id": 1,
+  "name": "example.com"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "TODO": "TODO",
+ "error": 0,
+ "message": "Domain parameters were changed"
 }
 </pre>
    <a name="commands-c2s-admin-domains-del"></a><h6>Smazání domény</h6>
@@ -1993,10 +2046,10 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>TODO</td>
+      <td>id</td>
+      <td>32-bit integer</td>
+      <td class="center">✔</td>
+      <td>ID záznamu</td>
      </tr>
     </table>
    </div>
@@ -2012,7 +2065,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>-</td>
       <td>-</td>
-      <td class="center">✔❌</td>
+      <td class="center">-</td>
       <td>-</td>
      </tr>
     </table>
@@ -2027,28 +2080,39 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
-      <td>-</td>
+      <td>Domain ID is missing</td>
+      <td>ID záznamu domény nebylo vyplněno</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>Domain ID does not exist</td>
+      <td>ID záznamu domény neexistuje</td>
+     </tr>
+     <tr>
+      <td class="center">3</td>
+      <td>Domain cannot be deleted as there are still user accounts using it</td>
+      <td>Doména nemůže být smazána, jelikož uživatelské účty jí stále používají</td>
      </tr>
     </table>
    </div>
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "admin_",
+ "command": "admin_domains_del",
  "params": {
-  "TODO": "TODO"
+  "id": "1"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "TODO": "TODO",
+ "error": 0,
+ "message": "Domain was deleted"
 }
 </pre>
    <a name="commands-c2s-admin-users"></a><h5>Uživatelské účty</h5>
-   <div>TODO - úvod</div>
+   <div>Příkazy v této části dokumentace slouží ke správě uživatelských účtů.</div>
    <a name="commands-c2s-admin-users-list"></a><h6>Seznam uživatelů</h6>
    <div>Tento příkaz vrací seznam uživatelských účtů.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
@@ -2688,7 +2752,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-admin-tokens"></a><h5>Správa uživatelských tokenů relace</h5>
-   <div>TODO - úvod</div>
+   <div>Příkazy v této části dokumentace slouží ke správě uživatelských tokenů relace správcem.</div>
    <a name="commands-c2s-admin-tokens-list"></a><h6>Seznam tokenů relace uživatele</h6>
    <div>Tento příkaz vrací seznam tokenů relace konkrétního uživatele.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
@@ -3094,7 +3158,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 
 
    <a name="commands-c2s-admin-blockusers"></a><h5>Blokace uživatelských účtů</h5>
-   <div>TODO - úvod</div>
+   <div>Příkazy v této části dokumentace slouží ke správě zablokovaných uživatelských účtů.</div>
    <a name="commands-c2s-admin-blockusers-list"></a><h6>Seznam zablokovaných uživatelů</h6>
    <div>Tento příkaz vrací seznam zablokovaných uživatelů</div>
    <div class="bold">Struktura požadavku od klienta:</div>
@@ -3997,14 +4061,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
   "users": 50,
   "data_size": 107374182400
  ],
- "uptime": "8:12:45:52"
+ "uptime": "123:18:45:52"
 }
 </pre>
    <a name="commands-c2s-user"></a><h4>Příkazy uživatele</h4>
    <div>Všechny příkazy začínající "<span class="bold">user_</span>" jsou určeny pro uživatele. Aby bylo možné provádět tyto příkazy, musí být uživatel přihlášen (mimo příkazů pro samotné přihlášení). Pokud je přihlášení úspěšné, získá uživatel token relace, kterým se prokazuje při navázání spojení se serverem (místo přihlášení). Přihlášení tokenem je platné po dobu spojení, token se tedy neodesílá v každém uživatelském příkazu.</div>
    <a name="commands-c2s-user-registration"></a><h5>Registrace uživatele</h5>
-   <div>Možnost registrace účtu uživatelem musí být povolena na serveru</div>
-   <div>TODO - úvod, popsat chybu, kdy není registrace povolena na serveru</div>
+   <div>Příkazy v této části dokumentace slouží k registraci uživatelských účtů přímo uživatelem. Tato funkcionalita musí být povolena na serveru.</div>
+   <div>TODO - popsat chybu, kdy není registrace povolena na serveru</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -4716,7 +4780,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-user-tokens"></a><h5>Správa tokenů relace</h5>
-   <div>TODO - úvod</div>
+   <div>Příkazy v této části dokumentace slouží ke správě tokenů relace uživatele.</div>
    <a name="commands-c2s-user-tokens-list"></a><h6>Seznam tokenů relace</h6>
    <div>Tento příkaz vrací seznam tokenů relace uživatele.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
