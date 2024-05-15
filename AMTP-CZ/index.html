@@ -1297,7 +1297,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>id</td>
       <td>32-bit integer</td>
-      <td>ID záznamu</td>
+      <td>ID záznamu v seznamu správcovských účtů</td>
      </tr>
      <tr>
       <td>name</td>
@@ -1546,12 +1546,12 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>id</td>
       <td>32-bit integer</td>
       <td class="center">✔</td>
-      <td>ID záznamu</td>
+      <td>ID záznamu v seznamu správcovských účtů</td>
      </tr>
      <tr>
       <td>name</td>
       <td>string</td>
-      <td class="center">✔</td>
+      <td class="center">❌</td>
       <td>Přihlašovací jméno správce</td>
      </tr>
     </table>
@@ -1588,16 +1588,11 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">2</td>
-      <td>Admin name is missing</td>
-      <td>Přihlašovací jméno správce nebylo vyplněno</td>
+      <td>Admin ID does not exist</td>
+      <td>ID záznamu v seznamu správců neexistuje</td>
      </tr>
      <tr>
       <td class="center">3</td>
-      <td>Admin ID does not exist</td>
-      <td>ID záznamu správce neexistuje</td>
-     </tr>
-     <tr>
-      <td class="center">4</td>
       <td>Wrong admin name format</td>
       <td>Přihlašovací jméno správce smí obsahovat jen písmena anglické abecedy, čísla a speciální znaky (tečku, podtržítko a pomlčku). Speciální znaky nesmí být na začátku nebo konci přihlašovacího jména a následovat po sobě.</td>
      </tr>
@@ -1648,7 +1643,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>id</td>
       <td>32-bit integer</td>
       <td class="center">✔</td>
-      <td>ID záznamu</td>
+      <td>ID záznamu v seznamu správců</td>
      </tr>
     </table>
    </div>
@@ -1685,7 +1680,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td class="center">2</td>
       <td>Admin ID does not exist</td>
-      <td>ID záznamu správce neexistuje</td>
+      <td>ID záznamu nebylo nalezeno v seznamu správců</td>
      </tr>
     </table>
    </div>
@@ -1773,7 +1768,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>id</td>
       <td>32-bit integer</td>
-      <td>ID záznamu</td>
+      <td>ID záznamu v seznamu domén</td>
      </tr>
      <tr>
       <td>name</td>
@@ -1950,12 +1945,12 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>id</td>
       <td>32-bit integer</td>
       <td class="center">✔</td>
-      <td>ID záznamu</td>
+      <td>ID záznamu v seznamu domén</td>
      </tr>
      <tr>
       <td>name</td>
       <td>string</td>
-      <td class="center">✔</td>
+      <td class="center">❌</td>
       <td>doménové jméno</td>
      </tr>
     </table>
@@ -1992,16 +1987,11 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">2</td>
-      <td>Domain name is missing</td>
-      <td>Doménové jméno nebylo vyplněno</td>
+      <td>Domain ID does not exist</td>
+      <td>ID záznamu v seznamu domén nebylo nalezeno</td>
      </tr>
      <tr>
       <td class="center">3</td>
-      <td>Domain ID does not exist</td>
-      <td>ID záznamu domény neexistuje</td>
-     </tr>
-     <tr>
-      <td class="center">4</td>
       <td>Wrong domain name format</td>
       <td>Doménové jméno má chybný formát</td>
      </tr>
@@ -2238,7 +2228,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td class="center">2</td>
       <td>Wrong domain ID</td>
-      <td>ID záznamu domény neexistuje</td>
+      <td>ID záznamu v seznamu domén neexistuje</td>
      </tr>
     </table>
    </div>
@@ -2318,37 +2308,37 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>name</td>
       <td>string</td>
       <td class="center">✔</td>
-      <td>TODO</td>
+      <td>Lokální část přihlašovacího jména uživatele</td>
      </tr>
      <tr>
       <td>id_domains</td>
       <td>32-bit integer</td>
       <td class="center">✔</td>
-      <td>TODO</td>
+      <td>ID záznamu v seznamu domén</td>
      </tr>
      <tr>
       <td>public_key</td>
       <td>string</td>
       <td class="center">✔</td>
-      <td>TODO</td>
+      <td>Veřejný klíč pro přihlášení uživatele</td>
      </tr>
      <tr>
       <td>public_key_algorithm</td>
       <td>string</td>
       <td class="center">✔</td>
-      <td>TODO</td>
+      <td>Šifrovací algoritmus veřejného klíče pro přihlášení uživatele</td>
      </tr>
      <tr>
       <td>password_hash</td>
       <td>string</td>
       <td class="center">❌</td>
-      <td>TODO</td>
+      <td>Hash hesla pro přihlášení uživatele</td>
      </tr>
      <tr>
       <td>password_hash_algorithm</td>
       <td>string</td>
       <td class="center">❌</td>
-      <td>TODO</td>
+      <td>Hashovací algoritmus hesla pro přihlášení uživatele</td>
      </tr>
     </table>
    </div>
@@ -2385,7 +2375,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td class="center">2</td>
       <td>Domain ID is missing</td>
-      <td>ID záznamu domény nebylo vyplněno</td>
+      <td>ID záznamu v seznamu domén nebylo vyplněno</td>
      </tr>
      <tr>
       <td class="center">3</td>
@@ -2475,10 +2465,46 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>TODO</td>
+      <td>id</td>
+      <td>64-bit integer</td>
+      <td class="center">✔</td>
+      <td>ID záznamu v seznamu uživatelů</td>
+     </tr>
+     <tr>
+      <td>name</td>
+      <td>string</td>
+      <td class="center">❌</td>
+      <td>Lokální část uživatelského jména</td>
+     </tr>
+     <tr>
+      <td>id_domains</td>
+      <td>32-bit integer</td>
+      <td class="center">❌</td>
+      <td>ID záznamu v seznemu domén</td>
+     </tr>
+     <tr>
+      <td>public_key</td>
+      <td>string</td>
+      <td class="center">❌</td>
+      <td>Veřejný klíč pro přihlášení uživatele</td>
+     </tr>
+     <tr>
+      <td>public_key_algorithm</td>
+      <td>string</td>
+      <td class="center">❌</td>
+      <td>Šifrovací algoritmus veřejného klíče pro přihlášení uživatele</td>
+     </tr>
+     <tr>
+      <td>password_hash</td>
+      <td>string</td>
+      <td class="center">❌</td>
+      <td>Hash hesla pro přihlášení uživatele</td>
+     </tr>
+     <tr>
+      <td>password_hash_algorithm</td>
+      <td>string</td>
+      <td class="center">❌</td>
+      <td>Hashovací algoritmus hesla pro přihlášení uživatele</td>
      </tr>
     </table>
    </div>
@@ -2494,7 +2520,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>-</td>
       <td>-</td>
-      <td class="center">✔❌</td>
+      <td class="center">-</td>
       <td>-</td>
      </tr>
     </table>
@@ -2509,8 +2535,33 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
-      <td>-</td>
+      <td>User ID is missing</td>
+      <td>ID záznamu uživatele nebylo vyplněno</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>Domain ID does not exist</td>
+      <td>ID záznamu v seznamu uživatelů nebylo nalezeno</td>
+     </tr>
+     <tr>
+      <td class="center">3</td>
+      <td>Wrong user name format</td>
+      <td>Přihlašovací jméno uživatele smí obsahovat jen písmena anglické abecedy, čísla a speciální znaky (tečku, podtržítko a pomlčku). Speciální znaky nesmí být na začátku nebo konci přihlašovacího jména a následovat po sobě. Maximální délka je 64 znaků.</td>
+     </tr>
+     <tr>
+      <td class="center">4</td>
+      <td>Wrong domain ID</td>
+      <td>ID záznamu domény nebylo nalezeno</td>
+     </tr>
+     <tr>
+      <td class="center">5</td>
+      <td>Unsupported public key encryption algorithm</td>
+      <td>Šifrovací algoritmus veřejného klíče není podporován serverem</td>
+     </tr>
+     <tr>
+      <td class="center">6</td>
+      <td>Unsupported password hash algorithm</td>
+      <td>Hashovací algoritmus veřejného klíče není podporován serverem</td>
      </tr>
     </table>
    </div>
@@ -2519,14 +2570,21 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_users_set",
  "params": {
-  "TODO": "TODO"
+  "id": 1,
+  "name": "alice",
+  "id_domains": 1,
+  "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
+  "public_key_algorithm": "rsa4096oaep",
+  "password_hash": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg",
+  "password_hash_algorithm": "argon2id"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "TODO": "TODO",
+ "error": 0,
+ "message": "User account parameters were changed"
 }
 </pre>
    <a name="commands-c2s-admin-users-del"></a><h6>Smazání uživatele</h6>
@@ -3720,7 +3778,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>id</td>
       <td>64-bit integer</td>
-      <td>ID záznamu</td>
+      <td>ID záznamu blokace IP</td>
      </tr>
      <tr>
       <td>ip</td>
@@ -3994,13 +4052,13 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>ID of the record is missing</td>
-      <td>ID záznamu nebylo vyplněno</td>
+      <td>Record ID is missing</td>
+      <td>ID záznamu blokace nebylo vyplněno</td>
      </tr>
      <tr>
       <td class="center">2</td>
-      <td>ID of the record doesn't exist</td>
-      <td>ID záznamu neexistuje</td>
+      <td>Record ID doesn't exist</td>
+      <td>ID záznamu blokace neexistuje</td>
      </tr>
      <tr>
       <td class="center">3</td>
@@ -4092,13 +4150,13 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>ID of the record is missing</td>
-      <td>ID záznamu nebylo vyplněno</td>
+      <td>Record ID is missing</td>
+      <td>ID záznamu blokace nebylo vyplněno</td>
      </tr>
      <tr>
       <td class="center">2</td>
-      <td>ID of the record doesn't exist</td>
-      <td>ID záznamu neexistuje</td>
+      <td>Record ID was not found</td>
+      <td>ID záznamu blokace neexistuje</td>
      </tr>
     </table>
    </div>
