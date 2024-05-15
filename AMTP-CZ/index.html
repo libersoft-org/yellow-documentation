@@ -141,7 +141,7 @@
    <div>Následující obrázek nastiňuje zjednodušený příklad toho, jak může vypadat modulární architektura serverové aplikace:</div>
    <div class="center"><img src="img/AMTP-server-CZ.png" alt="Architektura serveru" /></div>
    <a name="identity"></a><h2>Identita uživatele</h2>
-   <div>Každý uživatelský účet v rámci <span class="bold">AMTP</span> je identifikován adresou, jejíž formát vychází původních e-mailových standardů, s několika odlišnostmi a je definován následovně:</div>
+   <div>Každý <span class="bold">uživatelský účet</span> v rámci <span class="bold">AMTP</span> je identifikován adresou, jejíž formát vychází původních e-mailových standardů, s několika odlišnostmi a je definován následovně:</div>
    <ul class="spacelist">
     <li><span class="bold">Adresa</span>: sestává se z <span class="bold">lokální</span> a <span class="bold">doménové</span> části. Tyto části jsou odděleny znakem "<span class="bold">@</span>" (zavináč). Tedy ve tvaru: <span class="bold">uživatel@doména</span></li>
     <ul>
@@ -159,6 +159,7 @@
     <li><span class="bold">Účel identity</span>: Narozdíl od původních e-mailových protokolů, <span class="bold">AMTP</span> nedefinuje, co uživatelský účet reprezentuje (např. poštovní schránku, alias pro přeposílání pošty apod.). To je plně v režii modulů (např. modul pro rychlé zprávy).</li>
     <li><span class="bold">Profilové informace</span>: Uživatelský účet v protokolovém jádru neobsahuje žádné další profilové informace (např. jméno, příjmení, pohlaví, datum narození, fotografie apod.). Tyto informace jsou plně v kompetenci modulů, kde mohou být reprezentovány v podobě uživatelských profilů. Tento přístup dává modulům svobodu v rozhodnutí, zda každý uživatelský účet bude reprezentovat jen jeden a nebo více uživatelských profilů, tzn. přihlášením k jednomu uživatelskému účtu se může uživatel dostat k několika svým profilům). Taktéž tento přístup zajišťuje možnost nezveřejňovat adresu uživatelského účtu, pokud moduly budou zobrazovat jiný typ identifikace profilů.</li>
    </ul>
+   <div><span class="bold">Správcovské účty</span> mají pouze uživatelské jméno bez domény. Platí pro ně stejná pravidla, jako pro lokální část uživatelských účtů.</div>
    <a name="security"></a><h2>Zabezpečení</h2>
    <div><span class="bold">Zabezpečení dat</span> je klíčovou součástí moderního komunikačního protokolu, jelikož s rostoucími objemy přenášených dat mezi uživateli, roste i riziko jejich potenciálního zneužití.</div>
    <div><span class="bold">AMTP</span> je navržen s důrazem na komplexní zabezpečení a to na několika úrovních, které jsou popsány v této části dokumentace. Další úrovně zabezpečení mohou být doplněny v jednotlivých modulech.</div>
@@ -1458,8 +1459,43 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>TODO</td>
-      <td>-</td>
+      <td>User name is missing</td>
+      <td>Uživatelské jméno nebylo vyplněno</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>Public key is missing</td>
+      <td>Veřejný klíč pro přihlášení nebyl vyplněn</td>
+     </tr>
+     <tr>
+      <td class="center">3</td>
+      <td>Encryption algorithm of public key is missing</td>
+      <td>Šifrovací algoritmus veřejného klíče nebyl vyplněn</td>
+     </tr>
+     <tr>
+      <td class="center">4</td>
+      <td>Password hash is missing</td>
+      <td>Hash hesla nebyl vyplněn</td>
+     </tr>
+     <tr>
+      <td class="center">5</td>
+      <td>Password hash algorithm is missing</td>
+      <td>Hashovací algoritmus hesla nebyl vyplněn</td>
+     </tr>
+     <tr>
+      <td class="center">6</td>
+      <td>Wrong user name format</td>
+      <td>Uživatelské jméno smí obsahovat jen písmena anglické abecedy, čísla a speciální znaky (tečku, podtržítko a pomlčku). Speciální znaky nesmí být na začátku nebo konci uživatelského jména a následovat po sobě.</td>
+     </tr>
+     <tr>
+      <td class="center">7</td>
+      <td>Unsupported public key encryption algorithm</td>
+      <td>Šifrovací algoritmus veřejného klíče není podporován serverem</td>
+     </tr>
+     <tr>
+      <td class="center">8</td>
+      <td>Unsupported password hash algorithm</td>
+      <td>Hashovací algoritmus veřejného klíče není podporován serverem</td>
      </tr>
     </table>
    </div>
@@ -1469,10 +1505,10 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "command": "admin_admins_add",
  "params": {
   "name": "admin",
-  "public_key": "TODO",
-  "public_key_algorithm": "TODO",
-  "password_hash": "TODO",
-  "password_hash_algorithm": "TODO"
+  "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
+  "public_key_algorithm": "rsa4096oaep",
+  "password_hash": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg",
+  "password_hash_algorithm": "argon2id"
  }
 }
 </pre>
@@ -1511,7 +1547,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>id</td>
       <td>32-bit integer</td>
       <td class="center">✔</td>
-      <td>Správce identifikovaný polem "id"</td>
+      <td>ID záznamu</td>
      </tr>
     </table>
    </div>
