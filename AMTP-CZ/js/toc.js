@@ -326,12 +326,21 @@ const data = [
           link: 'commands-c2s-user-tokens-delall'
          }
         ]
-       }, {
-        title: 'Informace o serveru pro uživatele',
-        link: 'commands-c2s-user-info'
+       }
+      ]
+     }, {
+      title: 'Obecné příkazy',
+      link: 'commands-c2s-general',
+      sub: [
+       {
+        title: 'Obecné informace o serveru',
+        link: 'commands-c2s-general-info'
        }, {
         title: 'Seznam používaných modulů',
-        link: 'commands-c2s-user-modules'
+        link: 'commands-c2s-general-modules'
+       }, {
+        title: 'Seznam používaných algoritmů',
+        link: 'commands-c2s-general-algoritms'
        }
       ]
      }

@@ -20,7 +20,7 @@ Návrh verze 2:
 - Admin příkazy pro management modulů a audit logů - přidá se do dokumentace až poté, co zjistíme, co všechno je třeba logovat
 - Tokenové páry krátkodobých tokenů - access token a refresh token, místo dlouhodobých tokenů - zjistit implementací, jelikož nevíme, jak dlouhé sessions většinou udrží WebTransport a jestli se nebudou měnit při každém připojení
 - ACL s právy pro konkrétní akce adminů + zavedení možnosti změny klíče ostatních adminů v případě, že má admin toto právo
-- Digitální podpis serveru - navrhnout alternativu k DNS - něco jako notary server na Matrix protokolu (resp. ne jako alternativu, ale jako další vrstvu zabezpečení)
-- Rozšíření fail2ban na obecný rate limit na počet commandů za jednotku času (těžko říct, jestli to je reálné, protože file transfer toho bude generovat docela hodně, takže se uvidí v praxi v budoucnu)
+- Digitální podpis serveru - navrhnout další alternativu k DNS - něco jako notary server na Matrix protokolu (resp. ne jako náhrada za DNS, ale jako další vrstva zabezpečení)
+- Rozšíření blokace na IP na obecný rate limit na počet commandů za jednotku času (těžko říct, jestli to je reálné, protože file transfer toho bude generovat docela hodně, takže se uvidí v praxi v budoucnu)
+- Přidat do dokumentace i stavové chyby, když uživatel použije jiný datový typ na vstupu (invalid data type)?
 - Zvážit implementaci: dodatečný šifrovaný tunel, kde je šifrovaný každý command uvnitř WebTransportu, s jinou šifrou, než používá TLS v rámci WebTransportu - proč - kdyby někdo rozlouskl TLS. Dalo by se tam použít něco jako double ratchet, celé by to mělo být optional, protože to zpomaluje přenos.
-- Přidat do dokumentace i stavové chyby, když uživatel použije jiný datový typ na vstupu? Zjistit, jestli to vůbec v BSONu jde.

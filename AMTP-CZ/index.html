@@ -287,7 +287,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    </ul>
    <div>Na straně serveru je spuštěn <a href="https://cs.wikipedia.org/wiki/HTTPS" target="_blank">HTTPS</a> server s platným šifrovacím certifikátem vydaným certifikační autoritou a podporujícím standard <a href="https://cs.wikipedia.org/wiki/HTTP/3" target="_blank">HTTP/3</a>. Přesný způsob komunikace je podrobně popsán v dokumentu <a href="https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-http3" target="_blank">WebTransport over HTTP/3</a>.</div>
    <div>Po připojení k endpointu <span class="bold">/amtp/</span> je vytvořena <span class="bold">WebTransport</span> session, v rámci které je možné otevírat a zavírat jednotlivé proudy, ve kterých probíhá komunikace pomocí příkazů. Více proudů může běžet souběžně.</div>
-   <div>Ihned po navázání spojení se serverem pošle server automaticky protější straně informace o sobě, které jsou také přístupné pod příkazem <span class="bold">user_info</span>.</div>
+   <div>Ihned po navázání spojení se serverem pošle server automaticky protější straně informace o sobě, které jsou také přístupné pod příkazem <span class="bold">info</span>.</div>
    <div>Následující schéma nastiňuje příklad toho, jak fungují spojení klientů a serverů v rámci <span class="bold">AMTP</span>:</div>
    <div class="center"><img src="img/AMTP-network-CZ.png" alt="Distribuovaná síť" /></div>
    <a name="commands"></a><h2>Příkazy</h2>
@@ -5691,18 +5691,18 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "message": "All user's tokens were deleted"
 }
 </pre>
-   <a name="commands-c2s-user-info"></a><h5>Informace o serveru pro uživatele</h5>
+   <a name="commands-c2s-general"></a><h4>Ostatní příkazy</h4>
+   <div>V této části dokumentace jsou jsou uvedeny další příkazy, které nesouvisí s příkazy pro správce ani uživatele a nevyžadují přihlášení.</div>
+   <a name="commands-c2s-general-info"></a><h5>Informace o serveru pro uživatele</h5>
    <div>Tento příkaz vrací užitečné informace o AMTP serveru.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
       <th>Název příkazu</th>
-      <th class="center">Vyžaduje přihlášení uživatele</th>
      </tr>
      <tr>
-      <td>user_info</td>
-      <td class="center">❌</td>
+      <td>info</td>
      </tr>
     </table>
    </div>
@@ -5765,7 +5765,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "user_info"
+ "command": "info"
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -5781,18 +5781,16 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  }
 }
 </pre>
-   <a name="commands-c2s-user-modules"></a><h5>Seznam používaných modulů</h5>
+   <a name="commands-c2s-general-modules"></a><h5>Seznam používaných modulů</h5>
    <div>Tento příkaz zobrazuje seznam modulů a jejich verzí, které server používá. Server může mít spuštěný jeden modul ve více verzích. To umožňuje zpětnou kompatibilitu se starými verzemi klientských modulů. Tento příkaz nevyžaduje token relace.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
      <tr>
       <th>Název příkazu</th>
-      <th class="center">Vyžaduje přihlášení uživatele</th>
      </tr>
      <tr>
-      <td>user_modules</td>
-      <td class="center">❌</td>
+      <td>modules</td>
      </tr>
     </table>
    </div>
@@ -5854,7 +5852,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "user_modules",
+ "command": "modules",
  "params": {
   "offset": 50,
   "count": 3
