@@ -12,6 +12,7 @@ Dopsání obsahu:
 - Příkazy - User - při přihlašování vracet status o tom, že je uživatel zablokovaný, kdo zablokoval, kdy, proč atd. - chybovy stav
 - Příkazy - Obecné - Přidat error při fail2ban (blok na IP)
 - Příkazy - blokace IP adres - IP range první a koncová adresa + errory že první je vyšší, než druhá, jesli jsou ve validním formátu apod.
+- Dopsat vše, kde je TODO
 
 Návrh verze 2:
 - Přesunutí uživatelských účtů / přihlášení do modulu - přidá další možnosti ověření: OAuth / social loginy atd.
