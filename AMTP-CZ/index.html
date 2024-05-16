@@ -5701,9 +5701,49 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "message": "All user's tokens were deleted"
 }
 </pre>
-   <a name="commands-c2s-general"></a><h4>Ostatní příkazy</h4>
+   <a name="commands-s2s"></a><h3>Spojení server-server</h3>
+   <div>V této části dokumentace jsou popsány příkazy, které jsou využívány v komunikaci mezi dvěma serverovými aplikacemi:</div>
+   <div>TODO: předávání, ověřování protějšího serveru atd.</div>
+   <div>TODO: u ověřování protějšího serveru přidat error pokud server nemá spojení s DNS</div>
+   
+   Spojeni server-server je navazano na zaklade pozadavku modulu na odeslani zpravy na jiny server.
+   
+   <h4>Navazani spojeni</h4>
+   Servery se pri navazani spojeni vzajemne overuji. Toto overeni je provedeno paralelne v obou smerech. Drzeni privatniho klice se overi metodou challenge-response.
+   
+   Verejny klic serveru se ziska ze tri zdroju:
+   1) Z lokalni databaze serveru. 
+   2) Z DNS se ziska TXT zaznam ATMP-PUBKEY.
+   3) Z odpovedi vzdaleneho serveru v ramci challenge-response flow. 
+    
+    <h4>Challenge-response flow</h4>
+
+   1) Vzdaleny server je pozadan o podepsani nahodneho retezce. V odpovedi je navic prilozen verejny klic serveru.
+   priklad:
+    <pre>
+    {
+      "command": "server_challenge",
+      "data": {
+        "challenge": "1234567890"
+      }
+    }
+    </pre>
+
+    2) Vzdaleny server odpovi s podpisem a verejnym klicem:
+    <pre>
+    {
+      "command": "server_response",
+      "data": {
+        "signature": "abcdef1234567890",
+        "pubkey": "-----BEGIN..."
+      }
+    }
+    </pre>
+    Vsechny verejne klice se porovnaji. V pripade neshody je spojeni ukonceno.
+    Podpis ziskany v ramci challenge-response flow se overi pomoci verejneho klice. V pripade neshody je spojeni ukonceno.
+   <a name="commands-c2s-general"></a><h3>Ostatní příkazy</h3>
    <div>V této části dokumentace jsou jsou uvedeny další příkazy, které nesouvisí s příkazy pro správce ani uživatele a nevyžadují přihlášení.</div>
-   <a name="commands-c2s-general-info"></a><h5>Informace o serveru pro uživatele</h5>
+   <a name="commands-c2s-general-info"></a><h4>Obecné informace o serveru</h4>
    <div>Tento příkaz vrací užitečné informace o AMTP serveru.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -5791,7 +5831,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  }
 }
 </pre>
-   <a name="commands-c2s-general-modules"></a><h5>Seznam používaných modulů</h5>
+   <a name="commands-c2s-general-modules"></a><h4>Seznam používaných modulů</h4>
    <div>Tento příkaz zobrazuje seznam modulů a jejich verzí, které server používá. Server může mít spuštěný jeden modul ve více verzích. To umožňuje zpětnou kompatibilitu se starými verzemi klientských modulů.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -5909,7 +5949,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  }
 }
 </pre>
-<a name="commands-c2s-general-algoritms"></a><h5>Seznam používaných modulů</h5>
+   <a name="commands-c2s-general-algoritms"></a><h4>Seznam používaných algoritmů</h4>
    <div>Tento příkaz zobrazuje seznam podporovaných šifrovacích a hashovacích algoritmů serverem.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -5980,7 +6020,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "modules"
+ "command": "algo"
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
@@ -6015,46 +6055,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  }
 }
 </pre>
-   <a name="commands-s2s"></a><h3>Spojení server-server</h3>
-   <div>V této části dokumentace jsou popsány příkazy, které jsou využívány v komunikaci mezi dvěma serverovými aplikacemi:</div>
-   <div>TODO: předávání, ověřování protějšího serveru atd.</div>
-   <div>TODO: u ověřování protějšího serveru přidat error pokud server nemá spojení s DNS</div>
-   
-   Spojeni server-server je navazano na zaklade pozadavku modulu na odeslani zpravy na jiny server.
-   
-   <h4>Navazani spojeni</h4>
-   Servery se pri navazani spojeni vzajemne overuji. Toto overeni je provedeno paralelne v obou smerech. Drzeni privatniho klice se overi metodou challenge-response.
-   
-   Verejny klic serveru se ziska ze tri zdroju:
-   1) Z lokalni databaze serveru. 
-   2) Z DNS se ziska TXT zaznam ATMP-PUBKEY.
-   3) Z odpovedi vzdaleneho serveru v ramci challenge-response flow. 
-    
-    <h4>Challenge-response flow</h4>
-
-   1) Vzdaleny server je pozadan o podepsani nahodneho retezce. V odpovedi je navic prilozen verejny klic serveru.
-   priklad:
-    <pre>
-    {
-      "command": "server_challenge",
-      "data": {
-        "challenge": "1234567890"
-      }
-    }
-    </pre>
-
-    2) Vzdaleny server odpovi s podpisem a verejnym klicem:
-    <pre>
-    {
-      "command": "server_response",
-      "data": {
-        "signature": "abcdef1234567890",
-        "pubkey": "-----BEGIN..."
-      }
-    }
-    </pre>
-    Vsechny verejne klice se porovnaji. V pripade neshody je spojeni ukonceno.
-    Podpis ziskany v ramci challenge-response flow se overi pomoci verejneho klice. V pripade neshody je spojeni ukonceno.
    <a name="commands-c2s-modules"></a><h3>Komunikace s moduly</h3>
    <div>Tato část dokumentace popisuje, jakým způsobem se předávají data v rámci modulů mezi <span class="bold">AMTP</span> servery a jakým způsobem komunikuje jádro serveru s moduly.</div>
    <a name="commands-c2s-modules-deliver"></a><h4>Předávání příkazů určených modulům</h4>

@@ -328,26 +328,26 @@ const data = [
         ]
        }
       ]
-     }, {
-      title: 'Obecné příkazy',
-      link: 'commands-c2s-general',
-      sub: [
-       {
-        title: 'Obecné informace o serveru',
-        link: 'commands-c2s-general-info'
-       }, {
-        title: 'Seznam používaných modulů',
-        link: 'commands-c2s-general-modules'
-       }, {
-        title: 'Seznam používaných algoritmů',
-        link: 'commands-c2s-general-algoritms'
-       }
-      ]
      }
     ]
    }, {
     title: 'Server-server',
     link: 'commands-s2s'
+   }, {
+    title: 'Ostatní příkazy',
+    link: 'commands-c2s-general',
+    sub: [
+     {
+      title: 'Obecné informace o serveru',
+      link: 'commands-c2s-general-info'
+     }, {
+      title: 'Seznam používaných modulů',
+      link: 'commands-c2s-general-modules'
+     }, {
+      title: 'Seznam používaných algoritmů',
+      link: 'commands-c2s-general-algoritms'
+     }
+    ]
    }, {
     title: 'Komunikace s moduly',
     link: 'commands-c2s-modules',
