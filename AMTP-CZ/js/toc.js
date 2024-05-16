@@ -279,7 +279,7 @@ const data = [
          }
         ]
        }, {
-        title: 'Ověření uživatele tokenem',
+        title: 'Ověření uživatele tokenem relace',
         link: 'commands-c2s-user-verify',
        }, {
         title: 'Odhlášení uživatele',
