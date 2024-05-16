@@ -5639,10 +5639,10 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>TODO</td>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">-</td>
+      <td>-</td>
      </tr>
     </table>
    </div>
@@ -5658,7 +5658,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>-</td>
       <td>-</td>
-      <td class="center">✔❌</td>
+      <td class="center">-</td>
       <td>-</td>
      </tr>
     </table>
@@ -5672,7 +5672,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td class="center">1</td>
+      <td class="center">-</td>
       <td>-</td>
       <td>-</td>
      </tr>
@@ -5681,20 +5681,16 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad požadavku od klienta:</div>
 <pre>
 {
- "command": "user_tokens_delall",
- "params": {
-  "TODO": "TODO"
- }
+ "command": "user_tokens_delall"
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "TODO": "TODO",
+ "error": 0,
+ "message": "All user's tokens were deleted"
 }
 </pre>
-
-
    <a name="commands-c2s-user-info"></a><h5>Informace o serveru pro uživatele</h5>
    <div>Tento příkaz vrací užitečné informace o AMTP serveru.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
