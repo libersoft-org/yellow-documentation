@@ -5831,7 +5831,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>-</td>
       <td>-</td>
-      <td class="center">✔❌</td>
+      <td class="center">-</td>
       <td>-</td>
      </tr>
     </table>
@@ -5845,7 +5845,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td class="center">1</td>
+      <td class="center">-</td>
       <td>-</td>
       <td>-</td>
      </tr>
@@ -5856,25 +5856,29 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_modules",
  "params": {
-  "TODO": "TODO"
+  "offset": 50,
+  "count": 3
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "modules": [
-  {
-   "name": "contacts",
-   "version": "1.0"
-  }, {
-   "name": "messages",
-   "version": "1.0"
-  }, {
-   "name": "messages",
-   "version": "2.0"
-  }
- ]
+ "error": 0,
+ "data": {
+  "modules": [
+   {
+    "id": 51,
+    "name": "com.example.contacts_1.0",
+   }, {
+    "id": 52,
+    "name": "com.example.messages_1.0",
+   }, {
+    "id": 53,
+    "name": "com.example.blogs_2.0",
+   }
+  ]
+ }
 }
 </pre>
    <a name="commands-s2s"></a><h3>Spojení server-server</h3>
