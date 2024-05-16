@@ -5782,7 +5782,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-general-modules"></a><h5>Seznam používaných modulů</h5>
-   <div>Tento příkaz zobrazuje seznam modulů a jejich verzí, které server používá. Server může mít spuštěný jeden modul ve více verzích. To umožňuje zpětnou kompatibilitu se starými verzemi klientských modulů. Tento příkaz nevyžaduje token relace.</div>
+   <div>Tento příkaz zobrazuje seznam modulů a jejich verzí, které server používá. Server může mít spuštěný jeden modul ve více verzích. To umožňuje zpětnou kompatibilitu se starými verzemi klientských modulů.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -5827,10 +5827,30 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>-</td>
-      <td>-</td>
-      <td class="center">-</td>
-      <td>-</td>
+      <td>modules</td>
+      <td>array[object]</td>
+      <td class="center">✔</td>
+      <td>Pole objektů se seznamem modulů</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Položky objektu v poli "modules":</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>id</td>
+      <td>32-bit integer</td>
+      <td>ID záznamu v seznamu modulů</td>
+     </tr>
+     <tr>
+      <td>name</td>
+      <td>string</td>
+      <td>Název modulu</td>
      </tr>
     </table>
    </div>
@@ -5874,6 +5894,112 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    }, {
     "id": 53,
     "name": "com.example.blogs_2.0",
+   }
+  ]
+ }
+}
+</pre>
+<a name="commands-c2s-general-algoritms"></a><h5>Seznam používaných modulů</h5>
+   <div>Tento příkaz zobrazuje seznam podporovaných šifrovacích a hashovacích algoritmů serverem.</div>
+   <div class="bold">Struktura požadavku od klienta:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název příkazu</th>
+     </tr>
+     <tr>
+      <td>algo</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Parametry:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Struktura odezvy od serveru:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th class="center">Vyžadováno</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>encryption</td>
+      <td>array[object]</td>
+      <td class="center">✔</td>
+      <td>Pole objektů se seznamem podporovaných šifrovacích algoritmů serverem</td>
+     </tr>
+     <tr>
+      <td>hash</td>
+      <td>array[object]</td>
+      <td class="center">✔</td>
+      <td>Pole objektů se seznamem podporovaných hashovacích algoritmů serverem</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Chybové stavy:</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th class="center">Kód chyby</th>
+      <th>Zpráva</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td class="center">-</td>
+      <td>-</td>
+      <td>-</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Příklad požadavku od klienta:</div>
+<pre>
+{
+ "command": "modules"
+}
+</pre>
+   <div class="bold">Příklad odezvy od serveru:</div>
+<pre>
+{
+ "error": 0,
+ "data": {
+  "encryption": [
+   {
+    "id": 1,
+    "name": "rsa1024oaep"
+   }, {
+    "id": 2,
+    "name": "rsa2048oaep"
+   }, {
+    "id": 3,
+    "name": "rsa4096oaep"
+   }
+  ],
+  "hash": [
+   {
+    "id": 1,
+    "name": "argon2i"
+   }, {
+    "id": 2,
+    "name": "argon2d"
+   }, {
+    "id": 3,
+    "name": "argon2id"
    }
   ]
  }
