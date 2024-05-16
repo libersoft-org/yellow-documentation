@@ -4898,7 +4898,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_setpubkey_challenge",
  "params": {
-  "user": "admin",
+  "user": "alice@example.com",
   "password_hash": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg"
  }
 }
@@ -4938,10 +4938,22 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>TODO</td>
+      <td>decrypted_string</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Rozšifrovaný řetězec z přihlašovací výzvy soukromým klíčem</td>
+     </tr>
+     <tr>
+      <td>new_public_key</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Nový veřejný klíč</td>
+     </tr>
+     <tr>
+      <td>new_public_key_algorithm</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Identifikace algoritmu pro veřejný klíč</td>
      </tr>
     </table>
    </div>
@@ -4957,7 +4969,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>-</td>
       <td>-</td>
-      <td class="center">✔❌</td>
+      <td class="center">-</td>
       <td>-</td>
      </tr>
     </table>
@@ -4972,8 +4984,33 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
-      <td>-</td>
+      <td>Decrypted string is missing</td>
+      <td>Rozšifrovaný řetězec chybí</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>New public key is missing</td>
+      <td>Nový veřejný klíč chybí</td>
+     </tr>
+     <tr>
+      <td class="center">3</td>
+      <td>Encryption algorithm of the new public key is missing</td>
+      <td>Šifrovací algoritmus nového veřejného klíče chybí</td>
+     </tr>
+     <tr>
+      <td class="center">4</td>
+      <td>No challenge created</td>
+      <td>Výzva nebyla ještě vytvořena, je nejprve nutné ji provést</td>
+     </tr>
+     <tr>
+      <td class="center">5</td>
+      <td>Wrong decrypted string</td>
+      <td>Nesprávně rozšifrovaný řetězec</td>
+     </tr>
+     <tr>
+      <td class="center">6</td>
+      <td>Unsupported encryption algorithm</td>
+      <td>Server nepodporuje šifrovací algoritmus nového veřejného klíče</td>
      </tr>
     </table>
    </div>
@@ -4982,14 +5019,17 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_setpubkey_response",
  "params": {
-  "TODO": "TODO"
+  "decrypted_string": "abcdefghijklmnopqrstuvwxyz1234567890abcd",
+  "new_public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
+  "new_public_key_algorithm": "rsa4096oaep"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "TODO": "TODO",
+ "error": 0,
+ "message": "Public key was changed"
 }
 </pre>
    <a name="commands-c2s-user-setpassword"></a><h5>Změna hesla pro přihlášení</h5>
