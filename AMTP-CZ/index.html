@@ -5324,10 +5324,45 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>-</td>
-      <td>-</td>
-      <td class="center">✔❌</td>
-      <td>-</td>
+      <td>tokens</td>
+      <td>array[object]</td>
+      <td class="center">✔</td>
+      <td>Pole objektů se seznamem tokenů relace uživatele</td>
+     </tr>
+    </table>
+   </div>
+   <div class="bold">Položky objektu v poli "tokens":</div>
+   <div class="table-container">
+    <table class="table-structure">
+     <tr>
+      <th>Název parametru</th>
+      <th>Datový typ</th>
+      <th>Popis</th>
+     </tr>
+     <tr>
+      <td>id</td>
+      <td>64-bit integer</td>
+      <td>ID záznamu v seznamu tokenů relace uživatele</td>
+     </tr>
+     <tr>
+      <td>name</td>
+      <td>string</td>
+      <td>Název tokenu</td>
+     </tr>
+     <tr>
+      <td>hash</td>
+      <td>string</td>
+      <td>Jedinečný hash tokenu relace</td>
+     </tr>
+     <tr>
+      <td>created</td>
+      <td>timestamp</td>
+      <td>Datum a čas vytvoření záznamu</td>
+     </tr>
+     <tr>
+      <td>expiration</td>
+      <td>timestamp</td>
+      <td>Datum a čas vypršení platnosti tokenu</td>
      </tr>
     </table>
    </div>
@@ -5340,7 +5375,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td class="center">1</td>
+      <td class="center">-</td>
       <td>-</td>
       <td>-</td>
      </tr>
@@ -5351,14 +5386,38 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_tokens_list",
  "params": {
-  "TODO": "TODO"
+  "offset": 50,
+  "count": 3
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "TODO": "TODO",
+ "error": 0,
+ "data": {
+  "tokens": [
+   {
+    "id": 55,
+    "name": "My PC",
+    "hash": "2bb80d537b1da3e38bd30361aa855686bde0eacd7162fef6a25fe97bf527a25b",
+    "created": "2024-01-01T00:00:00Z",
+    "expiration": "2024-02-01T00:00:00Z"
+   }, {
+    "id": 60,
+    "name": "My cell phone",
+    "hash": "84654139869a7dc2efc4fa2110d1e9a85a30d43beed59ee315f4cf102f01a026",
+    "created": "2024-01-02T00:00:00Z",
+    "expiration": "2024-02-02T00:00:00Z"
+   }, {
+    "id": 65,
+    "name": "My tablet",
+    "hash": "f54e5c8f810648e7638d25eb7ed6d24b7e5999d588e88826f2aa837d2ee52ecd",
+    "created": "2024-01-03T00:00:00Z",
+    "expiration": "2024-02-03T00:00:00Z"
+   }
+  ]
+ }
 }
 </pre>
    <a name="commands-c2s-user-tokens-set"></a><h6>Úprava tokenu relace</h6>
