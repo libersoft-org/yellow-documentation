@@ -5734,12 +5734,13 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "message": "All user's tokens were deleted"
 }
 </pre>
-   <a name="commands-s2s"></a><h3>Spojení server-server</h3>
-   <div>V této části dokumentace jsou popsány příkazy, které jsou využívány v komunikaci mezi dvěma serverovými aplikacemi:</div>
-   <div>TODO: předávání, ověřování protějšího serveru atd.</div>
-   <div>TODO: u ověřování protějšího serveru přidat error pokud server nemá spojení s DNS</div>
-   
-   Spojeni server-server je navazano na zaklade pozadavku modulu na odeslani zpravy na jiny server.
+   <a name="commands-s2s"></a><h3>Server-server</h3>
+   <div>V této části dokumentace jsou popsány příkazy, které jsou využívány v komunikaci mezi dvěma servery.</div>
+   <a name="commands-s2s-verify"></a><h4>Ověření serverů</h4>
+
+   <div>TODO: ověřování protějšího serveru atd.</div>
+   <div>TODO: u ověřování protějšího serveru přidat error pokud server nemá spojení s DNS, nenalezl A zaznam nebo DKIM, pripadne nesedi podpis</div>
+   <div>TODO: Spojeni server-server je navazano na zaklade pozadavku modulu na odeslani zpravy na jiny server.</div>
    
    <h4>Navazani spojeni</h4>
    Servery se pri navazani spojeni vzajemne overuji. Toto overeni je provedeno paralelne v obou smerech. Drzeni privatniho klice se overi metodou challenge-response.
@@ -5774,9 +5775,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     </pre>
     Vsechny verejne klice se porovnaji. V pripade neshody je spojeni ukonceno.
     Podpis ziskany v ramci challenge-response flow se overi pomoci verejneho klice. V pripade neshody je spojeni ukonceno.
-   <a name="commands-c2s-general"></a><h3>Ostatní příkazy</h3>
+   <a name="commands-general"></a><h3>Ostatní příkazy</h3>
    <div>V této části dokumentace jsou jsou uvedeny další příkazy, které nesouvisí s příkazy pro správce ani uživatele a nevyžadují přihlášení.</div>
-   <a name="commands-c2s-general-info"></a><h4>Obecné informace o serveru</h4>
+   <a name="commands-general-info"></a><h4>Obecné informace o serveru</h4>
    <div>Tento příkaz vrací užitečné informace o AMTP serveru.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -5864,7 +5865,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  }
 }
 </pre>
-   <a name="commands-c2s-general-modules"></a><h4>Seznam používaných modulů</h4>
+   <a name="commands-general-modules"></a><h4>Seznam používaných modulů</h4>
    <div>Tento příkaz zobrazuje seznam modulů a jejich verzí, které server používá. Server může mít spuštěný jeden modul ve více verzích. To umožňuje zpětnou kompatibilitu se starými verzemi klientských modulů.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -5982,7 +5983,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  }
 }
 </pre>
-   <a name="commands-c2s-general-algoritms"></a><h4>Seznam používaných algoritmů</h4>
+   <a name="commands-general-algoritms"></a><h4>Seznam používaných algoritmů</h4>
    <div>Tento příkaz zobrazuje seznam podporovaných šifrovacích a hashovacích algoritmů serverem.</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -6088,9 +6089,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  }
 }
 </pre>
-   <a name="commands-c2s-modules"></a><h3>Komunikace s moduly</h3>
+   <a name="commands-modules"></a><h3>Komunikace s moduly</h3>
    <div>Tato část dokumentace popisuje, jakým způsobem se předávají data v rámci modulů mezi <span class="bold">AMTP</span> servery a jakým způsobem komunikuje jádro serveru s moduly.</div>
-   <a name="commands-c2s-modules-deliver"></a><h4>Předávání příkazů určených modulům</h4>
+   <a name="commands-modules-deliver"></a><h4>Předávání příkazů určených modulům</h4>
    <div>Na vlastním serveru nejprve předá modul zprávu určenou cizímu serveru s následujícími parametry:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -6218,9 +6219,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <div>Modul si poté před zpracováním příkazu může ověřit, zda server, který příkaz odeslal, má oprávnění používat v identitách doménová jména. K tomu slouží příkazy <span class="bold">get_servers</span> a <span class="bold">verify_domain</span> mezi moduly a jádrem.</div>
-   <a name="commands-c2s-modules-commands"></a><h4>Příkazy mezi jádrem a modulem</h4>
+   <a name="commands-modules-commands"></a><h4>Příkazy mezi jádrem a modulem</h4>
    <div>Následující příkazy poskytují modulům užitečné informace, pomocí kterých si modul může ověřit legitimnost použití identit, které modul protějšího serveru uvedl v objektu <span class="bold">data</span>.</div>
-   <a name="commands-c2s-modules-commands-servers"></a><h5>Zjištění oprávněných serverů:</h5>
+   <a name="commands-modules-commands-servers"></a><h5>Zjištění oprávněných serverů:</h5>
    <div>Tento příkaz slouží ke zjištění seznamu adres serverů, které mají oprávnění užívat konkrétní doménu.</div>
    <div class="bold">Struktura požadavku od modulu pro jádro:</div>
    <div class="table-container">
@@ -6310,7 +6311,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  }
 }
 </pre>
-   <a name="commands-c2s-modules-commands-verify"></a><h5>Ověření opravnění užití domény:</h5>
+   <a name="commands-modules-commands-verify"></a><h5>Ověření opravnění užití domény:</h5>
    <div>Tento příkaz slouží ke zjištění, zda určitý server má oprávnění užívat konkrétní doménu</div>
    <div class="bold">Struktura požadavku od modulu pro jádro:</div>
    <div class="table-container">
@@ -6412,7 +6413,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  }
 }
 </pre>
-   <a name="examples"></a><h2>Příklady</h2>
+   <a name="example"></a><h2>Příklad</h2>
    <div>TODO</div>
   </div>
   <div id="resizer" class="no-print"></div>

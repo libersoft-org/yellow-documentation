@@ -332,39 +332,45 @@ const data = [
     ]
    }, {
     title: 'Server-server',
-    link: 'commands-s2s'
+    link: 'commands-s2s',
+    sub: [
+     {
+      title: 'Ověření serverů',
+      link: 'commands-s2s-verify'
+     }
+    ]
    }, {
     title: 'Ostatní příkazy',
-    link: 'commands-c2s-general',
+    link: 'commands-general',
     sub: [
      {
       title: 'Obecné informace o serveru',
-      link: 'commands-c2s-general-info'
+      link: 'commands-general-info'
      }, {
       title: 'Seznam používaných modulů',
-      link: 'commands-c2s-general-modules'
+      link: 'commands-general-modules'
      }, {
       title: 'Seznam používaných algoritmů',
-      link: 'commands-c2s-general-algoritms'
+      link: 'commands-general-algoritms'
      }
     ]
    }, {
     title: 'Komunikace s moduly',
-    link: 'commands-c2s-modules',
+    link: 'commands-modules',
     sub: [
      {
       title: 'Předávání příkazů určených modulům',
-      link: 'commands-c2s-modules-deliver'
+      link: 'commands-modules-deliver'
      }, {
       title: 'Příkazy mezi jádrem a modulem',
-      link: 'commands-c2s-modules-commands',
+      link: 'commands-modules-commands',
       sub: [
        {
         title: 'Zjištění oprávněných serverů',
-        link: 'commands-c2s-modules-commands-servers'
+        link: 'commands-modules-commands-servers'
        }, {
         title: 'Ověření opravnění užití domény',
-        link: 'commands-c2s-modules-commands-verify'
+        link: 'commands-modules-commands-verify'
        }
       ]
      }
@@ -372,7 +378,7 @@ const data = [
    }
   ]
  }, {
-  title: 'Příklady',
-  link: 'examples'
+  title: 'Příklad',
+  link: 'example'
  }
 ];
