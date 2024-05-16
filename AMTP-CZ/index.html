@@ -278,7 +278,7 @@ subdomain.example.com. IN TXT "amtp-servers=amtp1.example.com,amtp2.example.com:
 <pre>
 amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
-   <div>Tento příklad uvádí, že pro server <span class="bold">amtp1.example.com</span> je používán veřejný klíč "<span class="bold">123456789abcdef</span>" se šifrovacím algoritmem <a href="https://cs.wikipedia.org/wiki/RSA" target="_blank">RSA</a>.</div>
+   <div>Tento příklad uvádí, že pro server <span class="bold">amtp1.example.com</span> je používán veřejný klíč "<span class="bold">123456789abcdef</span>" s algoritmem <a href="https://cs.wikipedia.org/wiki/RSA" target="_blank">RSA</a>.</div>
    <a name="connection"></a><h2>Spojení</h2>
    <div><span class="bold">Spojení</span> jsou realizována jak mezi klientem a serverem, tak i mezi servery navzájem.</div>
    <ul class="spacelist">
@@ -5735,7 +5735,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-s2s"></a><h3>Server-server</h3>
-   <div>V této části dokumentace jsou popsány příkazy, které jsou využívány v komunikaci mezi dvěma servery.</div>
+   <div>V této části dokumentace jsou popsány příkazy, které jsou využívány v komunikaci mezi dvěma servery. Tyto příkazy začínají "<span class="bold">server_</span>".</div>
    <a name="commands-s2s-verify"></a><h4>Ověření protějšího serveru</h4>
    <div>Spojení mezi dvěma servery je navázáno na základě požadavku modulu na předání dat jinému serveru se stejným modulem. Ihned po spojení je třeba vzájemné ověření protistrany pomocí digitálního podpisu serveru, jehož princip je popsán v části <a href="#security-dkey">Digitální podpis serveru</a>.</div>
    <div>TODO - přidat error pokud server nemá spojení s DNS, nenalezl A záznam v DNS nebo TXT - AMTP-PUBKEY záznam nebo nesedí podpis od protějšího serveru.</div>
