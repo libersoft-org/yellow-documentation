@@ -10,7 +10,7 @@ Design stranky:
 
 Dopsání obsahu:
 - Dopsat všechny commandy v dokumentaci, kde je TODO
-- Do user_info přidat supported hashing algorithms a encryption algorithms
+- Do user_encryption přidat supported hashing algorithms a encryption algorithms
 - Příkazy pro správu uživatelských tokenů - uživatel maže / edituje své, admin maže / edituje všech, zobrazení expirace, nějaké identifikace zařízení
 - Příkazy pro blokaci uživatelských účtů - pokud se takový uživatel bude přihlašovat, tak vracet status o tom, že je zablokovaný, kdo zablokoval, kdy, proč atd.
 - Notes.md - přeházet do html

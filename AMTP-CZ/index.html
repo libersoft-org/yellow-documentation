@@ -5716,10 +5716,10 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>TODO</td>
+      <td>-</td>
+      <td>-</td>
+      <td class="center">-</td>
+      <td>-</td>
      </tr>
     </table>
    </div>
@@ -5733,10 +5733,16 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>-</td>
-      <td>-</td>
-      <td class="center">✔❌</td>
-      <td>-</td>
+      <td>app</td>
+      <td>object</td>
+      <td class="center">✔</td>
+      <td>Obecné informace o serverové aplikaci</td>
+     </tr>
+     <tr>
+      <td>hostname</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Adresa serveru</td>
      </tr>
     </table>
    </div>
@@ -5749,7 +5755,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td class="center">1</td>
+      <td class="center">-</td>
       <td>-</td>
       <td>-</td>
      </tr>
@@ -5765,9 +5771,14 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "app_name": "AMTP Server",
- "app_version": "1.00",
- "hostname": "amtp.example.com"
+ "error": 0,
+ "data": {
+  "app": {
+   "name": "AMTP Server",
+   "version": "1.00"
+  }
+  "hostname": "amtp.example.com"
+ }
 }
 </pre>
    <a name="commands-c2s-user-modules"></a><h5>Seznam používaných modulů</h5>
