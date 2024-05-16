@@ -5034,7 +5034,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 </pre>
    <a name="commands-c2s-user-setpassword"></a><h5>Změna hesla pro přihlášení</h5>
    <div>Tento příkaz změní přihlašovací heslo uživatele. K tomu, aby mohlo být heslo změněno, je třeba poskytnout přihlašovací výzvu a odezvu, stejně, jako je to u běžného přihlášení a to i v případech, kdy je uživatel již přihlášen. Toto dodatečné přihlášení uvnitř tohoto příkazu je implementováno proto, aby nikdo nemohl neoprávněně změnit heslo na serveru již přihlášenému uživateli, například při použití jeho zařízení v nestřežený okamžik.</div>
-   <div>TODO - toto by mělo umět i nějak zrušit používání hesla pokud to server umožňuje (poslat null?) + chyba, že to nejde</div>
    <a name="commands-c2s-user-setpassword-challenge"></a><h6>Výzva</h6>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -5176,10 +5175,22 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>TODO</td>
+      <td>decrypted_string</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Rozšifrovaný řetězec z přihlašovací výzvy soukromým klíčem</td>
+     </tr>
+     <tr>
+      <td>new_password_hash</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Nový hash hesla - může být null (smazání používání hesla), pokud to server dovoluje</td>
+     </tr>
+     <tr>
+      <td>new_password_algorithm</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Algoritmus hashe nového hesla</td>
      </tr>
     </table>
    </div>
@@ -5195,7 +5206,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>-</td>
       <td>-</td>
-      <td class="center">✔❌</td>
+      <td class="center">-</td>
       <td>-</td>
      </tr>
     </table>
@@ -5210,8 +5221,38 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
-      <td>-</td>
+      <td>Decrypted string is missing</td>
+      <td>Rozšifrovaný řetězec chybí</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>New password hash is missing</td>
+      <td>Hash nového hesla chybí</td>
+     </tr>
+     <tr>
+      <td class="center">3</td>
+      <td>New password hash algorithm is missing</td>
+      <td>Hashovací algoritmus nového hesla chybí</td>
+     </tr>
+     <tr>
+      <td class="center">4</td>
+      <td>No challenge created</td>
+      <td>Výzva nebyla ještě vytvořena, je nejprve nutné ji provést</td>
+     </tr>
+     <tr>
+      <td class="center">5</td>
+      <td>Wrong decrypted string</td>
+      <td>Nesprávně rozšifrovaný řetězec</td>
+     </tr>
+     <tr>
+      <td class="center">6</td>
+      <td>Unsupported password hash algorithm</td>
+      <td>Server nepodporuje hashovací algoritmus nového hesla</td>
+     </tr>
+     <tr>
+      <td class="center">7</td>
+      <td>Password is required</td>
+      <td>Server nepodporuje možnost smazání hesla</td>
      </tr>
     </table>
    </div>
@@ -5220,14 +5261,17 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_setpassword_response",
  "params": {
-  "TODO": "TODO"
+  "decrypted_string": "abcdefghijklmnopqrstuvwxyz1234567890abcd",
+  "new_password_hash": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg",
+  "new_password_algorithm": "argon2id"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "TODO": "TODO",
+ "error": 0,
+ "message": "Password was changed"
 }
 </pre>
    <a name="commands-c2s-user-tokens"></a><h5>Správa tokenů relace</h5>
