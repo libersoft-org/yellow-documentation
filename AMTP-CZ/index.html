@@ -4628,10 +4628,10 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>-</td>
-      <td>-</td>
-      <td class="center">-</td>
-      <td>-</td>
+      <td>token</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Přihlašovací token relace</td>
      </tr>
     </table>
    </div>
@@ -4678,7 +4678,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 <pre>
 {
  "error": 0,
- "message": "User logged in"
+ "data": {
+  "token": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF"
+ }
 }
 </pre>
    <a name="commands-c2s-user-verify"></a><h5>Ověření uživatele tokenem relace</h5>
@@ -6460,7 +6462,173 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="example"></a><h2>Příklad</h2>
-   <div>TODO</div>
+   <div>Následující příklad popisuje posloupnost příkazů při kterém se klient připojí a přihlásí na server, poté odešle zprávu ze zjednodušeného modulu pro zasílání zpráv, následně vlastní server se spojí s protějším serverem, servery se navzájem ověří a vlastní server předá zprávu protějšímu serveru. Následně klient protějšího serveru, kterému byla zpráva určena si zprávu stáhne.</div>
+   <div class="bold">Klient se připojí k serveru a ten o sobě předá informace:</div>
+<pre>
+{
+ "error": 0,
+ "data": {
+  "app": {
+   "name": "AMTP Server",
+   "version": "1.00"
+  }
+  "hostname": "amtp.example1.com"
+ }
+}
+</pre>
+   <div class="bold">Uživatel zašle na server požadavek o přihlašovací výzvu:</div>
+<pre>
+{
+ "command": "user_login_challenge",
+ "params": {
+  "user": "alice@example.com",
+  "password_hash": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg"
+ }
+}
+</pre>
+   <div class="bold">Server mu odpoví s výzvou:</div>
+<pre>
+{
+ "error": 0,
+ "data": {
+  "encrypted_string": "1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B",
+  "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
+  "public_key_algorithm": "rsa4096oaep"
+ }
+}
+</pre>
+   <div class="bold">Uživatel rozšifruje výzvu:</div>
+<pre>
+{
+ "command": "user_login_response",
+ "params": {
+  "decrypted_string": "abcdefghijklmnopqrstuvwxyz1234567890abcd"
+ }
+}
+</pre>
+   <div class="bold">Server odpoví, že je uživatel přihlášen:</div>
+<pre>
+{
+ "error": 0,
+ "data": {
+  "token": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF"
+ }
+}
+</pre>
+   <div><span class="bold">POZNÁMKA</span>: Příště se již uživatel nemusí přihlašovat, pouze použije token relace.</div>
+   <div class="bold">Uživatel odešle zprávu, která je určena uživateli protějšího serveru:</div>
+<pre>
+{
+ "module": "com.example.messages_1.0",
+ "to": "amtp.example2.com",
+ "data": {
+  "command": "send",
+  "params": {
+   "from": "alice@example1.com",
+   "to": "bob@example2.com",
+   "message": "Hi, how are you doing?"
+   "created": "2024-01-01T12:00:00Z"
+  }
+ }
+}
+</pre>
+   <div class="bold">Vlastní server se spojí s protějším serverem a zašle mu ověřovací výzvu:</div>
+<pre>
+{
+ "command": "server_verify",
+ "params": {
+  "challenge_string": "abcdefghijklmnopqrstuvwxyz1234567890abcd"
+ }
+}
+</pre>
+   <div class="bold">Server podepíše výzvu a vrátí našemu serveru odpověď:</div>
+<pre>
+{
+ "error": 0,
+ "data": {
+  "signature": "1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F"
+ }
+}
+</pre>
+   <div>Stejným způsobem následně proběhne ověření z opačné strany.</div>
+   <div class="bold">Vlastní server předá zprávu pro modul protějšímu serveru:</div>
+<pre>
+{
+ "module": "com.example.messages_1.0",
+ "data": {
+  "command": "send",
+  "params": {
+   "from": "alice@example1.com",
+   "to": "bob@example2.com",
+   "message": "Hi, how are you doing?"
+   "created": "2024-01-01T12:00:00Z"
+  }
+ }
+}
+</pre>
+   <div class="bold">Protější server přijme zprávu a předá jí svému modulu:</div>
+<pre>
+{
+ "from": "amtp.example1.com",
+ "data": {
+  "command": "send",
+  "params": {
+   "from": "alice@example1.com",
+   "to": "bob@example2.com",
+   "message": "Hi, how are you doing?"
+   "created": "2024-01-01T12:00:00Z"
+  }
+ }
+}
+</pre>
+   <div class="bold">Modul protějšího serveru požádá jádro protějšího serveru o informaci, zda má server právo používat doménu odesilatele:</div>
+<pre>
+{
+ "command": "verify_domain",
+ "params": {
+  "server": "amtp.example1.com",
+  "domain": "example1.com"
+ }
+}
+</pre>
+   <div class="bold">Jádro protějšího serveru odpoví, že právo používat doménu má:</div>
+<pre>
+{
+ "error": 0,
+ "data": {
+  "authorized": true
+ }
+}
+</pre>
+   <div class="bold">Klient protějšího serveru si požádá o získání nových zpráv:</div>
+<pre>
+{
+ "module": "com.example.messages_1.0",
+ "data": {
+  "command": "get_messages"
+ }
+}
+</pre>
+   <div class="bold">Klient protějšího získá nové zprávy:</div>
+<pre>
+{
+ "module": "com.example.messages_1.0",
+ "data": {
+  "error": 0,
+  "data": {
+   "messages": [
+    {
+     "from": "alice@example1.com",
+     "to": "bob@example2.com",
+     "message": "Hi, how are you doing?"
+     "created": "2024-01-01T12:00:00Z"
+     "delivered": "2024-01-01T12:00:03Z"
+    }
+   ]
+  }
+ }
+}
+</pre>
   </div>
   <div id="resizer" class="no-print"></div>
  </body>
