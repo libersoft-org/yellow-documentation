@@ -335,8 +335,17 @@ const data = [
     link: 'commands-s2s',
     sub: [
      {
-      title: 'Ověření serverů',
-      link: 'commands-s2s-verify'
+      title: 'Ověření protějšího serveru',
+      link: 'commands-s2s-verify',
+      sub: [
+       {
+        title: 'Výzva',
+        link: 'commands-s2s-verify-challenge'
+       }, {
+        title: 'Odezva',
+        link: 'commands-s2s-verify-response'
+       }
+      ]
      }
     ]
    }, {
