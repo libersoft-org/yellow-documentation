@@ -461,7 +461,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-c2s-admin"></a><h4>Příkazy správce</h4>
    <div>Všechny příkazy začínající "<span class="bold">admin_</span>" jsou určeny pouze pro správce serveru. Aby bylo možné provádět tyto příkazy (mimo příkazů pro samotné přihlášení), musí být správce přihlášen. Pokud je přihlášení úspěšné, je správce přihlášen po dobu spojení.</div>
    <a name="commands-c2s-admin-login"></a><h5>Přihlášení správce</h5>
-   <div>Přihlášení správce probíhá ve dvou krocích - přihlašovací výzvě a přihlašovací odezvě. V přihlašovací výzvě zašle klient své přihlašovací jméno a hash hesla (pokud se používá). Server ověří heslo (pokud se používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem správce a předá mu jej. Správce následně řetězec rozšifruje pomocí svého soukromého klíče a zašle ho zpět v rámci přihlašovací odezvy. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetětec od klienta odpovídá původně vygenerovanému, pak je správce přihlášen po dobu spojení. V opačném případě vrátí chybu.</div>
+   <div><span class="bold">Přihlášení správce</span> probíhá ve dvou krocích - <span class="bold">přihlašovací výzvě</span> a <span class="bold">přihlašovací odezvě</span>.</div>
+   <div>V <span class="bold">přihlašovací výzvě</span> zašle klient své přihlašovací jméno a pokud používá mimo přivátního klíče i heslo, tak i hash tohoto hesla. Server ověří heslo (pokud se používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem správce. Tento zašifrovaný řetězec je následně předán klientovi.</div>
+   <div>V <span class="bold">přihlašovací odezvě</span> následně uživatel řetězec rozšifruje pomocí svého soukromého klíče a zašle ho zpět v této rozšifrované podobě serveru. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetětec od klienta se shoduje s původně vygenerovaným, pak správce přihlásí. V opačném případě vrátí chybu.</div>
    <a name="commands-c2s-admin-login-challenge"></a><h6>Výzva</h6>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -4253,7 +4255,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div>Všechny příkazy začínající "<span class="bold">user_</span>" jsou určeny pro uživatele. Aby bylo možné provádět tyto příkazy, musí být uživatel přihlášen (mimo příkazů pro samotné přihlášení). Pokud je přihlášení úspěšné, získá uživatel token relace, kterým se prokazuje při navázání spojení se serverem (místo přihlášení). Přihlášení tokenem je platné po dobu spojení, token se tedy neodesílá v každém uživatelském příkazu.</div>
    <a name="commands-c2s-user-registration"></a><h5>Registrace uživatele</h5>
    <div>Příkazy v této části dokumentace slouží k registraci uživatelských účtů přímo uživatelem. Tato funkcionalita musí být povolena na serveru.</div>
-   <div>TODO - pridat error code - this domain is not for public registration</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -4278,39 +4279,39 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td>name</td>
-      <td>TODO</td>
+      <td>string</td>
       <td class="center">✔</td>
-      <td>TODO</td>
+      <td>Lokální část uživatelského jména (před "@")</td>
      </tr>
      <tr>
       <td>id_domains</td>
-      <td>TODO</td>
+      <td>32-bit integer</td>
       <td class="center">✔</td>
-      <td>TODO</td>
+      <td>ID záznamu ze seznamu domén</td>
      </tr>
      <tr>
       <td>public_key</td>
-      <td>TODO</td>
+      <td>string</td>
       <td class="center">✔</td>
-      <td>TODO</td>
+      <td>Veřejný klíč pro přihlášení</td>
      </tr>
      <tr>
       <td>public_key_algorithm</td>
-      <td>TODO</td>
+      <td>string</td>
       <td class="center">✔</td>
-      <td>TODO</td>
+      <td>Šifrovací algoritmus veřejného klíče pro přihlášení</td>
      </tr>
      <tr>
       <td>password_hash</td>
-      <td>TODO</td>
+      <td>string</td>
       <td class="center">❌</td>
-      <td>TODO</td>
+      <td>Hash hesla</td>
      </tr>
      <tr>
       <td>password_hash_algorithm</td>
-      <td>TODO</td>
+      <td>string</td>
       <td class="center">❌</td>
-      <td>TODO</td>
+      <td>Hashovací algoritmus hesla</td>
      </tr>
     </table>
    </div>
@@ -4386,11 +4387,16 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">10</td>
+      <td>User name for the specified domain already exists</td>
+      <td>Kombinace uživatelského jména a domény je již obsazena</td>
+     </tr>
+     <tr>
+      <td class="center">11</td>
       <td>Unsupported public key encryption algorithm</td>
       <td>Šifrovací algoritmus veřejného klíče není podporován serverem</td>
      </tr>
      <tr>
-      <td class="center">11</td>
+      <td class="center">12</td>
       <td>Unsupported password hash algorithm</td>
       <td>Hashovací algoritmus veřejného klíče není podporován serverem</td>
      </tr>
@@ -4418,7 +4424,9 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 }
 </pre>
    <a name="commands-c2s-user-login"></a><h5>Přihlášení uživatele</h5>
-   <div>Přihlášení uživatele probíhá ve dvou krocích - přihlašovací výzvě a přihlašovací odezvě. V přihlašovací výzvě zašle klient své přihlašovací jméno ve tvaru <span class="bold">uživatel@doména</span> a pokud používá mimo privátního klíče i heslo, tak i hash tohoto hesla (nepovinné). Server ověří heslo (pokud uživatel používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem uživatele. Tento zašifrovaný řetězec je následně předán uživateli. Uživatel řetězec rozšifruje pomocí svého soukromého klíče a zašle ho zpět v rámci přihlašovací odezvy. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetětec od klienta odpovídá původně vygenerovanému, pak uživatele přihlásí a udělí mu token relace. V opačném případě vrátí chybu.</div>
+   <div><span class="bold">Přihlášení uživatele</span> probíhá ve dvou krocích - <span class="bold">přihlašovací výzvě</span> a <span class="bold">přihlašovací odezvě</span>.</div>
+   <div>V <span class="bold">přihlašovací výzvě</span> zašle klient své přihlašovací jméno ve tvaru <span class="bold">uživatel@doména</span> a pokud používá mimo privátního klíče i heslo, tak i hash tohoto hesla. Server ověří heslo (pokud uživatel používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem uživatele. Tento zašifrovaný řetězec je následně předán klientovi.</div>
+   <div>V <span class="bold">přihlašovací odezvě</span> následně uživatel řetězec rozšifruje pomocí svého soukromého klíče a zašle ho v této rozšifrované podobě serveru. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetětec od klienta se shoduje s původně vygenerovaným, pak uživatele přihlásí a udělí mu token relace. V opačném případě vrátí chybu.</div>
    <a name="commands-c2s-user-login-challenge"></a><h6>Výzva</h6>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
