@@ -218,7 +218,7 @@
      <tr>
       <td>A / AAAA</td>
       <td>A / AAAA</td>
-      <td>Záznam určující doménové jméno serveru je zachován.</td>
+      <td>Záznam určující název domény serveru je zachován.</td>
      </tr>
      <tr>
       <td>PTR</td>
@@ -1776,6 +1776,11 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>Název domény</td>
      </tr>
      <tr>
+      <td>public_reg</td>
+      <td>bool</td>
+      <td>Indikace, zda doména povoluje veřejnou registraci uživatelských účtů</td>
+     </tr>
+     <tr>
       <td>created</td>
       <td>timestamp</td>
       <td>Datum a čas vytvoření záznamu</td>
@@ -1816,14 +1821,17 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    {
     "id": 51,
     "name": "example1.com",
+    "public_reg": true,
     "created":"2024-01-01T00:00:00Z"
    }, {
     "id": 52,
     "name": "example2.com",
+    "public_reg": true,
     "created": "2024-01-02T00:00:00Z"
    }, {
     "id": 53,
     "name": "example3.com",
+    "public_reg": false,
     "created": "2024-01-03T00:00:00Z"
    }
   ]
@@ -1858,7 +1866,13 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>name</td>
       <td>string</td>
       <td class="center">✔</td>
-      <td>Doménové jméno</td>
+      <td>Název domény</td>
+     </tr>
+     <tr>
+      <td>public_reg</td>
+      <td>bool</td>
+      <td class="center">✔</td>
+      <td>Indikace, zda doména povoluje veřejnou registraci uživatelských účtů</td>
      </tr>
     </table>
    </div>
@@ -1890,12 +1904,17 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td class="center">1</td>
       <td>Domain name is missing</td>
-      <td>Doménové jméno nebylo vyplněno</td>
+      <td>Název domény nebyl vyplněn</td>
      </tr>
      <tr>
       <td class="center">2</td>
+      <td>Public registration indication is missing</td>
+      <td>Indikátor možnosti veřejné registrace uživatelských účtů pro doménu nebyl vyplněn</td>
+     </tr>
+     <tr>
+      <td class="center">3</td>
       <td>Wrong domain name format</td>
-      <td>Doménové jméno má chybný formát</td>
+      <td>Název domény má chybný formát</td>
      </tr>
     </table>
    </div>
@@ -1904,7 +1923,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_domains_add",
  "params": {
-  "name": "example.com"
+  "name": "example.com",
+  "public_reg": true
  }
 }
 </pre>
@@ -1949,7 +1969,13 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>name</td>
       <td>string</td>
       <td class="center">❌</td>
-      <td>doménové jméno</td>
+      <td>Název domény</td>
+     </tr>
+     <tr>
+      <td>public_reg</td>
+      <td>bool</td>
+      <td class="center">❌</td>
+      <td>Indikátor možnosti veřejné registrace uživatelských účtů pro doménu nebyl vyplněn</td>
      </tr>
     </table>
    </div>
@@ -1991,7 +2017,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td class="center">3</td>
       <td>Wrong domain name format</td>
-      <td>Doménové jméno má chybný formát</td>
+      <td>Název domény má chybný formát</td>
      </tr>
     </table>
    </div>
@@ -2001,7 +2027,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "command": "admin_domains_set",
  "params": {
   "id": 1,
-  "name": "example.com"
+  "name": "example.com",
+  "public_reg": true
  }
 }
 </pre>
@@ -4226,7 +4253,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div>Všechny příkazy začínající "<span class="bold">user_</span>" jsou určeny pro uživatele. Aby bylo možné provádět tyto příkazy, musí být uživatel přihlášen (mimo příkazů pro samotné přihlášení). Pokud je přihlášení úspěšné, získá uživatel token relace, kterým se prokazuje při navázání spojení se serverem (místo přihlášení). Přihlášení tokenem je platné po dobu spojení, token se tedy neodesílá v každém uživatelském příkazu.</div>
    <a name="commands-c2s-user-registration"></a><h5>Registrace uživatele</h5>
    <div>Příkazy v této části dokumentace slouží k registraci uživatelských účtů přímo uživatelem. Tato funkcionalita musí být povolena na serveru.</div>
-   <div>TODO - popsat chybu, kdy není registrace povolena na serveru</div>
+   <div>TODO - pridat error code - this domain is not for public registration</div>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
     <table class="table-structure">
@@ -4250,9 +4277,39 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
+      <td>name</td>
       <td>TODO</td>
+      <td class="center">✔</td>
       <td>TODO</td>
-      <td class="center">✔❌</td>
+     </tr>
+     <tr>
+      <td>id_domains</td>
+      <td>TODO</td>
+      <td class="center">✔</td>
+      <td>TODO</td>
+     </tr>
+     <tr>
+      <td>public_key</td>
+      <td>TODO</td>
+      <td class="center">✔</td>
+      <td>TODO</td>
+     </tr>
+     <tr>
+      <td>public_key_algorithm</td>
+      <td>TODO</td>
+      <td class="center">✔</td>
+      <td>TODO</td>
+     </tr>
+     <tr>
+      <td>password_hash</td>
+      <td>TODO</td>
+      <td class="center">❌</td>
+      <td>TODO</td>
+     </tr>
+     <tr>
+      <td>password_hash_algorithm</td>
+      <td>TODO</td>
+      <td class="center">❌</td>
       <td>TODO</td>
      </tr>
     </table>
@@ -4269,7 +4326,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>-</td>
       <td>-</td>
-      <td class="center">✔❌</td>
+      <td class="center">-</td>
       <td>-</td>
      </tr>
     </table>
@@ -4284,8 +4341,58 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
-      <td>-</td>
+      <td>User name is missing</td>
+      <td>Přihlašovací jméno uživatele nebylo vyplněno</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>Domain ID is missing</td>
+      <td>ID záznamu v seznamu domén nebylo vyplněno</td>
+     </tr>
+     <tr>
+      <td class="center">3</td>
+      <td>Public key is missing</td>
+      <td>Veřejný klíč pro přihlášení nebyl vyplněn</td>
+     </tr>
+     <tr>
+      <td class="center">4</td>
+      <td>Encryption algorithm of public key is missing</td>
+      <td>Šifrovací algoritmus veřejného klíče pro přihlášení nebyl vyplněn</td>
+     </tr>
+     <tr>
+      <td class="center">5</td>
+      <td>Password hash is missing</td>
+      <td>Hash hesla nebyl vyplněn</td>
+     </tr>
+     <tr>
+      <td class="center">6</td>
+      <td>Password hash algorithm is missing</td>
+      <td>Hashovací algoritmus hesla nebyl vyplněn</td>
+     </tr>
+     <tr>
+      <td class="center">7</td>
+      <td>Wrong user name format</td>
+      <td>Přihlašovací jméno uživatele smí obsahovat jen písmena anglické abecedy, čísla a speciální znaky (tečku, podtržítko a pomlčku). Speciální znaky nesmí být na začátku nebo konci přihlašovacího jména a následovat po sobě. Maximální délka je 64 znaků.</td>
+     </tr>
+     <tr>
+      <td class="center">8</td>
+      <td>Wrong domain ID</td>
+      <td>ID záznamu domény nebylo nalezeno</td>
+     </tr>
+     <tr>
+      <td class="center">9</td>
+      <td>Domain does not allow a public registration</td>
+      <td>Doména nemá povoleny veřejné registrace</td>
+     </tr>
+     <tr>
+      <td class="center">10</td>
+      <td>Unsupported public key encryption algorithm</td>
+      <td>Šifrovací algoritmus veřejného klíče není podporován serverem</td>
+     </tr>
+     <tr>
+      <td class="center">11</td>
+      <td>Unsupported password hash algorithm</td>
+      <td>Hashovací algoritmus veřejného klíče není podporován serverem</td>
      </tr>
     </table>
    </div>
@@ -4294,14 +4401,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_reg",
  "params": {
-  "TODO": "TODO"
+  "name": "alice",
+  "domain": 1,
+  "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
+  "public_key_algorithm": "rsa4096oaep",
+  "password_hash": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg",
+  "password_hash_algorithm": "argon2id"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "TODO": "TODO",
+ "error": 0,
+ "message": "Registration successful"
 }
 </pre>
    <a name="commands-c2s-user-login"></a><h5>Přihlášení uživatele</h5>
