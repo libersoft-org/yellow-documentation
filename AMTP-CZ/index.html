@@ -413,6 +413,11 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>User is not logged in</td>
       <td>Uživatel není přihlášen</td>
      </tr>
+     <tr>
+      <td class="center">905</td>
+      <td>Your IP address is blocked. Reason: [REASON], blocked by: [ADMIN NAME], blocked at: [BLOCK DATE], expiration: [EXPIRATION DATE]</td>
+      <td>IP adresa protější strany je zablokována</td>
+     </tr>
     </table>
    </div>
    <div class="bold">Příklad obecné chyby:</div>
@@ -4526,11 +4531,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>User is already logged in</td>
       <td>Uživatel je již přihlášen</td>
      </tr>
-     <tr>
-      <td class="center">6</td>
-      <td>User is blocked. Reason: [REASON], by: [ADMIN NAME], blocked: [CREATED DATE], expiration: [EXPIRATION DATE]</td>
-      <td>Uživatel je zablokován správcem</td>
-     </tr>
     </table>
    </div>
    <div class="bold">Příklad požadavku od klienta:</div>
@@ -4624,6 +4624,11 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td class="center">3</td>
       <td>Wrong decrypted string</td>
       <td>Nesprávně rozšifrovaný řetězec</td>
+     </tr>
+     <tr>
+      <td class="center">4</td>
+      <td>User is blocked. Reason: [REASON], blocked by: [ADMIN NAME], blocked at: [CREATED DATE], expiration: [EXPIRATION DATE]</td>
+      <td>Uživatel je zablokován správcem</td>
      </tr>
     </table>
    </div>
