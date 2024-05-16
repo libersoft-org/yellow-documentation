@@ -5059,10 +5059,16 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>TODO</td>
+      <td>user</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Přihlašovací jméno uživatele</td>
+     </tr>
+     <tr>
+      <td>password_hash</td>
+      <td>string</td>
+      <td class="center">❌</td>
+      <td>Hash původního hesla</td>
      </tr>
     </table>
    </div>
@@ -5076,10 +5082,22 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>-</td>
-      <td>-</td>
-      <td class="center">✔❌</td>
-      <td>-</td>
+      <td>encrypted_string</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Zašifrovaný náhodně vygenerovaný řetězec veřejným klíčem uživatele</td>
+     </tr>
+     <tr>
+      <td>public_key</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Veřejný klíč, kterým byl řetězec zašifrován</td>
+     </tr>
+     <tr>
+      <td>public_key_algorithm</td>
+      <td>string</td>
+      <td class="center">✔</td>
+      <td>Identifikace algoritmu, kterým byl řetězec zašifrován</td>
      </tr>
     </table>
    </div>
@@ -5093,8 +5111,23 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
-      <td>-</td>
+      <td>User name is missing</td>
+      <td>Přihlašovací jméno uživatele nebylo vyplněno</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>Password is missing</td>
+      <td>Heslo nebylo vyplněno</td>
+     </tr>
+     <tr>
+      <td class="center">3</td>
+      <td>User name not found</td>
+      <td>Přihlašovací jméno uživatele nebylo nenalezeno</td>
+     </tr>
+     <tr>
+      <td class="center">4</td>
+      <td>Wrong password</td>
+      <td>Heslo je chybné</td>
      </tr>
     </table>
    </div>
@@ -5103,14 +5136,20 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_setpassword_challenge",
  "params": {
-  "TODO": "TODO"
+  "user": "alice@example.com",
+  "password_hash": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg"
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "TODO": "TODO",
+ "error": 0,
+ "data": {
+  "encrypted_string": "1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B",
+  "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
+  "public_key_algorithm": "rsa4096oaep"
+ }
 }
 </pre>
 <a name="commands-c2s-user-setpassword-response"></a><h6>Odezva</h6>
