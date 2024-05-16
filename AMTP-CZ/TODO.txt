@@ -9,18 +9,10 @@ Design stranky:
 - Do obsahu (#doc) přidat možnost srolování každého nadpisu (accordion), stejně jako je to v #toc.
 
 Dopsání obsahu:
-- Dopsat všechny commandy v dokumentaci, kde je TODO
 - Do user_encryption přidat supported hashing algorithms a encryption algorithms
-- Příkazy pro správu uživatelských tokenů - uživatel maže / edituje své, admin maže / edituje všech, zobrazení expirace, nějaké identifikace zařízení
-- Příkazy pro blokaci uživatelských účtů - pokud se takový uživatel bude přihlašovat, tak vracet status o tom, že je zablokovaný, kdo zablokoval, kdy, proč atd.
-- Notes.md - přeházet do html
-- Příkazy - User - Správa uživatelských tokenů (je v NOTES, ale chybí tam editace názvu) - done
-- Příkazy - Admin - Přidat error při fail2ban + poté při loginu - Auto-ban při přihlašování (chybí v NOTES) - nechapu
-- Příkazy - User - Přidat error při fail2ban + poté při loginu - Auto-ban při přihlašování (chybí v NOTES)
-- Příkazy - Server - Přidat error při fail2ban + poté při ověření - Auto-ban při nevalidním ověření serveru (chybí v NOTES)
-- Zablokované IP adresy - přidat chybové stavy těmto zlým serverům / klientům ve stylu "You are not welcome here" při pokusech o přihlášení / challenge
-- Vymyslet u blokace IP adres, jak udělat IP range - např. integer, který udává počet IP adres následujících za první IP adresou (otázka je, jestli to nebude moc velké číslo pro integer) a nebo počáteční a koncovou adresu (+ nějaké ověření, zda počáteční je menší, než koncová, jestli jsou validní atd.)
-- Zamyslet se nad dalšími commandy do jádra
+- Příkazy - User - při přihlašování vracet status o tom, že je uživatel zablokovaný, kdo zablokoval, kdy, proč atd. - chybovy stav
+- Příkazy - Obecné - Přidat error při fail2ban (blok na IP)
+- Příkazy - blokace IP adres - IP range první a koncová adresa + errory že první je vyšší, než druhá, jesli jsou ve validním formátu apod.
 
 Návrh verze 2:
 - Přesunutí uživatelských účtů / přihlášení do modulu - přidá další možnosti ověření: OAuth / social loginy atd.
