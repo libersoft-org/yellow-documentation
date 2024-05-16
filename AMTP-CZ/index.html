@@ -2883,7 +2883,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>id</td>
       <td>64-bit integer</td>
       <td class="center">✔</td>
-      <td>ID záznamu v seznamu tokenů</td>
+      <td>ID záznamu v seznamu tokenů relace</td>
      </tr>
      <tr>
       <td>name</td>
@@ -2994,7 +2994,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>id</td>
       <td>64-bit integer</td>
       <td class="center">✔</td>
-      <td>ID záznamu v seznamu tokenů</td>
+      <td>ID záznamu v seznamu tokenů relace</td>
      </tr>
     </table>
    </div>
@@ -5549,10 +5549,10 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td class="center">✔❌</td>
-      <td>TODO</td>
+      <td>id</td>
+      <td>64-bit integer</td>
+      <td class="center">✔</td>
+      <td>ID záznamu v seznamu tokenů relace</td>
      </tr>
     </table>
    </div>
@@ -5568,7 +5568,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      <tr>
       <td>-</td>
       <td>-</td>
-      <td class="center">✔❌</td>
+      <td class="center">-</td>
       <td>-</td>
      </tr>
     </table>
@@ -5583,8 +5583,18 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">1</td>
-      <td>-</td>
-      <td>-</td>
+      <td>Token ID is missing</td>
+      <td>ID záznamu tokenu relace nebylo vyplněno</td>
+     </tr>
+     <tr>
+      <td class="center">2</td>
+      <td>Token ID does not exist</td>
+      <td>ID záznamu v seznamu tokenů relace neexistuje</td>
+     </tr>
+     <tr>
+      <td class="center">3</td>
+      <td>Permission denied</td>
+      <td>Uživatel nemá oprávnění k tomuto tokenu relace (např. token cizího uživatele)</td>
      </tr>
     </table>
    </div>
@@ -5593,14 +5603,15 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "user_tokens_del",
  "params": {
-  "TODO": "TODO"
+  "id": 1
  }
 }
 </pre>
    <div class="bold">Příklad odezvy od serveru:</div>
 <pre>
 {
- "TODO": "TODO",
+ "error": 0,
+ "message": "Token was deleted"
 }
 </pre>
    <a name="commands-c2s-user-tokens-delall"></a><h6>Smazání všech tokenů relace</h6>
