@@ -857,7 +857,7 @@ ja nevim jestli bych tu specifikaci takhle vylozene zabarvoval do ancapu, napr v
 
 
 - používat ho pro účely jak šifrovaného přenosu dat, tak i pro ověření identity serveru.
-
+  
 - vygeneruje soukromý klíč a z něj odvozený veřejný klíč
 > vygeneruje soukromý klíč a související veřejný klíč
 > 
