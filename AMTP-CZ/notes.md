@@ -757,4 +757,143 @@ Po nastaveni priznaku "ready_to_send" klientem, zacne modul zprav pokusy o doruc
 
 
 
+# for v2
+## client user interface sandboxing for untrusted code from modules in foreign servers
+### threat model
+
+
+### options for native clients
+
+### options for web browser client
+#### web workers
+#### compiled rust code
+#### inspected js code
+#### 
+
+
+
+
+    
+
+## BSON
+realne treba taky CBOR, ale hlavne protobuf(?).  , resp, protobuf pro stabilizovanej protokol jadra..
+### navic komprese: https://wicg.github.io/compression/
+    https://github.com/w3c/webtransport/issues/167
+
+
+
+
+
+## threat models
+
+
+
+
+# wtfs
+
+- To je způsobeno především snahou těchto aktualizací o navázání na původní koncepty, což je velmi limitující faktor, který vyžaduje změnu přístupu.
+
+- řadu dalších funkcionalit, kde je okamžitá komunikace nezbytná (např. videohovory, sdílení obrazovky, přenos velkých souborů apod.) 
+
+- Tím jsou sníženy latence a zvýšena propustnost při přenosu dat.
+
+> ?
+
+
+- přenos dat v online hrách apod.).
+
+
+- BSON, který kombinuje výhody strojově i lidsky snadno čitelného formátu JSON, 
+
+> BSON, který kombinuje výhody formátu JSON s efektivitou binárního formátu.
+
+- Snadné zpracování dat: Umožňuje přímý přístup k jednotlivým prvkům dat, aniž by bylo potřeba procházet celý objekt, 
+> nevim na jaky urovni to mas na mysli, ale myslim ze na binarni urovni se musi vzdy projit cely objekt, podobne jako kdyz se parsuje json
+
+
+- Integrace s databázovými systémy: Mnoho současných databázových systémů, jako je např. MongoDB, nativně používá BSON pro ukládání a zpracování dat. To může usnadnit integraci s těmito databázemi, což je výhodné pro aplikace vyžadující komplexní databázové operace.
+
+az na to ze vubec. Podle chatgpt pouziva bson jen mongo a Couchbase, a naprosto neni jasny jak by to mohlo usnadnit integraci.
+
+
+- snížit latenci a zlepšit rychlost odezvy, což zlepšuje uživatelskou zkušenost
+
+- Nežádoucí ovlivnění více uzlů v síti zvyšuje složitost a náklady na potenciální útoky.
+
+- zpracovávána velkými korporacemi, které mohou mít tendence velké množství dat uživatelů různými způsoby zpracovávat 
+
+- spolupráce s vládami apod.)
+ja nevim jestli bych tu specifikaci takhle vylozene zabarvoval do ancapu, napr vetsina skol rozhodne potrebuje "spolupracoovat s vladami" :)
+
+- Jádro: Stará se o síťovou komunikaci, komunikaci s moduly, komunikaci s DNS a zajišťuje základní správu serveru.
+> Jádro: Stará se o síťovou komunikaci, komunikaci s moduly a zajišťuje základní správu serveru.
+
+- Každá serverová i klientská aplikace může využívat vlastní sadu modulů.
+> co je serverová aplikace?
+> a jak muze klientska aplikace vyuzivat moduly?
+
+- Po spojení klienta nebo cizího serveru s vlastním serverem je možné komunikovat buď napřímo s jádrem nebo s jednotlivými moduly. 
+
+> Po spojení se serverem je možné komunikovat buď přímo s jádrem nebo s jednotlivými moduly.
+> Pokud je příkaz určen modulu a modul ho zpracuje, 
+
+
+- Správci či uživatelé mohou vybrat pouze ty moduly, které potřebují, což umožňuje vytvořit řešení šité na míru bez zbytečného nadbytečného software. 
+
+- Správci či uživatelé mohou vybrat pouze ty moduly, které potřebují, což umožňuje vytvořit řešení šité na míru bez zbytečného nadbytečného software. 
+> bez preruseni sluzeb zbylych casti systemu, pripadne bez nutnosti celý systém překompilovat či restartovat. 
+
+-  
+- odolnosti a omezení rizik spojených s narušením celého systému.
+|  což přispívá k vyšší stabilitě.
+
+
+- Účel identity: Narozdíl od původních e-mailových protokolů
+?
+
+- zda každý uživatelský účet bude reprezentovat jen jeden a nebo více uživatelských profilů, tzn. přihlášením k jednomu uživatelskému účtu se může uživatel dostat k několika svým profilům). Taktéž tento přístup zajišťuje možnost nezveřejňovat adresu uživatelského účtu, pokud moduly budou zobrazovat jiný typ identifikace profilů.
+
+- Spojení s certifikátem s vlastním podpisem (bez certifikační autority) není povoleno (jak pro spojení klient-server, tak i pro server-server), protože u nich nelze ověřit identitu (může je vydat kdokoliv),
+
+
+- používat ho pro účely jak šifrovaného přenosu dat, tak i pro ověření identity serveru.
+  
+- vygeneruje soukromý klíč a z něj odvozený veřejný klíč
+> vygeneruje soukromý klíč a související veřejný klíč
+> 
+
+
+-  při registraci v zahashované formě (výběr šifrovacího algoritmu
+
+
+- amtp-pubkey=e:rsa,k:123456789abcdef
+
+
+
+- vždy = 0.
+> error
+    This member is REQUIRED on error.
+    This member MUST NOT exist if there was no error 
+> sjednotit styl commndu se standardem json-rpc
+
+
+
+- Následující chyby nastávají nikoliv jako přímé odpovědi příkazů, ale při dalších speciálních událostech.
+
+> neco jsou samostatne eventy, ktery muze server poslat kdykoliv v ramci spojeni, a neco json obecne chybove odpovedi na commandy
+
+
+
+
+
+
+## messages
+- Text messages are in [Markdown](https://www.markdownguide.org/) format.
+- 
+- All the messages are end to end encrypted. Users can choose the encryption algorithm from those supported by server. Users store their private key and share their public key on the server.
+- 
+- All the contacts stored on the server are encrypted by end to end encryption
+
+> Some encrypted backup and file sharing services provide client-side encryption. The encryption they offer is here not referred to as end-to-end encryption, because the services are not meant for sharing messages between users[further explanation needed]. However, the term "end-to-end encryption" is sometimes incorrectly used to describe client-side encryption.[24]
+
 

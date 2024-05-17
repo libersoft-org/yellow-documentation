@@ -64,9 +64,9 @@
    </ul>
    <div class="bold">Nové koncepty v AMTP:</div>
    <ul class="spacelist">
-    <li><span class="bold">Komunikace v reálném čase</span>: Tento přístup, díky technologiím jako je <a href="https://www.w3.org/TR/webtransport/" target="_blank">WebTransport</a>, umožňuje uživatelům pohodlněji vést konverzace, rychleji reagovat na zprávy a využívat řadu dalších funkcionalit, kde je okamžitá komunikace nezbytná (např. videohovory, sdílení obrazovky, přenos velkých souborů apod.) a to navíc paralelně díky vícekanálové komunikaci. Tím jsou sníženy latence a zvýšena propustnost při přenosu dat.</li>
+    <li><span class="bold">Komunikace v reálném čase</span>: Tento přístup, díky technologiím jako je <a href="https://www.w3.org/TR/webtransport/" target="_blank">WebTransport</a>, umožňuje uživatelům pohodlněji vést konverzace, rychleji reagovat na zprávy a využívat řadu dalších funkcionalit, kde je okamžitá komunikace nezbytná (např. online hry, videohovory, sdílení obrazovky apod.) a to navíc paralelně díky vícekanálové komunikaci. Tím jsou sníženy latence a zvýšena propustnost při přenosu dat.</li>
     <li><span class="bold">Bezpečná komunikace</span>: Protokol klade velký důraz na zabezpečenou komunikaci a tím chrání soukromí uživatelů na více vrstvách. Díky tomu jsou minimalizována rizika spojená s únikem dat, znemožněny odposlechy a další formy kybernetických útoků.</li>
-    <li><span class="bold">Rozšiřitelnost</span>: Protokol umožňuje snadno vytvářet rozšíření o různé funkcionality díky modulárnímu konceptu, ať už jde o vytváření jednoduchých jednoúčelových aplikací (např. zasílání zpráv z <a href="https://cs.wikipedia.org/wiki/Internet_v%C4%9Bc%C3%AD" target="_blank">IoT zařízení</a> uživateli) až po multifunkční <a href="https://en.wikipedia.org/wiki/Super-app" target="_blank">super-aplikace</a> s četnou řadou funkcionalit (např. zasílání rychlých zpráv, funkce sociálních médií, e-commerce, přenosy velkých souborů, přenos dat v online hrách apod.).</li>
+    <li><span class="bold">Rozšiřitelnost</span>: Protokol umožňuje snadno vytvářet rozšíření o různé funkcionality díky modulárnímu konceptu, ať už jde o vytváření jednoduchých jednoúčelových aplikací (např. zasílání zpráv z <a href="https://cs.wikipedia.org/wiki/Internet_v%C4%9Bc%C3%AD" target="_blank">IoT zařízení</a> uživateli) až po multifunkční <a href="https://en.wikipedia.org/wiki/Super-app" target="_blank">super-aplikace</a> s četnou řadou funkcionalit (např. zasílání rychlých zpráv, funkce sociálních médií, e-commerce, přenosy velkých souborů, online hry apod.).</li>
     <li><span class="bold">Strukturovaná data</span>: Přenášená data jsou sestavena strukturovaně ve formátu <a href="https://en.wikipedia.org/wiki/BSON" target="_blank">BSON</a>, který je snadno převeditelný na strojově i lidsky čitelný formát <a href="https://cs.wikipedia.org/wiki/JSON" target="_blank">JSON</a> a navíc poskytuje výhody efektivity binárního formátu. To umožňuje, aby data byla snadno přístupná a zpracovatelná.</li>
    </ul>
    <a name="standards"></a><h2>Zvolené standardy</h2>
@@ -113,7 +113,7 @@
     <li><span class="bold">Geografický výběr poskytovatele</span>: Distribuce serverů geograficky blíže k uživatelům může výrazně zlepšit rychlost odezvy, což zkvalitňuje uživatelskou zkušenost při komunikaci a přenosu dat. Taktéž umožňuje vybrat si poskytovatele, který lépe vyhovuje lokálním potřebám, jako je podpora ve stejném jazyce, možnost osobního kontaktu apod. To zvyšuje komfort, spokojenost a posiluje důvěru uživatelů v poskytované služby.</li>
     <li><span class="bold">Místní přizpůsobení</span>: Distribuované sítě umožňují lokálním poskytovatelům služby se lépe přizpůsobit specifickým regionálním požadavkům uživatelů a nutnost dodržovat pouze lokální právní normy a nebýt tak svázán dodržováním regulací a norem z celého světa tak, jak je to u centralizovaných globálních služeb.</li>
     <li><span class="bold">Podpora pro inovace</span>: Distribuovaná síťová architektura umožňuje experimentování a inovace na jednotlivých uzlech bez rizika narušení celého systému. To může sloužit jako testovací prostor pro nové technologie a modely před jejich širším nasazením.</li>
-    <li><span class="bold">Bezpečnost</span>: Útoky zaměřené na jednotlivé uzly nemají vliv na celou síť. Distribuovaná struktura komplikuje útočníkům snahu ovlivnit celý systém. Nežádoucí ovlivnění více uzlů v síti zvyšuje složitost a náklady na potenciální útoky.</li>
+    <li><span class="bold">Bezpečnost</span>: Útoky zaměřené na jednotlivé uzly nemají vliv na celou síť. Distribuovaná struktura komplikuje útočníkům snahu ovlivnit celý systém. Množství uzlů v síti zvyšuje složitost a náklady na potenciální útoky.</li>
     <li><span class="bold">Ochrana soukromí</span>: Distribuovaná síťová architektura může přispět k lepší ochraně soukromí uživatelů tím, že data menších poskytovatelů nejsou uchovávána a zpracovávána velkými korporacemi, které mohou mít tendence velké množství dat uživatelů různými způsoby zpracovávat nebo sdílet pro různé účely (reklamní, trénink AI, předávání citlivých dat vládám apod.)</li>
    </ul>
    <a name="architecture-modularity"></a><h3>Modularita</h3>
@@ -123,15 +123,15 @@
     <li><span class="bold">Moduly</span>: Zajišťují funkcionality serveru (např. zasílání rychlých zpráv, diskuzní fórum, blogy apod.). Každá serverová i klientská aplikace může využívat vlastní sadu modulů.</li>
    </ul>
    <div></div>
-   <div>Po spojení klienta nebo cizího serveru s vlastním serverem je možné komunikovat buď napřímo s <span class="bold">jádrem</span> nebo s jednotlivými <span class="bold">moduly</span>. Na základě struktury příkazu, který je zaslán po síti, server určí, zda se jedná o příkaz, který má být zpracován jádrem nebo moduly. Pokud je určen příkaz modulu a modul ho zpracuje, vrátí odpověď jádru a jádro ho následně předá zpět připojenému klientovi nebo cizímu serveru, pro které je určen.</div>
+   <div>Po spojení se serverem je možné komunikovat buď přímo s <span class="bold">jádrem</span> nebo s jednotlivými <span class="bold">moduly</span>. Na základě struktury příkazu, který je zaslán po síti, server určí, zda se jedná o příkaz, který má být zpracován jádrem nebo moduly. Pokud je příkaz určen modulu a modul ho zpracuje, vrátí odpověď jádru a jádro ho následně předá zpět připojenému klientovi nebo cizímu serveru, pro které je odpověd určen.</div>
    <div>Způsob komunikace serverového jádra s moduly není standardizován touto dokumentací, každá softwarová implementace může mít vlastní řešení (například výměna dat uvnitř aplikace, externě běžící služby propojené unixovými sockety, síťové spojení přes <span class="bold">WebTransport</span> apod.). V rámci tohoto protokolu jsou pouze popsány struktury dat v <span class="bold">BSON</span> formátu, které se používají při komunikaci mezi jádrem a serverem.</div>
    <div><span class="bold">Modulární koncept architektury</span> protokolu poskytuje několik klíčových výhod:</div>
    <ul class="spacelist">
-    <li><span class="bold">Přizpůsobení</span>: Díky modulární struktuře mohou provozovatelé serverů snadno vybírat specifické funkcionality dle svých potřeb nebo potřeb jejich uživatelů. Správci či uživatelé mohou vybrat pouze ty moduly, které potřebují, což umožňuje vytvořit řešení šité na míru bez zbytečného nadbytečného software. Například školy či firmy mohou využívat jiné moduly, než domácí uživatelé apod.</li>
+    <li><span class="bold">Přizpůsobení</span>: Díky modulární struktuře mohou provozovatelé serverů snadno vybírat specifické funkcionality dle svých potřeb nebo potřeb jejich uživatelů. Správci či uživatelé mohou vybrat pouze ty moduly, které potřebují, což umožňuje vytvořit řešení šité na míru bez nadbytečného software. Například školy či firmy mohou využívat jiné moduly, než domácí uživatelé apod.</li>
     <li><span class="bold">Rychlý a snadný vývoj</span>: Modulární architektura umožňuje různým vývojovým týmům pracovat nezávisle na sobě na různých modulech, což zrychluje celkový vývoj systému, usnadňuje správu kódu a zvyšuje přehlednost v kódu. To je zvláště užitečné ve velkých projektech. Taktéž to šetří čas tím, že nemusí vytvářet celý systém od základu, ale jen specifické funkcionality.</li>
-    <li><span class="bold">Snadná údržba a aktualizace</span>: Moduly lze nezávisle na sobě aktualizovat a vylepšovat. Takovéto aktualizace jednotlivých modulů mohou proběhnout bez přerušení zbylé části systému nebo nutnosti celý systém překompilovat či restartovat. To zároveň přináší i dlouhodobou životnost a udržitelnost systému tím, že usnadní integraci nových funkcionalit.</li>
+    <li><span class="bold">Snadná údržba a aktualizace</span>: Moduly lze nezávisle na sobě aktualizovat a vylepšovat. Takovéto aktualizace jednotlivých modulů mohou proběhnout bez přerušení funkce zbylé části systému, připadně nutnosti celý systém překompilovat či restartovat. To zároveň přináší i dlouhodobou životnost a udržitelnost systému tím, že usnadní integraci nových funkcionalit.</li>
     <li><span class="bold">Testování</span>: Každý modul lze testovat samostatně, což zjednodušuje proces odstranění chyb a zvyšuje celkovou kvalitu software. Integrace nových funkcionalit je také snazší a méně náchylná k chybám, jelikož se jednotlivé moduly testují nezávisle.</li>
-    <li><span class="bold">Odolnost proti chybám</span>: V případě, že jeden z modulů selže, neovlivní to fungování ostatních částí systému, což přispívá k vyšší stabilitě, odolnosti a omezení rizik spojených s narušením celého systému.</li>
+    <li><span class="bold">Odolnost proti chybám</span>: V případě, že jeden z modulů selže, neovlivní to fungování ostatních částí systému, což přispívá k vyšší stabilitě, odolnosti.</li>
     <li><span class="bold">Bezpečnost</span>: Každému modulu lze udělit různá omezená práva v rámci operačního systému, což zajišťuje zvýšenou bezpečnost celého systému.</li>
     <li><span class="bold">Multiverzování</span>: V rámci jednoho serveru může běžet stejný modul ve více verzích najednou. To umožňuje serveru být kompatibilní pro nové i starší verze klientských aplikací.</li>
     <li><span class="bold">Interoperabilita</span>: Moduly mohou být navrženy tak, aby mohly komunikovat a spolupracovat mezi sebou a také s různými dalšími externími zdroji, se kterými taktéž mohou sdílet data.</li>
@@ -155,7 +155,7 @@
      <li><span class="bold">Doménová část</span>: určuje doménu, ke které má užívací právo provozovatel serveru (každý AMTP server může spravovat libovolné množství domén). Doménová jména mohou obsahovat znaky dle aktuálních standardů pro domény (definované v <a href="https://www.rfc-editor.org/rfc/rfc5890.html" target="_blank">RFC 5890</a>, <a href="https://www.rfc-editor.org/rfc/rfc5891.html" target="_blank">RFC 5891</a>, <a href="https://www.rfc-editor.org/rfc/rfc5892.html" target="_blank">RFC 5892</a> a <a href="https://www.rfc-editor.org/rfc/rfc5893.html" target="_blank">RFC 5893</a>.</li>
     </ul>
     <li><span class="bold">Viditelné jméno</span>: V rámci <span class="bold">AMTP</span> se již <span class="bold">nepoužívá</span> formát zápisu s viditelným jménem, který je známý z původních e-mailových protokolů (např.: "<span class="bold">John Doe &lt;john.doe@example.com&gt;</span>").</li>
-    <li><span class="bold">Účel identity</span>: Narozdíl od původních e-mailových protokolů, <span class="bold">AMTP</span> nedefinuje, co uživatelský účet reprezentuje (např. poštovní schránku, alias pro přeposílání pošty apod.). To je plně v režii modulů (např. modul pro rychlé zprávy).</li>
+    <li><span class="bold">Účel identity</span>: Narozdíl od původních e-mailových protokolů, <span class="bold">AMTP</span> nedefinuje, co identita reprezentuje (např. poštovní schránku, alias pro přeposílání pošty apod.). To je plně v režii modulů (např. modul pro rychlé zprávy).</li>
     <li><span class="bold">Profilové informace</span>: Uživatelský účet v protokolovém jádru neobsahuje žádné další profilové informace (např. jméno, příjmení, pohlaví, datum narození, fotografie apod.). Tyto informace jsou plně v kompetenci modulů, kde mohou být reprezentovány v podobě uživatelských profilů. Tento přístup dává modulům svobodu v rozhodnutí, zda každý uživatelský účet bude reprezentovat jen jeden a nebo více uživatelských profilů, tzn. přihlášením k jednomu uživatelskému účtu se může uživatel dostat k několika svým profilům). Taktéž tento přístup zajišťuje možnost nezveřejňovat adresu uživatelského účtu, pokud moduly budou zobrazovat jiný typ identifikace v profilech.</li>
    </ul>
    <div><span class="bold">Správcovské účty</span> mají pouze uživatelské jméno bez domény. Platí pro ně stejná pravidla, jako pro lokální část uživatelských účtů.</div>
@@ -167,7 +167,7 @@
    <div>Zároveň je vyžadován platný certifikát, vydaný certifikační autoritou (např. <a href="https://cs.wikipedia.org/wiki/Let%27s_Encrypt" target="_blank">Let's Encrypt</a>). Spojení s certifikátem s vlastním podpisem (bez certifikační autority) není povoleno (jak pro spojení <span class="bold">klient-server</span>, tak i pro <span class="bold">server-server</span>), protože u nich nelze ověřit identitu (může je vydat kdokoliv), proto je nutné si takový certifikát nechat vystavit od certifikační autority a používat ho pro ověření identity serveru.</div>
    <a name="security-dkey"></a><h3>Digitální podpis serveru</h3>
    <div><span class="bold">Digitální podpis serveru</span> slouží k ověření, zda server, ke kterému se klient či jiný server připojuje, je opravdu ten, za který se vydává. Toto je bezpečnostní mechanismus, který zabraňuje útokům, jako je např. <a href="https://cs.wikipedia.org/wiki/IP_spoofing" target="_blank">IP spoofing</a>.</div>
-   <div>Po nainstalování každého serveru se vygeneruje <span class="bold">soukromý klíč</span> a z něj odvozený <span class="bold">veřejný klíč</span> algoritmem, který podporují ostatní serverové i klientské aplikace. <span class="bold">Soukromý klíč</span> zůstává bezpečně uložen na serveru. <span class="bold">Veřejný klíč</span> společně s identifikací šifrovacího algoritmu se uloží do <span class="bold">DNS</span> do <span class="bold">TXT</span> záznamu <span class="bold">AMTP-PUBKEY</span>.</div>
+   <div>Po nainstalování každého serveru se vygeneruje <span class="bold">soukromý</span> a <span class="bold">veřejný</span> klíč pro algoritmus, který podporují ostatní serverové i klientské aplikace. <span class="bold">Soukromý klíč</span> zůstává bezpečně uložen na serveru. <span class="bold">Veřejný klíč</span> společně s identifikací šifrovacího algoritmu se uloží do <span class="bold">DNS</span> do <span class="bold">TXT</span> záznamu <span class="bold">AMTP-PUBKEY</span>.</div>
    <div>Ihned po navázání spojení vlastního serveru či klienta s protějším serverem, se zašle dotaz protějšímu serveru se žádostí o podepsání námi náhodně vygenerovaného řetězce. Protější server podepíše tento řetězec svým <span class="bold">soukromým klíčem</span> a odešle ho zpět. Náš server nebo klient odešle následně dotaz do <span class="bold">DNS</span> pro získání <span class="bold">TXT</span> záznamu <span class="bold">ATMP-PUBKEY</span> uvedený k protějšímu serveru a tím získá  jeho <span class="bold">veřejný klíč</span>. Náš server či klient následně ověří zda podepsaný řetězec odpovídá <span class="bold">veřejnému klíči</span> získanému z <span class="bold">DNS</span>. Pokud je podpis platný, nadále se komunikuje s protějším serverem, v opačném případě je ukončeno spojení.</div>
    <div>V případě spojení <span class="bold">server-server</span> se také provede stejné ověření z opačné strany (protější server si ověří náš server).</div>
    <div class="center"><img src="img/AMTP-dkey-CZ.png" alt="Digitální podpis serveru" /></div>
@@ -189,7 +189,7 @@
     <li>Server porovná rozšifrovaný řetězec s původně vygenerovaným řetězcem. Pokud se tyto dva řetězce shodují, je uživatel či správce přihlášen. V případě uživatelů (nikoliv správců) je zároveň i vydán token relace. Token relace by měl být taktéž časově omezen (dobu platnosti si určí server, doporučená doba platnosti je v rámci několika jednotek až desítek dní). Tokeny relace je možné i ručně odstranit. Správci nepotřebují token relace, jelikož se přihlašují jen na krátkou dobu (po dobu spojení se serverem).</li>
    </ul>
    <div>Tato metoda ověřování využívá výhody asymetrického šifrování k ochraně uživatelských dat a zajišťuje, že citlivé informace, jako jsou <span class="bold">soukromé klíče</span>, zůstanou chráněny v rámci koncových zařízení uživatelů. Tento přístup zvyšuje bezpečnost a je v souladu s osvědčenými postupy pro bezpečnou komunikaci v moderních aplikacích.</div>
-   <div>Ověření uživatele pomocí soukromého klíče může být rozšířeno i ověřením hesla (standardně nepovinné, server si povinnost hesla může vynutit), které je zasláno při registraci v zahashované formě (výběr hashovacího algoritmu je v kompetenci serverové a klientské aplikace). Tímto se docílí dodatečného zabezpečení pro případ, kdyby byl soukromý klíč zkompromitován.</div>
+   <div>Ověření uživatele pomocí soukromého klíče může být rozšířeno o ověření hesla (standardně nepovinné, server si povinnost hesla může vynutit), které je zasláno při registraci v zahashované formě (výběr hashovacího algoritmu je v kompetenci serverové a klientské aplikace). Tímto se docílí dodatečného zabezpečení pro případ, kdyby byl soukromý klíč zkompromitován.</div>
    <div class="center"><img src="img/AMTP-login-CZ.png" alt="Bezpečné přihlašování" /></div>
    <a name="security-block"></a><h3>Blokace neautorizovaných přístupů</h3>
    <div>Protokol počítá s obranými strategiemi, které mohou být implementovány v serverové aplikaci, které zajišťují ochranu systému před opakovanými pokusy o neautorizovaný přístup jak ze strany klientů, tak ze strany cizích serverů. Tyto strategie představují mechanismus, jak se bránit <a href="https://cs.wikipedia.org/wiki/%C3%9Atok_hrubou_silou" target="_blank">útokům hrubou silou</a> a to v následujících oblastech:</div>
@@ -533,7 +533,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>Veřejný klíč, kterým byl řetězec zašifrován</td>
      </tr>
      <tr>
-      <td>public_key_algorithm</td>
+      <td>encryption_algorithm</td>
       <td>string</td>
       <td class="center">✔</td>
       <td>Identifikace algoritmu, kterým byl řetězec zašifrován</td>
@@ -592,7 +592,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "data": {
   "encrypted_string": "1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B",
   "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-  "public_key_algorithm": "rsa4096oaep"
+  "encryption_algorithm": "rsa4096oaep"
  }
 }
 </pre>
@@ -823,7 +823,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>Veřejný klíč, kterým byl řetězec zašifrován</td>
      </tr>
      <tr>
-      <td>public_key_algorithm</td>
+      <td>encryption_algorithm</td>
       <td>string</td>
       <td class="center">✔</td>
       <td>Identifikace algoritmu, kterým byl řetězec zašifrován</td>
@@ -877,7 +877,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
   "data": {
    "encrypted_string": "1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B",
    "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-   "public_key_algorithm": "rsa4096oaep"
+   "encryption_algorithm": "rsa4096oaep"
   }
  }
 </pre>
@@ -915,12 +915,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>string</td>
       <td class="center">✔</td>
       <td>Nový veřejný klíč</td>
-     </tr>
-     <tr>
-      <td>new_public_key_algorithm</td>
-      <td>string</td>
-      <td class="center">✔</td>
-      <td>Identifikace algoritmu pro veřejný klíč</td>
      </tr>
     </table>
    </div>
@@ -961,8 +955,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">3</td>
-      <td>Encryption algorithm of the new public key is missing</td>
-      <td>Šifrovací algoritmus nového veřejného klíče chybí</td>
+      <td>Invalid public key format</td>
+      <td>Server nepodporuje formát veřejného klíče</td>
      </tr>
      <tr>
       <td class="center">4</td>
@@ -974,11 +968,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>Wrong decrypted string</td>
       <td>Nesprávně rozšifrovaný řetězec</td>
      </tr>
-     <tr>
-      <td class="center">6</td>
-      <td>Unsupported encryption algorithm</td>
-      <td>Server nepodporuje šifrovací algoritmus nového veřejného klíče</td>
-     </tr>
     </table>
    </div>
    <div class="bold">Příklad požadavku od klienta:</div>
@@ -987,8 +976,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "command": "admin_setpubkey_response",
  "params": {
   "decrypted_string": "abcdefghijklmnopqrstuvwxyz1234567890abcd",
-  "new_public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-  "new_public_key_algorithm": "rsa4096oaep"
+  "new_public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF"
  }
 }
 </pre>
@@ -1060,7 +1048,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>Veřejný klíč, kterým byl řetězec zašifrován</td>
      </tr>
      <tr>
-      <td>public_key_algorithm</td>
+      <td>encryption_algorithm</td>
       <td>string</td>
       <td class="center">✔</td>
       <td>Identifikace algoritmu, kterým byl řetězec zašifrován</td>
@@ -1114,7 +1102,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
   "data": {
    "encrypted_string": "1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B",
    "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-   "public_key_algorithm": "rsa4096oaep"
+   "encryption_algorithm": "rsa4096oaep"
   }
  }
 </pre>
@@ -1322,11 +1310,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>Veřejný klíč správce pro přihlášení</td>
      </tr>
      <tr>
-      <td>public_key_algorithm</td>
-      <td>string</td>
-      <td>Šifrovací algoritmus veřejného klíče</td>
-     </tr>
-     <tr>
       <td>created</td>
       <td>timestamp</td>
       <td>Datum a čas vytvoření záznamu</td>
@@ -1367,20 +1350,17 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    {
     "id": 51,
     "name": "admin51",
-    "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-    "public_key_algorithm": "rsa4096oaep"
+    "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF"
     "created": "2024-01-01T00:00:00Z",
    }, {
     "id": 52,
     "name": "admin52",
-    "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-    "public_key_algorithm": "rsa4096oaep"
+    "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF"
     "created": "2024-01-02T00:00:00Z",
    }, {
     "id": 53,
     "name": "admin53",
-    "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-    "public_key_algorithm": "rsa4096oaep"
+    "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF"
     "created": "2024-01-03T00:00:00Z",
    }
   ]
@@ -1422,12 +1402,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>string</td>
       <td class="center">✔</td>
       <td>Veřejný klíč pro přihlášení</td>
-     </tr>
-     <tr>
-      <td>public_key_algorithm</td>
-      <td>string</td>
-      <td class="center">✔</td>
-      <td>Algoritmus veřejného klíče pro přihlášení</td>
      </tr>
      <tr>
       <td>password_hash</td>
@@ -1480,8 +1454,8 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">3</td>
-      <td>Encryption algorithm of public key is missing</td>
-      <td>Šifrovací algoritmus veřejného klíče nebyl vyplněn</td>
+      <td>Invalid public key format</td>
+      <td>Server nepodporuje formát veřejného klíče</td>
      </tr>
      <tr>
       <td class="center">4</td>
@@ -1499,11 +1473,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>Přihlašovací jméno správce smí obsahovat jen písmena anglické abecedy, čísla a speciální znaky (tečku, podtržítko a pomlčku). Speciální znaky nesmí být na začátku nebo konci přihlašovacího jména a následovat po sobě. Maximální délka je 64 znaků.</td>
      </tr>
      <tr>
-      <td class="center">7</td>
-      <td>Unsupported public key encryption algorithm</td>
-      <td>Šifrovací algoritmus veřejného klíče není podporován serverem</td>
-     </tr>
-     <tr>
       <td class="center">8</td>
       <td>Unsupported password hash algorithm</td>
       <td>Hashovací algoritmus veřejného klíče není podporován serverem</td>
@@ -1517,7 +1486,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "params": {
   "name": "admin",
   "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-  "public_key_algorithm": "rsa4096oaep",
   "password_hash": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg",
   "password_hash_algorithm": "argon2id"
  }
@@ -2228,11 +2196,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>Veřejný klíč uživatele pro přihlášení</td>
      </tr>
      <tr>
-      <td>public_key_algorithm</td>
-      <td>string</td>
-      <td>Šifrovací algoritmus veřejného klíče uživatele pro přihlášení</td>
-     </tr>
-     <tr>
       <td>password_hash</td>
       <td>string</td>
       <td>Hash hesla uživatele</td>
@@ -2290,7 +2253,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     "id": 51,
     "name": "alice",
     "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-    "public_key_algorithm": "rsa4096oaep",
     "password_hash": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg",
     "password_hash_algorithm": "argon2id",
     "created":"2024-01-01T00:00:00Z"
@@ -2298,7 +2260,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     "id": 52,
     "name": "bob",
     "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-    "public_key_algorithm": "rsa4096oaep",
     "password_hash": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg",
     "password_hash_algorithm": "argon2id",
     "created": "2024-01-02T00:00:00Z"
@@ -2306,7 +2267,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     "id": 53,
     "name": "charlie",
     "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-    "public_key_algorithm": "rsa4096oaep",
     "password_hash": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg",
     "password_hash_algorithm": "argon2id",
     "created": "2024-01-03T00:00:00Z"
@@ -2356,12 +2316,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>string</td>
       <td class="center">✔</td>
       <td>Veřejný klíč pro přihlášení uživatele</td>
-     </tr>
-     <tr>
-      <td>public_key_algorithm</td>
-      <td>string</td>
-      <td class="center">✔</td>
-      <td>Šifrovací algoritmus veřejného klíče pro přihlášení uživatele</td>
      </tr>
      <tr>
       <td>password_hash</td>
@@ -2462,7 +2416,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
   "name": "alice",
   "id_domain": 1,
   "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-  "public_key_algorithm": "rsa4096oaep",
   "password_hash": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg",
   "password_hash_algorithm": "argon2id"
  }
@@ -2522,12 +2475,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>string</td>
       <td class="center">❌</td>
       <td>Veřejný klíč pro přihlášení uživatele</td>
-     </tr>
-     <tr>
-      <td>public_key_algorithm</td>
-      <td>string</td>
-      <td class="center">❌</td>
-      <td>Šifrovací algoritmus veřejného klíče pro přihlášení uživatele</td>
      </tr>
      <tr>
       <td>password_hash</td>
@@ -2609,7 +2556,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
   "name": "alice",
   "id_domain": 1,
   "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-  "public_key_algorithm": "rsa4096oaep",
   "password_hash": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg",
   "password_hash_algorithm": "argon2id"
  }
@@ -3124,7 +3070,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>ID záznamu uživatelského účtu nebylo vyplněno</td>
      </tr>
      <tr>
-      <td class="center">1</td>
+      <td class="center">2</td>
       <td>User account ID does not exist</td>
       <td>ID záznamu v seznamu uživatelských účtů nebylo nalezeno</td>
      </tr>
@@ -4339,12 +4285,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>Veřejný klíč pro přihlášení</td>
      </tr>
      <tr>
-      <td>public_key_algorithm</td>
-      <td>string</td>
-      <td class="center">✔</td>
-      <td>Šifrovací algoritmus veřejného klíče pro přihlášení</td>
-     </tr>
-     <tr>
       <td>password_hash</td>
       <td>string</td>
       <td class="center">❌</td>
@@ -4453,7 +4393,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
   "name": "alice",
   "domain": 1,
   "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-  "public_key_algorithm": "rsa4096oaep",
   "password_hash": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg",
   "password_hash_algorithm": "argon2id"
  }
@@ -4528,12 +4467,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td class="center">✔</td>
       <td>Veřejný klíč, kterým byl řetězec zašifrován</td>
      </tr>
-     <tr>
-      <td>public_key_algorithm</td>
-      <td>string</td>
-      <td class="center">✔</td>
-      <td>Identifikace algoritmu, kterým byl řetězec zašifrován</td>
-     </tr>
     </table>
    </div>
    <div class="bold">Chybové stavy:</div>
@@ -4588,7 +4521,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "data": {
   "encrypted_string": "1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B",
   "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-  "public_key_algorithm": "rsa4096oaep"
  }
 }
 </pre>
@@ -4905,12 +4837,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td class="center">✔</td>
       <td>Veřejný klíč, kterým byl řetězec zašifrován</td>
      </tr>
-     <tr>
-      <td>public_key_algorithm</td>
-      <td>string</td>
-      <td class="center">✔</td>
-      <td>Identifikace algoritmu, kterým byl řetězec zašifrován</td>
-     </tr>
     </table>
    </div>
    <div class="bold">Chybové stavy:</div>
@@ -4960,7 +4886,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "data": {
   "encrypted_string": "1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B",
   "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-  "public_key_algorithm": "rsa4096oaep"
  }
 }
 </pre>
@@ -4998,12 +4923,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>string</td>
       <td class="center">✔</td>
       <td>Nový veřejný klíč</td>
-     </tr>
-     <tr>
-      <td>new_public_key_algorithm</td>
-      <td>string</td>
-      <td class="center">✔</td>
-      <td>Identifikace algoritmu pro veřejný klíč</td>
      </tr>
     </table>
    </div>
@@ -5071,7 +4990,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "params": {
   "decrypted_string": "abcdefghijklmnopqrstuvwxyz1234567890abcd",
   "new_public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-  "new_public_key_algorithm": "rsa4096oaep"
  }
 }
 </pre>
@@ -5142,12 +5060,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td class="center">✔</td>
       <td>Veřejný klíč, kterým byl řetězec zašifrován</td>
      </tr>
-     <tr>
-      <td>public_key_algorithm</td>
-      <td>string</td>
-      <td class="center">✔</td>
-      <td>Identifikace algoritmu, kterým byl řetězec zašifrován</td>
-     </tr>
     </table>
    </div>
    <div class="bold">Chybové stavy:</div>
@@ -5197,7 +5109,6 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "data": {
   "encrypted_string": "1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B",
   "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-  "public_key_algorithm": "rsa4096oaep"
  }
 }
 </pre>
@@ -6498,7 +6409,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "data": {
   "encrypted_string": "1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B3C4D5E6F1A2B",
   "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
-  "public_key_algorithm": "rsa4096oaep"
+  "encryption_algorithm": "rsa4096oaep"
  }
 }
 </pre>
@@ -6614,7 +6525,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  }
 }
 </pre>
-   <div class="bold">Klient protějšího získá nové zprávy:</div>
+   <div class="bold">Klient protějšího serveru získá nové zprávy:</div>
 <pre>
 {
  "module": "com.example.messages_1.0",
