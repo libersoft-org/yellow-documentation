@@ -866,6 +866,16 @@ ja nevim jestli bych tu specifikaci takhle vylozene zabarvoval do ancapu, napr v
 -  při registraci v zahashované formě (výběr šifrovacího algoritmu
 
 
+- amtp-pubkey=e:rsa,k:123456789abcdef
+
+
+
+- vždy = 0.
+> error
+    This member is REQUIRED on error.
+    This member MUST NOT exist if there was no error 
+    
+
 
 
 
