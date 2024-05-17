@@ -2168,7 +2168,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>id_domains</td>
+      <td>id_domain</td>
       <td>64-bit integer</td>
       <td class="center">✔</td>
       <td>ID záznamu domény</td>
@@ -2274,7 +2274,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_users_list",
  "params": {
-  "id_domains": 1,
+  "id_domain": 1,
   "offset": 50,
   "count": 3
  }
@@ -2346,7 +2346,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>Lokální část přihlašovacího jména uživatele</td>
      </tr>
      <tr>
-      <td>id_domains</td>
+      <td>id_domain</td>
       <td>32-bit integer</td>
       <td class="center">✔</td>
       <td>ID záznamu v seznamu domén</td>
@@ -2460,7 +2460,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "command": "admin_users_add",
  "params": {
   "name": "alice",
-  "id_domains": 1,
+  "id_domain": 1,
   "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
   "public_key_algorithm": "rsa4096oaep",
   "password_hash": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg",
@@ -2512,7 +2512,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>Lokální část uživatelského jména</td>
      </tr>
      <tr>
-      <td>id_domains</td>
+      <td>id_domain</td>
       <td>32-bit integer</td>
       <td class="center">❌</td>
       <td>ID záznamu v seznamu domén</td>
@@ -2607,7 +2607,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "params": {
   "id": 1,
   "name": "alice",
-  "id_domains": 1,
+  "id_domain": 1,
   "public_key": "1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF",
   "public_key_algorithm": "rsa4096oaep",
   "password_hash": "$argon2id$v=19$m=12,t=3,p=1$Ym9lOGY4Z2JpNGcwMDAwMA$/tlnuG0YNErs5KviawcLcg",
@@ -2734,7 +2734,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>id_users</td>
+      <td>id_user</td>
       <td>64-bit integer</td>
       <td class="center">✔</td>
       <td>ID záznamu v seznamu uživatelů</td>
@@ -2830,7 +2830,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_tokens_list",
  "params": {
-  "id_users": 1,
+  "id_user": 1,
   "offset": 50,
   "count": 3
  }
@@ -3086,7 +3086,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>id_users</td>
+      <td>id_user</td>
       <td>64-bit integer</td>
       <td class="center">✔</td>
       <td>ID záznamu v seznamu uživatelských účtů</td>
@@ -3135,7 +3135,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_tokens_deluser",
  "params": {
-  "id_users": 1
+  "id_user": 1
  }
 }
 </pre>
@@ -3294,12 +3294,12 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>ID záznamu v seznamu zablokovaných uživatelů</td>
      </tr>
      <tr>
-      <td>id_users</td>
+      <td>id_user</td>
       <td>64-bit integer</td>
       <td>ID zablokovaného uživatele ze seznamu uživatelských účtů</td>
      </tr>
      <tr>
-      <td>id_admins</td>
+      <td>id_admin</td>
       <td>32-bit integer</td>
       <td>ID blokujícího správce - může být null, pokud byla IP adresa zablokována automaticky systémem, nikoliv ručně správcem</td>
      </tr>
@@ -3353,22 +3353,22 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
   "blockedusers": [
    {
     "id": 51,
-    "id_users": 1,
-    "id_admins": 1
+    "id_user": 1,
+    "id_admin": 1
     "reason": "Spam",
     "created": "2024-01-01T00:00:00Z",
     "duration": 86400
    }, {
     "id": 52,
-    "id_users": 2,
-    "id_admins": 1
+    "id_user": 2,
+    "id_admin": 1
     "reason": "Spam",
     "created": "2024-01-02T00:00:00Z",
     "duration": 86400
    }, {
     "id": 53,
-    "id_users": 3,
-    "id_admins": null
+    "id_user": 3,
+    "id_admin": null
     "reason": "Auto-spam detection",
     "created": "2024-01-03T00:00:00Z",
     "duration": 86400
@@ -3402,7 +3402,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <th>Popis</th>
      </tr>
      <tr>
-      <td>id_users</td>
+      <td>id_user</td>
       <td>64-bit integer</td>
       <td class="center">✔</td>
       <td>ID zablokovaného uživatele ze seznamu uživatelských účtů</td>
@@ -3463,7 +3463,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
 {
  "command": "admin_blockedusers_add",
  "params": {
-  "id_users": 1,
+  "id_user": 1,
   "reason": "Spam",
   "duration": 86400
  }
@@ -3507,7 +3507,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>ID záznamu blokovaného uživatele</td>
      </tr>
      <tr>
-      <td>id_users</td>
+      <td>id_user</td>
       <td>64-bit integer</td>
       <td class="center">❌</td>
       <td>ID zablokovaného uživatele ze seznamu uživatelských účtů</td>
@@ -3564,7 +3564,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  "command": "admin_blockedusers_set",
  "params": {
   "id": 1
-  "id_users": 2,
+  "id_user": 2,
   "reason": "Spam",
   "duration": 86400
  }
@@ -3743,7 +3743,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>Konečná adresa rozsahu blokovaných IP adres - pokud je null, pak se používá jen jediná IP adresa a to počáteční</td>
      </tr>
      <tr>
-      <td>id_admins</td>
+      <td>id_admin</td>
       <td>32-bit integer</td>
       <td>ID blokujícího správce - může být null, pokud byla IP adresa zablokována automaticky systémem, nikoliv ručně správcem</td>
      </tr>
@@ -3799,7 +3799,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     "id": 51,
     "ip_from": "10.0.0.10",
     "ip_to": null,
-    "id_admins": null,
+    "id_admin": null,
     "reason": "Too many failed admin login attempts",
     "created": "2024-01-01T00:00:00Z",
     "duration": 86400
@@ -3807,7 +3807,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     "id": 52,
     "ip_from": "172.16.0.123",
     "ip_to": null,
-    "id_admins": null,
+    "id_admin": null,
     "reason": "Too many failed user login attempts",
     "created": "2024-01-02T00:00:00Z",
     "duration": 86400
@@ -3815,7 +3815,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     "id": 53,
     "ip_from": "192.168.0.123",
     "ip_to": null,
-    "id_admins": null,
+    "id_admin": null,
     "reason": "Too many failed server sign attempts",
     "created": "2024-01-03T00:00:00Z",
     "duration": 86400
@@ -3823,7 +3823,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
     "id": 54,
     "ip": "192.168.0.1",
     "ip_to": "192.168.0.254",
-    "id_admins": 1,
+    "id_admin": 1,
     "reason": "Spam",
     "created": "2024-01-04T00:00:00Z",
     "duration": null
@@ -4327,7 +4327,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
       <td>Lokální část uživatelského jména (před "@")</td>
      </tr>
      <tr>
-      <td>id_domains</td>
+      <td>id_domain</td>
       <td>32-bit integer</td>
       <td class="center">✔</td>
       <td>ID záznamu ze seznamu domén</td>
