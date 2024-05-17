@@ -874,7 +874,10 @@ ja nevim jestli bych tu specifikaci takhle vylozene zabarvoval do ancapu, napr v
 > error
     This member is REQUIRED on error.
     This member MUST NOT exist if there was no error 
-    
+> sjednotit styl commndu se standardem json-rpc
+
+
+
 
 
 
