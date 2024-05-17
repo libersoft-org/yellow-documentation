@@ -812,6 +812,7 @@ ja nevim jestli bych tu specifikaci takhle vylozene zabarvoval do ancapu, napr v
 
 - Každá serverová i klientská aplikace může využívat vlastní sadu modulů.
 > co je serverová aplikace?
+> a jak muze klientska aplikace vyuzivat moduly?
 
 - Po spojení klienta nebo cizího serveru s vlastním serverem je možné komunikovat buď napřímo s jádrem nebo s jednotlivými moduly. 
 
