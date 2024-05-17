@@ -815,9 +815,18 @@ ja nevim jestli bych tu specifikaci takhle vylozene zabarvoval do ancapu, napr v
 
 - Po spojení klienta nebo cizího serveru s vlastním serverem je možné komunikovat buď napřímo s jádrem nebo s jednotlivými moduly. 
 
-> Po spojení se serverem je možné komunikovat buď napřímo s jádrem nebo s jednotlivými moduly.
+> Po spojení se serverem je možné komunikovat buď přímo s jádrem nebo s jednotlivými moduly.
 > Pokud je příkaz určen modulu a modul ho zpracuje, 
 
+
+- Správci či uživatelé mohou vybrat pouze ty moduly, které potřebují, což umožňuje vytvořit řešení šité na míru bez zbytečného nadbytečného software. 
+
+- Správci či uživatelé mohou vybrat pouze ty moduly, které potřebují, což umožňuje vytvořit řešení šité na míru bez zbytečného nadbytečného software. 
+> bez preruseni sluzeb zbylych casti systemu, pripadne bez nutnosti celý systém překompilovat či restartovat. 
+
+-  
+- odolnosti a omezení rizik spojených s narušením celého systému.
+|  což přispívá k vyšší stabilitě.
 
 
 
