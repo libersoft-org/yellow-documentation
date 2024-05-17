@@ -1,4 +1,5 @@
 Design stranky:
+- I když je TOC zavřeno, resizer zůstává na původním místě
 - V mobilní verzi při kliknutí na položku v TOC zasunout menu s TOC
 - Když je menu vysunuté, tak místo hamburgeru zobrazovat křížek
 - Šipku přesunout vlevo od textu a předělat jí na plusko / mínusko
@@ -7,15 +8,15 @@ Design stranky:
 - Automatický highlight sekce v TOC, na kterou je aktuálně doscrollováno (jinou barvou, než aktivní - zakliknutá sekce)
 - Po refreshi stránky, pokud je v adrese #sekce - tak jí zvýraznit v TOC jako aktivní
 - Do obsahu (#doc) přidat možnost srolování každého nadpisu (accordion), stejně jako je to v #toc.
-- I když je TOC zavřeno, resizer zůstává na původním místě
 
 Návrh verze 2:
-- Přesunutí uživatelských účtů / přihlášení do modulu - přidá další možnosti ověření: OAuth / social loginy atd.
-- Uživatelské / správcovské heslo použít jako privátní klíč a z něj vytvořit veřejný - pokud to jde, vytvořit stejný typ challenge-response přihlášení, jako je u privátního klíče, aby se heslo nemuselo (byť v zahashované podobě) posílat po síti (pokud to má vůbec smysl, protože Argon2 má nějaký random autosalting a pokaždé se posílá něco jiného po síti, takže to funguje podobně, jako challenge-response) - toto vyžaduje nějaký hlubší research kryptografa (jak moc je Argon prolomitelný, jestli vůbec lze něco jako password-as-private-key). Obecně prolomení šifry styly: "z public key získat private key" versus "prolomit Argon2id hash"
+- Uživatelské / správcovské heslo použít jako privátní klíč a z něj vytvořit veřejný - pokud to jde, vytvořit stejný typ challenge-response přihlášení, jako je u privátního klíče, aby se heslo nemuselo (byť v zahashované podobě) posílat po síti (pokud to má vůbec smysl, protože Argon2 pokaždé se posílá něco jiného po síti, takže to funguje podobně, jako challenge-response) - toto vyžaduje nějaký hlubší research kryptografa (jak moc je Argon prolomitelný, jestli vůbec lze něco jako password-as-private-key). Obecně prolomení šifry styly: "z public key získat private key" versus "prolomit Argon2id hash"
 - Admin příkazy pro management modulů a audit logů - přidá se do dokumentace až poté, co zjistíme, co všechno je třeba logovat
-- Tokenové páry krátkodobých tokenů - access token a refresh token, místo dlouhodobých tokenů - zjistit implementací, jelikož nevíme, jak dlouhé sessions většinou udrží WebTransport a jestli se nebudou měnit při každém připojení
+- Tokenové páry krátkodobých tokenů - access token a refresh token, místo dlouhodobých tokenů - zjistit implementací, jelikož nevíme, jak dlouhé sessions většinou udrží WebTransport a jestli se nebudou měnit při každém připojení.
 - ACL s právy pro konkrétní akce adminů + zavedení možnosti změny klíče ostatních adminů v případě, že má admin toto právo
 - Digitální podpis serveru - navrhnout další alternativu k DNS - něco jako notary server na Matrix protokolu (resp. ne jako náhrada za DNS, ale jako další vrstva zabezpečení)
 - Rozšíření blokace na IP na obecný rate limit na počet commandů za jednotku času (těžko říct, jestli to je reálné, protože file transfer toho bude generovat docela hodně, takže se uvidí v praxi v budoucnu)
 - Přidat do dokumentace i stavové chyby, když uživatel použije jiný datový typ na vstupu (invalid data type)?
 - Zvážit implementaci: dodatečný šifrovaný tunel, kde je šifrovaný každý command uvnitř WebTransportu, s jinou šifrou, než používá TLS v rámci WebTransportu - proč - kdyby někdo rozlouskl TLS. Dalo by se tam použít něco jako double ratchet, celé by to mělo být optional, protože to zpomaluje přenos.
+- Zašifrování tokenu relace vydaného serverem veřejným klíčem uživatele? (kdyby selhalo šifrování přes WebTransport) a obráceně ze strany klientat to šifrovat veřejným klíčem serveru z DNS - otázka je, jestli to vůbec má smysl, když to může někdo odchytit a posílat to v té zašifrované formě a nebo to nějak osaltovat. Taky je otázka, jestli to vůbec dělat specificky pro tento command a nedat uživatelům možnost šifrovat všechny commandy.
+- Zvážit přesunutí uživatelských účtů / přihlášení do modulu - přidá další možnosti ověření: OAuth / social loginy atd.
