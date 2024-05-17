@@ -758,6 +758,20 @@ Po nastaveni priznaku "ready_to_send" klientem, zacne modul zprav pokusy o doruc
 
 
 # for v2
+## client user interface sandboxing for untrusted code from modules in foreign servers
+### threat model
+
+
+### options for native clients
+
+### options for web browser client
+#### web workers
+#### compiled rust code
+#### inspected js code
+#### 
+
+
+
 
     
 
@@ -767,6 +781,10 @@ realne treba taky CBOR, ale hlavne protobuf(?).  , resp, protobuf pro stabilizov
     https://github.com/w3c/webtransport/issues/167
 
 
+
+
+
+## threat models
 
 
 
@@ -830,7 +848,22 @@ ja nevim jestli bych tu specifikaci takhle vylozene zabarvoval do ancapu, napr v
 |  což přispívá k vyšší stabilitě.
 
 
+- Účel identity: Narozdíl od původních e-mailových protokolů
+?
 
+- zda každý uživatelský účet bude reprezentovat jen jeden a nebo více uživatelských profilů, tzn. přihlášením k jednomu uživatelskému účtu se může uživatel dostat k několika svým profilům). Taktéž tento přístup zajišťuje možnost nezveřejňovat adresu uživatelského účtu, pokud moduly budou zobrazovat jiný typ identifikace profilů.
+
+- Spojení s certifikátem s vlastním podpisem (bez certifikační autority) není povoleno (jak pro spojení klient-server, tak i pro server-server), protože u nich nelze ověřit identitu (může je vydat kdokoliv),
+
+
+- používat ho pro účely jak šifrovaného přenosu dat, tak i pro ověření identity serveru.
+
+- vygeneruje soukromý klíč a z něj odvozený veřejný klíč
+> vygeneruje soukromý klíč a související veřejný klíč
+> 
+
+
+-  při registraci v zahashované formě (výběr šifrovacího algoritmu
 
 
 
