@@ -762,7 +762,7 @@ Po nastaveni priznaku "ready_to_send" klientem, zacne modul zprav pokusy o doruc
     
 
 ## BSON
-realne treba taky CBOR, ale hlavne protobuf(?).  
+realne treba taky CBOR, ale hlavne protobuf(?).  , resp, protobuf pro stabilizovanej protokol jadra..
 ### navic komprese: https://wicg.github.io/compression/
     https://github.com/w3c/webtransport/issues/167
 
@@ -813,7 +813,10 @@ ja nevim jestli bych tu specifikaci takhle vylozene zabarvoval do ancapu, napr v
 - Každá serverová i klientská aplikace může využívat vlastní sadu modulů.
 > co je serverová aplikace?
 
+- Po spojení klienta nebo cizího serveru s vlastním serverem je možné komunikovat buď napřímo s jádrem nebo s jednotlivými moduly. 
 
+> Po spojení se serverem je možné komunikovat buď napřímo s jádrem nebo s jednotlivými moduly.
+> Pokud je příkaz určen modulu a modul ho zpracuje, 
 
 
 
