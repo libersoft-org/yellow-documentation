@@ -878,6 +878,10 @@ ja nevim jestli bych tu specifikaci takhle vylozene zabarvoval do ancapu, napr v
 
 
 
+- Následující chyby nastávají nikoliv jako přímé odpovědi příkazů, ale při dalších speciálních událostech.
+
+> neco jsou samostatne eventy, ktery muze server poslat kdykoliv v ramci spojeni, a neco json obecne chybove odpovedi na commandy
+
 
 
 
