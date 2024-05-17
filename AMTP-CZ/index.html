@@ -6271,7 +6271,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
  }
 }
 </pre>
-   <div>Modul si poté před zpracováním příkazu může ověřit, zda server, který příkaz odeslal, má oprávnění používat v identitách doménová jména. K tomu slouží příkazy <span class="bold">get_servers</span> a <span class="bold">verify_domain</span> mezi moduly a jádrem.</div>
+   <div>Modul si poté před zpracováním příkazu může ověřit, zda server, který příkaz odeslal, má oprávnění používat v identitách doménová jména. K tomu slouží příkazy <span class="bold">get_servers</span> a <span class="bold">verify_domain</span> mezi moduly a jádrem. Tyto příkazy jsou součástí protokolu proto, aby každý modul nemusel zbytečně implementovat vlastní řešení komunikace s DNS.</div>
    <a name="commands-modules-commands"></a><h4>Příkazy mezi jádrem a modulem</h4>
    <div>Následující příkazy poskytují modulům užitečné informace, pomocí kterých si modul může ověřit legitimnost použití identit, které modul protějšího serveru uvedl v objektu <span class="bold">data</span>.</div>
    <a name="commands-modules-commands-servers"></a><h5>Zjištění oprávněných serverů:</h5>
