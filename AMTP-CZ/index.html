@@ -473,7 +473,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-c2s-admin-login"></a><h5>Přihlášení správce</h5>
    <div><span class="bold">Přihlášení správce</span> probíhá ve dvou krocích - <span class="bold">přihlašovací výzvě</span> a <span class="bold">přihlašovací odezvě</span>.</div>
    <div>V <span class="bold">přihlašovací výzvě</span> zašle klient své přihlašovací jméno a pokud používá mimo soukromého klíče i heslo, tak i hash tohoto hesla. Server ověří heslo (pokud se používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem správce. Tento zašifrovaný řetězec je následně předán klientovi.</div>
-   <div>V <span class="bold">přihlašovací odezvě</span> následně uživatel řetězec rozšifruje pomocí svého soukromého klíče a zašle ho zpět v této rozšifrované podobě serveru. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetězec od klienta se shoduje s původně vygenerovaným, pak správce přihlásí. V opačném případě vrátí chybu.</div>
+   <div>V <span class="bold">přihlašovací odezvě</span> následně klient řetězec rozšifruje pomocí svého soukromého klíče a zašle ho zpět v této rozšifrované podobě serveru. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetězec od klienta se shoduje s původně vygenerovaným, pak správce přihlásí. V opačném případě vrátí chybu.</div>
    <a name="commands-c2s-admin-login-challenge"></a><h6>Výzva</h6>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
@@ -4469,7 +4469,7 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <a name="commands-c2s-user-login"></a><h5>Přihlášení uživatele</h5>
    <div><span class="bold">Přihlášení uživatele</span> probíhá ve dvou krocích - <span class="bold">přihlašovací výzvě</span> a <span class="bold">přihlašovací odezvě</span>.</div>
    <div>V <span class="bold">přihlašovací výzvě</span> zašle klient své přihlašovací jméno ve tvaru <span class="bold">uživatel@doména</span> a pokud používá mimo soukromého klíče i heslo, tak i hash tohoto hesla. Server ověří heslo (pokud uživatel používá) a následně vygeneruje náhodný řetězec, který server zašifruje veřejným klíčem uživatele. Tento zašifrovaný řetězec je následně předán klientovi.</div>
-   <div>V <span class="bold">přihlašovací odezvě</span> následně uživatel řetězec rozšifruje pomocí svého soukromého klíče a zašle ho v této rozšifrované podobě serveru. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetězec od klienta se shoduje s původně vygenerovaným, pak uživatele přihlásí a udělí mu token relace. V opačném případě vrátí chybu.</div>
+   <div>V <span class="bold">přihlašovací odezvě</span> následně klient řetězec rozšifruje pomocí svého soukromého klíče a zašle ho v této rozšifrované podobě serveru. Server ho porovná s původně vygenerovaným řetězcem a v případě, že řetězec od klienta se shoduje s původně vygenerovaným, pak uživatele přihlásí a udělí mu token relace. V opačném případě vrátí chybu.</div>
    <a name="commands-c2s-user-login-challenge"></a><h6>Výzva</h6>
    <div class="bold">Struktura požadavku od klienta:</div>
    <div class="table-container">
