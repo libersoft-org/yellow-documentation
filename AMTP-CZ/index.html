@@ -283,11 +283,11 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
    <div><span class="bold">Spojení</span> jsou realizována jak mezi klientem a serverem, tak i mezi servery navzájem.</div>
    <ul class="spacelist">
     <li><span class="bold">Spojení server-server</span> - Servery jsou organizovány do distribuované sítě, kde každý server je schopný předávat data ostatním serverům. Tato komunikace je realizována přes spojení, které nemusí být perzistentní a může být ukončeno jednou nebo druhou stranou kdykoliv to jedna ze stran uzná za vhodné (např. server odesilatele po dokončení doručování dat nebo server příjemce po vypršení určitého časového limitu, kdy mezi servery nedošlo k žádné výměně dat). Podmínky za kterých dochází k odpojování serverů mezi sebou nejsou standardizováné touto dokumentací, jsou plně v kompetenci konkrétní implementace serverové aplikace. Důvodem je například to, že některé servery mohou mít omezené systémové prostředky a tak mohou spojení s ostatními servery častěji odpojovat. Naopak servery, které mají dostatečné systémové prostředky, mohou udržovat otevřené spojení s ostatními servery pro rychlejší komunikaci, bez nutnosti opětovného navazování spojení.</li>
-    <li><span class="bold">Spojení klient-server</span> - Každý klient je spojen se svým serverem prostřednictvím trvalého spojení. Pokud dojde k výpadku, automaticky se znovu klient k serveru připojí. Takováto spojení slouží jako stabilní kanál pro všechny operace, které klient potřebuje vykonávat (např. příjem zpráv, získávání notifikací, synchronizace dat apod.). Trvalá připojení klienta jsou klíčová pro udržení nepřetržité komunikace pro funkcionality, které vyžadují okamžité reakce, jako jsou např. rychlé zprávy nebo online hry. Díky <span class="bold">WebTransportu</span> mohou tato spojení efektivně spravovat více datových proudů současně, což minimalizuje zpoždění a zvyšuje celkovou uživatelskou spokojenost.</li>
+    <li><span class="bold">Spojení klient-server</span> - Každý klient je spojen se svým serverem prostřednictvím trvalého spojení. Pokud dojde k výpadku, automaticky se znovu klient k serveru připojí. Takováto spojení slouží jako stabilní kanál pro všechny operace, které klient potřebuje vykonávat (např. příjem zpráv, synchronizace dat apod.). Trvalá připojení klienta jsou klíčová pro udržení nepřetržité komunikace pro funkcionality, které vyžadují okamžité reakce, jako jsou např. rychlé zprávy nebo online hry. Díky <span class="bold">WebTransportu</span> mohou tato spojení efektivně spravovat více datových proudů současně, což minimalizuje zpoždění a zvyšuje celkovou uživatelskou spokojenost.</li>
    </ul>
-   <div>Na straně serveru je spuštěn <a href="https://cs.wikipedia.org/wiki/HTTPS" target="_blank">HTTPS</a> server s platným šifrovacím certifikátem vydaným certifikační autoritou a podporujícím standard <a href="https://cs.wikipedia.org/wiki/HTTP/3" target="_blank">HTTP/3</a>. Přesný způsob komunikace je podrobně popsán v dokumentu <a href="https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-http3" target="_blank">WebTransport over HTTP/3</a>.</div>
+   <div>Na straně serveru je spuštěn <a href="https://cs.wikipedia.org/wiki/HTTPS" target="_blank">HTTPS</a> server s platným certifikátem vydaným certifikační autoritou a podporujícím standard <a href="https://cs.wikipedia.org/wiki/HTTP/3" target="_blank">HTTP/3</a>. Přesný způsob komunikace je podrobně popsán v dokumentu <a href="https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-http3" target="_blank">WebTransport over HTTP/3</a>.</div>
    <div>Po připojení k endpointu <span class="bold">/amtp/</span> je vytvořena <span class="bold">WebTransport</span> session, v rámci které je možné otevírat a zavírat jednotlivé proudy, ve kterých probíhá komunikace pomocí příkazů. Více proudů může běžet souběžně.</div>
-   <div>Ihned po navázání spojení se serverem pošle server automaticky protější straně informace o sobě, které jsou také přístupné pod příkazem <span class="bold">info</span>.</div>
+   <div>Ihned po navázání spojení se serverem pošle server automaticky protější straně informace o sobě, které jsou také přístupné pod příkazem <a href="#commands-general-info">info</a>.</div>
    <div>Následující schéma nastiňuje příklad toho, jak fungují spojení klientů a serverů v rámci <span class="bold">AMTP</span>:</div>
    <div class="center"><img src="img/AMTP-network-CZ.png" alt="Distribuovaná síť" /></div>
    <a name="commands"></a><h2>Příkazy</h2>
@@ -395,26 +395,31 @@ amtp1.example.com. IN TXT "amtp-pubkey=e:rsa,k:123456789abcdef"
      </tr>
      <tr>
       <td class="center">901</td>
+      <td>Connection timed out</td>
+      <td>Vypršelo spojení</td>
+     </tr>
+     <tr>
+      <td class="center">902</td>
       <td>Invalid BSON command</td>
       <td>Obdržen neplatný BSON příkaz</td>
      </tr>
      <tr>
-      <td class="center">902</td>
+      <td class="center">903</td>
       <td>Unknown command</td>
       <td>Obdržen neznámý příkaz</td>
      </tr>
      <tr>
-      <td class="center">903</td>
+      <td class="center">904</td>
       <td>Admin is not logged in</td>
       <td>Správce není přihlášen</td>
      </tr>
      <tr>
-      <td class="center">904</td>
+      <td class="center">905</td>
       <td>User is not logged in</td>
       <td>Uživatel není přihlášen</td>
      </tr>
      <tr>
-      <td class="center">905</td>
+      <td class="center">906</td>
       <td>Your IP address is blocked. Reason: [REASON], blocked by: [ADMIN NAME], blocked at: [BLOCK DATE], expiration: [EXPIRATION DATE]</td>
       <td>IP adresa protější strany je zablokována</td>
      </tr>
