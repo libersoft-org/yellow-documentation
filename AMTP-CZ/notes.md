@@ -798,6 +798,24 @@ realne treba taky CBOR, ale hlavne protobuf(?).
 az na to ze vubec. Podle chatgpt pouziva bson jen mongo a Couchbase, a naprosto neni jasny jak by to mohlo usnadnit integraci.
 
 
+- snížit latenci a zlepšit rychlost odezvy, což zlepšuje uživatelskou zkušenost
+
+- Nežádoucí ovlivnění více uzlů v síti zvyšuje složitost a náklady na potenciální útoky.
+
+- zpracovávána velkými korporacemi, které mohou mít tendence velké množství dat uživatelů různými způsoby zpracovávat 
+
+- spolupráce s vládami apod.)
+ja nevim jestli bych tu specifikaci takhle vylozene zabarvoval do ancapu, napr vetsina skol rozhodne potrebuje "spolupracoovat s vladami" :)
+
+- Jádro: Stará se o síťovou komunikaci, komunikaci s moduly, komunikaci s DNS a zajišťuje základní správu serveru.
+> Jádro: Stará se o síťovou komunikaci, komunikaci s moduly a zajišťuje základní správu serveru.
+
+- Každá serverová i klientská aplikace může využívat vlastní sadu modulů.
+> co je serverová aplikace?
+
+
+
+
 
 
 
