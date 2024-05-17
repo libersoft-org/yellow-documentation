@@ -7,6 +7,7 @@ Design stranky:
 - Automatický highlight sekce v TOC, na kterou je aktuálně doscrollováno (jinou barvou, než aktivní - zakliknutá sekce)
 - Po refreshi stránky, pokud je v adrese #sekce - tak jí zvýraznit v TOC jako aktivní
 - Do obsahu (#doc) přidat možnost srolování každého nadpisu (accordion), stejně jako je to v #toc.
+- I když je TOC zavřeno, resizer zůstává na původním místě
 
 Návrh verze 2:
 - Přesunutí uživatelských účtů / přihlášení do modulu - přidá další možnosti ověření: OAuth / social loginy atd.
