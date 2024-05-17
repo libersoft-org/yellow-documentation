@@ -757,4 +757,62 @@ Po nastaveni priznaku "ready_to_send" klientem, zacne modul zprav pokusy o doruc
 
 
 
+# for v2
+
+    
+
+## BSON
+realne treba taky CBOR, ale hlavne protobuf(?).  
+### navic komprese: https://wicg.github.io/compression/
+    https://github.com/w3c/webtransport/issues/167
+
+
+
+
+
+
+# wtfs
+
+- To je způsobeno především snahou těchto aktualizací o navázání na původní koncepty, což je velmi limitující faktor, který vyžaduje změnu přístupu.
+
+- řadu dalších funkcionalit, kde je okamžitá komunikace nezbytná (např. videohovory, sdílení obrazovky, přenos velkých souborů apod.) 
+
+- Tím jsou sníženy latence a zvýšena propustnost při přenosu dat.
+
+> ?
+
+
+- přenos dat v online hrách apod.).
+
+
+- BSON, který kombinuje výhody strojově i lidsky snadno čitelného formátu JSON, 
+
+> BSON, který kombinuje výhody formátu JSON s efektivitou binárního formátu.
+
+- Snadné zpracování dat: Umožňuje přímý přístup k jednotlivým prvkům dat, aniž by bylo potřeba procházet celý objekt, 
+> nevim na jaky urovni to mas na mysli, ale myslim ze na binarni urovni se musi vzdy projit cely objekt, podobne jako kdyz se parsuje json
+
+
+- Integrace s databázovými systémy: Mnoho současných databázových systémů, jako je např. MongoDB, nativně používá BSON pro ukládání a zpracování dat. To může usnadnit integraci s těmito databázemi, což je výhodné pro aplikace vyžadující komplexní databázové operace.
+
+az na to ze vubec. Podle chatgpt pouziva bson jen mongo a Couchbase, a naprosto neni jasny jak by to mohlo usnadnit integraci.
+
+
+
+
+
+
+
+
+
+
+## messages
+- Text messages are in [Markdown](https://www.markdownguide.org/) format.
+- 
+- All the messages are end to end encrypted. Users can choose the encryption algorithm from those supported by server. Users store their private key and share their public key on the server.
+- 
+- All the contacts stored on the server are encrypted by end to end encryption
+
+> Some encrypted backup and file sharing services provide client-side encryption. The encryption they offer is here not referred to as end-to-end encryption, because the services are not meant for sharing messages between users[further explanation needed]. However, the term "end-to-end encryption" is sometimes incorrectly used to describe client-side encryption.[24]
+
 
