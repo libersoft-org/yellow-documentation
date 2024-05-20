@@ -10,6 +10,8 @@ Design stranky:
 - Do obsahu (#doc) přidat možnost srolování každého nadpisu (accordion), stejně jako je to v #toc.
 
 Návrh verze 2:
+- Rozdělit obecné chyby na přímé od příkazů a na eventy? Promyslet - některé jsou obojí - např. když někdo dostane ban na IP, tak se objeví hned po fail2ban, tak i po novém spojení.
+- K eventům napsat vlastní kategorii v dokumentaci?
 - Uživatelské / správcovské heslo použít jako soukromý klíč a z něj vytvořit veřejný - pokud to jde, vytvořit stejný typ challenge-response přihlášení, jako je u privátního klíče, aby se heslo nemuselo (byť v zahashované podobě) posílat po síti (pokud to má vůbec smysl, protože Argon2 pokaždé se posílá něco jiného po síti, takže to funguje podobně, jako challenge-response) - toto vyžaduje nějaký hlubší research kryptografa (jak moc je Argon2 prolomitelný, jestli vůbec lze provést něco jako password-as-private-key, jak moc je to bezpečné atd.). Obecně prolomení šifry ve stylu: "z public key získat private key" versus "prolomit Argon2id hash"
 - Admin příkazy pro management modulů a audit logů - přidá se do dokumentace až poté, co zjistíme, co všechno je třeba logovat
 - Tokenové páry krátkodobých tokenů - access token a refresh token, místo dlouhodobých tokenů - zjistit implementací, jelikož nevíme, jak dlouhé sessions většinou udrží WebTransport a jestli se nebudou měnit při každém připojení.
