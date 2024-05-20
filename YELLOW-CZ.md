@@ -6,7 +6,7 @@
 
 - **Multifunkčnost a modularita**: Modulární platforma umožňuje uživatelům i správcům serveru si zvolit funkcionality aplikace podle svých představ. Platforma nabízí mnoho modulů z rozličných oblastí, jako je např. zasílání rychlých zpráv, sociální média, e-commerce, sdílení souborů a mnoho dalšího. Platforma je otevřená i pro moduly třetích stran.
 
-- **Multiprotokolová podpora**: Kromě **AMTP** je Yellow připraveno integrovat další komunikační protokoly (např. **SMTP** nebo do budoucna plánovaný **DMTP**) ve formě modulů.
+- **Podpora více protokolů**: Kromě **AMTP** je Yellow připraveno integrovat další komunikační protokoly (např. **SMTP** nebo do budoucna plánovaný **DMTP**) ve formě modulů.
 
 - **Zabezpečení a ochrana soukromí**: Oficiální moduly poskytující hlavní funkcionality systému jsou vytvářeny v souvislosti s doporučeními protokolu **AMTP**, tedy jsou v nich implementovány silné bezpečnostní prvky jako je např. koncové šifrování apod. To zajišťuje nadstandardní ochranu soukromí pro uživatele.
 
