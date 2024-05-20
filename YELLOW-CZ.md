@@ -12,7 +12,7 @@
 
 **Seznam funkcionalit, které jsou součástí tohoto software:**
 
-## Rychlé zprávy
+## 📧 Rychlé zprávy
 
 Tento modul představuje hlavní funkcionalitu platformy **Yellow**, která umožňuje uživatelům komunikovat v reálném čase a zasílat mezi sebou data jako jsou **textové zprávy** (prostý i formátovaný text), **hlasové a video zprávy**, **neomezeně velké soubory**, **emotikony**, **animované nálepky**, **obrázky**, **kontakty**, **živé body na mapě** apod. Tyto jednotlivé typy zpráv lze taktéž kombinovat do jedné, **vícedílné zprávy**, což umožňuje například jednoduše vytvářet obchodní sdělení a komunikaci s chatboty.
 
@@ -32,101 +32,97 @@ Klientská aplikace umožňuje i vytváření **šablon zpráv**, což je využi
 
 Všechny zprávy je možné automaticky či na vyžádání **překládat** do mnoha světových jazyků.
 
-## Kontakty
+## 📋 Kontakty
 
 
 
-## Hlasové a video hovory
+## 📞 Hlasové a video hovory
 
 
 
-## Konferenční hovory
+## 📱 Konferenční hovory
 
 
 
-## Integrovaná kryptoměnová peněženka
+## 🪙 Integrovaná kryptoměnová peněženka
 
 - Umožňuje platby a převody kryptoměn mezi uživateli a platby v rámci placených funkcí v modulech.
 
 
 
-## Sledovatelé
+## 🫂 Sledovatelé
 
 
 
-## Video kanály (vč. živých vysílání)
+## 🎞️ Video kanály (vč. živých vysílání)
 
 
 
-## Diskuzní fórum
+## 💬 Diskuzní fórum
 
 
 
-## Newsfeed
+## ⭐ Newsfeed
 
 
 
-## Příběhy (stories)
+## 🤳🏻 Příběhy (stories)
 
 
 
-## Události
+## 🗓️ Události
 
 
 
-## Blogy
+## ✍🏻 Blogy
 
 
 
-## E-shopy
+## 🛍️ E-shopy
 
 
 
-## Tržiště (vč. aukce)
+## 🏪 Tržiště (vč. aukce)
 
 
 
-## Příspěvky (donations)
+## 💰 Příspěvky (donations)
 
 
 
-## Skupinové financování (crowdfunding)
+## 🤑 Skupinové financování (crowdfunding)
 
 
 
-## Sdílený kalendář
+## 📅 Sdílený kalendář
 
 
 
-## Sdílené úkoly
+## ✔️ Sdílené úkoly
 
 
 
-## Sdílení souborů
+## 📂 Sdílení souborů
 
 
 
-## Seznamka
+## ❤️ Seznamka
 
 
 
-## Virtual chat
+## ⛰️ Virtual chat
 
 
 
-## Mapy
+## 🗺️ Mapy
 
 
 
-## Kryptoměnová peněženka
+## 🎮 Hry
 
 
 
-## Hry
-
-
-
-## Media feed
+## 📰 Media feed
 
 
 
