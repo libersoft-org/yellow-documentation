@@ -32,7 +32,7 @@ Klientská aplikace umožňuje i vytváření **šablon zpráv**, což je využi
 
 Všechny zprávy je možné automaticky či na vyžádání **překládat** do mnoha světových jazyků.
 
-## 📋 Kontakty
+## 🧾 Kontakty
 
 
 
@@ -44,13 +44,11 @@ Všechny zprávy je možné automaticky či na vyžádání **překládat** do m
 
 
 
-## 🪙 Integrovaná kryptoměnová peněženka
+## ₿ Integrovaná kryptoměnová peněženka
 
 - Umožňuje platby a převody kryptoměn mezi uživateli a platby v rámci placených funkcí v modulech.
 
-
-
-## 🫂 Sledovatelé
+## 🧑‍🤝‍🧑 Sledovatelé
 
 
 
