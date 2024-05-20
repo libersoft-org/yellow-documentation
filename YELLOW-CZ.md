@@ -1,6 +1,6 @@
 # Yellow - dokumentace
 
-**Yellow** je rozsáhlá komunikační platforma (tzv. [**superapp**](https://en.wikipedia.org/wiki/Super-app)), která poskytuje serverovou i klientskou aplikaci. Tento software používá inovativní síťový protokol **AMTP** (Advanced Mail Transfer Protocol), který přináší pokročilé možnosti v oblasti přenosu dat a komunikace v reálném čase.
+**Yellow** je rozsáhlá komunikační platforma (tzv. [**super-app**](https://en.wikipedia.org/wiki/Super-app)), která poskytuje serverovou i klientskou aplikaci. Tento software používá inovativní síťový protokol **AMTP** (Advanced Mail Transfer Protocol), který přináší pokročilé možnosti v oblasti přenosu dat a komunikace v reálném čase.
 
 **Zde je seznam klíčových vlastností tohoto software:**
 
@@ -50,19 +50,19 @@ Všichni uživatelé, kteří potřebují efektivně spravovat a sdílet své os
 
 ## 📞 Hlasové a video hovory
 
-Tento modul představuje další základní funkcionalitu platformy, která umožňuje uživatelům komunikovat tváří v tvář s použitím **videa** nebo pomocí **hlasu** v reálném čase. Hovory lze vést mezi dvěma **jednotlivci** i **skupinově**. Součástí je i možnost **sdílení obrazovky** a **vzdálené ovládání** zařízení. Hovory lze **nahrávat** a jednotlivé nahrávky přehrávat, spravovat a sdílet. Všechny hovory jsou opatřeny **koncovým šifrováním**. **Kvalita hovoru** je automaticky přizpůsobena propustností internetového připojení.
+Tento modul představuje další základní funkcionalitu platformy, která umožňuje uživatelům komunikovat tváří v tvář s použitím **videa** nebo pomocí **hlasu** v reálném čase. Hovory lze vést mezi dvěma **jednotlivci** i **skupinově**. Součástí je i možnost **sdílení obrazovky** a **vzdálené ovládání** zařízení. Hovory lze **nahrávat** a jednotlivé nahrávky přehrávat, spravovat a sdílet. Všechny hovory jsou opatřeny **koncovým šifrováním**, takže jsou odolné proti odposlechu. **Kvalita hovoru** je automaticky přizpůsobena propustností internetového připojení.
 
 ### Cílová skupina:
 
-Všichni uživatelé hledající bezpečné telefonování pomocí hlasu a videa. Funkcionalita je vhodná pro širokou škálu uživatelů, tedy jak domácí uživatele, tak firmy či další typy organizací.
+Všichni uživatelé hledající bezpečné telefonování pomocí hlasu a videa. Funkcionalita je vhodná pro širokou škálu uživatelů, tedy **domácí** i **firemní** uživatele, či **další typy organizací**.
 
 ## 📱 Konferenční hovory
 
-
+TODO
 
 ### Cílová skupina:
 
-
+TODO
 
 ## ₿ Integrovaná kryptoměnová peněženka
 
@@ -70,153 +70,153 @@ Všichni uživatelé hledající bezpečné telefonování pomocí hlasu a videa
 
 ## 🧑‍🤝‍🧑 Sledovatelé
 
-
+TODO
 
 ### Cílová skupina:
 
-
+TODO
 
 ## 🎞️ Video kanály (vč. živých vysílání)
 
-
+TODO
 
 ### Cílová skupina:
 
-
+TODO
 
 ## 💬 Diskuzní fórum
 
-
+TODO
 
 ### Cílová skupina:
 
-
+TODO
 
 ## ⭐ Newsfeed
 
-
+TODO
 
 ### Cílová skupina:
 
-
+TODO
 
 ## 🤳🏻 Příběhy (stories)
 
-
+TODO
 
 ### Cílová skupina:
 
-
+TODO
 
 ## 🗓️ Události
 
-
+TODO
 
 ### Cílová skupina:
 
-
+TODO
 
 ## ✍🏻 Blogy
 
-
+TODO
 
 ### Cílová skupina:
 
-
+TODO
 
 ## 🛍️ E-shopy
 
-
+TODO
 
 ### Cílová skupina:
 
-
+TODO
 
 ## 🏪 Tržiště (vč. aukce)
 
-
+TODO
 
 ### Cílová skupina:
 
-
+TODO
 
 ## 💰 Příspěvky (donations)
 
-
+TODO
 
 ### Cílová skupina:
 
-
+TODO
 
 ## 🤑 Skupinové financování (crowdfunding)
 
-
+TODO
 
 ### Cílová skupina:
 
-
+TODO
 
 ## 📅 Sdílený kalendář
 
-
+TODO
 
 ### Cílová skupina:
 
-
+TODO
 
 ## ✔️ Sdílené úkoly
 
-
+TODO
 
 ### Cílová skupina:
 
-
+TODO
 
 ## 📂 Sdílení souborů
 
-
+TODO
 
 ### Cílová skupina:
 
-
+TODO
 
 ## ❤️ Seznamka
 
-
+TODO
 
 ### Cílová skupina:
 
-
+TODO
 
 ## ⛰️ Virtual chat
 
-
+TODO
 
 ### Cílová skupina:
 
-
+TODO
 
 ## 🗺️ Mapy
 
-
+TODO
 
 ### Cílová skupina:
 
-
+TODO
 
 ## 🎮 Hry
 
-
+TODO
 
 ### Cílová skupina:
 
-
+TODO
 
 ## 📰 Media feed
 
-
+TODO
 
 ### Cílová skupina:
 
-
+TODO
 
