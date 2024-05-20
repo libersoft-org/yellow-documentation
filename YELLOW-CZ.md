@@ -34,15 +34,27 @@ Všechny zprávy je možné automaticky či na vyžádání **překládat** do m
 
 TODO - popsat vyhledávání
 
+### Cílová skupina:
+
+Všichni uživatelé hledající efektivní a bezpečnou platformu pro komunikaci, jednotlivci, soukromé i veřejné organizace, všichni, kdo potřebují sdílet informace a soubory v reálném čase.
+
 ## 🧾 Kontakty
 
 Tento modul umožňuje uživatelům spravovat a organizovat své **kontakty** na jednom místě. Tato funkcionalita poskytuje pokročilé funkce pro správu kontaktů jako např. možnosti **importu a exportu** s použitím různých formátů, vytváření **skupin kontaktů**, **štítků**, **poznámek** apod., pokročilé **vyhledávání** dle různých kritérií, **sdílení** kontaktů s ostatními uživateli, přiřazování **fotografií** k jednotlivým kontaktům, **stavové informace** (online, offline apod.), možnosti nastavení **soukromí** pro jednotlivé kontakty.
 
-Všechny kontakty jsou taktéž **synchronizovány** se serverem mezi jednotlivými koncovými zařízeními
+Všechny kontakty jsou taktéž **synchronizovány** se serverem a mezi jednotlivými koncovými zařízeními, taktéž jsou ukládány na servery v **šifrované** podobě.
+
+### Cílová skupina:
+
+Všichni uživatelé, kteří potřebují efektivně spravovat a sdílet své osobní či profesní kontakty. Tato funkcionalita je také užitečná pro firmy či jiné druhy organizací, které potřebují udržovat přehled o svých členech a partnerech.
 
 ## 📞 Hlasové a video hovory
 
+Tento modul představuje další základní funkcionalitu platformy, která umožňuje uživatelům komunikovat tváří v tvář s použitím **videa** nebo pomocí **hlasu** v reálném čase. Hovory lze vést mezi dvěma **jednotlivci** i **skupinově**. Součástí je i možnost **sdílení obrazovky** a **vzdálené ovládání** zařízení. Hovory lze **nahrávat** a jednotlivé nahrávky přehrávat, spravovat a sdílet. Všechny hovory jsou opatřeny **koncovým šifrováním**. **Kvalita hovoru** je automaticky přizpůsobena propustností internetového připojení.
 
+### Cílová skupina:
+
+Všichni uživatelé hledající bezpečné telefonování pomocí hlasu a videa. Funkcionalita je vhodná pro širokou škálu uživatelů, tedy jak domácí uživatele, tak firmy či další typy organizací.
 
 ## 📱 Konferenční hovory
 
