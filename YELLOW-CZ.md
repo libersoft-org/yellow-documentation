@@ -1,4 +1,4 @@
-# Yellow - documentation
+# Yellow - dokumentace
 
 **Yellow** je rozsáhlá komunikační platforma (tzv. [**superapp**](https://en.wikipedia.org/wiki/Super-app)), která poskytuje serverovou i klientskou aplikaci. Tento software používá inovativní síťový protokol **AMTP** (Advanced Mail Transfer Protocol), který přináší pokročilé možnosti v oblasti přenosu dat a komunikace v reálném čase.
 
@@ -60,6 +60,10 @@ Všichni uživatelé hledající bezpečné telefonování pomocí hlasu a videa
 
 
 
+### Cílová skupina:
+
+
+
 ## ₿ Integrovaná kryptoměnová peněženka
 
 - Umožňuje platby a převody kryptoměn mezi uživateli a platby v rámci placených funkcí v modulech.
@@ -68,7 +72,15 @@ Všichni uživatelé hledající bezpečné telefonování pomocí hlasu a videa
 
 
 
+### Cílová skupina:
+
+
+
 ## 🎞️ Video kanály (vč. živých vysílání)
+
+
+
+### Cílová skupina:
 
 
 
@@ -76,7 +88,15 @@ Všichni uživatelé hledající bezpečné telefonování pomocí hlasu a videa
 
 
 
+### Cílová skupina:
+
+
+
 ## ⭐ Newsfeed
+
+
+
+### Cílová skupina:
 
 
 
@@ -84,7 +104,15 @@ Všichni uživatelé hledající bezpečné telefonování pomocí hlasu a videa
 
 
 
+### Cílová skupina:
+
+
+
 ## 🗓️ Události
+
+
+
+### Cílová skupina:
 
 
 
@@ -92,7 +120,15 @@ Všichni uživatelé hledající bezpečné telefonování pomocí hlasu a videa
 
 
 
+### Cílová skupina:
+
+
+
 ## 🛍️ E-shopy
+
+
+
+### Cílová skupina:
 
 
 
@@ -100,7 +136,15 @@ Všichni uživatelé hledající bezpečné telefonování pomocí hlasu a videa
 
 
 
+### Cílová skupina:
+
+
+
 ## 💰 Příspěvky (donations)
+
+
+
+### Cílová skupina:
 
 
 
@@ -108,7 +152,15 @@ Všichni uživatelé hledající bezpečné telefonování pomocí hlasu a videa
 
 
 
+### Cílová skupina:
+
+
+
 ## 📅 Sdílený kalendář
+
+
+
+### Cílová skupina:
 
 
 
@@ -116,7 +168,15 @@ Všichni uživatelé hledající bezpečné telefonování pomocí hlasu a videa
 
 
 
+### Cílová skupina:
+
+
+
 ## 📂 Sdílení souborů
+
+
+
+### Cílová skupina:
 
 
 
@@ -124,7 +184,15 @@ Všichni uživatelé hledající bezpečné telefonování pomocí hlasu a videa
 
 
 
+### Cílová skupina:
+
+
+
 ## ⛰️ Virtual chat
+
+
+
+### Cílová skupina:
 
 
 
@@ -132,11 +200,23 @@ Všichni uživatelé hledající bezpečné telefonování pomocí hlasu a videa
 
 
 
+### Cílová skupina:
+
+
+
 ## 🎮 Hry
 
 
 
+### Cílová skupina:
+
+
+
 ## 📰 Media feed
+
+
+
+### Cílová skupina:
 
 
 
