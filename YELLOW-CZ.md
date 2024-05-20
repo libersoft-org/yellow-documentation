@@ -24,7 +24,7 @@ Všechny zprávy ve všech formách (vč. zaslaných souborů apod.) jsou opatř
 
 Uživatelské účty mohou být ovládány **chatboty**, což je vhodné například pro vytváření konverzací s uživatelskou podporou, pro objednávání zboží apod.
 
-Na zprávy je možné **reagovat** a **přeposílat** je.
+Na zprávy je možné **odpovídat**, **přeposílat** je a **reagovat** pomocí emotikon.
 
 Kontakty zasílající nevyžádané zprávy je taktéž možné snadno **zablokovat**.
 
@@ -32,9 +32,13 @@ Klientská aplikace umožňuje i vytváření **šablon zpráv**, což je využi
 
 Všechny zprávy je možné automaticky či na vyžádání **překládat** do mnoha světových jazyků.
 
+TODO - popsat vyhledávání
+
 ## 🧾 Kontakty
 
+Tento modul umožňuje uživatelům spravovat a organizovat své **kontakty** na jednom místě. Tato funkcionalita poskytuje pokročilé funkce pro správu kontaktů jako např. možnosti **importu a exportu** s použitím různých formátů, vytváření **skupin kontaktů**, **štítků**, **poznámek** apod., pokročilé **vyhledávání** dle různých kritérií, **sdílení** kontaktů s ostatními uživateli, přiřazování **fotografií** k jednotlivým kontaktům, **stavové informace** (online, offline apod.), možnosti nastavení **soukromí** pro jednotlivé kontakty.
 
+Všechny kontakty jsou taktéž **synchronizovány** se serverem mezi jednotlivými koncovými zařízeními
 
 ## 📞 Hlasové a video hovory
 
