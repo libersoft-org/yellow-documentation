@@ -8,6 +8,8 @@
 
 - **Podpora více protokolů**: Kromě **AMTP** je Yellow připraveno integrovat další komunikační protokoly (např. **SMTP** nebo do budoucna plánovaný **DMTP**) ve formě modulů.
 
+- TODO - popsat SMTP, AMTP, DMTP - rozdíly, důvody implementace (smtp - zpetna kompatibilita, AMTP - synchronizace apod., DMTP - svoboda atd.), popsat výhody a nevýhody
+
 - **Zabezpečení a ochrana soukromí**: Oficiální moduly poskytující hlavní funkcionality systému jsou vytvářeny v souvislosti s doporučeními protokolu **AMTP**, tedy jsou v nich implementovány silné bezpečnostní prvky jako je např. koncové šifrování apod. To zajišťuje nadstandardní ochranu soukromí pro uživatele.
 
 **Seznam funkcionalit, které jsou součástí tohoto software:**
