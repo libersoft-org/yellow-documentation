@@ -129,19 +129,19 @@ Organizátoři a pořadatelé veřejných událostí, běžní uživatelé organ
 
 ## ✍🏻 Blogy
 
-TODO
+Blogy poskytují autorům možnost vytvářet, publikovat a sdílet své myšlenky a názory ve formě článků a čtenářům tyto články číst, reagovat na ně a komentovat v diskuzi. Modul je navržen tak, aby usnadňoval tvorbu obsahu, podporoval zapojení čtenářů. Taktéž poskytuje nástroje pro snadné psaní a úpravu textu a přidávání multimediálního obsahu. Zároveň je i implementována funkcionalita seznamu blogů s možností filtrace a řazením dle různých kritérií.
 
 ### Cílová skupina:
 
-TODO
+Amatérští i profesionální autoři a čtenáři různorodého obsahu.
 
 ## 🛍️ E-shopy
 
-TODO
+Tento modul umožňuje uživatelům vytvářet a spravovat vlastní online obchody a v takovýchto obchodech pohodlně nakupovat. Pro správu těchto e-shopů je poskytnuta sada nástrojů pro prodej produktů a služeb, správu objednávek, dokladů, plateb a komunikaci se zákazníky.
 
 ### Cílová skupina:
 
-TODO
+E-commerce podnikatelé, digitální tvůrci, koncoví zákazníci.
 
 ## 🏪 Tržiště (vč. aukce)
 
