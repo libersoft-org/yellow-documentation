@@ -1,10 +1,10 @@
 # Yellow - dokumentace
 
-**Yellow** je rozsáhlá komunikační platforma (tzv. [**super-app**](https://en.wikipedia.org/wiki/Super-app)), která poskytuje serverovou i klientskou aplikaci.
+**Yellow** je rozsáhlá komunikační platforma (tzv. [**super-app**](https://en.wikipedia.org/wiki/Super-app)), která poskytuje serverovou a klientskou aplikaci, podpůrné nástroje a dokumentaci.
 
 **Zde je seznam klíčových vlastností tohoto software:**
 
-- **Otevřené zdrojové kódy** - Celá platforma (serverová aplikace, klientská aplikace, podpůrné nástroje i dokumentace) je poskytována bezplatně a s otevřenými zdrojovými kódy. To přispívá důvěryhodnosti, bezpečnosti kódu a snadnému zapojení vývojářů 3. stran.
+- **Otevřené zdrojové kódy** - Celá platforma je poskytována bezplatně a s otevřenými zdrojovými kódy. To přispívá důvěryhodnosti, bezpečnosti kódu a snadnému zapojení vývojářů 3. stran.
 
 - **Multifunkčnost a modularita**: Modulární platforma umožňuje uživatelům i správcům serverů si zvolit funkcionality aplikace podle svých představ. Platforma nabízí mnoho modulů z rozličných oblastí, jako je např. zasílání rychlých zpráv, sociální média, e-commerce, sdílení souborů a mnoho dalšího. Platforma je otevřená i pro moduly třetích stran.
 
