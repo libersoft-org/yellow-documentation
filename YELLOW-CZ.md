@@ -14,7 +14,7 @@
   - [**DMTP**](./DMTP-CZ) - Připravovaný peer-to-peer komunikační protokol. Tento protokol využívá plně **decentralizovanou** síť uživatelů, kteří se starají o doručení dat pro ostatní uživatele. Data jsou uložena pouze na koncových zařízeních uživatelů nebo na decentralizovaných úložištích (v určitých případech), nikoliv na serverech, jako je to v případě ostatních protokolů. Tento protokol je velmi bezpečný a odolný vůči cenzuře.
   - [**IMAP**](https://www.rfc-editor.org/rfc/rfc9051.html) - Původní protokol elektronické pošty. Do platformy je integrován z důvodu zpětné kompatibility.
 
-- **Zabezpečení a ochrana soukromí**: Celé jádro platformy i oficiální moduly poskytující hlavní funkcionality systému, jsou vytvářeny dle standradů a doporučení protokolů **AMTP** a **DMTP**, tedy jsou v nich implementovány silné bezpečnostní prvky jako je např. koncové šifrování apod. To zajišťuje nadstandardní ochranu soukromí pro uživatele.
+- **Zabezpečení a ochrana soukromí**: Celé jádro platformy i oficiální moduly poskytující hlavní funkcionality systému, jsou vytvářeny dle standradů a doporučení protokolů **AMTP** a **DMTP**, tedy jsou v nich implementovány silné bezpečnostní prvky jako je např. **zabezpečená komunikace**, **koncové šifrování** apod. To zajišťuje nadstandardní ochranu soukromí pro uživatele.
 
 **Seznam funkcionalit, které jsou součástí tohoto software:**
 
@@ -68,11 +68,12 @@ Konferenční hovory umožňují uživatelům účastnit se rozsáhlých skupino
 
 ### Cílová skupina:
 
-Především organizace, jako jsou firmy, neziskové organizace, úřady, organizátoři akcí, vzdělávací instituce, profesní a odborné skupiny, konzultanti apod.
+Především organizace, jako jsou firmy, vzdělávací instituce, lektoři, konzultantni, organizátoři akcí, profesní a odborné skupiny apod.
 
 ## ₿ Integrovaná kryptoměnová peněženka
 
 Umožňuje platby a převody kryptoměn mezi uživateli a platby v rámci placených funkcí v modulech.
+TODO
 
 ## 🧑‍🤝‍🧑 Sledovatelé
 
