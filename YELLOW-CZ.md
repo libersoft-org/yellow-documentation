@@ -143,29 +143,29 @@ Tento modul umožňuje uživatelům vytvářet a spravovat vlastní online obcho
 
 E-commerce podnikatelé, digitální tvůrci, koncoví zákazníci.
 
-## 🏪 Tržiště (vč. aukce)
+## 🏪 Tržiště
 
-TODO
-
-### Cílová skupina:
-
-TODO
-
-## 💰 Příspěvky (donations)
-
-TODO
+Modul Tržiště umožňuje koncovým uživatelům nakupovat a prodávat produkty a služby mezi sebou. Tržiště poskytuje přehlednou platformu pro inzerci, kde mohou uživatelé nabízet své zboží a služby, organizovat **aukce**. Modul umožňuje vyhledávání a filtrování položek dle různých kritérií, hodnocení a komunikaci mezi uživateli.
 
 ### Cílová skupina:
 
-TODO
+Uživatelé, kteří prodávají a nakupují zboží či služby formou inzerce.
+
+## 💰 Příspěvky
+
+Tento modul umožňuje uživatelům podporovat ostatní členy komunity prostřednictvím finančních darů. Kdokoliv si může založit vlastní sbírku na libovolné účely a vybírat tak dary od lidí. Modul umožňuje snadnou sprvávu sbírek, poskytuje seznam sbírek filtrovatelný a seřaditelný dle různých kritérií. Taktéž umožňuje komunikaci mezi dárci a provozovateli sbírky.
+
+### Cílová skupina:
+
+Uživatelé provozující či přispívající na osobní, charitativní, komunitní, umělecké či jakékoliv jiné projekty.
 
 ## 🤑 Skupinové financování (crowdfunding)
 
-TODO
+Skupinové financování umožňuje uživatelům získávat finanční prostředky pro různé projekty prostřednictvím příspěvků od přispěvatelů, za což tito přispěvatelé dostávají různé odměny, podíly na projektu apod. Tento modul poskytuje komplexní nástroje pro vytváření a správu kampaní, čímž umožňuje realizaci inovativních nápadů, projektů a podnikatelských záměrů. Kdokoliv si může založit vlastní kampaň a sestavit jí podle svého uvážení. Platforma poskytuje i seznam veřejných kampaní, které lze filtrovat a řadit dle různých kritérií.
 
 ### Cílová skupina:
 
-TODO
+Podnikatelé, startupy, tvůrci a umělci, neziskové organizace, komunity, inovátoři a vynálezci, vzdělávací projekty a přispěvatelé do těchto projektů.
 
 ## 📅 Sdílený kalendář
 
