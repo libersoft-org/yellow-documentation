@@ -109,23 +109,23 @@ Tento modul poskytuje uživatelům personalizovaný přehled o nejnovějších p
 
 ### Cílová skupina:
 
-Široká skupina domácích uživatelů, tvůrci obsahu, organizace poskytující obsah svým odběratelům apod.
+Široká skupina koncových uživatelů, tvůrci obsahu, organizace poskytující obsah svým odběratelům apod.
 
-## 🤳🏻 Příběhy (stories)
+## 🤳🏻 Příběhy
 
-TODO
+Krátkodobé vizuální příspěvky, které uživatelé mohou sdílet se svými přáteli a sledovateli. Tyto příspěvky jsou viditelné pouze po omezenou dobu (typicky 24 hodin) a umožňují uživatelům sdílet okamžité momenty, krátká videa, fotografie a textové zprávy v atraktivním formátu, na který mohou odběratelé snadno reagovat.
 
 ### Cílová skupina:
 
-TODO
+Široká skupina koncových uživatelů, tvůrci obsahu, organizace poskytující obsah svým odběratelům apod.
 
 ## 🗓️ Události
 
-TODO
+Tento modul umožňuje uživatelům vytvářet, organizovat a sdílet různé typy událostí, jako jsou osobní setkání či veřejné akce. Tento modul poskytuje nástroje pro plánování, řízení a sdílení událostí, čímž usnadňuje koordinaci a zapojení účastníků. U jednotlivých událostí je umožněno nastavení soukromí a viditelnost. Modul taktéž poskytuje seznam veřejných událostí, které jsou filtrovatelné a seřaditelné podle různých kritérií.
 
 ### Cílová skupina:
 
-TODO
+Organizátoři a pořadatelé veřejných událostí, běžní uživatelé organizující soukromé akce, účastníci veřejných i soukromých akcí.
 
 ## ✍🏻 Blogy
 
