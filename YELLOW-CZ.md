@@ -4,15 +4,17 @@
 
 **Zde je seznam klíčových vlastností tohoto software:**
 
-- **Multifunkčnost a modularita**: Modulární platforma umožňuje uživatelům i správcům serveru si zvolit funkcionality aplikace podle svých představ. Platforma nabízí mnoho modulů z rozličných oblastí, jako je např. zasílání rychlých zpráv, sociální média, e-commerce, sdílení souborů a mnoho dalšího. Platforma je otevřená i pro moduly třetích stran.
+- **Otevřené zdrojové kódy** - Celá platforma (serverová aplikace, klientská aplikace, podpůrné nástroje i dokumentace) je poskytována bezplatně a s otevřenými zdrojovými kódy. To přispívá důvěryhodnosti, bezpečnosti kódu a snadnému zapojení vývojářů 3. stran.
 
-- **Podpora více protokolů**: Platforma podporuje integraci více komunikačních protokolů a je otevřena snadné integraci protokolů třetích stran. připraveno integrovat další komunikační protokoly (např. **SMTP** nebo do budoucna plánovaný **DMTP**) ve formě modulů.
+- **Multifunkčnost a modularita**: Modulární platforma umožňuje uživatelům i správcům serverů si zvolit funkcionality aplikace podle svých představ. Platforma nabízí mnoho modulů z rozličných oblastí, jako je např. zasílání rychlých zpráv, sociální média, e-commerce, sdílení souborů a mnoho dalšího. Platforma je otevřená i pro moduly třetích stran.
 
-- TODO - popsat SMTP, AMTP, DMTP - rozdíly, důvody implementace (smtp - zpetna kompatibilita, AMTP - synchronizace apod., DMTP - svoboda atd.), popsat výhody a nevýhody... AMTP - Přináší pokročilé možnosti v oblasti přenosu dat a komunikace v reálném čase.
+- **Podpora více protokolů**: Platforma podporuje integraci více komunikačních protokolů a je otevřena snadné integraci protokolů třetích stran. V rámci platformy jsou integrovány tyto protokoly:
 
-- **Zabezpečení a ochrana soukromí**: Oficiální moduly poskytující hlavní funkcionality systému jsou vytvářeny v souvislosti s doporučeními protokolu **AMTP**, tedy jsou v nich implementovány silné bezpečnostní prvky jako je např. koncové šifrování apod. To zajišťuje nadstandardní ochranu soukromí pro uživatele.
+  - [**AMTP**](./AMTP-CZ) - Nejnovější komunikační protokol, který přináší pokročilé možnosti v oblasti přenosu dat a komunikace v reálném čase. Nabízí **distribuovanou** síť serverů, které si mezi sebou předávají data a klientů, kteří se k těmto serverům připojují. Kdokoliv si může vytvořit vlastní server a připojit se tak k síti nebo se připojit k již zavedeným serverům, které pro uživatele poskytují své služby a navzájem si konkurují. Klientské aplikace si se servery a ostatními zařízeními mohou synchronizovat data.
+  - [**DMTP**](./DMTP-CZ) - Připravovaný peer-to-peer komunikační protokol. Tento protokol využívá plně **decentralizovanou** síť uživatelů, kteří se starají o doručení dat pro ostatní uživatele. Data jsou uložena pouze na koncových zařízeních uživatelů nebo na decentralizovaných úložištích (v určitých případech), nikoliv na serverech, jako je to v případě ostatních protokolů. Tento protokol je velmi bezpečný a odolný vůči cenzuře.
+  - [**IMAP**](https://www.rfc-editor.org/rfc/rfc9051.html) - Původní protokol elektronické pošty. Do platformy byl integrován z důvodu zpětné kompatibility.
 
-- **Otevřené zdrojové kódy** - TODO
+- **Zabezpečení a ochrana soukromí**: Oficiální moduly poskytující hlavní funkcionality systému jsou vytvářeny v souvislosti s doporučeními protokolů **AMTP** a **DMTP**, tedy jsou v nich implementovány silné bezpečnostní prvky jako je např. koncové šifrování apod. To zajišťuje nadstandardní ochranu soukromí pro uživatele.
 
 **Seznam funkcionalit, které jsou součástí tohoto software:**
 
@@ -36,7 +38,7 @@ Klientská aplikace umožňuje i vytváření **šablon zpráv**, což je využi
 
 Všechny zprávy je možné automaticky či na vyžádání **překládat** do mnoha světových jazyků.
 
-TODO - popsat vyhledávání
+Díky strukturovanosti tohoto modulu je snadné ve zprávách **vyhledávat**.
 
 ### Cílová skupina:
 
