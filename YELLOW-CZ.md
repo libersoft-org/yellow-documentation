@@ -52,7 +52,7 @@ Všechny kontakty jsou taktéž **synchronizovány** se serverem a mezi jednotli
 
 ### Cílová skupina:
 
-Všichni uživatelé, kteří potřebují efektivně spravovat a sdílet své osobní či profesní kontakty. Tato funkcionalita je také užitečná pro firmy či jiné druhy organizací, které potřebují udržovat přehled o svých členech a partnerech.
+Všichni domácí i firemní uživatelé, kteří potřebují efektivně spravovat a sdílet své osobní či profesní kontakty. Tato funkcionalita je také užitečná pro firmy či jiné druhy organizací, které potřebují udržovat přehled o svých členech a partnerech.
 
 ## 📞 Hlasové a video hovory
 
@@ -60,7 +60,7 @@ Tento modul představuje další základní funkcionalitu platformy, která umo�
 
 ### Cílová skupina:
 
-Všichni uživatelé hledající bezpečné telefonování pomocí hlasu a videa. Funkcionalita je vhodná pro širokou škálu uživatelů, tedy **domácí** i **firemní** uživatele, či **další typy organizací**.
+Uživatelé všech věkových kategorií, především těch, kteří hledají bezpečné telefonování pomocí hlasu či videa. Funkcionalita je vhodná pro širokou škálu domácích uživatelů i pro profesionální využití v různých typech soukromých i veřejných organizací.
 
 ## 📱 Konferenční hovory
 
