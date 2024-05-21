@@ -89,19 +89,19 @@ Uživatelé sociálních sítí, odběratelé novinek dle zájmových oblastí.
 
 ## 🎞️ Video kanály (vč. živých vysílání)
 
-TODO
+Video kanály v platformě Yellow umožňují uživatelům vytvářet a spravovat různé druhy video obsahu, jako např. **klasická videa**, **živá vysílání** a **krátká "reels" videa**. Tato funkcionalita poskytuje nástroje pro tvorbu a distribuci video obsahu. Zároveň poskytuje možnosti zapojení uživatelů, jako jsou reakce na videa, komentáře, sdílení apod.
 
 ### Cílová skupina:
 
-TODO
+Sledovatelé video obsahu, tvůrci video obsahu, vzdělávací instituce, umělci a hudebníci, společnosti produkující komerční obsah, herní komunita, uživatelé hledající zábavu či vzdělání.
 
 ## 💬 Diskuzní fórum
 
-TODO
+**Diskuzní fórum** poskytuje prostor pro uživatele, kde mohou diskutovat o různých tématech, sdílet názory, klást otázky a poskytovat odpovědi. Tento modul umožňuje vytváření, správu a vyhledávání diskuzí filtrovatelných dle kategorií a obsahu, nabízí nástroje pro moderování obsahu a podporuje živé a strukturované konverzace. Zároveň nabízí možnosti nastavení soukromí pro soukromé diskuzní skupiny a pokročilé zabezpečení a ochranu uživatelských dat.
 
 ### Cílová skupina:
 
-TODO
+Zájmové, profesní, vzdělávací, odborné a jiné skupiny, komunity, organizace poskytující uživatelskou podporu apod.
 
 ## ⭐ Newsfeed
 
