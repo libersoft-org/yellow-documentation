@@ -60,11 +60,11 @@ Všichni uživatelé hledající bezpečné telefonování pomocí hlasu a videa
 
 ## 📱 Konferenční hovory
 
-TODO
+Konferenční hovory umožňují uživatelům účastnit se rozsáhlých skupinových diskusí a setkání v reálném čase. Tato funkcionalita je navržena pro efektivní a pohodlnou komunikaci mezi více účastníky a to prostřednictvím hlasu i videa z kamery. Taktéž je umožněno sdílet obrazovku a povolit konkrétním účastníkům vzdálené řízení. Moderátoři mají možnost řídit průběh hovoru, jako např. přidávat, odstraňovat a blokovat účastníky, povolovat či zakazovat ostatním audio a video a zaznamenávat průběh hovoru. Uživatelé mohou taktéž využít chat v rámci hovoru a hlasovat v anketách. Všechny konferenční hovory lze plánovat dopředu, aby mohli být účastníci včas informováni o termínech. Všechny hovory jsou opatřeny koncovým šifrováním, které účastníky chrání před odposlechy. Kvalita zvuku je automaticky optimalizována dle propustnosti síťového připojení.
 
 ### Cílová skupina:
 
-TODO
+Především organizace, jako jsou firmy, neziskové organizace, úřady, organizátoři akcí, vzdělávací instituce, profesní a odborné skupiny, konzultanti apod.
 
 ## ₿ Integrovaná kryptoměnová peněženka
 
