@@ -1,16 +1,18 @@
 # Yellow - dokumentace
 
-**Yellow** je rozsáhlá komunikační platforma (tzv. [**super-app**](https://en.wikipedia.org/wiki/Super-app)), která poskytuje serverovou i klientskou aplikaci. Tento software používá inovativní síťový protokol **AMTP** (Advanced Mail Transfer Protocol), který přináší pokročilé možnosti v oblasti přenosu dat a komunikace v reálném čase.
+**Yellow** je rozsáhlá komunikační platforma (tzv. [**super-app**](https://en.wikipedia.org/wiki/Super-app)), která poskytuje serverovou i klientskou aplikaci.
 
 **Zde je seznam klíčových vlastností tohoto software:**
 
 - **Multifunkčnost a modularita**: Modulární platforma umožňuje uživatelům i správcům serveru si zvolit funkcionality aplikace podle svých představ. Platforma nabízí mnoho modulů z rozličných oblastí, jako je např. zasílání rychlých zpráv, sociální média, e-commerce, sdílení souborů a mnoho dalšího. Platforma je otevřená i pro moduly třetích stran.
 
-- **Podpora více protokolů**: Kromě **AMTP** je Yellow připraveno integrovat další komunikační protokoly (např. **SMTP** nebo do budoucna plánovaný **DMTP**) ve formě modulů.
+- **Podpora více protokolů**: Platforma podporuje integraci více komunikačních protokolů a je otevřena snadné integraci protokolů třetích stran. připraveno integrovat další komunikační protokoly (např. **SMTP** nebo do budoucna plánovaný **DMTP**) ve formě modulů.
 
-- TODO - popsat SMTP, AMTP, DMTP - rozdíly, důvody implementace (smtp - zpetna kompatibilita, AMTP - synchronizace apod., DMTP - svoboda atd.), popsat výhody a nevýhody
+- TODO - popsat SMTP, AMTP, DMTP - rozdíly, důvody implementace (smtp - zpetna kompatibilita, AMTP - synchronizace apod., DMTP - svoboda atd.), popsat výhody a nevýhody... AMTP - Přináší pokročilé možnosti v oblasti přenosu dat a komunikace v reálném čase.
 
 - **Zabezpečení a ochrana soukromí**: Oficiální moduly poskytující hlavní funkcionality systému jsou vytvářeny v souvislosti s doporučeními protokolu **AMTP**, tedy jsou v nich implementovány silné bezpečnostní prvky jako je např. koncové šifrování apod. To zajišťuje nadstandardní ochranu soukromí pro uživatele.
+
+- **Otevřené zdrojové kódy** - TODO
 
 **Seznam funkcionalit, které jsou součástí tohoto software:**
 
@@ -68,7 +70,7 @@ Především organizace, jako jsou firmy, neziskové organizace, úřady, organi
 
 ## ₿ Integrovaná kryptoměnová peněženka
 
-- Umožňuje platby a převody kryptoměn mezi uživateli a platby v rámci placených funkcí v modulech.
+Umožňuje platby a převody kryptoměn mezi uživateli a platby v rámci placených funkcí v modulech.
 
 ## 🧑‍🤝‍🧑 Sledovatelé
 
