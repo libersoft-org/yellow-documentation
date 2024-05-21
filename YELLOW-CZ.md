@@ -105,11 +105,11 @@ Zájmové, profesní, vzdělávací, odborné a jiné skupiny, komunity, organiz
 
 ## ⭐ Newsfeed
 
-TODO
+Tento modul poskytuje uživatelům personalizovaný přehled o nejnovějších příspěvcích sledovaných profilů. Poskytuje možnost udržení přehledu o novinkách a interakcích v rámci sítě uživatelů. Taktéž umožňuje zapojení uživatelů k příspěvkům ve formě reakcí a komentářů.
 
 ### Cílová skupina:
 
-TODO
+Široká skupina domácích uživatelů, tvůrci obsahu, organizace poskytující obsah svým odběratelům apod.
 
 ## 🤳🏻 Příběhy (stories)
 
