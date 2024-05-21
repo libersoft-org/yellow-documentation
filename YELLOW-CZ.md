@@ -20,7 +20,7 @@
 
 ## 📧 Rychlé zprávy
 
-Tento modul představuje hlavní funkcionalitu platformy **Yellow**, která umožňuje uživatelům komunikovat v reálném čase a zasílat mezi sebou data jako jsou **textové zprávy** (prostý i formátovaný text), **hlasové a video zprávy**, **neomezeně velké soubory**, **emotikony**, **animované nálepky**, **obrázky**, **kontakty**, **živé body na mapě** apod. Tyto jednotlivé typy zpráv lze taktéž kombinovat do jedné, **vícedílné zprávy**, což umožňuje například jednoduše vytvářet obchodní sdělení a komunikaci s chatboty.
+Tento modul představuje hlavní funkcionalitu platformy, která umožňuje uživatelům komunikovat v reálném čase a zasílat mezi sebou data jako jsou **textové zprávy** (prostý i formátovaný text), **hlasové a video zprávy**, **neomezeně velké soubory**, **emotikony**, **animované nálepky**, **obrázky**, **kontakty**, **živé body na mapě** apod. Tyto jednotlivé typy zpráv lze taktéž kombinovat do jedné, **vícedílné zprávy**, což umožňuje například jednoduše vytvářet obchodní sdělení a komunikaci s chatboty.
 
 V rámci každého kontaktu je možné zakládat **více konverzací**, které mohou být například řazeny dle témat rozhovorů. Jednotlivé kontakty mohou být taktéž **řazeny do skupin**, například dle typu kontaktu (práce, přátelé, apod.).
 
@@ -72,16 +72,20 @@ Především organizace, jako jsou firmy, vzdělávací instituce, lektoři, kon
 
 ## ₿ Integrovaná kryptoměnová peněženka
 
-Umožňuje platby a převody kryptoměn mezi uživateli a platby v rámci placených funkcí v modulech.
-TODO
-
-## 🧑‍🤝‍🧑 Sledovatelé
-
-TODO
+Integrovaná kryptoměnová peněženka v platformě umožňuje uživatelům snadno a bezpečně uchovávat, odesílat a přijímat kryptoměny přímo v klientské aplikaci. To umožňuje placení a převod kryptoměn i tokenů mezi uživateli platformy a také platby v rámci komerčních modulů (např. za prémiové funkce). Peněženka podporuje všechny EVM-kompatibilní blockchainy (jako je Ethereum, Binance Smart Chain, Polygon apod.). Tato funkcionalita je zcela oddělená od síťového protokolu a je propojená přímo s blockchainy.
 
 ### Cílová skupina:
 
-TODO
+Uživatelé, kteří chtějí v rámci platformy platit za služby, které moduly poskytují nebo uživatelé, kteří si mezi sebou navzájem zasílají platby. 
+
+## 🧑‍🤝‍🧑 Sledovatelé
+
+Tento modul umožňuje uživatelům sledovat aktivity ostatních uživatelů, čímž zajišťuje interakci a udržování kontaktu mezi komunitou a zájmovými osobami. Tato funkcionalita podporuje vytváření a správu seznamu sledovaných profilů, upozorňování na nové aktivity a interakce s obsahem sledovaných uživatelů.
+Zároveň je i poskytnut seznam nejsledovanějších profilů, filtrovatelný dle různých kritérií.
+
+### Cílová skupina:
+
+Uživatelé sociálních sítí, odběratelé novinek dle zájmových oblastí.
 
 ## 🎞️ Video kanály (vč. živých vysílání)
 
