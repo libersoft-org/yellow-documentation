@@ -217,17 +217,16 @@ Uživatelé, kteří se chtějí propojovat s ostatními uživateli nebo body z�
 
 ### 🎮 Hry
 
-TODO
+Modul **Hry** poskytuje uživatelům zábavu prostřednictvím zábavných online her, které mohou hrát se svými přáteli.
 
 #### Cílová skupina:
 
-TODO
+Hráči her různých žánrů, sociálně zaměření hráči, příležitostní hráči, především mladší generace uživatelů.
 
 ### 📰 Media feed
 
-TODO
+Modul **Media feed** v platformě Yellow poskytuje uživatelům přehled zpráv a informací z různých médií. Tento modul agreguje obsah z různých zpravodajských serverů, blogů, sociálních médií a dalších zdrojů, aby uživatelé měli aktuální přehled o dění ve světě na jednom místě. Uživatelé si mohou personalizovat výběr oblíbených médií a sdílet obsah s ostatními uživateli.
 
 #### Cílová skupina:
 
-TODO
-
+Aktivní čtenáři a informovaní uživatelé, obchodníci, studenti, zájemci o odborná témata apod.
