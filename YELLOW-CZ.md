@@ -4,7 +4,7 @@
 
 ## Klíčové vlastnosti software
 
-- **Otevřené zdrojové kódy** - Celá platforma je poskytována bezplatně a s otevřenými zdrojovými kódy. To přispívá důvěryhodnosti, bezpečnosti kódu a snadnému zapojení vývojářů 3. stran.
+- **Otevřené zdrojové kódy** - Celá platforma je poskytována **bezplatně** a s **otevřenými zdrojovými kódy**. To přispívá důvěryhodnosti, bezpečnosti kódu a snadnému zapojení vývojářů 3. stran.
 
 - **Multifunkčnost a modularita**: Modulární struktura umožňuje uživatelům i správcům serverů si zvolit funkcionality aplikace podle svých představ. Platforma nabízí mnoho modulů z rozličných oblastí, jako je např. zasílání rychlých zpráv, sociální média, e-commerce, sdílení souborů a mnoho dalšího. Platforma je otevřená i pro moduly třetích stran.
 
