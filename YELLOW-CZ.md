@@ -167,37 +167,37 @@ Skupinové financování umožňuje uživatelům získávat finanční prostřed
 
 Podnikatelé, startupy, tvůrci a umělci, neziskové organizace, komunity, inovátoři a vynálezci, vzdělávací projekty a přispěvatelé do těchto projektů.
 
-### 📅 Sdílený kalendář
+### 📅 Kalendář
 
-TODO
-
-#### Cílová skupina:
-
-TODO
-
-### ✔️ Sdílené úkoly
-
-TODO
+**Kalendář** je navržen pro efektivní **organizování času** a **plánování událostí**. Tento modul umožňuje uživatelům **vytvářet**, **synchronizovat** a **sdílet** kalendáře s ostatními členy komunity, což usnadňuje organizaci osobních i pracovních aktivit.
 
 #### Cílová skupina:
 
-TODO
+Firemní uživatelé, domácí uživatelé, studenti, komunity apod.
+
+### ✔️ Úkoly
+
+Modul **Úkoly** umožňuje uživatelům **vytvářet**, **spravovat**, **delegovat**, **sledovat průběh** a **sdílet** úkoly v reálném čase. Tento modul je navržen tak, aby zlepšoval **produktivitu** a **organizaci práce**, usnadňoval **spolupráci** a zajišťoval, že všechny úkoly budou dokončeny včas a efektivně.
+
+#### Cílová skupina:
+
+Jednotlivci, týmy, pracovní skupiny, studenti, domácnosti a další
 
 ### 📂 Sdílení souborů
 
-TODO
+**Sdílení souborů** umožňuje uživatelům **nahrávat**, **stahovat**, přehledně **organizovat** a **sdílet** soubory různých formátů. Tento modul je navržen pro snadnou a efektivní výměnu videí, software, obrázků, dokumentů a dalších typů souborů mezi uživateli. Soubory jsou na serveru ukládány v zašifrované podobě, což poskytuje další vrstvu zabezpečení proti zneužití.
 
 #### Cílová skupina:
 
-TODO
+Jednotlivci, studenti, komunity a další.
 
 ### ❤️ Seznamka
 
-TODO
+Modul **Seznamka** poskytuje moderní způsob seznamování se s novými lidmi za různými účely, jako např. nalezení životního partnera, příležitostná setkání, přátelství apod. Modul umožňuje vytváření profilů s galerií fotografií a podrobnými osobními informacemi, vyhledávání a filtrování ostatních uživatelů, možnosti řazení podle vzdálenosti a dalších kritérií, možnost kontaktování pomocí zpráv, lajkování uživatelských profilů, nalezení vzájemných shod, přidávání uživatelů do oblíbených apod.
 
 #### Cílová skupina:
 
-TODO
+Jednotlivci, kteří hledají nové vztahy, přátele a známé za různými účely.
 
 ### ⛰️ Virtual chat
 
