@@ -56,64 +56,63 @@ Funkcionality modulu jsou vhodné pro jednotlivce i organizace, tedy pro všechn
 
 ### 📞 Hlasové a video hovory
 
-Tento modul představuje další základní funkcionalitu platformy, která umožňuje uživatelům komunikovat tváří v tvář s použitím **videa** nebo pomocí **hlasu** v reálném čase. Hovory lze vést mezi dvěma **jednotlivci** i **skupinově**. Součástí je i možnost **sdílení obrazovky** a **vzdálené ovládání** zařízení. Hovory lze **nahrávat** a jednotlivé nahrávky přehrávat, spravovat a sdílet. **Kvalita hovoru** je automaticky přizpůsobena propustností internetového připojení.
+Tento modul představuje další základní funkcionalitu platformy, která umožňuje uživatelům komunikovat prostřednictvím **videa** nebo pomocí **hlasu** v reálném čase. Hovory lze vést mezi dvěma **jednotlivci** i **skupinově**. Součástí je i možnost **sdílení obrazovky** a **vzdálené ovládání** zařízení. Hovory lze **nahrávat** a jednotlivé nahrávky přehrávat, spravovat a sdílet. **Kvalita hovoru** je automaticky přizpůsobena propustností internetového připojení.
 
 #### Cílová skupina:
 
-Uživatelé všech věkových kategorií, především těch, kteří hledají bezpečné telefonování pomocí hlasu či videa. Funkcionalita je vhodná pro širokou škálu domácích uživatelů i pro profesionální využití v různých typech soukromých i veřejných organizací.
+Uživatelé všech věkových kategorií, především těch, kteří hledají bezpečné telefonování pomocí hlasu či videa. Funkcionalita je vhodná pro širokou škálu domácích uživatelů i pro profesionální využití v různých typech organizací.
 
 ### 📱 Konferenční hovory
 
-Konferenční hovory umožňují uživatelům účastnit se rozsáhlých skupinových diskusí a setkání v reálném čase. Tato funkcionalita je navržena pro efektivní a pohodlnou komunikaci mezi více účastníky a to prostřednictvím hlasu i videa z kamery. Taktéž je umožněno sdílet obrazovku a povolit konkrétním účastníkům vzdálené řízení. Moderátoři mají možnost řídit průběh hovoru, jako např. přidávat, odstraňovat a blokovat účastníky, povolovat či zakazovat ostatním audio a video a zaznamenávat průběh hovoru. Uživatelé mohou taktéž využít chat v rámci hovoru a hlasovat v anketách. Všechny konferenční hovory lze plánovat dopředu, aby mohli být účastníci včas informováni o termínech. Kvalita zvuku je automaticky optimalizována dle propustnosti síťového připojení.
+**Konferenční hovory** umožňují uživatelům účastnit se rozsáhlých skupinových diskuzí a setkání online v reálném čase. Tato funkcionalita je navržena pro efektivní a pohodlnou komunikaci mezi více účastníky a to prostřednictvím **hlasu** i **videa**. Taktéž je umožněno **sdílet obrazovku** a povolit konkrétním účastníkům **vzdálené řízení**. Moderátoři mají možnost řídit průběh hovoru, jako např. **přidávat**, **odstraňovat** a **blokovat** účastníky, **moderovat** ostatní a **zaznamenávat průběh hovoru**. Uživatelé mohou taktéž využít **chat** v rámci hovoru, **sdílet soubory** a **hlasovat v anketách**. Všechny konferenční hovory lze **plánovat** dopředu, aby mohli být účastníci včas informováni o termínu konference. Kvalita zvuku je automaticky optimalizována dle propustnosti síťového připojení.
 
 #### Cílová skupina:
 
-Především organizace, jako jsou firmy, vzdělávací instituce, lektoři, konzultanti, organizátoři akcí, profesní a odborné skupiny apod.
+Především organizace, jako jsou firmy, vzdělávací instituce, lektoři, konzultanti, organizátoři akcí, odborné skupiny apod.
 
 ### ₿ Integrovaná kryptoměnová peněženka
 
-Integrovaná kryptoměnová peněženka v platformě umožňuje uživatelům snadno a bezpečně uchovávat, odesílat a přijímat kryptoměny přímo v klientské aplikaci. To umožňuje placení a převod kryptoměn i tokenů mezi uživateli platformy a také platby v rámci komerčních modulů (např. za prémiové funkce). Peněženka podporuje všechny EVM-kompatibilní blockchainy (jako je Ethereum, Binance Smart Chain, Polygon apod.). Tato funkcionalita je zcela oddělená od síťového protokolu a je propojená přímo s blockchainy.
+**Integrovaná kryptoměnová peněženka** umožňuje uživatelům snadno a bezpečně **uchovávat**, **odesílat** a **přijímat** kryptoměny přímo v klientské aplikaci. To umožňuje placení a převod kryptoměn a tokenů mezi uživateli platformy a také **platby v rámci komerčních modulů** (např. za prémiové funkce). Peněženka podporuje všechny [**EVM-kompatibilní**](https://cs.wikipedia.org/wiki/Ethereum) blockchainy (jako je Ethereum, Binance Smart Chain, Polygon apod.). Tato funkcionalita je zcela oddělená od síťového protokolu a je propojená přímo s blockchainy. Zároveň umožňuje ostatním modulům využívat funkcionality [**chytrých smluv**](https://cs.wikipedia.org/wiki/Chytr%C3%BD_kontrakt), což značně přispívá k důvěryhodnosti transakcí a rozšiřuje možnosti funkcionalit modulů.
 
 #### Cílová skupina:
 
-Uživatelé, kteří chtějí v rámci platformy platit za služby, které moduly poskytují nebo uživatelé, kteří si mezi sebou navzájem zasílají platby. 
+Uživatelé, kteří chtějí v rámci platformy platit za služby, které moduly poskytují, využívat chytré smlouvy nebo si mezi sebou navzájem zasílat platby.
 
-### 🧑‍🤝‍🧑 Sledovatelé
+### 🧑‍🤝‍🧑 Profily a sledování
 
-Tento modul umožňuje uživatelům sledovat aktivity ostatních uživatelů, čímž zajišťuje interakci a udržování kontaktu mezi komunitou a zájmovými osobami. Tato funkcionalita podporuje vytváření a správu seznamu sledovaných profilů, upozorňování na nové aktivity a interakce s obsahem sledovaných uživatelů.
-Zároveň je i poskytnut seznam nejsledovanějších profilů, filtrovatelný dle různých kritérií.
-
-#### Cílová skupina:
-
-Uživatelé sociálních sítí, odběratelé novinek dle zájmových oblastí.
-
-### 🎞️ Video kanály (vč. živých vysílání)
-
-Video kanály v platformě Yellow umožňují uživatelům vytvářet a spravovat různé druhy video obsahu, jako např. **klasická videa**, **živá vysílání** a **krátká "reels" videa**. Tato funkcionalita poskytuje nástroje pro tvorbu a distribuci video obsahu. Zároveň poskytuje možnosti zapojení uživatelů, jako jsou reakce na videa, komentáře, sdílení apod.
+Tento modul umožňuje uživatelům **sledovat aktivity ostatních uživatelů** napříč moduly, čímž zajišťuje interakci a udržování kontaktu mezi lidmi. Tato funkcionalita podporuje vytváření a správu **seznamu sledovaných profilů**, **zobrazování aktivit**, **upozorňování na nové aktivity**, **zobrazení seznamu nejsledovanějších veřejných profilů** apod.
 
 #### Cílová skupina:
 
-Sledovatelé video obsahu, tvůrci video obsahu, vzdělávací instituce, umělci a hudebníci, společnosti produkující komerční obsah, herní komunita, uživatelé hledající zábavu či vzdělání.
+Uživatelé sociálních sítí, odběratelé novinek dle zájmových oblastí apod.
+
+### 🎞️ Video kanály
+
+**Video kanály** umožňují uživatelům **vytvářet** a **spravovat** různé druhy **video obsahu**, jako např. **klasická videa**, **živá vysílání** a **krátká "reels" videa**. Tato funkcionalita poskytuje nástroje pro **tvorbu a distribuci video obsahu**. Zároveň poskytuje možnosti zapojení uživatelů, jako jsou **reakce** na videa, **komentáře**, **sdílení** apod.
+
+#### Cílová skupina:
+
+Sledovatelé video obsahu, tvůrci video obsahu, vzdělávací instituce, umělci a hudebníci, herní komunita, společnosti produkující komerční obsah, uživatelé hledající zábavu či vzdělání.
 
 ### 💬 Diskuzní fórum
 
-**Diskuzní fórum** poskytuje prostor pro uživatele, kde mohou diskutovat o různých tématech, sdílet názory, klást otázky a poskytovat odpovědi. Tento modul umožňuje vytváření, správu a vyhledávání diskuzí filtrovatelných dle kategorií a obsahu, nabízí nástroje pro moderování obsahu a podporuje živé a strukturované konverzace. Zároveň nabízí možnosti nastavení soukromí pro soukromé diskuzní skupiny a pokročilé zabezpečení a ochranu uživatelských dat.
+**Diskuzní fórum** poskytuje prostor pro uživatele, kde mohou **diskutovat** o různých tématech, **sdílet názory**, **klást otázky** a **poskytovat odpovědi**. Tento modul umožňuje **vytváření**, **správu** a **vyhledávání** diskuzí filtrovatelných dle kategorií a obsahu, nabízí nástroje pro moderování obsahu a podporuje živé a strukturované konverzace. Zároveň nabízí možnosti **nastavení soukromí** pro soukromé diskuzní skupiny.
 
 #### Cílová skupina:
 
-Zájmové, profesní, vzdělávací, odborné a jiné skupiny, komunity, organizace poskytující uživatelskou podporu apod.
+Zájmové, profesní, vzdělávací, odborné a jiné skupiny, komunity, organizace poskytující uživatelskou podporu, běžní diskutující uživatelé apod.
 
 ### ⭐ Newsfeed
 
-Tento modul poskytuje uživatelům personalizovaný přehled o nejnovějších příspěvcích sledovaných profilů. Poskytuje možnost udržení přehledu o novinkách a interakcích v rámci sítě uživatelů. Taktéž umožňuje zapojení uživatelů k příspěvkům ve formě reakcí a komentářů.
+Tento modul poskytuje uživatelům personalizovaný **přehled o nejnovějších příspěvcích** sledovaných profilů. Poskytuje možnost udržení přehledu o novinkách a interakcích v rámci sítě uživatelů. Taktéž umožňuje zapojení uživatelů ve formě reakcí a komentářů k jednotlivým příspěvkům.
 
 #### Cílová skupina:
 
-Široká skupina koncových uživatelů, tvůrci obsahu, organizace poskytující obsah svým odběratelům apod.
+Široká skupina koncových uživatelů, tvůrci obsahu, organizace a projekty poskytující obsah svým odběratelům apod.
 
 ### 🤳🏻 Příběhy
 
-Krátkodobé vizuální příspěvky, které uživatelé mohou sdílet se svými přáteli a sledovateli. Tyto příspěvky jsou viditelné pouze po omezenou dobu (typicky 24 hodin) a umožňují uživatelům sdílet okamžité momenty, krátká videa, fotografie a textové zprávy v atraktivním formátu, na který mohou odběratelé snadno reagovat.
+Modul **Příběhy** umožňuje uživatelům **vytvářet vizuální příspěvky**, které uživatelé mohou sdílet se svými přáteli a sledovateli. Tyto příspěvky jsou viditelné pouze po omezenou dobu (typicky 24 hodin) a umožňují uživatelům **sdílet okamžité momenty**, **krátká videa**, **obrázky**, **zvuk** apod. v atraktivním formátu, na který mohou odběratelé snadno **reagovat** nebo je **okomentovat**.
 
 #### Cílová skupina:
 
