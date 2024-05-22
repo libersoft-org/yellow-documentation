@@ -12,7 +12,7 @@
 
   - [**AMTP**](./AMTP-CZ) - Nejnovější **klient-server** komunikační protokol, který přináší pokročilé možnosti v oblasti přenosu dat a **komunikace v reálném čase**. Nabízí **distribuovanou** síť serverů, které si mezi sebou předávají data, a také klientů, kteří se k těmto serverům připojují. Kdokoliv si může vytvořit vlastní server a připojit se tak k síti ostatních serverů nebo se jakožto klient připojit k již zavedeným serverům, které pro uživatele poskytují různé služby a navzájem si konkurují. Všechna uživatelská **data jsou uložena na serverech** a synchronizována s klientskými aplikacemi.
 
-  - [**DMTP**](./DMTP-CZ) - Připravovaný **peer-to-peer** komunikační protokol. Tento protokol využívá plně **decentralizovanou** síť uživatelů, kteří se starají o doručení dat pro ostatní uživatele. Uživatelská **data jsou uložena pouze na koncových zařízeních** uživatelů nebo na decentralizovaných úložištích (v určitých případech), nikoliv na serverech, jako je to v případě ostatních protokolů. Tento protokol je velmi bezpečný a odolný vůči cenzuře.
+  - [**DMTP**](./DMTP-CZ) - Připravovaný **peer-to-peer** komunikační protokol. Tento protokol využívá plně **decentralizovanou** síť uživatelů, kteří se starají o doručení dat pro ostatní uživatele. Uživatelská **data jsou uložena pouze na koncových zařízeních** nebo na **decentralizovaných úložištích** (v určitých případech), nikoliv na serverech, jako je to v případě ostatních protokolů. Tento protokol je velmi bezpečný a odolný vůči cenzuře.
 
   - [**IMAP**](https://www.rfc-editor.org/rfc/rfc9051.html) - Původní protokol elektronické pošty. Do platformy je integrován z důvodu zpětné kompatibility.
 
