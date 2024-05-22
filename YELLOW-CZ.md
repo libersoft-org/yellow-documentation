@@ -120,51 +120,51 @@ Modul **Příběhy** umožňuje uživatelům **vytvářet vizuální příspěvk
 
 ### 🗓️ Události
 
-Tento modul umožňuje uživatelům vytvářet, organizovat a sdílet různé typy událostí, jako jsou osobní setkání či veřejné akce. Tento modul poskytuje nástroje pro plánování, řízení a sdílení událostí, čímž usnadňuje koordinaci a zapojení účastníků. U jednotlivých událostí je umožněno nastavení soukromí a viditelnost. Modul taktéž poskytuje seznam veřejných událostí, které jsou filtrovatelné a seřaditelné podle různých kritérií.
+Tento modul umožňuje uživatelům **vytvářet**, **organizovat** a **sdílet** různé typy **událostí**, jako jsou **osobní setkání** či **veřejné akce**. Tento modul poskytuje **nástroje pro plánování**, **řízení**, **sdílení**, **reagování** a **komentování událostí**, čímž usnadňuje koordinaci a zapojení účastníků. U jednotlivých událostí je umožněno **nastavení soukromí** a **viditelnost**. Modul taktéž poskytuje **seznam veřejných událostí**, které jsou filtrovatelné a seřaditelné podle různých kritérií.
 
 #### Cílová skupina:
 
-Organizátoři a pořadatelé veřejných událostí, běžní uživatelé organizující soukromé akce, účastníci veřejných i soukromých akcí.
+Organizátoři a pořadatelé veřejných událostí, běžní uživatelé organizující soukromé akce, účastníci těchto akcí.
 
 ### ✍🏻 Blogy
 
-Blogy poskytují autorům možnost vytvářet, publikovat a sdílet své myšlenky a názory ve formě článků a čtenářům tyto články číst, reagovat na ně a komentovat v diskuzi. Modul je navržen tak, aby usnadňoval tvorbu obsahu, podporoval zapojení čtenářů. Taktéž poskytuje nástroje pro snadné psaní a úpravu textu a přidávání multimediálního obsahu. Zároveň je i implementována funkcionalita seznamu blogů s možností filtrace a řazením dle různých kritérií.
+**Blogy** poskytují autorům možnost **vytvářet**, **publikovat** a **sdílet** své myšlenky a názory ve formě článků a čtenářům tyto články **číst**, **reagovat** na ně a **komentovat** v diskuzi. Modul je navržen tak, aby usnadňoval tvorbu obsahu a podporoval zapojení čtenářů. Taktéž poskytuje nástroje pro snadné psaní a úpravu textu a přidávání multimediálního obsahu. Zároveň je i implementována funkcionalita **seznamu blogů** s možností filtrace a řazení dle různých kritérií.
 
 #### Cílová skupina:
 
-Amatérští i profesionální autoři a čtenáři různorodého obsahu.
+Amatérští i profesionální autoři, čtenáři různorodého obsahu.
 
 ### 🛍️ E-shopy
 
-Tento modul umožňuje uživatelům vytvářet a spravovat vlastní online obchody a v takovýchto obchodech pohodlně nakupovat. Pro správu těchto e-shopů je poskytnuta sada nástrojů pro prodej produktů a služeb, správu objednávek, dokladů, plateb a komunikaci se zákazníky.
+Tento modul umožňuje uživatelům **vytvářet** a **spravovat** vlastní **online obchody** a v takovýchto obchodech pohodlně **nakupovat**. Pro správu těchto e-shopů je poskytnuta sada nástrojů pro prodej produktů a služeb, správu objednávek, dokladů, plateb a možnost komunikace se zákazníky.
 
 #### Cílová skupina:
 
-E-commerce podnikatelé, digitální tvůrci, koncoví zákazníci.
+E-commerce podnikatelé, digitální tvůrci, poskytovatelé služeb roznášek jídla a koncoví zákazníci.
 
 ### 🏪 Tržiště
 
-Modul Tržiště umožňuje koncovým uživatelům nakupovat a prodávat produkty a služby mezi sebou. Tržiště poskytuje přehlednou platformu pro inzerci, kde mohou uživatelé nabízet své zboží a služby, organizovat **aukce**. Modul umožňuje vyhledávání a filtrování položek dle různých kritérií, hodnocení a komunikaci mezi uživateli.
+Modul **Tržiště** umožňuje koncovým uživatelům **nakupovat** a **prodávat produkty a služby** mezi sebou. Poskytuje přehlednou platformu pro **inzerci**, kde mohou uživatelé nabízet své zboží a služby za **fixní ceny** nebo je dražit formou **aukce**. Modul umožňuje vyhledávání a filtrování položek dle různých kritérií, **hodnotit prodejce** a **komunikovat** s nimi.
 
 #### Cílová skupina:
 
-Uživatelé, kteří prodávají a nakupují zboží či služby formou inzerce.
+Uživatelé, kteří prodávají, draží či nakupují zboží a služby formou inzerce.
 
 ### 💰 Příspěvky
 
-Tento modul umožňuje uživatelům podporovat ostatní členy komunity prostřednictvím finančních darů. Kdokoliv si může založit vlastní sbírku na libovolné účely a vybírat tak dary od lidí. Modul umožňuje snadnou správu sbírek, poskytuje seznam sbírek filtrovatelný a seřaditelný dle různých kritérií. Taktéž umožňuje komunikaci mezi dárci a provozovateli sbírky.
+Tento modul umožňuje uživatelům **finančně podporovat** konkrétní uživatele, projekty či charity prostřednictvím finančních darů. Kdokoliv si může založit vlastní sbírku na libovolné účely a vybírat tak dary od ostatních. Modul umožňuje snadnou **správu sbírek**, poskytuje **seznam veřejných sbírek** filtrovatelný a řaditelný dle různých kritérií. Taktéž umožňuje **komunikaci** mezi dárci a provozovateli sbírky.
 
 #### Cílová skupina:
 
 Uživatelé provozující či přispívající na osobní, charitativní, komunitní, umělecké či jakékoliv jiné projekty.
 
-### 🤑 Skupinové financování (crowdfunding)
+### 🤑 Skupinové financování
 
-Skupinové financování umožňuje uživatelům získávat finanční prostředky pro různé projekty prostřednictvím příspěvků od přispěvatelů, za což tito přispěvatelé dostávají různé odměny, podíly na projektu apod. Tento modul poskytuje komplexní nástroje pro vytváření a správu kampaní, čímž umožňuje realizaci inovativních nápadů, projektů a podnikatelských záměrů. Kdokoliv si může založit vlastní kampaň a sestavit jí podle svého uvážení. Platforma poskytuje i seznam veřejných kampaní, které lze filtrovat a řadit dle různých kritérií.
+**Skupinové financování** (crowdfunding) umožňuje uživatelům **získávat finanční prostředky** na různé projekty prostřednictvím příspěvků od přispěvatelů, za což tito přispěvatelé dostávají různé **odměny**, **podíly** na projektu či jiné **výhody**. Tento modul poskytuje komplexní nástroje pro vytváření a správu kampaní, čímž umožňuje realizaci inovativních nápadů, projektů a podnikatelských záměrů. Kdokoliv si může založit vlastní kampaň pro libovolný účel a sestavit jí podle svého uvážení. Platforma poskytuje i **seznam veřejných kampaní**, které lze filtrovat a řadit dle různých kritérií.
 
 #### Cílová skupina:
 
-Podnikatelé, startupy, tvůrci a umělci, neziskové organizace, komunity, inovátoři a vynálezci, vzdělávací projekty a přispěvatelé do těchto projektů.
+Podnikatelé, startupy, tvůrci a umělci, neziskové organizace, komunity, inovátoři a vynálezci, vzdělávací projekty a přispěvatelé.
 
 ### 📅 Kalendář
 
@@ -176,11 +176,11 @@ Firemní uživatelé, domácí uživatelé, studenti, komunity apod.
 
 ### ✔️ Úkoly
 
-Modul **Úkoly** umožňuje uživatelům **vytvářet**, **spravovat**, **delegovat**, **sledovat průběh** a **sdílet** úkoly v reálném čase. Tento modul je navržen tak, aby zlepšoval **produktivitu** a **organizaci práce**, usnadňoval **spolupráci** a zajišťoval, že všechny úkoly budou dokončeny včas a efektivně.
+Modul **Úkoly** umožňuje uživatelům **vytvářet**, **spravovat**, **delegovat**, **sledovat průběh**, **sdílet** a **komentovat** úkoly v reálném čase. Tento modul je navržen tak, aby zlepšoval **produktivitu** a **organizaci práce**, usnadňoval **spolupráci** v týmu a zajišťoval, že všechny úkoly budou dokončeny včas a efektivně.
 
 #### Cílová skupina:
 
-Jednotlivci, týmy, pracovní skupiny, studenti, domácnosti a další
+Jednotlivci, týmy, pracovní skupiny, studenti, domácnosti a další.
 
 ### 📂 Sdílení souborů
 
@@ -192,15 +192,15 @@ Jednotlivci, studenti, komunity a další.
 
 ### ❤️ Seznamka
 
-Modul **Seznamka** poskytuje moderní způsob seznamování se s novými lidmi za různými účely, jako např. nalezení životního partnera, příležitostná setkání, přátelství apod. Modul umožňuje vytváření profilů s galerií fotografií a podrobnými osobními informacemi, vyhledávání a filtrování ostatních uživatelů, možnosti řazení podle vzdálenosti a dalších kritérií, možnost kontaktování pomocí zpráv, lajkování uživatelských profilů, nalezení vzájemných shod, přidávání uživatelů do oblíbených apod.
+Modul **Seznamka** poskytuje moderní způsob **seznamování se s novými lidmi** za různými účely, jako např. **nalezení životního partnera**, **příležitostná setkání**, **přátelství** apod. Modul umožňuje **vytváření profilů** s **galerií fotografií** a podrobnými **osobními informacemi**, **vyhledávání** a **filtrování** ostatních uživatelů, možnosti **řazení uživatelů dle vzdálenosti** a dalších kritérií, možnost **kontaktování** pomocí zpráv, **lajkování** uživatelských profilů, nalezení **vzájemných shod**, přidávání uživatelů do **oblíbených** apod.
 
 #### Cílová skupina:
 
-Jednotlivci, kteří hledají nové vztahy, přátele a známé za různými účely.
+Jednotlivci, kteří hledají nové vztahy, přátele a známé za různými účely. Uživatelé různých věkových kategorií, především mladší generace a střední věk.
 
 ### ⛰️ Virtual chat
 
-**Virtual chat** nabízí uživatelům prostředí virtuálního světa, ve kterém mohou vzájemně komunikovat a bavit se s ostatními prostřednictvím textového chatu (soukromých nebo veřejných chatovacích bublin) či hlasového chatu, přizpůsobovat si svou virtuální postavičku, navštěvovat různá místa ve virtuálním prostředí. Uživatelé taktéž mohou interagovat s ostatními objekty.
+**Virtual chat** nabízí uživatelům prostředí **virtuálního světa**, ve kterém mohou vzájemně **komunikovat** a bavit se s ostatními prostřednictvím **textového chatu** (soukromých nebo veřejných chatovacích bublin) či **hlasového chatu**, přizpůsobovat si svou virtuální postavičku, **navštěvovat různá místa** ve virtuálním prostředí. Uživatelé taktéž mohou **interagovat s ostatními objekty**.
 
 #### Cílová skupina:
 
@@ -208,7 +208,7 @@ Jednotlivci hledající interaktivní komunikaci, netradiční způsob seznamov�
 
 ### 🗺️ Mapy
 
-**Mapy** nabízí uživatelům rozsáhlé možnosti pro **prohlížení** a **interakci** s geografickými informacemi. Modul poskytuje funkcionality jako **vyhledávání**, **sdílení polohy** v reálném čase a objevování míst a **bodů zájmů** (místní obchody, služby, události apod.). Body zájmů jsou filtrovatelné a propojené s dalšími moduly aplikace, jako jsou profily nebo možnost kontaktování pomocí rychlých zpráv.
+**Mapy** nabízí uživatelům rozsáhlé možnosti pro **prohlížení** a **interakci** s geografickými informacemi. Modul poskytuje funkcionality jako **vyhledávání**, **sdílení polohy** v reálném čase a **objevování míst** a nalézání **bodů zájmů** (místní obchody, služby, události apod.). Body zájmů jsou **filtrovatelné** a propojené s dalšími moduly aplikace, jako jsou profily nebo možnost kontaktování pomocí rychlých zpráv.
 
 #### Cílová skupina:
 
@@ -216,7 +216,7 @@ Uživatelé, kteří se chtějí propojovat s ostatními uživateli nebo body z�
 
 ### 🎮 Hry
 
-Modul **Hry** poskytuje uživatelům zábavu prostřednictvím zábavných online her, které mohou hrát se svými přáteli.
+Modul **Hry** poskytuje uživatelům zábavu prostřednictvím online her, které mohou hrát se svými přáteli.
 
 #### Cílová skupina:
 
@@ -224,7 +224,7 @@ Hráči her různých žánrů, sociálně zaměření hráči, příležitostn�
 
 ### 📰 Media feed
 
-Modul **Media feed** v platformě Yellow poskytuje uživatelům přehled zpráv a informací z různých médií. Tento modul agreguje obsah z různých zpravodajských serverů, blogů, sociálních médií a dalších zdrojů, aby uživatelé měli aktuální přehled o dění ve světě na jednom místě. Uživatelé si mohou personalizovat výběr oblíbených médií a sdílet obsah s ostatními uživateli.
+Modul **Media feed** v platformě Yellow poskytuje uživatelům **přehled zpráv** a informací z různých **médií**. Tento modul agreguje obsah z různých zpravodajských **serverů**, **blogů**, **sociálních médií** a dalších zdrojů, aby uživatelé měli aktuální přehled o dění v okolí a ve světě na jednom místě. Uživatelé si mohou personalizovat **výběr oblíbených médií** a **sdílet** obsah s ostatními uživateli.
 
 #### Cílová skupina:
 
