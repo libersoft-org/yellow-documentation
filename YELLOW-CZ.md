@@ -201,19 +201,19 @@ Jednotlivci, kteří hledají nové vztahy, přátele a známé za různými ú�
 
 ### ⛰️ Virtual chat
 
-TODO
+**Virtual chat** nabízí uživatelům prostředí virtuálního světa, ve kterém mohou vzájemně komunikovat a bavit se s ostatními prostřednicvím textového chatu (soukromých nebo veřejných chatovacích bublin) či hlasového chatu, přizpůsobovat si svou virtuální postavičku, navštěvovat různá místa ve virtuálním prostředí. Uživatelé taktéž mohou interagovat s ostatními objekty.
 
 #### Cílová skupina:
 
-TODO
+Jednotlivci hledající interaktivní komunikaci, netradiční způsob seznamování s novými lidmi a zábavu ve virtuálním světě. Modul je určen především mladší generaci uživatelů.
 
 ### 🗺️ Mapy
 
-TODO
+**Mapy** nabízí uživatelům rozsáhlé možnosti pro **prohlížení** a **interakci** s geografickými informacemi. Modul poskytuje funkcionality jako **vyhledávání**, **sdílení polohy** v reálném čase a objevování míst a **bodů zájmů** (místní obchody, služby, události apod.). Body zájmů jsou filtrovatelné a propojené s dalšími moduly aplikace, jako jsou profily nebo možnost kontaktování pomocí rychlých zpráv.
 
 #### Cílová skupina:
 
-TODO
+Uživatelé, kteří se chtějí propojovat s ostatními uživateli nebo body zájmů.
 
 ### 🎮 Hry
 
