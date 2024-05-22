@@ -52,7 +52,7 @@ Všechny kontakty jsou taktéž **synchronizovány** se serverem a mezi jednotli
 
 #### Cílová skupina:
 
-Všichni domácí i firemní uživatelé, kteří potřebují efektivně spravovat a sdílet své osobní či profesní kontakty. Tato funkcionalita je také užitečná pro firmy či jiné druhy organizací, které potřebují udržovat přehled o svých členech a partnerech.
+Funkcionality modulu jsou vhodné pro jednotlivce i organizace, tedy pro všechny kteří potřebují efektivně spravovat a sdílet své osobní či profesní kontakty.
 
 ### 📞 Hlasové a video hovory
 
