@@ -42,7 +42,7 @@ Díky strukturovanosti tohoto modulu je snadné ve zprávách **vyhledávat**.
 
 #### Cílová skupina:
 
-Široká skupina různých uživatelů všech věkových kategorii, především těch, kteří hledají efektivní a bezpečnou platformu pro komunikaci. Funkcionality jsou vhodné jak pro jednotlivce, tak i soukromé a veřejné organizace. Tedy všech, kdo potřebují sdílet zprávy či soubory v reálném čase.
+Široká skupina různých uživatelů všech věkových kategorii, především těch, kteří hledají efektivní a bezpečnou platformu pro komunikaci. Funkcionality jsou vhodné jak pro jednotlivce, tak i soukromé a veřejné organizace.
 
 ### 🧾 Kontakty
 
