@@ -18,17 +18,17 @@
 
 - **Zabezpečení a ochrana soukromí**: Celé jádro platformy i oficiální moduly poskytující hlavní funkcionality systému, jsou vytvářeny dle standardů a doporučení protokolů **AMTP** a **DMTP**, tedy jsou v nich implementovány silné bezpečnostní prvky jako je např. **zabezpečená komunikace**, **koncové šifrování** apod. To zajišťuje nadstandardní ochranu soukromí pro uživatele.
 
-## Seznam funkcionalit
+## Seznam modulů
+
+Jednotlivé moduly poskytují různé užitečné funkcionality. V této části jsou uvedeny oficiální moduly, poskytnuté k serverové i klientské aplikaci. Všechny moduly, ve kterých se přenáší nebo ukládají uživatelská data, jsou opatřeny **šifrováním**, což zajišťuje bezpečnou komunikaci mezi uživateli a ochranu proti tomu, aby kdokoliv (vč. správců serveru) mohl číst tato data.
 
 ### 📧 Rychlé zprávy
 
-Tento modul představuje hlavní funkcionalitu platformy, která umožňuje uživatelům komunikovat v reálném čase a zasílat mezi sebou data jako jsou **textové zprávy** (prostý i formátovaný text), **hlasové a video zprávy**, **neomezeně velké soubory**, **emotikony**, **animované nálepky**, **obrázky**, **kontakty**, **živé body na mapě** apod. Tyto jednotlivé typy zpráv lze taktéž kombinovat do jedné, **vícedílné zprávy**, což umožňuje například jednoduše vytvářet obchodní sdělení a komunikaci s chatboty.
+Modul **Rychlé zprávy** představuje hlavní funkcionalitu platformy, která umožňuje uživatelům komunikovat v reálném čase a zasílat mezi sebou data jako jsou **textové zprávy** (prostý i formátovaný text), **hlasové a video zprávy**, **neomezeně velké soubory**, **emotikony**, **animované nálepky**, **obrázky**, **kontakty**, **živé body na mapě** apod. Tyto jednotlivé typy zpráv lze taktéž kombinovat do jedné, **vícedílné zprávy**, což umožňuje například jednoduše vytvářet obchodní sdělení a komunikaci s chatboty.
 
 V rámci každé konverzace je možné zakládat **více témat** rozhovorů. Jednotlivé konverzace mohou být taktéž **řazeny do skupin**, například dle typu kontaktu (práce, přátelé, apod.).
 
 Modul umožňuje nejen konverzace **jeden na jednoho**, ale také poskytuje **chatovací skupiny** nebo **skupiny pro odběry novinek**. Tyto skupiny jsou vystaveny v přehledných **seznamech**, kde si je uživatelé mohou **filtrovat** dle kategorií, popularity, data vytvoření apod.
-
-Všechny zprávy ve všech formách (vč. zaslaných souborů apod.) jsou opatřené **koncovým šifrováním**, což zajišťuje bezpečnou komunikaci mezi uživateli a ochranu proti tomu, aby kdokoliv (vč. správců serveru) mohl číst tyto zprávy, jelikož na serverech jsou tyto zprávy ukládány v zašifrované podobě.
 
 Uživatelské účty mohou být ovládány **chatboty**, což je vhodné například pro vytváření konverzací s uživatelskou podporou, pro objednávání zboží přes zprávy apod.
 
@@ -46,9 +46,9 @@ Díky strukturovanosti tohoto modulu je snadné ve zprávách **vyhledávat**.
 
 ### 🧾 Kontakty
 
-Tento modul umožňuje uživatelům spravovat a organizovat své **kontakty** na jednom místě. Tato funkcionalita poskytuje pokročilé funkce pro správu kontaktů jako např. možnosti **importu a exportu** s použitím různých formátů, vytváření **skupin kontaktů**, **štítků**, **poznámek** apod., pokročilé **vyhledávání** dle různých kritérií, **sdílení** kontaktů s ostatními uživateli, přiřazování **fotografií** k jednotlivým kontaktům, **stavové informace** (online, offline apod.), možnosti nastavení **soukromí** pro jednotlivé kontakty.
+Tento modul umožňuje uživatelům **spravovat** a **organizovat** své **kontakty**. Tato funkcionalita poskytuje funkce jako např. možnosti **importu a exportu** kontaktů v různých formátech, vytváření **skupin kontaktů**, **štítků**, **poznámek** apod. Dále pokročilé **vyhledávání** dle různých kritérií, **sdílení** kontaktů s ostatními uživateli, přiřazování **fotografií** k jednotlivým kontaktům, možnosti **nastavení soukromí** a mnoho dalšího.
 
-Všechny kontakty jsou taktéž **synchronizovány** se serverem a mezi jednotlivými koncovými zařízeními, taktéž jsou ukládány na servery v **šifrované** podobě.
+Všechny kontakty jsou taktéž **synchronizovány** se serverem a mezi jednotlivými koncovými zařízeními.
 
 #### Cílová skupina:
 
@@ -56,7 +56,7 @@ Všichni domácí i firemní uživatelé, kteří potřebují efektivně spravov
 
 ### 📞 Hlasové a video hovory
 
-Tento modul představuje další základní funkcionalitu platformy, která umožňuje uživatelům komunikovat tváří v tvář s použitím **videa** nebo pomocí **hlasu** v reálném čase. Hovory lze vést mezi dvěma **jednotlivci** i **skupinově**. Součástí je i možnost **sdílení obrazovky** a **vzdálené ovládání** zařízení. Hovory lze **nahrávat** a jednotlivé nahrávky přehrávat, spravovat a sdílet. Všechny hovory jsou opatřeny **koncovým šifrováním**, takže jsou odolné proti odposlechu. **Kvalita hovoru** je automaticky přizpůsobena propustností internetového připojení.
+Tento modul představuje další základní funkcionalitu platformy, která umožňuje uživatelům komunikovat tváří v tvář s použitím **videa** nebo pomocí **hlasu** v reálném čase. Hovory lze vést mezi dvěma **jednotlivci** i **skupinově**. Součástí je i možnost **sdílení obrazovky** a **vzdálené ovládání** zařízení. Hovory lze **nahrávat** a jednotlivé nahrávky přehrávat, spravovat a sdílet. **Kvalita hovoru** je automaticky přizpůsobena propustností internetového připojení.
 
 #### Cílová skupina:
 
@@ -64,7 +64,7 @@ Uživatelé všech věkových kategorií, především těch, kteří hledají b
 
 ### 📱 Konferenční hovory
 
-Konferenční hovory umožňují uživatelům účastnit se rozsáhlých skupinových diskusí a setkání v reálném čase. Tato funkcionalita je navržena pro efektivní a pohodlnou komunikaci mezi více účastníky a to prostřednictvím hlasu i videa z kamery. Taktéž je umožněno sdílet obrazovku a povolit konkrétním účastníkům vzdálené řízení. Moderátoři mají možnost řídit průběh hovoru, jako např. přidávat, odstraňovat a blokovat účastníky, povolovat či zakazovat ostatním audio a video a zaznamenávat průběh hovoru. Uživatelé mohou taktéž využít chat v rámci hovoru a hlasovat v anketách. Všechny konferenční hovory lze plánovat dopředu, aby mohli být účastníci včas informováni o termínech. Všechny hovory jsou opatřeny koncovým šifrováním, které účastníky chrání před odposlechy. Kvalita zvuku je automaticky optimalizována dle propustnosti síťového připojení.
+Konferenční hovory umožňují uživatelům účastnit se rozsáhlých skupinových diskusí a setkání v reálném čase. Tato funkcionalita je navržena pro efektivní a pohodlnou komunikaci mezi více účastníky a to prostřednictvím hlasu i videa z kamery. Taktéž je umožněno sdílet obrazovku a povolit konkrétním účastníkům vzdálené řízení. Moderátoři mají možnost řídit průběh hovoru, jako např. přidávat, odstraňovat a blokovat účastníky, povolovat či zakazovat ostatním audio a video a zaznamenávat průběh hovoru. Uživatelé mohou taktéž využít chat v rámci hovoru a hlasovat v anketách. Všechny konferenční hovory lze plánovat dopředu, aby mohli být účastníci včas informováni o termínech. Kvalita zvuku je automaticky optimalizována dle propustnosti síťového připojení.
 
 #### Cílová skupina:
 
@@ -185,7 +185,7 @@ Jednotlivci, týmy, pracovní skupiny, studenti, domácnosti a další
 
 ### 📂 Sdílení souborů
 
-**Sdílení souborů** umožňuje uživatelům **nahrávat**, **stahovat**, přehledně **organizovat** a **sdílet** soubory různých formátů. Tento modul je navržen pro snadnou a efektivní výměnu videí, software, obrázků, dokumentů a dalších typů souborů mezi uživateli. Soubory jsou na serveru ukládány v zašifrované podobě, což poskytuje další vrstvu zabezpečení proti zneužití.
+**Sdílení souborů** umožňuje uživatelům **nahrávat**, **stahovat**, přehledně **organizovat** a **sdílet** soubory různých formátů. Tento modul je navržen pro snadnou a efektivní výměnu videí, software, obrázků, dokumentů a dalších typů souborů mezi uživateli.
 
 #### Cílová skupina:
 
