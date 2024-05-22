@@ -18,6 +18,16 @@
 
 - **Zabezpečení a ochrana soukromí**: Celé jádro platformy i oficiální moduly poskytující hlavní funkcionality systému, jsou vytvářeny dle standardů a doporučení protokolů **AMTP** a **DMTP**, tedy jsou v nich implementovány silné bezpečnostní prvky jako je např. **zabezpečená komunikace**, **koncové šifrování** apod. To zajišťuje nadstandardní ochranu soukromí pro uživatele.
 
+## Důvody vytvoření
+
+Cílem vytvoření tohoto software je potřeba řešit některé z největších problémů současných komunikačních aplikací a přinést inovativní řešení, která dosud v digitálním světě chyběla. V současné době neexistuje žádná jiná aplikace, která by splňovala všechna následující kritéria:
+
+- Modulární koncept, multifunkčnost a možnost výběru funkcionalit pro konkrétní cílové skupiny
+- Otevřené zdrojové kódy klientské i serverové aplikace
+- Decentralizovaná nebo distribuovaná síťová architektura
+- Vysoká míra zabezpečení a šifrování
+- Integrace kryptoměnové peněženky a využití chytrých smluv v komunikační aplikaci
+
 ## Seznam modulů
 
 Jednotlivé moduly poskytují různé užitečné funkcionality. V této části jsou uvedeny oficiální moduly, poskytnuté k serverové i klientské aplikaci. Všechny moduly, ve kterých se přenáší nebo ukládají uživatelská data, jsou opatřeny **šifrováním**, což zajišťuje bezpečnou komunikaci mezi uživateli a ochranu proti tomu, aby kdokoliv (vč. správců serveru) mohl číst tato data.
