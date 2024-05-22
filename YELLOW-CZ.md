@@ -70,7 +70,7 @@ Konferenční hovory umožňují uživatelům účastnit se rozsáhlých skupino
 
 #### Cílová skupina:
 
-Především organizace, jako jsou firmy, vzdělávací instituce, lektoři, konzultantni, organizátoři akcí, profesní a odborné skupiny apod.
+Především organizace, jako jsou firmy, vzdělávací instituce, lektoři, konzultanti, organizátoři akcí, profesní a odborné skupiny apod.
 
 ### ₿ Integrovaná kryptoměnová peněženka
 
@@ -155,7 +155,7 @@ Uživatelé, kteří prodávají a nakupují zboží či služby formou inzerce.
 
 ### 💰 Příspěvky
 
-Tento modul umožňuje uživatelům podporovat ostatní členy komunity prostřednictvím finančních darů. Kdokoliv si může založit vlastní sbírku na libovolné účely a vybírat tak dary od lidí. Modul umožňuje snadnou sprvávu sbírek, poskytuje seznam sbírek filtrovatelný a seřaditelný dle různých kritérií. Taktéž umožňuje komunikaci mezi dárci a provozovateli sbírky.
+Tento modul umožňuje uživatelům podporovat ostatní členy komunity prostřednictvím finančních darů. Kdokoliv si může založit vlastní sbírku na libovolné účely a vybírat tak dary od lidí. Modul umožňuje snadnou správu sbírek, poskytuje seznam sbírek filtrovatelný a seřaditelný dle různých kritérií. Taktéž umožňuje komunikaci mezi dárci a provozovateli sbírky.
 
 #### Cílová skupina:
 
@@ -203,7 +203,7 @@ Jednotlivci, kteří hledají nové vztahy, přátele a známé za různými ú�
 
 ### ⛰️ Virtual chat
 
-**Virtual chat** nabízí uživatelům prostředí virtuálního světa, ve kterém mohou vzájemně komunikovat a bavit se s ostatními prostřednicvím textového chatu (soukromých nebo veřejných chatovacích bublin) či hlasového chatu, přizpůsobovat si svou virtuální postavičku, navštěvovat různá místa ve virtuálním prostředí. Uživatelé taktéž mohou interagovat s ostatními objekty.
+**Virtual chat** nabízí uživatelům prostředí virtuálního světa, ve kterém mohou vzájemně komunikovat a bavit se s ostatními prostřednictvím textového chatu (soukromých nebo veřejných chatovacích bublin) či hlasového chatu, přizpůsobovat si svou virtuální postavičku, navštěvovat různá místa ve virtuálním prostředí. Uživatelé taktéž mohou interagovat s ostatními objekty.
 
 #### Cílová skupina:
 
