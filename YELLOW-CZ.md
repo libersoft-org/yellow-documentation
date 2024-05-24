@@ -2,6 +2,10 @@
 
 **Yellow** je rozsáhlá komunikační platforma (tzv. [**super-app**](https://en.wikipedia.org/wiki/Super-app)), která poskytuje serverovou a klientskou aplikaci, podpůrné nástroje a dokumentaci.
 
+**Serverová aplikace** je jednoduše nainstalovatelná a nastavitelná i pro začínajícího správce serveru či pokročilejšího uživatele PC. Aplikace umožňuje jednoduchou instalaci a nastavení serveru do 5 minut a přehledné webové rozhraní pro správu.
+
+**Klientská aplikace** je multiplatformní (dostupná pro platformy s OS Windows, Linux, macOS, Android, iOS a web) na mnoha typech zařízení. I přes svou komplexnost si aplikace zachovává přehledné a jednoduché uživatelské rozhraní, které je snadno pochopitelné a ovladatelné pro běžného člověka téměř všech věkových kategorií a to bez odborných znalostí. Většinu akcí v aplikaci je možné vykonat do 3 kliknutí. Aplikace je navržena tak, aby lidem řešila a značně usnadňovala běžné potřeby reálného světa v online prostředí (např. komunikace, zapojení se do komunit, obchodování, platby, vzdělávání, zábava, sledování aktuálního dění, seznamování se, profesní potřeby, sdílení informací apod.)
+
 ## Klíčové vlastnosti
 
 - **Otevřené zdrojové kódy** - Celá platforma je poskytována **bezplatně** a s **otevřenými zdrojovými kódy**. To přispívá důvěryhodnosti, bezpečnosti kódu, rychlému nalezení a opravě případných nedostatků v kódu a snadnému zapojení vývojářů 3. stran.
@@ -239,3 +243,7 @@ Modul **Media feed** v platformě Yellow poskytuje uživatelům **přehled zprá
 #### Cílová skupina:
 
 Aktivní čtenáři a informovaní uživatelé, obchodníci, studenti, zájemci o odborná témata apod.
+
+## Plán vývoje
+
+TODO
