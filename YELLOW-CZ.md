@@ -34,7 +34,7 @@ Cílem vytvoření tohoto software je potřeba řešit některé z největších
 
 - **Modulární koncept, multifunkčnost** - Modulární koncept zajišťuje pro uživatele, provozovatele serverů i pro vývojáře řadu výhod, jako např.:
 
-  - **Z uživatelského hlediska**:
+  - **Z hlediska uživatele**:
 
     - **Volba funkcionalit** - Uživatel si může v aplikaci zvolit jen funkcionality, které sám využívá a tím si zajistit maximální přehlednost a získat pozornost jen na obsah, který se rozhodne odebírat. To zajišťuje **maximální možný uživatelský zážitek**.
 
@@ -82,12 +82,18 @@ Cílem vytvoření tohoto software je potřeba řešit některé z největších
 
   - **Odolnost vůči cenzuře** - V decentralizované síti je mnohem obtížnější provádět cenzuru nebo blokování obsahu, protože není žádný centrální bod, který by mohl být snadno kontrolován nebo ovlivňován. Uživatelé tak mají větší svobodu ve sdílení a přístupu k informacím.
 
-- **Zabezpečení, šifrování a ochrana osobních dat** - TODO
-  - TODO - transparentnost v ramci zneuzivani uzivatelskych dat (trackovani za ucelem podsouvani obsahu) - nevymlejva to mozek diky trackovani reklamy apod.
-  - TODO - zabezpeceni - blbuvzdornost - ochranne mechanizmy pred unikem dat uzivatelu
+- **Zabezpečení, šifrování a ochrana osobních dat**: Platforma klade maximální důraz na bezpečnost uživatelských dat, což uživatelům přináší následující výhody:
 
-- **Integrace kryptoměnové peněženky** - TODO a využití chytrých smluv v komunikační aplikaci
+  - **Ochrana před neoprávněným přístupem** - Platforma zajišťuje uživatelům maximální ochranu při přihlašování a tím prevenci proti zneužití dat potenciálními útočníky.
+
+  - **Šifrování dat** - Všechna soukromá data, která jsou přenášena mezi uživateli či ukládána na servery, jsou šifrována a poskytují tak uživatelům ochranu proti odposlechům jejich komunikace, což zajišťuje ochranu jejich soukromí a pocit bezpečí při používání aplikace.
+
+  - **Digitální podpisy obsahu** - Protokoly zároveň počítají i s digitálním podepisováním veškerého obsahu, který je uživateli zasílán či sdílen, což zajišťuje ještě větší věrohodnost původu informací pro uživatele, kteří tento obsah přijímají.
+  
+- **Integrace kryptoměnové peněženky** - TODO
+  - TODO - využití chytrých smluv v komunikační aplikaci
   - TODO - moznost vydelku pro infleuncery, e-shopy, monetizace
+  - TODO - paralelní ekonomika
 
 ## Cílové skupiny
 
