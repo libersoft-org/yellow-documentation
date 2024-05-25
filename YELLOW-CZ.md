@@ -42,6 +42,22 @@ Cílem vytvoření tohoto software je potřeba řešit některé z největších
 - Vysoká míra zabezpečení a šifrování
 - Integrace kryptoměnové peněženky a využití chytrých smluv v komunikační aplikaci
 
+## Cílové skupiny
+
+Platforma je využitelná mnoha cílovými skupinami uživatelů, jejichž potřeby se potkávají v jedné komplexní platformě. Zde je několik příkladů cílových skupin pro tento software:
+
+**Běžní uživatelé - rodina, přátelé a komunity**: Uživatelé mohou snadno komunikovat s rodinou a přáteli pomocí rychlých zpráv, hlasových a video hovorů, sdílet si mezi sebou data bez omezení jejich velikosti, jako jsou fotografie, videa, obrázky, hlasové a video zprávy apod. Dále se mohou seznamovat, komunikovat a organizovat v komunitách pomocí různých modulů jako jsou chatovací skupiny (součást Rychlých zpráv), Diskuze, Newsfeed, Blogy, Události apod. Zároveň je jim umožněno mezi sebou platit díky integrované kryptoměnové peněžence, pomocí které mohou nakupovat na tržišti nebo prostřednictvím e-shopů, vybírat nebo zasílat peníze prostřednictvím modulů pro zasílaní darů nebo skupinového financování. Dale se mohou bavit prostřednictvím her, video kanálů nebo ve virtual chatu.
+
+**Známé osobnosti a influenceři**: Platforma poskytuje možnosti sebeprezentace pomocí video kanálů s funkcionalitou publikování a prodeje video obsahu, živých vysílání, možnost psaní blogových článků, textového či vizuálního obsahu prostřednictvím newsfeedu a příběhů, prodeje reklamních předmětů v e-shopu, pořádání událostí, financování sbírek, darů, aukcí a mnoho dalšího.
+
+**Podnikatelé a obchodníci**: Pro obchodníky a podnikatele jsou poskytnuty nástroje pro e-commerce (e-shopy, aukce, příspevky a skupinové financování), které jim usnadňují obchodování a platby přímo v aplikaci. Taktéž se mohou sebeprezentovat pomocí různých nástrojů podobně jako influenceři.
+
+**Pracovní týmy**: Pro pracovní skupiny a firmy platforma nabízí nástroje pro efektivní spolupráci a produktivitu, jako jsou sdílené úkoly, kalendáře, konferenční hovory. Taktéž spolu mohou efektivně komunikovat prostřednictvím rychlých zpráv, kde si mohou i snadno sdílet pracovní data.
+
+**Neziskové organizace**: Platforma podporuje tvorbu a správu komunitních projektů, umožňuje vytvářet a organizovat sbírky a skupinové financování, což je ideální pro neziskové organizace. Ty se taktéž mohou sebeprezentovat pomocí řady nástrojů, stejně jako influenceři.
+
+**Studenti, učitelé a školy**: Studenti mohou využívat platformu k organizaci svých studijních aktivit, komunikovat s učiteli a spolužáky, sdílet studijní materiály, sledovat výukový video obsah pomocí video kanálů, využívat konferenční hovory pro online výuku.
+
 ## Seznam modulů
 
 Jednotlivé moduly poskytují různé užitečné funkcionality. V této části jsou uvedeny oficiální moduly, poskytnuté k serverové i klientské aplikaci. Všechny moduly, ve kterých se přenáší nebo ukládají uživatelská data, jsou opatřeny **šifrováním**, což zajišťuje bezpečnou komunikaci mezi uživateli a ochranu proti tomu, aby kdokoliv (vč. správců serveru) mohl číst tato data.
