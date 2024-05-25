@@ -91,8 +91,8 @@ Cílem vytvoření tohoto software je potřeba řešit některé z největších
   - **Digitální podpisy obsahu** - Protokoly zároveň počítají i s digitálním podepisováním veškerého obsahu, který je uživateli zasílán či sdílen, což zajišťuje ještě větší věrohodnost původu informací pro uživatele, kteří tento obsah přijímají.
   
 - **Integrace kryptoměnové peněženky** - TODO
+  - TODO - možnost výdělku pro infleuncery, e-shopy, monetizace
   - TODO - využití chytrých smluv v komunikační aplikaci
-  - TODO - moznost vydelku pro infleuncery, e-shopy, monetizace
   - TODO - paralelní ekonomika
 
 ## Cílové skupiny
