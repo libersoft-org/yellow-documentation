@@ -36,11 +36,11 @@ Cílem vytvoření tohoto software je potřeba řešit některé z největších
 
   - **Z uživatelského hlediska**:
 
-    - Uživatel si může v aplikaci zvolit **jen funkcionality, které sám využívá** a tím si zajistit maximální přehlednost a získat pozornost jen na obsah, který se rozhodne odebírat. To zajišťuje maximální možný **uživatelský zážitek**.
+    - **Volba funkcionalit** - Uživatel si může v aplikaci zvolit jen funkcionality, které sám využívá a tím si zajistit maximální přehlednost a získat pozornost jen na obsah, který se rozhodne odebírat. To zajišťuje **maximální možný uživatelský zážitek**.
 
-    - Uživatel má pouze jednu aplikaci, do které se **přihlašuje jedinými přihlašovacími údaji** na libovolném počtu a druhu zařízení, což zajišťuje **maximální přístupnost**.
+    - **Jednotné přihlašování** - Uživatel má pouze jednu aplikaci, do které se přihlašuje jedinými přihlašovacími údaji na libovolném počtu a druhu zařízení, což zajišťuje **maximální přístupnost**.
 
-    - Funkcionality jsou navzájem **provázané**, což uživatelům **usnadňuje a zrychluje navigaci** uvnitř aplikace napříč funkcionalitami.
+    - **Provázanost** - Funkcionality jsou navzájem provázané, což uživatelům **usnadňuje a zrychluje navigaci** uvnitř aplikace napříč funkcionalitami.
 
   - **Z hlediska provozovatele serveru**:
 
