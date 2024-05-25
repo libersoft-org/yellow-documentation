@@ -58,9 +58,19 @@ Cílem vytvoření tohoto software je potřeba řešit některé z největších
 
     - **Zisk z funkcionalit třetích stran** - Integrace funkcionalit třetích stran přináší dodatečný zisk v rámci komerčních modulů.
 
-  - **Z hlediska vývojáře**: Modulární koncept zajišťuje vývojářům snadný a **rychlý vývoj**, díky tomu, že **vytváří pouze konkrétní moduly** a jejich funkcionality, nikoliv celou platformu.
+  - **Z hlediska vývojáře**:
 
-- **Otevřené zdrojové kódy** - TODO klientské i serverové aplikace
+    - **Rychlý a snadný vývoj** - Modulární koncept zajišťuje vývojářům snadný a rychlý vývoj, díky tomu, že **vytváří pouze konkrétní moduly** a jejich funkcionality, nikoliv celou platformu.
+
+- **Otevřené zdrojové kódy**:
+
+  - **Transparentnost a bezpečnost** - Software umožňuje komukoli prohlédnout si zdrojový kód, což znamená, že bezpečnostní experti a uživatelé mohou snadno zkontrolovat, zda neobsahuje bezpečnostní nedostatky nebo škodlivý kód. To zvyšuje důvěru v používání software.
+
+  - **Spolehlivost a kvalita** - Díky tomu, že na vývoji software s otevřeným zdrojovým kódem může spolupracovat široká komunita vývojářů a bezpečnostních expertů z celého světa, je pravděpodobné, že chyby a nedostatky budou rychleji objeveny a opraveny. Kolektivní úsilí mnoha lidí vede k vyšší kvalitě a stabilitě software.
+
+  - **Komunita a podpora** - projekty s otevřeným zdrojovým kódem zajišťují silnou a aktivní komunitu, která poskytuje podporu, sdílí znalosti a zkušenosti a přispívá k dalšímu vývoji softwaru.
+
+  - **Inovace a rychlý vývoj** - software s otevřeným zdrojovým kódem podporuje inovace a rychlejší vývoj. Vývojáři z celého světa mohou přinášet nové nápady a vylepšení platformy, což umožňuje rychlejší pokrok a implementaci nových technologií a funkcí.
 
 - **Decentralizovaná nebo distribuovaná síťová architektura** - TODO
   - selekce poskytovatelu - konkurence mezi nimi
