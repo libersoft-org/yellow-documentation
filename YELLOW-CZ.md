@@ -72,8 +72,15 @@ Cílem vytvoření tohoto software je potřeba řešit některé z největších
 
   - **Inovace a rychlý vývoj** - software s otevřeným zdrojovým kódem podporuje inovace a rychlejší vývoj. Vývojáři z celého světa mohou přinášet nové nápady a vylepšení platformy, což umožňuje rychlejší pokrok a implementaci nových technologií a funkcí.
 
-- **Decentralizovaná nebo distribuovaná síťová architektura** - TODO
-  - selekce poskytovatelu - konkurence mezi nimi
+- **Decentralizovaná nebo distribuovaná síťová architektura**: Tento typ sítě přináší uživatelům mnoho výhod:
+
+  - **Větší dostupnost a spolehlivost** - Uživatelé mohou mít jistotu, že služby budou dostupné i v případě výpadku některých částí sítě. Decentralizovaná síť znamená, že není žádný centrální bod, který by mohl způsobit kompletní výpadek služby, což zajišťuje stabilní a nepřerušovanou dostupnost.
+  
+  - **Větší kontrola nad daty** - Uživatelé mají větší kontrolu nad svými daty, protože mohou rozhodovat, kde a jak jsou jejich informace ukládány a kdo k nim má přístup.
+
+  - **Výkon a rychlost** - Díky rozložení zátěže na více uzlů mohou uživatelé zažít rychlejší přístup k datům a službám. Decentralizovaná síť umožňuje efektivnější zpracování a přenos dat, což vede k lepšímu uživatelskému zážitku.
+
+  - **Odolnost vůči cenzuře** - V decentralizované síti je mnohem obtížnější provádět cenzuru nebo blokování obsahu, protože není žádný centrální bod, který by mohl být snadno kontrolován nebo ovlivňován. Uživatelé tak mají větší svobodu ve sdílení a přístupu k informacím.
 
 - **Zabezpečení, šifrování a ochrana osobních dat** - TODO
   - TODO - transparentnost v ramci zneuzivani uzivatelskych dat (trackovani za ucelem podsouvani obsahu) - nevymlejva to mozek diky trackovani reklamy apod.
