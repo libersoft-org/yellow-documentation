@@ -169,7 +169,7 @@ Tento modul představuje další základní funkcionalitu platformy, která umo�
 
 #### Unikátní funkce:
 
-- Vzdálené ovládání zařízení v rámci hovoru
+- Vzdálené ovládání zařízení v rámci hovorů
 
 #### Cílová skupina:
 
