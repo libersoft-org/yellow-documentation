@@ -86,7 +86,7 @@ Cílem vytvoření tohoto software je potřeba řešit některé z největších
 
   - **Ochrana před neoprávněným přístupem** - Platforma zajišťuje uživatelům maximální ochranu při přihlašování a tím prevenci proti zneužití dat potenciálními útočníky.
 
-  - **Šifrování dat** - Všechna soukromá data, která jsou přenášena mezi uživateli či ukládána na servery, jsou šifrována a poskytují tak uživatelům ochranu proti odposlechům jejich komunikace, což zajišťuje ochranu jejich soukromí a pocit bezpečí při používání aplikace.
+  - **Šifrování dat** - Všechna soukromá data, která jsou přenášena mezi uživateli či ukládána na servery, jsou šifrována a poskytují tak uživatelům ochranu proti odposlechům jejich komunikace, což zajišťuje jejich soukromí a pocit bezpečí při používání aplikace.
 
   - **Digitální podpisy obsahu** - Protokoly zároveň počítají i s digitálním podepisováním veškerého obsahu, který je uživateli zasílán či sdílen, což zajišťuje ještě větší věrohodnost původu informací pro uživatele, kteří tento obsah přijímají.
   
