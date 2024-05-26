@@ -46,7 +46,7 @@ Cílem vytvoření tohoto software je potřeba řešit některé z největších
 
     - **Volba konkrétních funkcionalit** - Provozovatel serveru si zvolí jen funkcionality, které chce nabízet uživatelům, případně integruje moduly třetích stran či své vlastní moduly. Toto je výhodné například pro školy či firmy, kde jsou uživatelům poskytovány jen funkcionality, které jsou určené pro studijní či pracovní účely.
 
-    - **Nízké náklady na vývoj funkcionalit** - Jsou zajištěny tím, že není pro každou novou funkcionalitu třeba tvořit celou platformu, ale využít již stávající a pouze vytvořit modul s konkrétními funkcionalitami. To ve většině případech šetří náklady spojené s vývojem nových funkcionalit o 50 - 80%.
+    - **Nízké náklady na vývoj funkcionalit** - Jsou zajištěny tím, že není pro každou novou funkcionalitu třeba tvořit celou platformu, ale využít již stávající a pouze vytvořit modul s konkrétními funkcionalitami. To ve většině případech šetří náklady spojené s vývojem nových funkcionalit o 50 - 90%.
 
     - **Nízké náklady na marketing** - Jsou zajištěny tím, že není třeba propagovat jednotlivé funkcionality v rámci jednotlivých marketingových kampaní, ale pouze jednou pro celou platformu. Taktéž, při uvedení nové funkcionality, se využívá stávající uživatelská základna. Zároveň, díky své provázanosti funkcionalit, je aplikace atraktivní pro influencery, kteří přivádějí své sledovatele, což zajišťuje růst uživatelské základny.
 
