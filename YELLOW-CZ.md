@@ -64,7 +64,7 @@ Cílem vytvoření tohoto software je potřeba řešit některé z největších
 
 - **Otevřené zdrojové kódy**:
 
-  - **Transparentnost a bezpečnost** - Software umožňuje komukoli prohlédnout si zdrojový kód, což znamená, že bezpečnostní experti a uživatelé mohou snadno zkontrolovat, zda neobsahuje bezpečnostní nedostatky nebo škodlivý kód. To zvyšuje důvěru v používání software.
+  - **Transparentnost a bezpečnost** - Software umožňuje komukoli prohlédnout si zdrojový kód, což znamená, že bezpečnostní experti, programátoři a testeři mohou snadno zkontrolovat, zda neobsahuje bezpečnostní nedostatky nebo škodlivý kód. To zvyšuje důvěru v používání software.
 
   - **Spolehlivost a kvalita** - Díky tomu, že na vývoji software s otevřeným zdrojovým kódem může spolupracovat široká komunita vývojářů a bezpečnostních expertů z celého světa, je pravděpodobné, že chyby a nedostatky budou rychleji objeveny a opraveny. Kolektivní úsilí mnoha lidí vede k vyšší kvalitě a stabilitě software.
 
