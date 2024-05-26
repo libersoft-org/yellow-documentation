@@ -90,7 +90,7 @@ Cílem vytvoření tohoto software je potřeba řešit některé z největších
 
   - **Digitální podpisy obsahu** - Protokoly zároveň počítají i s digitálním podepisováním veškerého obsahu, který je uživateli zasílán či sdílen, což zajišťuje ještě větší věrohodnost původu informací pro uživatele, kteří tento obsah přijímají.
   
-- **Integrace kryptoměnové peněženky**: Platforma přináší velkou škálu využitelnosti integrované kryptoměnové peněženky, poskytuje snadný, rychlý a bezpečný způsob platby bez potřeby tradičních bankovních převodů. Ovšem peněženka jakožto samostatná aplikace neposkytuje rozšířené možnosti, které jsou možné právě při jejím propojení s multifunkční platformou, jako je tato. Mezi tyto výhody patří:
+- **Integrace kryptoměnové peněženky**: Platforma přináší velkou škálu využitelnosti integrované kryptoměnové peněženky, poskytuje snadný, rychlý a bezpečný způsob platby bez potřeby tradičních bankovních převodů. Propojení peněženky s multifunkční platformou, jako je tato, poskytuje značné rozšířené možnosti jejího využítí Mezi ty patří:
 
   - **Propojení uživatelské základny s platbami** - TODO
 
