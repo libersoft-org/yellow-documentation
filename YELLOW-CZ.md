@@ -412,16 +412,46 @@ Aktivní čtenáři a informovaní uživatelé, obchodníci, studenti, zájemci 
 
 TODO
 
-**1. fáze - 6 měsíců**:
+### 1. fáze - 6 měsíců
 
-- Vytvoření serverové aplikace, klientské aplikace, vč. možnosti modularity, vrstev zabezpečení a podpůrných nástrojů
-- Vytvoření modulu pro rychlé zprávy
-- Vytvoření modulu pro videohovory
+#### Technická realizace:
 
-**2. fáze - 6 měsíců**:
+- **Serverová a klientská aplikace**: Implementace AMTP, modularity, vrstev zabezpečení, vícejazyková podpora (pouze klientská aplikace), motivy
 
-- Vytvoření
+- **Modul pro rychlé zprávy**: Prosté i formátované zprávy, vícedílné zprávy, hlasové a video zprávy, podpora animovaných nálepek, přesnos souborů, sdílení kontaktů, složky konverzací, témata zpráv, blokování kontaktů, chatovací skupiny, novinkové skupiny, seznamy veřejných skupin, překlad zpráv, šablony zpráv
 
-**Budoucnost**:
+- **Modul pro kontakty**: Správa kontaktů, import a export, skupiny kontaktů, štítky, poznámky, vyhledávání, sdílení
 
-- Vytvoření paralelní ekonomiky
+- **Modul pro videohohovory**: Volání (hlas + video), skupinové hovory, sdílení obrazovky, nahrávání hovorů
+
+- **Podpůrné nástroje**: WebTransport konzole, správa domén, účtů, modulů a správců
+
+#### Marketing:
+
+Po dokončení technické realizace této fáze, dojde k seznámení produktu s veřejností s minimálními / žádnými náklady na marketing. Očekává se cca 500 - 1 000 uživatelů, kteří budou aplikaci testovat, hlásit chyby a navrhovat změny.
+
+### 2. fáze - 6 měsíců:
+
+#### Technická realizace:
+
+- **Vytvoření ostatních modulů**: (konferenční hovory, integrovaná kryptoměnová peněženka, profily a sledování, video kanály, diskuzní fórum, newsfeed, příběhy, blogy, e-shopy, tržiště, příspěvky, skupinové financování, kalendář, úkoly, sdílení souborů, seznamka, mapy, media feed)
+
+Moduly **virtual chat** a **hry** budou vytvořeny v případě včasnějšího splnění plánu, v opačném případě budou přesunuty do další fáze.
+
+#### Marketing:
+
+V průběhu této fáze dojde ke zvětšení uživatelské základny na nižší jednotky tisíc uživatelů s minimálními marketingovými náklady a s použitím vlastních marketingových kanálů.
+
+Po dokončení této fáze se spustí nejprve marketing pomocí vlastních nástrojů a poté se přistoupí k masivnějšímu seznámení uživatelů s platformou formou zapojení spolupráce s influencery, affiliate marketingu, PPC, tvorby prezentačních videí, mediálních článků, vytvoření hudebního videa, spotů apod.
+
+### Další fáze a plány do budoucna:
+
+#### Technická realizace:
+
+- **Vytvoření protokolu DMTP** - Vytvoření dalšího protokolu do platformy, který je plně decentralizovaný
+
+- **Vytvoření paralelní ekonomiky** - Zapojení reálné ekonomiky do platformy Yellow (platby zboží a služeb i mimo platformu, tvorba dalších modulů a modernizace stávajících dle reálných potřeb uživatelů)
+
+#### Marketing:
+
+- Pokračování propagace produktu pomocí osvědčených marketingových kanálů z předchozích fází
