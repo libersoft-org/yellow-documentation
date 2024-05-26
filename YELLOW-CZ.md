@@ -410,8 +410,6 @@ Aktivní čtenáři a informovaní uživatelé, obchodníci, studenti, zájemci 
 
 ## Plán vývoje
 
-TODO
-
 ### 1. fáze - 6 měsíců
 
 #### Technická realizace:
