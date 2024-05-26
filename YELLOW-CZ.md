@@ -411,3 +411,17 @@ Aktivní čtenáři a informovaní uživatelé, obchodníci, studenti, zájemci 
 ## Plán vývoje
 
 TODO
+
+**1. fáze - 6 měsíců**:
+
+- Vytvoření serverové aplikace, klientské aplikace, vč. možnosti modularity, vrstev zabezpečení a podpůrných nástrojů
+- Vytvoření modulu pro rychlé zprávy
+- Vytvoření modulu pro videohovory
+
+**2. fáze - 6 měsíců**:
+
+- Vytvoření
+
+**Budoucnost**:
+
+- Vytvoření paralelní ekonomiky
