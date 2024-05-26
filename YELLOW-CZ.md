@@ -338,7 +338,7 @@ Podnikatelé, startupy, tvůrci a umělci, neziskové organizace, komunity, inov
 
 #### Unikátní funkce:
 
-- Provázanost s ostatními moduly (např. automatické vytvoření události spojené s konferenčním hovorem apod., veřejný kalendář v profilech apod.)
+- Provázanost s ostatními moduly (např. automatické vytvoření události spojené s konferenčním hovorem, veřejný kalendář v profilech apod.)
 
 #### Cílová skupina:
 
