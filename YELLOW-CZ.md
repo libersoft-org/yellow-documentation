@@ -8,13 +8,13 @@
 
 - **Jednoduchost a použitelnost klientské aplikace** - Aplikace je navržena tak, aby lidem **řešila a značně usnadňovala běžné potřeby reálného světa** v online prostředí (např. komunikace, zapojení se do komunit, obchodování, platby, vzdělávání, zábava, sledování aktuálního dění, seznamování se, profesní potřeby, sdílení informací apod.). I přes svou komplexní využitelnost si aplikace zachovává **přehledné a jednoduché uživatelské rozhraní**, které je snadno pochopitelné a ovladatelné pro běžného člověka téměř všech věkových kategorií a to bez odborných znalostí.
 
-- **Jednoduchá instalace serveru a nastavení** - Serverová aplikace je jednoduše nainstalovatelná a nastavitelná i pro začínající správce serveru či pokročilejší uživatele PC. Aplikace umožňuje jednoduchou **instalaci a nastavení serveru do 5 minut** a přehledné webové rozhraní pro správu. Toto je výhodné pro ty, kteří nechtějí využívat servery a domény poskytovatelů služeb (třetích stran) a raději mají svá data pod kontrolou na vlastním serveru.
+- **Jednoduchá instalace serveru a nastavení** - Serverová aplikace je jednoduše nainstalovatelná a nastavitelná i pro začínající správce serveru či pokročilejší uživatele PC. Aplikace umožňuje jednoduchou **instalaci a nastavení serveru do 5 minut** a přehledné webové rozhraní pro správu. Toto je využitelné pro ty, kteří nechtějí využívat servery a domény poskytovatelů služeb (třetích stran) a raději mají svá data pod kontrolou na vlastním serveru.
 
 - **Kompletní náhrada za e-mail** - Jelikož platforma integruje protokol [**AMTP**](./AMTP-CZ), který představuje novou generaci e-mailových služeb, je mimo jiné i využitelná jako úplná náhrada za e-mailové klientské aplikace předchozích generací. To poskytuje mnohem přehlednější a modernější komunikaci s uživateli.
 
 - **Multifunkčnost a modularita**: Modulární struktura klientské i serverové aplikace umožňuje uživatelům i správcům serverů si zvolit funkcionality aplikace podle svých představ. Platforma nabízí mnoho modulů z rozličných oblastí, jako je např. zasílání rychlých zpráv, sociální média, e-commerce, sdílení dat a mnoho dalšího. Platforma je otevřená i pro **moduly třetích stran**.
 
-- **Zabezpečení a ochrana soukromí**: Celé jádro platformy i oficiální moduly poskytující hlavní funkcionality systému, jsou vytvářeny dle standardů a doporučení protokolů **AMTP** a **DMTP**, tedy jsou v nich implementovány silné bezpečnostní prvky jako je např. **zabezpečená komunikace**, **koncové šifrování** apod. To zajišťuje nadstandardní ochranu soukromí pro uživatele.
+- **Zabezpečení a ochrana soukromí**: Celé jádro platformy i oficiální moduly poskytující hlavní funkcionality systému, jsou vytvářeny dle standardů a doporučení protokolů **AMTP** a **DMTP**, tedy jsou v nich implementovány silné bezpečnostní prvky jako je např. **zabezpečená komunikace**, **podepisování obsahu**, **koncové šifrování** apod. To zajišťuje nadstandardní ochranu soukromí pro uživatele.
 
 - **Podpora více protokolů**: Platforma podporuje integraci více komunikačních protokolů a je otevřena snadné integraci protokolů třetích stran. V rámci platformy jsou integrovány tyto protokoly:
 
@@ -46,7 +46,7 @@ Cílem vytvoření tohoto software je potřeba řešit některé z největších
 
     - **Volba konkrétních funkcionalit** - Provozovatel serveru si zvolí jen funkcionality, které chce nabízet uživatelům, případně integruje moduly třetích stran či své vlastní moduly. Toto je výhodné například pro školy či firmy, kde jsou uživatelům poskytovány jen funkcionality, které jsou určené pro studijní či pracovní účely.
 
-    - **Nízké náklady na vývoj funkcionalit** - Jsou zajištěny tím, že není pro každou novou funkcionalitu třeba tvořit celou platformu, ale využít již stávající.
+    - **Nízké náklady na vývoj funkcionalit** - Jsou zajištěny tím, že není pro každou novou funkcionalitu třeba tvořit celou platformu, ale využít již stávající a pouze vytvořit modul s konkrétními funkcionalitami. To ve většině případech šetří náklady spojené s vývojem nových funkcionalit o 50 - 80%.
 
     - **Nízké náklady na marketing** - Jsou zajištěny tím, že není třeba propagovat jednotlivé funkcionality v rámci jednotlivých marketingových kampaní, ale pouze jednou pro celou platformu. Taktéž, při uvedení nové funkcionality, se využívá stávající uživatelská základna. Zároveň, díky své provázanosti funkcionalit, je aplikace atraktivní pro influencery, kteří přivádějí své sledovatele, což zajišťuje růst uživatelské základny.
 
