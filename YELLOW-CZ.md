@@ -90,7 +90,12 @@ Cílem vytvoření tohoto software je potřeba řešit některé z největších
 
   - **Digitální podpisy obsahu** - Protokoly zároveň počítají i s digitálním podepisováním veškerého obsahu, který je uživateli zasílán či sdílen, což zajišťuje ještě větší věrohodnost původu informací pro uživatele, kteří tento obsah přijímají.
   
-- **Integrace kryptoměnové peněženky** - TODO
+- **Integrace kryptoměnové peněženky**: Platforma přináší velkou škálu využitelnosti integrované kryptoměnové peněženky, poskytuje snadný, rychlý a bezpečný způsob platby bez potřeby tradičních bankovních převodů. Ovšem peněženka jakožto samostatná aplikace neposkytuje rozšířené možnosti, které jsou možné právě při jejím propojení s multifunkční platformou, jako je tato. Mezi tyto výhody patří:
+
+  - **Propojení uživatelské základny s platbami** - TODO
+
+  - **Platby za služby a zboží** - Peněženka umožňuje uživatelům platit za různé služby v rámci komerčních modulů, jako jsou video kanály, e-shopy, tržiště, příspěvky, skupinové financování, sdílení souborů, seznamka, virtual chat a další. Taktéž umožňuje platby za upřednostňování záznamů v seznamech. 
+
   - TODO - možnost výdělku pro infleuncery, e-shopy, monetizace
   - TODO - využití chytrých smluv v komunikační aplikaci
   - TODO - paralelní ekonomika
