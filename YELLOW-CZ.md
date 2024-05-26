@@ -68,9 +68,9 @@ Cílem vytvoření tohoto software je potřeba řešit některé z největších
 
   - **Spolehlivost a kvalita** - Díky tomu, že na vývoji software s otevřeným zdrojovým kódem může spolupracovat široká komunita vývojářů a bezpečnostních expertů z celého světa, je pravděpodobné, že chyby a nedostatky budou rychleji objeveny a opraveny. Kolektivní úsilí mnoha lidí vede k vyšší kvalitě a stabilitě software.
 
-  - **Komunita a podpora** - projekty s otevřeným zdrojovým kódem zajišťují silnou a aktivní komunitu, která poskytuje podporu, sdílí znalosti a zkušenosti a přispívá k dalšímu vývoji softwaru.
+  - **Komunita a podpora** - Projekty s otevřeným zdrojovým kódem zajišťují silnou a aktivní komunitu, která poskytuje podporu, sdílí znalosti a zkušenosti a přispívá k dalšímu vývoji software.
 
-  - **Inovace a rychlý vývoj** - software s otevřeným zdrojovým kódem podporuje inovace a rychlejší vývoj. Vývojáři z celého světa mohou přinášet nové nápady a vylepšení platformy, což umožňuje rychlejší pokrok a implementaci nových technologií a funkcí.
+  - **Inovace a rychlý vývoj** - Software s otevřeným zdrojovým kódem podporuje inovace a rychlejší vývoj. Vývojáři z celého světa mohou přinášet nové nápady a vylepšení platformy, což umožňuje rychlejší pokrok a implementaci nových technologií a funkcí.
 
 - **Decentralizovaná nebo distribuovaná síťová architektura**: Tento typ sítě přináší uživatelům mnoho výhod:
 
