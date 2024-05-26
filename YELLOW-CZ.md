@@ -170,6 +170,7 @@ Tento modul představuje další základní funkcionalitu platformy, která umo�
 #### Unikátní funkce:
 
 - Vzdálené ovládání zařízení v rámci hovorů
+- Nahrávání hovorů
 
 #### Cílová skupina:
 
@@ -420,7 +421,7 @@ Aktivní čtenáři a informovaní uživatelé, obchodníci, studenti, zájemci 
 
 - **Modul pro kontakty**: Správa kontaktů, import a export, skupiny kontaktů, štítky, poznámky, vyhledávání, sdílení
 
-- **Modul pro videohovory**: Volání (hlas + video), skupinové hovory, sdílení obrazovky, nahrávání hovorů
+- **Modul pro videohovory**: Volání (hlas + video), výpisy volání, skupinové hovory, sdílení obrazovky, nahrávání hovorů
 
 - **Podpůrné nástroje**: WebTransport konzole, správa domén, účtů, modulů a správců
 
