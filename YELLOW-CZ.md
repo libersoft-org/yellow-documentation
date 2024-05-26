@@ -441,7 +441,7 @@ Moduly **virtual chat** a **hry** budou vytvořeny v případě včasnějšího 
 
 V průběhu této fáze dojde ke zvětšení uživatelské základny na nižší jednotky tisíc uživatelů s minimálními marketingovými náklady a s použitím vlastních marketingových kanálů.
 
-Po dokončení této fáze se spustí nejprve marketing pomocí vlastních nástrojů a poté se přistoupí k masivnějšímu seznámení uživatelů s platformou formou zapojení spolupráce s influencery, affiliate marketingu, PPC, tvorby prezentačních videí, mediálních článků, vytvoření hudebního videa, spotů apod.
+Po dokončení této fáze se spustí nejprve marketing pomocí vlastních nástrojů a poté se přistoupí k masivnějšímu seznámení široké veřejnosti s platformou formou zapojení spolupráce s influencery, affiliate marketingu, PPC, tvorby prezentačních videí, mediálních článků, vytvoření hudebního videa, spotů apod.
 
 ### Další fáze a plány do budoucna:
 
