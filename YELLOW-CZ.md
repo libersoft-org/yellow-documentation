@@ -4,13 +4,13 @@
 
 ## Klíčové vlastnosti
 
-- **Kompatibilita napříč zařízeními** - Klientská aplikace je dostupná pro mnoho platforem, především s OS Windows, Linux, macOS, Android, iOS a web na mnoha typech zařízení.
+- **Kompatibilita napříč zařízeními**: Klientská aplikace je dostupná pro mnoho platforem, především s OS Windows, Linux, macOS, Android, iOS a web na mnoha typech zařízení.
 
-- **Jednoduchost a použitelnost klientské aplikace** - Aplikace je navržena tak, aby lidem **řešila a značně usnadňovala běžné potřeby reálného světa** v online prostředí (např. komunikace, zapojení se do komunit, obchodování, platby, vzdělávání, zábava, sledování aktuálního dění, seznamování se, profesní potřeby, sdílení informací apod.). I přes svou komplexní využitelnost si aplikace zachovává **přehledné a jednoduché uživatelské rozhraní**, které je snadno pochopitelné a ovladatelné pro běžného člověka téměř všech věkových kategorií a to bez odborných znalostí.
+- **Jednoduchost a použitelnost klientské aplikace**: Aplikace je navržena tak, aby lidem **řešila a značně usnadňovala běžné potřeby reálného světa** v online prostředí (např. komunikace, zapojení se do komunit, obchodování, platby, vzdělávání, zábava, sledování aktuálního dění, seznamování se, profesní potřeby, sdílení informací apod.). I přes svou komplexní využitelnost si aplikace zachovává **přehledné a jednoduché uživatelské rozhraní**, které je snadno pochopitelné a ovladatelné pro běžného člověka téměř všech věkových kategorií a to bez odborných znalostí.
 
-- **Jednoduchá instalace serveru a nastavení** - Serverová aplikace je jednoduše nainstalovatelná a nastavitelná i pro začínající správce serveru či pokročilejší uživatele PC. Aplikace umožňuje jednoduchou **instalaci a nastavení serveru do 5 minut** a přehledné webové rozhraní pro správu. Toto je využitelné pro ty, kteří nechtějí využívat servery a domény poskytovatelů služeb (třetích stran) a raději mají svá data pod kontrolou na vlastním serveru.
+- **Jednoduchá instalace serveru a nastavení**: Serverová aplikace je jednoduše nainstalovatelná a nastavitelná i pro začínající správce serveru či pokročilejší uživatele PC. Aplikace umožňuje jednoduchou **instalaci a nastavení serveru do 5 minut** a přehledné webové rozhraní pro správu. Toto je využitelné pro ty, kteří nechtějí využívat servery a domény poskytovatelů služeb (třetích stran) a raději mají svá data pod kontrolou na vlastním serveru.
 
-- **Kompletní náhrada za e-mail** - Jelikož platforma integruje protokol [**AMTP**](./AMTP-CZ), který představuje novou generaci e-mailových služeb, je mimo jiné i využitelná jako úplná náhrada za e-mailové klientské aplikace předchozích generací. To poskytuje mnohem přehlednější a modernější komunikaci s uživateli.
+- **Kompletní náhrada za e-mail**: Jelikož platforma integruje protokol [**AMTP**](./AMTP-CZ), který představuje novou generaci e-mailových služeb, je mimo jiné i využitelná jako úplná náhrada za e-mailové klientské aplikace předchozích generací. To poskytuje mnohem přehlednější a modernější komunikaci s uživateli.
 
 - **Multifunkčnost a modularita**: Modulární struktura klientské i serverové aplikace umožňuje uživatelům i správcům serverů si zvolit funkcionality aplikace podle svých představ. Platforma nabízí mnoho modulů z rozličných oblastí, jako je např. zasílání rychlých zpráv, sociální média, e-commerce, sdílení dat a mnoho dalšího. Platforma je otevřená i pro **moduly třetích stran**.
 
@@ -30,9 +30,9 @@
 
 Cílem vytvoření tohoto software je potřeba řešit některé z největších problémů současných komunikačních aplikací a přinést inovativní řešení, která dosud v digitálním světě chyběla. V současné době neexistuje žádná jiná aplikace, která by splňovala všechna následující kritéria:
 
-- **Přívětivé uživatelské rozhraní** - U klientské aplikace je kladen důraz na jednoduché, přehledné a moderní uživatelské prostředí a to i přes komplexní funkcionalitu celé aplikace. Většina funkcionalit a akcí v aplikaci je přístupná **do max. 3 kliknutí**.
+- **Přívětivé uživatelské rozhraní**: U klientské aplikace je kladen důraz na jednoduché, přehledné a moderní uživatelské prostředí a to i přes komplexní funkcionalitu celé aplikace. Většina funkcionalit a akcí v aplikaci je přístupná **do max. 3 kliknutí**.
 
-- **Modulární koncept, multifunkčnost** - Modulární koncept zajišťuje pro uživatele, provozovatele serverů i pro vývojáře řadu výhod, jako např.:
+- **Modulární koncept, multifunkčnost**: Modulární koncept zajišťuje pro uživatele, provozovatele serverů i pro vývojáře řadu výhod, jako např.:
 
   - **Z hlediska uživatele**:
 
