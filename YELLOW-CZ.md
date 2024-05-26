@@ -120,8 +120,6 @@ Platforma je využitelná mnoha cílovými skupinami uživatelů, jejichž potř
 
 ## Seznam modulů
 
-TODO - dopsat všude unikátní funkce
-
 Jednotlivé moduly poskytují různé užitečné funkcionality. V této části jsou uvedeny oficiální moduly, poskytnuté k serverové i klientské aplikaci. Všechny moduly, ve kterých se přenáší nebo ukládají uživatelská data, jsou opatřeny **šifrováním**, což zajišťuje bezpečnou komunikaci mezi uživateli a ochranu proti tomu, aby kdokoliv (vč. správců serveru) mohl číst tato data.
 
 ### 📧 Rychlé zprávy
@@ -150,7 +148,6 @@ Díky strukturovanosti tohoto modulu je snadné ve zprávách **vyhledávat**.
 - Řazení kontaktů do skupin
 - Řazení konverzací do témat
 - Šablony zpráv
-- Provázanost s ostatními moduly (např. tlačítko "Napsat zprávu" v diskuzi, video kanálech, seznamce, e-shopech, v profilech apod.)
 
 #### Cílová skupina:
 
@@ -185,6 +182,7 @@ Uživatelé všech věkových kategorií, především těch, kteří hledají b
 #### Unikátní funkce:
 
 - Vzdálené ovládání zařízení v rámci konferenčního hovoru
+- Provázanost s ostatními moduly (Kalendář apod.)
 
 #### Cílová skupina:
 
@@ -197,8 +195,8 @@ Především organizace, jako jsou firmy, vzdělávací instituce, lektoři, kon
 #### Unikátní funkce:
 
 - Provázanost peněženky s uživatelskou základnou (možnost plateb mezi uživateli apod.)
-- Možnost využití plateb v rámci modulů (prémiové funkce, platby za služby a zboží apod.)
-- Možnost využití smart contractů v rámci modulů (rozdělení zisků z modulů, zajištění férovosti pravidel her, transparentní hlasování apod.)
+- Možnost využití plateb v rámci modulů (prémiové funkce, platby za služby a zboží, upřednostňovýní záznamů v seznamech apod.)
+- Možnost využití chytrých smluv v rámci modulů (rozdělení zisků z modulů, zajištění férovosti pravidel her, transparentní hlasování, úschova v rámci tržiště apod.)
 
 #### Cílová skupina:
 
@@ -267,7 +265,7 @@ Tento modul umožňuje uživatelům **vytvářet**, **organizovat** a **sdílet*
 
 #### Unikátní funkce:
 
-- Provázanost s ostatními moduly (např. tlačítko pod videem ve video kanálech, sekce v profilech apod.)
+- Provázanost s ostatními moduly (např. tlačítko pod videem ve video kanálech, sekce v profilech, propojení s konferenčními hovory apod.)
 
 #### Cílová skupina:
 
@@ -303,6 +301,7 @@ Modul **Tržiště** umožňuje koncovým uživatelům **nakupovat** a **prodáv
 
 #### Unikátní funkce:
 
+- Možnost využití chytrých smluv pro účely úschovy
 - Provázanost s ostatními moduly (např. lokace v mapách, sekce v profilech apod.)
 
 #### Cílová skupina:
@@ -313,6 +312,10 @@ Uživatelé, kteří prodávají, draží či nakupují zboží a služby formou
 
 Tento modul umožňuje uživatelům **finančně podporovat** konkrétní uživatele, projekty či charity prostřednictvím finančních darů. Kdokoliv si může založit vlastní sbírku na libovolné účely a vybírat tak dary od ostatních. Modul umožňuje snadnou **správu sbírek**, poskytuje **seznam veřejných sbírek** filtrovatelný a řaditelný dle různých kritérií. Taktéž umožňuje **komunikaci** mezi dárci a provozovateli sbírky.
 
+#### Unikátní funkce:
+
+- Provázanost s ostatními moduly (např. tlačítko pod videem ve video kanálech, sekce v profilech apod.)
+
 #### Cílová skupina:
 
 Uživatelé provozující či přispívající na osobní, charitativní, komunitní, umělecké či jakékoliv jiné projekty.
@@ -321,6 +324,10 @@ Uživatelé provozující či přispívající na osobní, charitativní, komuni
 
 **Skupinové financování** (crowdfunding) umožňuje uživatelům **získávat finanční prostředky** na různé projekty prostřednictvím příspěvků od přispěvatelů, za což tito přispěvatelé dostávají různé **odměny**, **podíly** na projektu či jiné **výhody**. Tento modul poskytuje komplexní nástroje pro vytváření a správu kampaní, čímž umožňuje realizaci inovativních nápadů, projektů a podnikatelských záměrů. Kdokoliv si může založit vlastní kampaň pro libovolný účel a sestavit jí podle svého uvážení. Platforma poskytuje i **seznam veřejných kampaní**, které lze filtrovat a řadit dle různých kritérií.
 
+#### Unikátní funkce:
+
+- Provázanost s ostatními moduly (např. tlačítko pod videem ve video kanálech, sekce v profilech apod.)
+
 #### Cílová skupina:
 
 Podnikatelé, startupy, tvůrci a umělci, neziskové organizace, komunity, inovátoři a vynálezci, vzdělávací projekty a přispěvatelé.
@@ -328,6 +335,10 @@ Podnikatelé, startupy, tvůrci a umělci, neziskové organizace, komunity, inov
 ### 📅 Kalendář
 
 **Kalendář** je navržen pro efektivní **organizování času** a **plánování událostí**. Tento modul umožňuje uživatelům **vytvářet**, **synchronizovat** a **sdílet** kalendáře s ostatními členy komunity, což usnadňuje organizaci osobních i pracovních aktivit.
+
+#### Unikátní funkce:
+
+- Provázanost s ostatními moduly (např. automatické vytvoření události spojené s konferenčním hovorem apod., veřejný kalendář v profilech apod.)
 
 #### Cílová skupina:
 
@@ -369,6 +380,10 @@ Jednotlivci hledající interaktivní komunikaci, netradiční způsob seznamov�
 
 **Mapy** nabízí uživatelům rozsáhlé možnosti pro **prohlížení** a **interakci** s geografickými informacemi. Modul poskytuje funkcionality jako **vyhledávání**, **sdílení polohy** v reálném čase a **objevování míst** a nalézání **bodů zájmů** (místní obchody, služby, události apod.), které lze **hodnotit** a **komentovat**. Body zájmů jsou **filtrovatelné** a propojené s dalšími moduly aplikace, jako jsou profily nebo možnost kontaktování pomocí rychlých zpráv.
 
+#### Unikátní funkce:
+
+- Provázanost s ostatními moduly (např. body zájmů z událostí, veřejných skupin, video kanálů apod.)
+
 #### Cílová skupina:
 
 Uživatelé, kteří se chtějí propojovat v reálném světě s ostatními a sdílet svou polohu nebo uživatelé hledající a hodnotící body zájmů.
@@ -376,6 +391,10 @@ Uživatelé, kteří se chtějí propojovat v reálném světě s ostatními a s
 ### 🎮 Hry
 
 Modul **Hry** poskytuje uživatelům zábavu prostřednictvím her, které mohou hrát se svými přáteli online.
+
+#### Unikátní funkce:
+
+- Provázanost s ostatními moduly (např. hraní her přímo ve zprávách apod.)
 
 #### Cílová skupina:
 
