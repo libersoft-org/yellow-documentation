@@ -427,7 +427,7 @@ Aktivní čtenáři a informovaní uživatelé, obchodníci, studenti, zájemci 
 
 #### Marketing:
 
-Po dokončení technické realizace této fáze, dojde k seznámení produktu s veřejností s minimálními / žádnými náklady na marketing. Očekává se cca 500 - 1 000 uživatelů, kteří budou aplikaci testovat, hlásit chyby a navrhovat změny.
+Po dokončení technické realizace této fáze, dojde k seznámení produktu s veřejností s minimálními náklady na marketing. Očekává se cca 500 - 1 000 uživatelů, kteří budou aplikaci testovat, hlásit chyby a navrhovat změny.
 
 ### 2. fáze - 6 měsíců:
 
