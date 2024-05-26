@@ -54,7 +54,7 @@ Cílem vytvoření tohoto software je potřeba řešit některé z největších
 
     - **Udržení uživatelů online** - Větší množství funkcionalit udržuje více lidí online, tzn. vyšší pravděpodobnost interakce mezi uživateli a následný vyšší potenciální zisk z komerčních funkcionalit.
 
-    - **Aplikace jako nezbytnost** - Funkcionality propojené s běžnými denními potřebami uživatelů v rámci platformy, vytváří nezbytnost mít takovou aplikaci nejen zaregistrovanou a stále nainstalovanou, ale i jí aktivně využívat, tzn. nižší riziko, že uživatel aplikaci odinstaluje a naopak stále odebírá její oznámení, které uživatele opět vrací k tomu aplikaci aktivně využívat a zvyšuje pravděpodobnost vynaložení finančních prostředků v rámci komerčních modulů.
+    - **Aplikace jako nezbytnost** - Funkcionality propojené s běžnými denními potřebami uživatelů v rámci platformy, vytváří nezbytnost mít takovou aplikaci nejen zaregistrovanou a stále nainstalovanou, ale i jí aktivně využívat, tzn. nižší riziko, že uživatel aplikaci odinstaluje a naopak je stále přihlášen k odběru oznámení, které uživatele opět vrací k tomu aplikaci aktivně využívat a zvyšuje pravděpodobnost vynaložení finančních prostředků v rámci komerčních modulů.
 
     - **Zisk z funkcionalit třetích stran** - Integrace funkcionalit třetích stran přináší dodatečný zisk v rámci komerčních modulů.
 
