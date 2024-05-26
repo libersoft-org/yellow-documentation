@@ -88,7 +88,7 @@ Cílem vytvoření tohoto software je potřeba řešit některé z největších
 
   - **Šifrování dat** - Všechna soukromá data, která jsou přenášena mezi uživateli či ukládána na servery, jsou šifrována a poskytují tak uživatelům ochranu proti odposlechům jejich komunikace, což zajišťuje jejich soukromí a pocit bezpečí při používání aplikace.
 
-  - **Digitální podpisy obsahu** - Protokoly zároveň počítají i s digitálním podepisováním veškerého obsahu, který je uživateli zasílán či sdílen, což zajišťuje ještě větší věrohodnost původu informací pro uživatele, kteří tento obsah přijímají.
+  - **Digitální podpisy obsahu** - Protokoly zároveň počítají i s digitálním podepisováním veškerého obsahu, který je uživateli zasílán či sdílen, což zajišťuje věrohodnost původu informací pro uživatele, kteří tento obsah přijímají.
   
 - **Integrace kryptoměnové peněženky**: Platforma přináší velkou škálu využitelnosti integrované kryptoměnové peněženky - poskytuje snadný, rychlý a bezpečný způsob platby bez potřeby tradičních bankovních převodů. Zasílání plateb uvnitř aplikace je značně jednodušší a rychlejší, než používání běžných bankovních služeb. Propojení peněženky s multifunkční platformou, jako je tato, poskytuje rozšířené možnosti jejího využití, než kdyby to byla samostatná aplikace. Mezi tyto výhody ty patří:
 
