@@ -90,15 +90,17 @@ Cílem vytvoření tohoto software je potřeba řešit některé z největších
 
   - **Digitální podpisy obsahu** - Protokoly zároveň počítají i s digitálním podepisováním veškerého obsahu, který je uživateli zasílán či sdílen, což zajišťuje ještě větší věrohodnost původu informací pro uživatele, kteří tento obsah přijímají.
   
-- **Integrace kryptoměnové peněženky**: Platforma přináší velkou škálu využitelnosti integrované kryptoměnové peněženky, poskytuje snadný, rychlý a bezpečný způsob platby bez potřeby tradičních bankovních převodů. Propojení peněženky s multifunkční platformou, jako je tato, poskytuje značné rozšířené možnosti jejího využítí Mezi ty patří:
+- **Integrace kryptoměnové peněženky**: Platforma přináší velkou škálu využitelnosti integrované kryptoměnové peněženky, poskytuje snadný, rychlý a bezpečný způsob platby bez potřeby tradičních bankovních převodů. Propojení peněženky s multifunkční platformou, jako je tato, poskytuje značné rozšířené možnosti jejího využítí. Mezi ty patří:
 
   - **Propojení uživatelské základny s platbami** - TODO
 
-  - **Platby za služby a zboží** - Peněženka umožňuje uživatelům platit za různé služby v rámci komerčních modulů, jako jsou video kanály, e-shopy, tržiště, příspěvky, skupinové financování, sdílení souborů, seznamka, virtual chat a další. Taktéž umožňuje platby za upřednostňování záznamů v seznamech. 
+  - **Platby za služby a zboží** - Peněženka umožňuje uživatelům platit za různé služby a zboží v rámci komerčních modulů (video kanály, e-shopy, tržiště, příspěvky, skupinové financování, sdílení souborů, seznamka, virtual chat apod.). Taktéž umožňuje platby za upřednostňování záznamů v různých seznamech (rychlé zprávy - seznamy chatovacích a novinkových skupin, veřejné profily, video kanály, diskuzní fórum, události, blogy, e-shopy, tržiště, příspěvky, skupinové financování, seznamka apod.).
 
-  - TODO - možnost výdělku pro infleuncery, e-shopy, monetizace
-  - TODO - využití chytrých smluv v komunikační aplikaci
-  - TODO - paralelní ekonomika
+  - **Výdělky pro poskytovatele obsahu** - TODO - možnost výdělku pro infleuncery, e-shopy, monetizace
+
+  - **Chytré smlouvy** - TODO - využití chytrých smluv v komunikační aplikaci
+
+  - **Paralelní ekonomika** - TODO
 
 ## Cílové skupiny
 
