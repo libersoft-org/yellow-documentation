@@ -181,7 +181,7 @@ Uživatelé všech věkových kategorií, především těch, kteří hledají b
 
 #### Unikátní funkce:
 
-- Vzdálené ovládání zařízení v rámci konferenčního hovoru
+- Vzdálené ovládání zařízení v rámci konferenčních hovorů
 - Provázanost s ostatními moduly (Kalendář apod.)
 
 #### Cílová skupina:
