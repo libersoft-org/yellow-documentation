@@ -90,17 +90,17 @@ Cílem vytvoření tohoto software je potřeba řešit některé z největších
 
   - **Digitální podpisy obsahu** - Protokoly zároveň počítají i s digitálním podepisováním veškerého obsahu, který je uživateli zasílán či sdílen, což zajišťuje ještě větší věrohodnost původu informací pro uživatele, kteří tento obsah přijímají.
   
-- **Integrace kryptoměnové peněženky**: Platforma přináší velkou škálu využitelnosti integrované kryptoměnové peněženky, poskytuje snadný, rychlý a bezpečný způsob platby bez potřeby tradičních bankovních převodů. Propojení peněženky s multifunkční platformou, jako je tato, poskytuje značné rozšířené možnosti jejího využítí. Mezi ty patří:
+- **Integrace kryptoměnové peněženky**: Platforma přináší velkou škálu využitelnosti integrované kryptoměnové peněženky - poskytuje snadný, rychlý a bezpečný způsob platby bez potřeby tradičních bankovních převodů. Zasílání plateb uvnitř aplikace je značně jednodušší a rychlejší, než používání běžných bankovních služeb. Propojení peněženky s multifunkční platformou, jako je tato, poskytuje rozšířené možnosti jejího využítí, než kdyby to byla samostatná aplikace. Mezi tyto výhody ty patří:
 
-  - **Propojení uživatelské základny s platbami** - TODO
+  - **Propojení uživatelské základny s platbami** - Uživatelé si mohou jednoduše v rámci platformy zasílat platby v kryptoměnách, přehledně zobrazit zůstatky, transakční historii a výpisy.
 
   - **Platby za služby a zboží** - Peněženka umožňuje uživatelům platit za různé služby a zboží v rámci komerčních modulů (video kanály, e-shopy, tržiště, příspěvky, skupinové financování, sdílení souborů, seznamka, virtual chat apod.). Taktéž umožňuje platby za upřednostňování záznamů v různých seznamech (rychlé zprávy - seznamy chatovacích a novinkových skupin, veřejné profily, video kanály, diskuzní fórum, události, blogy, e-shopy, tržiště, příspěvky, skupinové financování, seznamka apod.).
 
-  - **Výdělky pro poskytovatele obsahu** - TODO - možnost výdělku pro infleuncery, e-shopy, monetizace
+  - **Výdělky pro poskytovatele obsahu** - Poskytovatelé obsahu mohou vydělávat kryptoměny tak, že zapojí svoje odběratele do dění. Např. mohou získávat dary během živých vysílání, pořádat sbírky na libovolné účely, prodávat reklamní předměty v e-shopech, dražit zajímavé předměty v aukcích, vytvořit kampaň pro skupinové financování apod.
 
-  - **Chytré smlouvy** - TODO - využití chytrých smluv v komunikační aplikaci
+  - **Chytré smlouvy** - do modulů v rámci klientské aplikace lze zakomponovat možnosti chytrých smluv a tím zvýšit důvěryhodnost a zautomatizovat různé transakční procesy. Například takto lze pořádat transparentní soutěže o kryptoměny ve hrách, rozdělovat automaticky zisky z komerčních modulů, provádět služby peněžní úschovy v rámci tržiště apod. Taktéž tyto smlouvy poskytují aktivace prémiových služeb v rámci platformy.
 
-  - **Paralelní ekonomika** - TODO
+  - **Paralelní ekonomika** - Multifunkční aplikace s integrovanou kryptoměnovou peněženkou má potenciál vytvořit fungující reálnou celosvětovou paralelní ekonomiku založenou na kryptoměnách a chytrých smlouvách. V době, kdy je platforma rozšířená mezi mnoho uživatelů, je možné, aby kamenné obchody a poskytovatelé různých služeb využívali aplikaci pro příjem plateb a uživatelé s ní běžně denně platili.
 
 ## Cílové skupiny
 
