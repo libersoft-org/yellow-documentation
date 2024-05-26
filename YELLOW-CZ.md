@@ -90,7 +90,7 @@ Cílem vytvoření tohoto software je potřeba řešit některé z největších
 
   - **Digitální podpisy obsahu** - Protokoly zároveň počítají i s digitálním podepisováním veškerého obsahu, který je uživateli zasílán či sdílen, což zajišťuje ještě větší věrohodnost původu informací pro uživatele, kteří tento obsah přijímají.
   
-- **Integrace kryptoměnové peněženky**: Platforma přináší velkou škálu využitelnosti integrované kryptoměnové peněženky - poskytuje snadný, rychlý a bezpečný způsob platby bez potřeby tradičních bankovních převodů. Zasílání plateb uvnitř aplikace je značně jednodušší a rychlejší, než používání běžných bankovních služeb. Propojení peněženky s multifunkční platformou, jako je tato, poskytuje rozšířené možnosti jejího využítí, než kdyby to byla samostatná aplikace. Mezi tyto výhody ty patří:
+- **Integrace kryptoměnové peněženky**: Platforma přináší velkou škálu využitelnosti integrované kryptoměnové peněženky - poskytuje snadný, rychlý a bezpečný způsob platby bez potřeby tradičních bankovních převodů. Zasílání plateb uvnitř aplikace je značně jednodušší a rychlejší, než používání běžných bankovních služeb. Propojení peněženky s multifunkční platformou, jako je tato, poskytuje rozšířené možnosti jejího využití, než kdyby to byla samostatná aplikace. Mezi tyto výhody ty patří:
 
   - **Propojení uživatelské základny s platbami** - Uživatelé si mohou jednoduše v rámci platformy zasílat platby v kryptoměnách, přehledně zobrazit zůstatky, transakční historii a výpisy.
 
@@ -110,7 +110,7 @@ Platforma je využitelná mnoha cílovými skupinami uživatelů, jejichž potř
 
 **Známé osobnosti a influenceři**: Platforma poskytuje možnosti sebeprezentace pomocí video kanálů s funkcionalitou publikování a prodeje video obsahu, živých vysílání, možnost psaní blogových článků, textového či vizuálního obsahu prostřednictvím newsfeedu a příběhů, prodeje reklamních předmětů v e-shopu, pořádání událostí, financování sbírek, darů, aukcí a mnoho dalšího.
 
-**Podnikatelé a obchodníci**: Pro obchodníky a podnikatele jsou poskytnuty nástroje pro e-commerce (e-shopy, aukce, příspevky a skupinové financování), které jim usnadňují obchodování a platby přímo v aplikaci. Taktéž se mohou sebeprezentovat pomocí různých nástrojů podobně jako influenceři.
+**Podnikatelé a obchodníci**: Pro obchodníky a podnikatele jsou poskytnuty nástroje pro e-commerce (e-shopy, aukce, příspěvky a skupinové financování), které jim usnadňují obchodování a platby přímo v aplikaci. Taktéž se mohou sebeprezentovat pomocí různých nástrojů podobně jako influenceři.
 
 **Pracovní týmy**: Pro pracovní skupiny a firmy platforma nabízí nástroje pro efektivní spolupráci a produktivitu, jako jsou sdílené úkoly, kalendáře, konferenční hovory. Taktéž spolu mohou efektivně komunikovat prostřednictvím rychlých zpráv, kde si mohou i snadno sdílet pracovní data.
 
@@ -195,7 +195,7 @@ Především organizace, jako jsou firmy, vzdělávací instituce, lektoři, kon
 #### Unikátní funkce:
 
 - Provázanost peněženky s uživatelskou základnou (možnost plateb mezi uživateli apod.)
-- Možnost využití plateb v rámci modulů (prémiové funkce, platby za služby a zboží, upřednostňovýní záznamů v seznamech apod.)
+- Možnost využití plateb v rámci modulů (prémiové funkce, platby za služby a zboží, upřednostňování záznamů v seznamech apod.)
 - Možnost využití chytrých smluv v rámci modulů (rozdělení zisků z modulů, zajištění férovosti pravidel her, transparentní hlasování, úschova v rámci tržiště apod.)
 
 #### Cílová skupina:
@@ -402,7 +402,7 @@ Hráči her různých žánrů, sociálně zaměření hráči, příležitostn�
 
 ### 📰 Media feed
 
-Modul **Media feed** v platformě Yellow poskytuje uživatelům **přehled zpráv** a informací z různých **médií**. Tento modul agreguje obsah z různých zpravodajských **serverů**, **blogů**, **sociálních médií** a dalších zdrojů, aby uživatelé měli aktuální přehled o dění v okolí a ve světě na jednom místě. Uživatelé si mohou personalizovat **výběr oblíbených médií** a **sdílet** obsah s ostatními uživateli.
+Modul **Media feed** poskytuje uživatelům **přehled zpráv** a informací z různých **médií**. Tento modul agreguje obsah z různých zpravodajských **serverů**, **blogů**, **sociálních médií** a dalších zdrojů, aby uživatelé měli aktuální přehled o dění v okolí a ve světě na jednom místě. Uživatelé si mohou personalizovat **výběr oblíbených médií** a **sdílet** obsah s ostatními uživateli.
 
 #### Cílová skupina:
 
@@ -416,11 +416,11 @@ Aktivní čtenáři a informovaní uživatelé, obchodníci, studenti, zájemci 
 
 - **Serverová a klientská aplikace**: Implementace AMTP, modularity, vrstev zabezpečení, vícejazyková podpora (pouze klientská aplikace), motivy
 
-- **Modul pro rychlé zprávy**: Prosté i formátované zprávy, vícedílné zprávy, hlasové a video zprávy, podpora animovaných nálepek, přesnos souborů, sdílení kontaktů, složky konverzací, témata zpráv, blokování kontaktů, chatovací skupiny, novinkové skupiny, seznamy veřejných skupin, překlad zpráv, šablony zpráv
+- **Modul pro rychlé zprávy**: Prosté i formátované zprávy, vícedílné zprávy, hlasové a video zprávy, podpora animovaných nálepek, přenos souborů, sdílení kontaktů, složky konverzací, témata zpráv, blokování kontaktů, chatovací skupiny, novinkové skupiny, seznamy veřejných skupin, překlad zpráv, šablony zpráv
 
 - **Modul pro kontakty**: Správa kontaktů, import a export, skupiny kontaktů, štítky, poznámky, vyhledávání, sdílení
 
-- **Modul pro videohohovory**: Volání (hlas + video), skupinové hovory, sdílení obrazovky, nahrávání hovorů
+- **Modul pro videohovory**: Volání (hlas + video), skupinové hovory, sdílení obrazovky, nahrávání hovorů
 
 - **Podpůrné nástroje**: WebTransport konzole, správa domén, účtů, modulů a správců
 
@@ -448,7 +448,7 @@ Po dokončení této fáze se spustí nejprve marketing pomocí vlastních nást
 
 - **Vytvoření protokolu DMTP** - Vytvoření dalšího protokolu do platformy, který je plně decentralizovaný
 
-- **Vytvoření paralelní ekonomiky** - Zapojení reálné ekonomiky do platformy Yellow (platby zboží a služeb i mimo platformu, tvorba dalších modulů a modernizace stávajících dle reálných potřeb uživatelů)
+- **Vytvoření paralelní ekonomiky** - Zapojení reálné ekonomiky do platformy (platby zboží a služeb i mimo platformu, tvorba dalších modulů a modernizace stávajících dle reálných potřeb uživatelů)
 
 #### Marketing:
 
