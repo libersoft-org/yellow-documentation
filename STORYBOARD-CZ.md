@@ -16,7 +16,9 @@
 
 **0 - 5s**:
 
-**Mluvené slovo**: "Představujeme vám Yellow, komunikační platformu nové generace."
+**Mluvené slovo**:
+
+- "Představujeme vám Yellow, komunikační platformu nové generace."
 
 **Video**:
 
@@ -26,7 +28,9 @@
 
 **5 - 15s**:
 
-**Mluvené slovo**: "S hlasovým asistentem zvládnete vše rychle a jednoduše."
+**Mluvené slovo**:
+
+- "S hlasovým asistentem zvládnete vše rychle a jednoduše."
 
 **Video**:
 
@@ -46,12 +50,21 @@
 
 **25 - 30s**:
 
-**Mluvené slovo**: "S Yellow je život jednodušší."
+**Mluvené slovo**:
 
-**Video**: Záběr na pár, jak na gauči spokojeně jedí pizzu.
+- "S Yellow je život jednodušší."
+
+**Video**:
+
+- Záběr na pár, jak na gauči spokojeně jedí pizzu.
 
 **30 - 40s**:
 
-**Mluvené slovo** (rychleji): A to není vše, což takhle: Zasílání neomezeně velkých souborů rodině a přátelům, seznamka s geolokací, video kanály, chatovací skupiny, hry, diskuze, nejnovější události v okolí a mnoho dalšího! - Yellow: Stahujte zdarma na Google Play a App Store.
+**Mluvené slovo** (rychle):
 
-**Video**: Při zmínění jednotlivých funkcionalit zobrazení ukázky modulu na mobilu, na konci zobrazení ikony aplikace, pod tím 2 ikony - Google Play a App Store
+- "A to není vše, což takhle: Zasílání neomezeně velkých souborů rodině a přátelům, seznamka s geolokací, video kanály, chatovací skupiny, hry, diskuze, nejnovější události v okolí a mnoho dalšího!"
+- "Yellow - Stahujte zdarma na Google Play a App Store".
+
+**Video**:
+
+- Při zmínění jednotlivých funkcionalit zobrazení ukázky modulu na mobilu, na konci zobrazení ikony aplikace, pod tím 2 ikony - Google Play a App Store
