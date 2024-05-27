@@ -2,8 +2,12 @@
 
 ## Video pro běžné uživatele
 
-TODO
+**Cíl videa**: Seznámit uživatele s unikátními funkcemi aplikace a přesvědčit ke stažení aplikace
+
+**Scénář**: TODO
 
 ## Video pro influencery
 
-TODO
+**Cíl videa**: Vysvětlit influencerům, proč je pro ně výhodné publikovat jejich obsah na naší platformě
+
+**Scénář**: TODO
