@@ -7,6 +7,7 @@
 ## Zaměření na:
 
 - AI asistent
+- Rychlé zprávy
 - Použití integrované kryptoměnové peněženky
 - Funkce e-shopu
 - Další funkce v kostce
