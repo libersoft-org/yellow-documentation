@@ -52,6 +52,6 @@
 
 **30 - 40s**:
 
-**Mluvené slovo** (rychleji): A to není vše, což takhle: Zasílání neomezeně velkých souborů rodině a přátelům, seznamka s geolokací, video kanály, chatovací skupiny, hry, diskuze, nejnovější události v okolí a mnoho dalšího! - Yellow: Stahujte na Google Play a App Store.
+**Mluvené slovo** (rychleji): A to není vše, což takhle: Zasílání neomezeně velkých souborů rodině a přátelům, seznamka s geolokací, video kanály, chatovací skupiny, hry, diskuze, nejnovější události v okolí a mnoho dalšího! - Yellow: Stahujte zdarma na Google Play a App Store.
 
 **Video**: Při zmínění jednotlivých funkcionalit zobrazení ukázky modulu na mobilu, na konci zobrazení ikony aplikace, pod tím 2 ikony - Google Play a App Store
