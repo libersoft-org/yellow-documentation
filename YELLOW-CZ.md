@@ -454,9 +454,11 @@ Po dokončení této fáze se spustí nejprve marketing pomocí vlastních nást
 
 #### Technická realizace:
 
-- **Vytvoření protokolu DMTP** - Vytvoření dalšího protokolu do platformy, který je plně decentralizovaný
+- **Vytvoření protokolu DMTP**: Vytvoření dalšího protokolu do platformy, který je plně decentralizovaný. Protokol umožňuje uživatelům komunikovat bez nutnosti serverů a data ukládá na decentralizovaná úložiště v případě potřeby.
 
-- **Vytvoření paralelní ekonomiky** - Zapojení reálné ekonomiky do platformy (platby zboží a služeb i mimo platformu, tvorba dalších modulů a modernizace stávajících dle reálných potřeb uživatelů)
+- **Vytvoření paralelní ekonomiky**: Paralelní ekonomika ve spojení s multifunkční komunikační aplikací přínáší řadu možností využitelnosti:
+  - Zapojení reálné ekonomiky do platformy (platby zboží a služeb v kryptoměnách i mimo platformu - např. v kamenných obchodech)
+  - Vytvoření funkcionalit pro tvorbu a správu decentralizovaných organizací (společnosti, neziskové organizace apod.) a nástrojů pro jejich pohodlnou správu (emitování tokenů představující podíly na orgrazaci / projektu, systémy hlasování, vyplácení zisků organizace dle podílů, možnosti prodeje tokenů prostřednictvím tržiště / skupinového financování apod.)
 
 #### Marketing:
 
