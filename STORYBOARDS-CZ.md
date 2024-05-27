@@ -9,7 +9,7 @@
 - AI asistent
 - Rychlé zprávy
 - Použití integrované kryptoměnové peněženky
-- Funkce e-shopu
+- Funkce e-shopu (objednávka jídla)
 - Další funkce v kostce
 
 ## Scénář:
