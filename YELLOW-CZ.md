@@ -460,7 +460,7 @@ Po dokončení této fáze se spustí nejprve marketing pomocí vlastních nást
 
 - **Vytvoření modulu Nástěnka**: Tento modul umožňuje vytvářet přehlednou nástěnku s ovládacími prvky (widgety), které umožňují uživatelům zobrazit rychlé přehledy přesně toho, co je zajímá díky propojení s ostatními moduly (např. zobrazit aktuální zprávy, nejbližší svátky, část kalendáře apod.). Zároveň umožňuje vykonávat rychlé akce konkrétních modulech. Tento modul je vhodný nastavit jako výchozí po spuštění.
 
-- **Vytvoření modulu AI asistent**: Tento modul umožňuje snadné získávání informací a ovládání aplikace pomocí textu a hlasu a to na jedno kliknutí. Asistent vykonává akce v aplikaci za uživatele (např. "Napiš Honzovi zprávu o tom, že zítra se nedostavím na schůzku.", "Najdi v diskuzích zajímavá témata o umělé inteligenci.", "Přidej na nástěnku ovládací prvky pro kalendář a svátky" apod.).
+- **Vytvoření modulu AI asistent**: Tento modul umožňuje snadné získávání informací a ovládání aplikace pomocí textu a hlasu a to na jedno kliknutí. Asistent vykonává akce v aplikaci za uživatele (např. "Napiš Honzovi zprávu o tom, že se zítra nedostavím na schůzku.", "Najdi v diskuzích zajímavá témata o umělé inteligenci.", "Přidej na nástěnku ovládací prvky pro kalendář a svátky." apod.).
 
 - **Vytvoření protokolu DMTP**: Vytvoření dalšího protokolu do platformy, který je plně decentralizovaný. Protokol umožňuje uživatelům komunikovat bez nutnosti serverů a data ukládá na decentralizovaná úložiště v případě potřeby.
 
