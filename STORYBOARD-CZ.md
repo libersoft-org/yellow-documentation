@@ -2,7 +2,7 @@
 
 ## Cíl videa:
 
-- Seznámit uživatele s unikátními funkcemi aplikace za účelem, aby si stáhli a používali aplikaci
+- Seznámit běžné uživatele s unikátními funkcemi aplikace za účelem, aby si stáhli a používali aplikaci
 
 ## Zaměření na:
 
