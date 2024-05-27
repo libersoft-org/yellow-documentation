@@ -365,6 +365,13 @@ Jednotlivci, studenti, komunity a další.
 
 Modul **Seznamka** poskytuje moderní způsob **seznamování se s novými lidmi** za různými účely, jako např. **nalezení životního partnera**, **příležitostná setkání**, **přátelství** apod. Modul umožňuje **vytváření profilů** s **galerií fotografií** a podrobnými **osobními informacemi**, **vyhledávání** a **filtrování** ostatních uživatelů, možnosti **řazení uživatelů dle vzdálenosti** a dalších kritérií, možnost **kontaktování** pomocí zpráv, **lajkování** uživatelských profilů, nalezení **vzájemných shod**, přidávání uživatelů do **oblíbených** apod.
 
+#### Unikátní funkce:
+
+- Filtrování a řazení uživatelů od nejbližších po nejvzdálenějších dle jejich geolokace
+- Možnost oslovit uživatele napřímo bez nutnosti shody
+- Zobrazení seznamu uživatelů, kteří označili můj profil, že se jim líbí (rychlejší způsob zjištění shod)
+- Super like s notifikací druhé strany
+
 #### Cílová skupina:
 
 Jednotlivci, kteří hledají nové vztahy, přátele a známé za různými účely. Uživatelé různých věkových kategorií, především mladší generace a střední věk.
