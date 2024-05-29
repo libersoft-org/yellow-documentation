@@ -26,7 +26,7 @@
 - **Krokoměr** - Live a sdílený v reálném čase a fitness výzvy
 - **Horoskopy** - 
 - **360 stupňové fotky / videa** - 
-- **Planovani tras a zavodu na trase** - 
+- **Plánování tras a závodu na trase** - 
 - **Live stream v bublině** (synchronizovaný slider) - společné sledování filmu a následné komentování
 
 ## Chat boti
