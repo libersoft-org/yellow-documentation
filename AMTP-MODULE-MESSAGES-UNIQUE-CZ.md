@@ -19,7 +19,7 @@
 - **Automatické shrnutí konverzací** - 
 - **Plánovač cest** - 
 - **Ceny kryptoměn** - 
-- **3D modely s otacenim** - 
+- **3D modely s otáčením** - Při zaslání souborů 3D modelů (OBJ, FBX apod.) se model zobrazí přímo v bublině, lze ho otáčet a zvětšit na celou obrazovku.
 - **Časovač a odpočítávání** - 
 - **Sandboxovaný kód** - v bublině - se start / stop / check code tlacitkama
 - **Návrhy na filmy a seriály** - 
