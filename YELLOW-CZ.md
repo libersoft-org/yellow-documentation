@@ -250,11 +250,22 @@ Především organizace, jako jsou firmy, vzdělávací instituce, lektoři, kon
 
 ### ₿ Integrovaná kryptoměnová peněženka
 
-**Integrovaná kryptoměnová peněženka** umožňuje uživatelům snadno a bezpečně **uchovávat**, **odesílat** a **přijímat** kryptoměny přímo v klientské aplikaci. To umožňuje placení a převod kryptoměn a tokenů mezi uživateli platformy a také **platby v rámci komerčních modulů** (např. za prémiové funkce). Peněženka podporuje všechny [**EVM-kompatibilní**](https://cs.wikipedia.org/wiki/Ethereum) blockchainy (jako je Ethereum, Binance Smart Chain, Polygon apod.). Tato funkcionalita je zcela oddělená od síťového protokolu a je propojená přímo s blockchainy. Zároveň umožňuje ostatním modulům využívat funkcionality [**chytrých smluv**](https://cs.wikipedia.org/wiki/Chytr%C3%BD_kontrakt), což značně přispívá k důvěryhodnosti transakcí a rozšiřuje možnosti funkcionalit modulů.
+**Integrovaná kryptoměnová peněženka** umožňuje uživatelům snadno a bezpečně **uchovávat**, **odesílat** a **přijímat** kryptoměny přímo v klientské aplikaci. To umožňuje placení a převod kryptoměn a tokenů mezi uživateli platformy a také **platby v rámci komerčních modulů** (např. za prémiové funkce). Peněženka podporuje všechny [**EVM-kompatibilní**](https://cs.wikipedia.org/wiki/Ethereum) blockchainy (jako je Ethereum, Binance Smart Chain, Polygon apod.). Tato funkcionalita je zcela oddělená od síťového protokolu a je propojená přímo s blockchainy. Zároveň umožňuje ostatním modulům využívat funkcionality [**chytrých smluv**](https://cs.wikipedia.org/wiki/Chytr%C3%BD_kontrakt), což značně přispívá k důvěryhodnosti transakcí a rozšiřuje možnosti funkcionalit modulů. Peněženka je založená na knihovně [**Ethers.js**](https://ethers.org/).
 
 #### Seznam funkcí:
 
-TODO
+- Vytvoření seed klíče pro automatickou tvorbu privátních klíčů
+- Záloha a obnovení seed klíče
+- Možnost zašifrování privátních klíčů PIN kódem, heslem nebo biometrickým ověřením
+- Možnost připojení na více EVM-kompatibilních blockchainů
+- Možnost přepínání mezi více účty
+- Zobrazení zůstatků aktiv (hlavní měna, tokeny, NFT)
+- Spouštění metod chytrých smluv
+- Příjem a odeslání aktiv
+- Transakční historie, výpisy a hledání v transakcích
+- Generování QR kódu pro mobilní transakce
+
+- Provázání s řadou modulů (platby v každém komerčním modulu, možnost automatického zaslání zprávy o příchozí platbě nebo žádosti o platbu přes "Rychlé zprávy" - zpráva s QR kódem a tlačítkem pro potvrzení platby - s konkrétní čáskou či možností zadání libovolné / výchozí změnitelné částky)
 
 #### Unikátní funkce:
 
@@ -272,7 +283,14 @@ Tento modul umožňuje uživatelům **sledovat aktivity ostatních uživatelů**
 
 #### Seznam funkcí:
 
-TODO
+- Sledování profilů
+- Seznam sledujících / sledovaných a jejich export
+- Nastavení soukromí - viditelnost vlastního profilu (jen já / jen pro sledované / veřejný)
+- Úprava vlastního profilu, vč. výběru viditelných modulů v profilu
+- Zobrazení aktivit napříč všemi moduly nebo u konkrétních modulů
+- Blokování zobrazení profilu pro konkrétní uživatele
+- Seznam veřejných profilů s možností řazení a vyhledávání
+- Provázání s řadou modulů - zobrazení novinek pro moduly (video kanály, diskuzní fórum, newsfeed, příběhy, události, blogy, e-shopy, tržiště, příspěvky, skupinové financování, kalendář), sdílení profilu do zpráv
 
 #### Unikátní funkce:
 
@@ -513,7 +531,7 @@ Jednotlivci hledající interaktivní komunikaci, netradiční způsob seznamov�
 
 ### 🗺️ Mapy
 
-**Mapy** nabízí uživatelům rozsáhlé možnosti pro **prohlížení** a **interakci** s geografickými informacemi. Modul poskytuje funkcionality jako **vyhledávání**, **sdílení polohy** v reálném čase a **objevování míst** a nalézání **bodů zájmů** (místní obchody, služby, události apod.), které lze **hodnotit** a **komentovat**. Body zájmů jsou **filtrovatelné** a propojené s dalšími moduly aplikace, jako jsou profily nebo možnost kontaktování pomocí rychlých zpráv.
+**Mapy** nabízí uživatelům rozsáhlé možnosti pro **prohlížení** a **interakci** s geografickými informacemi. Modul poskytuje funkcionality jako **vyhledávání**, **sdílení polohy** v reálném čase a **objevování míst** a nalézání **bodů zájmů** (místní obchody, služby, události apod.), které lze **hodnotit** a **komentovat**. Body zájmů jsou **filtrovatelné** a propojené s dalšími moduly aplikace, jako jsou profily nebo možnost kontaktování pomocí rychlých zpráv. Mapy jsou založeny na [**OpenStreetMap**](https://www.openstreetmap.org/).
 
 #### Seznam funkcí:
 
@@ -604,6 +622,8 @@ Po dokončení této fáze se spustí nejprve marketing pomocí vlastních nást
 - **Vytvoření funkcionality otázkové hry do Seznamky**: 3 muži položí otázku 3 ženám a obráceně, po spuštění odpoví muži ženám na otázky a obráceně, následně si navzájem ohodnotí odpovědi a vyberou ten protějšek, který jim byl dle odpovědi nejsympatičtější. Kladné hodnocení odpovědí zajistí body, ty se následně přičítají na high score.
 
 - **Vytvoření protokolu DMTP**: Vytvoření dalšího protokolu do platformy, který je plně decentralizovaný. Protokol umožňuje uživatelům komunikovat bez nutnosti serverů a data ukládá na decentralizovaná úložiště v případě potřeby.
+
+- **Podpora hardwarových peněženek**: Podpora hardwarových peněženek jako Trezor a Ledger v integrované kryptoměnové peněžence - potvrzování transakcí přes HW peněženku představuje silnou ochranu před zavirovanými zařízeními.
 
 #### Marketing:
 
