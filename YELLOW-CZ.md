@@ -667,3 +667,5 @@ Po dokončení této fáze se spustí nejprve marketing pomocí vlastních nást
 #### Marketing:
 
 - Pokračování propagace produktu pomocí osvědčených marketingových kanálů z předchozích fází
+
+TODO - přesunout AMTP-MODULE-MESSAGES-UNIQUE.md sem?
