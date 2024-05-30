@@ -225,29 +225,6 @@ Tento modul představuje další základní funkcionalitu platformy, která umo�
 
 Uživatelé všech věkových kategorií, především těch, kteří hledají bezpečné telefonování pomocí hlasu či videa. Funkcionalita je vhodná pro širokou škálu domácích uživatelů i pro profesionální využití v různých typech organizací.
 
-### 📱 Konferenční hovory
-
-**Konferenční hovory** umožňují uživatelům účastnit se rozsáhlých skupinových diskuzí a setkání online v reálném čase. Tato funkcionalita je navržena pro efektivní a pohodlnou komunikaci mezi více účastníky a to prostřednictvím **hlasu** i **videa**. Taktéž je umožněno **sdílet obrazovku** a povolit konkrétním účastníkům **vzdálené řízení**. Moderátoři mají možnost řídit průběh hovoru, jako např. **přidávat**, **odstraňovat** a **blokovat** účastníky, **moderovat** ostatní a **zaznamenávat průběh hovoru**. Uživatelé mohou taktéž využít **chat** v rámci hovoru, **sdílet soubory** a **hlasovat v anketách**. Všechny konferenční hovory lze **plánovat** dopředu, aby mohli být účastníci včas informováni o termínu konference. Kvalita zvuku je automaticky optimalizována dle propustnosti síťového připojení.
-
-#### Seznam funkcí:
-
-- Hlasové a video konferenční hovory pro více účastníků
-- Moderování konference - udělování moderátorských práv, přídávání a odstraňování účastníků, povolování a zakazování mikrofonu / kamery
-- Sdílení obrazovky
-- Vzdálené ovládání zařízení
-- Nahrávání konference - správa nahrávek, možnost sdílení nahrávek (odeslání po skončení vybranému seznamu uživatelů do rychlých zpráv)
-- Koncové šifrování konference
-- Provázání s moduly "Kontakty" (výběr uživatelů) a "Kalendář" (uložení plánované konference do kalendáře, upozornění před začátkem)
-
-#### Unikátní funkce:
-
-- Vzdálené ovládání zařízení v rámci konferenčních hovorů
-- Provázanost s ostatními moduly (Kalendář apod.)
-
-#### Cílová skupina:
-
-Především organizace, jako jsou firmy, vzdělávací instituce, lektoři, konzultanti, organizátoři akcí, odborné skupiny apod.
-
 ### ₿ Integrovaná kryptoměnová peněženka
 
 **Integrovaná kryptoměnová peněženka** umožňuje uživatelům snadno a bezpečně **uchovávat**, **odesílat** a **přijímat** kryptoměny přímo v klientské aplikaci. To umožňuje placení a převod kryptoměn a tokenů mezi uživateli platformy a také **platby v rámci komerčních modulů** (např. za prémiové funkce). Peněženka podporuje všechny [**EVM-kompatibilní**](https://cs.wikipedia.org/wiki/Ethereum) blockchainy (jako je Ethereum, Binance Smart Chain, Polygon apod.). Tato funkcionalita je zcela oddělená od síťového protokolu a je propojená přímo s blockchainy. Zároveň umožňuje ostatním modulům využívat funkcionality [**chytrých smluv**](https://cs.wikipedia.org/wiki/Chytr%C3%BD_kontrakt), což značně přispívá k důvěryhodnosti transakcí a rozšiřuje možnosti funkcionalit modulů. Peněženka je založená na knihovně [**Ethers.js**](https://ethers.org/).
@@ -494,6 +471,29 @@ TODO
 #### Cílová skupina:
 
 Jednotlivci, týmy, pracovní skupiny, studenti, domácnosti a další.
+
+### 📱 Konferenční hovory
+
+**Konferenční hovory** umožňují uživatelům účastnit se rozsáhlých skupinových diskuzí a setkání online v reálném čase. Tato funkcionalita je navržena pro efektivní a pohodlnou komunikaci mezi více účastníky a to prostřednictvím **hlasu** i **videa**. Taktéž je umožněno **sdílet obrazovku** a povolit konkrétním účastníkům **vzdálené řízení**. Moderátoři mají možnost řídit průběh hovoru, jako např. **přidávat**, **odstraňovat** a **blokovat** účastníky, **moderovat** ostatní a **zaznamenávat průběh hovoru**. Uživatelé mohou taktéž využít **chat** v rámci hovoru, **sdílet soubory** a **hlasovat v anketách**. Všechny konferenční hovory lze **plánovat** dopředu, aby mohli být účastníci včas informováni o termínu konference. Kvalita zvuku je automaticky optimalizována dle propustnosti síťového připojení.
+
+#### Seznam funkcí:
+
+- Hlasové a video konferenční hovory pro více účastníků
+- Moderování konference - udělování moderátorských práv, přídávání a odstraňování účastníků, povolování a zakazování mikrofonu / kamery
+- Sdílení obrazovky
+- Vzdálené ovládání zařízení
+- Nahrávání konference - správa nahrávek, možnost sdílení nahrávek (odeslání po skončení vybranému seznamu uživatelů do rychlých zpráv)
+- Koncové šifrování konference
+- Provázání s moduly "Kontakty" (výběr uživatelů) a "Kalendář" (uložení plánované konference do kalendáře, upozornění před začátkem)
+
+#### Unikátní funkce:
+
+- Vzdálené ovládání zařízení v rámci konferenčních hovorů
+- Provázanost s ostatními moduly (Kalendář apod.)
+
+#### Cílová skupina:
+
+Především organizace, jako jsou firmy, vzdělávací instituce, lektoři, konzultanti, organizátoři akcí, odborné skupiny apod.
 
 ### 📂 Sdílení souborů
 
