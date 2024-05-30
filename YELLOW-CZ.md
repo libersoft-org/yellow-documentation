@@ -165,7 +165,7 @@ Díky strukturovanosti tohoto modulu je snadné ve zprávách **vyhledávat**.
 - Chatovací skupiny - obsahuje možnosti nastavení soukromí, moderování, vypsání a řazení seznamu veřejných skupin)
 - Novinkové skupiny - obsahuje možnosti nastavení soukromí, výběr moderátorů, vypsání a řazení seznamu skupin)
 - Indikace přečtení, informace o koncovém šifrování
-- Provázání s moduly "Profily" a "Volání".
+- Provázání s moduly "Profily" (odkaz na profil) a "Volání" (možnost zahájit audio / video hovor).
 
 #### Unikátní funkce:
 
@@ -193,19 +193,28 @@ Všechny kontakty jsou taktéž **synchronizovány** se serverem a mezi jednotli
 - Správa skupin kontaktů
 - Export vizitek
 - Fulltextové vyhledávání
-- Provázání s moduly "Rychlé zprávy" (sdílení kontaktu do zprávy) a "Profil" (odkaz na profil)
+- Provázání s moduly "Rychlé zprávy" (sdílení kontaktu do zprávy, odkaz na konverzaci) a "Profil" (odkaz na profil)
 
 #### Cílová skupina:
 
 Funkcionality modulu jsou vhodné pro jednotlivce i organizace, tedy pro všechny kteří potřebují efektivně spravovat a sdílet své osobní či profesní kontakty.
 
-### 📞 Hlasové a video hovory
+### 📞 Hovory
 
 Tento modul představuje další základní funkcionalitu platformy, která umožňuje uživatelům komunikovat prostřednictvím **videa** nebo pomocí **hlasu** v reálném čase. Hovory lze vést mezi dvěma **jednotlivci** i **skupinově**. Součástí je i možnost **sdílení obrazovky** a **vzdálené ovládání** zařízení. Hovory lze **nahrávat** a jednotlivé nahrávky přehrávat, spravovat a sdílet. **Kvalita hovoru** je automaticky přizpůsobena propustností internetového připojení.
 
 #### Seznam funkcí:
 
-TODO
+- Hlasové hovory
+- Video hovory
+- Skupinové hovory
+- Sdílení obrazovky
+- Vzdálené ovládaní zařízení
+- Nahrávání hovorů - hlas i video, správa nahrávek, možnost sdílení nahrávek (odeslání po skončení vybranému seznamu uživatelů do rychlých zpráv)
+- Historie volání
+- Automatické přizpůsobení kvality hovoru
+- Koncové šifrování hovorů
+- Provázání s moduly "Kontakty" (volání přímo z kontaktu) a "Kalendář" (plánování hovorů)
 
 #### Unikátní funkce:
 
@@ -222,7 +231,13 @@ Uživatelé všech věkových kategorií, především těch, kteří hledají b
 
 #### Seznam funkcí:
 
-TODO
+- Hlasové a video konferenční hovory pro více účastníků
+- Moderování konference - udělování moderátorských práv, přídávání a odstraňování účastníků, povolování a zakazování mikrofonu / kamery
+- Sdílení obrazovky
+- Vzdálené ovládání zařízení
+- Nahrávání konference - správa nahrávek, možnost sdílení nahrávek (odeslání po skončení vybranému seznamu uživatelů do rychlých zpráv)
+- Koncové šifrování konference
+- Provázání s moduly "Kontakty" (výběr uživatelů) a "Kalendář" (uložení plánované konference do kalendáře, upozornění před začátkem)
 
 #### Unikátní funkce:
 
