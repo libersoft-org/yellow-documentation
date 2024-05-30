@@ -602,7 +602,7 @@ Po dokončení technické realizace této fáze, dojde k seznámení produktu s 
 
 #### Technická realizace:
 
-- **Vytvoření ostatních modulů s vyšší prioritou**: (tyto moduly je nutné v této fázi dokončit)
+- **Vytvoření ostatních modulů s vyšší prioritou**: (tyto moduly je nutné v této fázi dokončit, jsou seřazeny podle priority)
 
   - integrovaná kryptoměnová peněženka
   - seznamka
