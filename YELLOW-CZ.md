@@ -165,7 +165,7 @@ Díky strukturovanosti tohoto modulu je snadné ve zprávách **vyhledávat**.
 - Chatovací skupiny - obsahuje možnosti nastavení soukromí, moderování, vypsání a řazení seznamu veřejných skupin)
 - Novinkové skupiny - obsahuje možnosti nastavení soukromí, výběr moderátorů, vypsání a řazení seznamu skupin)
 - Indikace přečtení, informace o koncovém šifrování
-- Propojení na modul "Profily" a "Volání".
+- Provázání s moduly "Profily" a "Volání".
 
 #### Unikátní funkce:
 
@@ -188,7 +188,12 @@ Všechny kontakty jsou taktéž **synchronizovány** se serverem a mezi jednotli
 
 #### Seznam funkcí:
 
-TODO
+- Správa kontaktů - vytváření, úprava, mazání, přiřazování fotografií, přidávání detailních informací, štítků a poznámek
+- Import a export kontaktů
+- Správa skupin kontaktů
+- Export vizitek
+- Fulltextové vyhledávání
+- Provázání s moduly "Rychlé zprávy" (sdílení kontaktu do zprávy) a "Profil" (odkaz na profil)
 
 #### Cílová skupina:
 
