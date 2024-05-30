@@ -608,7 +608,7 @@ Po dokončení technické realizace této fáze, dojde k seznámení produktu s 
 
 - **Vytvoření ostatních modulů**: (konferenční hovory, integrovaná kryptoměnová peněženka, profily a sledování, video kanály, diskuzní fórum, newsfeed, příběhy, blogy, e-shopy, tržiště, příspěvky, skupinové financování, kalendář, úkoly, sdílení souborů, seznamka, mapy, media feed)
 
-Moduly **virtual chat** a **hry** budou vytvořeny v případě včasnějšího splnění plánu, v opačném případě budou přesunuty do další fáze.
+Moduly **virtual chat**, **hry** a **media feed** budou vytvořeny v případě včasnějšího splnění plánu, v opačném případě budou přesunuty do další fáze.
 
 #### Marketing:
 
