@@ -254,6 +254,41 @@ Uživatelé všech věkových kategorií, především těch, kteří hledají b
 
 Uživatelé, kteří chtějí v rámci platformy platit za služby, které moduly poskytují, využívat chytré smlouvy nebo si mezi sebou navzájem zasílat platby.
 
+### ❤️ Seznamka
+
+Modul **Seznamka** poskytuje moderní způsob **seznamování se s novými lidmi** za různými účely, jako např. **nalezení životního partnera**, **příležitostná setkání**, **přátelství** apod. Modul umožňuje **vytváření profilů** s **galerií fotografií** a podrobnými **osobními informacemi**, **vyhledávání** a **filtrování** ostatních uživatelů, možnosti **řazení uživatelů dle vzdálenosti** a dalších kritérií, možnost **kontaktování** pomocí zpráv, **lajkování** uživatelských profilů, nalezení **vzájemných shod**, přidávání uživatelů do **oblíbených** apod.
+
+#### Seznam funkcí:
+
+TODO
+
+#### Unikátní funkce:
+
+- Filtrování a řazení uživatelů od nejbližších po nejvzdálenějších dle jejich geolokace
+- Možnost oslovit uživatele napřímo bez nutnosti shody
+- Zobrazení seznamu uživatelů, kteří označili můj profil, že se jim líbí (rychlejší způsob zjištění shod)
+- Super like s notifikací druhé strany
+
+#### Cílová skupina:
+
+Jednotlivci, kteří hledají nové vztahy, přátele a známé za různými účely. Uživatelé různých věkových kategorií, především mladší generace a střední věk.
+
+#### Cílová skupina:
+
+Jednotlivci hledající interaktivní komunikaci, netradiční způsob seznamování s novými lidmi a zábavu ve virtuálním světě. Modul je určen především mladší generaci uživatelů.
+
+### 📂 Sdílení souborů
+
+**Sdílení souborů** umožňuje uživatelům **nahrávat**, **stahovat**, přehledně **organizovat** a **sdílet** soubory různých formátů. Tento modul je navržen pro snadnou a efektivní výměnu videí, software, obrázků, dokumentů a dalších typů souborů mezi uživateli.
+
+#### Seznam funkcí:
+
+TODO
+
+#### Cílová skupina:
+
+Jednotlivci, studenti, komunity a další.
+
 ### 🧑‍🤝‍🧑 Profily a sledování
 
 Tento modul umožňuje uživatelům **sledovat aktivity ostatních uživatelů** napříč moduly, čímž zajišťuje interakci a udržování kontaktu mezi lidmi. Tato funkcionalita podporuje vytváření a správu **seznamu sledovaných profilů**, **zobrazování aktivit**, **upozorňování na nové aktivity**, **zobrazení seznamu nejsledovanějších veřejných profilů** apod.
@@ -495,40 +530,13 @@ Jednotlivci, týmy, pracovní skupiny, studenti, domácnosti a další.
 
 Především organizace, jako jsou firmy, vzdělávací instituce, lektoři, konzultanti, organizátoři akcí, odborné skupiny apod.
 
-### ❤️ Seznamka
+### ⛰️ Virtual chat
 
-Modul **Seznamka** poskytuje moderní způsob **seznamování se s novými lidmi** za různými účely, jako např. **nalezení životního partnera**, **příležitostná setkání**, **přátelství** apod. Modul umožňuje **vytváření profilů** s **galerií fotografií** a podrobnými **osobními informacemi**, **vyhledávání** a **filtrování** ostatních uživatelů, možnosti **řazení uživatelů dle vzdálenosti** a dalších kritérií, možnost **kontaktování** pomocí zpráv, **lajkování** uživatelských profilů, nalezení **vzájemných shod**, přidávání uživatelů do **oblíbených** apod.
-
-#### Seznam funkcí:
-
-TODO
-
-#### Unikátní funkce:
-
-- Filtrování a řazení uživatelů od nejbližších po nejvzdálenějších dle jejich geolokace
-- Možnost oslovit uživatele napřímo bez nutnosti shody
-- Zobrazení seznamu uživatelů, kteří označili můj profil, že se jim líbí (rychlejší způsob zjištění shod)
-- Super like s notifikací druhé strany
-
-#### Cílová skupina:
-
-Jednotlivci, kteří hledají nové vztahy, přátele a známé za různými účely. Uživatelé různých věkových kategorií, především mladší generace a střední věk.
-
-#### Cílová skupina:
-
-Jednotlivci hledající interaktivní komunikaci, netradiční způsob seznamování s novými lidmi a zábavu ve virtuálním světě. Modul je určen především mladší generaci uživatelů.
-
-### 📂 Sdílení souborů
-
-**Sdílení souborů** umožňuje uživatelům **nahrávat**, **stahovat**, přehledně **organizovat** a **sdílet** soubory různých formátů. Tento modul je navržen pro snadnou a efektivní výměnu videí, software, obrázků, dokumentů a dalších typů souborů mezi uživateli.
+**Virtual chat** nabízí uživatelům prostředí **virtuálního světa**, ve kterém mohou vzájemně **komunikovat** a bavit se s ostatními prostřednictvím **textového chatu** (soukromých nebo veřejných chatovacích bublin) či **hlasového chatu**, přizpůsobovat si svou virtuální postavičku, **navštěvovat různá místa** ve virtuálním prostředí. Uživatelé taktéž mohou **interagovat s ostatními objekty**.
 
 #### Seznam funkcí:
 
 TODO
-
-#### Cílová skupina:
-
-Jednotlivci, studenti, komunity a další.
 
 ### 🗺️ Mapy
 
@@ -545,14 +553,6 @@ TODO
 #### Cílová skupina:
 
 Uživatelé, kteří se chtějí propojovat v reálném světě s ostatními a sdílet svou polohu nebo uživatelé hledající a hodnotící body zájmů.
-
-### ⛰️ Virtual chat
-
-**Virtual chat** nabízí uživatelům prostředí **virtuálního světa**, ve kterém mohou vzájemně **komunikovat** a bavit se s ostatními prostřednictvím **textového chatu** (soukromých nebo veřejných chatovacích bublin) či **hlasového chatu**, přizpůsobovat si svou virtuální postavičku, **navštěvovat různá místa** ve virtuálním prostředí. Uživatelé taktéž mohou **interagovat s ostatními objekty**.
-
-#### Seznam funkcí:
-
-TODO
 
 ### 🎮 Hry
 
