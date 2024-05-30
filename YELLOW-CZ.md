@@ -414,6 +414,22 @@ TODO
 
 Amatérští i profesionální autoři, čtenáři různorodého obsahu.
 
+### 🗺️ Mapy
+
+**Mapy** nabízí uživatelům rozsáhlé možnosti pro **prohlížení** a **interakci** s geografickými informacemi. Modul poskytuje funkcionality jako **vyhledávání**, **sdílení polohy** v reálném čase a **objevování míst** a nalézání **bodů zájmů** (místní obchody, služby, události apod.), které lze **hodnotit** a **komentovat**. Body zájmů jsou **filtrovatelné** a propojené s dalšími moduly aplikace, jako jsou profily nebo možnost kontaktování pomocí rychlých zpráv. Mapy jsou založeny na [**OpenStreetMap**](https://www.openstreetmap.org/).
+
+#### Seznam funkcí:
+
+TODO
+
+#### Unikátní funkce:
+
+- Provázanost s ostatními moduly (např. body zájmů z událostí, veřejných skupin, video kanálů apod.)
+
+#### Cílová skupina:
+
+Uživatelé, kteří se chtějí propojovat v reálném světě s ostatními a sdílet svou polohu nebo uživatelé hledající a hodnotící body zájmů.
+
 ### 🛍️ E-shopy
 
 Tento modul umožňuje uživatelům **vytvářet** a **spravovat** vlastní **online obchody** a v takovýchto obchodech pohodlně **nakupovat**. Pro správu těchto e-shopů je poskytnuta sada nástrojů pro prodej produktů a služeb, správu objednávek, dokladů, plateb a možnost komunikace se zákazníky.
@@ -537,22 +553,6 @@ Především organizace, jako jsou firmy, vzdělávací instituce, lektoři, kon
 #### Seznam funkcí:
 
 TODO
-
-### 🗺️ Mapy
-
-**Mapy** nabízí uživatelům rozsáhlé možnosti pro **prohlížení** a **interakci** s geografickými informacemi. Modul poskytuje funkcionality jako **vyhledávání**, **sdílení polohy** v reálném čase a **objevování míst** a nalézání **bodů zájmů** (místní obchody, služby, události apod.), které lze **hodnotit** a **komentovat**. Body zájmů jsou **filtrovatelné** a propojené s dalšími moduly aplikace, jako jsou profily nebo možnost kontaktování pomocí rychlých zpráv. Mapy jsou založeny na [**OpenStreetMap**](https://www.openstreetmap.org/).
-
-#### Seznam funkcí:
-
-TODO
-
-#### Unikátní funkce:
-
-- Provázanost s ostatními moduly (např. body zájmů z událostí, veřejných skupin, video kanálů apod.)
-
-#### Cílová skupina:
-
-Uživatelé, kteří se chtějí propojovat v reálném světě s ostatními a sdílet svou polohu nebo uživatelé hledající a hodnotící body zájmů.
 
 ### 🎮 Hry
 
