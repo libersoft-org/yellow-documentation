@@ -142,6 +142,8 @@ Díky strukturovanosti tohoto modulu je snadné ve zprávách **vyhledávat**.
 
 #### Seznam funkcí:
 
+TODO - přesunout popisy vyjmenovaných funkcionalit výše do seznamu níže - toto u všech modulů!!!
+
 - Různé typy zpráv:
   - Textové zprávy (prostý i formátovaný text)
   - Hlasové zprávy
