@@ -22,11 +22,15 @@
 - **Horoskopy** - Výběr znamení / dalších kritérií a následné zaslání horoskopu druhé straně.
 - **360 stupňové fotky / videa** - Možnost zobrazení otočitelného panoramatického obrázku / videa přímo v chatovací bublině s možností zobrazení na celé obrazovce.
 - **Live stream v bublině** - Společné sledování filmu se synchronizovaným sliderem - přináší možnost sledovat oběma stranám stejné video synchronizovaně v reálném čase a možnost live komentářů.
+- **Hlasové filtry** - Pozměnění hlasu ve stylu aplikace MorphVOX přímo v hlasových zprávách nebo při hovorech.
+- **Anonymní chatovací skupiny** - Možnost u chatovacích skupin nastavit anonymitu účastníků
+- **Upozorňování zprávami na pohyby v krypto peněžence** - Možnost monitorovat pohyby na krypto peněžence (jak hlavní měna, tak tokeny i NFT) pomocí zpráv nebo upozornění zprávou druhé straně, že uživatel provedl transakci
 
 ## Chat boti
 
 - **Monitoring zdraví** - Detekce pádu, tepu, teploty, zasílání výstrah (např. Mii band - propojený s Androidem a následně Yellow s ním propojit přes Fitness API). Využitelné např. k monitoringu seniorů, pacientů apod.
 - **Automatické shrnutí konverzací** - Využití AI u velmi dlouhých textů - získání přehledu toho, o čem byla dlouhá konverzace.
+- **Geofencing** - Upozornění zprávou na to, když nějaké zařízení opustí předem vymezený prostor. Vhodné pro monitorování domácích zvířat apod.
 
 ## Ostatní funkce
 
