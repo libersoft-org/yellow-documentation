@@ -306,7 +306,16 @@ Uživatelé sociálních sítí, odběratelé novinek dle zájmových oblastí a
 
 #### Seznam funkcí:
 
-TODO
+- Možnost vytvoření více kanálů
+- Správa videí (nahrávání, mazání, playlisty, statistiky sledovanosti, reakcí, komentářů apod.)
+- Sledování kanálů
+- Přehrávání videí + komentáře, reakce, sdílení, zasílání darů
+- Živá vysílání - vč. komentářů, reakcí, sdílení, zasílání darů
+- Krátká "reels" videa
+- Zasílání oznámení o nových videích odberatelům
+- Prodej videí
+- Blokování a nahlašování kanálů
+- Provázání s dalšími moduly - tlačítka v kanálu a pod videi (stejné jako u profilů, vč. odkazu na profil samotný), zaslání rychlé zprávy majiteli kanálu
 
 #### Unikátní funkce:
 
