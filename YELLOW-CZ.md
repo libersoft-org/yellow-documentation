@@ -132,13 +132,40 @@ Modul umožňuje nejen konverzace **jeden na jednoho**, ale také poskytuje **ch
 
 Uživatelské účty mohou být ovládány **chatboty**, což je vhodné například pro vytváření konverzací s uživatelskou podporou, pro objednávání zboží přes zprávy apod.
 
-Na zprávy je možné **odpovídat**, **přeposílat** je a **reagovat** pomocí emotikon. Kontakty zasílající nevyžádané zprávy je taktéž možné snadno **zablokovat**.
+Na zprávy je možné **odpovídat**, **přeposílat** je a **reagovat** pomocí emotikon. Kontakty zasílající nevyžádané zprávy je taktéž možné snadno **zablokovat** a **nahlásit**.
 
 Klientská aplikace umožňuje i vytváření **šablon zpráv**, což je využitelné například pro rychlou komunikaci se zákazníky v rámci uživatelské podpory.
 
 Všechny zprávy je možné automaticky či na vyžádání **překládat** do mnoha světových jazyků.
 
 Díky strukturovanosti tohoto modulu je snadné ve zprávách **vyhledávat**.
+
+#### Seznam funkcí:
+
+- Různé typy zpráv:
+  - Textové zprávy (prostý i formátovaný text)
+  - Hlasové zprávy
+  - Video zprávy
+  - Přenos souborů (omezená velikost pro uložení na serveru, neomezená velikost bez ukládání na serveru)
+  - Emotikony
+  - Animované nálepky
+  - Obrázky (vč. animovaných GIFů)
+  - Videa
+  - Kontakty
+  - Mapa (+ živý pohyb bodů na mapě po omezenou dobu)
+  - Vícedílné zprávy
+- Odpovídání, přeposílání a reakce
+- Blokování kontaktů
+- Nahlášení kontaktů
+- Témata zpráv v rámci konverzace
+- Řazení konverzací do skupin (např. práce, rodina, přátelé apod.)
+- Šablony zpráv
+- Překlady zpráv
+- Vyhledávání v konverzacích
+- Chatovací skupiny - obsahuje možnosti nastavení soukromí, moderování, vypsání a řazení seznamu veřejných skupin)
+- Novinkové skupiny - obsahuje možnosti nastavení soukromí, výběr moderátorů, vypsání a řazení seznamu skupin)
+- Indikace přečtení, informace o koncovém šifrování
+- Propojení na modul "Profily" a "Volání".
 
 #### Unikátní funkce:
 
@@ -159,6 +186,10 @@ Tento modul umožňuje uživatelům **spravovat** a **organizovat** své **konta
 
 Všechny kontakty jsou taktéž **synchronizovány** se serverem a mezi jednotlivými koncovými zařízeními.
 
+#### Seznam funkcí:
+
+TODO
+
 #### Cílová skupina:
 
 Funkcionality modulu jsou vhodné pro jednotlivce i organizace, tedy pro všechny kteří potřebují efektivně spravovat a sdílet své osobní či profesní kontakty.
@@ -166,6 +197,10 @@ Funkcionality modulu jsou vhodné pro jednotlivce i organizace, tedy pro všechn
 ### 📞 Hlasové a video hovory
 
 Tento modul představuje další základní funkcionalitu platformy, která umožňuje uživatelům komunikovat prostřednictvím **videa** nebo pomocí **hlasu** v reálném čase. Hovory lze vést mezi dvěma **jednotlivci** i **skupinově**. Součástí je i možnost **sdílení obrazovky** a **vzdálené ovládání** zařízení. Hovory lze **nahrávat** a jednotlivé nahrávky přehrávat, spravovat a sdílet. **Kvalita hovoru** je automaticky přizpůsobena propustností internetového připojení.
+
+#### Seznam funkcí:
+
+TODO
 
 #### Unikátní funkce:
 
@@ -180,6 +215,10 @@ Uživatelé všech věkových kategorií, především těch, kteří hledají b
 
 **Konferenční hovory** umožňují uživatelům účastnit se rozsáhlých skupinových diskuzí a setkání online v reálném čase. Tato funkcionalita je navržena pro efektivní a pohodlnou komunikaci mezi více účastníky a to prostřednictvím **hlasu** i **videa**. Taktéž je umožněno **sdílet obrazovku** a povolit konkrétním účastníkům **vzdálené řízení**. Moderátoři mají možnost řídit průběh hovoru, jako např. **přidávat**, **odstraňovat** a **blokovat** účastníky, **moderovat** ostatní a **zaznamenávat průběh hovoru**. Uživatelé mohou taktéž využít **chat** v rámci hovoru, **sdílet soubory** a **hlasovat v anketách**. Všechny konferenční hovory lze **plánovat** dopředu, aby mohli být účastníci včas informováni o termínu konference. Kvalita zvuku je automaticky optimalizována dle propustnosti síťového připojení.
 
+#### Seznam funkcí:
+
+TODO
+
 #### Unikátní funkce:
 
 - Vzdálené ovládání zařízení v rámci konferenčních hovorů
@@ -192,6 +231,10 @@ Především organizace, jako jsou firmy, vzdělávací instituce, lektoři, kon
 ### ₿ Integrovaná kryptoměnová peněženka
 
 **Integrovaná kryptoměnová peněženka** umožňuje uživatelům snadno a bezpečně **uchovávat**, **odesílat** a **přijímat** kryptoměny přímo v klientské aplikaci. To umožňuje placení a převod kryptoměn a tokenů mezi uživateli platformy a také **platby v rámci komerčních modulů** (např. za prémiové funkce). Peněženka podporuje všechny [**EVM-kompatibilní**](https://cs.wikipedia.org/wiki/Ethereum) blockchainy (jako je Ethereum, Binance Smart Chain, Polygon apod.). Tato funkcionalita je zcela oddělená od síťového protokolu a je propojená přímo s blockchainy. Zároveň umožňuje ostatním modulům využívat funkcionality [**chytrých smluv**](https://cs.wikipedia.org/wiki/Chytr%C3%BD_kontrakt), což značně přispívá k důvěryhodnosti transakcí a rozšiřuje možnosti funkcionalit modulů.
+
+#### Seznam funkcí:
+
+TODO
 
 #### Unikátní funkce:
 
@@ -207,6 +250,10 @@ Uživatelé, kteří chtějí v rámci platformy platit za služby, které modul
 
 Tento modul umožňuje uživatelům **sledovat aktivity ostatních uživatelů** napříč moduly, čímž zajišťuje interakci a udržování kontaktu mezi lidmi. Tato funkcionalita podporuje vytváření a správu **seznamu sledovaných profilů**, **zobrazování aktivit**, **upozorňování na nové aktivity**, **zobrazení seznamu nejsledovanějších veřejných profilů** apod.
 
+#### Seznam funkcí:
+
+TODO
+
 #### Unikátní funkce:
 
 - Veřejný obsah profilů z více modulů na jednom místě (provázanost s moduly)
@@ -218,6 +265,10 @@ Uživatelé sociálních sítí, odběratelé novinek dle zájmových oblastí a
 ### 🎞️ Video kanály
 
 **Video kanály** umožňují uživatelům **vytvářet** a **spravovat** různé druhy **video obsahu**, jako např. **klasická videa**, **živá vysílání** a **krátká "reels" videa**. Tato funkcionalita poskytuje nástroje pro **tvorbu a distribuci video obsahu**. Zároveň poskytuje možnosti zapojení uživatelů, jako jsou **reakce** na videa, **komentáře**, **sdílení** apod.
+
+#### Seznam funkcí:
+
+TODO
 
 #### Unikátní funkce:
 
@@ -232,6 +283,10 @@ Sledovatelé video obsahu, tvůrci video obsahu, vzdělávací instituce, umělc
 
 **Diskuzní fórum** poskytuje prostor pro uživatele, kde mohou **diskutovat** o různých tématech, **sdílet názory**, **klást otázky** a **poskytovat odpovědi**. Tento modul umožňuje **vytváření**, **správu** a **vyhledávání** diskuzí filtrovatelných dle kategorií a obsahu, nabízí nástroje pro moderování obsahu a podporuje živé a strukturované konverzace. Zároveň nabízí možnosti **nastavení soukromí** pro soukromé diskuzní skupiny.
 
+#### Seznam funkcí:
+
+TODO
+
 #### Unikátní funkce:
 
 - Provázanost s ostatními moduly (např. tlačítko pod videem ve video kanálech, sekce v profilech apod.)
@@ -243,6 +298,10 @@ Zájmové, profesní, vzdělávací, odborné a jiné skupiny, komunity, organiz
 ### ⭐ Newsfeed
 
 Tento modul poskytuje uživatelům personalizovaný **přehled o nejnovějších příspěvcích** sledovaných profilů. Poskytuje možnost udržení přehledu o novinkách a interakcích v rámci sítě uživatelů. Taktéž umožňuje zapojení uživatelů ve formě reakcí a komentářů k jednotlivým příspěvkům.
+
+#### Seznam funkcí:
+
+TODO
 
 #### Unikátní funkce:
 
@@ -256,6 +315,10 @@ Tento modul poskytuje uživatelům personalizovaný **přehled o nejnovějších
 
 Modul **Příběhy** umožňuje uživatelům **vytvářet vizuální příspěvky**, které uživatelé mohou sdílet se svými přáteli a sledovateli. Tyto příspěvky jsou viditelné pouze po omezenou dobu (typicky 24 hodin) a umožňují uživatelům **sdílet okamžité momenty**, **krátká videa**, **obrázky**, **zvuk** apod. v atraktivním formátu, na který mohou odběratelé snadno **reagovat** nebo je **okomentovat**.
 
+#### Seznam funkcí:
+
+TODO
+
 #### Cílová skupina:
 
 Široká skupina koncových uživatelů, tvůrci obsahu, organizace poskytující obsah svým odběratelům apod.
@@ -263,6 +326,10 @@ Modul **Příběhy** umožňuje uživatelům **vytvářet vizuální příspěvk
 ### 🗓️ Události
 
 Tento modul umožňuje uživatelům **vytvářet**, **organizovat** a **sdílet** různé typy **událostí**, jako jsou **osobní setkání** či **veřejné akce**. Tento modul poskytuje **nástroje pro plánování**, **řízení**, **sdílení**, **reagování** a **komentování událostí**, čímž usnadňuje koordinaci a zapojení účastníků. U jednotlivých událostí je umožněno **nastavení soukromí** a **viditelnost**. Modul taktéž poskytuje **seznam veřejných událostí**, které jsou filtrovatelné a seřaditelné podle různých kritérií.
+
+#### Seznam funkcí:
+
+TODO
 
 #### Unikátní funkce:
 
@@ -276,6 +343,10 @@ Organizátoři a pořadatelé veřejných událostí, běžní uživatelé organ
 
 **Blogy** poskytují autorům možnost **vytvářet**, **publikovat** a **sdílet** své myšlenky a názory ve formě článků a čtenářům tyto články **číst**, **reagovat** na ně a **komentovat** v diskuzi. Modul je navržen tak, aby usnadňoval tvorbu obsahu a podporoval zapojení čtenářů. Taktéž poskytuje nástroje pro snadné psaní a úpravu textu a přidávání multimediálního obsahu. Zároveň je i implementována funkcionalita **seznamu blogů** s možností filtrace a řazení dle různých kritérií.
 
+#### Seznam funkcí:
+
+TODO
+
 #### Unikátní funkce:
 
 - Provázanost s ostatními moduly (např. tlačítko pod videem ve video kanálech, sekce v profilech apod.)
@@ -288,6 +359,10 @@ Amatérští i profesionální autoři, čtenáři různorodého obsahu.
 
 Tento modul umožňuje uživatelům **vytvářet** a **spravovat** vlastní **online obchody** a v takovýchto obchodech pohodlně **nakupovat**. Pro správu těchto e-shopů je poskytnuta sada nástrojů pro prodej produktů a služeb, správu objednávek, dokladů, plateb a možnost komunikace se zákazníky.
 
+#### Seznam funkcí:
+
+TODO
+
 #### Unikátní funkce:
 
 - Provázanost s ostatními moduly (např. tlačítko pod videem ve video kanálech, lokace v mapách, sekce v profilech apod.)
@@ -299,6 +374,10 @@ E-commerce podnikatelé, digitální tvůrci, poskytovatelé služeb roznášek 
 ### 🏪 Tržiště
 
 Modul **Tržiště** umožňuje koncovým uživatelům **nakupovat** a **prodávat produkty a služby** mezi sebou. Poskytuje přehlednou platformu pro **inzerci**, kde mohou uživatelé nabízet své zboží a služby za **fixní ceny** nebo je dražit formou **aukce**. Modul umožňuje vyhledávání a filtrování položek dle různých kritérií, **hodnotit prodejce** a **komunikovat** s nimi.
+
+#### Seznam funkcí:
+
+TODO
 
 #### Unikátní funkce:
 
@@ -313,6 +392,10 @@ Uživatelé, kteří prodávají, draží či nakupují zboží a služby formou
 
 Tento modul umožňuje uživatelům **finančně podporovat** konkrétní uživatele, projekty či charity prostřednictvím finančních darů. Kdokoliv si může založit vlastní sbírku na libovolné účely a vybírat tak dary od ostatních. Modul umožňuje snadnou **správu sbírek**, poskytuje **seznam veřejných sbírek** filtrovatelný a řaditelný dle různých kritérií. Taktéž umožňuje **komunikaci** mezi dárci a provozovateli sbírky.
 
+#### Seznam funkcí:
+
+TODO
+
 #### Unikátní funkce:
 
 - Provázanost s ostatními moduly (např. tlačítko pod videem ve video kanálech, sekce v profilech apod.)
@@ -324,6 +407,10 @@ Uživatelé provozující či přispívající na osobní, charitativní, komuni
 ### 🤑 Skupinové financování
 
 **Skupinové financování** (crowdfunding) umožňuje uživatelům **získávat finanční prostředky** na různé projekty prostřednictvím příspěvků od přispěvatelů, za což tito přispěvatelé dostávají různé **odměny**, **podíly** na projektu či jiné **výhody**. Tento modul poskytuje komplexní nástroje pro vytváření a správu kampaní, čímž umožňuje realizaci inovativních nápadů, projektů a podnikatelských záměrů. Kdokoliv si může založit vlastní kampaň pro libovolný účel a sestavit jí podle svého uvážení. Platforma poskytuje i **seznam veřejných kampaní**, které lze filtrovat a řadit dle různých kritérií.
+
+#### Seznam funkcí:
+
+TODO
 
 #### Unikátní funkce:
 
@@ -337,6 +424,10 @@ Podnikatelé, startupy, tvůrci a umělci, neziskové organizace, komunity, inov
 
 **Kalendář** je navržen pro efektivní **organizování času** a **plánování událostí**. Tento modul umožňuje uživatelům **vytvářet**, **synchronizovat** a **sdílet** kalendáře s ostatními členy komunity, což usnadňuje organizaci osobních i pracovních aktivit.
 
+#### Seznam funkcí:
+
+TODO
+
 #### Unikátní funkce:
 
 - Provázanost s ostatními moduly (např. automatické vytvoření události spojené s konferenčním hovorem, veřejný kalendář v profilech apod.)
@@ -349,6 +440,10 @@ Firemní uživatelé, domácí uživatelé, studenti, komunity apod.
 
 Modul **Úkoly** umožňuje uživatelům **vytvářet**, **spravovat**, **delegovat**, **sledovat průběh**, **sdílet** a **komentovat** úkoly v reálném čase. Tento modul je navržen tak, aby zlepšoval **produktivitu** a **organizaci práce**, usnadňoval **spolupráci** v týmu a zajišťoval, že všechny úkoly budou dokončeny včas a efektivně.
 
+#### Seznam funkcí:
+
+TODO
+
 #### Cílová skupina:
 
 Jednotlivci, týmy, pracovní skupiny, studenti, domácnosti a další.
@@ -357,6 +452,10 @@ Jednotlivci, týmy, pracovní skupiny, studenti, domácnosti a další.
 
 **Sdílení souborů** umožňuje uživatelům **nahrávat**, **stahovat**, přehledně **organizovat** a **sdílet** soubory různých formátů. Tento modul je navržen pro snadnou a efektivní výměnu videí, software, obrázků, dokumentů a dalších typů souborů mezi uživateli.
 
+#### Seznam funkcí:
+
+TODO
+
 #### Cílová skupina:
 
 Jednotlivci, studenti, komunity a další.
@@ -364,6 +463,10 @@ Jednotlivci, studenti, komunity a další.
 ### ❤️ Seznamka
 
 Modul **Seznamka** poskytuje moderní způsob **seznamování se s novými lidmi** za různými účely, jako např. **nalezení životního partnera**, **příležitostná setkání**, **přátelství** apod. Modul umožňuje **vytváření profilů** s **galerií fotografií** a podrobnými **osobními informacemi**, **vyhledávání** a **filtrování** ostatních uživatelů, možnosti **řazení uživatelů dle vzdálenosti** a dalších kritérií, možnost **kontaktování** pomocí zpráv, **lajkování** uživatelských profilů, nalezení **vzájemných shod**, přidávání uživatelů do **oblíbených** apod.
+
+#### Seznam funkcí:
+
+TODO
 
 #### Unikátní funkce:
 
@@ -380,6 +483,10 @@ Jednotlivci, kteří hledají nové vztahy, přátele a známé za různými ú�
 
 **Virtual chat** nabízí uživatelům prostředí **virtuálního světa**, ve kterém mohou vzájemně **komunikovat** a bavit se s ostatními prostřednictvím **textového chatu** (soukromých nebo veřejných chatovacích bublin) či **hlasového chatu**, přizpůsobovat si svou virtuální postavičku, **navštěvovat různá místa** ve virtuálním prostředí. Uživatelé taktéž mohou **interagovat s ostatními objekty**.
 
+#### Seznam funkcí:
+
+TODO
+
 #### Cílová skupina:
 
 Jednotlivci hledající interaktivní komunikaci, netradiční způsob seznamování s novými lidmi a zábavu ve virtuálním světě. Modul je určen především mladší generaci uživatelů.
@@ -387,6 +494,10 @@ Jednotlivci hledající interaktivní komunikaci, netradiční způsob seznamov�
 ### 🗺️ Mapy
 
 **Mapy** nabízí uživatelům rozsáhlé možnosti pro **prohlížení** a **interakci** s geografickými informacemi. Modul poskytuje funkcionality jako **vyhledávání**, **sdílení polohy** v reálném čase a **objevování míst** a nalézání **bodů zájmů** (místní obchody, služby, události apod.), které lze **hodnotit** a **komentovat**. Body zájmů jsou **filtrovatelné** a propojené s dalšími moduly aplikace, jako jsou profily nebo možnost kontaktování pomocí rychlých zpráv.
+
+#### Seznam funkcí:
+
+TODO
 
 #### Unikátní funkce:
 
@@ -400,6 +511,10 @@ Uživatelé, kteří se chtějí propojovat v reálném světě s ostatními a s
 
 Modul **Hry** poskytuje uživatelům zábavu prostřednictvím her, které mohou hrát se svými přáteli online.
 
+#### Seznam funkcí:
+
+TODO
+
 #### Unikátní funkce:
 
 - Provázanost s ostatními moduly (např. hraní her přímo ve zprávách apod.)
@@ -411,6 +526,10 @@ Hráči her různých žánrů, sociálně zaměření hráči, příležitostn�
 ### 📰 Media feed
 
 Modul **Media feed** poskytuje uživatelům **přehled zpráv** a informací z různých **médií**. Tento modul agreguje obsah z různých zpravodajských **serverů**, **blogů**, **sociálních médií** a dalších zdrojů, aby uživatelé měli aktuální přehled o dění v okolí a ve světě na jednom místě. Uživatelé si mohou personalizovat **výběr oblíbených médií** a **sdílet** obsah s ostatními uživateli.
+
+#### Seznam funkcí:
+
+TODO
 
 #### Cílová skupina:
 
