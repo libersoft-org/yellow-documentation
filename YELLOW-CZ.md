@@ -344,7 +344,16 @@ Sledovatelé video obsahu, tvůrci video obsahu, vzdělávací instituce, umělc
 
 #### Seznam funkcí:
 
-TODO
+- Kategorie diskuzí - určuje správce serveru
+- Seznam veřejných diskuzí - seřaditelný dle počtu příspěvků a odpovědí / data založení, filtrovatelný dle kategorií
+- Seznam příspěvků v diskuzi
+- Zobrazení příspěvku a jeho odpovědí
+- Možnost psaní příspěvků a odpovědí - různé druhy zpráv (stejně jako u modulu "Rychlé zprávy")
+- Možnost reakcí na příspěvky a odpovědi
+- Moderování diskuzí - mazání příspěvků a odpovědí
+- Vyhledávání diskuzí, příspěvků a odpovědí
+- Nahlašování závadných diskuzí, příspěvků a odpovědí
+- Nastavení soukromí (veřejná / soukromá diskuze)
 
 #### Unikátní funkce:
 
