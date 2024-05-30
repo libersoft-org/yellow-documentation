@@ -589,13 +589,9 @@ Aktivní čtenáři a informovaní uživatelé, obchodníci, studenti, zájemci 
 #### Technická realizace:
 
 - **Serverová a klientská aplikace**: Implementace AMTP, modularity, vrstev zabezpečení, vícejazyková podpora (pouze klientská aplikace), motivy
-
 - **Modul pro rychlé zprávy**: Prosté i formátované zprávy, vícedílné zprávy, hlasové a video zprávy, podpora animovaných nálepek, přenos souborů, sdílení kontaktů, složky konverzací, témata zpráv, blokování kontaktů, chatovací skupiny, novinkové skupiny, seznamy veřejných skupin, překlad zpráv, šablony zpráv
-
 - **Modul pro kontakty**: Správa kontaktů, import a export, skupiny kontaktů, štítky, poznámky, vyhledávání, sdílení
-
 - **Modul pro videohovory**: Volání (hlas + video), výpisy volání, skupinové hovory, sdílení obrazovky, nahrávání hovorů
-
 - **Podpůrné nástroje**: WebTransport konzole, správa domén, účtů, modulů a správců
 
 #### Marketing:
