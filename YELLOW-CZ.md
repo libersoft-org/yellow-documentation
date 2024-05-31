@@ -250,18 +250,23 @@ Uživatelé, kteří chtějí v rámci platformy platit za služby, které modul
 
 ### ❤️ Seznamka
 
-Modul **Seznamka** poskytuje moderní způsob **seznamování se s novými lidmi** za různými účely, jako např. **nalezení životního partnera**, **příležitostná setkání**, **přátelství** apod. Modul umožňuje **vytváření profilů** s **galerií fotografií** a podrobnými **osobními informacemi**, **vyhledávání** a **filtrování** ostatních uživatelů, možnosti **řazení uživatelů dle vzdálenosti** a dalších kritérií, možnost **kontaktování** pomocí zpráv, **lajkování** uživatelských profilů, nalezení **vzájemných shod**, přidávání uživatelů do **oblíbených** apod.
+Modul **Seznamka** poskytuje moderní způsob seznamování se s novými lidmi za různými účely, jako např. nalezení životního partnera, příležitostná setkání, přátelství apod.
 
 #### Seznam funkcí:
 
-TODO
+- Vytvoření profilu s podrobnými osobními informacemi a galerií fotografií
+- Vyhledávání, filtrování (dle všech osobních informací) a řazení (dle vzdálenosti podle geolokace, stáří profilu apod.) v seznamu ostatních uživatelů
+- Shody - lajkování profilů ostatních uživatelů, zobrazení kdo dal like mě, komu jsem dal like já a vzájemné liky, možnost odstranit like / dislike
+- Možnost zaslat super like (zaslání oznámení druhé straně)
+- Přidávání uživatelů do oblíbených
+- Možnost kontaktování pomocí zpráv bez nutnosti shody
 
 #### Unikátní funkce:
 
 - Filtrování a řazení uživatelů od nejbližších po nejvzdálenějších dle jejich geolokace
 - Možnost oslovit uživatele napřímo bez nutnosti shody
 - Zobrazení seznamu uživatelů, kteří označili můj profil, že se jim líbí (rychlejší způsob zjištění shod)
-- Super like s notifikací druhé strany
+- Super like s oznámením pro druhou stranu
 
 #### Cílová skupina:
 
