@@ -398,11 +398,13 @@ Tento modul poskytuje uživatelům publikovat textový, obrázkový, video a aud
 
 ### 🤳🏻 Příběhy
 
-Modul **Příběhy** umožňuje uživatelům **vytvářet vizuální příspěvky**, které uživatelé mohou sdílet se svými přáteli a sledovateli. Tyto příspěvky jsou viditelné pouze po omezenou dobu (typicky 24 hodin) a umožňují uživatelům **sdílet okamžité momenty**, **krátká videa**, **obrázky**, **zvuk** apod. v atraktivním formátu, na který mohou odběratelé snadno **reagovat** nebo je **okomentovat**.
+Modul umožňuje uživatelům vytvářet vizuální příspěvky, které uživatelé mohou sdílet se svými sledovateli. Tyto příspěvky jsou viditelné pouze po omezenou dobu a umožňují uživatelům sdílet okamžité momenty.
 
 #### Seznam funkcí:
 
-TODO
+- Vytváření vizuálních příspěvků - krátká videa, obrázky, zvuk, texty
+- Zobrazení po omezenou dobu - typicky 24 hodin
+- Možnost reakcí a komentářů
 
 #### Cílová skupina:
 
