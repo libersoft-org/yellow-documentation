@@ -412,11 +412,16 @@ Modul umožňuje uživatelům vytvářet vizuální příspěvky, které uživat
 
 ### 🗓️ Události
 
-Tento modul umožňuje uživatelům **vytvářet**, **organizovat** a **sdílet** různé typy **událostí**, jako jsou **osobní setkání** či **veřejné akce**. Tento modul poskytuje **nástroje pro plánování**, **řízení**, **sdílení**, **reagování** a **komentování událostí**, čímž usnadňuje koordinaci a zapojení účastníků. U jednotlivých událostí je umožněno **nastavení soukromí** a **viditelnost**. Modul taktéž poskytuje **seznam veřejných událostí**, které jsou filtrovatelné a seřaditelné podle různých kritérií.
+Tento modul umožňuje uživatelům organizovat různé typy událostí, jako jsou osobní setkání či veřejné akce.
 
 #### Seznam funkcí:
 
-TODO
+- Vytváření a organizování událostí
+- Přihlášení k události
+- Komentáře a reakce
+- Nastavení soukromí - soukromé nebo veřejné
+- Zobrazení seznamu všech veřejných událostí a možnost jejich řazení a filtrování
+- Provázání s ostatními moduly - sdílení do newsfeedu a zpráv
 
 #### Unikátní funkce:
 
