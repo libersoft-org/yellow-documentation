@@ -124,21 +124,7 @@ Jednotlivé moduly poskytují různé užitečné funkcionality. V této části
 
 ### 📧 Rychlé zprávy
 
-Modul **Rychlé zprávy** představuje hlavní funkcionalitu platformy, která umožňuje uživatelům komunikovat v reálném čase a zasílat mezi sebou data jako jsou **textové zprávy** (prostý i formátovaný text), **hlasové a video zprávy**, **neomezeně velké soubory**, **emotikony**, **animované nálepky**, **obrázky**, **kontakty**, **živé body na mapě** apod. Tyto jednotlivé typy zpráv lze taktéž kombinovat do jedné, **vícedílné zprávy**, což umožňuje například jednoduše vytvářet obchodní sdělení a komunikaci s chatboty.
-
-V rámci každé konverzace je možné zakládat **více témat** rozhovorů. Jednotlivé konverzace mohou být taktéž **řazeny do skupin**, například dle typu kontaktu (práce, přátelé, apod.).
-
-Modul umožňuje nejen konverzace **jeden na jednoho**, ale také poskytuje **chatovací skupiny** nebo **skupiny pro odběry novinek**. Tyto skupiny jsou vystaveny v přehledných **seznamech**, kde si je uživatelé mohou **filtrovat** dle kategorií, popularity, data vytvoření apod.
-
-Uživatelské účty mohou být ovládány **chatboty**, což je vhodné například pro vytváření konverzací s uživatelskou podporou, pro objednávání zboží přes zprávy apod.
-
-Na zprávy je možné **odpovídat**, **přeposílat** je a **reagovat** pomocí emotikon. Kontakty zasílající nevyžádané zprávy je taktéž možné snadno **zablokovat** a **nahlásit**.
-
-Klientská aplikace umožňuje i vytváření **šablon zpráv**, což je využitelné například pro rychlou komunikaci se zákazníky v rámci uživatelské podpory.
-
-Všechny zprávy je možné automaticky či na vyžádání **překládat** do mnoha světových jazyků.
-
-Díky strukturovanosti tohoto modulu je snadné ve zprávách **vyhledávat**.
+Modul **Rychlé zprávy** představuje hlavní funkcionalitu platformy, která umožňuje uživatelům komunikovat v reálném čase a zasílat mezi sebou různé druhy zpráv.
 
 #### Seznam funkcí:
 
@@ -154,19 +140,27 @@ TODO - přesunout popisy vyjmenovaných funkcionalit výše do seznamu níže - 
   - Obrázky (vč. animovaných GIFů)
   - Videa
   - Kontakty
-  - Mapa (+ živý pohyb bodů na mapě po omezenou dobu)
-  - Vícedílné zprávy
+  - Mapa (+ sdílení polohy s pohybem v reálném čase)
+  - Vícedílné zprávy - kombinace různých druhů zpráv do jedné - vhodné např. pro tvorbu obchodních sdělení nebo zpráv od chatbotů
 - Odpovídání, přeposílání a reakce
 - Blokování kontaktů
 - Nahlášení kontaktů
-- Témata zpráv v rámci konverzace
+- Témata v rámci konverzace - možnost přepínání mezi nimi
 - Řazení konverzací do skupin (např. práce, rodina, přátelé apod.)
-- Šablony zpráv
-- Překlady zpráv
+- Šablony zpráv - vhodné např. pro uživatelskou podporu - přednastavené odpovědi pro zákazníky
+- Překlady zpráv - mnoho světových jazyků, lze vybrat u konkrétní zprávy nebo u celé konverzace
 - Vyhledávání v konverzacích
-- Chatovací skupiny - obsahuje možnosti nastavení soukromí, moderování, vypsání a řazení seznamu veřejných skupin)
-- Novinkové skupiny - obsahuje možnosti nastavení soukromí, výběr moderátorů, vypsání a řazení seznamu skupin)
-- Indikace přečtení, informace o koncovém šifrování
+- Chatovací skupiny
+  - Nastavení soukromí
+  - Moderování
+  - Seznam veřejných skupin - výpis, řazení (dle popularity, data vytvoření apod.) a filtrace (dle kategorie apod.)
+- Novinkové skupiny
+  - Nastavení soukromí
+  - Moderování
+  - Seznam veřejných novinkových skupin - výpis, řazení (dle popularity, data vytvoření apod.) a filtrace (dle kategorie apod.)
+- Indikace přečtení
+- Informace o koncovém šifrování
+- Možnost ovládání konverzace chatbotem (např. pro objednávání zboží, uživatelskou podporu apod.)
 - Provázání s moduly "Profily" (odkaz na profil) a "Volání" (možnost zahájit audio / video hovor).
 
 #### Unikátní funkce:
