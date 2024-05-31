@@ -250,7 +250,7 @@ Uživatelé, kteří chtějí v rámci platformy platit za služby, které modul
 
 ### ❤️ Seznamka
 
-Modul **Seznamka** poskytuje moderní způsob seznamování se s novými lidmi za různými účely, jako např. nalezení životního partnera, příležitostná setkání, přátelství apod.
+Modul poskytuje moderní způsob seznamování se s novými lidmi za různými účely, jako např. nalezení životního partnera, příležitostná setkání, přátelství apod.
 
 #### Seznam funkcí:
 
@@ -272,17 +272,20 @@ Modul **Seznamka** poskytuje moderní způsob seznamování se s novými lidmi z
 
 Jednotlivci, kteří hledají nové vztahy, přátele a známé za různými účely. Uživatelé různých věkových kategorií, především mladší generace a střední věk.
 
-#### Cílová skupina:
-
-Jednotlivci hledající interaktivní komunikaci, netradiční způsob seznamování s novými lidmi a zábavu ve virtuálním světě. Modul je určen především mladší generaci uživatelů.
-
 ### 📂 Sdílení souborů
 
-**Sdílení souborů** umožňuje uživatelům **nahrávat**, **stahovat**, přehledně **organizovat** a **sdílet** soubory různých formátů. Tento modul je navržen pro snadnou a efektivní výměnu videí, software, obrázků, dokumentů a dalších typů souborů mezi uživateli.
+Tento modul umožňuje uživatelům nahrávat, stahovat, přehledně organizovat a sdílet soubory různých formátů. Tento modul je navržen pro snadnou a efektivní výměnu videí, software, obrázků, dokumentů a dalších typů souborů mezi uživateli.
 
 #### Seznam funkcí:
 
-TODO
+- Nahrávání souborů
+- Stahování souborů
+- Přehrávání videa a audia online
+- Řazení souborů do produktů
+- Řazení produktů do kategorií
+- Vyhledávání - dle kategorie, dle klíčové fráze
+- Šifrování souborů
+- Nahlášení nevhodného obsahu
 
 #### Cílová skupina:
 
@@ -290,18 +293,21 @@ Jednotlivci, studenti, komunity a další.
 
 ### 🧑‍🤝‍🧑 Profily a sledování
 
-Tento modul umožňuje uživatelům **sledovat aktivity ostatních uživatelů** napříč moduly, čímž zajišťuje interakci a udržování kontaktu mezi lidmi. Tato funkcionalita podporuje vytváření a správu **seznamu sledovaných profilů**, **zobrazování aktivit**, **upozorňování na nové aktivity**, **zobrazení seznamu nejsledovanějších veřejných profilů** apod.
+Tento modul umožňuje uživatelům vytvořit si vlastní veřejný profil a sledovat aktivity ostatních uživatelů napříč moduly, čímž zajišťuje interakci a udržování kontaktu mezi lidmi.
 
 #### Seznam funkcí:
 
-- Sledování profilů
+- Vytvoření vlastního veřejného profilu vč. fotografií
+- Sledování profilů ostatních uživatelů a zobrazení jejich posledních aktivit
+- Oznamování vybraných aktivit
 - Seznam sledujících / sledovaných a jejich export
 - Nastavení soukromí - viditelnost vlastního profilu (jen já / jen pro sledované / veřejný)
 - Úprava vlastního profilu, vč. výběru viditelných modulů v profilu
 - Zobrazení aktivit napříč všemi moduly nebo u konkrétních modulů
 - Blokování zobrazení profilu pro konkrétní uživatele
 - Seznam veřejných profilů s možností řazení a vyhledávání
-- Provázání s řadou modulů - zobrazení novinek pro moduly (video kanály, diskuzní fórum, newsfeed, příběhy, události, blogy, e-shopy, tržiště, příspěvky, skupinové financování, kalendář), sdílení profilu do zpráv
+- Zobrazení aktivit nejsledovanějších veřejných profilů (bez nutnosti sledování, odděleně od sledovaných profilů)
+- Provázání s řadou modulů - zobrazení aktivit z ostatních modulů - video kanály (nová videa, probíhající live streamy), diskuzní fórum (nové příspěvky), newsfeed (nové příspěvky), příběhy (aktuální příběhy), události (zůčastnění se, komentáře), blogy (nové články), e-shopy (odkazy na jednotlivé e-shopy, nové produkty), tržiště (nové inzerované položky, seznam inzerovaných položek), příspěvky (seznam kampaní, informace o začátku a dokončení), skupinové financování (seznam kampaní, informace o začátku a dokončení), kalendář (blížící se události z veřejných kalendářů), možnost sdílení profilu do rychlých zpráv
 
 #### Unikátní funkce:
 
