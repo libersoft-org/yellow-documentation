@@ -165,9 +165,9 @@ TODO - přesunout popisy vyjmenovaných funkcionalit výše do seznamu níže - 
 
 #### Unikátní funkce:
 
-- Vícedílné zprávy v rámci IM
+- Vícedílné zprávy
 - Zasílání neomezeně velkých souborů
-- Živé body na mapě v rámci IM
+- Živé body na mapě
 - Řazení kontaktů do skupin
 - Řazení konverzací do témat
 - Šablony zpráv
@@ -178,17 +178,16 @@ TODO - přesunout popisy vyjmenovaných funkcionalit výše do seznamu níže - 
 
 ### 🧾 Kontakty
 
-Tento modul umožňuje uživatelům **spravovat** a **organizovat** své **kontakty**. Tato funkcionalita poskytuje funkce jako např. možnosti **importu a exportu** kontaktů v různých formátech, vytváření **skupin kontaktů**, **štítků**, **poznámek** apod. Dále pokročilé **vyhledávání** dle různých kritérií, **sdílení** kontaktů s ostatními uživateli, přiřazování **fotografií** k jednotlivým kontaktům, možnosti **nastavení soukromí** a mnoho dalšího.
-
-Všechny kontakty jsou taktéž **synchronizovány** se serverem a mezi jednotlivými koncovými zařízeními.
+Tento modul umožňuje uživatelům spravovat a organizovat své kontakty.
 
 #### Seznam funkcí:
 
 - Správa kontaktů - vytváření, úprava, mazání, přiřazování fotografií, přidávání detailních informací, štítků a poznámek
-- Import a export kontaktů
 - Správa skupin kontaktů
+- Import a export kontaktů
 - Export vizitek
 - Fulltextové vyhledávání
+- Synchronizace kontaktů se serverem a napříč zařízeními
 - Provázání s moduly "Rychlé zprávy" (sdílení kontaktu do zprávy, odkaz na konverzaci) a "Profil" (odkaz na profil)
 
 #### Cílová skupina:
@@ -197,7 +196,7 @@ Funkcionality modulu jsou vhodné pro jednotlivce i organizace, tedy pro všechn
 
 ### 📞 Hovory
 
-Tento modul představuje další základní funkcionalitu platformy, která umožňuje uživatelům komunikovat prostřednictvím **videa** nebo pomocí **hlasu** v reálném čase. Hovory lze vést mezi dvěma **jednotlivci** i **skupinově**. Součástí je i možnost **sdílení obrazovky** a **vzdálené ovládání** zařízení. Hovory lze **nahrávat** a jednotlivé nahrávky přehrávat, spravovat a sdílet. **Kvalita hovoru** je automaticky přizpůsobena propustností internetového připojení.
+Tento modul představuje další základní funkcionalitu platformy, která umožňuje uživatelům komunikovat prostřednictvím videa či hlasu v reálném čase.
 
 #### Seznam funkcí:
 
@@ -223,22 +222,21 @@ Uživatelé všech věkových kategorií, především těch, kteří hledají b
 
 ### ₿ Integrovaná kryptoměnová peněženka
 
-**Integrovaná kryptoměnová peněženka** umožňuje uživatelům snadno a bezpečně **uchovávat**, **odesílat** a **přijímat** kryptoměny přímo v klientské aplikaci. To umožňuje placení a převod kryptoměn a tokenů mezi uživateli platformy a také **platby v rámci komerčních modulů** (např. za prémiové funkce). Peněženka podporuje všechny [**EVM-kompatibilní**](https://cs.wikipedia.org/wiki/Ethereum) blockchainy (jako je Ethereum, Binance Smart Chain, Polygon apod.). Tato funkcionalita je zcela oddělená od síťového protokolu a je propojená přímo s blockchainy. Zároveň umožňuje ostatním modulům využívat funkcionality [**chytrých smluv**](https://cs.wikipedia.org/wiki/Chytr%C3%BD_kontrakt), což značně přispívá k důvěryhodnosti transakcí a rozšiřuje možnosti funkcionalit modulů. Peněženka je založená na knihovně [**Ethers.js**](https://ethers.org/).
+Tento modul umožňuje uživatelům snadno a bezpečně uchovávat, odesílat a přijímat platby v kryptoměnách, tokenech a NFT přímo v klientské aplikaci. Peněženka je založená na knihovně [**Ethers.js**](https://ethers.org/).
 
 #### Seznam funkcí:
 
 - Vytvoření seed klíče pro automatickou tvorbu privátních klíčů
 - Záloha a obnovení seed klíče
 - Možnost zašifrování privátních klíčů PIN kódem, heslem nebo biometrickým ověřením
-- Možnost připojení na více EVM-kompatibilních blockchainů
+- Možnost připojení na více EVM-kompatibilních blockchainů (jako je Ethereum, Binance Smart Chain, Polygon apod.)
 - Možnost přepínání mezi více účty
-- Zobrazení zůstatků aktiv (hlavní měna, tokeny, NFT)
-- Spouštění metod chytrých smluv
-- Příjem a odeslání aktiv
+- Zobrazení zůstatků aktiv - hlavní měna, tokeny, NFT
+- Příjem a odesílání aktiv
+- Spouštění metod [**chytrých smluv**](https://cs.wikipedia.org/wiki/Chytr%C3%BD_kontrakt) - značně přispívá k důvěryhodnosti transakcí a rozšiřuje možnosti funkcionalit modulů
 - Transakční historie, výpisy a hledání v transakcích
 - Generování QR kódu pro mobilní transakce
-
-- Provázání s řadou modulů (platby v každém komerčním modulu, možnost automatického zaslání zprávy o příchozí platbě nebo žádosti o platbu přes "Rychlé zprávy" - zpráva s QR kódem a tlačítkem pro potvrzení platby - s konkrétní čáskou či možností zadání libovolné / výchozí změnitelné částky)
+- Provázání s řadou modulů -platby v každém komerčním modulu (např. za prémiové funkce), možnost automatického zaslání zprávy o příchozí platbě nebo žádosti o platbu přes "Rychlé zprávy" - zpráva s QR kódem a tlačítkem pro potvrzení platby - s konkrétní čáskou či možností zadání libovolné / výchozí změnitelné částky)
 
 #### Unikátní funkce:
 
