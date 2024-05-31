@@ -373,7 +373,7 @@ Zájmové, profesní, vzdělávací, odborné a jiné skupiny, komunity, organiz
 
 ### ⭐ Newsfeed
 
-Tento modul poskytuje uživatelům personalizovaný **přehled o nejnovějších příspěvcích** sledovaných profilů. Poskytuje možnost udržení přehledu o novinkách a interakcích v rámci sítě uživatelů. Taktéž umožňuje zapojení uživatelů ve formě reakcí a komentářů k jednotlivým příspěvkům.
+Tento modul poskytuje uživatelům publikovat textový, obrázkový, video a audio obsah, který sdílí ve formě jednotlivých příspěvků. Poskytuje možnost udržení přehledu o novinkách a interakcích v rámci sítě uživatelů. Taktéž umožňuje zapojení uživatelů ve formě reakcí a komentářů k jednotlivým příspěvkům.
 
 #### Seznam funkcí:
 
