@@ -377,10 +377,19 @@ Tento modul poskytuje uživatelům publikovat textový, obrázkový, video a aud
 
 #### Seznam funkcí:
 
-TODO
+- Vytvoření příspěvku (text, obrázek, video, audio nebo vícedílný příspěvek - jako u vícedílných zpráv v modulu Rychlé zprávy)
+- Přehled příspěvků sledovaných profilů
+- Správa vlastních příspěvků - zobrazení, editace, smazání
+- Komentování příspěvků
+- Reakce na příspěvky a komentáře
+- Moderování komentářů
+- Sdílení příspěvků do zpráv
+- Seznam nejsledovanějších / nejnovějších veřejných příspěvků
+- Nastavení soukromí newsfeedu - veřejný / jen pro sledující / jen pro sledované
 
 #### Unikátní funkce:
 
+- Vícedílné příspěvky
 - Provázanost s ostatními moduly (např. tlačítko pod videem ve video kanálech, sekce v profilech apod.)
 
 #### Cílová skupina:
