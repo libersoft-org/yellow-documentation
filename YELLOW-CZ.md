@@ -129,6 +129,7 @@ Modul **Rychlé zprávy** představuje hlavní funkcionalitu platformy, která u
 #### Seznam funkcí:
 
 TODO - přesunout popisy vyjmenovaných funkcionalit výše do seznamu níže - toto u všech modulů!!!
+TODO - vyhodit unikátní funkce a místo toho ty unikátní v seznamu všech funkcí označit a vytvořit legendu ikonek
 
 - Různé typy zpráv:
   - Textové zprávy (prostý i formátovaný text)
@@ -433,11 +434,15 @@ Organizátoři a pořadatelé veřejných událostí, běžní uživatelé organ
 
 ### ✍🏻 Blogy
 
-**Blogy** poskytují autorům možnost **vytvářet**, **publikovat** a **sdílet** své myšlenky a názory ve formě článků a čtenářům tyto články **číst**, **reagovat** na ně a **komentovat** v diskuzi. Modul je navržen tak, aby usnadňoval tvorbu obsahu a podporoval zapojení čtenářů. Taktéž poskytuje nástroje pro snadné psaní a úpravu textu a přidávání multimediálního obsahu. Zároveň je i implementována funkcionalita **seznamu blogů** s možností filtrace a řazení dle různých kritérií.
+Tento modul poskytuje autorům možnost publikovat své myšlenky a názory ve formě článků. Modul je navržen tak, aby usnadňoval tvorbu obsahu a podporoval zapojení čtenářů.
 
 #### Seznam funkcí:
 
-TODO
+- Vytváření a publikování článků
+- Čtení, komentování a reakce na články
+- Nástroje pro snadné psaní a úpravu textu a přidávání multimediálního obsahu
+- Seznamy blogů a článků, řazené dle popularity nebo data vytvoření a filtrovatelné dle různých kritérií (kategorie, jazyk apod.)
+- Provázanost s ostatními moduly (tlačítko pod videem ve video kanálech, sekce v profilech, možnost sdílet články v newsfeedu a do zpráv)
 
 #### Unikátní funkce:
 
