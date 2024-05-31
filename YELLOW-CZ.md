@@ -319,25 +319,27 @@ Uživatelé sociálních sítí, odběratelé novinek dle zájmových oblastí a
 
 ### 🎞️ Video kanály
 
-**Video kanály** umožňují uživatelům **vytvářet** a **spravovat** různé druhy **video obsahu**, jako např. **klasická videa**, **živá vysílání** a **krátká "reels" videa**. Tato funkcionalita poskytuje nástroje pro **tvorbu a distribuci video obsahu**. Zároveň poskytuje možnosti zapojení uživatelů, jako jsou **reakce** na videa, **komentáře**, **sdílení** apod.
+**Video kanály** umožňují uživatelům publikovat a sledovat různé druhy video obsahu, jako např. klasická videa, živá vysílání a rátká "reels" videa. Tato funkcionalita poskytuje nástroje pro tvorbu a distribuci video obsahu. Zároveň poskytuje možnosti zapojení uživatelů, jako jsou reakce na videa, komentáře, sdílení apod.
 
 #### Seznam funkcí:
 
 - Možnost vytvoření více kanálů
-- Správa videí (nahrávání, mazání, playlisty, statistiky sledovanosti, reakcí, komentářů apod.)
-- Sledování kanálů
+- Správa videí (nahrávání, mazání, nastavení názvu a popisu)
+- Správa playlistů (vytváření, přidávání a odebírání položek)
+- Statistiky sledovanosti, reakcí a komentářů ke každému videu a živému vysílání
+- Přidávání kanálů do odběrů
 - Přehrávání videí + komentáře, reakce, sdílení, zasílání darů
 - Živá vysílání - vč. komentářů, reakcí, sdílení, zasílání darů
 - Krátká "reels" videa
 - Zasílání oznámení o nových videích odberatelům
-- Prodej videí
+- Prodej placených videí - přes integrovanou kryptoměnovou peněženku
 - Blokování a nahlašování kanálů
-- Provázání s dalšími moduly - tlačítka v kanálu a pod videi (stejné jako u profilů, vč. odkazu na profil samotný), zaslání rychlé zprávy majiteli kanálu
+- Provázání s dalšími moduly - tlačítka v kanálu a pod videi (stejné jako u profilů, vč. odkazu na profil samotný), sekce v profilu, placení videí a zasílání darů přes integrovanou kryptoměnovou peněženku, zaslání rychlé zprávy majiteli kanálu
 
 #### Unikátní funkce:
 
 - Placená videa v rámci video kanálů
-- Provázanost s ostatními moduly (např. sekce v profilech, tlačítka ostatních modulů pod videi apod.)
+- Provázanost s ostatními moduly
 
 #### Cílová skupina:
 
@@ -345,20 +347,21 @@ Sledovatelé video obsahu, tvůrci video obsahu, vzdělávací instituce, umělc
 
 ### 💬 Diskuzní fórum
 
-**Diskuzní fórum** poskytuje prostor pro uživatele, kde mohou **diskutovat** o různých tématech, **sdílet názory**, **klást otázky** a **poskytovat odpovědi**. Tento modul umožňuje **vytváření**, **správu** a **vyhledávání** diskuzí filtrovatelných dle kategorií a obsahu, nabízí nástroje pro moderování obsahu a podporuje živé a strukturované konverzace. Zároveň nabízí možnosti **nastavení soukromí** pro soukromé diskuzní skupiny.
+Tento modul poskytuje prostor pro uživatele, kde mohou zakládat tématické diskuze a v nich diskutovat, sdílet názory, klást otázky a poskytovat odpovědi.
 
 #### Seznam funkcí:
 
 - Kategorie diskuzí - určuje správce serveru
+- Vytváření a mazání vlastních diskuzních fór (veřejné či soukromé)
 - Seznam veřejných diskuzí - seřaditelný dle počtu příspěvků a odpovědí / data založení, filtrovatelný dle kategorií
+- Seznam soukromých diskuzích, jejíchž je uživatel členem
 - Seznam příspěvků v diskuzi
 - Zobrazení příspěvku a jeho odpovědí
 - Možnost psaní příspěvků a odpovědí - různé druhy zpráv (stejně jako u modulu "Rychlé zprávy")
 - Možnost reakcí na příspěvky a odpovědi
-- Moderování diskuzí - mazání příspěvků a odpovědí
+- Moderování diskuzí - správa moderujících, mazání příspěvků a odpovědí, blokace uživatelů
 - Vyhledávání diskuzí, příspěvků a odpovědí
 - Nahlašování závadných diskuzí, příspěvků a odpovědí
-- Nastavení soukromí (veřejná / soukromá diskuze)
 
 #### Unikátní funkce:
 
