@@ -614,11 +614,21 @@ Především organizace, jako jsou firmy, vzdělávací instituce, lektoři, kon
 
 ### ⛰️ Virtual chat
 
-**Virtual chat** nabízí uživatelům prostředí **virtuálního světa**, ve kterém mohou vzájemně **komunikovat** a bavit se s ostatními prostřednictvím **textového chatu** (soukromých nebo veřejných chatovacích bublin) či **hlasového chatu**, přizpůsobovat si svou virtuální postavičku, **navštěvovat různá místa** ve virtuálním prostředí. Uživatelé taktéž mohou **interagovat s ostatními objekty**.
+Modul nabízí uživatelům prostředí virtuálního světa, ve kterém mohou vzájemně komunikovat a bavit se.
 
 #### Seznam funkcí:
 
-TODO
+- Ovládání vlastní postavy ve virtuálním světě
+- Přizpůsobení vlastní postavy - vzhled, oblečení apod.
+- Komunikace pomocí textového a hlasového chatu
+- Možnost navštěvování různých veřejných lokalit
+- Možnost pronájmu vlastní soukromé lokality vč. možnosti vlastní modifikace lokality
+- Možnosti nákupu předmětů
+- Možnost interakcí s předměty
+- Možnost blokace a nahlašování uživatelů
+- 💡 Provázanost s ostatními moduly:
+  - Možnost sdílení vlastní identity - profil a kontakt do rychlých zpráv
+  - Platby prostřednictvím integrované kryptoměnové peněženky
 
 ### 🎮 Hry
 
