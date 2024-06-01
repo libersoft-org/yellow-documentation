@@ -448,11 +448,10 @@ Tento modul poskytuje autorům možnost publikovat své myšlenky a názory ve f
 - Čtení, komentování a reakce na články
 - Nástroje pro snadné psaní a úpravu textu a přidávání multimediálního obsahu
 - Seznamy blogů a článků, řazené dle popularity nebo data vytvoření a filtrovatelné dle různých kritérií (kategorie, jazyk apod.)
-- Provázanost s ostatními moduly (tlačítko pod videem ve video kanálech, sekce v profilech, možnost sdílet články v newsfeedu a do zpráv)
-
-#### Unikátní funkce:
-
-- Provázanost s ostatními moduly (např. tlačítko pod videem ve video kanálech, sekce v profilech apod.)
+- 💡 Provázanost s ostatními moduly:
+  - Tlačítko pod videem ve video kanálech
+  - Sekce v profilech
+  - Možnost sdílet články v newsfeedu a do zpráv
 
 #### Cílová skupina:
 
@@ -467,11 +466,10 @@ Amatérští i profesionální autoři, čtenáři různorodého obsahu.
 - Prohlížení mapy
 - Vyhledávání míst
 - Body zájmu - místní obchody, služby, události, možnost hodnocení a komentování, filtrování
-- Provázanost s ostatními moduly - odkaz na konkrétní události nebo veřejné skupiny apod.,  možnost kontatkovat přes rychlé zprávy, sdílení polohy v rychlých zprávách (jednorázově i v reálném čase)
-
-#### Unikátní funkce:
-
-- Provázanos s ostatními moduly - odkaz na konkrétní události nebo veřejné skupiny apod.,  možnost kontatkovat přes rychlé zprávy, sdílení polohy v rychlých zprávách (jednorázově i v reálném čase)
+- 💡 Provázanost s ostatními moduly:
+  - Odkaz na konkrétní události nebo veřejné skupiny
+  - Možnost kontatkovat přes rychlé zprávy
+  - Sdílení polohy v rychlých zprávách - jednorázově i v reálném čase
 
 #### Cílová skupina:
 
