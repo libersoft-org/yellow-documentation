@@ -351,7 +351,7 @@ Uživatelé sociálních sítí, odběratelé novinek dle zájmových oblastí a
 - Zasílání oznámení o nových videích odberatelům
 - 💡 Prodej placených videí - přes integrovanou kryptoměnovou peněženku
 - Blokování a nahlašování kanálů
-- 💡 Provázání s moduly - Tlačítka (platba, skupinové financování, dary, e-shop, profil apod.) v kanálu a pod videi, zaslání rychlé zprávy majiteli kanálu
+- 💡 Provázání s moduly - Tlačítka (platba, skupinové financování, dary, diskuzní fórum, veřejná chatovací skupina, veřejná novinková skupina, blog, e-shop, profil apod.) v kanálu a pod videi, zaslání rychlé zprávy majiteli kanálu
 
 #### Cílová skupina:
 
@@ -364,7 +364,8 @@ Tento modul poskytuje prostor pro uživatele, kde mohou zakládat tématické di
 #### Seznam funkcí:
 
 - Kategorie diskuzí - určuje správce serveru
-- Vytváření a mazání vlastních diskuzních fór (veřejné či soukromé)
+- Vytváření a mazání vlastních diskuzních fór
+- Nastavení soukromí fóra - veřejné či soukromé
 - Seznam veřejných diskuzí - seřaditelný dle počtu příspěvků a odpovědí / data založení, filtrovatelný dle kategorií
 - Seznam soukromých diskuzích, jejíchž je uživatel členem
 - Seznam příspěvků v diskuzi
@@ -374,10 +375,7 @@ Tento modul poskytuje prostor pro uživatele, kde mohou zakládat tématické di
 - Moderování diskuzí - správa moderujících, mazání příspěvků a odpovědí, blokace uživatelů
 - Vyhledávání diskuzí, příspěvků a odpovědí
 - Nahlašování závadných diskuzí, příspěvků a odpovědí
-
-#### Unikátní funkce:
-
-- Provázanost s ostatními moduly (např. tlačítko pod videem ve video kanálech, sekce v profilech apod.)
+- 💡 Provázanost s ostatními moduly - tlačítko pod videem ve video kanálech, sekce v profilech apod.
 
 #### Cílová skupina:
 
