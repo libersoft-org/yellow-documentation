@@ -122,6 +122,8 @@ Platforma je využitelná mnoha cílovými skupinami uživatelů, jejichž potř
 
 Jednotlivé moduly poskytují různé užitečné funkcionality. V této části jsou uvedeny oficiální moduly, poskytnuté k serverové i klientské aplikaci. Všechny moduly, ve kterých se přenáší nebo ukládají uživatelská data, jsou opatřeny **šifrováním**, což zajišťuje bezpečnou komunikaci mezi uživateli a ochranu proti tomu, aby kdokoliv (vč. správců serveru) mohl číst tato data.
 
+**POZNÁMKA**: Symbolem 💡 jsou označeny unikátní funkce.
+
 ### 📧 Rychlé zprávy
 
 Modul **Rychlé zprávy** představuje hlavní funkcionalitu platformy, která umožňuje uživatelům komunikovat v reálném čase a zasílat mezi sebou různé druhy zpráv.
