@@ -576,34 +576,38 @@ Firemní uživatelé, domácí uživatelé, studenti, komunity apod.
 
 ### ✔️ Úkoly
 
-Modul **Úkoly** umožňuje uživatelům **vytvářet**, **spravovat**, **delegovat**, **sledovat průběh**, **sdílet** a **komentovat** úkoly v reálném čase. Tento modul je navržen tak, aby zlepšoval **produktivitu** a **organizaci práce**, usnadňoval **spolupráci** v týmu a zajišťoval, že všechny úkoly budou dokončeny včas a efektivně.
+Modul umožňuje uživatelům spravovat a sdílet nástěnky s úkoly, je navržen tak, aby zlepšoval produktivitu a organizaci práce, usnadňoval spolupráci v týmu a zajišťoval, že všechny úkoly budou dokončeny včas a efektivně.
 
 #### Seznam funkcí:
 
 TODO
-
+- Vytváření a správa úkolových nástěnek
+- Sledování průběhu, delegování, komentování úkolů v reálném čase
+- Sdílení úkolů s ostatními členy týmu
+- 💡 Provázanost s ostatními moduly - sdílení do soukromých zpráv
+  
 #### Cílová skupina:
 
 Jednotlivci, týmy, pracovní skupiny, studenti, domácnosti a další.
 
 ### 📱 Konferenční hovory
 
-**Konferenční hovory** umožňují uživatelům účastnit se rozsáhlých skupinových diskuzí a setkání online v reálném čase. Tato funkcionalita je navržena pro efektivní a pohodlnou komunikaci mezi více účastníky a to prostřednictvím **hlasu** i **videa**. Taktéž je umožněno **sdílet obrazovku** a povolit konkrétním účastníkům **vzdálené řízení**. Moderátoři mají možnost řídit průběh hovoru, jako např. **přidávat**, **odstraňovat** a **blokovat** účastníky, **moderovat** ostatní a **zaznamenávat průběh hovoru**. Uživatelé mohou taktéž využít **chat** v rámci hovoru, **sdílet soubory** a **hlasovat v anketách**. Všechny konferenční hovory lze **plánovat** dopředu, aby mohli být účastníci včas informováni o termínu konference. Kvalita zvuku je automaticky optimalizována dle propustnosti síťového připojení.
+Modul umožňuje uživatelům účastnit se rozsáhlých skupinových diskuzí a setkání online v reálném čase. Tato funkcionalita je navržena pro efektivní a pohodlnou komunikaci mezi více účastníky prostřednictvím hlasu a videa.
 
 #### Seznam funkcí:
 
 - Hlasové a video konferenční hovory pro více účastníků
-- Moderování konference - udělování moderátorských práv, přídávání a odstraňování účastníků, povolování a zakazování mikrofonu / kamery
+- Moderování konference - udělování moderátorských práv, přídávání, odstraňování a blokování účastníků, povolování a zakazování mikrofonu / kamery
 - Sdílení obrazovky
-- Vzdálené ovládání zařízení
+- 💡 Vzdálené ovládání zařízení
 - Nahrávání konference - správa nahrávek, možnost sdílení nahrávek (odeslání po skončení vybranému seznamu uživatelů do rychlých zpráv)
+- Chat v rámci konference vč. sdílení souborů a možnosti hlasování
+- Automatická optimalizace kvality dle propustnosti síťového připojení
 - Koncové šifrování konference
-- Provázání s moduly "Kontakty" (výběr uživatelů) a "Kalendář" (uložení plánované konference do kalendáře, upozornění před začátkem)
-
-#### Unikátní funkce:
-
-- Vzdálené ovládání zařízení v rámci konferenčních hovorů
-- Provázanost s ostatními moduly (Kalendář apod.)
+- 💡 Provázání s moduly:
+  - Kontakty - výběr uživatelů
+  - Kalendář - uložení plánované konference do kalendáře
+  - Rychlé zprávy - upozornění před začátkem
 
 #### Cílová skupina:
 
