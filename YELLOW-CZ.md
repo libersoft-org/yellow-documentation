@@ -504,7 +504,10 @@ Modul umožňuje koncovým uživatelům nakupovat a prodávat produkty a služby
 - Hodnocení prodejců
 - 💡 Platby přes integrovaou kryptoměnovou peněženku
 - 💡 Možnost využití chytrých smluv pro účely úschovy
-- 💡 Provázanost s ostatními moduly: zasílání zpráv v rámci modulu Rychlé zprávy, možnost zobrazení sekce v profilu, zobrazení lokace na mapě apod.
+- 💡 Provázanost s ostatními moduly:
+  - Možnost zobrazení sekce v profilu
+  - Zobrazení lokace na mapě apod.
+  - Zasílání zpráv v rámci modulu Rychlé zprávy
 
 #### Cílová skupina:
 
