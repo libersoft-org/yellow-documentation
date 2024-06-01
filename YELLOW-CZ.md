@@ -387,7 +387,7 @@ Tento modul poskytuje uživatelům publikovat textový, obrázkový, video a aud
 
 #### Seznam funkcí:
 
-- Vytvoření příspěvku (text, obrázek, video, audio nebo vícedílný příspěvek - jako u vícedílných zpráv v modulu Rychlé zprávy)
+- Vytvoření příspěvku (text, obrázek, video, audio nebo 💡 vícedílný příspěvek - jako u vícedílných zpráv v modulu Rychlé zprávy)
 - Přehled příspěvků sledovaných profilů
 - Správa vlastních příspěvků - zobrazení, editace, smazání
 - Komentování příspěvků
@@ -396,11 +396,7 @@ Tento modul poskytuje uživatelům publikovat textový, obrázkový, video a aud
 - Sdílení příspěvků do zpráv
 - Seznam nejsledovanějších / nejnovějších veřejných příspěvků
 - Nastavení soukromí newsfeedu - veřejný / jen pro sledující / jen pro sledované
-
-#### Unikátní funkce:
-
-- Vícedílné příspěvky
-- Provázanost s ostatními moduly (např. tlačítko pod videem ve video kanálech, sekce v profilech apod.)
+- 💡 Provázanost s ostatními moduly - např. tlačítko pod videem ve video kanálech, sekce v profilech apod.
 
 #### Cílová skupina:
 
@@ -415,6 +411,7 @@ Modul umožňuje uživatelům vytvářet vizuální příspěvky, které uživat
 - Vytváření vizuálních příspěvků - krátká videa, obrázky, zvuk, texty
 - Zobrazení po omezenou dobu - typicky 24 hodin
 - Možnost reakcí a komentářů
+- 💡 Provázanost s moduly - viditelnost story v profilech
 
 #### Cílová skupina:
 
@@ -431,11 +428,11 @@ Tento modul umožňuje uživatelům organizovat různé typy událostí, jako js
 - Komentáře a reakce
 - Nastavení soukromí - soukromé nebo veřejné
 - Zobrazení seznamu všech veřejných událostí a možnost jejich řazení a filtrování
-- Provázání s ostatními moduly - sdílení do newsfeedu a zpráv
-
-#### Unikátní funkce:
-
-- Provázanost s ostatními moduly (např. tlačítko pod videem ve video kanálech, sekce v profilech, propojení s konferenčními hovory apod.)
+- Provázání s ostatními moduly:
+  - Sdílení do newsfeedu a zpráv
+  - 💡 Zobrazení události na mapě
+  - 💡 Tlačítko pod videem, sekce v profilech
+  - 💡 Propojení s konferenčními hovory
 
 #### Cílová skupina:
 
