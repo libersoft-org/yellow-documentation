@@ -231,10 +231,12 @@ Tento modul umožňuje uživatelům snadno a bezpečně uchovávat, odesílat a 
 - Spouštění metod [**chytrých smluv**](https://cs.wikipedia.org/wiki/Chytr%C3%BD_kontrakt) - značně přispívá k důvěryhodnosti transakcí a rozšiřuje možnosti funkcionalit modulů
 - Transakční historie, výpisy a hledání v transakcích
 - Generování QR kódu pro mobilní transakce
+- 💡 Možnost plateb mezi uživateli
+- 💡 Možnost využití chytrých smluv v rámci modulů (rozdělení zisků z komerčních modulů, zajištění férovosti pravidel her, transparentní hlasování, úschova v rámci tržiště apod.)
 - Provázání s moduly:
   - 💡 Rychlé zprávy - možnost automatického zaslání zprávy o příchozí platbě nebo žádosti o platbu - zpráva s QR kódem a tlačítkem pro potvrzení platby - s konkrétní čáskou či možností zadání libovolné / výchozí změnitelné částky
   - 💡 Sdílení souborů - Platba za přístup ke komerčním databázím
-  - 💡 Profily - Možnost zveřejnění adresy + QR kódu + tlačítka pro platbu
+  - 💡 Profily - možnost zveřejnění adresy + QR kódu + tlačítka pro platbu
   - 💡 Video kanály - platba za komerční videa, zasílání příspěvků oblíbenému kanálu, zasílání příspěvků v rámci živých vysílání
   - 💡 Diskuzní fórum - možnost mít tlačítko pro příspěvek vedle jména autora - zobrazí možnost vložení částky, tlačítka pro zaplacení, adresa a QR kód - funguje např. jako poděkování za dobrou radu apod.
   - 💡 Newsfeed - možnost mít tlačítko pro příspěvek vedle jména (stejné jako u diskuzního fóra)
@@ -242,18 +244,12 @@ Tento modul umožňuje uživatelům snadno a bezpečně uchovávat, odesílat a 
   - 💡 Události - možnost zaslání příspěvku v události nebo zaplacení členství na události apod.
   - 💡 Blogy - možnost mít tlačítko pro příspěvek v seznamu článků a u konkrétního článku (stejné jako u diskuzního fóra)
   - 💡 E-shopy - platba za zboží a služby
-  - 💡 Tržiště - platba za zboží a služby
+  - 💡 Tržiště - platba za zboží a služby, možnost úschovy - chytrá smlouva
   - 💡 Příspěvky - platba příspěvku v rámci kampaně, možnost upozornění na pravidelné příspěvky
   - 💡 Skupinové financování - platba příspěvku v rámci kampaně
   - 💡 Úkoly - platba za splnění konkrétních úkolů + označení zaplacení
   - 💡 Virtual chat - platba měsíčního členství, za doplňky na postavu, předměty do prostoru apod.
   - 💡 Hry - Platby za komerční hry, možnost sázek v rámci her přes chytré smlouvy
-
-#### Unikátní funkce:
-
-- Provázanost peněženky s uživatelskou základnou (možnost plateb mezi uživateli apod.)
-- Možnost využití plateb v rámci modulů (prémiové funkce, platby za služby a zboží, upřednostňování záznamů v seznamech apod.)
-- Možnost využití chytrých smluv v rámci modulů (rozdělení zisků z modulů, zajištění férovosti pravidel her, transparentní hlasování, úschova v rámci tržiště apod.)
 
 #### Cílová skupina:
 
