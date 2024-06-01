@@ -477,15 +477,16 @@ Uživatelé, kteří se chtějí propojovat v reálném světě s ostatními a s
 
 ### 🛍️ E-shopy
 
-Tento modul umožňuje uživatelům **vytvářet** a **spravovat** vlastní **online obchody** a v takovýchto obchodech pohodlně **nakupovat**. Pro správu těchto e-shopů je poskytnuta sada nástrojů pro prodej produktů a služeb, správu objednávek, dokladů, plateb a možnost komunikace se zákazníky.
+Tento modul umožňuje uživatelům vytvářet a spravovat vlastní online obchody a v takovýchto obchodech pohodlně nakupovat.
 
 #### Seznam funkcí:
 
 - Vytváření a správa vlastních e-shopů
 - Nakupování v e-shopech
 - Seznam e-shopů seřazený podle popularity
+- Správa objednávek, vystavování dokladů
 - 💡 Platby integrovanou kryptoměnovou peněženkou
-- 💡 Provázanost s ostatními moduly - sekce v profilech, tlačítka ve video kanálech, body na mapě apod.
+- 💡 Provázanost s ostatními moduly - sekce v profilech, tlačítka ve video kanálech, body na mapě, komunikace se zákazníky přes rychlé zprávy apod.
 
 #### Cílová skupina:
 
