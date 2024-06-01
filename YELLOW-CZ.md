@@ -262,18 +262,18 @@ Modul poskytuje moderní způsob seznamování se s novými lidmi za různými �
 #### Seznam funkcí:
 
 - Vytvoření profilu s podrobnými osobními informacemi a galerií fotografií
-- Vyhledávání, filtrování (dle všech osobních informací) a řazení (dle vzdálenosti podle geolokace, stáří profilu apod.) v seznamu ostatních uživatelů
-- Shody - lajkování profilů ostatních uživatelů, zobrazení kdo dal like mě, komu jsem dal like já a vzájemné liky, možnost odstranit like / dislike
-- Možnost zaslat super like (zaslání oznámení druhé straně)
+- Vyhledávání uživatelů
+- 💡 Filtrování (dle všech osobních informací)
+- Řazení v seznamu uživatelů dle:
+  - 💡 vzdálenosti podle geolokace
+  - stáří profilu
+- Shody:
+  - lajkování profilů ostatních uživatelů
+  - 💡 zobrazení kdo dal like mě, komu jsem dal like já a vzájemné liky - rychlejší způsob zjištění shod
+  - 💡 možnost odstranit like / dislike
+- Možnost zaslat super like - zaslání oznámení druhé straně
 - Přidávání uživatelů do oblíbených
-- Možnost kontaktování pomocí zpráv bez nutnosti shody
-
-#### Unikátní funkce:
-
-- Filtrování a řazení uživatelů od nejbližších po nejvzdálenějších dle jejich geolokace
-- Možnost oslovit uživatele napřímo bez nutnosti shody
-- Zobrazení seznamu uživatelů, kteří označili můj profil, že se jim líbí (rychlejší způsob zjištění shod)
-- Super like s oznámením pro druhou stranu
+- 💡 Možnost kontaktování pomocí zpráv bez nutnosti shody
 
 #### Cílová skupina:
 
