@@ -137,43 +137,38 @@ TODO - vyhodit unikátní funkce a místo toho ty unikátní v seznamu všech fu
   - Textové zprávy (prostý i formátovaný text)
   - Hlasové zprávy
   - Video zprávy
-  - Přenos souborů (omezená velikost pro uložení na serveru, neomezená velikost bez ukládání na serveru)
+  - Přenos souborů:
+    - omezená velikost pro uložení na serveru
+    - 💡 neomezená velikost bez ukládání na serveru
   - Emotikony
   - Animované nálepky
   - Obrázky (vč. animovaných GIFů)
   - Videa
   - Kontakty
-  - Mapa (+ sdílení polohy s pohybem v reálném čase)
-  - Vícedílné zprávy - kombinace různých druhů zpráv do jedné - vhodné např. pro tvorbu obchodních sdělení nebo zpráv od chatbotů
+  - Mapa - vč. sdílení polohy s pohybem v reálném čase
+  - 💡 Vícedílné zprávy - kombinace různých druhů zpráv do jedné - vhodné např. pro tvorbu obchodních sdělení nebo zpráv od chatbotů
 - Odpovídání, přeposílání a reakce
 - Blokování kontaktů
 - Nahlášení kontaktů
-- Témata v rámci konverzace - možnost přepínání mezi nimi
-- Řazení konverzací do skupin (např. práce, rodina, přátelé apod.)
-- Šablony zpráv - vhodné např. pro uživatelskou podporu - přednastavené odpovědi pro zákazníky
+- 💡 Témata v rámci konverzace - možnost přepínání mezi nimi
+- 💡 Řazení konverzací do skupin (např. práce, rodina, přátelé apod.)
+- 💡 Šablony zpráv - vhodné např. pro uživatelskou podporu - přednastavené odpovědi pro zákazníky
 - Překlady zpráv - mnoho světových jazyků, lze vybrat u konkrétní zprávy nebo u celé konverzace
 - Vyhledávání v konverzacích
 - Chatovací skupiny
   - Nastavení soukromí
   - Moderování
-  - Seznam veřejných skupin - výpis, řazení (dle popularity, data vytvoření apod.) a filtrace (dle kategorie apod.)
+  - 💡 Seznam veřejných skupin - výpis, řazení (dle popularity, data vytvoření apod.) a filtrace (dle kategorie apod.)
 - Novinkové skupiny
   - Nastavení soukromí
   - Moderování
-  - Seznam veřejných novinkových skupin - výpis, řazení (dle popularity, data vytvoření apod.) a filtrace (dle kategorie apod.)
+  - 💡 Seznam veřejných novinkových skupin - výpis, řazení (dle popularity, data vytvoření apod.) a filtrace (dle kategorie apod.)
 - Indikace přečtení
 - Informace o koncovém šifrování
 - Možnost ovládání konverzace chatbotem (např. pro objednávání zboží, uživatelskou podporu apod.)
-- Provázání s moduly "Profily" (odkaz na profil) a "Volání" (možnost zahájit audio / video hovor).
-
-#### Unikátní funkce:
-
-- Vícedílné zprávy
-- Zasílání neomezeně velkých souborů
-- Živé body na mapě
-- Řazení kontaktů do skupin
-- Řazení konverzací do témat
-- Šablony zpráv
+- Provázání s moduly:
+  - Profily - odkaz na profil
+  - Volání - možnost zahájit audio / video hovor
 
 #### Cílová skupina:
 
@@ -207,17 +202,14 @@ Tento modul představuje další základní funkcionalitu platformy, která umo�
 - Video hovory
 - Skupinové hovory
 - Sdílení obrazovky
-- Vzdálené ovládaní zařízení
-- Nahrávání hovorů - hlas i video, správa nahrávek, možnost sdílení nahrávek (odeslání po skončení vybranému seznamu uživatelů do rychlých zpráv)
+- 💡 Vzdálené ovládaní zařízení
+- 💡 Nahrávání hovorů - hlas i video, správa nahrávek, možnost sdílení nahrávek (odeslání po skončení vybranému seznamu uživatelů do rychlých zpráv)
 - Historie volání
 - Automatické přizpůsobení kvality hovoru
 - Koncové šifrování hovorů
-- Provázání s moduly "Kontakty" (volání přímo z kontaktu) a "Kalendář" (plánování hovorů)
-
-#### Unikátní funkce:
-
-- Vzdálené ovládání zařízení v rámci hovorů
-- Nahrávání hovorů
+- Provázání s moduly:
+  - Kontakty - volání přímo z kontaktu
+  - Kalendář - plánování hovorů
 
 #### Cílová skupina:
 
@@ -239,7 +231,23 @@ Tento modul umožňuje uživatelům snadno a bezpečně uchovávat, odesílat a 
 - Spouštění metod [**chytrých smluv**](https://cs.wikipedia.org/wiki/Chytr%C3%BD_kontrakt) - značně přispívá k důvěryhodnosti transakcí a rozšiřuje možnosti funkcionalit modulů
 - Transakční historie, výpisy a hledání v transakcích
 - Generování QR kódu pro mobilní transakce
-- Provázání s řadou modulů -platby v každém komerčním modulu (např. za prémiové funkce), možnost automatického zaslání zprávy o příchozí platbě nebo žádosti o platbu přes "Rychlé zprávy" - zpráva s QR kódem a tlačítkem pro potvrzení platby - s konkrétní čáskou či možností zadání libovolné / výchozí změnitelné částky)
+- Provázání s moduly:
+  - 💡 Rychlé zprávy - možnost automatického zaslání zprávy o příchozí platbě nebo žádosti o platbu - zpráva s QR kódem a tlačítkem pro potvrzení platby - s konkrétní čáskou či možností zadání libovolné / výchozí změnitelné částky
+  - 💡 Sdílení souborů - Platba za přístup ke komerčním databázím
+  - 💡 Profily - Možnost zveřejnění adresy + QR kódu + tlačítka pro platbu
+  - 💡 Video kanály - platba za komerční videa, zasílání příspěvků oblíbenému kanálu, zasílání příspěvků v rámci živých vysílání
+  - 💡 Diskuzní fórum - možnost mít tlačítko pro příspěvek vedle jména autora - zobrazí možnost vložení částky, tlačítka pro zaplacení, adresa a QR kód - funguje např. jako poděkování za dobrou radu apod.
+  - 💡 Newsfeed - možnost mít tlačítko pro příspěvek vedle jména (stejné jako u diskuzního fóra)
+  - 💡 Příběhy - možnost mít tlačítko pro příspěvek při kliknutí na jméno (podobné jako u diskuzního fóra)
+  - 💡 Události - možnost zaslání příspěvku v události nebo zaplacení členství na události apod.
+  - 💡 Blogy - možnost mít tlačítko pro příspěvek v seznamu článků a u konkrétního článku (stejné jako u diskuzního fóra)
+  - 💡 E-shopy - platba za zboží a služby
+  - 💡 Tržiště - platba za zboží a služby
+  - 💡 Příspěvky - platba příspěvku v rámci kampaně, možnost upozornění na pravidelné příspěvky
+  - 💡 Skupinové financování - platba příspěvku v rámci kampaně
+  - 💡 Úkoly - platba za splnění konkrétních úkolů + označení zaplacení
+  - 💡 Virtual chat - platba měsíčního členství, za doplňky na postavu, předměty do prostoru apod.
+  - 💡 Hry - Platby za komerční hry, možnost sázek v rámci her přes chytré smlouvy
 
 #### Unikátní funkce:
 
