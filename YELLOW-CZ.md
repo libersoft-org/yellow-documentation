@@ -312,13 +312,22 @@ Tento modul umožňuje uživatelům vytvořit si vlastní veřejný profil a sle
 - Úprava vlastního profilu, vč. výběru viditelných modulů v profilu
 - Zobrazení aktivit napříč všemi moduly nebo u konkrétních modulů
 - Blokování zobrazení profilu pro konkrétní uživatele
-- Seznam veřejných profilů s možností řazení a vyhledávání
+- 💡 Seznam veřejných profilů s možností řazení a vyhledávání
 - Zobrazení aktivit nejsledovanějších veřejných profilů (bez nutnosti sledování, odděleně od sledovaných profilů)
-- Provázání s řadou modulů - zobrazení aktivit z ostatních modulů - video kanály (nová videa, probíhající live streamy), diskuzní fórum (nové příspěvky), newsfeed (nové příspěvky), příběhy (aktuální příběhy), události (zůčastnění se, komentáře), blogy (nové články), e-shopy (odkazy na jednotlivé e-shopy, nové produkty), tržiště (nové inzerované položky, seznam inzerovaných položek), příspěvky (seznam kampaní, informace o začátku a dokončení), skupinové financování (seznam kampaní, informace o začátku a dokončení), kalendář (blížící se události z veřejných kalendářů), možnost sdílení profilu do rychlých zpráv
-
-#### Unikátní funkce:
-
-- Veřejný obsah profilů z více modulů na jednom místě (provázanost s moduly)
+- Provázání s řadou modulů:
+  - Zobrazení aktivit z ostatních modulů:
+    - Video kanály - nová videa, probíhající live streamy
+    - Diskuzní fórum - nové příspěvky
+    - Newsfeed - nové příspěvky
+    - Příběhy - aktuální příběhy
+    - Události - zůčastnění se, komentáře
+    - 💡 Blogy - nové blogy, nové články
+    - 💡 E-shopy - odkazy na jednotlivé e-shopy, nové produkty
+    - Tržiště - nové inzerované položky, seznam inzerovaných položek
+    - 💡 Příspěvky - seznam kampaní, informace o začátku a dokončení
+    - 💡 Skupinové financování -seznam kampaní, informace o začátku a dokončení
+    - Kalendář (blížící se události z veřejných kalendářů)
+  - Rychlé zprávy - možnost sdílení profilu v rámci zprávy
 
 #### Cílová skupina:
 
