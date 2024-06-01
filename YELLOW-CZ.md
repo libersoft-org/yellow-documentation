@@ -322,7 +322,7 @@ Tento modul umožňuje uživatelům vytvořit si vlastní veřejný profil a sle
     - 💡 E-shopy - odkazy na jednotlivé e-shopy, nové produkty
     - Tržiště - nové inzerované položky, seznam inzerovaných položek
     - 💡 Příspěvky - seznam kampaní, informace o začátku a dokončení
-    - 💡 Skupinové financování -seznam kampaní, informace o začátku a dokončení
+    - 💡 Skupinové financování - seznam kampaní, informace o začátku a dokončení
     - Kalendář (blížící se události z veřejných kalendářů)
   - Rychlé zprávy - možnost sdílení profilu v rámci zprávy
 
