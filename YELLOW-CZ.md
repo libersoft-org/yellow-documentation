@@ -580,7 +580,6 @@ Modul umožňuje uživatelům spravovat a sdílet nástěnky s úkoly, je navrž
 
 #### Seznam funkcí:
 
-TODO
 - Vytváření a správa úkolových nástěnek
 - Sledování průběhu, delegování, komentování úkolů v reálném čase
 - Sdílení úkolů s ostatními členy týmu
@@ -716,7 +715,7 @@ Po dokončení této fáze se spustí nejprve marketing pomocí vlastních nást
 
 - **Vytvoření funkcionality otázkové hry do Seznamky**: 3 muži položí otázku 3 ženám a obráceně, po spuštění odpoví muži ženám na otázky a obráceně, následně si navzájem ohodnotí odpovědi a vyberou ten protějšek, který jim byl dle odpovědi nejsympatičtější. Kladné hodnocení odpovědí zajistí body, ty se následně přičítají na high score.
 
-- **Nové funkcionality v rámci modulu Rychlé zprávy**:
+- **Nové funkcionality v rámci modulu Rychlé zprávy** (ne vše se bude realizovat, spíše nápady):
   - **Widgety do chat bubliny**:
     - **Sdílená tabule** - Umožňuje uživatelům spolupracovat v reálním čase na sdílené ploše, kde mohou kreslit, psát poznámky, přidávat obrázky a další interaktivní prvky. Funkcionalita je užitečná pro práci, výuku i zábavu.
     - **Duelové mini hry** - Zábavné jednoduché mini hry pro dva přímo v bublině - např. piškvorky, šibenice, dáma, Connect 4, šachy, lodě, duel Tetris pro 2, hádánky, Draw it, Simon apod.
@@ -761,5 +760,3 @@ Po dokončení této fáze se spustí nejprve marketing pomocí vlastních nást
 #### Marketing:
 
 - Pokračování propagace produktu pomocí osvědčených marketingových kanálů z předchozích fází
-
-TODO - přesunout AMTP-MODULE-MESSAGES-UNIQUE.md sem?
