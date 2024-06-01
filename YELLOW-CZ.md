@@ -519,8 +519,8 @@ Tento modul umožňuje uživatelům finančně podporovat konkrétní uživatele
 
 #### Seznam funkcí:
 
-- Založení vlastních sbírek na libovolné účely
-- Správa sbírek
+- Založení a správa vlastních sbírek
+- 💡 Žádná nutnost schvalování - kdokoliv může vytvořit sbírku k libovolným účelům
 - Přispívání na konkrétní sbírky
 - 💡 Seznam veřejných sbírek - možnost řazení a filtrování
 - 💡 Platby přes integrovaou kryptoměnovou peněženku
@@ -534,17 +534,22 @@ Tento modul umožňuje uživatelům finančně podporovat konkrétní uživatele
 
 Uživatelé provozující či přispívající na osobní, charitativní, komunitní, umělecké či jakékoliv jiné projekty.
 
-### 🤑 Skupinové financování
+### 🤑 Skupinové financování (crowdfunding)
 
-**Skupinové financování** (crowdfunding) umožňuje uživatelům **získávat finanční prostředky** na různé projekty prostřednictvím příspěvků od přispěvatelů, za což tito přispěvatelé dostávají různé **odměny**, **podíly** na projektu či jiné **výhody**. Tento modul poskytuje komplexní nástroje pro vytváření a správu kampaní, čímž umožňuje realizaci inovativních nápadů, projektů a podnikatelských záměrů. Kdokoliv si může založit vlastní kampaň pro libovolný účel a sestavit jí podle svého uvážení. Platforma poskytuje i **seznam veřejných kampaní**, které lze filtrovat a řadit dle různých kritérií.
+Díky tomuto modulu je uživatelům umožněno získávat finanční prostředky na různé projekty prostřednictvím příspěvků od přispěvatelů, za což tito přispěvatelé dostávají různé odměny, podíly na projektu či jiné výhody. To umožňuje realizaci inovativních nápadů, projektů a podnikatelských záměrů.
 
 #### Seznam funkcí:
 
-TODO
-
-#### Unikátní funkce:
-
-- Provázanost s ostatními moduly (např. tlačítko pod videem ve video kanálech, sekce v profilech apod.)
+- Založení a správa kampaní skupinového financování
+- 💡 Žádná nutnost schvalování - kdokoliv může vytvořit kampaň k libovolným účelům
+- Přispívání na konkrétní kampaně
+- Seznam veřejných sbírek - možnost řazení a filtrování
+- 💡 Platby přes integrovaou kryptoměnovou peněženku
+- 💡 Provázanost s ostatními moduly:
+  - Možnost zobrazení sekce v profilu
+  - Možnost tlačítek ve video kanálech
+  - Možnost zobrazení lokace na mapě
+  - Zasílání zpráv v rámci modulu Rychlé zprávy
 
 #### Cílová skupina:
 
@@ -552,7 +557,7 @@ Podnikatelé, startupy, tvůrci a umělci, neziskové organizace, komunity, inov
 
 ### 📅 Kalendář
 
-**Kalendář** je navržen pro efektivní **organizování času** a **plánování událostí**. Tento modul umožňuje uživatelům **vytvářet**, **synchronizovat** a **sdílet** kalendáře s ostatními členy komunity, což usnadňuje organizaci osobních i pracovních aktivit.
+Tento modul je navržen pro efektivní organizování času a plánování událostí. Tento modul umožňuje uživatelům **vytvářet**, **synchronizovat** a **sdílet** kalendáře s ostatními členy komunity, což usnadňuje organizaci osobních i pracovních aktivit.
 
 #### Seznam funkcí:
 
