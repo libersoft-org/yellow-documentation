@@ -494,16 +494,17 @@ E-commerce podnikatelé, digitální tvůrci, poskytovatelé služeb roznášek 
 
 ### 🏪 Tržiště
 
-Modul **Tržiště** umožňuje koncovým uživatelům **nakupovat** a **prodávat produkty a služby** mezi sebou. Poskytuje přehlednou platformu pro **inzerci**, kde mohou uživatelé nabízet své zboží a služby za **fixní ceny** nebo je dražit formou **aukce**. Modul umožňuje vyhledávání a filtrování položek dle různých kritérií, **hodnotit prodejce** a **komunikovat** s nimi.
+Modul umožňuje koncovým uživatelům nakupovat a prodávat produkty a služby mezi sebou.
 
 #### Seznam funkcí:
 
-TODO
-
-#### Unikátní funkce:
-
-- Možnost využití chytrých smluv pro účely úschovy
-- Provázanost s ostatními moduly (např. lokace v mapách, sekce v profilech apod.)
+- Nákup a prodej produktů a služeb mezi uživateli - inzerce
+- Možnost nastavení fixní ceny nebo aukce
+- Vyhledávání a filtrování položek
+- Hodnocení prodejců
+- 💡 Platby přes integrovaou kryptoměnovou peněženku
+- 💡 Možnost využití chytrých smluv pro účely úschovy
+- 💡 Provázanost s ostatními moduly: zasílání zpráv v rámci modulu Rychlé zprávy, možnost zobrazení sekce v profilu, zobrazení lokace na mapě apod.
 
 #### Cílová skupina:
 
