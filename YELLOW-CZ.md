@@ -368,11 +368,15 @@ Tento modul poskytuje prostor pro uživatele, kde mohou zakládat tématické di
 - Seznam příspěvků v diskuzi
 - Zobrazení příspěvku a jeho odpovědí
 - Možnost psaní příspěvků a odpovědí - různé druhy zpráv (stejně jako u modulu "Rychlé zprávy")
+- 💡 Vícedílné příspěvky - jako u vícedílných zpráv v modulu Rychlé zprávy
 - Možnost reakcí na příspěvky a odpovědi
 - Moderování diskuzí - správa moderujících, mazání příspěvků a odpovědí, blokace uživatelů
 - Vyhledávání diskuzí, příspěvků a odpovědí
 - Nahlašování závadných diskuzí, příspěvků a odpovědí
-- 💡 Provázanost s ostatními moduly - tlačítko pod videem ve video kanálech, sekce v profilech apod.
+- 💡 Provázanost s ostatními moduly:
+  - Tlačítka v příspěvcích a odpovědích, které odkazují na další moduly (profil, napsání rychlé zprávy apod.)
+  - Video kanály - tlačítko pod videem a v informacích o kanálu
+  - Profily - sekce Příspěvky v diskuzním fóru
 
 #### Cílová skupina:
 
@@ -384,7 +388,8 @@ Tento modul poskytuje uživatelům publikovat textový, obrázkový, video a aud
 
 #### Seznam funkcí:
 
-- Vytvoření příspěvku (text, obrázek, video, audio nebo 💡 vícedílný příspěvek - jako u vícedílných zpráv v modulu Rychlé zprávy)
+- Vytvoření příspěvku (text, obrázek, video, audio apod.)
+- 💡 Vícedílné příspěvky - jako u vícedílných zpráv v modulu Rychlé zprávy
 - Přehled příspěvků sledovaných profilů
 - Správa vlastních příspěvků - zobrazení, editace, smazání
 - Komentování příspěvků
@@ -393,7 +398,10 @@ Tento modul poskytuje uživatelům publikovat textový, obrázkový, video a aud
 - Sdílení příspěvků do zpráv
 - Seznam nejsledovanějších / nejnovějších veřejných příspěvků
 - Nastavení soukromí newsfeedu - veřejný / jen pro sledující / jen pro sledované
-- 💡 Provázanost s ostatními moduly - např. tlačítko pod videem ve video kanálech, sekce v profilech apod.
+- 💡 Provázanost s ostatními moduly:
+  - Tlačítka v příspěvcích a odpovědích, které odkazují na další moduly (profil, napsání rychlé zprávy apod.)
+  - Video kanály - tlačítko pod videem a v informacích o kanálu
+  - Profily - sekce příspěvky v Newsfeedu
 
 #### Cílová skupina:
 
