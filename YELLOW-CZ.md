@@ -130,9 +130,6 @@ Modul **Rychlé zprávy** představuje hlavní funkcionalitu platformy, která u
 
 #### Seznam funkcí:
 
-TODO - přesunout popisy vyjmenovaných funkcionalit výše do seznamu níže - toto u všech modulů!!!
-TODO - vyhodit unikátní funkce a místo toho ty unikátní v seznamu všech funkcí označit a vytvořit legendu ikonek
-
 - Různé typy zpráv:
   - Textové zprávy (prostý i formátovaný text)
   - Hlasové zprávy
@@ -632,15 +629,17 @@ Modul nabízí uživatelům prostředí virtuálního světa, ve kterém mohou v
 
 ### 🎮 Hry
 
-Modul **Hry** poskytuje uživatelům zábavu prostřednictvím her, které mohou hrát se svými přáteli online.
+Tento modul poskytuje uživatelům zábavu prostřednictvím her, které mohou hrát se svými přáteli online.
 
 #### Seznam funkcí:
 
-TODO
-
-#### Unikátní funkce:
-
-- Provázanost s ostatními moduly (např. hraní her přímo ve zprávách apod.)
+- Seznam her od různých vývojářů
+- Možnost vydání vlastní hry
+- Možnost prodeje komerčních her integrovanou kryptoměnovou peněženkou
+- 💡 Provázanost s ostatními moduly:
+  - Rychlé zprávy - hraní mini her přímo ve zprávách
+  - Platby v rámci integrované kryptoměnové peněženky
+  - Možnost vytvoření férových her pomocí chytrých smluv - pomocí integrované kryptoměnové peněženky
 
 #### Cílová skupina:
 
@@ -648,11 +647,13 @@ Hráči her různých žánrů, sociálně zaměření hráči, příležitostn�
 
 ### 📰 Media feed
 
-Modul **Media feed** poskytuje uživatelům **přehled zpráv** a informací z různých **médií**. Tento modul agreguje obsah z různých zpravodajských **serverů**, **blogů**, **sociálních médií** a dalších zdrojů, aby uživatelé měli aktuální přehled o dění v okolí a ve světě na jednom místě. Uživatelé si mohou personalizovat **výběr oblíbených médií** a **sdílet** obsah s ostatními uživateli.
+Modul poskytuje uživatelům přehled zpráv a informací, agreguje obsah z různých zpravodajských serverů a dalších zdrojů, aby uživatelé měli aktuální přehled o dění v okolí a ve světě na jednom místě.
 
 #### Seznam funkcí:
 
-TODO
+- Přehled zpráv z různých zpravodajských serverů
+- Personalizace díky výběru oblíbených médií
+- Provázanost s ostatními moduly - sdílení přes rychlé zprávy nebo do newsfeedu
 
 #### Cílová skupina:
 
