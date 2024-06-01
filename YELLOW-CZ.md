@@ -454,15 +454,18 @@ Amatérští i profesionální autoři, čtenáři různorodého obsahu.
 
 ### 🗺️ Mapy
 
-**Mapy** nabízí uživatelům rozsáhlé možnosti pro **prohlížení** a **interakci** s geografickými informacemi. Modul poskytuje funkcionality jako **vyhledávání**, **sdílení polohy** v reálném čase a **objevování míst** a nalézání **bodů zájmů** (místní obchody, služby, události apod.), které lze **hodnotit** a **komentovat**. Body zájmů jsou **filtrovatelné** a propojené s dalšími moduly aplikace, jako jsou profily nebo možnost kontaktování pomocí rychlých zpráv. Mapy jsou založeny na [**OpenStreetMap**](https://www.openstreetmap.org/).
+**Mapy** nabízí uživatelům rozsáhlé možnosti pro interakci s geografickými informacemi. Mapy jsou založeny na [**OpenStreetMap**](https://www.openstreetmap.org/).
 
 #### Seznam funkcí:
 
-TODO
+- Prohlížení mapy
+- Vyhledávání míst
+- Body zájmu - místní obchody, služby, události, možnost hodnocení a komentování, filtrování
+- Provázanost s ostatními moduly - odkaz na konkrétní události nebo veřejné skupiny apod.,  možnost kontatkovat přes rychlé zprávy, sdílení polohy v rychlých zprávách (jednorázově i v reálném čase)
 
 #### Unikátní funkce:
 
-- Provázanost s ostatními moduly (např. body zájmů z událostí, veřejných skupin, video kanálů apod.)
+- Provázanos s ostatními moduly - odkaz na konkrétní události nebo veřejné skupiny apod.,  možnost kontatkovat přes rychlé zprávy, sdílení polohy v rychlých zprávách (jednorázově i v reálném čase)
 
 #### Cílová skupina:
 
