@@ -481,11 +481,11 @@ Tento modul umožňuje uživatelům **vytvářet** a **spravovat** vlastní **on
 
 #### Seznam funkcí:
 
-TODO
-
-#### Unikátní funkce:
-
-- Provázanost s ostatními moduly (např. tlačítko pod videem ve video kanálech, lokace v mapách, sekce v profilech apod.)
+- Vytváření a správa vlastních e-shopů
+- Nakupování v e-shopech
+- Seznam e-shopů seřazený podle popularity
+- 💡 Platby integrovanou kryptoměnovou peněženkou
+- 💡 Provázanost s ostatními moduly - sekce v profilech, tlačítka ve video kanálech, body na mapě apod.
 
 #### Cílová skupina:
 
