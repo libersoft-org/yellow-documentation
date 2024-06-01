@@ -506,7 +506,7 @@ Modul umožňuje koncovým uživatelům nakupovat a prodávat produkty a služby
 - 💡 Možnost využití chytrých smluv pro účely úschovy
 - 💡 Provázanost s ostatními moduly:
   - Možnost zobrazení sekce v profilu
-  - Zobrazení lokace na mapě apod.
+  - Možnost zobrazení lokace na mapě apod.
   - Zasílání zpráv v rámci modulu Rychlé zprávy
 
 #### Cílová skupina:
@@ -515,15 +515,20 @@ Uživatelé, kteří prodávají, draží či nakupují zboží a služby formou
 
 ### 💰 Příspěvky
 
-Tento modul umožňuje uživatelům **finančně podporovat** konkrétní uživatele, projekty či charity prostřednictvím finančních darů. Kdokoliv si může založit vlastní sbírku na libovolné účely a vybírat tak dary od ostatních. Modul umožňuje snadnou **správu sbírek**, poskytuje **seznam veřejných sbírek** filtrovatelný a řaditelný dle různých kritérií. Taktéž umožňuje **komunikaci** mezi dárci a provozovateli sbírky.
+Tento modul umožňuje uživatelům finančně podporovat konkrétní uživatele, projekty či charity prostřednictvím finančních darů.
 
 #### Seznam funkcí:
 
-TODO
-
-#### Unikátní funkce:
-
-- Provázanost s ostatními moduly (např. tlačítko pod videem ve video kanálech, sekce v profilech apod.)
+- Založení vlastních sbírek na libovolné účely
+- Správa sbírek
+- Přispívání na konkrétní sbírky
+- 💡 Seznam veřejných sbírek - možnost řazení a filtrování
+- 💡 Platby přes integrovaou kryptoměnovou peněženku
+- 💡 Provázanost s ostatními moduly:
+  - Možnost zobrazení sekce v profilu
+  - Možnost tlačítek ve video kanálech
+  - Možnost zobrazení lokace na mapě
+  - Zasílání zpráv v rámci modulu Rychlé zprávy
 
 #### Cílová skupina:
 
