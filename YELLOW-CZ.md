@@ -561,11 +561,14 @@ Tento modul je navržen pro efektivní organizování času a plánování udál
 
 #### Seznam funkcí:
 
-TODO
-
-#### Unikátní funkce:
-
-- Provázanost s ostatními moduly (např. automatické vytvoření události spojené s konferenčním hovorem, veřejný kalendář v profilech apod.)
+- Vytváření více kalendářů
+- Organizování času a plánování událostí
+- Sdílení kalendáře s ostatními - pouze pro čtění nebo s možností modifikací
+- 💡 Provázanost s ostatními moduly:
+  - Tlačítka ve video kanálech
+  - Sdílení do soukromých zpráv
+  - Sekce v rámci profilu
+  - Automatické vytvoření události spojené s konferenčním hovorem
 
 #### Cílová skupina:
 
