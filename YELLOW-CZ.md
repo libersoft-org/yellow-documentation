@@ -724,6 +724,8 @@ Po dokončení této fáze se spustí nejprve marketing pomocí vlastních nást
 
 - **Vytvoření modulu AI asistent**: Tento modul umožňuje snadné získávání informací a ovládání aplikace pomocí textu a hlasu a to na jedno kliknutí. Asistent vykonává akce v aplikaci za uživatele (např. "Napiš Honzovi zprávu o tom, že se zítra nedostavím na schůzku.", "Najdi v diskuzích zajímavá témata o umělé inteligenci.", "Přidej na nástěnku ovládací prvky pro kalendář a svátky." apod.).
 
+- **Vytvoření modulu Vzdělávání**: Tento modul nabízí publikování a prodej vzdělávcích kurzů formou videí, pracovních listů, testů a možnosti získání certifikace. Zároveň umožňuje uživatelům kurzy hodnotit a komentovat, vyhledávat je dle kategorií, hodnocení apod.
+
 - **Vytvoření funkcionality otázkové hry do Seznamky**: 3 muži položí otázku 3 ženám a obráceně, po spuštění odpoví muži ženám na otázky a obráceně, následně si navzájem ohodnotí odpovědi a vyberou ten protějšek, který jim byl dle odpovědi nejsympatičtější. Kladné hodnocení odpovědí zajistí body, ty se následně přičítají na high score.
 
 - **Nové funkcionality v rámci modulu Rychlé zprávy** (ne vše se bude realizovat, spíše nápady):
