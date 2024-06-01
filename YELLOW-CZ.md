@@ -344,18 +344,14 @@ Uživatelé sociálních sítí, odběratelé novinek dle zájmových oblastí a
 - Správa playlistů (vytváření, přidávání a odebírání položek)
 - Statistiky sledovanosti, reakcí a komentářů ke každému videu a živému vysílání
 - Přidávání kanálů do odběrů
-- Přehrávání videí + komentáře, reakce, sdílení, zasílání darů
-- Živá vysílání - vč. komentářů, reakcí, sdílení, zasílání darů
+- Přehrávání videí + komentáře, reakce, sdílení
+- Živá vysílání - vč. komentářů, reakcí, sdílení
 - Krátká "reels" videa
+- 💡 Zasílání darů - tlačítko v kanálu, u každého videa a v rámci živých vysílání
 - Zasílání oznámení o nových videích odberatelům
-- Prodej placených videí - přes integrovanou kryptoměnovou peněženku
+- 💡 Prodej placených videí - přes integrovanou kryptoměnovou peněženku
 - Blokování a nahlašování kanálů
-- Provázání s dalšími moduly - tlačítka v kanálu a pod videi (stejné jako u profilů, vč. odkazu na profil samotný), sekce v profilu, placení videí a zasílání darů přes integrovanou kryptoměnovou peněženku, zaslání rychlé zprávy majiteli kanálu
-
-#### Unikátní funkce:
-
-- Placená videa v rámci video kanálů
-- Provázanost s ostatními moduly
+- 💡 Provázání s moduly - Tlačítka (platba, skupinové financování, dary, e-shop, profil apod.) v kanálu a pod videi, zaslání rychlé zprávy majiteli kanálu
 
 #### Cílová skupina:
 
