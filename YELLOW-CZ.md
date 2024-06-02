@@ -742,7 +742,7 @@ Po dokončení této fáze se spustí nejprve marketing pomocí vlastních nást
   - **Widgety do chat bubliny**:
     - **Sdílená tabule** - Umožňuje uživatelům spolupracovat v reálním čase na sdílené ploše, kde mohou kreslit, psát poznámky, přidávat obrázky a další interaktivní prvky. Funkcionalita je užitečná pro práci, výuku i zábavu.
     - **Duelové mini hry** - Zábavné jednoduché mini hry pro dva přímo v bublině - např. piškvorky, šibenice, dáma, Connect 4, šachy, lodě, duel Tetris pro 2, hádánky, Draw it, Simon apod.
-    - **Odškrtávací seznamy** - Přidávání, uprava, zaškrtávání a odstraňování položek za běhu, synchronizované s druhou stranou. Užitečné pro nákupní seznam, plánování výletu / dovolené, domácích prací, pracovních úkolů apod.
+    - **Odškrtávací seznamy** - Přidávání, úprava, zaškrtávání a odstraňování položek za běhu, synchronizované s druhou stranou. Užitečné pro nákupní seznamy, plánování výletů / dovolených, domácí práce, pracovní úkoly apod.
     - **Anketa / hlasování** - V chatovací skupině s více účastníky mohou lidé hlasovat přímo v chatovací bublině pro uživatelem vytvořenou anketu.
     - **Zvukové efekty** - Uživatelé mohou vybírat zvukové efekty z předdefinované knihovny přímo v chatovací bublině. Knihovna může obsahovat různé kategorie zvuků, jako jsou smích, potlesk, bzučení, výbuchy, zvuky zvířat atd.
     - **Piano** - Synchronizované piano, které slyší a mohou ovládat obě strany zároveň. Také obsahuje funkci zobrazení notové osnovy s notami nebo zobrazení následné posloupnosti jednotlivých kláves (jako u Guitar Hero).
