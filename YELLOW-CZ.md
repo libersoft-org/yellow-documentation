@@ -6,7 +6,7 @@
 
 - **Kompatibilita napříč zařízeními**: Klientská aplikace je dostupná pro mnoho platforem, především s OS Windows, Linux, macOS, Android, iOS a web na mnoha typech zařízení.
 
-- **Jazyková podpora**: Klientská aplikace je přeložena do spousty nejpoužívanějších světových jazyků, což umožňuje její celosvětové rozšíření.
+- **Jazyková podpora**: Jádro klientské aplikace je přeloženo do mnoha nejpoužívanějších světových jazyků, což umožňuje její celosvětové rozšíření. Moduly klientské aplikace je taktéž možné přeložit do libovolných světových jazyků.
 
 - **Jednoduchost a použitelnost klientské aplikace**: Aplikace je navržena tak, aby lidem **řešila a značně usnadňovala běžné potřeby reálného světa** v online prostředí (např. komunikace, zapojení se do komunit, obchodování, platby, vzdělávání, zábava, sledování aktuálního dění, seznamování se, profesní potřeby, sdílení informací apod.). I přes svou komplexní využitelnost si aplikace zachovává **přehledné a jednoduché uživatelské rozhraní**, které je snadno pochopitelné a ovladatelné pro běžného člověka téměř všech věkových kategorií a to bez odborných znalostí.
 
