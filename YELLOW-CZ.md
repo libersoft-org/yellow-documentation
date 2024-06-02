@@ -6,6 +6,8 @@
 
 - **Kompatibilita napříč zařízeními**: Klientská aplikace je dostupná pro mnoho platforem, především s OS Windows, Linux, macOS, Android, iOS a web na mnoha typech zařízení.
 
+- **Jazyková podpora**: Aplikace je přeložena do spousty nejpoužívanějších světových jazyků, což umožňuje její celosvětové rozšíření.
+
 - **Jednoduchost a použitelnost klientské aplikace**: Aplikace je navržena tak, aby lidem **řešila a značně usnadňovala běžné potřeby reálného světa** v online prostředí (např. komunikace, zapojení se do komunit, obchodování, platby, vzdělávání, zábava, sledování aktuálního dění, seznamování se, profesní potřeby, sdílení informací apod.). I přes svou komplexní využitelnost si aplikace zachovává **přehledné a jednoduché uživatelské rozhraní**, které je snadno pochopitelné a ovladatelné pro běžného člověka téměř všech věkových kategorií a to bez odborných znalostí.
 
 - **Jednoduchá instalace serveru a nastavení**: Serverová aplikace je jednoduše nainstalovatelná a nastavitelná i pro začínající správce serveru či pokročilejší uživatele PC. Aplikace umožňuje jednoduchou **instalaci a nastavení serveru do 5 minut** a přehledné webové rozhraní pro správu. Toto je využitelné pro ty, kteří nechtějí využívat servery a domény poskytovatelů služeb (třetích stran) a raději mají svá data pod kontrolou na vlastním serveru.
