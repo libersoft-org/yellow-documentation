@@ -741,24 +741,24 @@ Po dokončení této fáze se spustí nejprve marketing pomocí vlastních nást
 - **Nové funkcionality v rámci modulu Rychlé zprávy** (ne vše se bude realizovat, spíše nápady):
   - **Widgety do chat bubliny**:
     - **Sdílená tabule** - Umožňuje uživatelům spolupracovat v reálním čase na sdílené ploše, kde mohou kreslit, psát poznámky, přidávat obrázky a další interaktivní prvky. Funkcionalita je užitečná pro práci, výuku i zábavu.
-    - **Duelové mini hry** - Zábavné jednoduché mini hry pro dva přímo v bublině - např. piškvorky, šibenice, dáma, Connect 4, šachy, lodě, duel Tetris pro 2, hádánky, Draw it, Simon apod.
-    - **Odškrtávací seznamy** - Přidávání, úprava, zaškrtávání a odstraňování položek za běhu, synchronizované s druhou stranou. Užitečné pro nákupní seznamy, plánování výletů / dovolených, domácí práce, pracovní úkoly apod.
-    - **Anketa / hlasování** - V chatovací skupině s více účastníky mohou lidé hlasovat přímo v chatovací bublině pro uživatelem vytvořenou anketu.
-    - **Zvukové efekty** - Uživatelé mohou vybírat zvukové efekty z předdefinované knihovny přímo v chatovací bublině. Knihovna může obsahovat různé kategorie zvuků, jako jsou smích, potlesk, bzučení, výbuchy, zvuky zvířat atd.
     - **Piano** - Synchronizované piano, které slyší a mohou ovládat obě strany zároveň. Také obsahuje funkci zobrazení notové osnovy s notami nebo zobrazení následné posloupnosti jednotlivých kláves (jako u Guitar Hero).
+    - **Zvukové efekty** - Uživatelé mohou vybírat zvukové efekty z předdefinované knihovny přímo v chatovací bublině. Knihovna může obsahovat různé kategorie zvuků, jako jsou smích, potlesk, bzučení, výbuchy, zvuky zvířat atd.
     - **Počasí** - Widget, který rychle nasdílí v chatovací bublině počasí v následujících hodinách a dnech s druhou stranou pro vybranou lokaci.
-    - **Recepty** - Jednoduchý widget, který z velkého seznamu receptů na jídla vybírá dle zvolené kategorie a sdílí s druhou stranou.
-    - **Interaktivní infografika** - Vytváření grafů přímo ve zprávě ze zadané struktury dat (např. JSON, CSV apod.).
-    - **Plánování tras a závodů na trasách** - Live sledování dvojice či skupiny lidí, kteří se v reálném čase pohybují po mapě, možnost nastavit cestu trasy, kontrolních bodů (vhodné např. pro závody) apod.
-    - **Ceny akcií, komodit a kryptoměn** - Možnost zaslání grafů a cen ke konkrétním aktivům přímo v chatovací bublině.
-    - **Návrhy na filmy a seriály** - Ve widgetu se vybere žánr, rozsah let vydání apod. a poté widget nabídne film či seriál ke zhlédnutí.
+    - **Duelové mini hry** - Zábavné jednoduché mini hry pro dva přímo v bublině - např. piškvorky, šibenice, dáma, Connect 4, šachy, lodě, duel Tetris pro 2, hádánky, Draw it, Simon apod.
     - **3D modely s otáčením** - Při zaslání souborů 3D modelů (OBJ, FBX apod.) se model zobrazí přímo v bublině, lze ho otáčet, zvětšovat jeho detaily, zobrazit na celou obrazovku apod.
-    - **Stopky a odpočítávání** - Synchronizované časovače pro různé účely.
     - **360 stupňové fotky / videa** - Možnost zobrazení otočitelného panoramatického obrázku / videa přímo v chatovací bublině s možností zobrazení na celé obrazovce.
-    - **Hlasové filtry** - Pozměnění hlasu ve stylu aplikace MorphVOX přímo v hlasových zprávách nebo při hovorech.
-    - **Sandboxovaný kód** - Spustitelný sandboxovaný kód přímo v chatovací bublině nabízí možnost druhé straně spustit bezpěčný kód, který představuje widget uvnitř chatovací bubliny. Po obdržení druhou stranou může uživatel nahlédnout do kódu a následně spustit a poté i zastavit kód. To nabízí neomezené možnosti použití - např. tvorba her, ukázky kódu pro programátory apod.
+    - **Ceny akcií, komodit a kryptoměn** - Možnost zaslání grafů a cen ke konkrétním aktivům přímo v chatovací bublině.
+    - **Odškrtávací seznamy** - Přidávání, úprava, zaškrtávání a odstraňování položek za běhu, synchronizované s druhou stranou. Užitečné pro nákupní seznamy, plánování výletů / dovolených, domácí práce, pracovní úkoly apod.
+    - **Návrhy na filmy a seriály** - Ve widgetu se vybere žánr, rozsah let vydání apod. a poté widget nabídne film či seriál ke zhlédnutí.
+    - **Recepty** - Jednoduchý widget, který z velkého seznamu receptů na jídla vybírá dle zvolené kategorie a sdílí s druhou stranou.
+    - **Anketa / hlasování** - V chatovací skupině s více účastníky mohou lidé hlasovat přímo v chatovací bublině pro uživatelem vytvořenou anketu.
+    - **Interaktivní infografika** - Vytváření grafů přímo ve zprávě ze zadané struktury dat (např. JSON, CSV apod.).
     - **Krokoměr** - Sdílený počet kroků v reálném čase a možnosti fitness výzev.
     - **Horoskopy** - Výběr znamení / dalších kritérií a následné zaslání horoskopu druhé straně.
+    - **Stopky a odpočítávání** - Synchronizované časovače pro různé účely.
+    - **Hlasové filtry** - Pozměnění hlasu ve stylu aplikace MorphVOX přímo v hlasových zprávách nebo při hovorech.
+    - **Sandboxovaný kód** - Spustitelný sandboxovaný kód přímo v chatovací bublině nabízí možnost druhé straně spustit bezpěčný kód, který představuje widget uvnitř chatovací bubliny. Po obdržení druhou stranou může uživatel nahlédnout do kódu a následně spustit a poté i zastavit kód. To nabízí neomezené možnosti použití - např. tvorba her, ukázky kódu pro programátory apod.
+    - **Plánování tras a závodů na trasách** - Live sledování dvojice či skupiny lidí, kteří se v reálném čase pohybují po mapě, možnost nastavit cestu trasy, kontrolních bodů (vhodné např. pro závody) apod.
     - **Hudební playlist** - Sdílení, přidávání a odebírání položek sdíleného playlistu v reálném čase s odkazem na Spotify - možnost společného (možná i synchronizovaného) poslechu hudby.
     - **Live stream v bublině** - Společné sledování filmu se synchronizovaným sliderem - přináší možnost sledovat oběma stranám stejné video synchronizovaně v reálném čase a možnost live komentářů.
 
