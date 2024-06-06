@@ -156,6 +156,7 @@ Modul **Rychlé zprávy** představuje hlavní funkcionalitu platformy, která u
   - 💡 Recepty - Jednoduchý widget, který z velkého seznamu receptů na jídla vybírá dle zvolené kategorie a sdílí s druhou stranou.
   - 💡 Stopky a odpočítávání - Synchronizované časovače pro různé účely.
   - 💡 Anketa / hlasování - V chatovací skupině s více účastníky mohou lidé hlasovat přímo v chatovací bublině pro uživatelem vytvořenou anketu.
+  - 💡 Horoskopy - Výběr znamení / dalších kritérií a následné zaslání horoskopu druhé straně.
   - 💡 Vícedílné zprávy - kombinace různých druhů zpráv do jedné - vhodné např. pro tvorbu obchodních sdělení nebo zpráv od chatbotů
 - Odpovídání, přeposílání a reakce
 - Blokování kontaktů
@@ -751,7 +752,6 @@ Po dokončení této fáze se spustí nejprve marketing pomocí vlastních nást
 
 - **Nové funkcionality v rámci modulu Rychlé zprávy** (ne vše se bude realizovat, spíše nápady):
   - **Widgety do chat bubliny**:
-    - Horoskopy - Výběr znamení / dalších kritérií a následné zaslání horoskopu druhé straně.
     - Krokoměr - Sdílený počet kroků v reálném čase a možnosti fitness výzev.
     - Návrhy na filmy a seriály - Ve widgetu se vybere žánr, rozsah let vydání apod. a poté widget nabídne film či seriál ke zhlédnutí.
     - Interaktivní infografika - Vytváření grafů přímo ve zprávě ze zadané struktury dat (např. JSON, CSV apod.).
