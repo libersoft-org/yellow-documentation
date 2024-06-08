@@ -148,7 +148,7 @@ Modul **Rychlé zprávy** představuje hlavní funkcionalitu platformy, která u
   - 💡 Sdílené kreslení - Umožňuje uživatelům spolupracovat v reálním čase na sdílené tabuli, kde mohou kreslit, psát poznámky, přidávat obrázky a další interaktivní prvky. Funkcionalita je užitečná pro práci, výuku i zábavu.
   - 💡 Piano - Synchronizované piano, které slyší a mohou ovládat obě strany zároveň. Také obsahuje funkci zobrazení notové osnovy s notami nebo zobrazení následné posloupnosti jednotlivých kláves (jako u Guitar Hero).
   - 💡 Počasí - Widget, který rychle nasdílí v chatovací bublině počasí v následujících hodinách a dnech s druhou stranou pro vybranou lokaci.
-  - 💡 Duelové mini hry - Zábavné jednoduché mini hry pro dva přímo v bublině - např. piškvorky, Connect 4, šibenice, kámen-nůžky-papír, pexeso, dáma, šachy, lodě, reversi (Othello), had, hádání kresby, Simon pro dva apod.
+  - 💡 Duelové mini hry - Zábavné jednoduché mini hry pro dva přímo v bublině - např. piškvorky, Connect 4, šibenice, kámen-nůžky-papír, pexeso, dáma, šachy, lodě, reversi (Othello), had, hádání kresby, Simon pro dva, poker, prší, kostky apod.
   - 💡 3D modely s otáčením - Při zaslání souborů 3D modelů (OBJ, FBX apod.) se model zobrazí přímo v bublině, lze ho otáčet, zvětšovat jeho detaily, zobrazit na celou obrazovku apod.
   - 💡 360 stupňové fotky / videa - Možnost zobrazení otočitelného panoramatického obrázku / videa přímo v chatovací bublině s možností zobrazení na celé obrazovce.
   - 💡 Ceny akcií, komodit a kryptoměn - Možnost zaslání grafů a cen ke konkrétním aktivům přímo v chatovací bublině.
