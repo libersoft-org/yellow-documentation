@@ -357,6 +357,7 @@ Uživatelé sociálních sítí, odběratelé novinek dle zájmových oblastí a
 - Přidávání kanálů do odběrů
 - Přehrávání videí + komentáře, reakce, sdílení
 - Živá vysílání - vč. komentářů, reakcí, sdílení
+- Seznam nejsledovanějších živých vysílání (všech / jen sledovaných)
 - Krátká "reels" videa
 - 💡 Zasílání darů - tlačítko v kanálu, u každého videa a v rámci živých vysílání
 - Zasílání oznámení o nových videích odberatelům
