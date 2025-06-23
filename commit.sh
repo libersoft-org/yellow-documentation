@@ -1,7 +1,7 @@
 #!/bin/sh
 
 REPO="yellow-documentation.git"
-NAME="Liberland Software Foundation"
+NAME="LiberSoft"
 BRANCH="main"
 EMAIL="info@libersoft.org"
 USER="libersoft-org"
@@ -13,7 +13,7 @@ if [ "$#" -eq 0 ]; then
  echo "Git commit & push script"
  echo "------------------------"
  echo ""
- echo "This script commits changes and pushes it on GitHub."
+ echo "This script commits the changes and pushes them to GitHub."
  echo ""
  echo "Usage: $0 \"[SOME COMMENT]\""
  echo "Example: $0 \"Add README.md\""
@@ -28,12 +28,13 @@ if [ ! -d "./.git/" ]; then
 else
  git remote set-url origin https://$USER:$PASS@github.com/$USER/$REPO
 fi
+bun i -g prettier prettier-plugin-svelte
+prettier --plugin 'prettier-plugin-svelte' --write "src/**/*.{js,ts,css,html,svelte}"
 git config user.name "$NAME"
 git config user.email "$EMAIL"
 git status
 git add .
 git status
 git commit -m "$1"
-git branch -M $BRANCH
-git push -u origin $BRANCH
+git push
 git status
