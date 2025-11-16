@@ -31,6 +31,7 @@ If you just want to get your free Yellow account hosted on our server, please na
 
 - [**Yellow Server**](https://github.com/libersoft-org/yellow-server/)
 - [**Yellow Web Client**](https://github.com/libersoft-org/yellow-client/)
+- [**Yellow Native Client**](https://github.com/libersoft-org/yellow-client-native/) - Android, iOS, Windows, macOS and Linux version
 
 ## Donations
 
